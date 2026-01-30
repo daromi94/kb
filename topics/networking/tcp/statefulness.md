@@ -20,7 +20,7 @@ relationship.
 ## Comparison: Stateful vs Stateless
 
 | Protocol | Type      | Analogy    | Description                         |
-| -------- | --------- | ---------- | ----------------------------------- |
+|----------|-----------|------------|-------------------------------------|
 | TCP      | Stateful  | Phone call | Both sides track conversation state |
 | UDP/IP   | Stateless | Mailbox    | Each packet independent, no memory  |
 

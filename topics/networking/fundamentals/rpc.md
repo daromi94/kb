@@ -38,11 +38,11 @@ When you call a remote function, these steps happen in milliseconds:
 
 ## RPC vs REST
 
-| Feature     | RPC                                      | REST                              |
-| ----------- | ---------------------------------------- | --------------------------------- |
-| Focus       | Actions: "Do this" (`sendMessage()`)     | Resources: "Get this" (`GET /m/1`)|
-| Coupling    | Tight (strict contract/schema)           | Loose (URL + data format)         |
-| Performance | Often faster (binary formats like gRPC)  | Slower (text-heavy JSON/HTTP)     |
+| Feature     | RPC                                     | REST                               |
+|-------------|-----------------------------------------|------------------------------------|
+| Focus       | Actions: "Do this" (`sendMessage()`)    | Resources: "Get this" (`GET /m/1`) |
+| Coupling    | Tight (strict contract/schema)          | Loose (URL + data format)          |
+| Performance | Often faster (binary formats like gRPC) | Slower (text-heavy JSON/HTTP)      |
 
 ## Common Implementations
 

@@ -66,7 +66,7 @@ Even on `127.0.0.1`, a TCP packet traverses:
 ## Comparison
 
 | Feature     | TCP Loopback             | Unix Domain Socket         |
-| ----------- | ------------------------ | -------------------------- |
+|-------------|--------------------------|----------------------------|
 | OS layer    | L4 (Transport)           | VFS / Kernel memory        |
 | Data flow   | Packets → Routing → lo   | Direct kernel memory copy  |
 | Reliability | ACKs, retries, checksums | Inherent (memory-based)    |

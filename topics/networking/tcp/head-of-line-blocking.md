@@ -49,7 +49,7 @@ This is why HTTP/3 (which uses QUIC) performs better on lossy networks.
 ## When HOL Blocking Matters
 
 | Scenario             | Impact                              |
-| -------------------- | ----------------------------------- |
+|----------------------|-------------------------------------|
 | Single request/reply | Minimal (only one stream)           |
 | Multiplexed streams  | Severe (all streams blocked)        |
 | Lossy networks       | Severe (frequent retransmissions)   |

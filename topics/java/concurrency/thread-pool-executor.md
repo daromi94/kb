@@ -21,7 +21,7 @@ When a task is submitted via `execute(Runnable)`:
 ## Core parameters
 
 | Parameter           | Purpose                                                      |
-| ------------------- | ------------------------------------------------------------ |
+|---------------------|--------------------------------------------------------------|
 | **corePoolSize**    | Threads to keep in the pool, even if idle                    |
 | **maximumPoolSize** | Absolute ceiling on threads allowed                          |
 | **keepAliveTime**   | How long excess threads (above core) wait before terminating |

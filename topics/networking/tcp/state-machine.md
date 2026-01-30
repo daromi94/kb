@@ -6,7 +6,7 @@ particularly important for diagnosing system issues.
 ## Key States
 
 | State       | Description                                      |
-| ----------- | ------------------------------------------------ |
+|-------------|--------------------------------------------------|
 | LISTEN      | Server waiting for connection requests           |
 | SYN_SENT    | Client sent SYN, awaiting SYN-ACK                |
 | SYN_RCVD    | Server received SYN, sent SYN-ACK, awaiting ACK  |

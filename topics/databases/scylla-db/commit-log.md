@@ -73,9 +73,9 @@ The commit log is a temporary buffer:
 3. Once data is safely in the SSTable, corresponding commit log entries are
    truncated or recycled
 
-| Aspect      | Description                                       |
-| ----------- | ------------------------------------------------- |
-| Purpose     | Durability and crash recovery                     |
-| Speed       | Fast—sequential append-only I/O                   |
-| Persistence | Temporary—deleted once flushed to SSTables        |
-| ScyllaDB    | Recycled segments avoid file allocation overhead  |
+| Aspect      | Description                                      |
+|-------------|--------------------------------------------------|
+| Purpose     | Durability and crash recovery                    |
+| Speed       | Fast—sequential append-only I/O                  |
+| Persistence | Temporary—deleted once flushed to SSTables       |
+| ScyllaDB    | Recycled segments avoid file allocation overhead |

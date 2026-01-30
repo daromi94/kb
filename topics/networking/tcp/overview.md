@@ -7,7 +7,7 @@ network.
 ## Core Properties
 
 | Property            | Description                                           |
-| ------------------- | ----------------------------------------------------- |
+|---------------------|-------------------------------------------------------|
 | Connection-oriented | Requires formal handshake before data transfer        |
 | Reliable            | Guarantees delivery via ACKs and retransmission       |
 | Ordered             | Guarantees byte order via sequence numbers            |

@@ -3,12 +3,12 @@
 The speed of light establishes hard physical limits on system design. Grace
 Hopper famously distributed 11.8-inch wires to visualize a nanosecond.
 
-| Time Unit     | Distance       | Context                                    |
-| ------------- | -------------- | ------------------------------------------ |
-| 1 nanosecond  | ~30 cm         | CPU cache territory - data must be on-chip |
-| 1 microsecond | ~300 meters    | Datacenter territory - same rack/building  |
-| 1 millisecond | ~300 km        | Internet territory - cross-city requests   |
-| 1 second      | ~300,000 km    | 7.5x around Earth, 80% to the Moon         |
+| Time Unit     | Distance    | Context                                    |
+|---------------|-------------|--------------------------------------------|
+| 1 nanosecond  | ~30 cm      | CPU cache territory - data must be on-chip |
+| 1 microsecond | ~300 meters | Datacenter territory - same rack/building  |
+| 1 millisecond | ~300 km     | Internet territory - cross-city requests   |
+| 1 second      | ~300,000 km | 7.5x around Earth, 80% to the Moon         |
 
 ## Implications for system design
 

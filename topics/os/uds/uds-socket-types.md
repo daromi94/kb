@@ -12,11 +12,13 @@ int fd = socket(AF_UNIX, SOCK_STREAM, 0);
 ```
 
 **Characteristics:**
+
 - Requires `connect()` before sending
 - No message boundaries (bytes flow like water from a tap)
 - Application must parse where messages begin and end
 
 **Message boundary problem:**
+
 ```
 Sender:  write("Hello") then write("World")
 Receiver: might read "HelloWorld" in one chunk
@@ -31,7 +33,7 @@ int fd = socket(AF_UNIX, SOCK_DGRAM, 0);
 ```
 
 | Aspect      | Network UDP      | UDS Datagram              |
-| ----------- | ---------------- | ------------------------- |
+|-------------|------------------|---------------------------|
 | Connection  | Not required     | Not required              |
 | Reliability | Packets can drop | **Reliable** (kernel RAM) |
 | Ordering    | Can reorder      | **Ordered**               |
@@ -49,6 +51,7 @@ int fd = socket(AF_UNIX, SOCK_SEQPACKET, 0);
 ```
 
 **Characteristics:**
+
 - Requires `connect()` (like STREAM)
 - Message boundaries preserved (like DGRAM)
 - One `write()` = one `read()` guaranteed
@@ -70,7 +73,7 @@ Zero protocol overhead for backpressure.
 ## Summary
 
 | Type           | Connection | Boundaries | Analogy            |
-| -------------- | ---------- | ---------- | ------------------ |
+|----------------|------------|------------|--------------------|
 | SOCK_STREAM    | Yes        | None       | TCP                |
 | SOCK_DGRAM     | No         | Preserved  | UDP (but reliable) |
 | SOCK_SEQPACKET | Yes        | Preserved  | SCTP               |

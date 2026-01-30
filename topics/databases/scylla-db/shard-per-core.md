@@ -16,6 +16,7 @@ each core is a fully independent worker that shares nothing with other cores.
 shards.
 
 **Total ownership.** Each shard completely owns:
+
 - A specific slice of the dataset (based on the token ring)
 - A dedicated chunk of RAM
 - A dedicated slice of network bandwidth
@@ -41,14 +42,14 @@ cross-socket memory trips.
 
 ## Thread-Pool vs Shard-per-Core
 
-| Feature     | Thread-Pool (Cassandra)            | Shard-per-Core (ScyllaDB)         |
-| ----------- | ---------------------------------- | --------------------------------- |
-| Concurrency | Hundreds of threads compete for    | One thread per core. No context   |
-|             | CPU. OS constantly context switches| switching; CPU does actual work   |
-| Memory      | Shared heap. Threads contend for   | Partitioned. Core 0 owns its      |
-|             | access, requiring locks            | chunk. No contention              |
-| I/O         | Blocking. Threads sleep waiting    | Async (Seastar). Core switches to |
-|             | for disk/network                   | another task without sleeping     |
+| Feature     | Thread-Pool (Cassandra)             | Shard-per-Core (ScyllaDB)         |
+|-------------|-------------------------------------|-----------------------------------|
+| Concurrency | Hundreds of threads compete for     | One thread per core. No context   |
+|             | CPU. OS constantly context switches | switching; CPU does actual work   |
+| Memory      | Shared heap. Threads contend for    | Partitioned. Core 0 owns its      |
+|             | access, requiring locks             | chunk. No contention              |
+| I/O         | Blocking. Threads sleep waiting     | Async (Seastar). Core switches to |
+|             | for disk/network                    | another task without sleeping     |
 
 ## Benefits
 

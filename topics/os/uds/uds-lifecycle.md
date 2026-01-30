@@ -71,6 +71,7 @@ Once connected, "client" and "server" distinction disappears. Both hold file
 descriptors pointing to each other.
 
 **Standard I/O:**
+
 ```c
 write(fd, "Hello", 5);  // Copy to kernel buffer
 read(fd, buf, 100);     // Read from kernel buffer
@@ -106,7 +107,7 @@ descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 ## API Comparison
 
 | API       | TCP Behavior            | UDS Behavior             |
-| --------- | ----------------------- | ------------------------ |
+|-----------|-------------------------|--------------------------|
 | `socket`  | `AF_INET`               | `AF_UNIX`                |
 | `bind`    | Reserve port            | **Create file** on disk  |
 | `connect` | TCP handshake (SYN/ACK) | Permission check + queue |

@@ -4,6 +4,7 @@ Latency and throughput represent fundamentally different optimization targets
 that often conflict.
 
 **Key asymmetry:**
+
 - Bandwidth is fixable: buy more cables or network cards
 - Latency is stuck: you cannot buy faster light
 
@@ -34,6 +35,7 @@ Time 2:00  - Load B exits
 ```
 
 **Load B's journey:**
+
 - Washing: 30 minutes
 - Waiting for dryer: 30 minutes (the penalty)
 - Drying: 60 minutes
@@ -55,7 +57,7 @@ utilized.
 ## The choice
 
 | Optimization target | Strategy                   | Consequence             |
-| ------------------- | -------------------------- | ----------------------- |
+|---------------------|----------------------------|-------------------------|
 | Low latency         | No queuing, idle resources | Inefficient utilization |
 | High throughput     | Pipelining, batching       | Items wait in queues    |
 

@@ -10,7 +10,7 @@ metric). You cannot optimize what you cannot measure.
 To measure latency, you must define exactly when to start and stop the clock:
 
 | Definition                              | Includes                   |
-| --------------------------------------- | -------------------------- |
+|-----------------------------------------|----------------------------|
 | Request hits server → Response sent     | Server processing only     |
 | User clicks button → First byte arrives | Network + server           |
 | User clicks → Page fully rendered       | Network + server + browser |

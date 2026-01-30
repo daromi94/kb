@@ -71,7 +71,7 @@ Reading frees buffer space, increasing the advertised window.
 ## Socket Options
 
 | Option       | Purpose                                      |
-| ------------ | -------------------------------------------- |
+|--------------|----------------------------------------------|
 | TCP_NODELAY  | Disable Nagle's algorithm (send immediately) |
 | SO_REUSEADDR | Allow bind to port in TIME_WAIT              |
 | SO_LINGER    | Block on close() until FIN acknowledged      |
@@ -89,7 +89,7 @@ ss -ti
 ```
 
 | Field  | Meaning                                   |
-| ------ | ----------------------------------------- |
+|--------|-------------------------------------------|
 | Recv-Q | Bytes in receive buffer (app hasn't read) |
 | Send-Q | Bytes in send buffer (not yet ACKed)      |
 | cwnd   | Current congestion window                 |

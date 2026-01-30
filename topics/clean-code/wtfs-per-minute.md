@@ -7,12 +7,12 @@ hits a cognitive "speed bump" while trying to parse the logic.
 
 ## The two states of code review
 
-| Feature            | Low WTF/min (clean)                            | High WTF/min (messy)                               |
-| ------------------ | ---------------------------------------------- | -------------------------------------------------- |
-| Cognitive load     | Low; code reads like well-written prose        | High; requires mental map of 15 different files    |
-| Discoverability    | Functions and variables exactly where expected | Logic buried in obscure utility classes            |
-| Predictability     | No side effects; functions do what they claim  | A "Getter" might accidentally delete a user        |
-| Reviewer reaction  | "Ah, that makes sense."                        | "What was the author thinking?"                    |
+| Feature           | Low WTF/min (clean)                            | High WTF/min (messy)                            |
+|-------------------|------------------------------------------------|-------------------------------------------------|
+| Cognitive load    | Low; code reads like well-written prose        | High; requires mental map of 15 different files |
+| Discoverability   | Functions and variables exactly where expected | Logic buried in obscure utility classes         |
+| Predictability    | No side effects; functions do what they claim  | A "Getter" might accidentally delete a user     |
+| Reviewer reaction | "Ah, that makes sense."                        | "What was the author thinking?"                 |
 
 ## Core drivers of high WTF rates
 

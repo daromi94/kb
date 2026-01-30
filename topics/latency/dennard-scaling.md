@@ -34,7 +34,7 @@ significantly since.
 Unable to make single cores faster, manufacturers added more cores:
 
 | Era         | Strategy           | Software implication                          |
-| ----------- | ------------------ | --------------------------------------------- |
+|-------------|--------------------|-----------------------------------------------|
 | Before 2006 | One fast core      | Code runs faster automatically                |
 | After 2006  | Multiple mid cores | Code only faster if rewritten for parallelism |
 

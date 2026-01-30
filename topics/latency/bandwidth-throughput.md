@@ -2,11 +2,11 @@
 
 Three metrics describe system performance. Using a water pipe analogy:
 
-| Metric     | Definition                                  | Unit              |
-| ---------- | ------------------------------------------- | ----------------- |
-| Latency    | Time for one drop to traverse the pipe      | Milliseconds      |
-| Bandwidth  | Maximum capacity the pipe could hold        | Megabits/second   |
-| Throughput | Actual flow coming out right now            | Requests/second   |
+| Metric     | Definition                             | Unit            |
+|------------|----------------------------------------|-----------------|
+| Latency    | Time for one drop to traverse the pipe | Milliseconds    |
+| Bandwidth  | Maximum capacity the pipe could hold   | Megabits/second |
+| Throughput | Actual flow coming out right now       | Requests/second |
 
 ## The key distinction
 

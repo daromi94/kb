@@ -28,7 +28,7 @@ data payload.
 ## Field Details
 
 | Field            | Bits | Description                                      |
-| ---------------- | ---- | ------------------------------------------------ |
+|------------------|------|--------------------------------------------------|
 | Source Port      | 16   | Sender's port (forms 5-tuple with IPs)           |
 | Destination Port | 16   | Receiver's port                                  |
 | Sequence Number  | 32   | Byte position in stream (ISN if SYN set)         |
@@ -41,7 +41,7 @@ data payload.
 ## Control Flags
 
 | Flag | Purpose                                         |
-| ---- | ----------------------------------------------- |
+|------|-------------------------------------------------|
 | SYN  | Synchronize sequence numbers (connection start) |
 | ACK  | Acknowledgment field is valid                   |
 | FIN  | No more data from sender (connection close)     |
@@ -53,12 +53,12 @@ data payload.
 
 ## Common Options
 
-| Option       | Purpose                                            |
-| ------------ | -------------------------------------------------- |
-| MSS          | Maximum Segment Size (sent only in SYN)            |
-| Window Scale | Multiply window by 2^n (allows windows > 64KB)     |
-| SACK         | Selective acknowledgment of non-contiguous blocks  |
-| Timestamps   | RTT measurement and PAWS protection                |
+| Option       | Purpose                                           |
+|--------------|---------------------------------------------------|
+| MSS          | Maximum Segment Size (sent only in SYN)           |
+| Window Scale | Multiply window by 2^n (allows windows > 64KB)    |
+| SACK         | Selective acknowledgment of non-contiguous blocks |
+| Timestamps   | RTT measurement and PAWS protection               |
 
 ## Related
 

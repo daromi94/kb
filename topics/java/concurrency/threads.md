@@ -26,7 +26,7 @@ the OS. They are extremely lightweight, allowing millions of threads on a single
 machine—ideal for high-throughput I/O tasks.
 
 | Feature           | Platform threads          | Virtual threads                   |
-| ----------------- | ------------------------- | --------------------------------- |
+|-------------------|---------------------------|-----------------------------------|
 | **Creation cost** | Expensive (high memory)   | Cheap (low memory)                |
 | **Scaling**       | Limited by OS (thousands) | Scalable to millions              |
 | **Best use case** | CPU-intensive tasks       | I/O-intensive tasks (web servers) |

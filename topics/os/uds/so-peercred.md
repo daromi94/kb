@@ -16,7 +16,7 @@ printf("PID: %d, UID: %d, GID: %d\n", cred.pid, cred.uid, cred.gid);
 ```
 
 | Field | Description              |
-| ----- | ------------------------ |
+|-------|--------------------------|
 | pid   | Process ID of peer       |
 | uid   | User ID of peer          |
 | gid   | Primary group ID of peer |
@@ -58,7 +58,7 @@ mounting a disk) is allowed.
 ## Compared to TCP Authentication
 
 | Aspect      | TCP                          | UDS with SO_PEERCRED    |
-| ----------- | ---------------------------- | ----------------------- |
+|-------------|------------------------------|-------------------------|
 | Identity    | IP address (spoofable)       | Kernel-verified UID/PID |
 | Auth method | TLS certs, tokens, etc.      | None needed             |
 | Forgery     | Possible with network access | Impossible              |

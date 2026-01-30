@@ -34,11 +34,11 @@ Clean code makes this model obvious.
 Modification is the ultimate test of clean code. If a codebase is "fragile,"
 a change in one place breaks an unrelated feature.
 
-| Characteristic  | Why it simplifies modification                                              |
-| --------------- | --------------------------------------------------------------------------- |
-| Decoupling      | Changing database logic won't break the UI because they aren't wired together |
-| Testability     | High-quality code is easy to wrap in automated tests, providing safety nets |
-| Extensibility   | New features can be added by writing new code rather than hacking old code  |
+| Characteristic | Why it simplifies modification                                                |
+|----------------|-------------------------------------------------------------------------------|
+| Decoupling     | Changing database logic won't break the UI because they aren't wired together |
+| Testability    | High-quality code is easy to wrap in automated tests, providing safety nets   |
+| Extensibility  | New features can be added by writing new code rather than hacking old code    |
 
 ## The economic argument
 

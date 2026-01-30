@@ -8,7 +8,7 @@ single process to handle multiple tasks at once.
 **Concurrency within a process:** Instead of one main thread, you create
 several threads that execute code independently.
 
-**Shared memory:** Unlike multi-processing, all threads within a process share
+**Shared memory:** Unlike multiprocessing, all threads within a process share
 the same memory and resources. This makes them fast and efficient for
 communication.
 

@@ -17,11 +17,11 @@ Wheeler, states:
 At its core, indirection replaces a direct link with an intermediate step.
 Instead of **A -> B**, the structure becomes **A -> Map -> B**.
 
-| Component     | Direct access                                    | Indirect access                                  |
-| ------------- | ------------------------------------------------ | ------------------------------------------------ |
-| The pointer   | Actual value stored at memory address            | Memory address stores the address of the value   |
-| The name      | Hardcoding an IP address (`192.168.1.1`)         | Using a hostname (`database.local`) via DNS      |
-| The reference | Function calls a specific class implementation   | Function calls an interface/abstract class       |
+| Component     | Direct access                                  | Indirect access                                |
+|---------------|------------------------------------------------|------------------------------------------------|
+| The pointer   | Actual value stored at memory address          | Memory address stores the address of the value |
+| The name      | Hardcoding an IP address (`192.168.1.1`)       | Using a hostname (`database.local`) via DNS    |
+| The reference | Function calls a specific class implementation | Function calls an interface/abstract class     |
 
 ## Common examples
 

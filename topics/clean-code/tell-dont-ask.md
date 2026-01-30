@@ -23,12 +23,12 @@ rules of the object it is manipulating.
 2. Evaluate: Apply business logic to that state outside of the object
 3. Update: Set the new state back into the object
 
-| Characteristic   | Ask (procedural)                           | Tell (object-oriented)               |
-| ---------------- | ------------------------------------------ | ------------------------------------ |
-| Logic location   | Spread across multiple callers             | Centralized within the object        |
-| Coupling         | High; callers depend on internal structures | Low; callers depend on stable behaviors |
-| Maintenance      | Changing a rule requires updating every caller | Changing a rule happens in one place |
-| Encapsulation    | Weak; internal state is exposed            | Strong; internal state is hidden     |
+| Characteristic | Ask (procedural)                               | Tell (object-oriented)                  |
+|----------------|------------------------------------------------|-----------------------------------------|
+| Logic location | Spread across multiple callers                 | Centralized within the object           |
+| Coupling       | High; callers depend on internal structures    | Low; callers depend on stable behaviors |
+| Maintenance    | Changing a rule requires updating every caller | Changing a rule happens in one place    |
+| Encapsulation  | Weak; internal state is exposed                | Strong; internal state is hidden        |
 
 ## The object-oriented approach: telling
 

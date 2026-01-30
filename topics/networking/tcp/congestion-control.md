@@ -35,7 +35,7 @@ decrease).
 ## Algorithms
 
 | Algorithm     | Loss Detection  | Behavior                        |
-| ------------- | --------------- | ------------------------------- |
+|---------------|-----------------|---------------------------------|
 | Reno          | Packet loss     | Cut cwnd by 50% on loss         |
 | CUBIC (Linux) | Packet loss     | Cubic function recovery, faster |
 | BBR (Google)  | RTT + bandwidth | Models pipe capacity, not loss  |

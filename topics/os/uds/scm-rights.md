@@ -69,6 +69,7 @@ processes.
 ## What Can Be Passed
 
 Any file descriptor:
+
 - Regular files
 - Sockets (including other UDS)
 - Pipes

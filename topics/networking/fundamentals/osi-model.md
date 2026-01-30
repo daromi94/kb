@@ -10,13 +10,13 @@ In the 1970s-80s, every manufacturer (IBM, DEC, Apple) had proprietary ways of
 sending data. An IBM computer could only talk to another IBM. Communication
 models solve this "Tower of Babel" problem:
 
-| Benefit                | Description                                        |
-| ---------------------- | -------------------------------------------------- |
-| Interoperability       | Different hardware/software can communicate        |
-| Modularity             | Change one layer without rewriting the system      |
-| Troubleshooting        | Isolate problems to a specific layer               |
-| Specialization         | Companies focus on one layer (routers, encryption) |
-| Managing Complexity    | Break networking into manageable pieces            |
+| Benefit             | Description                                        |
+|---------------------|----------------------------------------------------|
+| Interoperability    | Different hardware/software can communicate        |
+| Modularity          | Change one layer without rewriting the system      |
+| Troubleshooting     | Isolate problems to a specific layer               |
+| Specialization      | Companies focus on one layer (routers, encryption) |
+| Managing Complexity | Break networking into manageable pieces            |
 
 ## The Seven Layers
 
@@ -74,12 +74,12 @@ machine.
 
 #### TCP vs UDP
 
-| Feature    | TCP ("The Reliable One")          | UDP ("The Fast One")           |
-| ---------- | --------------------------------- | ------------------------------ |
-| Connection | Connection-oriented (handshake)   | Connectionless (no handshake)  |
-| Reliability| Guaranteed; resends lost data     | No guarantee; data may be lost |
-| Order      | Delivers in exact order sent      | Data can arrive in any order   |
-| Use Case   | Web, email, file transfers        | Streaming, gaming, DNS, VoIP   |
+| Feature     | TCP ("The Reliable One")        | UDP ("The Fast One")           |
+|-------------|---------------------------------|--------------------------------|
+| Connection  | Connection-oriented (handshake) | Connectionless (no handshake)  |
+| Reliability | Guaranteed; resends lost data   | No guarantee; data may be lost |
+| Order       | Delivers in exact order sent    | Data can arrive in any order   |
+| Use Case    | Web, email, file transfers      | Streaming, gaming, DNS, VoIP   |
 
 #### TCP 3-Way Handshake
 
@@ -153,15 +153,15 @@ The foundation dealing with actual physical media and raw bit transmission.
 
 ## Layer Comparison
 
-| Layer | Name         | PDU      | Key Function              | Hardware      |
-| ----- | ------------ | -------- | ------------------------- | ------------- |
-| 7     | Application  | Data     | User interface            | -             |
-| 6     | Presentation | Data     | Format/encrypt            | -             |
-| 5     | Session      | Data     | Manage dialogue           | -             |
-| 4     | Transport    | Segment  | Port addressing           | -             |
-| 3     | Network      | Packet   | Routing                   | Routers       |
-| 2     | Data Link    | Frame    | Local delivery            | Switches      |
-| 1     | Physical     | Bits     | Signal transmission       | Hubs, cables  |
+| Layer | Name         | PDU     | Key Function        | Hardware     |
+|-------|--------------|---------|---------------------|--------------|
+| 7     | Application  | Data    | User interface      | -            |
+| 6     | Presentation | Data    | Format/encrypt      | -            |
+| 5     | Session      | Data    | Manage dialogue     | -            |
+| 4     | Transport    | Segment | Port addressing     | -            |
+| 3     | Network      | Packet  | Routing             | Routers      |
+| 2     | Data Link    | Frame   | Local delivery      | Switches     |
+| 1     | Physical     | Bits    | Signal transmission | Hubs, cables |
 
 ## OSI vs TCP/IP
 

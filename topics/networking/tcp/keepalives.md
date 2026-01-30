@@ -16,10 +16,10 @@ descriptors.
    kernel wakes up
 2. **Probe**: Sends empty ACK packet to peer
 3. **Response**:
-   - Peer ACKs → connection alive, reset timer
-   - Peer sends RST → peer rebooted, close connection
-   - No reply → retry `tcp_keepalive_probes` times at `tcp_keepalive_intvl`
-     intervals
+    - Peer ACKs → connection alive, reset timer
+    - Peer sends RST → peer rebooted, close connection
+    - No reply → retry `tcp_keepalive_probes` times at `tcp_keepalive_intvl`
+      intervals
 4. **Failure**: After all probes fail, kernel closes connection with ETIMEDOUT
 
 ## Linux Tuning
@@ -57,7 +57,7 @@ Or in application frameworks (Java, Python, etc.) via socket options.
 These are completely different concepts:
 
 | Term            | Purpose                                  |
-| --------------- | ---------------------------------------- |
+|-----------------|------------------------------------------|
 | TCP Keepalive   | Detect dead connections (liveness probe) |
 | HTTP Keep-Alive | Reuse connection for multiple requests   |
 

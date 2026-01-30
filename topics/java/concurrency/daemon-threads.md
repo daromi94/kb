@@ -19,13 +19,13 @@ Daemon threads exist only to support the primary work of the application.
 
 ## User vs daemon threads
 
-| Feature          | User thread                         | Daemon thread                         |
-| ---------------- | ----------------------------------- | ------------------------------------- |
-| **Purpose**      | Core application logic              | Background support services           |
-| **JVM priority** | High—JVM waits for them to finish   | Low—JVM ignores during shutdown       |
-| **Lifecycle**    | Independent                         | Dependent on user threads             |
-| **JVM exit**     | Program keeps running if one exists | Program exits if only daemons remain  |
-| **Inheritance**  | Inherits "user" status from parent  | Inherits "daemon" status from parent  |
+| Feature          | User thread                         | Daemon thread                        |
+|------------------|-------------------------------------|--------------------------------------|
+| **Purpose**      | Core application logic              | Background support services          |
+| **JVM priority** | High—JVM waits for them to finish   | Low—JVM ignores during shutdown      |
+| **Lifecycle**    | Independent                         | Dependent on user threads            |
+| **JVM exit**     | Program keeps running if one exists | Program exits if only daemons remain |
+| **Inheritance**  | Inherits "user" status from parent  | Inherits "daemon" status from parent |
 
 ## Creating a daemon thread
 

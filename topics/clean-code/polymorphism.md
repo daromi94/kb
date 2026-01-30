@@ -14,11 +14,11 @@ general "contract" (the abstraction) and using a reference to that contract
 (the indirection), the system can decide which specific code to execute at
 runtime.
 
-| Feature         | Description                                                              |
-| --------------- | ------------------------------------------------------------------------ |
-| Uniformity      | Different classes can be manipulated through the same interface          |
-| Dynamic binding | Which method to call is determined at runtime, not compile time          |
-| Extensibility   | New classes can be added without modifying existing code                 |
+| Feature         | Description                                                     |
+|-----------------|-----------------------------------------------------------------|
+| Uniformity      | Different classes can be manipulated through the same interface |
+| Dynamic binding | Which method to call is determined at runtime, not compile time |
+| Extensibility   | New classes can be added without modifying existing code        |
 
 ## Types of polymorphism
 

@@ -12,12 +12,12 @@ well-architected, the surgery is routine.
 
 A successful shutdown surgery follows a strict sequence:
 
-| Phase              | Action                                                            | Goal                                                      |
-| ------------------ | ----------------------------------------------------------------- | --------------------------------------------------------- |
-| 1. Isolation       | Wrap the legacy system in an indirection layer (interface/proxy)  | Stop the rest of the app from talking directly to legacy  |
-| 2. Shadowing       | Route traffic to both old and new systems simultaneously          | Compare results to ensure new logic is accurate           |
-| 3. Traffic shifting | Incrementally move read/write requests to the new system          | Validate performance under real-world load                |
-| 4. Amputation      | Physically remove dead code, dependencies, and configuration      | Reclaim resources and reduce cognitive load               |
+| Phase               | Action                                                           | Goal                                                     |
+|---------------------|------------------------------------------------------------------|----------------------------------------------------------|
+| 1. Isolation        | Wrap the legacy system in an indirection layer (interface/proxy) | Stop the rest of the app from talking directly to legacy |
+| 2. Shadowing        | Route traffic to both old and new systems simultaneously         | Compare results to ensure new logic is accurate          |
+| 3. Traffic shifting | Incrementally move read/write requests to the new system         | Validate performance under real-world load               |
+| 4. Amputation       | Physically remove dead code, dependencies, and configuration     | Reclaim resources and reduce cognitive load              |
 
 ## Core principles
 

@@ -6,13 +6,13 @@ relationship is fundamental to networking.
 
 ## IP vs MAC
 
-| Feature    | MAC Address                 | IP Address                      |
-| ---------- | --------------------------- | ------------------------------- |
-| Identity   | Who the device is           | Where the device is currently   |
-| Layer      | Layer 2 (Data Link)         | Layer 3 (Network)               |
-| Structure  | Flat (random)               | Hierarchical (organized)        |
-| Usage      | Local delivery (same LAN)   | Global routing (across networks)|
-| Permanence | Hard-coded in hardware      | Dynamic, changes with location  |
+| Feature    | MAC Address               | IP Address                       |
+|------------|---------------------------|----------------------------------|
+| Identity   | Who the device is         | Where the device is currently    |
+| Layer      | Layer 2 (Data Link)       | Layer 3 (Network)                |
+| Structure  | Flat (random)             | Hierarchical (organized)         |
+| Usage      | Local delivery (same LAN) | Global routing (across networks) |
+| Permanence | Hard-coded in hardware    | Dynamic, changes with location   |
 
 **Why both are needed:** MAC addresses are "flat" - they contain no location
 information. If we routed by MAC alone, every router on Earth would need to know
@@ -21,6 +21,7 @@ the location of every network card (billions). IP addresses are "hierarchical" -
 need to know how to reach the network, not every device.
 
 **Mobility:** When you move your laptop from home to a coffee shop:
+
 - MAC address stays the same (you're the same device)
 - IP address changes (you're at a new location)
 
@@ -54,17 +55,18 @@ replies.
 ### Step 3: The Journey
 
 For remote destinations, the packet traverses multiple routers. Each router:
+
 - Strips the old Layer 2 frame
 - Wraps in a new frame for the next hop
 - Source and destination IPs **never change**
 
 ## Local vs Remote Communication
 
-| Feature         | Local (Same Subnet)           | Remote (Different Subnet)      |
-| --------------- | ----------------------------- | ------------------------------ |
-| Device Used     | Switch                        | Router/Gateway                 |
-| Dest MAC        | Target host's MAC             | Router's interface MAC         |
-| IP Handling     | Direct delivery               | Multi-hop routing              |
+| Feature     | Local (Same Subnet) | Remote (Different Subnet) |
+|-------------|---------------------|---------------------------|
+| Device Used | Switch              | Router/Gateway            |
+| Dest MAC    | Target host's MAC   | Router's interface MAC    |
+| IP Handling | Direct delivery     | Multi-hop routing         |
 
 ## Broadcast vs Unicast
 
@@ -107,12 +109,12 @@ they can't read it.
 
 ## Common Failures
 
-| Problem           | Cause                                          |
-| ----------------- | ---------------------------------------------- |
-| No Route to Host  | Router doesn't know path to destination IP     |
-| Address Conflict  | Two hosts have the same IP address             |
-| ICMP Blocked      | Firewall blocks ping but allows other traffic  |
-| ARP Cache Stale   | Old MAC-to-IP mapping causes misdelivery       |
+| Problem          | Cause                                         |
+|------------------|-----------------------------------------------|
+| No Route to Host | Router doesn't know path to destination IP    |
+| Address Conflict | Two hosts have the same IP address            |
+| ICMP Blocked     | Firewall blocks ping but allows other traffic |
+| ARP Cache Stale  | Old MAC-to-IP mapping causes misdelivery      |
 
 ## Related
 

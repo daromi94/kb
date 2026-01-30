@@ -59,12 +59,12 @@ code samples, depth and nuance
 **Format:** Fix inconsistencies, remove trailing whitespace, consistent heading
 hierarchy, ~80 char lines
 
-**Tables:** Pad all cells so columns align. Ensure space before every `|`.
-Separator dashes must match header width exactly (not longer):
+**Tables:** Pad all cells so columns align. Ensure space before every `|` in
+content rows. Separator row has no spaces, just dashes filling the column width:
 
 ```markdown
 | Short | Longer header |
-| ----- | ------------- |
+|-------|---------------|
 | A     | Description   |
 | Abc   | More text     |
 ```
@@ -95,7 +95,7 @@ Opening paragraph establishing the concept.
 Substantive content. Prose when it serves clarity.
 
 | Comparison | Option A    | Option B    |
-| ---------- | ----------- | ----------- |
+|------------|-------------|-------------|
 | Aspect     | Description | Description |
 
 **Term:** Definition when introducing vocabulary.

@@ -21,12 +21,12 @@ The `ExecutorService` solves this with a **work queue** and a **thread pool**.
 
 The `Executors` factory provides pre-configured thread pool implementations:
 
-| Pool type              | Method                      | Behavior                              |
-| ---------------------- | --------------------------- | ------------------------------------- |
-| **Fixed thread pool**  | `newFixedThreadPool(n)`     | Set number of threads; tasks queue    |
-| **Cached thread pool** | `newCachedThreadPool()`     | Creates threads as needed, reclaims   |
-| **Single thread**      | `newSingleThreadExecutor()` | One thread, tasks run sequentially    |
-| **Scheduled pool**     | `newScheduledThreadPool(n)` | Delayed or periodic execution         |
+| Pool type              | Method                      | Behavior                            |
+|------------------------|-----------------------------|-------------------------------------|
+| **Fixed thread pool**  | `newFixedThreadPool(n)`     | Set number of threads; tasks queue  |
+| **Cached thread pool** | `newCachedThreadPool()`     | Creates threads as needed, reclaims |
+| **Single thread**      | `newSingleThreadExecutor()` | One thread, tasks run sequentially  |
+| **Scheduled pool**     | `newScheduledThreadPool(n)` | Delayed or periodic execution       |
 
 ## Task lifecycle
 

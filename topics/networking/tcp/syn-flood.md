@@ -54,7 +54,7 @@ sysctl net.ipv4.tcp_max_syn_backlog
 ## Other Mitigations
 
 | Technique            | Description                          |
-| -------------------- | ------------------------------------ |
+|----------------------|--------------------------------------|
 | Rate limiting        | Limit SYNs per source IP at firewall |
 | Increase backlog     | Larger queue before dropping         |
 | Reduce SYN-ACK retry | `tcp_synack_retries` (default 5)     |

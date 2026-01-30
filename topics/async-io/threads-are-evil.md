@@ -60,7 +60,7 @@ wasting resources.
 Modern technologies avoid threads for application logic:
 
 | Technology    | Approach                                                        |
-| ------------- | --------------------------------------------------------------- |
+|---------------|-----------------------------------------------------------------|
 | Node.js       | Async I/O (single-threaded) avoids locks and race conditions    |
 | Go / Erlang   | Message passing between actors/goroutines instead of shared     |
 |               | memory                                                          |

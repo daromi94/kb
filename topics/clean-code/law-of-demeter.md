@@ -51,12 +51,12 @@ interact with the `Customer` interface.
 
 ## Impact on code quality
 
-| Benefit                 | Explanation                                                            |
-| ----------------------- | ---------------------------------------------------------------------- |
-| Reduced coupling        | Classes are less dependent on internal structure of other classes      |
+| Benefit                   | Explanation                                                           |
+|---------------------------|-----------------------------------------------------------------------|
+| Reduced coupling          | Classes are less dependent on internal structure of other classes     |
 | Increased maintainability | Changes to one part (like `Wallet`) don't ripple through the codebase |
-| Easier testing          | Fewer "stranger" dependencies makes mocking simpler                    |
-| Lower WTFs/minute       | Code intent is clearer via "tell, don't ask" philosophy                |
+| Easier testing            | Fewer "stranger" dependencies makes mocking simpler                   |
+| Lower WTFs/minute         | Code intent is clearer via "tell, don't ask" philosophy               |
 
 ## Tell, don't ask
 

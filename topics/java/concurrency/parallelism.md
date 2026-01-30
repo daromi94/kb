@@ -10,7 +10,7 @@ or a cluster of networked computers.
 ## Concurrency vs parallelism
 
 | Feature       | Concurrency                     | Parallelism                        |
-| ------------- | ------------------------------- | ---------------------------------- |
+|---------------|---------------------------------|------------------------------------|
 | **Execution** | Interleaved (switching between) | Simultaneous (running together)    |
 | **Hardware**  | Can run on a single core        | Requires multiple cores/processors |
 | **Goal**      | Responsiveness and structure    | Computational speed and throughput |

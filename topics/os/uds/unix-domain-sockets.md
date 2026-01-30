@@ -8,7 +8,7 @@ it is fundamentally different from network sockets.
 ## Key Characteristics
 
 | Aspect     | Network Socket    | Unix Domain Socket        |
-| ---------- | ----------------- | ------------------------- |
+|------------|-------------------|---------------------------|
 | Family     | `AF_INET`         | `AF_UNIX` (or `AF_LOCAL`) |
 | Addressing | IP address + port | Filesystem path           |
 | Data path  | Network stack     | Direct kernel memory copy |

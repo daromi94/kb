@@ -14,6 +14,7 @@ bind(fd, &addr, sizeof(addr));  // Creates /tmp/app.sock
 ```
 
 **Crash scenario:**
+
 1. Server binds to `/tmp/app.sock`
 2. Server crashes without calling `unlink()`
 3. File remains on disk
@@ -36,6 +37,7 @@ bind(fd, &addr, sizeof(addr));  // No file created
 ```
 
 **Properties:**
+
 - No filesystem presence (no file to delete)
 - Automatically disappears when socket closes
 - No cleanup needed after crashes
@@ -62,7 +64,7 @@ Uses abstract sockets for various internal communication channels.
 ## Trade-offs
 
 | Aspect      | Filesystem Socket          | Abstract Socket          |
-| ----------- | -------------------------- | ------------------------ |
+|-------------|----------------------------|--------------------------|
 | Cleanup     | Manual `unlink()` required | Automatic                |
 | Permissions | File chmod/chown           | None (namespace-wide)    |
 | Persistence | Survives process death     | Dies with last reference |

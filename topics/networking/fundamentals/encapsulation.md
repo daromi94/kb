@@ -81,20 +81,22 @@ Each layer strips its header to reveal the payload inside.
 
 ## What Each Layer Checks
 
-| Layer | Sender Action    | Receiver Check         | PDU     |
-| ----- | ---------------- | ---------------------- | ------- |
-| L4    | Add port 443     | Is this for port 443?  | Segment |
-| L3    | Add dest IP      | Is this my IP?         | Packet  |
-| L2    | Add router MAC   | Is this my MAC?        | Frame   |
-| L1    | Send as light    | Receive light          | Bits    |
+| Layer | Sender Action  | Receiver Check        | PDU     |
+|-------|----------------|-----------------------|---------|
+| L4    | Add port 443   | Is this for port 443? | Segment |
+| L3    | Add dest IP    | Is this my IP?        | Packet  |
+| L2    | Add router MAC | Is this my MAC?       | Frame   |
+| L1    | Send as light  | Receive light         | Bits    |
 
 ## Debugging with Layers
 
 If the receiver never gets the frame (Layer 2), check:
+
 - Layer 1: Was the signal received? (cable, NIC)
 - Layer 2: Was the MAC address correct?
 
 If the receiver gets the packet but the application doesn't respond, check:
+
 - Layer 4: Is there a port mismatch?
 - Firewall: Is the port blocked?
 

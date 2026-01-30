@@ -46,9 +46,9 @@ corrupted.
 
 ## Comparison
 
-| Method        | Analogy                       | Speed   | Safety                    |
-| ------------- | ----------------------------- | ------- | ------------------------- |
-| Pipes/Sockets | Emailing an attachment (copy) | Slow    | Safe (OS manages)         |
+| Method        | Analogy                       | Speed   | Safety                      |
+|---------------|-------------------------------|---------|-----------------------------|
+| Pipes/Sockets | Emailing an attachment (copy) | Slow    | Safe (OS manages)           |
 | Shared Memory | Editing a live Google Doc     | Instant | Risky (manual coordination) |
 
 ## Application to io_uring

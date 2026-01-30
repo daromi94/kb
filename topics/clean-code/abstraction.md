@@ -28,11 +28,11 @@ interface to the level below it. Well-abstracted code follows the **single
 level of abstraction principle**: all statements within a function should be
 at the same conceptual level.
 
-| Level      | Example                          | Focus                                  |
-| ---------- | -------------------------------- | -------------------------------------- |
-| High level | `order.process()`                | Business logic and "what" is happening |
-| Mid level  | `paymentGateway.charge(amount)`  | Integration logic and orchestration    |
-| Low level  | `socket.send(buffer)`            | Technical implementation and "how"     |
+| Level      | Example                         | Focus                                  |
+|------------|---------------------------------|----------------------------------------|
+| High level | `order.process()`               | Business logic and "what" is happening |
+| Mid level  | `paymentGateway.charge(amount)` | Integration logic and orchestration    |
+| Low level  | `socket.send(buffer)`           | Technical implementation and "how"     |
 
 ## Benefits for code quality
 

@@ -4,11 +4,11 @@ A comparison of two concurrency approaches: asynchronous I/O and multithreading.
 
 ## Threading and resource usage
 
-| Aspect            | Async I/O                  | Multithreading              |
-| ----------------- | -------------------------- | --------------------------- |
-| Threads           | Single thread              | Multiple threads            |
-| Memory            | Low (one stack)            | Higher (stack per thread)   |
-| Context switching | None                       | OS switches between threads |
+| Aspect            | Async I/O       | Multithreading              |
+|-------------------|-----------------|-----------------------------|
+| Threads           | Single thread   | Multiple threads            |
+| Memory            | Low (one stack) | Higher (stack per thread)   |
+| Context switching | None            | OS switches between threads |
 
 ## Execution model
 
@@ -32,12 +32,12 @@ or mutexes, which can slow the program and cause deadlocks.
 
 ## Best use cases
 
-| Approach       | Best for                                                   |
-| -------------- | ---------------------------------------------------------- |
-| Async I/O      | I/O-bound tasks (databases, APIs, file systems)            |
-| Multithreading | Concurrent independent operations with shared data needs   |
+| Approach       | Best for                                                 |
+|----------------|----------------------------------------------------------|
+| Async I/O      | I/O-bound tasks (databases, APIs, file systems)          |
+| Multithreading | Concurrent independent operations with shared data needs |
 
-For heavy CPU-bound tasks, multi-processing is often better than either
+For heavy CPU-bound tasks, multiprocessing is often better than either
 approach.
 
 ## Related

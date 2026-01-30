@@ -38,7 +38,7 @@ much faster than downloading 100GB to your phone just to find one line of text.
 When tasks overwhelm a single server, the architecture allows two scaling types:
 
 | Strategy   | Description                                                  |
-| ---------- | ------------------------------------------------------------ |
+|------------|--------------------------------------------------------------|
 | Vertical   | Upgrade existing server (more RAM, faster CPU, better NICs)  |
 | Horizontal | Add more servers with a load balancer to distribute requests |
 

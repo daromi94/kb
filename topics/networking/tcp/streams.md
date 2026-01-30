@@ -49,7 +49,7 @@ to delimit messages.
 **Common approaches:**
 
 | Method        | Example               | Description             |
-| ------------- | --------------------- | ----------------------- |
+|---------------|-----------------------|-------------------------|
 | Delimiter     | HTTP/1.1, Redis       | End message with `\r\n` |
 | Length prefix | Most binary protocols | Send length, then data  |
 | Fixed size    | Some legacy protocols | All messages same size  |

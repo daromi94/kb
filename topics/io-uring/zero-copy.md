@@ -49,10 +49,10 @@ io_uring supports zero copy through registered buffers:
 
 ## Summary
 
-| Approach    | Data flow                    | CPU usage |
-| ----------- | ---------------------------- | --------- |
-| Standard    | Kernel -> User -> Kernel     | High      |
-| Zero copy   | CPU manages pointers only    | Low       |
+| Approach  | Data flow                 | CPU usage |
+|-----------|---------------------------|-----------|
+| Standard  | Kernel -> User -> Kernel  | High      |
+| Zero copy | CPU manages pointers only | Low       |
 
 **Best use case:** Sending large files (video streaming, static web servers)
 where the application acts as a dumb pipe and doesn't modify the data.

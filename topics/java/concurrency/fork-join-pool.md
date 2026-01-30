@@ -32,7 +32,7 @@ the thief busy longer.
 ## ForkJoinPool vs ThreadPoolExecutor
 
 | Feature           | ThreadPoolExecutor                | ForkJoinPool                        |
-| ----------------- | --------------------------------- | ----------------------------------- |
+|-------------------|-----------------------------------|-------------------------------------|
 | **Task source**   | Mostly external submissions       | Mostly internal (spawning subtasks) |
 | **Queuing**       | One shared global queue           | One deque per worker thread         |
 | **Idle behavior** | Wait for tasks from global queue  | Steal work from busy threads        |
@@ -65,10 +65,10 @@ Per Doug Lea and Brian Goetz:
   computational problems into smaller pieces across all CPU cores, minimizing
   total calculation time
 
-| Feature               | ThreadPoolExecutor (Concurrency)  | ForkJoinPool (Parallelism)          |
-| --------------------- | --------------------------------- | ----------------------------------- |
-| **Typical task**      | Independent ("Handle User Login") | Recursive ("Sum 10M elements")      |
-| **Blocking**          | Handles blocked I/O well          | Prefers pure computation            |
-| **Work distribution** | Shared global queue (centralized) | Per-thread deques + stealing        |
-| **Efficiency goal**   | High throughput of many requests  | Minimum latency for one massive task|
-| **Java usage**        | Tomcat, Netty, general APIs       | Parallel Streams engine             |
+| Feature               | ThreadPoolExecutor (Concurrency)  | ForkJoinPool (Parallelism)           |
+|-----------------------|-----------------------------------|--------------------------------------|
+| **Typical task**      | Independent ("Handle User Login") | Recursive ("Sum 10M elements")       |
+| **Blocking**          | Handles blocked I/O well          | Prefers pure computation             |
+| **Work distribution** | Shared global queue (centralized) | Per-thread deques + stealing         |
+| **Efficiency goal**   | High throughput of many requests  | Minimum latency for one massive task |
+| **Java usage**        | Tomcat, Netty, general APIs       | Parallel Streams engine              |

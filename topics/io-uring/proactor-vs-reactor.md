@@ -34,13 +34,13 @@ OS:  "Read complete, 1024 bytes in buffer"
 
 ## Comparison
 
-| Aspect            | Reactor (epoll)                      | Proactor (io_uring)                  |
-| ----------------- | ------------------------------------ | ------------------------------------ |
-| Notification      | "Ready to read"                      | "Read complete"                      |
-| Who does I/O      | Application                          | OS/Kernel                            |
-| Syscalls          | epoll_wait + read/write per chunk    | One io_uring_enter for batches       |
-| Disk I/O          | No true async (files always "ready") | Full async disk support              |
-| Buffer management | Per read/write call                  | Can register/pin for efficiency      |
+| Aspect            | Reactor (epoll)                      | Proactor (io_uring)                    |
+|-------------------|--------------------------------------|----------------------------------------|
+| Notification      | "Ready to read"                      | "Read complete"                        |
+| Who does I/O      | Application                          | OS/Kernel                              |
+| Syscalls          | epoll_wait + read/write per chunk    | One io_uring_enter for batches         |
+| Disk I/O          | No true async (files always "ready") | Full async disk support                |
+| Buffer management | Per read/write call                  | Can register/pin for efficiency        |
 | Complexity        | Moderate                             | High (memory barriers, liburing helps) |
 
 ## Why proactor is faster

@@ -31,12 +31,12 @@ The interaction follows a strict pattern:
 
 As systems grow complex, architecture is split into tiers to separate concerns:
 
-| Tier    | Description                                               | Use Case              |
-| ------- | --------------------------------------------------------- | --------------------- |
-| 1-Tier  | Client, logic, and data on one machine                    | Local apps (MS Access)|
-| 2-Tier  | Direct client-to-server (database) communication          | Simple enterprise     |
-| 3-Tier  | Adds middle tier (app server) between UI and data         | Modern web apps       |
-| N-Tier  | Multiple layers (load balancers, caching, microservices)  | High-scale systems    |
+| Tier   | Description                                              | Use Case               |
+|--------|----------------------------------------------------------|------------------------|
+| 1-Tier | Client, logic, and data on one machine                   | Local apps (MS Access) |
+| 2-Tier | Direct client-to-server (database) communication         | Simple enterprise      |
+| 3-Tier | Adds middle tier (app server) between UI and data        | Modern web apps        |
+| N-Tier | Multiple layers (load balancers, caching, microservices) | High-scale systems     |
 
 ## Benefits
 

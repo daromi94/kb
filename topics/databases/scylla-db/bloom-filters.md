@@ -19,16 +19,19 @@ A Bloom filter has two components:
 2. **Hash functions** - Multiple independent hash functions (e.g., 3)
 
 **Insertion.** To add "Google":
+
 1. Run "Google" through the 3 hash functions
 2. They output positions 2, 5, and 8
 3. Set bits at positions 2, 5, and 8 to 1
 
 **Query.** To check if "Google" is in the set:
+
 1. Run "Google" through the same hash functions → 2, 5, 8
 2. Check if bits 2, 5, and 8 are all 1
 3. If yes: "Google" is *probably* in the set
 
 **Definite negative.** To check if "Apple" is in the set:
+
 1. Hash functions return 2, 8, and 9
 2. Bit 2 is 1, bit 8 is 1, but bit 9 is 0
 3. "Apple" is **definitely not** in the set—if it were, bit 9 would be 1
@@ -56,9 +59,9 @@ cached if they hit the Bloom filter a second time.
 
 ## Properties
 
-| Property        | Behavior                                              |
-| --------------- | ----------------------------------------------------- |
-| False positives | Possible—may say "yes" when answer is "no"            |
-| False negatives | Impossible—never says "no" when answer is "yes"       |
-| Deletion        | Not supported—removing a bit affects other items      |
-| Space usage     | Constant—grows with item count, not item size         |
+| Property        | Behavior                                         |
+|-----------------|--------------------------------------------------|
+| False positives | Possible—may say "yes" when answer is "no"       |
+| False negatives | Impossible—never says "no" when answer is "yes"  |
+| Deletion        | Not supported—removing a bit affects other items |
+| Space usage     | Constant—grows with item count, not item size    |

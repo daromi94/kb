@@ -75,10 +75,10 @@ Enables true zero-copy data transfer.
 
 ### System call reduction
 
-| Approach    | 1000 file reads                          |
-| ----------- | ---------------------------------------- |
-| Standard    | 1000 `read()` syscalls, 1000 ctx switches |
-| io_uring    | 1000 SQEs, one `io_uring_enter()` call   |
+| Approach | 1000 file reads                           |
+|----------|-------------------------------------------|
+| Standard | 1000 `read()` syscalls, 1000 ctx switches |
+| io_uring | 1000 SQEs, one `io_uring_enter()` call    |
 
 ### Polling mode
 

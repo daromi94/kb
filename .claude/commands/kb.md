@@ -7,7 +7,7 @@ arguments: <topic>
 
 Record and organize knowledge into clean, atomic notes using Zettelkasten principles.
 
-- `topic`: Topic folder (e.g., "clean-code", "rust", "systems")
+- `topic`: Topic path (e.g., "clean-code", "java/concurrency", "rust/ownership")
 
 ## Directory Structure
 
@@ -16,6 +16,9 @@ topics/
   <topic>/
     _index.md           # Topic overview
     <note-slug>.md      # Individual notes
+    <subtopic>/         # Optional nested subtopic
+      _index.md
+      <note-slug>.md
 ```
 
 ## Workflow
@@ -116,17 +119,25 @@ Continue as needed. The note should feel complete.
 
 Brief description.
 
+## Subtopics
+
+- [Subtopic name](subtopic/_index.md) - One-line description
+
 ## Notes
 
 - [Note name](note-name.md) - One-line description
 - [Another note](another-note.md) - One-line description
 ```
 
+Include `## Subtopics` only when nested subtopics exist. Include `## Notes`
+only when there are direct notes in the folder.
+
 ### 6. Save and Confirm
 
 - Create `topics/<topic>/` folder if needed
 - Write note files to `topics/<topic>/<slug>.md` (kebab-case names)
 - Update `topics/<topic>/_index.md`
+- For nested subtopics, update parent `_index.md` with subtopic link
 - Report what was created with brief summaries
 
 ## Filename Convention
@@ -142,7 +153,7 @@ Use standard markdown links for GitHub compatibility:
 - `[Note title](note-name.md)` - Same folder
 - `[Note title](../topic/note.md)` - Cross-topic
 
-## Example
+## Examples
 
 ```
 User: /kb clean-code
@@ -152,4 +163,17 @@ Created topics/clean-code/:
   wtfs-per-minute.md - Measuring code quality by confusion
   abstraction.md - Managing complexity through layered interfaces
   _index.md - Updated
+```
+
+Nested subtopic:
+
+```
+User: /kb java/concurrency
+[pastes content about threads and executors]
+
+Created topics/java/concurrency/:
+  threads.md - Units of execution in Java
+  executor-service.md - Thread pool abstraction
+  _index.md - Updated
+Updated topics/java/_index.md - Added subtopic link
 ```

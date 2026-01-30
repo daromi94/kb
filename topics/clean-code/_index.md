@@ -4,14 +4,14 @@ Principles and practices for writing maintainable, readable software.
 
 ## Notes
 
-- [[wtfs-per-minute]] - Measuring code quality by cognitive friction
-- [[triad-of-maintainability]] - Easy to read, understand, and modify
-- [[abstraction]] - Hiding implementation to manage complexity
-- [[indirection]] - Adding layers between requester and provider
-- [[polymorphism]] - Many shapes through common interfaces
-- [[shutdown-surgery]] - Safely decommissioning legacy systems
-- [[law-of-demeter]] - Only talk to your immediate friends
-- [[tell-dont-ask]] - Command objects, don't query their state
+- [WTFs per minute](wtfs-per-minute.md) - Measuring code quality by cognitive friction
+- [Triad of maintainability](triad-of-maintainability.md) - Easy to read, understand, and modify
+- [Abstraction](abstraction.md) - Hiding implementation to manage complexity
+- [Indirection](indirection.md) - Adding layers between requester and provider
+- [Polymorphism](polymorphism.md) - Many shapes through common interfaces
+- [Shutdown surgery](shutdown-surgery.md) - Safely decommissioning legacy systems
+- [Law of Demeter](law-of-demeter.md) - Only talk to your immediate friends
+- [Tell, don't ask](tell-dont-ask.md) - Command objects, don't query their state
 
 ## Sources
 

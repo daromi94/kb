@@ -105,6 +105,6 @@ There are specific contexts where "asking" is appropriate:
 
 ## Related
 
-- [[law-of-demeter]] - TDA is the practical application of LoD
-- [[abstraction]] - Strong interfaces enable TDA
-- [[triad-of-maintainability]] - TDA improves all three aspects
+- [Law of Demeter](law-of-demeter.md) - TDA is the practical application of LoD
+- [Abstraction](abstraction.md) - Strong interfaces enable TDA
+- [Triad of maintainability](triad-of-maintainability.md) - TDA improves all three aspects

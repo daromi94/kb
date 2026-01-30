@@ -93,5 +93,5 @@ Every level of indirection comes with trade-offs:
 
 ## Related
 
-- [[abstraction]] - Hides complexity; indirection provides flexibility
-- [[polymorphism]] - Dynamic dispatch is a form of indirection
+- [Abstraction](abstraction.md) - Hides complexity; indirection provides flexibility
+- [Polymorphism](polymorphism.md) - Dynamic dispatch is a form of indirection

@@ -85,5 +85,5 @@ apply to:
 
 ## Related
 
-- [[tell-dont-ask]] - The practical application of LoD
-- [[abstraction]] - Proper interfaces enable LoD compliance
+- [Tell, don't ask](tell-dont-ask.md) - The practical application of LoD
+- [Abstraction](abstraction.md) - Proper interfaces enable LoD compliance

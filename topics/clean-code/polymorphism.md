@@ -86,6 +86,6 @@ minor cost.
 
 ## Related
 
-- [[abstraction]] - Polymorphism builds on abstraction
-- [[indirection]] - Dynamic dispatch is a form of indirection
-- [[law-of-demeter]] - Polymorphism helps comply with LoD
+- [Abstraction](abstraction.md) - Polymorphism builds on abstraction
+- [Indirection](indirection.md) - Dynamic dispatch is a form of indirection
+- [Law of Demeter](law-of-demeter.md) - Polymorphism helps comply with LoD

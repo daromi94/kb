@@ -87,6 +87,6 @@ Abstraction is the primary tool for keeping the WTF/minute count low:
 
 ## Related
 
-- [[indirection]] - Closely related but serves different purpose
-- [[polymorphism]] - Uses abstraction for dynamic behavior
-- [[wtfs-per-minute]] - What abstraction helps minimize
+- [Indirection](indirection.md) - Closely related but serves different purpose
+- [Polymorphism](polymorphism.md) - Uses abstraction for dynamic behavior
+- [WTFs per minute](wtfs-per-minute.md) - What abstraction helps minimize

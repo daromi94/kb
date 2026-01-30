@@ -20,12 +20,6 @@ topics/<topic>/
 
 ### 1. Initialize
 
-Run in parallel:
-
-```bash
-python3 scripts/build-index.py          # Build term index
-```
-
 - Glob `topics/<topic>/**/*.md` to check if topic exists
 - Read `_index.md` if present to see what's covered
 
@@ -35,14 +29,12 @@ Ask: "How would you like to provide content? (1) URL (2) Paste (3) Book referenc
 
 ### 3. Match Existing Notes
 
-After receiving content, extract key terms and check for overlapping notes:
+After receiving content, semantically match against existing notes:
 
-```bash
-echo "term1 term2 term3 ..." | python3 scripts/match-notes.py [topic]
-```
-
-Returns JSON with matches ranked by score. Notes with score > 0.05 are
-candidates for merging rather than creating new files.
+- Read note titles and descriptions from `_index.md`
+- For potential matches, read the actual note to assess overlap
+- Consider conceptual similarity, not just keyword overlap
+- Merge into existing notes when the new content extends the same concept
 
 ### 4. Identify Notes
 

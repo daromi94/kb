@@ -1,6 +1,6 @@
 ---
 description: Record and organize knowledge into atomic Zettelkasten notes
-arguments: <topic> [source-label]
+arguments: <topic>
 ---
 
 # Knowledge Acquisition Skill
@@ -8,7 +8,6 @@ arguments: <topic> [source-label]
 Record and organize knowledge into clean, atomic notes using Zettelkasten principles.
 
 - `topic`: Topic folder (e.g., "clean-code", "rust", "systems")
-- `source-label`: Source attribution (e.g., "Kleppmann", "Rust Book Ch.4")
 
 ## Directory Structure
 
@@ -68,8 +67,6 @@ The key: each note should be **self-contained** and cover **one thing well**.
 ```markdown
 # Note Title
 
-Source: Attribution
-
 Opening paragraph establishing the concept or idea.
 
 ## Section
@@ -98,7 +95,7 @@ Continue as needed. The note should feel complete.
 
 ## Related
 
-- [[other-note]] - How it connects
+- [Other note](other-note.md) - How it connects
 ```
 
 **Formatting standards:**
@@ -121,12 +118,8 @@ Brief description.
 
 ## Notes
 
-- [[note-name]] - One-line description
-- [[another-note]] - One-line description
-
-## Sources
-
-- Source Name - Description or full title
+- [Note name](note-name.md) - One-line description
+- [Another note](another-note.md) - One-line description
 ```
 
 ### 6. Save and Confirm
@@ -144,13 +137,15 @@ Brief description.
 
 ## Linking
 
-- `[[note-name]]` - Same folder
-- `[[../topic/note]]` - Cross-topic
+Use standard markdown links for GitHub compatibility:
+
+- `[Note title](note-name.md)` - Same folder
+- `[Note title](../topic/note.md)` - Cross-topic
 
 ## Example
 
 ```
-User: /kb clean-code Codely
+User: /kb clean-code
 [pastes content about code quality metrics and abstraction]
 
 Created topics/clean-code/:

@@ -70,3 +70,8 @@ class MyWorker extends Thread {
 MyWorker worker = new MyWorker();
 worker.start();
 ```
+
+## Related
+
+- [Daemon threads](daemon-threads.md) - Background service threads
+- [Executor service](executor-service.md) - Managing thread pools instead of raw threads

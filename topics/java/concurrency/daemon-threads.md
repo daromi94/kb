@@ -59,3 +59,8 @@ database connections.
 
 **Silent exit:** There is no graceful shutdown for a daemon. Work in progress is
 simply lost.
+
+## Related
+
+- [Threads](threads.md) - Thread fundamentals and lifecycle
+- [Executor service](executor-service.md) - Managed thread pools with graceful shutdown

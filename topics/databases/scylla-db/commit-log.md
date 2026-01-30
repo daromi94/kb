@@ -38,10 +38,10 @@ the middle. This makes writes fast because the disk head doesn't jump around
        +---+--------+---+
            |        |
            v        v
-   +-------+---+ +--+--------+
+   +-------+----+ +--+--------+
    | Commit Log | |  Memtable |
    |   (Disk)   | |   (RAM)   |
-   +-----+-----+ +-----+-----+
+   +-----+------+ +-----+-----+
          |             |
          +------+------+
                 |

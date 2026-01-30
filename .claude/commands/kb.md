@@ -59,14 +59,28 @@ code samples, depth and nuance
 **Format:** Fix inconsistencies, remove trailing whitespace, consistent heading
 hierarchy, ~80 char lines
 
-**Tables:** Pad all cells so columns align. Every cell in a column (including
-header and separator) must have the same width:
+**Tables:** Pad all cells so columns align. Separator dashes must match header
+width exactly (not longer):
 
 ```markdown
 | Short | Longer header |
 | ----- | ------------- |
 | A     | Description   |
 | Abc   | More text     |
+```
+
+**ASCII diagrams:** Use ASCII box-drawing for architecture/flow diagrams. Show
+data flow with arrows and label the operations:
+
+```
++-------------------+
+|  Component A      |
+|        |          |
+|        | operation|
+|        v          |
++-------------------+
+|  Component B      |
++-------------------+
 ```
 
 ### 6. Note Format
@@ -119,6 +133,12 @@ Include Subtopics/Notes sections only when entries exist.
 - Update `_index.md` with new entries only
 - For nested subtopics, update parent `_index.md`
 - Report what was created/updated with brief summaries
+
+### 9. Fixing Issues
+
+When fixing formatting across multiple files, edit each file individually
+rather than using batch scripts (which may break ASCII diagrams or other
+structured content).
 
 ## Filename Convention
 

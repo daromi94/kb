@@ -23,15 +23,24 @@ topics/
 
 ## Workflow
 
-### 1. Check Existing Notes
+### 1. Build Index
 
-Before gathering input, check if the topic already exists:
+Run the index builder to prepare for note matching:
+
+```bash
+python3 scripts/build-index.py
+```
+
+This creates `index/kb.json` with term mappings for all notes.
+
+### 2. Check Existing Notes
+
+Check if the topic already exists:
 
 - List existing notes in `topics/<topic>/`
 - Read the `_index.md` to understand what's already covered
-- Keep this context when identifying notes from new content
 
-### 2. Gather Input
+### 3. Gather Input
 
 Ask how to provide content:
 
@@ -39,7 +48,27 @@ Ask how to provide content:
 2. **Paste** - Content pasted directly
 3. **Book** - Ask for book title, chapter, or section
 
-### 3. Identify Notes
+### 4. Match Against Index
+
+After receiving content, find existing notes that might overlap:
+
+```bash
+echo "<content>" | python3 scripts/match-notes.py [topic]
+```
+
+The script returns JSON with matching notes ranked by relevance:
+
+```json
+[
+  {"path": "async-io/multithreading.md", "title": "Multithreading", "score": 0.08},
+  {"path": "async-io/threads-are-evil.md", "title": "Threads are evil", "score": 0.04}
+]
+```
+
+Notes with score > 0.05 are strong candidates for merging rather than creating
+new files.
+
+### 5. Identify Notes
 
 Analyze the content and identify distinct pieces of knowledge. Each becomes its own note file. A note can be:
 
@@ -52,13 +81,12 @@ Analyze the content and identify distinct pieces of knowledge. Each becomes its 
 
 The key: each note should be **self-contained** and cover **one thing well**.
 
-**When a matching note exists:** If a piece of knowledge maps to an existing
-note (same concept, just more detail or a different angle), update the existing
-note rather than creating a new one. Read the existing note first, then merge
-the new content into it—adding sections, examples, or details that weren't
-there before.
+**When the index finds a match:** If `match-notes.py` returns a high-scoring
+note (score > 0.05), read that note and consider merging. Update the existing
+note rather than creating a new one—add sections, examples, or details that
+weren't there before.
 
-### 4. Process Each Note
+### 6. Process Each Note
 
 **Remove:**
 - Self-references ("In this article...", "As mentioned...")
@@ -79,7 +107,7 @@ there before.
 - Ensure consistent heading hierarchy
 - Align tables properly
 
-### 5. Note Format
+### 7. Note Format
 
 ```markdown
 # Note Title
@@ -124,7 +152,7 @@ Continue as needed. The note should feel complete.
 - Language on code blocks
 - ~80 char soft limit for terminal readability
 
-### 6. Index File
+### 8. Index File
 
 `topics/<topic>/_index.md` for each topic:
 
@@ -146,7 +174,7 @@ Brief description.
 Include `## Subtopics` only when nested subtopics exist. Include `## Notes`
 only when there are direct notes in the folder.
 
-### 7. Save and Confirm
+### 9. Save and Confirm
 
 - Create `topics/<topic>/` folder if needed
 - Write new note files to `topics/<topic>/<slug>.md` (kebab-case names)

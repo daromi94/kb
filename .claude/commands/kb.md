@@ -1,0 +1,160 @@
+---
+description: Record and organize knowledge into atomic Zettelkasten notes
+arguments: <topic> [source-label]
+---
+
+# Knowledge Acquisition Skill
+
+Record and organize knowledge into clean, atomic notes using Zettelkasten principles.
+
+- `topic`: Topic folder (e.g., "clean-code", "rust", "systems")
+- `source-label`: Source attribution (e.g., "Kleppmann", "Rust Book Ch.4")
+
+## Directory Structure
+
+```
+topics/
+  <topic>/
+    _index.md           # Topic overview
+    <note-slug>.md      # Individual notes
+```
+
+## Workflow
+
+### 1. Gather Input
+
+Ask how to provide content:
+
+1. **URL** - Fetch from web
+2. **Paste** - Content pasted directly
+3. **Book** - Ask for book title, chapter, or section
+
+### 2. Identify Notes
+
+Analyze the content and identify distinct pieces of knowledge. Each becomes its own note file. A note can be:
+
+- A concept explanation
+- A principle or pattern
+- A technique or method
+- A comparison or analysis
+- A one-pager summary
+- Any cohesive chunk of knowledge
+
+The key: each note should be **self-contained** and cover **one thing well**.
+
+### 3. Process Each Note
+
+**Remove:**
+- Self-references ("In this article...", "As mentioned...")
+- Filler and padding
+- Redundant explanations
+- Marketing language
+
+**Preserve:**
+- Core explanations and reasoning
+- Examples that illuminate the concept
+- Tables, comparisons, analogies
+- Code samples that demonstrate ideas
+- The depth and nuance of the original
+
+**Clean up:**
+- Fix formatting inconsistencies
+- Remove double spaces and trailing whitespace
+- Ensure consistent heading hierarchy
+- Align tables properly
+
+### 4. Note Format
+
+```markdown
+# Note Title
+
+Source: Attribution
+
+Opening paragraph establishing the concept or idea.
+
+## Section
+
+Substantive content. Prose is fine when it serves clarity.
+Notes can include depth - this isn't about compression to
+bullet points, but about removing noise while keeping signal.
+
+### Subsection
+
+More detailed exploration when needed.
+
+| Comparison    | Option A     | Option B     |
+| ------------- | ------------ | ------------ |
+| Aspect        | Description  | Description  |
+
+**Term:** Definition when introducing vocabulary.
+
+```language
+// Code that illustrates the point
+```
+
+## Another Section
+
+Continue as needed. The note should feel complete.
+
+## Related
+
+- [[other-note]] - How it connects
+```
+
+**Formatting standards:**
+- Single blank line between elements
+- No trailing whitespace
+- No consecutive blank lines
+- Sentence case headers
+- Aligned table pipes
+- Language on code blocks
+- ~80 char soft limit for terminal readability
+
+### 5. Index File
+
+`topics/<topic>/_index.md` for each topic:
+
+```markdown
+# Topic Name
+
+Brief description.
+
+## Notes
+
+- [[note-name]] - One-line description
+- [[another-note]] - One-line description
+
+## Sources
+
+- Source Name - Description or full title
+```
+
+### 6. Save and Confirm
+
+- Create `topics/<topic>/` folder if needed
+- Write note files to `topics/<topic>/<slug>.md` (kebab-case names)
+- Update `topics/<topic>/_index.md`
+- Report what was created with brief summaries
+
+## Filename Convention
+
+- "WTFs per Minute" → `wtfs-per-minute.md`
+- "Law of Demeter" → `law-of-demeter.md`
+- "Chapter 4: Ownership" → `ownership.md`
+
+## Linking
+
+- `[[note-name]]` - Same folder
+- `[[../topic/note]]` - Cross-topic
+
+## Example
+
+```
+User: /kb clean-code Codely
+[pastes content about code quality metrics and abstraction]
+
+Created topics/clean-code/:
+  wtfs-per-minute.md - Measuring code quality by confusion
+  abstraction.md - Managing complexity through layered interfaces
+  _index.md - Updated
+```

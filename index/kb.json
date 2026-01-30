@@ -2216,6 +2216,7 @@
         "creating",
         "creation",
         "currentthread",
+        "daemon",
         "decides",
         "due",
         "entering",
@@ -2223,6 +2224,7 @@
         "executes",
         "executing",
         "execution",
+        "executor",
         "expensive",
         "extending",
         "extends",
@@ -2240,6 +2242,7 @@
         "ideal",
         "implementing",
         "inheritance",
+        "instead",
         "intensive",
         "interface",
         "interleaved",
@@ -2259,6 +2262,7 @@
         "machine",
         "main",
         "managed",
+        "managing",
         "mapping",
         "memory",
         "method",
@@ -2274,6 +2278,7 @@
         "path",
         "perform",
         "platform",
+        "pools",
         "preferred",
         "println",
         "private",
@@ -2281,7 +2286,9 @@
         "project",
         "public",
         "rather",
+        "raw",
         "ready",
+        "related",
         "requests",
         "resources",
         "run",
@@ -2294,6 +2301,7 @@
         "scheduling",
         "separates",
         "servers",
+        "service",
         "simultaneously",
         "single",
         "smallest",
@@ -2717,6 +2725,7 @@
         "execute",
         "executes",
         "execution",
+        "executor",
         "exist",
         "exists",
         "exit",
@@ -2728,6 +2737,7 @@
         "finally",
         "finish",
         "finishing",
+        "fundamentals",
         "garbage",
         "graceful",
         "hanging",
@@ -2751,6 +2761,7 @@
         "lost",
         "low",
         "main",
+        "managed",
         "memory",
         "mid",
         "monitoring",
@@ -2762,6 +2773,7 @@
         "parent",
         "perform",
         "performs",
+        "pools",
         "primary",
         "println",
         "priority",
@@ -2770,6 +2782,7 @@
         "provide",
         "provider",
         "purpose",
+        "related",
         "remain",
         "removal",
         "risking",
@@ -2967,6 +2980,602 @@
         "why",
         "window",
         "without"
+      ]
+    },
+    "io-uring/io-uring.md": {
+      "title": "io_uring",
+      "terms": [
+        "accept",
+        "actually",
+        "address",
+        "adds",
+        "aggressive",
+        "allocates",
+        "allows",
+        "app",
+        "application",
+        "applications",
+        "approach",
+        "architecture",
+        "array",
+        "async",
+        "asynchronous",
+        "asynchronously",
+        "automatically",
+        "avoiding",
+        "axboe",
+        "batching",
+        "border",
+        "bottlenecks",
+        "buffer",
+        "buffers",
+        "bytes",
+        "call",
+        "calls",
+        "cancelled",
+        "capabilities",
+        "chaining",
+        "check",
+        "circular",
+        "code",
+        "completed",
+        "completion",
+        "completions",
+        "connect",
+        "context",
+        "continuously",
+        "control",
+        "copy",
+        "copying",
+        "cpu",
+        "cqe",
+        "cqes",
+        "crossings",
+        "ctx",
+        "data",
+        "databases",
+        "dedicated",
+        "descriptor",
+        "designed",
+        "details",
+        "dma",
+        "doesn",
+        "done",
+        "drastically",
+        "during",
+        "empty",
+        "enables",
+        "enter",
+        "entering",
+        "entries",
+        "entry",
+        "epoll",
+        "equivalent",
+        "etc",
+        "evolved",
+        "example",
+        "execution",
+        "exist",
+        "expensive",
+        "failed",
+        "fails",
+        "fallocate",
+        "fast",
+        "field",
+        "file",
+        "fill",
+        "flush",
+        "fprintf",
+        "fsync",
+        "general",
+        "head",
+        "helper",
+        "hft",
+        "high",
+        "holds",
+        "identify",
+        "immediately",
+        "index",
+        "indices",
+        "indirection",
+        "init",
+        "initialize",
+        "input",
+        "instead",
+        "integers",
+        "interface",
+        "introduced",
+        "iops",
+        "ioring",
+        "ipc",
+        "issues",
+        "jens",
+        "kernel",
+        "large",
+        "latency",
+        "layer",
+        "library",
+        "liburing",
+        "lifecycle",
+        "link",
+        "linux",
+        "locks",
+        "low",
+        "making",
+        "map",
+        "mapped",
+        "mark",
+        "mechanism",
+        "memory",
+        "mmap",
+        "mode",
+        "model",
+        "models",
+        "moving",
+        "multiple",
+        "needed",
+        "network",
+        "offset",
+        "offsets",
+        "opcode",
+        "operation",
+        "operations",
+        "order",
+        "original",
+        "output",
+        "overhead",
+        "packet",
+        "pages",
+        "per",
+        "perform",
+        "performance",
+        "pinning",
+        "pointing",
+        "polling",
+        "polls",
+        "pread",
+        "prep",
+        "prepare",
+        "previous",
+        "proactor",
+        "processes",
+        "purpose",
+        "pushing",
+        "queue",
+        "queued",
+        "ram",
+        "reactor",
+        "read",
+        "reads",
+        "recv",
+        "reduces",
+        "reduction",
+        "region",
+        "register",
+        "registration",
+        "related",
+        "request",
+        "requests",
+        "res",
+        "result",
+        "results",
+        "retrieve",
+        "returns",
+        "ring",
+        "rings",
+        "seen",
+        "sees",
+        "send",
+        "setup",
+        "share",
+        "shared",
+        "sides",
+        "single",
+        "size",
+        "socket",
+        "space",
+        "sqe",
+        "sqes",
+        "sqpoll",
+        "standard",
+        "starts",
+        "stderr",
+        "strerror",
+        "struct",
+        "structures",
+        "submission",
+        "submit",
+        "submitting",
+        "suitable",
+        "switches",
+        "syscall",
+        "syscalls",
+        "system",
+        "tag",
+        "tail",
+        "technique",
+        "them",
+        "thread",
+        "threads",
+        "time",
+        "timeouts",
+        "timers",
+        "traditional",
+        "transfer",
+        "true",
+        "ultra",
+        "underlying",
+        "unmap",
+        "update",
+        "updates",
+        "uring",
+        "user",
+        "uses",
+        "valid",
+        "version",
+        "via",
+        "wait",
+        "why",
+        "without",
+        "write",
+        "writes",
+        "yet",
+        "zero"
+      ]
+    },
+    "io-uring/proactor-vs-reactor.md": {
+      "title": "Proactor vs reactor",
+      "terms": [
+        "actual",
+        "always",
+        "app",
+        "application",
+        "asks",
+        "aspect",
+        "async",
+        "asynchronous",
+        "asynchronously",
+        "available",
+        "avoiding",
+        "barriers",
+        "based",
+        "batches",
+        "buffer",
+        "buffers",
+        "bytes",
+        "call",
+        "cannot",
+        "chunk",
+        "comparison",
+        "complete",
+        "completion",
+        "complexity",
+        "concepts",
+        "data",
+        "descriptors",
+        "disk",
+        "done",
+        "efficiency",
+        "enter",
+        "epoll",
+        "event",
+        "faster",
+        "file",
+        "files",
+        "full",
+        "fundamental",
+        "general",
+        "handles",
+        "handling",
+        "helps",
+        "high",
+        "implementation",
+        "iocp",
+        "itself",
+        "kernel",
+        "kqueue",
+        "liburing",
+        "linux",
+        "loops",
+        "management",
+        "memory",
+        "model",
+        "moderate",
+        "monitor",
+        "nginx",
+        "node",
+        "notification",
+        "notifies",
+        "once",
+        "operation",
+        "operations",
+        "overhead",
+        "pattern",
+        "patterns",
+        "per",
+        "performs",
+        "pin",
+        "pinning",
+        "proactor",
+        "reactor",
+        "read",
+        "readiness",
+        "ready",
+        "reduction",
+        "register",
+        "related",
+        "reported",
+        "requires",
+        "reuse",
+        "socket",
+        "submission",
+        "submits",
+        "support",
+        "syscall",
+        "syscalls",
+        "tell",
+        "them",
+        "true",
+        "uring",
+        "wait",
+        "watch",
+        "why",
+        "windows",
+        "write"
+      ]
+    },
+    "io-uring/shared-memory.md": {
+      "title": "Shared memory",
+      "terms": [
+        "access",
+        "address",
+        "allow",
+        "analogy",
+        "app",
+        "appears",
+        "application",
+        "attachment",
+        "becomes",
+        "believes",
+        "block",
+        "breaking",
+        "breaks",
+        "buffer",
+        "buffers",
+        "cannot",
+        "catch",
+        "change",
+        "communication",
+        "comparison",
+        "completely",
+        "completion",
+        "conditions",
+        "coordinate",
+        "coordination",
+        "copy",
+        "copying",
+        "corrupted",
+        "crashes",
+        "data",
+        "default",
+        "different",
+        "doc",
+        "editing",
+        "emailing",
+        "existence",
+        "expensive",
+        "fake",
+        "fastest",
+        "fix",
+        "form",
+        "forth",
+        "frame",
+        "gives",
+        "goes",
+        "google",
+        "instant",
+        "instantly",
+        "intentionally",
+        "inter",
+        "ipc",
+        "isn",
+        "isolation",
+        "issues",
+        "kernel",
+        "large",
+        "leads",
+        "linux",
+        "live",
+        "location",
+        "locks",
+        "manages",
+        "manual",
+        "map",
+        "mapped",
+        "maps",
+        "matters",
+        "memory",
+        "method",
+        "microseconds",
+        "moved",
+        "multiple",
+        "needed",
+        "optimization",
+        "pass",
+        "physical",
+        "pipes",
+        "place",
+        "pointer",
+        "possible",
+        "prevents",
+        "process",
+        "processes",
+        "program",
+        "programs",
+        "puts",
+        "queue",
+        "race",
+        "ram",
+        "reads",
+        "redirects",
+        "region",
+        "regions",
+        "related",
+        "request",
+        "ring",
+        "risky",
+        "safe",
+        "safety",
+        "seconds",
+        "security",
+        "semaphores",
+        "shared",
+        "simultaneously",
+        "slow",
+        "sockets",
+        "space",
+        "specific",
+        "speed",
+        "spot",
+        "stays",
+        "submission",
+        "syscalls",
+        "takes",
+        "technique",
+        "touches",
+        "transferring",
+        "uring",
+        "uses",
+        "video",
+        "viewers",
+        "virtual",
+        "why",
+        "write",
+        "writes",
+        "zero"
+      ]
+    },
+    "io-uring/zero-copy.md": {
+      "title": "Zero copy",
+      "terms": [
+        "accesses",
+        "acts",
+        "actually",
+        "allows",
+        "app",
+        "application",
+        "approach",
+        "avoids",
+        "best",
+        "buffer",
+        "buffers",
+        "cache",
+        "call",
+        "calls",
+        "card",
+        "case",
+        "client",
+        "code",
+        "connection",
+        "copies",
+        "copy",
+        "copying",
+        "count",
+        "cpu",
+        "creates",
+        "data",
+        "descriptor",
+        "descriptors",
+        "directly",
+        "disk",
+        "dma",
+        "doesn",
+        "don",
+        "drops",
+        "dumb",
+        "enters",
+        "entirely",
+        "famous",
+        "file",
+        "files",
+        "flow",
+        "high",
+        "implementations",
+        "ipc",
+        "isn",
+        "itself",
+        "kernel",
+        "large",
+        "linux",
+        "lock",
+        "low",
+        "manages",
+        "mapping",
+        "maps",
+        "memory",
+        "mmap",
+        "modify",
+        "modifying",
+        "move",
+        "moves",
+        "moving",
+        "netflix",
+        "network",
+        "never",
+        "nginx",
+        "operation",
+        "optimization",
+        "owned",
+        "pages",
+        "passing",
+        "path",
+        "pipe",
+        "place",
+        "point",
+        "pointers",
+        "pre",
+        "quickly",
+        "ram",
+        "read",
+        "reading",
+        "reads",
+        "register",
+        "registered",
+        "related",
+        "send",
+        "sendfile",
+        "sending",
+        "sends",
+        "serve",
+        "server",
+        "servers",
+        "shared",
+        "socket",
+        "space",
+        "splice",
+        "standard",
+        "static",
+        "steps",
+        "streaming",
+        "summary",
+        "supports",
+        "tells",
+        "them",
+        "time",
+        "touch",
+        "unmapping",
+        "uring",
+        "usage",
+        "user",
+        "variable",
+        "via",
+        "video",
+        "waste",
+        "wasteful",
+        "web",
+        "within",
+        "without",
+        "zero"
       ]
     },
     "async-io/synchronous-io.md": {
@@ -3479,7 +4088,8 @@
     "block": [
       "async-io/async-vs-multithreading.md",
       "clean-code/abstraction.md",
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/shared-memory.md"
     ],
     "blocks": [
       "clean-code/polymorphism.md",
@@ -3554,6 +4164,8 @@
       "clean-code/tell-dont-ask.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
@@ -3570,7 +4182,8 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/triad-of-maintainability.md",
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "connections": [
       "async-io/multithreading.md",
@@ -3596,6 +4209,7 @@
       "clean-code/abstraction.md",
       "clean-code/polymorphism.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "cyclomatic": [
@@ -3610,6 +4224,10 @@
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/parallelism.md"
     ],
@@ -3648,6 +4266,7 @@
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/parallelism.md"
     ],
     "discoverability": [
@@ -3697,6 +4316,7 @@
       "async-io/synchronous-io.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
@@ -3729,6 +4349,8 @@
       "clean-code/abstraction.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md"
     ],
     "five": [
@@ -3738,7 +4360,8 @@
     ],
     "fix": [
       "async-io/threads-are-evil.md",
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/shared-memory.md"
     ],
     "forcing": [
       "clean-code/wtfs-per-minute.md"
@@ -3789,6 +4412,7 @@
       "clean-code/law-of-demeter.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -3808,6 +4432,9 @@
       "clean-code/tell-dont-ask.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/parallelism.md",
@@ -3823,6 +4450,7 @@
       "clean-code/abstraction.md",
       "clean-code/polymorphism.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md"
     ],
@@ -3832,6 +4460,7 @@
     ],
     "instant": [
       "clean-code/wtfs-per-minute.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/parallelism.md"
     ],
     "intent": [
@@ -3903,6 +4532,8 @@
       "clean-code/law-of-demeter.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md",
@@ -3935,7 +4566,9 @@
     ],
     "map": [
       "clean-code/indirection.md",
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
     ],
     "measurement": [
       "clean-code/wtfs-per-minute.md"
@@ -3971,7 +4604,9 @@
       "async-io/synchronous-io.md",
       "async-io/threads-are-evil.md",
       "clean-code/triad-of-maintainability.md",
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "moment": [
       "clean-code/wtfs-per-minute.md",
@@ -3985,6 +4620,8 @@
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/threads.md"
@@ -4039,7 +4676,8 @@
       "clean-code/wtfs-per-minute.md"
     ],
     "output": [
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md"
     ],
     "outside": [
       "clean-code/tell-dont-ask.md",
@@ -4054,13 +4692,16 @@
       "clean-code/wtfs-per-minute.md"
     ],
     "patterns": [
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "per": [
       "async-io/async-vs-multithreading.md",
       "clean-code/abstraction.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -4107,6 +4748,9 @@
     "reads": [
       "async-io/threads-are-evil.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "related": [
@@ -4122,7 +4766,13 @@
       "clean-code/shutdown-surgery.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/triad-of-maintainability.md",
-      "clean-code/wtfs-per-minute.md"
+      "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
+      "java/concurrency/daemon-threads.md",
+      "java/concurrency/threads.md"
     ],
     "relying": [
       "clean-code/wtfs-per-minute.md"
@@ -4136,6 +4786,7 @@
       "clean-code/tell-dont-ask.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/parallelism.md"
     ],
     "review": [
@@ -4176,6 +4827,7 @@
       "clean-code/polymorphism.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/parallelism.md",
@@ -4189,6 +4841,7 @@
       "async-io/threads-are-evil.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/parallelism.md"
     ],
     "stack": [
@@ -4211,6 +4864,7 @@
     ],
     "static": [
       "clean-code/wtfs-per-minute.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md"
     ],
@@ -4230,6 +4884,7 @@
       "clean-code/shutdown-surgery.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
@@ -4296,6 +4951,8 @@
       "clean-code/abstraction.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
@@ -4324,6 +4981,8 @@
       "clean-code/shutdown-surgery.md",
       "clean-code/triad-of-maintainability.md",
       "clean-code/wtfs-per-minute.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/threads.md"
     ],
@@ -4362,7 +5021,8 @@
     ],
     "avoids": [
       "async-io/threads-are-evil.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/zero-copy.md"
     ],
     "behavior": [
       "async-io/synchronous-io.md",
@@ -4384,7 +5044,8 @@
     ],
     "breaks": [
       "clean-code/law-of-demeter.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/shared-memory.md"
     ],
     "building": [
       "clean-code/triad-of-maintainability.md"
@@ -4394,7 +5055,8 @@
       "clean-code/abstraction.md",
       "clean-code/law-of-demeter.md",
       "clean-code/shutdown-surgery.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/shared-memory.md"
     ],
     "changing": [
       "async-io/async-vs-multithreading.md",
@@ -4435,6 +5097,7 @@
       "async-io/threads-are-evil.md",
       "clean-code/law-of-demeter.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -4495,7 +5158,8 @@
     ],
     "fast": [
       "async-io/multithreading.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md"
     ],
     "file": [
       "async-io/async-vs-multithreading.md",
@@ -4503,6 +5167,9 @@
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -4557,10 +5224,12 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md"
     ],
     "lifecycle": [
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/threads.md"
@@ -4598,6 +5267,10 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/parallelism.md",
@@ -4619,7 +5292,8 @@
       "async-io/multithreading.md",
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/zero-copy.md"
     ],
     "named": [
       "clean-code/abstraction.md",
@@ -4655,6 +5329,8 @@
       "clean-code/shutdown-surgery.md",
       "clean-code/tell-dont-ask.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-executor.md"
     ],
@@ -4688,16 +5364,21 @@
     ],
     "read": [
       "clean-code/shutdown-surgery.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md"
     ],
     "reading": [
       "async-io/asynchronous-io.md",
       "async-io/synchronous-io.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/zero-copy.md"
     ],
     "reduces": [
       "clean-code/polymorphism.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md"
     ],
     "remains": [
       "clean-code/abstraction.md",
@@ -4721,7 +5402,8 @@
     ],
     "safety": [
       "async-io/async-vs-multithreading.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/shared-memory.md"
     ],
     "scale": [
       "clean-code/triad-of-maintainability.md",
@@ -4737,7 +5419,8 @@
       "clean-code/triad-of-maintainability.md"
     ],
     "seconds": [
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/shared-memory.md"
     ],
     "simplifies": [
       "clean-code/triad-of-maintainability.md"
@@ -4757,6 +5440,7 @@
     "starts": [
       "async-io/async-vs-multithreading.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/threads.md"
     ],
@@ -4774,6 +5458,7 @@
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -4782,12 +5467,15 @@
       "clean-code/triad-of-maintainability.md"
     ],
     "technique": [
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
     ],
     "tell": [
       "clean-code/law-of-demeter.md",
       "clean-code/tell-dont-ask.md",
-      "clean-code/triad-of-maintainability.md"
+      "clean-code/triad-of-maintainability.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "test": [
       "clean-code/polymorphism.md",
@@ -4816,6 +5504,8 @@
       "async-io/threads-are-evil.md",
       "clean-code/polymorphism.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
@@ -4884,6 +5574,9 @@
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
       "clean-code/triad-of-maintainability.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md"
     ],
@@ -4919,7 +5612,9 @@
     ],
     "address": [
       "clean-code/indirection.md",
-      "clean-code/polymorphism.md"
+      "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
     ],
     "allows": [
       "async-io/asynchronous-io.md",
@@ -4927,6 +5622,8 @@
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/threads.md"
@@ -4935,6 +5632,7 @@
       "clean-code/abstraction.md",
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md"
     ],
     "application": [
@@ -4943,6 +5641,10 @@
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
@@ -4950,11 +5652,13 @@
       "java/concurrency/threads.md"
     ],
     "applications": [
-      "clean-code/polymorphism.md"
+      "clean-code/polymorphism.md",
+      "io-uring/io-uring.md"
     ],
     "architecture": [
       "clean-code/polymorphism.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "base": [
       "clean-code/abstraction.md",
@@ -4962,6 +5666,7 @@
     ],
     "based": [
       "clean-code/polymorphism.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "behave": [
@@ -4994,6 +5699,9 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/threads.md"
@@ -5052,6 +5760,8 @@
       "async-io/threads-are-evil.md",
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
@@ -5098,6 +5808,7 @@
     "designed": [
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "determined": [
@@ -5126,6 +5837,7 @@
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -5153,6 +5865,7 @@
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -5178,7 +5891,8 @@
     ],
     "form": [
       "clean-code/indirection.md",
-      "clean-code/polymorphism.md"
+      "clean-code/polymorphism.md",
+      "io-uring/shared-memory.md"
     ],
     "frequency": [
       "clean-code/polymorphism.md",
@@ -5189,6 +5903,8 @@
     ],
     "general": [
       "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "generically": [
@@ -5214,7 +5930,8 @@
     ],
     "helps": [
       "clean-code/abstraction.md",
-      "clean-code/polymorphism.md"
+      "clean-code/polymorphism.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "hinder": [
       "clean-code/polymorphism.md"
@@ -5240,11 +5957,13 @@
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "implementations": [
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/executor-service.md"
     ],
     "implements": [
@@ -5261,7 +5980,8 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md"
     ],
     "infrared": [
       "clean-code/polymorphism.md"
@@ -5279,14 +5999,17 @@
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md",
-      "java/concurrency/thread-pool-sizing.md"
+      "java/concurrency/thread-pool-sizing.md",
+      "java/concurrency/threads.md"
     ],
     "int": [
       "clean-code/polymorphism.md"
     ],
     "integers": [
-      "clean-code/polymorphism.md"
+      "clean-code/polymorphism.md",
+      "io-uring/io-uring.md"
     ],
     "interface": [
       "clean-code/abstraction.md",
@@ -5294,6 +6017,7 @@
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/threads.md"
     ],
     "interprets": [
@@ -5306,6 +6030,8 @@
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/threads.md"
     ],
@@ -5362,6 +6088,7 @@
     "mechanism": [
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "method": [
@@ -5369,6 +6096,7 @@
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/threads.md"
     ],
@@ -5385,7 +6113,8 @@
     ],
     "modifying": [
       "clean-code/polymorphism.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/zero-copy.md"
     ],
     "name": [
       "clean-code/indirection.md",
@@ -5417,7 +6146,8 @@
       "clean-code/tell-dont-ask.md"
     ],
     "original": [
-      "clean-code/polymorphism.md"
+      "clean-code/polymorphism.md",
+      "io-uring/io-uring.md"
     ],
     "outweighs": [
       "clean-code/polymorphism.md"
@@ -5438,6 +6168,7 @@
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -5475,6 +6206,7 @@
       "async-io/threads-are-evil.md",
       "clean-code/indirection.md",
       "clean-code/polymorphism.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/parallelism.md",
@@ -5521,6 +6253,7 @@
     "sends": [
       "async-io/asynchronous-io.md",
       "clean-code/polymorphism.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/parallelism.md"
     ],
     "shape": [
@@ -5555,6 +6288,7 @@
       "clean-code/polymorphism.md",
       "clean-code/shutdown-surgery.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "square": [
@@ -5629,6 +6363,8 @@
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/threads.md"
     ],
@@ -5639,16 +6375,20 @@
     "version": [
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md"
     ],
     "via": [
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/polymorphism.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "virtual": [
       "clean-code/polymorphism.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/threads.md"
     ],
     "vtable": [
@@ -5673,7 +6413,8 @@
     ],
     "actual": [
       "clean-code/indirection.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "amount": [
       "clean-code/abstraction.md",
@@ -5699,6 +6440,8 @@
       "async-io/async-vs-multithreading.md",
       "async-io/threads-are-evil.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "appropriate": [
@@ -5740,6 +6483,7 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "behalf": [
@@ -5778,7 +6522,8 @@
       "java/concurrency/thread-pool-executor.md"
     ],
     "check": [
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "closely": [
       "clean-code/abstraction.md",
@@ -5808,6 +6553,7 @@
     ],
     "creates": [
       "clean-code/tell-dont-ask.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
@@ -5836,7 +6582,8 @@
     ],
     "details": [
       "clean-code/abstraction.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "developers": [
       "async-io/multithreading.md",
@@ -5853,6 +6600,8 @@
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "doing": [
@@ -5961,7 +6710,8 @@
       "clean-code/tell-dont-ask.md"
     ],
     "intentionally": [
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md"
     ],
     "interfaces": [
       "clean-code/abstraction.md",
@@ -5983,12 +6733,14 @@
     ],
     "isolation": [
       "clean-code/shutdown-surgery.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md"
     ],
     "leads": [
       "async-io/async-vs-multithreading.md",
       "clean-code/abstraction.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "leaky": [
@@ -5999,7 +6751,8 @@
       "clean-code/tell-dont-ask.md"
     ],
     "location": [
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md"
     ],
     "maintenance": [
       "clean-code/tell-dont-ask.md"
@@ -6027,7 +6780,8 @@
     "move": [
       "async-io/threads-are-evil.md",
       "clean-code/shutdown-surgery.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/zero-copy.md"
     ],
     "naturally": [
       "clean-code/tell-dont-ask.md",
@@ -6035,6 +6789,8 @@
     ],
     "needed": [
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/executor-service.md"
     ],
     "operates": [
@@ -6051,6 +6807,7 @@
     ],
     "perform": [
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/threads.md"
@@ -6063,11 +6820,13 @@
     "possible": [
       "clean-code/shutdown-surgery.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/parallelism.md"
     ],
     "prevents": [
       "async-io/asynchronous-io.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "private": [
@@ -6080,6 +6839,8 @@
     ],
     "processes": [
       "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/parallelism.md"
     ],
@@ -6133,7 +6894,9 @@
     "request": [
       "async-io/asynchronous-io.md",
       "async-io/synchronous-io.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
     ],
     "responses": [
       "clean-code/tell-dont-ask.md"
@@ -6197,7 +6960,8 @@
     ],
     "structures": [
       "clean-code/law-of-demeter.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "style": [
       "clean-code/tell-dont-ask.md"
@@ -6229,7 +6993,8 @@
       "clean-code/tell-dont-ask.md"
     ],
     "tells": [
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/zero-copy.md"
     ],
     "testing": [
       "clean-code/law-of-demeter.md",
@@ -6246,7 +7011,8 @@
       "clean-code/tell-dont-ask.md"
     ],
     "transfer": [
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "uis": [
       "clean-code/tell-dont-ask.md"
@@ -6259,7 +7025,8 @@
     "update": [
       "async-io/async-vs-multithreading.md",
       "clean-code/indirection.md",
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "updated": [
       "clean-code/tell-dont-ask.md"
@@ -6269,7 +7036,8 @@
       "clean-code/tell-dont-ask.md"
     ],
     "valid": [
-      "clean-code/tell-dont-ask.md"
+      "clean-code/tell-dont-ask.md",
+      "io-uring/io-uring.md"
     ],
     "verify": [
       "clean-code/tell-dont-ask.md"
@@ -6296,6 +7064,7 @@
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/tell-dont-ask.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/threads.md"
@@ -6319,7 +7088,11 @@
       "clean-code/shutdown-surgery.md"
     ],
     "app": [
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
     ],
     "architected": [
       "clean-code/shutdown-surgery.md"
@@ -6372,7 +7145,8 @@
       "clean-code/shutdown-surgery.md"
     ],
     "completely": [
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md"
     ],
     "configuration": [
       "clean-code/shutdown-surgery.md"
@@ -6442,6 +7216,7 @@
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "disconnected": [
@@ -6458,10 +7233,12 @@
     ],
     "drastically": [
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "during": [
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -6478,6 +7255,7 @@
     ],
     "exist": [
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/thread-pool-executor.md"
     ],
@@ -6491,10 +7269,12 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "failed": [
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md"
     ],
     "fails": [
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md"
     ],
     "failure": [
       "clean-code/shutdown-surgery.md"
@@ -6517,7 +7297,8 @@
     ],
     "flow": [
       "async-io/synchronous-io.md",
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/zero-copy.md"
     ],
     "flowing": [
       "clean-code/shutdown-surgery.md"
@@ -6532,6 +7313,7 @@
     ],
     "handling": [
       "clean-code/shutdown-surgery.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "highway": [
@@ -6546,7 +7328,8 @@
       "clean-code/shutdown-surgery.md"
     ],
     "instantly": [
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md"
     ],
     "jobs": [
       "clean-code/shutdown-surgery.md"
@@ -6564,7 +7347,8 @@
       "clean-code/shutdown-surgery.md"
     ],
     "live": [
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md"
     ],
     "living": [
       "clean-code/shutdown-surgery.md"
@@ -6601,6 +7385,8 @@
       "async-io/asynchronous-io.md",
       "async-io/threads-are-evil.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/parallelism.md"
     ],
     "others": [
@@ -6616,6 +7402,7 @@
     "pattern": [
       "clean-code/law-of-demeter.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "permanent": [
@@ -6628,6 +7415,7 @@
     "physical": [
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -6644,6 +7432,7 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/parallelism.md"
     ],
@@ -6691,6 +7480,7 @@
       "async-io/asynchronous-io.md",
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-sizing.md",
       "java/concurrency/threads.md"
@@ -6707,6 +7497,7 @@
     "results": [
       "async-io/asynchronous-io.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "route": [
@@ -6717,7 +7508,8 @@
     ],
     "safe": [
       "async-io/multithreading.md",
-      "clean-code/shutdown-surgery.md"
+      "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md"
     ],
     "scripts": [
       "clean-code/shutdown-surgery.md"
@@ -6729,7 +7521,8 @@
       "clean-code/abstraction.md",
       "clean-code/shutdown-surgery.md",
       "java/concurrency/daemon-threads.md",
-      "java/concurrency/executor-service.md"
+      "java/concurrency/executor-service.md",
+      "java/concurrency/threads.md"
     ],
     "shadowing": [
       "clean-code/shutdown-surgery.md"
@@ -6739,6 +7532,9 @@
       "async-io/multithreading.md",
       "async-io/threads-are-evil.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "shifting": [
@@ -6761,6 +7557,7 @@
       "async-io/multithreading.md",
       "clean-code/abstraction.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/threads.md"
     ],
@@ -6806,6 +7603,7 @@
     "switches": [
       "async-io/async-vs-multithreading.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md"
     ],
     "symptoms": [
@@ -6851,6 +7649,7 @@
     "underlying": [
       "clean-code/abstraction.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/threads.md"
     ],
@@ -6870,6 +7669,9 @@
       "async-io/synchronous-io.md",
       "clean-code/indirection.md",
       "clean-code/shutdown-surgery.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/daemon-threads.md"
     ],
     "zombie": [
@@ -6886,7 +7688,8 @@
       "clean-code/law-of-demeter.md"
     ],
     "asks": [
-      "clean-code/law-of-demeter.md"
+      "clean-code/law-of-demeter.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "benefit": [
       "clean-code/law-of-demeter.md"
@@ -6901,6 +7704,8 @@
       "clean-code/abstraction.md",
       "clean-code/indirection.md",
       "clean-code/law-of-demeter.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -6908,7 +7713,8 @@
       "clean-code/law-of-demeter.md"
     ],
     "chaining": [
-      "clean-code/law-of-demeter.md"
+      "clean-code/law-of-demeter.md",
+      "io-uring/io-uring.md"
     ],
     "charge": [
       "clean-code/abstraction.md",
@@ -7130,6 +7936,7 @@
     ],
     "programs": [
       "clean-code/law-of-demeter.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md"
     ],
     "pulls": [
@@ -7206,6 +8013,7 @@
     ],
     "acts": [
       "clean-code/abstraction.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "algorithm": [
@@ -7243,10 +8051,15 @@
     ],
     "breaking": [
       "clean-code/abstraction.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md"
     ],
     "buffer": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
     ],
     "calculatepremium": [
       "clean-code/abstraction.md"
@@ -7280,7 +8093,8 @@
       "clean-code/abstraction.md"
     ],
     "connection": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/zero-copy.md"
     ],
     "constructs": [
       "clean-code/abstraction.md"
@@ -7416,7 +8230,8 @@
       "clean-code/abstraction.md"
     ],
     "models": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/io-uring.md"
     ],
     "modifiability": [
       "clean-code/abstraction.md"
@@ -7425,7 +8240,9 @@
       "clean-code/abstraction.md"
     ],
     "moving": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
     ],
     "navigate": [
       "clean-code/abstraction.md"
@@ -7434,7 +8251,8 @@
       "clean-code/abstraction.md"
     ],
     "notification": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "notificationservice": [
       "clean-code/abstraction.md"
@@ -7455,6 +8273,7 @@
     "order": [
       "async-io/synchronous-io.md",
       "clean-code/abstraction.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md"
     ],
     "otherwise": [
@@ -7467,7 +8286,8 @@
       "clean-code/abstraction.md"
     ],
     "packet": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/io-uring.md"
     ],
     "paymentgateway": [
       "clean-code/abstraction.md"
@@ -7503,6 +8323,7 @@
     ],
     "purpose": [
       "clean-code/abstraction.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/thread-pool-executor.md"
     ],
@@ -7523,6 +8344,7 @@
     "result": [
       "async-io/synchronous-io.md",
       "clean-code/abstraction.md",
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md"
     ],
@@ -7540,7 +8362,9 @@
       "clean-code/abstraction.md"
     ],
     "send": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
     ],
     "serves": [
       "clean-code/abstraction.md"
@@ -7565,7 +8389,10 @@
     ],
     "socket": [
       "clean-code/abstraction.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md"
     ],
     "specification": [
       "clean-code/abstraction.md"
@@ -7577,7 +8404,8 @@
       "clean-code/abstraction.md"
     ],
     "stays": [
-      "clean-code/abstraction.md"
+      "clean-code/abstraction.md",
+      "io-uring/shared-memory.md"
     ],
     "steering": [
       "clean-code/abstraction.md"
@@ -7626,11 +8454,14 @@
       "clean-code/indirection.md"
     ],
     "access": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/shared-memory.md"
     ],
     "actually": [
       "async-io/threads-are-evil.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
     ],
     "adding": [
       "async-io/threads-are-evil.md",
@@ -7648,6 +8479,7 @@
     ],
     "cache": [
       "clean-code/indirection.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/fork-join-pool.md"
     ],
@@ -7687,14 +8519,20 @@
       "java/concurrency/executor-service.md"
     ],
     "descriptor": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
     ],
     "descriptors": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md"
     ],
     "disk": [
       "async-io/synchronous-io.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md"
     ],
     "dns": [
       "clean-code/indirection.md"
@@ -7730,7 +8568,8 @@
     ],
     "fundamental": [
       "async-io/threads-are-evil.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "game": [
       "clean-code/indirection.md",
@@ -7750,7 +8589,8 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "hft": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md"
     ],
     "hides": [
       "clean-code/indirection.md"
@@ -7768,7 +8608,8 @@
       "clean-code/indirection.md"
     ],
     "index": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md"
     ],
     "integer": [
       "clean-code/indirection.md"
@@ -7789,16 +8630,25 @@
       "clean-code/indirection.md"
     ],
     "kernel": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
     ],
     "late": [
       "clean-code/indirection.md"
     ],
     "link": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md"
     ],
     "linux": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
     ],
     "local": [
       "clean-code/indirection.md",
@@ -7813,10 +8663,13 @@
     ],
     "manages": [
       "clean-code/indirection.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/executor-service.md"
     ],
     "mapping": [
       "clean-code/indirection.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/threads.md"
     ],
     "massive": [
@@ -7826,7 +8679,9 @@
     "network": [
       "async-io/asynchronous-io.md",
       "async-io/synchronous-io.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
     ],
     "numerical": [
       "clean-code/indirection.md"
@@ -7836,6 +8691,8 @@
     ],
     "overhead": [
       "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -7846,26 +8703,32 @@
     ],
     "passing": [
       "async-io/threads-are-evil.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/zero-copy.md"
     ],
     "penalty": [
       "clean-code/indirection.md"
     ],
     "performs": [
       "clean-code/indirection.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/daemon-threads.md"
     ],
     "pipe": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/zero-copy.md"
     ],
     "point": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/zero-copy.md"
     ],
     "pointer": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/shared-memory.md"
     ],
     "pointers": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/zero-copy.md"
     ],
     "provider": [
       "clean-code/indirection.md",
@@ -7882,6 +8745,9 @@
     ],
     "ram": [
       "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "readable": [
@@ -7914,20 +8780,24 @@
       "java/concurrency/threads.md"
     ],
     "security": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/shared-memory.md"
     ],
     "serve": [
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/zero-copy.md"
     ],
     "server": [
       "clean-code/indirection.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "share": [
       "async-io/async-vs-multithreading.md",
       "async-io/multithreading.md",
       "async-io/threads-are-evil.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md"
     ],
     "solve": [
       "clean-code/indirection.md"
@@ -7954,6 +8824,9 @@
       "async-io/asynchronous-io.md",
       "async-io/multithreading.md",
       "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/fork-join-pool.md"
@@ -7976,6 +8849,7 @@
     "usage": [
       "async-io/async-vs-multithreading.md",
       "clean-code/indirection.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -7989,6 +8863,7 @@
     ],
     "web": [
       "clean-code/indirection.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/threads.md"
@@ -7998,12 +8873,15 @@
     ],
     "writes": [
       "async-io/threads-are-evil.md",
-      "clean-code/indirection.md"
+      "clean-code/indirection.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
     ],
     "adjust": [
       "java/concurrency/thread-pool-sizing.md"
     ],
     "always": [
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "arrival": [
@@ -8011,6 +8889,7 @@
     ],
     "available": [
       "async-io/asynchronous-io.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -8093,6 +8972,7 @@
       "java/concurrency/threads.md"
     ],
     "default": [
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -8137,6 +9017,7 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "full": [
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -8202,12 +9083,16 @@
     ],
     "large": [
       "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/parallelism.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "latency": [
       "async-io/multithreading.md",
+      "io-uring/io-uring.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -8240,6 +9125,7 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "monitor": [
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/thread-pool-sizing.md",
       "java/concurrency/threads.md"
     ],
@@ -8250,6 +9136,7 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "never": [
+      "io-uring/zero-copy.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -8298,6 +9185,8 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "queue": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-executor.md",
@@ -8342,6 +9231,7 @@
       "java/concurrency/thread-pool-sizing.md"
     ],
     "size": [
+      "io-uring/io-uring.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
@@ -8376,6 +9266,7 @@
       "java/concurrency/threads.md"
     ],
     "steps": [
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-sizing.md"
     ],
     "suggest": [
@@ -8406,6 +9297,7 @@
       "async-io/multithreading.md",
       "async-io/synchronous-io.md",
       "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
@@ -8417,6 +9309,7 @@
       "async-io/async-vs-multithreading.md",
       "async-io/multithreading.md",
       "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
@@ -8442,6 +9335,8 @@
       "async-io/async-vs-multithreading.md",
       "async-io/asynchronous-io.md",
       "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/thread-pool-executor.md",
       "java/concurrency/thread-pool-sizing.md"
@@ -8506,6 +9401,7 @@
       "java/concurrency/thread-pool-executor.md"
     ],
     "drops": [
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "effectively": [
@@ -8521,8 +9417,10 @@
       "java/concurrency/thread-pool-executor.md"
     ],
     "executor": [
+      "java/concurrency/daemon-threads.md",
       "java/concurrency/executor-service.md",
-      "java/concurrency/thread-pool-executor.md"
+      "java/concurrency/thread-pool-executor.md",
+      "java/concurrency/threads.md"
     ],
     "executors": [
       "java/concurrency/executor-service.md",
@@ -8614,6 +9512,7 @@
       "async-io/asynchronous-io.md",
       "async-io/multithreading.md",
       "async-io/threads-are-evil.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/thread-pool-executor.md"
@@ -8625,16 +9524,20 @@
       "java/concurrency/thread-pool-executor.md"
     ],
     "pass": [
+      "io-uring/shared-memory.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "policies": [
       "java/concurrency/thread-pool-executor.md"
     ],
     "pools": [
+      "java/concurrency/daemon-threads.md",
       "java/concurrency/fork-join-pool.md",
-      "java/concurrency/thread-pool-executor.md"
+      "java/concurrency/thread-pool-executor.md",
+      "java/concurrency/threads.md"
     ],
     "pre": [
+      "io-uring/zero-copy.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/thread-pool-executor.md"
     ],
@@ -8671,6 +9574,8 @@
       "java/concurrency/thread-pool-executor.md"
     ],
     "standard": [
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "submitted": [
@@ -8678,6 +9583,7 @@
       "java/concurrency/thread-pool-executor.md"
     ],
     "submitting": [
+      "io-uring/io-uring.md",
       "java/concurrency/thread-pool-executor.md"
     ],
     "synchronousqueue": [
@@ -8733,6 +9639,7 @@
       "java/concurrency/executor-service.md"
     ],
     "automatically": [
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md"
     ],
     "cached": [
@@ -8746,10 +9653,14 @@
     ],
     "complete": [
       "async-io/synchronous-io.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/executor-service.md"
     ],
     "completion": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/executor-service.md"
     ],
     "concurrent": [
@@ -8762,6 +9673,7 @@
       "java/concurrency/executor-service.md"
     ],
     "control": [
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md"
     ],
     "decouples": [
@@ -8772,6 +9684,8 @@
     ],
     "done": [
       "async-io/async-vs-multithreading.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/executor-service.md"
     ],
     "drawbacks": [
@@ -8785,6 +9699,8 @@
       "java/concurrency/executor-service.md"
     ],
     "expensive": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/threads.md"
@@ -8870,9 +9786,11 @@
       "java/concurrency/threads.md"
     ],
     "queued": [
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md"
     ],
     "ready": [
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/threads.md"
     ],
@@ -8880,10 +9798,12 @@
       "java/concurrency/executor-service.md"
     ],
     "retrieve": [
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md"
     ],
     "returns": [
       "async-io/synchronous-io.md",
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/fork-join-pool.md"
     ],
@@ -8924,6 +9844,9 @@
     ],
     "space": [
       "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/executor-service.md"
     ],
     "spawning": [
@@ -8931,9 +9854,13 @@
       "java/concurrency/fork-join-pool.md"
     ],
     "submission": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/executor-service.md"
     ],
     "submit": [
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md"
     ],
     "thousands": [
@@ -8954,6 +9881,7 @@
       "java/concurrency/threads.md"
     ],
     "yet": [
+      "io-uring/io-uring.md",
       "java/concurrency/executor-service.md",
       "java/concurrency/threads.md"
     ],
@@ -8970,6 +9898,7 @@
       "async-io/async-vs-multithreading.md",
       "async-io/asynchronous-io.md",
       "async-io/multithreading.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/threads.md"
     ],
@@ -8979,6 +9908,7 @@
     "case": [
       "async-io/asynchronous-io.md",
       "async-io/multithreading.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/threads.md"
     ],
@@ -8992,6 +9922,10 @@
     "currentthread": [
       "java/concurrency/threads.md"
     ],
+    "daemon": [
+      "java/concurrency/daemon-threads.md",
+      "java/concurrency/threads.md"
+    ],
     "decides": [
       "java/concurrency/threads.md"
     ],
@@ -8999,6 +9933,7 @@
       "java/concurrency/threads.md"
     ],
     "entering": [
+      "io-uring/io-uring.md",
       "java/concurrency/threads.md"
     ],
     "executing": [
@@ -9057,12 +9992,17 @@
     ],
     "lock": [
       "async-io/threads-are-evil.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/threads.md"
     ],
     "loom": [
       "java/concurrency/threads.md"
     ],
     "managed": [
+      "java/concurrency/daemon-threads.md",
+      "java/concurrency/threads.md"
+    ],
+    "managing": [
       "java/concurrency/threads.md"
     ],
     "millions": [
@@ -9070,6 +10010,7 @@
     ],
     "moves": [
       "async-io/async-vs-multithreading.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/threads.md"
     ],
     "myworker": [
@@ -9083,6 +10024,7 @@
       "java/concurrency/threads.md"
     ],
     "path": [
+      "io-uring/zero-copy.md",
       "java/concurrency/threads.md"
     ],
     "platform": [
@@ -9092,6 +10034,9 @@
       "java/concurrency/threads.md"
     ],
     "project": [
+      "java/concurrency/threads.md"
+    ],
+    "raw": [
       "java/concurrency/threads.md"
     ],
     "scalable": [
@@ -9112,6 +10057,7 @@
       "java/concurrency/threads.md"
     ],
     "servers": [
+      "io-uring/zero-copy.md",
       "java/concurrency/threads.md"
     ],
     "smallest": [
@@ -9128,6 +10074,7 @@
       "java/concurrency/threads.md"
     ],
     "support": [
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/daemon-threads.md",
       "java/concurrency/fork-join-pool.md",
       "java/concurrency/threads.md"
@@ -9183,6 +10130,8 @@
     ],
     "cannot": [
       "async-io/synchronous-io.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/parallelism.md"
     ],
     "cellular": [
@@ -9214,6 +10163,7 @@
       "java/concurrency/parallelism.md"
     ],
     "entirely": [
+      "io-uring/zero-copy.md",
       "java/concurrency/parallelism.md"
     ],
     "exists": [
@@ -9295,6 +10245,9 @@
     "operation": [
       "async-io/async-vs-multithreading.md",
       "async-io/synchronous-io.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/parallelism.md"
     ],
     "parallel": [
@@ -9382,6 +10335,7 @@
       "java/concurrency/fork-join-pool.md"
     ],
     "array": [
+      "io-uring/io-uring.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "automatic": [
@@ -9446,6 +10400,7 @@
     ],
     "efficiency": [
       "async-io/asynchronous-io.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "efficient": [
@@ -9484,6 +10439,7 @@
       "java/concurrency/fork-join-pool.md"
     ],
     "head": [
+      "io-uring/io-uring.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "http": [
@@ -9633,6 +10589,7 @@
       "java/concurrency/fork-join-pool.md"
     ],
     "tail": [
+      "io-uring/io-uring.md",
       "java/concurrency/fork-join-pool.md"
     ],
     "thief": [
@@ -9660,6 +10617,7 @@
       "java/concurrency/daemon-threads.md"
     ],
     "catch": [
+      "io-uring/shared-memory.md",
       "java/concurrency/daemon-threads.md"
     ],
     "cleaning": [
@@ -9672,9 +10630,7 @@
       "java/concurrency/daemon-threads.md"
     ],
     "corrupted": [
-      "java/concurrency/daemon-threads.md"
-    ],
-    "daemon": [
+      "io-uring/shared-memory.md",
       "java/concurrency/daemon-threads.md"
     ],
     "daemons": [
@@ -9682,6 +10638,7 @@
     ],
     "databases": [
       "async-io/async-vs-multithreading.md",
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md"
     ],
     "documents": [
@@ -9691,6 +10648,7 @@
       "java/concurrency/daemon-threads.md"
     ],
     "entries": [
+      "io-uring/io-uring.md",
       "java/concurrency/daemon-threads.md"
     ],
     "exit": [
@@ -9706,6 +10664,9 @@
       "java/concurrency/daemon-threads.md"
     ],
     "finishing": [
+      "java/concurrency/daemon-threads.md"
+    ],
+    "fundamentals": [
       "java/concurrency/daemon-threads.md"
     ],
     "garbage": [
@@ -9788,6 +10749,8 @@
       "java/concurrency/daemon-threads.md"
     ],
     "true": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/concurrency.md",
       "java/concurrency/daemon-threads.md"
     ],
@@ -9845,12 +10808,14 @@
       "java/concurrency/concurrency.md"
     ],
     "faster": [
+      "io-uring/proactor-vs-reactor.md",
       "java/concurrency/concurrency.md"
     ],
     "freeze": [
       "java/concurrency/concurrency.md"
     ],
     "gives": [
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md"
     ],
     "illusion": [
@@ -9860,6 +10825,8 @@
       "java/concurrency/concurrency.md"
     ],
     "isn": [
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md"
     ],
     "lets": [
@@ -9875,6 +10842,8 @@
       "java/concurrency/concurrency.md"
     ],
     "mapped": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
       "java/concurrency/concurrency.md"
     ],
     "milk": [
@@ -9906,6 +10875,7 @@
       "java/concurrency/concurrency.md"
     ],
     "quickly": [
+      "io-uring/zero-copy.md",
       "java/concurrency/concurrency.md"
     ],
     "rapidly": [
@@ -9956,13 +10926,656 @@
     "window": [
       "java/concurrency/concurrency.md"
     ],
-    "alternative": [
+    "accept": [
+      "io-uring/io-uring.md"
+    ],
+    "adds": [
+      "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md"
+    ],
+    "aggressive": [
+      "io-uring/io-uring.md"
+    ],
+    "allocates": [
+      "io-uring/io-uring.md"
+    ],
+    "async": [
+      "async-io/async-vs-multithreading.md",
       "async-io/asynchronous-io.md",
-      "async-io/synchronous-io.md",
-      "async-io/threads-are-evil.md"
+      "async-io/multithreading.md",
+      "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
     ],
     "asynchronous": [
       "async-io/async-vs-multithreading.md",
+      "async-io/asynchronous-io.md",
+      "async-io/synchronous-io.md",
+      "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "asynchronously": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "avoiding": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "axboe": [
+      "io-uring/io-uring.md"
+    ],
+    "batching": [
+      "io-uring/io-uring.md"
+    ],
+    "border": [
+      "io-uring/io-uring.md"
+    ],
+    "bottlenecks": [
+      "io-uring/io-uring.md"
+    ],
+    "buffers": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "bytes": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "cancelled": [
+      "io-uring/io-uring.md"
+    ],
+    "capabilities": [
+      "io-uring/io-uring.md"
+    ],
+    "circular": [
+      "io-uring/io-uring.md"
+    ],
+    "completed": [
+      "io-uring/io-uring.md"
+    ],
+    "completions": [
+      "io-uring/io-uring.md"
+    ],
+    "connect": [
+      "io-uring/io-uring.md"
+    ],
+    "continuously": [
+      "io-uring/io-uring.md"
+    ],
+    "copy": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "copying": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "cqe": [
+      "io-uring/io-uring.md"
+    ],
+    "cqes": [
+      "io-uring/io-uring.md"
+    ],
+    "crossings": [
+      "io-uring/io-uring.md"
+    ],
+    "ctx": [
+      "io-uring/io-uring.md"
+    ],
+    "dedicated": [
+      "io-uring/io-uring.md"
+    ],
+    "dma": [
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
+    ],
+    "empty": [
+      "io-uring/io-uring.md"
+    ],
+    "enables": [
+      "io-uring/io-uring.md"
+    ],
+    "enter": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "entry": [
+      "io-uring/io-uring.md"
+    ],
+    "epoll": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "equivalent": [
+      "io-uring/io-uring.md"
+    ],
+    "etc": [
+      "io-uring/io-uring.md"
+    ],
+    "evolved": [
+      "io-uring/io-uring.md"
+    ],
+    "fallocate": [
+      "io-uring/io-uring.md"
+    ],
+    "field": [
+      "io-uring/io-uring.md"
+    ],
+    "fill": [
+      "io-uring/io-uring.md"
+    ],
+    "flush": [
+      "io-uring/io-uring.md"
+    ],
+    "fprintf": [
+      "io-uring/io-uring.md"
+    ],
+    "fsync": [
+      "io-uring/io-uring.md"
+    ],
+    "helper": [
+      "io-uring/io-uring.md"
+    ],
+    "holds": [
+      "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md"
+    ],
+    "identify": [
+      "io-uring/io-uring.md"
+    ],
+    "indices": [
+      "io-uring/io-uring.md"
+    ],
+    "init": [
+      "io-uring/io-uring.md"
+    ],
+    "initialize": [
+      "io-uring/io-uring.md"
+    ],
+    "input": [
+      "io-uring/io-uring.md"
+    ],
+    "introduced": [
+      "io-uring/io-uring.md"
+    ],
+    "iops": [
+      "io-uring/io-uring.md"
+    ],
+    "ioring": [
+      "io-uring/io-uring.md"
+    ],
+    "ipc": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "issues": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
+    ],
+    "jens": [
+      "io-uring/io-uring.md"
+    ],
+    "library": [
+      "io-uring/io-uring.md"
+    ],
+    "liburing": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "locks": [
+      "async-io/async-vs-multithreading.md",
+      "async-io/multithreading.md",
+      "async-io/threads-are-evil.md",
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
+    ],
+    "making": [
+      "async-io/synchronous-io.md",
+      "io-uring/io-uring.md"
+    ],
+    "mark": [
+      "io-uring/io-uring.md"
+    ],
+    "mmap": [
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
+    ],
+    "mode": [
+      "io-uring/io-uring.md"
+    ],
+    "offset": [
+      "io-uring/io-uring.md"
+    ],
+    "offsets": [
+      "io-uring/io-uring.md"
+    ],
+    "opcode": [
+      "io-uring/io-uring.md"
+    ],
+    "pages": [
+      "io-uring/io-uring.md",
+      "io-uring/zero-copy.md"
+    ],
+    "pinning": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "pointing": [
+      "io-uring/io-uring.md"
+    ],
+    "polling": [
+      "io-uring/io-uring.md"
+    ],
+    "polls": [
+      "io-uring/io-uring.md"
+    ],
+    "pread": [
+      "io-uring/io-uring.md"
+    ],
+    "prep": [
+      "io-uring/io-uring.md"
+    ],
+    "prepare": [
+      "io-uring/io-uring.md"
+    ],
+    "previous": [
+      "io-uring/io-uring.md"
+    ],
+    "proactor": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "pushing": [
+      "io-uring/io-uring.md"
+    ],
+    "reactor": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "recv": [
+      "io-uring/io-uring.md"
+    ],
+    "reduction": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "region": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
+    ],
+    "register": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md"
+    ],
+    "registration": [
+      "io-uring/io-uring.md"
+    ],
+    "res": [
+      "io-uring/io-uring.md"
+    ],
+    "ring": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md"
+    ],
+    "rings": [
+      "io-uring/io-uring.md"
+    ],
+    "seen": [
+      "io-uring/io-uring.md"
+    ],
+    "sees": [
+      "io-uring/io-uring.md"
+    ],
+    "setup": [
+      "io-uring/io-uring.md"
+    ],
+    "sides": [
+      "io-uring/io-uring.md"
+    ],
+    "sqe": [
+      "io-uring/io-uring.md"
+    ],
+    "sqes": [
+      "io-uring/io-uring.md"
+    ],
+    "sqpoll": [
+      "io-uring/io-uring.md"
+    ],
+    "stderr": [
+      "io-uring/io-uring.md"
+    ],
+    "strerror": [
+      "io-uring/io-uring.md"
+    ],
+    "struct": [
+      "io-uring/io-uring.md"
+    ],
+    "suitable": [
+      "io-uring/io-uring.md"
+    ],
+    "syscall": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "syscalls": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md"
+    ],
+    "tag": [
+      "io-uring/io-uring.md"
+    ],
+    "timeouts": [
+      "io-uring/io-uring.md"
+    ],
+    "timers": [
+      "io-uring/io-uring.md"
+    ],
+    "traditional": [
+      "io-uring/io-uring.md"
+    ],
+    "ultra": [
+      "io-uring/io-uring.md"
+    ],
+    "unmap": [
+      "io-uring/io-uring.md"
+    ],
+    "updates": [
+      "io-uring/io-uring.md"
+    ],
+    "uring": [
+      "io-uring/io-uring.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "zero": [
+      "io-uring/io-uring.md",
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "aspect": [
+      "async-io/async-vs-multithreading.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "barriers": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "batches": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "chunk": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "comparison": [
+      "async-io/async-vs-multithreading.md",
+      "async-io/asynchronous-io.md",
+      "async-io/multithreading.md",
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/shared-memory.md"
+    ],
+    "concepts": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "event": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "iocp": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "kqueue": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "loops": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "management": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "moderate": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "nginx": [
+      "io-uring/proactor-vs-reactor.md",
+      "io-uring/zero-copy.md"
+    ],
+    "node": [
+      "async-io/asynchronous-io.md",
+      "async-io/threads-are-evil.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "notifies": [
+      "async-io/async-vs-multithreading.md",
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "pin": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "readiness": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "reported": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "reuse": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "submits": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "watch": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "windows": [
+      "io-uring/proactor-vs-reactor.md"
+    ],
+    "allow": [
+      "io-uring/shared-memory.md"
+    ],
+    "appears": [
+      "io-uring/shared-memory.md"
+    ],
+    "attachment": [
+      "io-uring/shared-memory.md"
+    ],
+    "believes": [
+      "io-uring/shared-memory.md"
+    ],
+    "communication": [
+      "async-io/multithreading.md",
+      "io-uring/shared-memory.md"
+    ],
+    "conditions": [
+      "async-io/async-vs-multithreading.md",
+      "async-io/multithreading.md",
+      "async-io/threads-are-evil.md",
+      "io-uring/shared-memory.md"
+    ],
+    "coordinate": [
+      "io-uring/shared-memory.md"
+    ],
+    "coordination": [
+      "io-uring/shared-memory.md"
+    ],
+    "crashes": [
+      "io-uring/shared-memory.md"
+    ],
+    "doc": [
+      "io-uring/shared-memory.md"
+    ],
+    "editing": [
+      "io-uring/shared-memory.md"
+    ],
+    "emailing": [
+      "io-uring/shared-memory.md"
+    ],
+    "existence": [
+      "io-uring/shared-memory.md"
+    ],
+    "fake": [
+      "io-uring/shared-memory.md"
+    ],
+    "fastest": [
+      "io-uring/shared-memory.md"
+    ],
+    "forth": [
+      "io-uring/shared-memory.md"
+    ],
+    "frame": [
+      "io-uring/shared-memory.md"
+    ],
+    "goes": [
+      "io-uring/shared-memory.md"
+    ],
+    "google": [
+      "io-uring/shared-memory.md"
+    ],
+    "inter": [
+      "io-uring/shared-memory.md"
+    ],
+    "manual": [
+      "io-uring/shared-memory.md"
+    ],
+    "maps": [
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "matters": [
+      "io-uring/shared-memory.md"
+    ],
+    "microseconds": [
+      "io-uring/shared-memory.md"
+    ],
+    "moved": [
+      "io-uring/shared-memory.md"
+    ],
+    "optimization": [
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "pipes": [
+      "io-uring/shared-memory.md"
+    ],
+    "puts": [
+      "io-uring/shared-memory.md"
+    ],
+    "race": [
+      "async-io/async-vs-multithreading.md",
+      "async-io/multithreading.md",
+      "async-io/threads-are-evil.md",
+      "io-uring/shared-memory.md"
+    ],
+    "redirects": [
+      "io-uring/shared-memory.md"
+    ],
+    "regions": [
+      "io-uring/shared-memory.md"
+    ],
+    "risky": [
+      "io-uring/shared-memory.md"
+    ],
+    "semaphores": [
+      "io-uring/shared-memory.md"
+    ],
+    "slow": [
+      "async-io/async-vs-multithreading.md",
+      "async-io/asynchronous-io.md",
+      "io-uring/shared-memory.md"
+    ],
+    "sockets": [
+      "io-uring/shared-memory.md"
+    ],
+    "spot": [
+      "io-uring/shared-memory.md"
+    ],
+    "touches": [
+      "io-uring/shared-memory.md"
+    ],
+    "transferring": [
+      "io-uring/shared-memory.md"
+    ],
+    "video": [
+      "io-uring/shared-memory.md",
+      "io-uring/zero-copy.md"
+    ],
+    "viewers": [
+      "io-uring/shared-memory.md"
+    ],
+    "accesses": [
+      "io-uring/zero-copy.md"
+    ],
+    "card": [
+      "io-uring/zero-copy.md"
+    ],
+    "client": [
+      "async-io/multithreading.md",
+      "io-uring/zero-copy.md"
+    ],
+    "copies": [
+      "io-uring/zero-copy.md"
+    ],
+    "dumb": [
+      "io-uring/zero-copy.md"
+    ],
+    "enters": [
+      "io-uring/zero-copy.md"
+    ],
+    "famous": [
+      "async-io/threads-are-evil.md",
+      "io-uring/zero-copy.md"
+    ],
+    "netflix": [
+      "io-uring/zero-copy.md"
+    ],
+    "owned": [
+      "io-uring/zero-copy.md"
+    ],
+    "registered": [
+      "io-uring/zero-copy.md"
+    ],
+    "sendfile": [
+      "io-uring/zero-copy.md"
+    ],
+    "sending": [
+      "io-uring/zero-copy.md"
+    ],
+    "splice": [
+      "io-uring/zero-copy.md"
+    ],
+    "streaming": [
+      "io-uring/zero-copy.md"
+    ],
+    "summary": [
+      "io-uring/zero-copy.md"
+    ],
+    "supports": [
+      "io-uring/zero-copy.md"
+    ],
+    "touch": [
+      "io-uring/zero-copy.md"
+    ],
+    "unmapping": [
+      "io-uring/zero-copy.md"
+    ],
+    "variable": [
+      "async-io/async-vs-multithreading.md",
+      "io-uring/zero-copy.md"
+    ],
+    "waste": [
+      "io-uring/zero-copy.md"
+    ],
+    "wasteful": [
+      "io-uring/zero-copy.md"
+    ],
+    "alternative": [
       "async-io/asynchronous-io.md",
       "async-io/synchronous-io.md",
       "async-io/threads-are-evil.md"
@@ -9977,9 +11590,6 @@
     ],
     "initiates": [
       "async-io/asynchronous-io.md",
-      "async-io/synchronous-io.md"
-    ],
-    "making": [
       "async-io/synchronous-io.md"
     ],
     "matches": [
@@ -9997,30 +11607,8 @@
       "async-io/asynchronous-io.md",
       "async-io/multithreading.md"
     ],
-    "async": [
-      "async-io/async-vs-multithreading.md",
-      "async-io/asynchronous-io.md",
-      "async-io/multithreading.md",
-      "async-io/threads-are-evil.md"
-    ],
     "challenges": [
       "async-io/multithreading.md"
-    ],
-    "client": [
-      "async-io/multithreading.md"
-    ],
-    "communication": [
-      "async-io/multithreading.md"
-    ],
-    "comparison": [
-      "async-io/async-vs-multithreading.md",
-      "async-io/asynchronous-io.md",
-      "async-io/multithreading.md"
-    ],
-    "conditions": [
-      "async-io/async-vs-multithreading.md",
-      "async-io/multithreading.md",
-      "async-io/threads-are-evil.md"
     ],
     "evil": [
       "async-io/async-vs-multithreading.md",
@@ -10030,11 +11618,6 @@
     "introduces": [
       "async-io/multithreading.md"
     ],
-    "locks": [
-      "async-io/async-vs-multithreading.md",
-      "async-io/multithreading.md",
-      "async-io/threads-are-evil.md"
-    ],
     "multithreading": [
       "async-io/async-vs-multithreading.md",
       "async-io/asynchronous-io.md",
@@ -10042,11 +11625,6 @@
       "async-io/threads-are-evil.md"
     ],
     "mutexes": [
-      "async-io/async-vs-multithreading.md",
-      "async-io/multithreading.md",
-      "async-io/threads-are-evil.md"
-    ],
-    "race": [
       "async-io/async-vs-multithreading.md",
       "async-io/multithreading.md",
       "async-io/threads-are-evil.md"
@@ -10071,9 +11649,6 @@
       "async-io/threads-are-evil.md"
     ],
     "addresses": [
-      "async-io/threads-are-evil.md"
-    ],
-    "adds": [
       "async-io/threads-are-evil.md"
     ],
     "almost": [
@@ -10141,9 +11716,6 @@
     "erlang": [
       "async-io/threads-are-evil.md"
     ],
-    "famous": [
-      "async-io/threads-are-evil.md"
-    ],
     "freezes": [
       "async-io/threads-are-evil.md"
     ],
@@ -10162,9 +11734,6 @@
     "highlighting": [
       "async-io/threads-are-evil.md"
     ],
-    "holds": [
-      "async-io/threads-are-evil.md"
-    ],
     "increment": [
       "async-io/threads-are-evil.md"
     ],
@@ -10178,10 +11747,6 @@
       "async-io/threads-are-evil.md"
     ],
     "neither": [
-      "async-io/threads-are-evil.md"
-    ],
-    "node": [
-      "async-io/asynchronous-io.md",
       "async-io/threads-are-evil.md"
     ],
     "notoriously": [
@@ -10247,9 +11812,6 @@
     "went": [
       "async-io/threads-are-evil.md"
     ],
-    "aspect": [
-      "async-io/async-vs-multithreading.md"
-    ],
     "callback": [
       "async-io/async-vs-multithreading.md",
       "async-io/asynchronous-io.md"
@@ -10266,17 +11828,7 @@
     "given": [
       "async-io/async-vs-multithreading.md"
     ],
-    "notifies": [
-      "async-io/async-vs-multithreading.md"
-    ],
     "promise": [
-      "async-io/async-vs-multithreading.md"
-    ],
-    "slow": [
-      "async-io/async-vs-multithreading.md",
-      "async-io/asynchronous-io.md"
-    ],
-    "variable": [
       "async-io/async-vs-multithreading.md"
     ],
     "associated": [

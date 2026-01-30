@@ -65,7 +65,17 @@ than creating a duplicate.
 code samples, depth and nuance
 
 **Format:** Fix inconsistencies, remove trailing whitespace, consistent heading
-hierarchy, aligned tables, ~80 char lines
+hierarchy, ~80 char lines
+
+**Tables:** Pad all cells so columns align. Every cell in a column (including
+header and separator) must have the same width:
+
+```markdown
+| Short | Longer header |
+| ----- | ------------- |
+| A     | Description   |
+| Abc   | More text     |
+```
 
 ### 6. Note Format
 

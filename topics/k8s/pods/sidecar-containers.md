@@ -5,7 +5,8 @@ issues with startup and shutdown ordering for helper containers.
 
 ## Definition
 
-A native sidecar is defined in `initContainers` with `restartPolicy: Always`:
+A native sidecar is an init container with a container-level `restartPolicy: Always`.
+This attribute only works on init containers and only accepts the value `Always`:
 
 ```yaml
 apiVersion: v1
@@ -19,6 +20,9 @@ spec:
       restartPolicy: Always  # Makes it a native sidecar
       ports:
         - containerPort: 8080
+      readinessProbe: # Probes supported (unlike regular init containers)
+        tcpSocket:
+          port: 8080
   containers:
     - name: main-app
       image: my-app:v1
@@ -71,3 +75,8 @@ Before native sidecars, managing helper containers was difficult:
 | Ready state    | Doesn't block others            | Blocks until ready       |
 | Shutdown order | Random/Parallel                 | After main app exits     |
 | Jobs           | Prevents Job from finishing     | Allows Job to finish     |
+| Probes         | All supported                   | All supported            |
+
+Unlike traditional init containers (which don't support probes), native sidecars
+support startup, readiness, and liveness probes. This allows Kubernetes to wait
+for a sidecar proxy to be fully ready before starting the main application.

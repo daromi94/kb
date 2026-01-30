@@ -23,7 +23,15 @@ topics/
 
 ## Workflow
 
-### 1. Gather Input
+### 1. Check Existing Notes
+
+Before gathering input, check if the topic already exists:
+
+- List existing notes in `topics/<topic>/`
+- Read the `_index.md` to understand what's already covered
+- Keep this context when identifying notes from new content
+
+### 2. Gather Input
 
 Ask how to provide content:
 
@@ -31,7 +39,7 @@ Ask how to provide content:
 2. **Paste** - Content pasted directly
 3. **Book** - Ask for book title, chapter, or section
 
-### 2. Identify Notes
+### 3. Identify Notes
 
 Analyze the content and identify distinct pieces of knowledge. Each becomes its own note file. A note can be:
 
@@ -44,7 +52,13 @@ Analyze the content and identify distinct pieces of knowledge. Each becomes its 
 
 The key: each note should be **self-contained** and cover **one thing well**.
 
-### 3. Process Each Note
+**When a matching note exists:** If a piece of knowledge maps to an existing
+note (same concept, just more detail or a different angle), update the existing
+note rather than creating a new one. Read the existing note first, then merge
+the new content into it—adding sections, examples, or details that weren't
+there before.
+
+### 4. Process Each Note
 
 **Remove:**
 - Self-references ("In this article...", "As mentioned...")
@@ -65,7 +79,7 @@ The key: each note should be **self-contained** and cover **one thing well**.
 - Ensure consistent heading hierarchy
 - Align tables properly
 
-### 4. Note Format
+### 5. Note Format
 
 ```markdown
 # Note Title
@@ -110,7 +124,7 @@ Continue as needed. The note should feel complete.
 - Language on code blocks
 - ~80 char soft limit for terminal readability
 
-### 5. Index File
+### 6. Index File
 
 `topics/<topic>/_index.md` for each topic:
 
@@ -132,13 +146,14 @@ Brief description.
 Include `## Subtopics` only when nested subtopics exist. Include `## Notes`
 only when there are direct notes in the folder.
 
-### 6. Save and Confirm
+### 7. Save and Confirm
 
 - Create `topics/<topic>/` folder if needed
-- Write note files to `topics/<topic>/<slug>.md` (kebab-case names)
-- Update `topics/<topic>/_index.md`
+- Write new note files to `topics/<topic>/<slug>.md` (kebab-case names)
+- Update existing notes when merging new content
+- Update `topics/<topic>/_index.md` (add new notes only)
 - For nested subtopics, update parent `_index.md` with subtopic link
-- Report what was created with brief summaries
+- Report what was created or updated with brief summaries
 
 ## Filename Convention
 
@@ -176,4 +191,17 @@ Created topics/java/concurrency/:
   executor-service.md - Thread pool abstraction
   _index.md - Updated
 Updated topics/java/_index.md - Added subtopic link
+```
+
+Updating existing notes:
+
+```
+User: /kb async-io
+[pastes content about event loops and blocking]
+
+Updated topics/async-io/:
+  asynchronous-io.md - Added event loop section
+Created topics/async-io/:
+  blocking.md - When sync I/O makes sense
+  _index.md - Added blocking.md
 ```

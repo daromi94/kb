@@ -59,8 +59,8 @@ code samples, depth and nuance
 **Format:** Fix inconsistencies, remove trailing whitespace, consistent heading
 hierarchy, ~80 char lines
 
-**Tables:** Pad all cells so columns align. Separator dashes must match header
-width exactly (not longer):
+**Tables:** Pad all cells so columns align. Ensure space before every `|`.
+Separator dashes must match header width exactly (not longer):
 
 ```markdown
 | Short | Longer header |
@@ -136,9 +136,14 @@ Include Subtopics/Notes sections only when entries exist.
 
 ### 9. Fixing Issues
 
-When fixing formatting across multiple files, edit each file individually
-rather than using batch scripts (which may break ASCII diagrams or other
-structured content).
+When fixing formatting across multiple files, edit files sequentially (not in
+parallel) to avoid file-modified conflicts. Avoid batch scripts which may break
+ASCII diagrams or other structured content.
+
+### 10. Commits
+
+When asked to commit, use conventional commit format with `docs(kb):` prefix.
+One-line message, no co-author.
 
 ## Filename Convention
 

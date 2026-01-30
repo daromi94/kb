@@ -12,7 +12,3 @@ Principles and practices for writing maintainable, readable software.
 - [Shutdown surgery](shutdown-surgery.md) - Safely decommissioning legacy systems
 - [Law of Demeter](law-of-demeter.md) - Only talk to your immediate friends
 - [Tell, don't ask](tell-dont-ask.md) - Command objects, don't query their state
-
-## Sources
-
-- Codely - Clean Code course

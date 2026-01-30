@@ -1,7 +1,5 @@
 # Law of Demeter
 
-Source: Codely
-
 The Law of Demeter (LoD) is a design guideline for developing software,
 particularly object-oriented programs. It states that a unit should have only
 limited knowledge about other units: only units "closely" related to the

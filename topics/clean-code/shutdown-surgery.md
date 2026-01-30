@@ -1,7 +1,5 @@
 # Shutdown surgery
 
-Source: Codely
-
 Shutdown surgery is a specialized engineering pattern for decommissioning or
 drastically refactoring high-stakes legacy systems. It describes the process
 of systematically removing a service, module, or database while it is still

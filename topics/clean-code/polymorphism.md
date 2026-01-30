@@ -1,7 +1,5 @@
 # Polymorphism
 
-Source: Codely
-
 Polymorphism is a core principle of object-oriented programming that allows
 objects of different types to be treated as instances of a common superclass
 or interface. The word derives from Greek, meaning "many shapes."

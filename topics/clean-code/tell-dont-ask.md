@@ -1,7 +1,5 @@
 # Tell, don't ask
 
-Source: Codely
-
 "Tell, don't ask" (TDA) is a design principle that encourages developers to
 command objects to perform tasks rather than querying their internal state to
 make decisions on their behalf. It is the practical application of

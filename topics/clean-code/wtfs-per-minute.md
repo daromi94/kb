@@ -1,7 +1,5 @@
 # WTFs per minute
 
-Source: Codely
-
 The most practical measurement of code quality is not found in static analysis
 tools or cyclomatic complexity scores, but in the hallway outside a code review
 room. The **WTFs per minute** metric evaluates how often a developer's brain

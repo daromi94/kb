@@ -1,7 +1,5 @@
 # Abstraction
 
-Source: Codely
-
 Abstraction is the process of hiding underlying implementation details and
 exposing only essential features. It is a tool for "selective ignorance,"
 allowing a developer to interact with a complex system without understanding

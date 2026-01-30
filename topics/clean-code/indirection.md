@@ -1,7 +1,5 @@
 # Indirection
 
-Source: Codely
-
 Indirection is the ability to reference something using a name, identifier, or
 container instead of the value itself. In software engineering, it is the act
 of adding a layer between a requester and a provider to decouple them.

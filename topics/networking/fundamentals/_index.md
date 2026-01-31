@@ -12,3 +12,4 @@ the OSI model.
 - [OSI Model](osi-model.md) - The seven-layer communication framework
 - [Encapsulation](encapsulation.md) - How data travels through protocol layers
 - [Addressing](addressing.md) - IP vs MAC and host-to-host communication
+- [Topology](topology.md) - Physical and logical network structure

@@ -56,8 +56,8 @@ than creating a duplicate.
 **Preserve:** Core explanations, illuminating examples, tables/comparisons,
 code samples, depth and nuance
 
-**Format:** Fix inconsistencies, remove trailing whitespace, consistent heading
-hierarchy, ~80 char lines
+**Format:** Fix inconsistencies, remove trailing whitespace, no double spaces in
+prose (table padding is fine), consistent heading hierarchy, ~80 char lines
 
 **Tables:** Pad all cells so columns align. Ensure space before every `|` in
 content rows. Separator row has no spaces, just dashes filling the column width:

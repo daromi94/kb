@@ -54,7 +54,7 @@ than creating a duplicate.
 **Remove:** Self-references, filler, redundant explanations, marketing language
 
 **Preserve:** Core explanations, illuminating examples, tables/comparisons,
-code samples, depth and nuance
+code samples, LaTeX notation, depth and nuance
 
 **Format:** Fix inconsistencies, remove trailing whitespace, no double spaces in
 prose (table padding is fine), consistent heading hierarchy, ~80 char lines

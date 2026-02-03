@@ -1,6 +1,6 @@
-# Database Concepts
+# Concepts
 
-Foundational techniques and principles common across database systems.
+Foundational techniques and principles for distributed systems.
 
 ## Notes
 

@@ -154,17 +154,16 @@ One-line message, no co-author.
 ## Examples
 
 ```
-/kb clean-code + paste -> Created:
-  wtfs-per-minute.md - Code quality metric
-  abstraction.md - Managing complexity
+/kb practices/clean-code + paste -> Created:
+  shutdown-surgery.md - Decommissioning legacy systems
   _index.md - Updated
 
-/kb java/concurrency + paste -> Created:
-  topics/java/concurrency/threads.md
-  topics/java/concurrency/executor-service.md
-  Updated topics/java/_index.md with subtopic link
+/kb languages/java/concurrency + paste -> Created:
+  topics/languages/java/concurrency/threads.md
+  topics/languages/java/concurrency/executor-service.md
+  Updated topics/languages/java/_index.md with subtopic link
 
-/kb async-io + paste (with match) -> Updated:
+/kb performance/async-io + paste (with match) -> Updated:
   asynchronous-io.md - Added event loop section
   Created blocking.md - When sync I/O fits
 ```

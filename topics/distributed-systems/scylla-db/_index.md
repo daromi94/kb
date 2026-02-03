@@ -7,5 +7,4 @@ eliminates thread contention.
 ## Notes
 
 - [Shard-per-core](shard-per-core.md) - Thread-per-core architecture for linear scalability
-- [Bloom filters](bloom-filters.md) - Probabilistic data structure for fast set membership
 - [Commit log](commit-log.md) - Append-only durability mechanism for crash recovery

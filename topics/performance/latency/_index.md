@@ -1,7 +1,7 @@
 # Latency
 
 Fundamentals of latency measurement, physical constraints, and tradeoffs in
-system design. Based on Pekka Enberg's work.
+system design.
 
 ## Notes
 

@@ -28,3 +28,5 @@ resources.
 - [Synchronous I/O](synchronous-io.md) - The blocking alternative
 - [Async I/O vs multithreading](async-vs-multithreading.md) - Comparison of
   approaches
+
+Return to [Async I/O](_index.md)

@@ -69,3 +69,5 @@ utilized.
 - [Dennard scaling](dennard-scaling.md) - Why parallelism became necessary
 - [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing the
   metrics
+
+Return to [Latency](_index.md)

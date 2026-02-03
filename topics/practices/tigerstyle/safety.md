@@ -57,3 +57,5 @@ handling remains non-negotiable.
 - [Assertions](assertions.md) - Detailed assertion strategy
 - [Performance](performance.md) - How batching enables safety without cost
 - [Overview](overview.md) - Safety as the top priority
+
+Return to [TigerStyle](_index.md)

@@ -72,3 +72,5 @@ Per Doug Lea and Brian Goetz:
 | **Work distribution** | Shared global queue (centralized) | Per-thread deques + stealing         |
 | **Efficiency goal**   | High throughput of many requests  | Minimum latency for one massive task |
 | **Java usage**        | Tomcat, Netty, general APIs       | Parallel Streams engine              |
+
+Return to [Concurrency](_index.md)

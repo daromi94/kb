@@ -59,3 +59,5 @@ Use it over the standard `Executors` factory when you need to:
 - Enforce strict resource constraints (limit queue size to prevent OOM)
 - Set a specific `ThreadFactory` for custom thread names and priorities
 - Choose a bounded queue with a specific rejection policy
+
+Return to [Concurrency](_index.md)

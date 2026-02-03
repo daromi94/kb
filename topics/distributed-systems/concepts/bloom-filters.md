@@ -65,3 +65,5 @@ cached if they hit the Bloom filter a second time.
 | False negatives | Impossible—never says "no" when answer is "yes"  |
 | Deletion        | Not supported—removing a bit affects other items |
 | Space usage     | Constant—grows with item count, not item size    |
+
+Return to [Concepts](_index.md)

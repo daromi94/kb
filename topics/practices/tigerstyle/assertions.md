@@ -39,3 +39,5 @@ but do not prove correctness. Design thinking remains essential.
 
 - [Safety](safety.md) - Broader safety principles
 - [Overview](overview.md) - Why rigorous validation matters
+
+Return to [TigerStyle](_index.md)

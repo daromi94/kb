@@ -95,3 +95,5 @@ significant performance penalty compared to standard writes.
 - [Replication](replication.md) - How replicas are created and placed
 - [Query routing](query-routing.md) - How the coordinator manages requests
 - [Fault tolerance](fault-tolerance.md) - How consistency interacts with failures
+
+Return to [Cassandra](_index.md)

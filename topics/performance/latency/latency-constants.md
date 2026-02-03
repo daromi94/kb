@@ -26,3 +26,5 @@ exist.
 
 The massive jump from microseconds to milliseconds explains why distributed
 systems pay such a high latency tax compared to local operations.
+
+Return to [Latency](_index.md)

@@ -64,3 +64,5 @@ are stored together in a single wide row on the same physical node.
 - [Primary key](primary-key.md) - Partition key and clustering column design
 - [Consistent hashing](consistent-hashing.md) - The algorithm behind partitioning
 - [Data modeling tips](data-modeling-tips.md) - Avoiding hot partitions
+
+Return to [Cassandra](_index.md)

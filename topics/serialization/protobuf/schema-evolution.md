@@ -46,3 +46,5 @@ default value when the tag is absent.
 
 - [Wire format](wire-format.md) - How skip logic enables compatibility
 - [Architecture](architecture.md) - The role of the `.proto` schema
+
+Return to [Protocol Buffers](_index.md)

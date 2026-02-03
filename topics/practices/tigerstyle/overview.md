@@ -51,3 +51,5 @@ objectives, establishing sustainable progress built upon verified quality.
 - [Safety](safety.md) - Safety principles derived from NASA guidelines
 - [Performance](performance.md) - Design-phase optimization approach
 - [Naming](naming.md) - Naming conventions for clarity
+
+Return to [TigerStyle](_index.md)

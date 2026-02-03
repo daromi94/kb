@@ -61,3 +61,5 @@ where the application acts as a dumb pipe and doesn't modify the data.
 
 - [io_uring](io-uring.md) - Supports registered buffers for zero copy
 - [Shared memory](shared-memory.md) - Related IPC optimization
+
+Return to [Async I/O](_index.md)

@@ -69,3 +69,5 @@ constantly bump into each other waiting for the knife.
 
 ScyllaDB: 32 separate stations. Each has one chef, one cutting board, one set
 of ingredients. They never collide and work at maximum speed.
+
+Return to [ScyllaDB](_index.md)

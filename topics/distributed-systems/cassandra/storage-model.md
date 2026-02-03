@@ -92,3 +92,5 @@ disk index lookups.
 - [Data model](data-model.md) - Logical data structure
 - [Fault tolerance](fault-tolerance.md) - How the commit log aids recovery
 - [Data modeling tips](data-modeling-tips.md) - Avoiding tombstone buildup
+
+Return to [Cassandra](_index.md)

@@ -51,3 +51,5 @@ identical regardless of implementation language.
 
 - [Wire format](wire-format.md) - How binary encoding achieves efficiency
 - [Schema evolution](schema-evolution.md) - How compatibility is maintained
+
+Return to [Protocol Buffers](_index.md)

@@ -62,3 +62,5 @@ next instruction before the "execute" phase of the current one finishes.
 **Superscalar execution:** The CPU can execute multiple instructions (like an
 addition and a memory load) in the same clock cycle if they don't depend on each
 other.
+
+Return to [Concurrency](_index.md)

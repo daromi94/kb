@@ -74,3 +74,5 @@ spec:
 ## Related
 
 - [Deployments](deployments.md) - For applications with explicit replica counts
+
+Return to [Workloads](_index.md)

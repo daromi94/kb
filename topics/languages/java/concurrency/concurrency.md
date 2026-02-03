@@ -52,3 +52,5 @@ communicate with each other makes the code more modular. This concurrent
 structure allows the program to scale naturally: run it on a machine with 16
 cores, and the concurrent tasks can be mapped to those cores to run in parallel
 without changing the underlying logic.
+
+Return to [Concurrency](_index.md)

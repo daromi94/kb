@@ -82,3 +82,5 @@ Zero protocol overhead for backpressure.
 
 - [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
 - [UDS lifecycle](uds-lifecycle.md) - API flow for each type
+
+Return to [Unix Domain Sockets](_index.md)

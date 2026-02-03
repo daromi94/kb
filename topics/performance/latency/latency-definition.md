@@ -45,3 +45,5 @@ Without agreement on these boundaries, you cannot fix the problem.
 - [Latency constants](latency-constants.md) - Physical limits at each time scale
 - [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing speed
   from volume
+
+Return to [Latency](_index.md)

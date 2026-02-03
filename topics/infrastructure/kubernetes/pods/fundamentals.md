@@ -71,3 +71,5 @@ spec:
 | IP address | Usually unique per container   | One IP shared by all containers in the Pod |
 | Storage    | Ephemeral (lost on restart)    | Can share Volumes between containers       |
 | localhost  | Refers to the container itself | Refers to all containers in the Pod        |
+
+Return to [Pods](_index.md)

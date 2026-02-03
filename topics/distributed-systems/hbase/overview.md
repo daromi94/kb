@@ -47,3 +47,5 @@ approach with tunable eventual consistency.
 
 - [Architecture](architecture.md) - How master/slave coordination works
 - [Consistency model](consistency-model.md) - Why HBase chooses CP
+
+Return to [HBase](_index.md)

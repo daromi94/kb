@@ -104,3 +104,5 @@ If the receiver gets the packet but the application doesn't respond, check:
 
 - [OSI Model](osi-model.md) - The seven-layer framework
 - [Addressing](addressing.md) - How IP and MAC work together
+
+Return to [Networking Fundamentals](_index.md)

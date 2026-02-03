@@ -39,3 +39,5 @@ facilitates compiler optimization by:
 
 - [Safety](safety.md) - How batching enables safety without performance cost
 - [Overview](overview.md) - Performance as the second priority after safety
+
+Return to [TigerStyle](_index.md)

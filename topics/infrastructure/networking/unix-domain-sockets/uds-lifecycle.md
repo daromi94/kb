@@ -119,3 +119,5 @@ descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 - [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
 - [UDS socket types](uds-socket-types.md) - STREAM vs DGRAM vs SEQPACKET
 - [SCM_RIGHTS](scm-rights.md) - sendmsg/recvmsg for FD passing
+
+Return to [Unix Domain Sockets](_index.md)

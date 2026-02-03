@@ -83,3 +83,5 @@ trees) to compare all data across replicas and synchronize any differences.
 - [Consistency](consistency.md) - Tunable consistency levels
 - [Fault tolerance](fault-tolerance.md) - How replication enables resilience
 - [Query routing](query-routing.md) - How the coordinator works
+
+Return to [Cassandra](_index.md)

@@ -87,3 +87,5 @@ The `restartPolicy` determines how the kubelet reacts when a container exits:
 | Always    | Restart regardless of exit code (default) | Deployments, DaemonSets |
 | OnFailure | Restart only on non-zero exit             | Jobs                    |
 | Never     | Never restart                             | One-shot tasks          |
+
+Return to [Pods](_index.md)

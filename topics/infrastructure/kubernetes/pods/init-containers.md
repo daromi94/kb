@@ -71,3 +71,5 @@ Kubernetes uses the **higher of**:
 This ensures the Pod is scheduled on a node that can handle peak load. If an
 init container needs 2GB RAM for data migration, the Pod lands on a node with
 at least 2GB, even if the main app only needs 512MB.
+
+Return to [Pods](_index.md)

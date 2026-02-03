@@ -79,3 +79,5 @@ Even on `127.0.0.1`, a TCP packet traverses:
 
 - [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
 - [SCM_RIGHTS](scm-rights.md) - The feature TCP cannot replicate
+
+Return to [Unix Domain Sockets](_index.md)

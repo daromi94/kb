@@ -75,3 +75,5 @@ Useful when the Pod should exist in the API but isn't ready to be placed.
 | Pod anti-affinity  | Other Pods   | Hard/Soft  | HA (don't put all eggs in one basket) |
 | Taints/Tolerations | Nodes        | Repulsion  | Dedicated hardware, node maintenance  |
 | Topology spread    | Distribution | Balanced   | Evenly spread across zones/racks      |
+
+Return to [Pods](_index.md)

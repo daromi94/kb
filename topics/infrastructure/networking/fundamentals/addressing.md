@@ -120,3 +120,5 @@ they can't read it.
 
 - [OSI Model](osi-model.md) - The layer model for networking
 - [Encapsulation](encapsulation.md) - How addresses are added to frames/packets
+
+Return to [Networking Fundamentals](_index.md)

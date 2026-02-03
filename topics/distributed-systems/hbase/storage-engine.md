@@ -84,3 +84,5 @@ Cassandra offers pluggable compaction strategies:
 
 - [Data model](data-model.md) - Logical structure that maps to this storage
 - [Netty I/O](netty-io.md) - How writes reach HDFS efficiently
+
+Return to [HBase](_index.md)

@@ -68,3 +68,5 @@ nodes with that hardware.
 | RuntimeClass       | Sandbox selection         | Mixed-security workloads (e.g., gVisor)    |
 | HugePages          | Memory optimization       | Lower TLB misses for high-performance apps |
 | Extended resources | Hardware awareness        | Schedule onto GPUs or specialized hardware |
+
+Return to [Pods](_index.md)

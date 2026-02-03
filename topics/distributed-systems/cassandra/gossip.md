@@ -81,3 +81,5 @@ Without a central name node or master, gossip provides:
 - [Query routing](query-routing.md) - How gossip informs routing decisions
 - [Fault tolerance](fault-tolerance.md) - How failure detection enables resilience
 - [Replication](replication.md) - How hinted handoff uses gossip state
+
+Return to [Cassandra](_index.md)

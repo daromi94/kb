@@ -85,3 +85,5 @@ read repair might have missed.
 - [Replication](replication.md) - How data redundancy is configured
 - [Consistency](consistency.md) - Trade-offs between availability and consistency
 - [Gossip](gossip.md) - How failures are detected
+
+Return to [Cassandra](_index.md)

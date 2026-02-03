@@ -74,3 +74,5 @@ mounting a disk) is allowed.
 
 - [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
 - [SCM_RIGHTS](scm-rights.md) - The other UDS-only feature
+
+Return to [Unix Domain Sockets](_index.md)

@@ -81,3 +81,5 @@ On Linux, HBase can use Netty's native Epoll transport instead of Java NIO:
 
 - [Storage engine](storage-engine.md) - Where AsyncFSWAL fits in the write path
 - [Architecture](architecture.md) - RegionServer RPC handling
+
+Return to [HBase](_index.md)

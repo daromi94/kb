@@ -64,3 +64,5 @@ joins, or datasets small enough for a single relational server.
 - [Data model](data-model.md) - How data is structured
 - [Consistent hashing](consistent-hashing.md) - How the ring distributes data
 - [Replication](replication.md) - How data is copied across nodes
+
+Return to [Cassandra](_index.md)

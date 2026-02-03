@@ -91,3 +91,5 @@ more efficiently during compaction.
 - [Primary key](primary-key.md) - Partition key and clustering column design
 - [Partitioning](partitioning.md) - How data locality affects queries
 - [Storage model](storage-model.md) - Why tombstones matter
+
+Return to [Cassandra](_index.md)

@@ -79,3 +79,5 @@ Because $W/C$ ratios are hard to measure precisely:
 3. **Adjust dynamically:** If the queue is always full but CPU usage is low,
    increase thread count. If CPU is at 100% and latency is high, you've hit the
    physical limit
+
+Return to [Concurrency](_index.md)

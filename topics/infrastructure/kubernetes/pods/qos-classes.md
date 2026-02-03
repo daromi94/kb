@@ -65,3 +65,5 @@ When a node is under memory pressure, the kubelet evicts in order:
 If Pods randomly restart with `OOMKilled` status, they likely have BestEffort
 or Burstable class and the node ran out of memory. Set appropriate requests and
 limits based on actual usage to improve stability.
+
+Return to [Pods](_index.md)

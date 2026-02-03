@@ -87,3 +87,5 @@ coordinator plays back the hint to bring the node up to date.
 - [Gossip](gossip.md) - How nodes share cluster state
 - [Consistency](consistency.md) - Tunable consistency levels
 - [Replication](replication.md) - How replicas are identified
+
+Return to [Cassandra](_index.md)

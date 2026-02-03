@@ -76,3 +76,5 @@ single bytes rapidly, TCP waits briefly to batch them into one segment.
 
 - [TCP Segment](segment.md) - Actual packet structure
 - [TCP Performance](performance.md) - Nagle and TCP_NODELAY details
+
+Return to [TCP](_index.md)

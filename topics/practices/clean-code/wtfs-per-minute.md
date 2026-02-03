@@ -44,3 +44,5 @@ stack.
 
 - [Triad of maintainability](triad-of-maintainability.md) - The three layers clean code optimizes for
 - [Abstraction](../principles/abstraction.md) - Primary tool for keeping WTF count low
+
+Return to [Clean code](_index.md)

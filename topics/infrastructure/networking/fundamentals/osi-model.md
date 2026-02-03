@@ -173,3 +173,5 @@ industry standard for troubleshooting, teaching, and security analysis.
 
 - [Encapsulation](encapsulation.md) - How data travels through layers
 - [Addressing](addressing.md) - IP vs MAC and host-to-host communication
+
+Return to [Networking Fundamentals](_index.md)

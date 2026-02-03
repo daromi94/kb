@@ -103,6 +103,10 @@ Substantive content. Prose when it serves clarity.
 ## Related
 
 - [Other note](other-note.md) - How it connects
+
+---
+
+Return to [Topic](_index.md)
 ```
 
 Standards: Single blank lines between elements, sentence case headers, language

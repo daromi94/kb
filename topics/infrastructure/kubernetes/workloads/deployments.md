@@ -80,4 +80,6 @@ simultaneously, such as when holding database schema locks.
 - [ReplicaSets](replicasets.md) - How Deployments track versions via ReplicaSets
 - [StatefulSets](statefulsets.md) - For applications requiring stable identity
 
+---
+
 Return to [Workloads](_index.md)

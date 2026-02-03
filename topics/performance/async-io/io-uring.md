@@ -135,4 +135,6 @@ io_uring has evolved into a general-purpose async execution mechanism:
 - [Zero copy](zero-copy.md) - Avoiding CPU data copying
 - [Proactor vs reactor](proactor-vs-reactor.md) - io_uring vs epoll models
 
+---
+
 Return to [Async I/O](_index.md)

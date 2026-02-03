@@ -46,4 +46,6 @@ approach.
 - [Multithreading](multithreading.md) - The concurrent threads model
 - [Threads are evil](threads-are-evil.md) - Problems with multithreading
 
+---
+
 Return to [Async I/O](_index.md)

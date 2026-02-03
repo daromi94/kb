@@ -50,4 +50,6 @@ throughput.
 - [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - The pipelining
   tension
 
+---
+
 Return to [Latency](_index.md)

@@ -56,4 +56,6 @@ the **total cost of ownership**.
 - [WTFs per minute](wtfs-per-minute.md) - How to measure these qualities
 - [Abstraction](../principles/abstraction.md) - Key technique for all three layers
 
+---
+
 Return to [Clean code](_index.md)

@@ -61,4 +61,6 @@ flushes to an SSTable (the immutable on-disk storage).
 
 - [Commit log](../scylla-db/commit-log.md) - ScyllaDB's WAL implementation
 
+---
+
 Return to [Concepts](_index.md)

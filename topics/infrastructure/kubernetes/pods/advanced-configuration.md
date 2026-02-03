@@ -69,4 +69,6 @@ nodes with that hardware.
 | HugePages          | Memory optimization       | Lower TLB misses for high-performance apps |
 | Extended resources | Hardware awareness        | Schedule onto GPUs or specialized hardware |
 
+---
+
 Return to [Pods](_index.md)

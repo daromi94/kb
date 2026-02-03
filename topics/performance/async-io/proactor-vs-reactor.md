@@ -59,4 +59,6 @@ per-operation memory management overhead.
 - [io_uring](io-uring.md) - Linux proactor implementation
 - [Asynchronous I/O](asynchronous-io.md) - General async concepts
 
+---
+
 Return to [Async I/O](_index.md)

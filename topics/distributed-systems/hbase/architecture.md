@@ -62,4 +62,6 @@ coordination for individual operations.
 - [Consistency model](consistency-model.md) - How single-owner enables CP
 - [Storage engine](storage-engine.md) - How data flows through the system
 
+---
+
 Return to [HBase](_index.md)

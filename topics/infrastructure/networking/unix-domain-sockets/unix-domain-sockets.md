@@ -49,4 +49,6 @@ connection.
 - [UDS lifecycle](uds-lifecycle.md) - API calls for server and client
 - [SCM_RIGHTS](scm-rights.md) - Passing file descriptors
 
+---
+
 Return to [Unix Domain Sockets](_index.md)

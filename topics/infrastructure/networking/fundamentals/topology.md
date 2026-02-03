@@ -100,4 +100,6 @@ logic (BGP, OSPF) to determine paths.
 | Full Mesh      | Critical infrastructure | Highest                | Very Low    |
 | Partial Mesh   | Internet / WAN          | High                   | High        |
 
+---
+
 Return to [Networking Fundamentals](_index.md)

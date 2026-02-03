@@ -86,4 +86,6 @@ read repair might have missed.
 - [Consistency](consistency.md) - Trade-offs between availability and consistency
 - [Gossip](gossip.md) - How failures are detected
 
+---
+
 Return to [Cassandra](_index.md)

@@ -65,4 +65,6 @@ simply lost.
 - [Threads](threads.md) - Thread fundamentals and lifecycle
 - [Executor service](executor-service.md) - Managed thread pools with graceful shutdown
 
+---
+
 Return to [Concurrency](_index.md)

@@ -70,4 +70,6 @@ utilized.
 - [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing the
   metrics
 
+---
+
 Return to [Latency](_index.md)

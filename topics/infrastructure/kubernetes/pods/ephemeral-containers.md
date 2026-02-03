@@ -62,4 +62,6 @@ Ephemeral containers bypass the minimalist security of distroless images.
 Access to the `pods/ephemeralcontainers` subresource should be strictly
 controlled via RBAC, granted only to trusted administrators.
 
+---
+
 Return to [Pods](_index.md)

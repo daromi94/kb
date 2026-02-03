@@ -53,4 +53,6 @@ practical.
 - [Overview](overview.md) - Developer experience as a core priority
 - [Safety](safety.md) - How naming clarity prevents bugs
 
+---
+
 Return to [TigerStyle](_index.md)

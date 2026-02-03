@@ -73,4 +73,6 @@ Per Doug Lea and Brian Goetz:
 | **Efficiency goal**   | High throughput of many requests  | Minimum latency for one massive task |
 | **Java usage**        | Tomcat, Netty, general APIs       | Parallel Streams engine              |
 
+---
+
 Return to [Concurrency](_index.md)

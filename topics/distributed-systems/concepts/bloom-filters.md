@@ -66,4 +66,6 @@ cached if they hit the Bloom filter a second time.
 | Deletion        | Not supported—removing a bit affects other items |
 | Space usage     | Constant—grows with item count, not item size    |
 
+---
+
 Return to [Concepts](_index.md)

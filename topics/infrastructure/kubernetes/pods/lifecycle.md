@@ -88,4 +88,6 @@ The `restartPolicy` determines how the kubelet reacts when a container exits:
 | OnFailure | Restart only on non-zero exit             | Jobs                    |
 | Never     | Never restart                             | One-shot tasks          |
 
+---
+
 Return to [Pods](_index.md)

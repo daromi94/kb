@@ -76,4 +76,6 @@ Completed Jobs and their Pods are not deleted automatically—they remain in
 
 - [Deployments](deployments.md) - For continuously running applications
 
+---
+
 Return to [Workloads](_index.md)

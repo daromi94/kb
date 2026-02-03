@@ -46,4 +46,6 @@ Without agreement on these boundaries, you cannot fix the problem.
 - [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing speed
   from volume
 
+---
+
 Return to [Latency](_index.md)

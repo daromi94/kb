@@ -61,4 +61,6 @@ with parsing speed.
 - [Architecture](architecture.md) - The four-layer component model
 - [Schema evolution](schema-evolution.md) - How skip logic enables compatibility
 
+---
+
 Return to [Protocol Buffers](_index.md)

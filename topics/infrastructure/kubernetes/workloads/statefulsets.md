@@ -60,4 +60,6 @@ fails its health check.
 
 - [Deployments](deployments.md) - For stateless applications
 
+---
+
 Return to [Workloads](_index.md)

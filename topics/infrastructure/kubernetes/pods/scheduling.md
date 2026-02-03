@@ -76,4 +76,6 @@ Useful when the Pod should exist in the API but isn't ready to be placed.
 | Taints/Tolerations | Nodes        | Repulsion  | Dedicated hardware, node maintenance  |
 | Topology spread    | Distribution | Balanced   | Evenly spread across zones/racks      |
 
+---
+
 Return to [Pods](_index.md)

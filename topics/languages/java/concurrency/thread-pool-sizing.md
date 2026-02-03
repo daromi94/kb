@@ -80,4 +80,6 @@ Because $W/C$ ratios are hard to measure precisely:
    increase thread count. If CPU is at 100% and latency is high, you've hit the
    physical limit
 
+---
+
 Return to [Concurrency](_index.md)

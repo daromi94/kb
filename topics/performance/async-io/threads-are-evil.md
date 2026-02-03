@@ -71,4 +71,6 @@ Modern technologies avoid threads for application logic:
 - [Multithreading](multithreading.md) - The model this critique addresses
 - [Asynchronous I/O](asynchronous-io.md) - A safer alternative for I/O tasks
 
+---
+
 Return to [Async I/O](_index.md)

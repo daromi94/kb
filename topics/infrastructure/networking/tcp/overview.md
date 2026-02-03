@@ -36,4 +36,6 @@ for real-time applications where occasional loss is acceptable.
 - [TCP Segment](segment.md) - Header structure details
 - [TCP Streams](streams.md) - Stream semantics and framing
 
+---
+
 Return to [TCP](_index.md)

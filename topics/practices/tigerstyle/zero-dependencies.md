@@ -33,4 +33,6 @@ self-contained code provides stronger guarantees than external dependencies.
 - [Overview](overview.md) - Philosophy of sustainable design
 - [Safety](safety.md) - How dependencies violate safety principles
 
+---
+
 Return to [TigerStyle](_index.md)

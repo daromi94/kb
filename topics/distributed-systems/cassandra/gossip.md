@@ -82,4 +82,6 @@ Without a central name node or master, gossip provides:
 - [Fault tolerance](fault-tolerance.md) - How failure detection enables resilience
 - [Replication](replication.md) - How hinted handoff uses gossip state
 
+---
+
 Return to [Cassandra](_index.md)

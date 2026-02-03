@@ -69,4 +69,6 @@ overwhelmed.
 - [Replication](replication.md) - How data is copied after placement
 - [Fault tolerance](fault-tolerance.md) - How vnodes aid recovery
 
+---
+
 Return to [Cassandra](_index.md)

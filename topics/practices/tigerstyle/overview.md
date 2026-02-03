@@ -52,4 +52,6 @@ objectives, establishing sustainable progress built upon verified quality.
 - [Performance](performance.md) - Design-phase optimization approach
 - [Naming](naming.md) - Naming conventions for clarity
 
+---
+
 Return to [TigerStyle](_index.md)

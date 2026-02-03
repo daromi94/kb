@@ -92,4 +92,6 @@ more efficiently during compaction.
 - [Partitioning](partitioning.md) - How data locality affects queries
 - [Storage model](storage-model.md) - Why tombstones matter
 
+---
+
 Return to [Cassandra](_index.md)

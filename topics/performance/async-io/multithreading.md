@@ -27,4 +27,6 @@ high-speed data sharing between tasks are required.
 - [Async I/O vs multithreading](async-vs-multithreading.md) - Comparison of
   approaches
 
+---
+
 Return to [Async I/O](_index.md)

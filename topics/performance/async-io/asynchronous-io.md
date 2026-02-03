@@ -29,4 +29,6 @@ resources.
 - [Async I/O vs multithreading](async-vs-multithreading.md) - Comparison of
   approaches
 
+---
+
 Return to [Async I/O](_index.md)

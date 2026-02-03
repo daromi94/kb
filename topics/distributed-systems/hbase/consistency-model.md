@@ -77,4 +77,6 @@ allowing concurrent modifications.
 
 - [Architecture](architecture.md) - How master/slave enables this model
 
+---
+
 Return to [HBase](_index.md)

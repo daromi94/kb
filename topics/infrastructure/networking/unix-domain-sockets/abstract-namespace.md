@@ -80,4 +80,6 @@ process can connect if it knows the name. Use `SO_PEERCRED` for access control.
 - [UDS lifecycle](uds-lifecycle.md) - The unlink/bind pattern
 - [SO_PEERCRED](so-peercred.md) - Authentication for abstract sockets
 
+---
+
 Return to [Unix Domain Sockets](_index.md)

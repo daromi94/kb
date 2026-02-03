@@ -73,4 +73,6 @@ The `dnsPolicy` field governs how a Pod resolves hostnames:
 Kubernetes automatically manages `/etc/hosts` inside each container, mapping
 the Pod's own IP to its hostname. The application always knows its own identity.
 
+---
+
 Return to [Pods](_index.md)

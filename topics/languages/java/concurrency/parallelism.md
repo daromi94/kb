@@ -63,4 +63,6 @@ next instruction before the "execute" phase of the current one finishes.
 addition and a memory load) in the same clock cycle if they don't depend on each
 other.
 
+---
+
 Return to [Concurrency](_index.md)

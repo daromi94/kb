@@ -20,4 +20,6 @@ flow matches the order of code on the page.
 
 - [Asynchronous I/O](asynchronous-io.md) - The non-blocking alternative
 
+---
+
 Return to [Async I/O](_index.md)

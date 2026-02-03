@@ -88,4 +88,6 @@ Any file descriptor:
 - [SO_PEERCRED](so-peercred.md) - The other UDS-only feature
 - [UDS lifecycle](uds-lifecycle.md) - Using sendmsg/recvmsg
 
+---
+
 Return to [Unix Domain Sockets](_index.md)

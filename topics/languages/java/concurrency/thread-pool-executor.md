@@ -60,4 +60,6 @@ Use it over the standard `Executors` factory when you need to:
 - Set a specific `ThreadFactory` for custom thread names and priorities
 - Choose a bounded queue with a specific rejection policy
 
+---
+
 Return to [Concurrency](_index.md)

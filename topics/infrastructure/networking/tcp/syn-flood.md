@@ -65,4 +65,6 @@ sysctl net.ipv4.tcp_max_syn_backlog
 - [Connection Lifecycle](connection-lifecycle.md) - The three-way handshake
 - [TCP State Machine](state-machine.md) - SYN_RCVD state
 
+---
+
 Return to [TCP](_index.md)

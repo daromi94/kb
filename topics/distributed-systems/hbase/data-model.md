@@ -58,4 +58,6 @@ Each row only stores the columns it actually has values for.
 
 - [Storage engine](storage-engine.md) - How this model maps to physical storage
 
+---
+
 Return to [HBase](_index.md)

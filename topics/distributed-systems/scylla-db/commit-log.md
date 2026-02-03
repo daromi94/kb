@@ -80,4 +80,6 @@ The commit log is a temporary buffer:
 | Persistence | Temporary—deleted once flushed to SSTables       |
 | ScyllaDB    | Recycled segments avoid file allocation overhead |
 
+---
+
 Return to [ScyllaDB](_index.md)

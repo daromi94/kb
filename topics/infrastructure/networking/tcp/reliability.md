@@ -67,4 +67,6 @@ triggering retransmission via timeout.
 - [Congestion Control](congestion-control.md) - How retransmission interacts
   with congestion algorithms
 
+---
+
 Return to [TCP](_index.md)

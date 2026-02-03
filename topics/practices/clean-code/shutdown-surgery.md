@@ -66,5 +66,5 @@ bridge.
 
 ## Related
 
-- [Indirection](indirection.md) - The isolation layer that makes surgery possible
-- [Abstraction](abstraction.md) - Clean interfaces enable safe decommissioning
+- [Indirection](../principles/indirection.md) - The isolation layer that makes surgery possible
+- [Abstraction](../principles/abstraction.md) - Clean interfaces enable safe decommissioning

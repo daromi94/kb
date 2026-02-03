@@ -45,9 +45,7 @@ coordination.
 System availability is bounded by the least available hard dependency. If the
 data plane requires synchronous calls to the control plane:
 
-```
-A_total = A_data × A_control
-```
+$$\alpha_{sys} = \alpha_{data} \times \alpha_{control}$$
 
 Mitigation: **Static stability**. The data plane must continue operating with
 cached or stale state when the control plane becomes unreachable.

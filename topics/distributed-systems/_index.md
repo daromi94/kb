@@ -1,6 +1,6 @@
 # Distributed Systems
 
-Storage systems and patterns for distributed data management.
+Concepts, patterns, and systems for building reliable distributed applications.
 
 ## Subtopics
 

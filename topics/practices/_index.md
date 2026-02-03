@@ -1,4 +1,4 @@
-# Coding
+# Practices
 
 Software development practices, style guides, and programming principles.
 

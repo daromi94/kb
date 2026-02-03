@@ -1,6 +1,6 @@
-# Databases
+# Distributed Systems
 
-Storage systems for structured data, covering relational and NoSQL paradigms.
+Storage systems and patterns for distributed data management.
 
 ## Subtopics
 

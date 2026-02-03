@@ -1,6 +1,6 @@
-# Data Formats
+# Serialization
 
-Serialization formats for structured data exchange and storage.
+Formats for structured data exchange and storage.
 
 ## Subtopics
 

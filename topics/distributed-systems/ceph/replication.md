@@ -19,11 +19,11 @@ replicas.
 
 Two pool parameters control replication:
 
-**$size$:** Total copies to maintain (default: 3)
+**`size`:** Total copies to maintain (default: 3)
 
-**$min\_size$:** Minimum replicas required to ACK before success (default: 2)
+**`min_size`:** Minimum replicas required to ACK before success (default: 2)
 
-If active OSDs for a PG fall below $min\_size$, Ceph stops accepting I/O for
+If active OSDs for a PG fall below `min_size`, Ceph stops accepting I/O for
 that PG to prevent inconsistency.
 
 ## Replication vs Erasure Coding
@@ -52,10 +52,10 @@ replicas land on different disks, servers, or racks based on configuration.
 When an OSD fails:
 
 1. **Degraded state:** PGs with data on that OSD are degraded but accessible
-   (if $min\_size$ is met)
+   (if `min_size` is met)
 2. **Detection:** Surviving OSDs and Monitors detect the failure
 3. **Backfilling:** Cluster identifies new homes for missing replicas and copies
-   data to restore full $size$ count
+   data to restore full `size` count
 
 ## Related
 

@@ -39,7 +39,7 @@ kubectl debug -it web-app --image=busybox --target=main-container
 - `--target=main-container`: Share process namespace with this container
   (requires `shareProcessNamespace: true` in Pod spec)
 
-## Use cases for SREs
+## Use cases
 
 - **Network troubleshooting:** Run `tcpdump` or `nmap` to diagnose connectivity
 - **File system inspection:** Check logs or config not exposed via logging

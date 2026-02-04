@@ -5,7 +5,7 @@ systems broadly.
 
 ## 1. Intelligence at the Edge (Smart Clients)
 
-Traditional systems use a central gateway to route every request---a hard
+Traditional systems use a central gateway to route every request—a hard
 bottleneck.
 
 **The Ceph approach:** Give clients the CRUSH algorithm so they calculate data
@@ -27,7 +27,7 @@ separate systems.
 
 ## 3. Calculation Over Lookup
 
-Most systems find data via database lookup---$O(1)$ or $O(\log n)$ but requires
+Most systems find data via database lookup—$O(1)$ or $O(\log n)$ but requires
 memory and synchronization.
 
 **The Ceph approach:** Deterministic mapping via CRUSH replaces stateful tables.
@@ -53,7 +53,7 @@ disagree on data.
 non-negotiable. Make the trade-off explicit.
 
 **CephFS Caps:** Manages consistency across clients using Distributed
-Capabilities---centralized authority delegates "leases" for safe caching while
+Capabilities—centralized authority delegates "leases" for safe caching while
 retaining revocation rights.
 
 ## 6. Dynamic Subtree Partitioning

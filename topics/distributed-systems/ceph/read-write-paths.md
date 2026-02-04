@@ -50,7 +50,7 @@ Log (WAL), even before flushing to the main data disk.
 
 ## Read Path
 
-Reads are simpler---usually a single network hop.
+Reads are simpler—usually a single network hop.
 
 1. **Client calculation:** CRUSH identifies the Primary OSD.
 2. **Direct read:** Client requests data from Primary.

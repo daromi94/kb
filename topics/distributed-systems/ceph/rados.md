@@ -1,8 +1,8 @@
 # RADOS Architecture
 
 The core of every Ceph cluster is **RADOS** (Reliable Autonomic Distributed
-Object Store). Every piece of data---whether from a virtual disk, S3 bucket, or
-file system---is stored as an object within this layer.
+Object Store). Every piece of data—whether from a virtual disk, S3 bucket, or
+file system—is stored as an object within this layer.
 
 ## Core Daemons
 

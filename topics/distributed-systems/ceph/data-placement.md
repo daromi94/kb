@@ -5,7 +5,7 @@ Placement Groups, and (for CephFS) dynamic subtree partitioning.
 
 ## Pools
 
-At the highest level, a cluster is divided into **Pools**---logical partitions
+At the highest level, a cluster is divided into **Pools**—logical partitions
 for isolating different data types or tenants.
 
 **Isolation:** Separate pools for Kubernetes, S3 object store, private cloud.
@@ -30,7 +30,7 @@ tracking "File_A," Ceph tracks "PG_1.0."
 hash(object_name) % pg_count → PG ID
 ```
 
-**Dynamic balancing:** Adding OSDs doesn't move individual objects---entire PGs
+**Dynamic balancing:** Adding OSDs doesn't move individual objects—entire PGs
 migrate. This makes rebalancing significantly faster.
 
 ## Metadata Partitioning (CephFS)

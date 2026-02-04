@@ -51,7 +51,9 @@ than creating a duplicate.
 
 ### 5. Process Content
 
-**Remove:** Self-references, filler, redundant explanations, marketing language
+**Remove:** Self-references, filler, redundant explanations, marketing language,
+dated references (version numbers, "as of 2024", "currently", "new in v3",
+release-specific features, "modern" without context)
 
 **Preserve:** Core explanations, illuminating examples, tables/comparisons,
 code samples, LaTeX notation, depth and nuance

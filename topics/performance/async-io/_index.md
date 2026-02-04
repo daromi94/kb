@@ -14,3 +14,7 @@ Concurrency models for handling I/O operations efficiently.
 - [Shared memory](shared-memory.md) - IPC technique for ring buffers
 - [Zero copy](zero-copy.md) - Avoiding CPU data copying in I/O
 - [Proactor vs reactor](proactor-vs-reactor.md) - Completion vs readiness models
+
+---
+
+Return to [Performance](../_index.md)

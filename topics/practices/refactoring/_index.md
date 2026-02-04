@@ -10,3 +10,7 @@ Techniques for restructuring code without introducing regression.
 - [Tests as specifications](tests-as-specifications.md) - Using tests as behavioral contracts
 - [Measuring technical debt](measuring-technical-debt.md) - Objective metrics over aesthetic preference
 - [Exit strategy](exit-strategy.md) - Knowing when to abort a refactor
+
+---
+
+Return to [Practices](../_index.md)

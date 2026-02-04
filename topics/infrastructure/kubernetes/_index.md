@@ -7,3 +7,7 @@ management of containerized applications.
 
 - [Pods](pods/_index.md) - The smallest deployable unit
 - [Workloads](workloads/_index.md) - Controllers for running applications
+
+---
+
+Return to [Infrastructure](../_index.md)

@@ -9,3 +9,7 @@ Foundational design principles for software architecture.
 - [Law of Demeter](law-of-demeter.md) - Only talk to your immediate friends
 - [Polymorphism](polymorphism.md) - Many shapes through common interfaces
 - [Tell, don't ask](tell-dont-ask.md) - Command objects, don't query their state
+
+---
+
+Return to [Practices](../_index.md)

@@ -11,3 +11,7 @@ Inter-process communication via the BSD socket API.
 - [SCM_RIGHTS](scm-rights.md) - Passing file descriptors between processes
 - [SO_PEERCRED](so-peercred.md) - Kernel-level credential authentication
 - [Abstract namespace](abstract-namespace.md) - Linux cleanup-free sockets
+
+---
+
+Return to [Networking](../_index.md)

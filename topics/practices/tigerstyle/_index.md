@@ -11,3 +11,7 @@ experience.
 - [Performance](performance.md) - Design-phase optimization and batching
 - [Naming](naming.md) - Naming conventions for clarity
 - [Zero dependencies](zero-dependencies.md) - Policy against external dependencies
+
+---
+
+Return to [Practices](../_index.md)

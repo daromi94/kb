@@ -9,3 +9,7 @@ Controllers that manage the lifecycle of Pods in Kubernetes.
 - [StatefulSets](statefulsets.md) - Applications requiring stable identity and storage
 - [DaemonSets](daemonsets.md) - Running a Pod on every node
 - [Jobs](jobs.md) - Running tasks to completion
+
+---
+
+Return to [Kubernetes](../_index.md)

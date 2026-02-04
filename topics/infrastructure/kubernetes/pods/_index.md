@@ -15,3 +15,7 @@ that share network, storage, and lifecycle.
 - [QoS classes](qos-classes.md) - Resource guarantees and eviction priority
 - [Advanced configuration](advanced-configuration.md) - Overhead, RuntimeClass, HugePages
 - [Scheduling](scheduling.md) - Affinity, taints, and topology spread
+
+---
+
+Return to [Kubernetes](../_index.md)

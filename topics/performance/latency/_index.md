@@ -13,3 +13,7 @@ system design.
   tension
 - [Dennard scaling](dennard-scaling.md) - End of free performance, rise of
   multicore
+
+---
+
+Return to [Performance](../_index.md)

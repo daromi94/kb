@@ -13,3 +13,7 @@ the OSI model.
 - [Encapsulation](encapsulation.md) - How data travels through protocol layers
 - [Addressing](addressing.md) - IP vs MAC and host-to-host communication
 - [Topology](topology.md) - Physical and logical network structure
+
+---
+
+Return to [Networking](../_index.md)

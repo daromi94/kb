@@ -9,3 +9,7 @@ defining and exchanging structured data between systems.
 - [Wire format](wire-format.md) - Binary encoding with field tags and varints
 - [Schema evolution](schema-evolution.md) - Backward and forward compatibility
 - [Use cases](use-cases.md) - Primary applications
+
+---
+
+Return to [Serialization](../_index.md)

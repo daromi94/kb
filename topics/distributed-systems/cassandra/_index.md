@@ -17,3 +17,7 @@ Google Bigtable's data model.
 - [Gossip](gossip.md) - Peer-to-peer protocol for cluster awareness
 - [Fault tolerance](fault-tolerance.md) - No SPOF and self-healing mechanisms
 - [Data modeling tips](data-modeling-tips.md) - Query-driven design best practices
+
+---
+
+Return to [Distributed Systems](../_index.md)

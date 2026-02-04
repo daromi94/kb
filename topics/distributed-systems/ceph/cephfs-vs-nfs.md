@@ -6,13 +6,13 @@ shared file systems but differ significantly in architecture and use cases.
 
 ## Architectural Comparison
 
-| Feature     | NFS                   | CephFS                             |
-|-------------|-----------------------|------------------------------------|
-| Model       | Client-Server         | Distributed Cluster                |
-| Scalability | Vertical (scale-up)   | Horizontal (scale-out)             |
-| Metadata    | Single server         | Cluster of MDS daemons             |
-| Data Path   | Client → Server → Disk| Client → OSD Cluster (direct I/O)  |
-| Redundancy  | RAID on server or HA  | Replication or Erasure Coding      |
+| Feature     | NFS                    | CephFS                            |
+|-------------|------------------------|-----------------------------------|
+| Model       | Client-Server          | Distributed Cluster               |
+| Scalability | Vertical (scale-up)    | Horizontal (scale-out)            |
+| Metadata    | Single server          | Cluster of MDS daemons            |
+| Data Path   | Client → Server → Disk | Client → OSD Cluster (direct I/O) |
+| Redundancy  | RAID on server or HA   | Replication or Erasure Coding     |
 
 ## Key Differences
 

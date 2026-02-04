@@ -11,11 +11,11 @@ Unlike traditional systems that require separate infrastructure for different
 storage types, Ceph runs all three interfaces on top of the same underlying
 **RADOS** (Reliable Autonomic Distributed Object Store) cluster:
 
-| Interface          | Protocol          | Use Case                              |
-|--------------------|-------------------|---------------------------------------|
-| Block (RBD)        | Kernel/librbd     | VM disks, Kubernetes PVs              |
-| Object (RGW)       | S3/Swift REST API | Backups, media files, data lakes      |
-| File (CephFS)      | POSIX mount       | Shared directories, HPC scratch space |
+| Interface     | Protocol          | Use Case                              |
+|---------------|-------------------|---------------------------------------|
+| Block (RBD)   | Kernel/librbd     | VM disks, Kubernetes PVs              |
+| Object (RGW)  | S3/Swift REST API | Backups, media files, data lakes      |
+| File (CephFS) | POSIX mount       | Shared directories, HPC scratch space |
 
 ## Key Characteristics
 

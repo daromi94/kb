@@ -52,21 +52,21 @@ root default
 CRUSH rules specify how replicas are distributed across the hierarchy. Setting
 the failure domain to `rack` ensures replicas land on different racks:
 
-| Failure Domain | Survives                    |
-|----------------|-----------------------------|
-| `osd`          | Single disk failure         |
-| `host`         | Entire server failure       |
-| `rack`         | Entire rack power loss      |
-| `datacenter`   | Site-level disaster         |
+| Failure Domain | Survives               |
+|----------------|------------------------|
+| `osd`          | Single disk failure    |
+| `host`         | Entire server failure  |
+| `rack`         | Entire rack power loss |
+| `datacenter`   | Site-level disaster    |
 
 ## Why This Matters
 
-| Traditional Approach     | CRUSH Approach                |
-|--------------------------|-------------------------------|
-| Central lookup table     | Local mathematical function   |
-| $O(1)$ lookup + sync     | $O(1)$ calculation, no sync   |
-| Memory scales with data  | Constant memory (just the map)|
-| Single point of failure  | Fully distributed             |
+| Traditional Approach    | CRUSH Approach                 |
+|-------------------------|--------------------------------|
+| Central lookup table    | Local mathematical function    |
+| $O(1)$ lookup + sync    | $O(1)$ calculation, no sync    |
+| Memory scales with data | Constant memory (just the map) |
+| Single point of failure | Fully distributed              |
 
 The insight: **tables require coordination; math is free and locally
 executable**. Replace "where is X?" with "calculate the location of X."

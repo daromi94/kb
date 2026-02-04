@@ -41,6 +41,7 @@ implementations that stored data on top of a Linux file system (XFS), BlueStore
 manages the raw block device directly.
 
 Benefits:
+
 - Reduced overhead
 - No double-journaling issues
 - Internal RocksDB instance for metadata

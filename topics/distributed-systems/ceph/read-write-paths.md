@@ -76,12 +76,12 @@ settings).
 
 ## Comparison
 
-| Aspect         | Write Path                         | Read Path                |
-|----------------|------------------------------------|--------------------------|
-| Primary Actor  | Primary OSD                        | Primary OSD (typically)  |
-| Consistency    | Strong (all replicas must ACK)     | High (read from Primary) |
-| Network Hops   | Client → Primary → Replicas        | Client → Primary         |
-| Load           | High (hashing, WAL, replication)   | Low (hashing, local read)|
+| Aspect        | Write Path                       | Read Path                 |
+|---------------|----------------------------------|---------------------------|
+| Primary Actor | Primary OSD                      | Primary OSD (typically)   |
+| Consistency   | Strong (all replicas must ACK)   | High (read from Primary)  |
+| Network Hops  | Client → Primary → Replicas      | Client → Primary          |
+| Load          | High (hashing, WAL, replication) | Low (hashing, local read) |
 
 ## Related
 

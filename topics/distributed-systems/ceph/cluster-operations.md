@@ -8,12 +8,12 @@ locations independently.
 
 The cluster's coordination begins with **Monitors** maintaining the Cluster Map:
 
-| Sub-Map      | Contents                              |
-|--------------|---------------------------------------|
-| OSD Map      | Which disks are up/down and in/out    |
-| Monitor Map  | Which monitors are in quorum          |
-| CRUSH Map    | Physical hierarchy of the data center |
-| PG Map       | Placement Group states                |
+| Sub-Map     | Contents                              |
+|-------------|---------------------------------------|
+| OSD Map     | Which disks are up/down and in/out    |
+| Monitor Map | Which monitors are in quorum          |
+| CRUSH Map   | Physical hierarchy of the data center |
+| PG Map      | Placement Group states                |
 
 To perform any action, a client first contacts a Monitor to get the latest map.
 Once obtained, the client no longer needs the Monitor for data I/O.

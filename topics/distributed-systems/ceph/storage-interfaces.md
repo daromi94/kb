@@ -13,6 +13,7 @@ Ceph stripes a block device image across multiple objects in the RADOS cluster.
 To the operating system, it appears as a standard SCSI or local disk.
 
 **Features:**
+
 - Snapshots and cloning (copy-on-write)
 - Thin provisioning (consumes space only when written)
 - Optimized for low-latency random I/O
@@ -29,6 +30,7 @@ It translates S3/Swift API calls into RADOS operations. Data is stored as
 objects with associated metadata.
 
 **Features:**
+
 - Multisite replication for disaster recovery
 - Bucket policies and object versioning
 - No directory hierarchy bottlenecks
@@ -45,6 +47,7 @@ It uses Metadata Servers (MDS) to manage the file hierarchy while actual file
 contents are stored as objects in RADOS.
 
 **Features:**
+
 - Multiple clients mount simultaneously (like NFS but distributed)
 - Scalable metadata via multiple MDS daemons
 - Directory quotas
@@ -54,12 +57,12 @@ containerized applications.
 
 ## Comparison
 
-| Feature           | Block (RBD)           | Object (RGW)         | File (CephFS)            |
-|-------------------|-----------------------|----------------------|--------------------------|
-| Access Method     | Kernel module/librbd  | REST API (S3/Swift)  | POSIX mount/NFS/FUSE     |
-| Unit of Storage   | Block (virtual disk)  | Object (file + meta) | File/directory           |
-| Shared Access     | No (single host)      | Yes (global)         | Yes (multiple hosts)     |
-| Performance       | Low latency           | High throughput      | Balanced                 |
+| Feature         | Block (RBD)          | Object (RGW)         | File (CephFS)        |
+|-----------------|----------------------|----------------------|----------------------|
+| Access Method   | Kernel module/librbd | REST API (S3/Swift)  | POSIX mount/NFS/FUSE |
+| Unit of Storage | Block (virtual disk) | Object (file + meta) | File/directory       |
+| Shared Access   | No (single host)     | Yes (global)         | Yes (multiple hosts) |
+| Performance     | Low latency          | High throughput      | Balanced             |
 
 ## Related
 

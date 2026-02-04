@@ -48,11 +48,11 @@ inconsistent data temporarily.
 
 ## Summary
 
-| Attribute            | Status       | Mechanism                              |
-|----------------------|--------------|----------------------------------------|
-| Consistency          | **Strong**   | Synchronous replication, Primary model |
-| Availability         | **Partial**  | Sacrificed during partitions/quorum loss |
-| Partition Tolerance  | **High**     | Monitor quorum (Paxos) prevents split-brain |
+| Attribute           | Status      | Mechanism                                   |
+|---------------------|-------------|---------------------------------------------|
+| Consistency         | **Strong**  | Synchronous replication, Primary model      |
+| Availability        | **Partial** | Sacrificed during partitions/quorum loss    |
+| Partition Tolerance | **High**    | Monitor quorum (Paxos) prevents split-brain |
 
 ## Related
 

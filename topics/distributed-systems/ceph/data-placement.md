@@ -49,11 +49,11 @@ that subtree to a different MDS without client awareness.
 
 ## Layers Summary
 
-| Layer      | Unit             | Purpose                                       |
-|------------|------------------|-----------------------------------------------|
-| Logical    | Pool             | User isolation, storage policy, security      |
-| Functional | Placement Group  | Data distribution, scalability, rebalancing   |
-| Metadata   | Subtree          | Scaling file hierarchy across MDS daemons     |
+| Layer      | Unit            | Purpose                                     |
+|------------|-----------------|---------------------------------------------|
+| Logical    | Pool            | User isolation, storage policy, security    |
+| Functional | Placement Group | Data distribution, scalability, rebalancing |
+| Metadata   | Subtree         | Scaling file hierarchy across MDS daemons   |
 
 This multi-layered approach lets Ceph handle exabytes of data by replacing
 central lookup tables with calculations (CRUSH) and sharded structures (PGs).

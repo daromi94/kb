@@ -79,13 +79,13 @@ for every minor event.
 
 ## Summary
 
-| Challenge            | Traditional           | Ceph Lesson                      |
-|----------------------|-----------------------|----------------------------------|
-| Finding Data         | Global lookup table   | Local math (CRUSH)               |
-| Scaling              | Vertical              | Horizontal                       |
-| Hotspots             | Static hashing        | Dynamic subtree partitioning     |
-| Failures             | Admin intervention    | Autonomic recovery               |
-| State Sync           | Global broadcast      | Lazy epoch-based gossip          |
+| Challenge    | Traditional         | Ceph Lesson                  |
+|--------------|---------------------|------------------------------|
+| Finding Data | Global lookup table | Local math (CRUSH)           |
+| Scaling      | Vertical            | Horizontal                   |
+| Hotspots     | Static hashing      | Dynamic subtree partitioning |
+| Failures     | Admin intervention  | Autonomic recovery           |
+| State Sync   | Global broadcast    | Lazy epoch-based gossip      |
 
 ## Related
 

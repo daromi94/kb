@@ -28,24 +28,24 @@ that PG to prevent inconsistency.
 
 ## Replication vs Erasure Coding
 
-| Feature             | Replication          | Erasure Coding (EC)           |
-|---------------------|----------------------|-------------------------------|
-| Storage Efficiency  | Low (33% for size 3) | High (66%+ for typical k+m)   |
-| CPU/RAM Usage       | Low                  | High (encode/decode overhead) |
-| Recovery Speed      | Fast (simple copy)   | Slower (math reconstruction)  |
-| Best For            | Small, random I/O    | Large, sequential I/O         |
+| Feature            | Replication          | Erasure Coding (EC)           |
+|--------------------|----------------------|-------------------------------|
+| Storage Efficiency | Low (33% for size 3) | High (66%+ for typical k+m)   |
+| CPU/RAM Usage      | Low                  | High (encode/decode overhead) |
+| Recovery Speed     | Fast (simple copy)   | Slower (math reconstruction)  |
+| Best For           | Small, random I/O    | Large, sequential I/O         |
 
 ## Fault Domains
 
 Replication is only effective if copies are physically separated. CRUSH ensures
 replicas land on different disks, servers, or racks based on configuration.
 
-| Failure Domain | Protection Level              |
-|----------------|-------------------------------|
-| `osd`          | Single disk failure           |
-| `host`         | Entire server failure         |
-| `rack`         | Entire rack power loss        |
-| `datacenter`   | Site-level disaster           |
+| Failure Domain | Protection Level       |
+|----------------|------------------------|
+| `osd`          | Single disk failure    |
+| `host`         | Entire server failure  |
+| `rack`         | Entire rack power loss |
+| `datacenter`   | Site-level disaster    |
 
 ## Self-Healing (Backfilling)
 

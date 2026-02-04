@@ -46,4 +46,4 @@ use CRUSH to determine which OSDs hold data, eliminating the central bottleneck.
 
 ---
 
-Return to [Ceph](_index.md) | [Distributed Systems](../_index.md)
+Return to [Ceph](_index.md)

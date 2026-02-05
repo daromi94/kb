@@ -25,7 +25,10 @@ topics/<topic>/
 
 ### 2. Gather Input
 
-Ask: "How would you like to provide content? (1) URL (2) Paste (3) Book reference"
+Ask: "How would you like to provide content? (1) URL (2) Paste (3) Book reference (4) File"
+
+For file input: Read the specified file(s) using the Read tool. Accept multiple files
+and process them together as a single content batch.
 
 ### 3. Match Existing Notes
 
@@ -172,4 +175,8 @@ One-line message, no co-author.
 /kb performance/async-io + paste (with match) -> Updated:
   asynchronous-io.md - Added event loop section
   Created blocking.md - When sync I/O fits
+
+/kb databases/postgres + file ~/notes/postgres-indexes.md -> Created:
+  btree-indexes.md - B-tree index structure and usage
+  index-only-scans.md - Covering indexes for query optimization
 ```

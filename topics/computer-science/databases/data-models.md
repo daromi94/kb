@@ -47,6 +47,7 @@ obsolete for new applications.
 ## Related
 
 - [Overview](overview.md) — Database fundamentals
+- [Navigational models](navigational-models.md) — IMS, CODASYL, and why they failed
 
 ---
 

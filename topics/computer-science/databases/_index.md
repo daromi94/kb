@@ -6,6 +6,7 @@ Organized collections of inter-related data and the systems that manage them.
 
 - [Overview](overview.md) — Definition, data models, and why databases exist
 - [Data models](data-models.md) — Relational, document, vector, and other models
+- [Navigational models](navigational-models.md) — IMS, CODASYL, and why they failed
 
 ---
 

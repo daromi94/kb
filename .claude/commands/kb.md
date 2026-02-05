@@ -27,8 +27,16 @@ topics/<topic>/
 
 Ask: "How would you like to provide content? (1) URL (2) Paste (3) Book reference (4) File"
 
-For file input: Read the specified file(s) using the Read tool. Accept multiple files
-and process them together as a single content batch.
+**Critical:** Save all input to `/tmp/kb-input.md` before processing. This prevents
+raw content from polluting conversation context:
+
+- **URL:** Fetch content, write to `/tmp/kb-input.md`
+- **Paste:** User pastes content, write to `/tmp/kb-input.md`
+- **Book reference:** User provides text, write to `/tmp/kb-input.md`
+- **File:** Copy file contents to `/tmp/kb-input.md` (or use directly if already a tmp file)
+
+Then read from `/tmp/kb-input.md` for all subsequent processing steps. Delete the tmp
+file after notes are created.
 
 ### 3. Match Existing Notes
 

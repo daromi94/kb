@@ -5,6 +5,14 @@ no single failure can take the system down or destroy data. Beyond fault
 tolerance, it enables read scalability and lower latency through
 geographic placement.
 
+## Why replicate
+
+| Goal         | Description                                            | Key metric             |
+|--------------|--------------------------------------------------------|------------------------|
+| Durability   | Data survives disk and node failures                   | Mean Time to Data Loss |
+| Availability | System stays up during partial failures and outages    | Uptime ("the nines")   |
+| Performance  | Geo-replicas cut latency; followers scale read traffic | Latency and throughput |
+
 ## Synchronous vs asynchronous
 
 **Synchronous:** The leader waits for all (or a majority of) replicas to
@@ -58,14 +66,6 @@ it up to date:
   downed node and replay them once it returns
 - **Merkle trees** — Hash-based structures that quickly identify which
   pieces of data are out of sync without transferring the entire dataset
-
-## Why replicate
-
-| Goal         | Description                                            | Key metric             |
-|--------------|--------------------------------------------------------|------------------------|
-| Durability   | Data survives disk and node failures                   | Mean Time to Data Loss |
-| Availability | System stays up during partial failures and outages    | Uptime ("the nines")   |
-| Performance  | Geo-replicas cut latency; followers scale read traffic | Latency and throughput |
 
 ## Related
 

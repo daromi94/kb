@@ -1,8 +1,9 @@
 # Replication
 
-Replication copies the same data across multiple nodes. Its primary
-purpose is **availability and fault tolerance** — the system remains
-operational and data remains durable when individual components fail.
+Replication maintains copies of the same data on multiple nodes so that
+no single failure can take the system down or destroy data. Beyond fault
+tolerance, it enables read scalability and lower latency through
+geographic placement.
 
 ## Synchronous vs asynchronous
 

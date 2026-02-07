@@ -60,6 +60,12 @@ it up to date:
 
 ## Why replicate
 
+| Goal         | Description                               | Key metric             |
+|--------------|-------------------------------------------|------------------------|
+| Durability   | Data survives disk and node failures      | Mean Time to Data Loss |
+| Availability | System stays up during partial failures   | Uptime ("the nines")   |
+| Performance  | Workload spreads across multiple machines | Latency and throughput |
+
 - **Disaster recovery** — A replica in another location keeps the service
   alive if a data center loses power
 - **Reduced latency** — Placing replicas closer to users (Europe and US)

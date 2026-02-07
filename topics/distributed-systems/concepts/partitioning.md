@@ -11,6 +11,18 @@ A single machine has physical limits on storage capacity and
 read/write throughput. A system with 10 partitions can theoretically handle
 10x the data and 10x the traffic of a single node.
 
+**Write parallelism.** In a leader-follower setup every write funnels
+through one node. Partitioning lets different writes land on different
+nodes simultaneously, removing the single-leader bottleneck.
+
+**Query performance.** The system only scans the partition where the data
+resides rather than the full dataset, and complex aggregations can run in
+parallel across partitions with a coordinator merging results.
+
+**Blast radius.** If one node in a 10-node cluster fails, only that
+partition's slice is offline. The remaining 90% continues serving
+requests, and maintenance can happen per-partition without full downtime.
+
 ## Partitioning strategies
 
 ### Key-range partitioning
@@ -62,6 +74,14 @@ existing nodes to the new one to balance load.
 
 **Distributed joins.** Joining data across partitions on different machines
 is slow and often avoided in distributed database design.
+
+## Replication vs partitioning
+
+|               | Replication                      | Partitioning                    |
+|---------------|----------------------------------|---------------------------------|
+| Goal          | Availability and safety          | Scalability and throughput      |
+| Data strategy | Copy the same data to many nodes | Split data into disjoint pieces |
+| On failure    | Other copies serve requests      | Only the affected slice is lost |
 
 ## Related
 

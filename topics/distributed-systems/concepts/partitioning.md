@@ -50,7 +50,13 @@ receives more traffic. A social media app partitioned by user ID will
 create a hot partition for a celebrity with millions of followers, even if
 the rest of the cluster is idle.
 
-## Partitioning with replication
+## Partitioning and replication
+
+|               | Replication                      | Partitioning                    |
+|---------------|----------------------------------|---------------------------------|
+| Goal          | Availability and safety          | Scalability and throughput      |
+| Data strategy | Copy the same data to many nodes | Split data into disjoint pieces |
+| On failure    | Other copies serve requests      | Only the affected slice is lost |
 
 In production, these patterns are used together. A dataset is partitioned
 for scale, then each partition is replicated for fault tolerance.
@@ -74,14 +80,6 @@ existing nodes to the new one to balance load.
 
 **Distributed joins.** Joining data across partitions on different machines
 is slow and often avoided in distributed database design.
-
-## Replication vs partitioning
-
-|               | Replication                      | Partitioning                    |
-|---------------|----------------------------------|---------------------------------|
-| Goal          | Availability and safety          | Scalability and throughput      |
-| Data strategy | Copy the same data to many nodes | Split data into disjoint pieces |
-| On failure    | Other copies serve requests      | Only the affected slice is lost |
 
 ## Related
 

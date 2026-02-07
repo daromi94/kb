@@ -7,7 +7,7 @@ according to its own demand rather than scaling together as a monolithic unit.
 
 **Compute layer:** Stateless nodes or containers that execute logic, run
 queries, and perform transformations. They do not own data and can be spun
-up or shut down based on CPU demand.
+up or shut down based on demand.
 
 **Storage layer:** A persistent, highly available service (S3, Azure Blob
 Storage, or a distributed file system) responsible for durability and

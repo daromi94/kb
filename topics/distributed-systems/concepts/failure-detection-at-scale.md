@@ -43,8 +43,8 @@ missing heartbeat within the next timeout interval.
 
 Large clusters rely on gossip protocols. When node A dies, neighbor B
 notices and tells C and D, who tell others. The information spreads with
-a logarithmic infection rate ($O(\log n)$), so the full cluster learns
-of the failure after several hops rather than all at once.
+a logarithmic infection rate, so the full cluster learns of the failure
+after several hops rather than all at once.
 
 ## Related
 

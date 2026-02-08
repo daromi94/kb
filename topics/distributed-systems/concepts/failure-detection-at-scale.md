@@ -17,14 +17,13 @@ random subset.
 
 ## Strategy comparison
 
-| Aspect          | Small cluster                | Large cluster                       |
-|-----------------|------------------------------|-------------------------------------|
-| **Topology**    | Centralized or full mesh     | Gossip or ring                      |
-| **Consistency** | High — nodes agree quickly   | Eventual — failure info propagates  |
-|                 | on who is up/down            | over multiple hops                  |
-| **Accuracy**    | Deterministic binary up/down | Probabilistic (phi accrual)         |
-| **Network**     | LAN, low latency and jitter  | Often WAN/multi-region, high jitter |
-| **Overhead**    | Minimal                      | Significant; requires optimization  |
+| Aspect          | Small cluster                                | Large cluster                                         |
+|-----------------|----------------------------------------------|-------------------------------------------------------|
+| **Topology**    | Centralized or full mesh                     | Gossip or ring                                        |
+| **Consistency** | High — nodes agree quickly on who is up/down | Eventual — failure info propagates over multiple hops |
+| **Accuracy**    | Deterministic binary up/down                 | Probabilistic (phi accrual)                           |
+| **Network**     | LAN, low latency and jitter                  | Often WAN/multi-region, high jitter                   |
+| **Overhead**    | Minimal                                      | Significant; requires optimization                    |
 
 ## False-positive impact
 

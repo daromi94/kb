@@ -122,6 +122,9 @@ Substantive content. Prose when it serves clarity.
 Return to [Topic](_index.md)
 ```
 
+**Cross-references:** Never link to other notes inline within prose or headings.
+All cross-references go exclusively in the `## Related` section at the bottom.
+
 Standards: Single blank lines between elements, sentence case headers, language
 tags on code blocks.
 

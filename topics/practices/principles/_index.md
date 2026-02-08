@@ -8,6 +8,7 @@ Foundational design principles for software architecture.
 - [Uniform access](uniform-access.md) - Hide whether a value is stored or computed
 - [Indirection](indirection.md) - Adding layers between requester and provider
 - [Polymorphism](polymorphism.md) - Many shapes through common interfaces
+- [Inheritance design](inheritance-design.md) - Design for extension or prohibit it; prefer composition
 - [Law of Demeter](law-of-demeter.md) - Only talk to your immediate friends
 - [Tell, don't ask](tell-dont-ask.md) - Command objects, don't query their state
 - [Command-query separation](command-query-separation.md) - Methods should change state or return data, not both

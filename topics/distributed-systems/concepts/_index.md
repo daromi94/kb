@@ -13,6 +13,7 @@ Foundational techniques and principles for distributed systems.
 - [Stateless vs stateful](stateless-vs-stateful.md) - How state retention affects scaling and recovery
 - [Replication](replication.md) - Strategies and patterns for copying data across nodes
 - [Partitioning](partitioning.md) - Splitting datasets across nodes for scalability
+- [Low-water mark](low-water-mark.md) - Safe deletion boundary for segmented log cleanup
 - [CAP theorem](cap-theorem.md) - Consistency, availability, and partition tolerance trade-offs
 
 ---

@@ -75,6 +75,8 @@ it up to date:
   during network partitions
 - [Write-ahead log](write-ahead-log.md) - The log that replication
   propagates between nodes
+- [Low-water mark](low-water-mark.md) - Follower progress constrains
+  how aggressively old log segments can be cleaned
 
 ---
 

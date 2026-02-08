@@ -58,6 +58,8 @@ consisting of finite, disposable files.
 
 - [Write-ahead log](write-ahead-log.md) - The pattern that segmented
   logs build on
+- [Low-water mark](low-water-mark.md) - Determines which segments are
+  safe to delete
 - [Bloom filters](bloom-filters.md) - Often used alongside segment
   indexes to skip segments that cannot contain a key
 

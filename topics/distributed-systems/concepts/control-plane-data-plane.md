@@ -58,14 +58,11 @@ plane.
 
 ## Mitigation strategies
 
-| Strategy               | Mechanism                                          |
-|------------------------|----------------------------------------------------|
-| Blob storage buffer    | Control plane persists state to object store (S3). |
-|                        | Data plane polls the store, decoupling the planes. |
-| Push-based propagation | Control plane pushes deltas via long-lived         |
-|                        | connections (gRPC streams) with back-pressure.     |
-| Hybrid snapshotting    | New nodes bootstrap from storage snapshot, then    |
-|                        | subscribe for incremental updates.                 |
+| Strategy               | Mechanism                                                                   |
+|------------------------|-----------------------------------------------------------------------------|
+| Blob storage buffer    | Control plane persists state to object store (S3); data plane polls it      |
+| Push-based propagation | Control plane pushes deltas via long-lived connections with back-pressure   |
+| Hybrid snapshotting    | New nodes bootstrap from storage snapshot, then subscribe for delta updates |
 
 ## Complexity isolation
 

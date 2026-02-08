@@ -42,14 +42,11 @@ cross-socket memory trips.
 
 ## Thread-Pool vs Shard-per-Core
 
-| Feature     | Thread-Pool (Cassandra)             | Shard-per-Core (ScyllaDB)         |
-|-------------|-------------------------------------|-----------------------------------|
-| Concurrency | Hundreds of threads compete for     | One thread per core. No context   |
-|             | CPU. OS constantly context switches | switching; CPU does actual work   |
-| Memory      | Shared heap. Threads contend for    | Partitioned. Core 0 owns its      |
-|             | access, requiring locks             | chunk. No contention              |
-| I/O         | Blocking. Threads sleep waiting     | Async (Seastar). Core switches to |
-|             | for disk/network                    | another task without sleeping     |
+| Feature     | Thread-Pool (Cassandra)                            | Shard-per-Core (ScyllaDB)                     |
+|-------------|----------------------------------------------------|-----------------------------------------------|
+| Concurrency | Hundreds of threads; constant OS context switching | One thread per core; no context switching     |
+| Memory      | Shared heap with lock contention                   | Partitioned per core; no contention           |
+| I/O         | Blocking; threads sleep on disk/network            | Async (Seastar); switches tasks, never sleeps |
 
 ## Benefits
 

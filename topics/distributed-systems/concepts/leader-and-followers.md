@@ -18,7 +18,7 @@ leader.
 ## Replication flow
 
 ```
-Client          Leader               Followers
+Client          Leader                Followers
   |--- write ---->|                       |
   |               |-- append to WAL       |
   |               |   (uncommitted)       |

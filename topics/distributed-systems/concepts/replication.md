@@ -77,6 +77,10 @@ it up to date:
   propagates between nodes
 - [Low-water mark](low-water-mark.md) - Follower progress constrains
   how aggressively old log segments can be cleaned
+- [Leader and followers](leader-and-followers.md) - The leader-follower
+  pattern in depth
+- [Quorum and linearizability](quorum-and-linearizability.md) - Why
+  quorum overlap does not guarantee strong consistency
 
 ---
 

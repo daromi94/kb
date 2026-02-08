@@ -15,6 +15,10 @@ Foundational techniques and principles for distributed systems.
 - [Partitioning](partitioning.md) - Splitting datasets across nodes for scalability
 - [Low-water mark](low-water-mark.md) - Safe deletion boundary for segmented log cleanup
 - [CAP theorem](cap-theorem.md) - Consistency, availability, and partition tolerance trade-offs
+- [Leader and followers](leader-and-followers.md) - Single-leader coordination for total ordering of writes
+- [Leader election](leader-election.md) - Choosing and replacing the cluster coordinator
+- [Quorum and linearizability](quorum-and-linearizability.md) - Why quorum overlap alone does not guarantee strong
+  consistency
 
 ---
 

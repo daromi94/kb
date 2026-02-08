@@ -67,6 +67,8 @@ flushes to an SSTable (the immutable on-disk storage).
 
 ## Related
 
+- [Segmented log](segmented-log.md) - Breaking the WAL into manageable
+  file segments for cleanup and recovery
 - [Commit log](../scylla-db/commit-log.md) - ScyllaDB's WAL implementation
 
 ---

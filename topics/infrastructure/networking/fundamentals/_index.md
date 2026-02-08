@@ -5,14 +5,14 @@ the OSI model.
 
 ## Notes
 
-- [Client-Server Architecture](client-server.md) - The asymmetric model of
-  service requesters and providers
-- [Offloading](offloading.md) - Why servers handle expensive computation
-- [RPC](rpc.md) - Remote Procedure Call and transparent network communication
 - [OSI Model](osi-model.md) - The seven-layer communication framework
 - [Encapsulation](encapsulation.md) - How data travels through protocol layers
-- [Addressing](addressing.md) - IP vs MAC and host-to-host communication
 - [Topology](topology.md) - Physical and logical network structure
+- [Addressing](addressing.md) - IP vs MAC and host-to-host communication
+- [Client-Server Architecture](client-server.md) - The asymmetric model of
+  service requesters and providers
+- [RPC](rpc.md) - Remote Procedure Call and transparent network communication
+- [Offloading](offloading.md) - Why servers handle expensive computation
 
 ---
 

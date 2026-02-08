@@ -143,6 +143,11 @@ Brief description.
 
 Include Subtopics/Notes sections only when entries exist.
 
+**Ordering:** List entries from general to specific, keeping related topics
+together. Overviews and foundational concepts come first, specialized or
+niche topics last. When adding a new entry, insert it at the position that
+maintains this order rather than appending to the end.
+
 ### 8. Save and Report
 
 - Create `topics/<topic>/` if needed

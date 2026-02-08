@@ -30,18 +30,26 @@ Using a WAL is more efficient than updating main data files immediately.
 
 ### Sequential vs random I/O
 
-Updating a B-Tree or heap file involves random I/O—the disk head jumps to
+Updating a B-Tree or heap file involves random I/O — the disk head jumps to
 different physical locations. A WAL is **append-only**, using sequential I/O.
 Writing to the end of a file is vastly faster than updating pages scattered
-across a disk.
+across a disk. The system calls **fsync** to force the OS to flush the log
+entry to stable storage before acknowledging the write.
+
+### Immutability and segmentation
+
+Log entries are never modified. If a value is updated, a new entry is
+appended. To prevent unbounded growth, the WAL is split into segments.
+Once a segment's data has been flushed to the main data files, the
+segment can be deleted or archived.
 
 ### Recovery
 
 If power is lost before the buffer cache flushes to data files:
 
 - Data files are stale or inconsistent
-- On restart, the database reads the WAL
-- It replays any committed transactions missing from the data files
+- On restart, the database reads the WAL from the last checkpoint
+- It replays committed transactions in order to restore consistent state
 
 ## WAL in distributed systems
 

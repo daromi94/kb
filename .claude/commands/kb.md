@@ -158,7 +158,7 @@ maintains this order rather than appending to the end.
 
 ### 9. Fixing Issues
 
-When fixing formatting across multiple files, edit files sequentially (not in
+When fixing issues across multiple files, edit files sequentially (not in
 parallel) to avoid file-modified conflicts. Avoid batch scripts which may break
 ASCII diagrams or other structured content.
 

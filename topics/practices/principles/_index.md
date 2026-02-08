@@ -5,6 +5,7 @@ Foundational design principles for software architecture.
 ## Notes
 
 - [Abstraction](abstraction.md) - Hiding implementation to manage complexity
+- [Uniform access](uniform-access.md) - Hide whether a value is stored or computed
 - [Indirection](indirection.md) - Adding layers between requester and provider
 - [Polymorphism](polymorphism.md) - Many shapes through common interfaces
 - [Law of Demeter](law-of-demeter.md) - Only talk to your immediate friends

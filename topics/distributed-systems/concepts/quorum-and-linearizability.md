@@ -73,6 +73,8 @@ mechanisms on top of quorum overlap:
 
 ## Related
 
+- [Quorum](quorum.md) - The intersection rule, configurations, and
+  strict vs sloppy quorum
 - [Replication](replication.md) - Quorum is one of several replication
   coordination strategies
 - [Leader and followers](leader-and-followers.md) - Leader-based

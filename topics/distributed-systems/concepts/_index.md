@@ -13,6 +13,7 @@ Foundational techniques and principles for distributed systems.
 - [Partitioning](partitioning.md) - Splitting datasets across nodes for scalability
 - [Leader and followers](leader-and-followers.md) - Single-leader coordination for total ordering of writes
 - [Leader election](leader-election.md) - Choosing and replacing the cluster coordinator
+- [Quorum](quorum.md) - The intersection rule, common configurations, and strict vs sloppy quorum
 - [Quorum and linearizability](quorum-and-linearizability.md) - Why quorum overlap alone does not guarantee strong
   consistency
 - [Write-ahead log](write-ahead-log.md) - Durability through sequential logging

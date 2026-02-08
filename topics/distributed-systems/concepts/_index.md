@@ -12,6 +12,9 @@ Foundational techniques and principles for distributed systems.
 - [Replication](replication.md) - Strategies and patterns for copying data across nodes
 - [Partitioning](partitioning.md) - Splitting datasets across nodes for scalability
 - [Leader and followers](leader-and-followers.md) - Single-leader coordination for total ordering of writes
+- [Heartbeat](heartbeat.md) - Periodic liveness signal, timing inequality, and lease renewal
+- [Failure detection at scale](failure-detection-at-scale.md) - How heartbeat topology changes from small to large
+  clusters
 - [Leader election](leader-election.md) - Choosing and replacing the cluster coordinator
 - [Quorum](quorum.md) - The intersection rule, common configurations, and strict vs sloppy quorum
 - [Quorum and linearizability](quorum-and-linearizability.md) - Why quorum overlap alone does not guarantee strong

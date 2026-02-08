@@ -42,23 +42,6 @@ When tasks overwhelm a single server, the architecture allows two scaling types:
 | Vertical   | Upgrade existing server (more RAM, faster CPU, better NICs)  |
 | Horizontal | Add more servers with a load balancer to distribute requests |
 
-## Example: Cloud Gaming
-
-Cloud gaming (Xbox Cloud, GeForce Now) demonstrates offloading in action:
-
-```
-+------------------+                    +---------------------+
-|  Client (Tablet) |                    |  Server (Data Ctr)  |
-|                  |   controller       |                     |
-|  Display video <-+--- inputs -------->|  Render 4K @ 60fps  |
-|  stream only     |<-- video stream ---|  Full game engine   |
-+------------------+                    +---------------------+
-```
-
-The client handles only input capture and video display. The server runs the
-entire game engine and renders graphics that the client hardware could never
-produce locally.
-
 ## Related
 
 - [Client-Server](client-server.md) - The architecture that enables offloading

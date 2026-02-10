@@ -28,6 +28,7 @@ Google Bigtable's data model.
 - [Anti-entropy](anti-entropy.md) - Read repair and Merkle tree-based repair
 - [Lightweight transactions](lightweight-transactions.md) - Paxos-based compare-and-set
 - [Data modeling tips](data-modeling-tips.md) - Query-driven design best practices
+- [Architectural lessons](architectural-lessons.md) - Broader principles from Cassandra's design
 
 ---
 

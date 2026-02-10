@@ -21,6 +21,34 @@ own info; it sends everything it knows about Nodes C, D, and E as well.
 information about a new node joining or an existing node failing spreads across
 even a massive cluster in a matter of seconds.
 
+## Three-way handshake
+
+Rather than broadcasting full state, nodes exchange only deltas through a
+Syn-Ack-Ack2 handshake:
+
+| Message          | Sent by   | Content                                               |
+|------------------|-----------|-------------------------------------------------------|
+| GossipDigestSyn  | Initiator | List of known nodes with their latest version numbers |
+| GossipDigestAck  | Recipient | Newer data for initiator + request for missing data   |
+| GossipDigestAck2 | Initiator | Requested data to complete the sync                   |
+
+The Syn message is small — just node IDs and version numbers, not full
+state. The recipient compares versions, sends back anything newer it has,
+and requests anything the initiator has that is newer. After the third
+message, both nodes are synchronized.
+
+This delta-based approach keeps bandwidth low even in large clusters. If
+messages are lost, the next one-second cycle triggers a fresh handshake
+that catches up automatically.
+
+## Versioning and convergence
+
+Every piece of gossip state (status, tokens, schema version) carries a
+monotonically increasing version number. When two nodes disagree, the
+higher version wins. Because every node gossips with several peers each
+second, information propagates exponentially — even a 1,000-node cluster
+converges within seconds of a state change.
+
 ## What information is gossiped
 
 Nodes exchange a data structure known as the gossip state, which is composed of
@@ -35,23 +63,13 @@ several key elements:
 If Node A receives info about Node C with a higher version than its local copy,
 it updates its local state.
 
-## Failure detection (Phi Accrual Detector)
+## Failure detection
 
-Gossip is the primary input for Cassandra's failure detection. Instead of using
-a simple ping that returns a binary up/down status, Cassandra uses a Phi Accrual
-Failure Detector.
-
-**Suspicion vs. certainty:** The detector tracks the intervals between
-heartbeats. If heartbeats start arriving late, the Phi value increases.
-
-**Adaptive thresholds:** The system calculates the probability that a node is
-down. This allows the cluster to be flexible during periods of network
-congestion or GC pauses, avoiding the flapping of nodes being marked down
-prematurely.
-
-**Action:** When the Phi value crosses a configured threshold, the node is
-marked as down locally, and the coordinator will stop routing queries to it,
-instead storing hinted handoffs.
+Gossip heartbeats are the primary input for failure detection. Rather than
+a binary up/down check, Cassandra uses the Phi Accrual Failure Detector,
+which tracks heartbeat arrival intervals and calculates a probabilistic
+suspicion level. When the suspicion crosses a threshold, the node is
+convicted and the coordinator stops routing queries to it.
 
 ## Seed nodes
 
@@ -78,6 +96,8 @@ Without a central name node or master, gossip provides:
 
 ## Related
 
+- [Phi accrual failure detector](phi-accrual.md) - Deep dive on probabilistic failure detection
+- [Topology](topology.md) - The cluster hierarchy gossip propagates
 - [Query routing](query-routing.md) - How gossip informs routing decisions
 - [Fault tolerance](fault-tolerance.md) - How failure detection enables resilience
 - [Replication](replication.md) - How hinted handoff uses gossip state

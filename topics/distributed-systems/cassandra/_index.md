@@ -14,7 +14,9 @@ Google Bigtable's data model.
 - [Consistency](consistency.md) - Tunable consistency levels and strong consistency formula
 - [Query routing](query-routing.md) - Coordinator, snitch, and dispatch
 - [Storage model](storage-model.md) - LSM-tree, SSTables, and compaction
+- [Topology](topology.md) - Nodes, racks, data centers, and the snitch
 - [Gossip](gossip.md) - Peer-to-peer protocol for cluster awareness
+- [Phi accrual failure detector](phi-accrual.md) - Probabilistic failure detection via gossip
 - [Fault tolerance](fault-tolerance.md) - No SPOF and self-healing mechanisms
 - [Data modeling tips](data-modeling-tips.md) - Query-driven design best practices
 

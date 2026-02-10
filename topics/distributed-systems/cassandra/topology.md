@@ -55,6 +55,7 @@ this mapping.
 ## Related
 
 - [Overview](overview.md) - Architecture principles and the ring
+- [Snitch](snitch.md) - Static vs dynamic snitching in depth
 - [Consistent hashing](consistent-hashing.md) - Token ring that nodes sit on
 - [Replication](replication.md) - How replicas are placed across the topology
 - [Query routing](query-routing.md) - How the snitch informs routing decisions

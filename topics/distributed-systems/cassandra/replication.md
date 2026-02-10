@@ -81,6 +81,8 @@ trees) to compare all data across replicas and synchronize any differences.
 ## Related
 
 - [Consistency](consistency.md) - Tunable consistency levels
+- [Hinted handoff](hinted-handoff.md) - Store-and-forward for missed writes
+- [Anti-entropy](anti-entropy.md) - Read repair and Merkle tree repair
 - [Fault tolerance](fault-tolerance.md) - How replication enables resilience
 - [Query routing](query-routing.md) - How the coordinator works
 

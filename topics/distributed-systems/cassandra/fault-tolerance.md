@@ -83,6 +83,8 @@ read repair might have missed.
 ## Related
 
 - [Replication](replication.md) - How data redundancy is configured
+- [Hinted handoff](hinted-handoff.md) - Store-and-forward writes in depth
+- [Anti-entropy](anti-entropy.md) - Read repair and Merkle tree repair in depth
 - [Consistency](consistency.md) - Trade-offs between availability and consistency
 - [Gossip](gossip.md) - How failures are detected
 

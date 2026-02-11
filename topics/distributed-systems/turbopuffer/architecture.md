@@ -34,7 +34,7 @@ Inactive data remains in S3.
 
 ## Stateless Compute
 
-Query nodes are stateless Rust binaries. Because all persistent state
+Query nodes are stateless binaries. Because all persistent state
 lives in object storage, nodes are interchangeable. A failed node is
 replaced without data rebalancing or state synchronization. New nodes
 pull the required data from S3 on demand.

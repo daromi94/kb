@@ -68,18 +68,6 @@ Both use LSM trees but differ in where data lives:
 - MemStore → Memtable
 - HFile → SSTable (Sorted String Table)
 
-Cassandra's SSTables include additional files: `Data.db` (data), `Index.db`
-(partition offsets), and `Filter.db` (Bloom filter for negative lookups).
-
-## Compaction strategies (Cassandra)
-
-Cassandra offers pluggable compaction strategies:
-
-- **SizeTieredCompaction:** Default. Merges similarly-sized SSTables. Good for
-  write-heavy workloads.
-- **LeveledCompaction:** Organizes SSTables into levels. Keeps read latency
-  predictable. Better for read-heavy workloads.
-
 ## Related
 
 - [Data model](data-model.md) - Logical structure that maps to this storage

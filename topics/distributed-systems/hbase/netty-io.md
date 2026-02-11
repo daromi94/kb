@@ -47,7 +47,7 @@ implementation uses Netty for asynchronous HDFS writes.
 +--------+---------+
          |
   +----+----+----+
-  |    |    |    |  Fan-out (parallel)
+  |    |    |    |   Fan-out (parallel)
   v    v    v    v
 +--+ +--+ +--+ +--+
 |DN| |DN| |DN| |DN|  DataNodes via Netty

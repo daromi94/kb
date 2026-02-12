@@ -15,8 +15,7 @@ explicit coordination, threads execute simultaneously and asynchronously with
 respect to one another.
 
 Every Java application starts with at least one thread, the **main thread**,
-which executes the `main()` method. From there, you can spawn additional threads
-to handle background tasks without freezing the user interface.
+which executes the `main()` method.
 
 ## Shared memory
 

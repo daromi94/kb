@@ -4,7 +4,7 @@ Java programming language notes.
 
 ## Subtopics
 
-- [Concurrency](concurrency/_index.md) - Multithreading and parallel execution
+- [Concurrency](concurrency/_index.md) - Concurrent programming primitives and patterns
 
 ---
 

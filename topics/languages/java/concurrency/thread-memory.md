@@ -70,6 +70,7 @@ other threads without explicit synchronization.
 
 ## Related
 
+- [Thread safety hazards](thread-safety-hazards.md) - Race conditions, visibility, and reordering
 - [Threads](threads.md) - Thread fundamentals and creation
 
 ---

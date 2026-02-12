@@ -29,16 +29,6 @@ of another thread's deque (First-In, First-Out). Tasks at the tail are usually
 oldest and largest—when stolen, they'll likely be subdivided further, keeping
 the thief busy longer.
 
-## ForkJoinPool vs ThreadPoolExecutor
-
-| Feature           | ThreadPoolExecutor                | ForkJoinPool                        |
-|-------------------|-----------------------------------|-------------------------------------|
-| **Task source**   | Mostly external submissions       | Mostly internal (spawning subtasks) |
-| **Queuing**       | One shared global queue           | One deque per worker thread         |
-| **Idle behavior** | Wait for tasks from global queue  | Steal work from busy threads        |
-| **Best use case** | Independent tasks (HTTP requests) | Recursive tasks (sorting, images)   |
-| **Join support**  | Blocking to wait is expensive     | Designed for efficient joins        |
-
 ## The common pool
 
 `ForkJoinPool.commonPool()` is a static, shared instance.
@@ -47,14 +37,7 @@ the thief busy longer.
 - **Shared resource:** Avoid running blocking I/O in the common pool—it can
   starve other parts of your application (like parallel streams) that rely on it
 
-## Using ForkJoinPool
-
-Extend one of two classes:
-
-- **`RecursiveTask<V>`:** Task returns a result (summing an array)
-- **`RecursiveAction`:** Task returns nothing (sorting in place)
-
-## Thread pools vs fork join pools
+## ForkJoinPool vs ThreadPoolExecutor
 
 Per Doug Lea and Brian Goetz:
 
@@ -65,13 +48,15 @@ Per Doug Lea and Brian Goetz:
   computational problems into smaller pieces across all CPU cores, minimizing
   total calculation time
 
-| Feature               | ThreadPoolExecutor (Concurrency)  | ForkJoinPool (Parallelism)           |
-|-----------------------|-----------------------------------|--------------------------------------|
-| **Typical task**      | Independent ("Handle User Login") | Recursive ("Sum 10M elements")       |
-| **Blocking**          | Handles blocked I/O well          | Prefers pure computation             |
-| **Work distribution** | Shared global queue (centralized) | Per-thread deques + stealing         |
-| **Efficiency goal**   | High throughput of many requests  | Minimum latency for one massive task |
-| **Java usage**        | Tomcat, Netty, general APIs       | Parallel Streams engine              |
+| Feature               | ThreadPoolExecutor            | ForkJoinPool                       |
+|-----------------------|-------------------------------|------------------------------------|
+| **Task model**        | Independent external tasks    | Recursive subtask spawning         |
+| **Work distribution** | Shared global queue           | Per-thread deques + work-stealing  |
+| **Idle behavior**     | Wait on global queue          | Steal from busy threads            |
+| **Blocking I/O**      | Handles blocked I/O well      | Prefers pure computation           |
+| **Join support**      | Blocking to wait is expensive | Designed for efficient joins       |
+| **Efficiency goal**   | Throughput of many requests   | Minimum latency for one large task |
+| **Java usage**        | Tomcat, Netty, general APIs   | Parallel Streams engine            |
 
 ---
 

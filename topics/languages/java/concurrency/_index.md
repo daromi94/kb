@@ -6,7 +6,10 @@ Java concurrency in practice.
 
 - [Concurrency](concurrency.md) - Handling multiple tasks with interleaving
 - [Parallelism](parallelism.md) - Simultaneous execution across multiple cores
+- [Concurrency models](concurrency-models.md) - Thread-per-client, NIO, and modern virtual thread architectures
+- [Thread-per-client](thread-per-client.md) - Dedicated thread per connection workflow and trade-offs
 - [Blocking I/O](blocking-io.md) - Overlapping I/O waits with productive CPU work
+- [I/O multiplexing](io-multiplexing.md) - select/poll and Java NIO Selector/Channel
 - [Threads](threads.md) - Units of execution in Java
 - [Thread memory](thread-memory.md) - Shared vs. thread-private state in the JVM
 - [Daemon threads](daemon-threads.md) - Background service threads

@@ -1,5 +1,9 @@
 # Threads
 
+A thread is the smallest unit of execution within a program—a path of execution
+that allows a program to perform multiple tasks simultaneously or in an
+interleaved fashion.
+
 A thread is a stream of program control flow within a process. Multiple threads
 coexist inside the same process, sharing process-wide resources such as memory
 and file handles, while each thread maintains its own program counter, stack,

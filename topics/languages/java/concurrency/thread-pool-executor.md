@@ -52,13 +52,51 @@ When pool and queue are both full, the executor must reject the task:
 - **DiscardPolicy:** Silently drops the task
 - **DiscardOldestPolicy:** Drops the oldest unhandled task and retries
 
-## When to use ThreadPoolExecutor directly
+## Production configuration
 
-Use it over the standard `Executors` factory when you need to:
+A common production pattern combines a bounded queue with `CallerRunsPolicy` to
+create natural back-pressure. When the pool and queue are full, the submitting
+thread runs the task itself, which slows the rate of new submissions without
+dropping work.
 
-- Enforce strict resource constraints (limit queue size to prevent OOM)
-- Set a specific `ThreadFactory` for custom thread names and priorities
-- Choose a bounded queue with a specific rejection policy
+```java
+int cores = Runtime.getRuntime().availableProcessors();
+
+ThreadPoolExecutor executor = new ThreadPoolExecutor(
+    cores, // corePoolSize: Keep CPUs busy
+    cores * 2, // maximumPoolSize: Allow some burst
+    60L, TimeUnit.SECONDS, // keepAliveTime: Clean up extra threads
+    new ArrayBlockingQueue<>(1000), // workQueue: Bounded to prevent OOM
+    new ThreadFactoryBuilder().setNameFormat("orders-wp-%d").build(),
+    new ThreadPoolExecutor.CallerRunsPolicy() // Rejection: Submit thread handles it
+);
+```
+
+Key choices:
+
+- **Bounded queue** prevents OOM under sustained load
+- **CallerRunsPolicy** applies back-pressure instead of dropping tasks
+- **Custom thread names** make thread dumps readable
+- **`cores * 2` maximum** allows burst capacity for mixed workloads
+
+## Factory method risks
+
+The `Executors` convenience methods hide configuration that causes problems
+under load:
+
+| Setting          | `newFixedThreadPool(n)`  | `newCachedThreadPool()`    | Custom safe pool        |
+|------------------|--------------------------|----------------------------|-------------------------|
+| Core threads     | `n`                      | 0                          | `n`                     |
+| Max threads      | `n`                      | `Integer.MAX_VALUE`        | `m` (fixed limit)       |
+| Queue type       | `LinkedBlockingQueue`    | `SynchronousQueue`         | `ArrayBlockingQueue`    |
+| Queue capacity   | Unbounded                | 0 (direct handoff)         | Bounded (e.g. 1000)     |
+| Rejection policy | AbortPolicy              | AbortPolicy                | CallerRunsPolicy        |
+| Primary risk     | OOM from unbounded queue | Thread exhaustion on burst | Back-pressure on caller |
+
+A fixed pool's unbounded queue can grow until the JVM runs out of memory. A
+cached pool can spawn threads without limit during traffic spikes. Both fail
+catastrophically under sustained load. The custom configuration in the
+production example above avoids both failure modes.
 
 ---
 

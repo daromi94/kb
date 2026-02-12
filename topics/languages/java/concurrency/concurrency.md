@@ -44,15 +44,6 @@ freeze until the download finished.
 **Better throughput:** By overlapping I/O-bound tasks, a system can complete
 significantly more work in the same total window of time.
 
-## Concurrency as structure
-
-In modern software design, concurrency is treated as a way to **structure** a
-program. Breaking a monolithic process into independent, smaller tasks that
-communicate with each other makes the code more modular. This concurrent
-structure allows the program to scale naturally: run it on a machine with 16
-cores, and the concurrent tasks can be mapped to those cores to run in parallel
-without changing the underlying logic.
-
 ---
 
 Return to [Concurrency](_index.md)

@@ -12,6 +12,7 @@ Java concurrency in practice.
 - [I/O multiplexing](io-multiplexing.md) - select/poll and Java NIO Selector/Channel
 - [Threads](threads.md) - Units of execution in Java
 - [Thread memory](thread-memory.md) - Shared vs. thread-private state in the JVM
+- [Safety and liveness](safety-and-liveness.md) - Correctness framework: wrong answer vs. no answer
 - [Thread safety hazards](thread-safety-hazards.md) - Race conditions, visibility, and reordering
 - [Daemon threads](daemon-threads.md) - Background service threads
 - [Thread states](thread-states.md) - The six JVM thread lifecycle states

@@ -66,6 +66,7 @@ of requiring retry loops under contention.
 
 ## Related
 
+- [Safety and liveness](safety-and-liveness.md) - The broader correctness framework
 - [Thread memory](thread-memory.md) - Shared vs. thread-private state
 - [Threads](threads.md) - Thread fundamentals and creation
 

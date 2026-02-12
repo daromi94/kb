@@ -1,12 +1,26 @@
 # Threads
 
-A thread is the smallest unit of execution within a program—a path of execution
-that allows a program to perform multiple tasks simultaneously or in an
-interleaved fashion.
+A thread is a stream of program control flow within a process. Multiple threads
+coexist inside the same process, sharing process-wide resources such as memory
+and file handles, while each thread maintains its own program counter, stack,
+and local variables.
+
+Threads are sometimes called lightweight processes. Most modern operating
+systems treat threads, not processes, as the basic units of scheduling. Without
+explicit coordination, threads execute simultaneously and asynchronously with
+respect to one another.
 
 Every Java application starts with at least one thread, the **main thread**,
 which executes the `main()` method. From there, you can spawn additional threads
 to handle background tasks without freezing the user interface.
+
+## Shared memory
+
+Since threads share the memory address space of their owning process, all
+threads within a process access the same variables and allocate objects from the
+same heap. This allows finer-grained data sharing than inter-process mechanisms,
+but without explicit synchronization a thread may modify variables that another
+thread is in the middle of using, with unpredictable results.
 
 ## Platform threads
 

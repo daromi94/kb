@@ -51,7 +51,7 @@ own stack memory, typically 1MB by default.
 - **Thread stack cost:** 1,000 threads ≈ 1 GB RAM just for stacks
 - **Heap pressure:** More threads mean more simultaneous object creation,
   increasing GC pause frequency
-- **Rule of thumb:** If calculations suggest 1,000 threads but you only have
+- **Rule of thumb:** If calculations suggest 1,000 threads, but you only have
   2 GB RAM, lower the thread count and increase queue size instead
 
 ## Little's Law for queue sizing

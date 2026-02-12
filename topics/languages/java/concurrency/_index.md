@@ -1,6 +1,6 @@
 # Concurrency
 
-Java concurrency and multithreading fundamentals.
+Java concurrency in practice.
 
 ## Notes
 

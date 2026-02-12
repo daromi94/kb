@@ -74,11 +74,22 @@ be at least 40 to prevent rejection.
 Because $W/C$ ratios are hard to measure precisely:
 
 1. **Start with a fixed pool** using the formula as a baseline
-2. **Expose metrics:** Use Micrometer or JMX to monitor `getPoolSize()`,
-   `getQueueSize()`, and `getActiveCount()`
+2. **Expose metrics:** Use Micrometer or JMX to monitor pool state
 3. **Adjust dynamically:** If the queue is always full but CPU usage is low,
    increase thread count. If CPU is at 100% and latency is high, you've hit the
    physical limit
+
+Key metrics to track periodically:
+
+```java
+executor.getActiveCount();        // threads currently running tasks
+executor.getCompletedTaskCount(); // total tasks finished
+executor.getQueue().size();       // tasks waiting in the queue
+executor.getLargestPoolSize();    // high-water mark for threads
+```
+
+- **Queue constantly full:** pool is undersized, increase thread count
+- **Threads mostly idle:** pool is over-provisioned, reduce threads
 
 ---
 

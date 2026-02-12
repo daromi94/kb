@@ -6,6 +6,7 @@ Java concurrency in practice.
 
 - [Concurrency](concurrency.md) - Handling multiple tasks with interleaving
 - [Parallelism](parallelism.md) - Simultaneous execution across multiple cores
+- [Blocking I/O](blocking-io.md) - Overlapping I/O waits with productive CPU work
 - [Threads](threads.md) - Units of execution in Java
 - [Thread memory](thread-memory.md) - Shared vs. thread-private state in the JVM
 - [Daemon threads](daemon-threads.md) - Background service threads

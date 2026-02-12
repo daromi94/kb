@@ -76,9 +76,9 @@ handlers.
 +------------------+      +-----------+
         ^
         |  register
-   +----+----+----+
+   +----+----+----+--+
    | Ch1 | Ch2 | Ch3 |  (thousands of channels)
-   +-----+----+-----+
+   +-----+----+------+
 ```
 
 The Reactor thread handles accept and read-readiness events. When data is

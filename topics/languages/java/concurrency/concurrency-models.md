@@ -45,6 +45,20 @@ managed by the JVM and multiplexed onto a small carrier thread pool. They
 restore sequential programming style while the runtime handles the
 multiplexing transparently.
 
+## The core difference
+
+The fundamental distinction is how the application waits for data.
+
+**Thread-per-client:** Each thread is dedicated to one connection. When the
+client has no data ready, the thread calls `read()` and the OS suspends it.
+The thread sits idle—consuming stack memory and a scheduling slot—until
+packets arrive.
+
+**I/O multiplexing:** A single thread monitors many connections through a
+Selector. It asks the OS "which of these 1,000 sockets have data ready?"
+and sleeps until the OS wakes it with a set of ready descriptors. The thread
+only touches connections that have actual work, then returns to monitoring.
+
 ## Comparison
 
 | Model                    | Resource usage    | Code complexity | Best for                          |

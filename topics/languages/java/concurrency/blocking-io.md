@@ -23,6 +23,13 @@ When a Java application calls `inputStream.read()`, the following occurs:
 6. **Resumption:** The kernel marks the thread as Runnable. The scheduler
    puts it back on the CPU and `read()` returns
 
+## The cost of waiting
+
+I/O is orders of magnitude slower than the CPU. If a CPU instruction takes
+~1 nanosecond, a network round-trip might take 500,000ns and a disk read
+10,000,000ns. In a blocking model, the thread sits idle for that entire
+duration. Multiplexing or concurrency reclaims those wasted cycles.
+
 ## Overlapping execution
 
 On a single-processor system, true parallelism is impossible. But when one
@@ -75,6 +82,7 @@ blocked thread, the system still reaches a standstill.
 ## Related
 
 - [Concurrency](concurrency.md) - Why overlapping tasks improves throughput
+- [I/O multiplexing](io-multiplexing.md) - Non-blocking alternative using selectors
 - [Thread memory](thread-memory.md) - Thread-private stack and shared heap
 - [Thread pool sizing](thread-pool-sizing.md) - Sizing pools for I/O-bound workloads
 

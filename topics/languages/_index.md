@@ -1,6 +1,6 @@
 # Languages
 
-Programming language notes and idioms.
+Idioms, constructs, patterns, and runtime behavior.
 
 ## Subtopics
 

@@ -10,7 +10,7 @@ Normal Unix sockets create a file on disk:
 struct sockaddr_un addr;
 addr.sun_family = AF_UNIX;
 strcpy(addr.sun_path, "/tmp/app.sock");
-bind(fd, &addr, sizeof(addr));  // Creates /tmp/app.sock
+bind(fd, &addr, sizeof(addr)); // Creates /tmp/app.sock
 ```
 
 **Crash scenario:**
@@ -33,7 +33,7 @@ struct sockaddr_un addr;
 addr.sun_family = AF_UNIX;
 addr.sun_path[0] = '\0';
 strcpy(addr.sun_path + 1, "app.sock");
-bind(fd, &addr, sizeof(addr));  // No file created
+bind(fd, &addr, sizeof(addr)); // No file created
 ```
 
 **Properties:**

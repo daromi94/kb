@@ -69,6 +69,9 @@ Inbound                                             Outbound
 - [Non-blocking sockets](non-blocking-sockets.md) - OS-level mechanics
   Netty abstracts away
 - [Selector](selector.md) - The multiplexer at the heart of NIO
+- [Channel](channel.md) - The bidirectional I/O conduit
+- [Channel handler](channel-handler.md) - Modular event processing
+- [Channel future](channel-future.md) - Listener-based async tracking
 - [Partial I/O](partial-io.md) - How Netty handles incomplete reads and
   writes
 

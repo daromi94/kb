@@ -1,0 +1,63 @@
+# Channel
+
+A Channel is the fundamental abstraction for any I/O operation in Java NIO
+and Netty. It represents an open connection to an entity — a network
+socket, file, or hardware device — capable of reading and writing. Where
+traditional I/O uses unidirectional streams (one InputStream, one
+OutputStream), a Channel is a bidirectional conduit through which data
+flows in both directions.
+
+## Key properties
+
+**State-based:** A Channel has a lifecycle. It can be open or closed, and
+for network sockets, connected or disconnected. If the underlying socket
+drops, the Channel transitions to a closed state.
+
+**Non-blocking capable:** A Channel can be configured in non-blocking mode,
+allowing read and write operations to return immediately even when no data
+is ready, rather than suspending the thread.
+
+**Buffer-oriented:** Channels never move data directly. They always
+interact with a Buffer (ByteBuf in Netty). You ask the Channel to read
+bytes into a buffer or write a buffer's contents to the underlying entity.
+
+## Channel types
+
+| Channel type        | Entity               | Use case                                    |
+|---------------------|----------------------|---------------------------------------------|
+| FileChannel         | File on local disk   | High-speed file transfers, memory mapping   |
+| SocketChannel       | TCP socket (client)  | Connecting to a server, exchanging data     |
+| ServerSocketChannel | TCP listening socket | Accepting incoming connections              |
+| DatagramChannel     | UDP socket           | Connectionless packet exchange (DNS, video) |
+
+## Channel vs stream
+
+| Aspect    | Stream (java.io)               | Channel (java.nio)                    |
+|-----------|--------------------------------|---------------------------------------|
+| Direction | Unidirectional (in or out)     | Bidirectional (read and write)        |
+| Blocking  | Always blocks on read/write    | Configurable non-blocking mode        |
+| Data unit | Byte-by-byte                   | Buffer-oriented (block of data)       |
+| Scaling   | One stream pair per connection | Registers with Selector for thousands |
+
+## Netty's Channel
+
+A Java NIO SocketChannel is a low-level OS wrapper. A Netty Channel is a
+richer object that integrates with the framework:
+
+- Bound to a single EventLoop for its entire lifetime, ensuring all I/O
+  is handled sequentially and thread-safely
+- Connected to a ChannelPipeline that processes inbound and outbound data
+  through a chain of handlers
+- Provides ChannelFuture for asynchronous operation tracking
+
+## Related
+
+- [Channel handler](channel-handler.md) - Logic that processes data
+  flowing through a Channel
+- [Channel future](channel-future.md) - Tracking asynchronous Channel
+  operations
+- [Netty](netty.md) - Framework overview and core components
+
+---
+
+Return to [Netty](_index.md)

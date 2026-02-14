@@ -8,6 +8,9 @@ Asynchronous, event-driven network application framework for Java.
 - [BIO scaling walls](bio-scaling-walls.md) - Thread-per-connection bottlenecks Netty overcomes
 - [Non-blocking sockets](non-blocking-sockets.md) - OS-level socket mechanics that Netty abstracts
 - [Selector](selector.md) - I/O multiplexer at the heart of NIO
+- [Channel](channel.md) - Bidirectional I/O conduit abstraction
+- [Channel handler](channel-handler.md) - Modular event processing in the pipeline
+- [Channel future](channel-future.md) - Listener-based async operation tracking
 - [Partial I/O](partial-io.md) - Handling incomplete reads and writes in non-blocking I/O
 
 ---

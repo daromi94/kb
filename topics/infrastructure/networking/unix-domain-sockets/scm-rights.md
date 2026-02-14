@@ -15,7 +15,7 @@ cannot use it—their file tables are independent.
 Process A (fd=4)              Kernel                    Process B
 +---------------+        +---------------+        +---------------+
 | fd table      |        |               |        | fd table      |
-| 4 -> file*  --|------->| file struct   |<-------|- 7 -> file*   |
+| 4 -> file* ---|------->| file struct   |<-------|- 7 -> file*   |
 +---------------+        | refcount: 2   |        +---------------+
                          +---------------+
 ```

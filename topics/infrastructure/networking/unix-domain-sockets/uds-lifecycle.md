@@ -6,32 +6,32 @@ The UDS API mirrors TCP but with filesystem-specific setup and teardown.
 
 ```
 +------------------+
-|  socket()        |  Create endpoint (AF_UNIX, SOCK_STREAM)
+|  socket()        | Create endpoint (AF_UNIX, SOCK_STREAM)
 +------------------+
          |
          v
 +------------------+
-|  unlink()        |  Remove stale socket file (UDS-specific)
+|  unlink()        | Remove stale socket file (UDS-specific)
 +------------------+
          |
          v
 +------------------+
-|  bind()          |  Create socket file on disk
+|  bind()          | Create socket file on disk
 +------------------+
          |
          v
 +------------------+
-|  chmod()         |  Set permissions (optional but common)
+|  chmod()         | Set permissions (optional but common)
 +------------------+
          |
          v
 +------------------+
-|  listen()        |  Mark as passive, set backlog
+|  listen()        | Mark as passive, set backlog
 +------------------+
          |
          v
 +------------------+
-|  accept()        |  Block until client connects
+|  accept()        | Block until client connects
 +------------------+
 ```
 
@@ -49,12 +49,12 @@ Process umask affects permissions.
 
 ```
 +------------------+
-|  socket()        |  Create endpoint (AF_UNIX, SOCK_STREAM)
+|  socket()        | Create endpoint (AF_UNIX, SOCK_STREAM)
 +------------------+
          |
          v
 +------------------+
-|  connect()       |  Connect to server's socket file
+|  connect()       | Connect to server's socket file
 +------------------+
 ```
 
@@ -73,8 +73,8 @@ descriptors pointing to each other.
 **Standard I/O:**
 
 ```c
-write(fd, "Hello", 5);  // Copy to kernel buffer
-read(fd, buf, 100);     // Read from kernel buffer
+write(fd, "Hello", 5); // Copy to kernel buffer
+read(fd, buf, 100);    // Read from kernel buffer
 ```
 
 **Advanced I/O:** Use `sendmsg()`/`recvmsg()` for ancillary data like file
@@ -98,10 +98,10 @@ descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 
    accept returns fd=5  <------------- [Connected]
 
-6. read(fd=5)  <--------------------- 3. write(fd=4, "Hello")
+6. read(fd=5)  <------------------- 3. write(fd=4, "Hello")
    [RAM-to-RAM copy]
 
-7. close(fd=5)                        4. close(fd=4)
+7. close(fd=5)                      4. close(fd=4)
 ```
 
 ## API Comparison

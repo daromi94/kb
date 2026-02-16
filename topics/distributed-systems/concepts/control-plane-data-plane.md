@@ -23,16 +23,16 @@ coordination.
 - Handles complex logic (leader election, sharding) asynchronously
 
 ```
-+------------------+
-|   Control Plane  |
-|  (consistency)   |
-|        |         |
-|        | config  |
-|        v         |
-+------------------+
-|    Data Plane    |
-|  (performance)   |
-+------------------+
++-------------------+
+|   Control Plane   |
+|   (consistency)   |
+|        |          |
+|        | config   |
+|        v          |
++-------------------+
+|    Data Plane     |
+|   (performance)   |
++-------------------+
         |
         v
     requests

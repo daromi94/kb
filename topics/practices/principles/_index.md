@@ -5,6 +5,8 @@ Foundational design principles for software architecture.
 ## Notes
 
 - [Abstraction](abstraction.md) - Hiding implementation to manage complexity
+- [Premature abstraction](premature-abstraction.md) - Costs of abstracting before the pattern is clear
+- [Rule of three](rule-of-three.md) - Wait for three instances before generalizing
 - [Uniform access](uniform-access.md) - Hide whether a value is stored or computed
 - [Indirection](indirection.md) - Adding layers between requester and provider
 - [Polymorphism](polymorphism.md) - Many shapes through common interfaces

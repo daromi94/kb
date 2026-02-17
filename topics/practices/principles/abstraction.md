@@ -51,12 +51,11 @@ at the same conceptual level.
 
 ## Low vs high abstraction in code
 
-**Low abstraction (high WTF potential):** Code manually opens an SMTP
-connection, authenticates with base64, constructs a MIME header, and handles
-packet retries. If the notification method changes to SMS, this entire block
-must be ripped out.
+**Low abstraction:** Code manually opens an SMTP connection, authenticates
+with base64, constructs a MIME header, and handles packet retries. If the
+notification method changes to SMS, this entire block must be ripped out.
 
-**High abstraction (clean):** The developer calls
+**High abstraction:** The developer calls
 `NotificationService.send(message, recipient)`. Whether it uses email, SMS, or
 Slack is hidden behind the service.
 

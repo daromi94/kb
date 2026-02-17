@@ -65,8 +65,6 @@ implementation is determined at runtime (dynamic dispatch).
 
 ## Why use indirection
 
-Indirection facilitates clean code through:
-
 - **Decoupling:** The caller doesn't need to know the specific identity of the
   callee, only the intermediary
 - **Late binding:** Decisions about which resource to use can be delayed until

@@ -34,24 +34,20 @@ at the same conceptual level.
 | Mid level  | `paymentGateway.charge(amount)` | Integration logic and orchestration    |
 | Low level  | `socket.send(buffer)`           | Technical implementation and "how"     |
 
-## Benefits for code quality
+## Benefits
 
 - **Readability:** Replacing a complex 50-line algorithm with a well-named
   function call like `validateUserCredentials()` makes intent immediately clear
 - **Reduced cognitive load:** The brain can only hold about seven pieces of
   information in short-term memory. Abstraction "chunks" information, allowing
   understanding of a system as interacting boxes rather than tangled lines
-- **Decoupling for modification:** If implementation details of a "black box"
-  change (e.g., switching from SQL to NoSQL), the code that uses that box
-  remains untouched as long as the public interface stays the same
-
-## The automotive analogy
-
-A driver interacts with a car through steering wheel, pedals, and gear shifter.
-This is the abstraction layer. The driver doesn't need to understand internal
-combustion or fuel injection to navigate. If the engine is replaced with an
-electric motor, the abstraction remains the same, so the driver doesn't need
-to learn a new way to drive.
+- **Decoupling:** When code depends on abstractions (interfaces) rather than
+  concretions (specific classes), the system becomes "pluggable." If
+  implementation details change (e.g., switching from SQL to NoSQL), consumers
+  remain untouched as long as the public interface stays the same
+- **Domain language:** Abstraction allows code written in the "ubiquitous
+  language" of the problem domain (e.g., `policy.calculatePremium()`) rather
+  than the language of the machine (e.g., `float result = (x * 0.05) + y`)
 
 ## Low vs high abstraction in code
 
@@ -64,27 +60,9 @@ must be ripped out.
 `NotificationService.send(message, recipient)`. Whether it uses email, SMS, or
 Slack is hidden behind the service.
 
-## The danger of over-abstraction
-
-**Leaky abstractions** occur when implementation details "leak" through to the
-user. **Over-abstraction** (creating layers for the sake of layers) leads to
-"boilerplate hell," where a developer must navigate through five different
-files just to find where a single line of logic executes.
-
-## Relationship to cognitive load
-
-Abstraction is the primary tool for keeping the WTF/minute count low:
-
-1. **Reduced specification:** By focusing on high-level models, the amount of
-   code a developer must hold in working memory is reduced
-2. **Increased modifiability:** When code depends on abstractions (interfaces)
-   rather than concretions (specific classes), the system becomes "pluggable"
-3. **Language of the business:** Abstraction allows code written in the
-   "ubiquitous language" of the problem domain (e.g., `policy.calculatePremium()`)
-   rather than the language of the machine (e.g., `float result = (x * 0.05) + y`)
-
 ## Related
 
+- [Premature abstraction](premature-abstraction.md) - Costs of abstracting too early
 - [Indirection](indirection.md) - Closely related but serves different purpose
 - [Polymorphism](polymorphism.md) - Uses abstraction for dynamic behavior
 - [WTFs per minute](../clean-code/wtfs-per-minute.md) - What abstraction helps minimize

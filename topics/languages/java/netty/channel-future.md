@@ -1,13 +1,15 @@
 # Channel future
 
 In Netty, every I/O operation — `connect()`, `write()`, `close()` — returns
-immediately before the operation completes. A ChannelFuture is the object
-that tracks the operation's progress and notifies the application when it
-finishes. It acts as a placeholder for the result of an operation that will
-be executed in the future. While the exact timing depends on various factors
-and cannot be predicted, the framework guarantees that the operation will
-be executed. ChannelFuture extends Java's `Future` with a listener-based
-callback mechanism that avoids blocking.
+immediately before it completes. A ChannelFuture is the object that
+tracks the operation's progress and notifies the application when it
+finishes.
+
+It acts as a placeholder for the result of an operation that
+will be executed in the future. While the exact timing depends on various
+factors and cannot be predicted, the framework guarantees that the
+operation will be executed. ChannelFuture extends Java's `Future` with a
+listener-based callback mechanism that avoids blocking.
 
 ## Java Future limitations
 

@@ -20,7 +20,7 @@ rules of the object it is manipulating.
 **The workflow of "asking":**
 
 1. Request: Ask the object for its current state
-2. Evaluate: Apply business logic to that state outside of the object
+2. Evaluate: Apply business logic to that state outside the object
 3. Update: Set the new state back into the object
 
 | Characteristic | Ask (procedural)                               | Tell (object-oriented)                  |

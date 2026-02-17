@@ -15,7 +15,7 @@ Wheeler, states:
 ## The mechanism
 
 At its core, indirection replaces a direct link with an intermediate step.
-Instead of **A -> B**, the structure becomes **A -> Map -> B**.
+Instead of **A → B**, the structure becomes **A → Map → B**.
 
 | Component     | Direct access                                  | Indirect access                                |
 |---------------|------------------------------------------------|------------------------------------------------|

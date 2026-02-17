@@ -27,16 +27,21 @@ versions of the same program share almost no structure.
 
 ## Available transports
 
-| Transport | EventLoopGroup        | Channel class            | Use case                           |
-|-----------|-----------------------|--------------------------|------------------------------------|
-| NIO       | `NioEventLoopGroup`   | `NioServerSocketChannel` | High-concurrency, scalable servers |
-| OIO       | `OioEventLoopGroup`   | `OioServerSocketChannel` | Small-to-moderate concurrency      |
-| Local     | `LocalEventLoopGroup` | `LocalServerChannel`     | In-JVM communication               |
-| Embedded  | —                     | `EmbeddedChannel`        | Unit testing ChannelHandlers       |
+| Transport | Package                       | Use case                           |
+|-----------|-------------------------------|------------------------------------|
+| NIO       | `io.netty.channel.socket.nio` | High-concurrency, scalable servers |
+| Epoll     | `io.netty.channel.epoll`      | Linux-optimized high performance   |
+| OIO       | `io.netty.channel.socket.oio` | Small-to-moderate concurrency      |
+| Local     | `io.netty.channel.local`      | In-JVM communication via pipes     |
+| Embedded  | `io.netty.channel.embedded`   | Unit testing ChannelHandlers       |
 
 **NIO** is the default choice for production. It uses I/O multiplexing via a
 Selector, allowing a small number of threads to manage thousands of
 connections.
+
+**Epoll** uses JNI to call Linux's `epoll()` directly, bypassing the JDK's
+NIO layer. It is faster than the NIO transport, fully non-blocking, and
+exposes Linux-specific socket options like `SO_REUSEPORT`. Linux-only.
 
 **OIO** wraps the classic `java.net` blocking sockets. Useful when integrating
 with libraries that require blocking semantics, but limited in scalability.

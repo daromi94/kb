@@ -42,17 +42,6 @@ using the same logic.
 The most common form in OOP. A program defines a base class (or interface) and
 multiple subclasses provide their own implementations of the base's methods.
 
-## The universal remote analogy
-
-A universal remote has a "Power" button designed to work with any television.
-
-- **The abstraction:** The "Power" button is the interface. Every TV must have
-  a way to turn on or off.
-- **The polymorphism:** When you press "Power," the remote sends a signal. A
-  Sony TV interprets it one way, a Samsung another. You don't need to know the
-  specific infrared frequency for each brand; you only need to know how to
-  press "Power."
-
 ## Clean code benefits
 
 Polymorphism reduces the WTF/minute count by eliminating complex conditional

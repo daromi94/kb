@@ -3,10 +3,10 @@
 The blocking I/O (BIO) thread-per-connection model was the standard way to
 handle networking in Java before NIO. It assigns a dedicated thread to each
 client socket, following a synchronous lifecycle: `accept()` blocks waiting
-for a connection, a new thread is spawned for the socket, `readLine()`
-blocks waiting for data, the thread processes and writes back, then waits
-again. This model hits three scaling walls that frameworks like Netty were
-built to overcome.
+for a connection, a new thread is spawned for the socket, `read()` blocks
+waiting for data, the thread processes and writes back, then waits again.
+This model hits three scaling walls that frameworks like Netty were built
+to overcome.
 
 ## Resource wastage
 

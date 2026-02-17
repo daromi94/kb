@@ -100,7 +100,27 @@ data flow with arrows and label the operations:
 +-------------------+
 ```
 
-### 6. Note Format
+### 6. Fact-Check
+
+Before writing notes, verify claims against trusted sources. Launch a
+general-purpose subagent (via the Task tool) with instructions to:
+
+- Identify the key factual claims in the processed content (API names, method
+  signatures, default values, behavioral descriptions, class hierarchies)
+- Search for the **official documentation**, **Javadocs**, or **GitHub source
+  code** for the relevant project — the agent must find these sources itself
+- Cross-reference each claim against what the source says
+- Return a list of issues found, each with: the claim, what the source says,
+  and a link to the source
+
+Fix any inaccuracies before writing the notes. If the agent finds no issues,
+proceed as-is.
+
+**Skip this step** when the input source is itself authoritative (e.g., the
+content was fetched directly from official docs or source code for the same
+project being documented).
+
+### 7. Note Format
 
 ```markdown
 # Note Title
@@ -132,7 +152,7 @@ All cross-references go exclusively in the `## Related` section at the bottom.
 Standards: Single blank lines between elements, sentence case headers, language
 tags on code blocks.
 
-### 7. Index File
+### 8. Index File
 
 ```markdown
 # Topic Name
@@ -155,7 +175,7 @@ together. Overviews and foundational concepts come first, specialized or
 niche topics last. When adding a new entry, insert it at the position that
 maintains this order rather than appending to the end.
 
-### 8. Save and Report
+### 9. Save and Report
 
 - Create `topics/<topic>/` if needed
 - Write notes as `<slug>.md` (kebab-case)
@@ -163,13 +183,13 @@ maintains this order rather than appending to the end.
 - For nested subtopics, update parent `_index.md`
 - Report what was created/updated with brief summaries
 
-### 9. Fixing Issues
+### 10. Fixing Issues
 
 When fixing issues across multiple files, edit files sequentially (not in
 parallel) to avoid file-modified conflicts. Avoid batch scripts which may break
 ASCII diagrams or other structured content.
 
-### 10. Commits
+### 11. Commits
 
 When asked to commit, use conventional commit format with `docs(kb):` prefix.
 One-line message, no co-author.

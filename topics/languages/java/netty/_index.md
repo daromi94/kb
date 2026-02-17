@@ -19,6 +19,7 @@ Asynchronous, event-driven network application framework for Java.
 - [Channel handler](channel-handler.md) - Modular event processing in the pipeline
 - [Channel pipeline](channel-pipeline.md) - Ordered handler chain and event propagation
 - [Channel handler context](channel-handler-context.md) - Handler-pipeline binding and scoped event propagation
+- [Exception handling](exception-handling.md) - Inbound propagation and outbound future/promise errors
 - [Codecs](codecs.md) - Encoder/decoder handlers for byte-object translation
 - [Bootstrap](bootstrap.md) - Configuring client and server network layers
 - [Transport](transport.md) - Unified API over pluggable I/O mechanisms

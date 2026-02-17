@@ -10,15 +10,15 @@ ChannelPipeline, and ChannelHandler regardless of the underlying I/O model.
 ## Switching transports
 
 Because the transport is an implementation detail hidden behind Netty's
-abstractions, migrating from blocking to non-blocking I/O reduces to changing
-two classes in the bootstrap configuration:
+abstractions, migrating from blocking to non-blocking I/O reduces to swapping
+the EventLoopGroup and Channel class in the bootstrap configuration:
 
 ```java
 // Blocking (OIO)
-bootstrap.group(new OioEventLoopGroup()).channel(OioServerSocketChannel.class)
+bootstrap.group(oioGroup).channel(OioServerSocketChannel.class)
 
 // Non-blocking (NIO)
-bootstrap.group(new NioEventLoopGroup()).channel(NioServerSocketChannel.class)
+bootstrap.group(nioGroup).channel(NioServerSocketChannel.class)
 ```
 
 The rest of the application — handlers, pipeline, business logic — remains

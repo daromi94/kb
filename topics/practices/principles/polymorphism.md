@@ -42,10 +42,9 @@ using the same logic.
 The most common form in OOP. A program defines a base class (or interface) and
 multiple subclasses provide their own implementations of the base's methods.
 
-## Clean code benefits
+## Benefits
 
-Polymorphism reduces the WTF/minute count by eliminating complex conditional
-logic.
+Polymorphism simplifies code by eliminating complex conditional logic.
 
 - **Replacing if/else or switch blocks:** Instead of a giant switch checking
   object type (`if (type == "Circle") drawCircle(); else if (type == "Square")...`),

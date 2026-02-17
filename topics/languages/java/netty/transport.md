@@ -52,11 +52,8 @@ platforms.
 **io_uring** uses Linux's completion-based I/O interface. Where Epoll is
 readiness-based (tells you a socket is ready, then you perform the I/O),
 io_uring is completion-based (you submit I/O, the kernel notifies you
-when it finishes). Submissions and completions flow through shared
-memory-mapped ring buffers, allowing multiple operations to be batched
-into a single `io_uring_enter()` syscall or none at all in polling mode.
-Requires Linux kernel 5.9+. Graduated from incubator to mainline in
-Netty 4.2.
+when it finishes). Requires Linux kernel 5.9+. Graduated from incubator
+to mainline in Netty 4.2.
 
 **OIO** wraps the classic `java.net` blocking sockets. Deprecated since Netty
 4.1.32 (November 2018) — use NIO, Epoll, or KQueue instead.

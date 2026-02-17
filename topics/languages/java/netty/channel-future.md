@@ -87,14 +87,6 @@ f.addListener(ChannelFutureListener.CLOSE);
 `ChannelFutureListener.CLOSE` is a built-in listener that waits for the
 write to be confirmed by the OS before initiating the close sequence.
 
-## Summary
-
-| Concept                 | Description                                                   |
-|-------------------------|---------------------------------------------------------------|
-| `ChannelFuture`         | A "promise" or placeholder for a future result                |
-| `ChannelFutureListener` | A callback registered to handle completion events             |
-| Sequential execution    | Operations on the same Channel always follow invocation order |
-
 ## Related
 
 - [Channel](channel.md) - The connection whose operations produce futures

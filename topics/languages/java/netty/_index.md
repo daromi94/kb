@@ -10,6 +10,7 @@ Asynchronous, event-driven network application framework for Java.
 - [Selector](selector.md) - I/O multiplexer at the heart of NIO
 - [Event loop](event-loop.md) - Single-threaded I/O engine and thread model
 - [Channel](channel.md) - Bidirectional I/O conduit abstraction
+- [ByteBuf](bytebuf.md) - Pooled buffer replacing JDK ByteBuffer
 - [Channel handler](channel-handler.md) - Modular event processing in the pipeline
 - [Channel pipeline](channel-pipeline.md) - Ordered handler chain and event propagation
 - [Codecs](codecs.md) - Encoder/decoder handlers for byte-object translation

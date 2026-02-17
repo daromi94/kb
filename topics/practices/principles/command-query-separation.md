@@ -34,8 +34,8 @@ the change is invisible to callers:
 pointer (command) in a single call. Under strict CQS, this splits into:
 
 ```java
-iterator.current();  // query: return element at position
-iterator.advance();  // command: move pointer forward
+iterator.current(); // query: return element at position
+iterator.advance(); // command: move pointer forward
 ```
 
 ## When to break the rule

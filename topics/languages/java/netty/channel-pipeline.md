@@ -70,6 +70,8 @@ letting the application override only the methods it needs.
 
 - [Channel handler](channel-handler.md) - The individual processing units
   in the pipeline
+- [Channel handler context](channel-handler-context.md) - Full API and
+  advanced usage of the handler-pipeline binding
 - [Channel](channel.md) - The connection that owns a pipeline
 - [Event loop](event-loop.md) - The thread that drives pipeline execution
 

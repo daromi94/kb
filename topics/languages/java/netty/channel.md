@@ -9,9 +9,9 @@ flows in both directions.
 
 ## Key properties
 
-**State-based:** A Channel has a lifecycle. It can be open or closed, and
-for network sockets, connected or disconnected. If the underlying socket
-drops, the Channel transitions to a closed state.
+**State-based:** A Channel follows a defined lifecycle with four states.
+State transitions fire events through the ChannelPipeline to inbound
+handlers.
 
 **Non-blocking capable:** A Channel can be configured in non-blocking mode,
 allowing read and write operations to return immediately even when no data
@@ -20,6 +20,24 @@ is ready, rather than suspending the thread.
 **Buffer-oriented:** Channels never move data directly. They always
 interact with a Buffer (ByteBuf in Netty). You ask the Channel to read
 bytes into a buffer or write a buffer's contents to the underlying entity.
+
+## Lifecycle states
+
+A Channel progresses through these states in order:
+
+```
+Unregistered --> Registered --> Active --> Inactive
+```
+
+| State                 | Meaning                                   | Handler callback        |
+|-----------------------|-------------------------------------------|-------------------------|
+| `ChannelUnregistered` | Created but not yet bound to an EventLoop | `channelUnregistered()` |
+| `ChannelRegistered`   | Bound to an EventLoop                     | `channelRegistered()`   |
+| `ChannelActive`       | Connected to remote peer, ready for I/O   | `channelActive()`       |
+| `ChannelInactive`     | Disconnected from remote peer             | `channelInactive()`     |
+
+Common patterns: send a greeting message in `channelActive()`, release
+resources in `channelInactive()`.
 
 ## Channel types
 

@@ -12,6 +12,7 @@ Asynchronous, event-driven network application framework for Java.
 - [Channel](channel.md) - Bidirectional I/O conduit abstraction
 - [Channel handler](channel-handler.md) - Modular event processing in the pipeline
 - [Channel pipeline](channel-pipeline.md) - Ordered handler chain and event propagation
+- [Codecs](codecs.md) - Encoder/decoder handlers for byte-object translation
 - [Channel future](channel-future.md) - Listener-based async operation tracking
 - [Partial I/O](partial-io.md) - Handling incomplete reads and writes in non-blocking I/O
 

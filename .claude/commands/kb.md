@@ -113,8 +113,11 @@ general-purpose subagent (via the Task tool) with instructions to:
 - Return a list of issues found, each with: the claim, what the source says,
   and a link to the source
 
-Fix any inaccuracies before writing the notes. If the agent finds no issues,
-proceed as-is.
+Present the findings to the user in a numbered list. For each issue, show:
+the claim made, what the source says, and the source link. Ask the user if
+they want to accept all corrections, reject all, or specify which to reject
+by number. Fix accepted issues before writing the notes. If the agent finds
+no issues, proceed as-is.
 
 **Skip this step** when the input source is itself authoritative (e.g., the
 content was fetched directly from official docs or source code for the same

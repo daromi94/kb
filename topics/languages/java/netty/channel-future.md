@@ -24,10 +24,10 @@ blocking the EventLoop thread would freeze thousands of connections.
 
 ## The listener pattern
 
-Since blocking on `get()` is not an option, Netty provides a callback-style
-notification system. A ChannelFuture allows registering a
-ChannelFutureListener. The EventLoop automatically invokes the listener
-once the operation completes, regardless of whether it succeeded or failed:
+Since blocking on `get()` is not an option, Netty provides a
+callback-style notification system. A ChannelFuture allows registering
+a ChannelFutureListener. The EventLoop invokes the listener once the
+operation completes, regardless of whether it succeeded or failed:
 
 1. **Initiate:** `cf = channel.write(data)` returns immediately
 2. **Attach:** `cf.addListener(myListener)` registers a callback

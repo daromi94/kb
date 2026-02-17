@@ -21,7 +21,7 @@ understand what is actually happening.
 
 ## Speculative generality
 
-The anti-pattern known as "speculative generality" (or "architecture
+The antipattern known as "speculative generality" (or "architecture
 astronautics") happens when developers look at a single use case and
 immediately build a generic framework to handle it. Every line of generic code
 must be maintained, documented, and debugged — even if the anticipated

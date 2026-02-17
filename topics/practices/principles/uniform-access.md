@@ -13,7 +13,7 @@ A `Circle` might store its area as a field updated when the radius changes,
 or compute it on the fly. Under UAP, both cases use the same syntax:
 
 ```python
-circle.area  # stored field or computed — caller cannot tell
+circle.area # stored field or computed — caller cannot tell
 ```
 
 If the implementation switches from cached to calculated (or vice versa),

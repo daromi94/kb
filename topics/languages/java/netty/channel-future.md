@@ -2,9 +2,12 @@
 
 In Netty, every I/O operation — `connect()`, `write()`, `close()` — returns
 immediately before the operation completes. A ChannelFuture is the object
-that tracks the operation's progress and notifies the application when
-it finishes. It extends Java's `Future` with a listener-based callback
-mechanism that avoids blocking.
+that tracks the operation's progress and notifies the application when it
+finishes. It acts as a placeholder for the result of an operation that will
+be executed in the future. While the exact timing depends on various factors
+and cannot be predicted, the framework guarantees that the operation will
+be executed. ChannelFuture extends Java's `Future` with a listener-based
+callback mechanism that avoids blocking.
 
 ## Java Future limitations
 
@@ -19,9 +22,10 @@ blocking the EventLoop thread would freeze thousands of connections.
 
 ## The listener pattern
 
-Instead of blocking on `get()`, a ChannelFuture allows registering a
-ChannelFutureListener. When the I/O operation completes, the EventLoop
-thread automatically invokes the listener:
+Since blocking on `get()` is not an option, Netty provides a callback-style
+notification system. A ChannelFuture allows registering a
+ChannelFutureListener. The EventLoop automatically invokes the listener
+once the operation completes, regardless of whether it succeeded or failed:
 
 1. **Initiate:** `cf = channel.write(data)` returns immediately
 2. **Attach:** `cf.addListener(myListener)` registers a callback
@@ -82,6 +86,14 @@ f.addListener(ChannelFutureListener.CLOSE);
 
 `ChannelFutureListener.CLOSE` is a built-in listener that waits for the
 write to be confirmed by the OS before initiating the close sequence.
+
+## Summary
+
+| Concept                 | Description                                                   |
+|-------------------------|---------------------------------------------------------------|
+| `ChannelFuture`         | A "promise" or placeholder for a future result                |
+| `ChannelFutureListener` | A callback registered to handle completion events             |
+| Sequential execution    | Operations on the same Channel always follow invocation order |
 
 ## Related
 

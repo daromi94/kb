@@ -36,19 +36,6 @@ A method M of an object O may only invoke methods of:
 The method should **not** invoke methods on objects returned by any of the
 allowed calls (don't talk to the friends of your friends).
 
-## The paperboy and the wallet
-
-Imagine a paperboy comes to the door to collect payment.
-
-- **LoD violation:** The paperboy reaches into the customer's pocket, pulls out
-  their wallet, opens it, and takes out the exact change.
-- **LoD compliance:** The paperboy asks the customer for the money. The
-  customer interacts with their own wallet and hands the money to the paperboy.
-
-In the compliant version, the paperboy doesn't need to know if the customer
-keeps money in a wallet, a jar, or a pocket. The paperboy only knows how to
-interact with the `Customer` interface.
-
 ## Impact on code quality
 
 | Benefit                   | Explanation                                                           |

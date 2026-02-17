@@ -1,9 +1,8 @@
 # Channel future
 
 In Netty, every I/O operation — `connect()`, `write()`, `close()` — returns
-immediately before it completes. A ChannelFuture is the object that
-tracks the operation's progress and notifies the application when it
-finishes.
+immediately before it completes. A ChannelFuture is the object that tracks
+the operation's progress and notifies the application when it finishes.
 
 A ChannelFuture acts as a placeholder for the result of an operation
 that will be executed in the future. While the exact timing depends on

@@ -1,6 +1,6 @@
 # Anemic domain model
 
-The anemic domain model is an anti-pattern where domain objects contain state
+The anemic domain model is an antipattern where domain objects contain state
 (data) but lack behavior (logic). Objects are named after business nouns
 (`Order`, `Customer`) with rich relationships, yet they are little more than
 bags of getters and setters. The actual business logic lives in separate

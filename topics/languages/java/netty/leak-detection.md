@@ -2,7 +2,7 @@
 
 Netty's `ResourceLeakDetector` monitors pooled ByteBuf allocations to
 catch buffers that are garbage-collected without being released. By
-default it samples roughly 1% of allocations, keeping overhead low while
+default, it samples roughly 1% of allocations, keeping overhead low while
 still surfacing leaks as `LEAK` error log messages.
 
 ## Detection levels

@@ -39,7 +39,30 @@ ByteBuf eliminates this by maintaining two independent indices:
 | Memory reuse     | Not built-in               | Pooling and reference counting   |
 | API style        | Imperative                 | Fluent method chaining           |
 
-## Performance features
+## Buffer types
+
+| Type      | Memory location | Advantage                 | Trade-off                         |
+|-----------|-----------------|---------------------------|-----------------------------------|
+| Heap      | JVM heap        | Fast alloc, backing array | Extra copy on socket I/O          |
+| Direct    | Native memory   | Zero-copy for socket I/O  | Expensive alloc, no backing array |
+| Composite | Virtual         | No-copy message assembly  | Slightly more complex access      |
+
+**Heap buffers** store bytes in a JVM byte array. Call `hasArray()` before
+accessing the backing array directly — direct and composite buffers do not
+have one and will throw `UnsupportedOperationException`.
+
+**Direct buffers** allocate native (off-heap) memory. The kernel can read
+from and write to them without an intermediate copy, which is why the JVM
+silently copies heap data into a temporary direct buffer on every socket
+send. Allocating direct buffers is more expensive than heap buffers, but
+the pooling system amortizes that cost.
+
+**Composite buffers** (`CompositeByteBuf`) present multiple buffers — any
+mix of heap and direct — as a single logical ByteBuf without memcpy. Netty
+further optimizes socket writes on composites using scatter/gather I/O,
+flushing all components in a single system call.
+
+## Memory management
 
 **Pooling:** Netty maintains pools of ByteBuf instances and reuses them
 instead of allocating fresh memory on every I/O operation. This reduces GC
@@ -50,12 +73,6 @@ of buffers per second.
 reference to it. When the count drops to zero, the buffer is returned to
 the pool (or its memory is freed). This ensures pooled buffers are released
 promptly rather than waiting for garbage collection.
-
-**Composite buffers:** A `CompositeByteBuf` presents multiple underlying
-buffers as a single logical ByteBuf without copying data between them. This
-is Netty's form of zero-copy at the application level — for example,
-combining an HTTP header buffer and a body buffer into one message without
-a memcpy.
 
 ## Related
 

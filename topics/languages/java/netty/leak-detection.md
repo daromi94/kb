@@ -2,23 +2,23 @@
 
 Netty's `ResourceLeakDetector` monitors pooled ByteBuf allocations to
 catch buffers that are garbage-collected without being released. By
-default, it samples roughly 1% of allocations, keeping overhead low while
+default, it samples 1 in 128 allocations, keeping overhead low while
 still surfacing leaks as `LEAK` error log messages.
 
 ## Detection levels
 
-Set the level with the JVM option `-Dio.netty.leakDetectionLevel=<LEVEL>`:
+Set the level with the JVM option `-Dio.netty.leakDetection.level=<LEVEL>`:
 
-| Level      | Behavior                                           |
-|------------|----------------------------------------------------|
-| `DISABLED` | No detection; only for verified production systems |
-| `SIMPLE`   | Default; reports leaks at ~1% sampling rate        |
-| `ADVANCED` | Reports leaks with last-access location            |
-| `PARANOID` | Samples every access; high overhead, debug only    |
+| Level      | Sampling rate | Access traces | Behavior                                  |
+|------------|---------------|---------------|-------------------------------------------|
+| `DISABLED` | None          | No            | No detection; only for verified prod      |
+| `SIMPLE`   | 1/128         | No            | Default; reports that a leak exists       |
+| `ADVANCED` | 1/128         | Yes           | Reports leaks with recent access location |
+| `PARANOID` | Every alloc   | Yes           | Tracks all allocations; debug only        |
 
 `SIMPLE` catches most leaks in production. Switch to `ADVANCED` or
 `PARANOID` when reproducing a specific leak in development — the
-last-access trace pinpoints which handler failed to release.
+access traces pinpoint which handler failed to release.
 
 ## Related
 

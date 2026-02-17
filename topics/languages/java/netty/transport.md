@@ -27,13 +27,14 @@ versions of the same program share almost no structure.
 
 ## Available transports
 
-| Transport | Package                       | Use case                           |
-|-----------|-------------------------------|------------------------------------|
-| NIO       | `io.netty.channel.socket.nio` | High-concurrency, scalable servers |
-| Epoll     | `io.netty.channel.epoll`      | Linux-optimized high performance   |
-| OIO       | `io.netty.channel.socket.oio` | Small-to-moderate concurrency      |
-| Local     | `io.netty.channel.local`      | In-JVM communication via pipes     |
-| Embedded  | `io.netty.channel.embedded`   | Unit testing ChannelHandlers       |
+| Transport | Package                       | Use case                             |
+|-----------|-------------------------------|--------------------------------------|
+| NIO       | `io.netty.channel.socket.nio` | High-concurrency, scalable servers   |
+| Epoll     | `io.netty.channel.epoll`      | Linux-optimized high performance     |
+| KQueue    | `io.netty.channel.kqueue`     | macOS/BSD-optimized high performance |
+| OIO       | `io.netty.channel.socket.oio` | Deprecated since 4.1.32              |
+| Local     | `io.netty.channel.local`      | In-JVM communication via pipes       |
+| Embedded  | `io.netty.channel.embedded`   | Unit testing ChannelHandlers         |
 
 **NIO** is the default choice for production. It uses I/O multiplexing via a
 Selector, allowing a small number of threads to manage thousands of
@@ -43,8 +44,12 @@ connections.
 NIO layer. It is faster than the NIO transport, fully non-blocking, and
 exposes Linux-specific socket options like `SO_REUSEPORT`. Linux-only.
 
-**OIO** wraps the classic `java.net` blocking sockets. Useful when integrating
-with libraries that require blocking semantics, but limited in scalability.
+**KQueue** is the macOS/BSD equivalent of Epoll. It uses JNI to call
+`kqueue()` directly, offering the same performance benefits on those
+platforms.
+
+**OIO** wraps the classic `java.net` blocking sockets. Deprecated since Netty
+4.1.32 (November 2018) — use NIO, Epoll, or KQueue instead.
 
 **Local** enables asynchronous communication between components in the same
 JVM through the same Channel API, without touching the network stack.

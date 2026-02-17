@@ -2,7 +2,7 @@
 
 Pooled ByteBuf instances are borrowed from a memory pool and must be
 explicitly returned. Forgetting to release a buffer leaks native memory
-and eventually causes `OutOfMemoryError`. Netty logs a WARN-level
+and eventually causes `OutOfMemoryError`. Netty logs an ERROR-level
 message when it detects leaked resources, but by that point memory is
 already being wasted.
 

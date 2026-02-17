@@ -44,17 +44,15 @@ multiple subclasses provide their own implementations of the base's methods.
 
 ## Benefits
 
-Polymorphism simplifies code by eliminating complex conditional logic.
-
-- **Replacing if/else or switch blocks:** Instead of a giant switch checking
-  object type (`if (type == "Circle") drawCircle(); else if (type == "Square")...`),
-  simply call `shape.draw()`. The object knows how to draw itself.
-- **Dependency inversion:** High-level logic depends on an interface rather
-  than a concrete implementation. This makes code easier to test (via mocking)
-  and easier to modify.
-- **Plug-and-play architecture:** Add a `Triangle` class to the system, and as
-  long as it implements `Shape`, the rest of the application works with it
-  immediately without changing a single line of original logic.
+- **Eliminates conditional dispatch:** Instead of branching on type
+  (`if (type == "Circle") ... else if (type == "Square") ...`), call
+  `shape.draw()` and let the object decide how to handle it.
+- **Decouples callers from implementations:** High-level logic depends on an
+  interface rather than a concrete class, making components independently
+  testable and replaceable.
+- **Open for extension:** New implementations can be added without modifying
+  existing code — a `Triangle` that implements `Shape` works everywhere
+  `Shape` is accepted.
 
 ## The performance trade-off
 

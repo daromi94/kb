@@ -39,8 +39,29 @@ message must be forwarded or retained beyond the callback.
 | Release   | Manual `ReferenceCountUtil`       | Automatic after callback returns  |
 | Use case  | Forwarding or retaining a message | Terminal consumption of a message |
 
+## Outbound discarding
+
+When an outbound handler intercepts `write()` and decides not to forward
+the message, it must do two things:
+
+1. **Release the buffer** — call `ReferenceCountUtil.release(msg)`
+2. **Notify the ChannelPromise** — mark it as success or failure so that
+   any `ChannelFutureListener` waiting on the write is notified;
+   otherwise the application may hang
+
+## When Netty releases automatically
+
+You do not need to release a message manually when:
+
+- **Forwarding** — passing the message to the next handler transfers
+  ownership; the receiving handler becomes responsible
+- **Reaching the transport** — once a message reaches the head of the
+  pipeline (the transport layer), Netty releases it after the write
+  completes or the Channel closes
+
 ## Related
 
+- [Leak detection](leak-detection.md) - Diagnosing unreleased buffers
 - [ByteBuf](bytebuf.md) - Buffer structure, pooling, and reference counting
 - [Channel handler](channel-handler.md) - Handler callbacks and pipeline role
 - [Channel pipeline](channel-pipeline.md) - Ordered chain where ownership

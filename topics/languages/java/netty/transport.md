@@ -32,6 +32,7 @@ versions of the same program share almost no structure.
 | NIO       | `io.netty.channel.socket.nio` | High-concurrency, scalable servers   |
 | Epoll     | `io.netty.channel.epoll`      | Linux-optimized high performance     |
 | KQueue    | `io.netty.channel.kqueue`     | macOS/BSD-optimized high performance |
+| io_uring  | `io.netty.channel.uring`      | Linux completion-based I/O           |
 | OIO       | `io.netty.channel.socket.oio` | Deprecated since 4.1.32              |
 | Local     | `io.netty.channel.local`      | In-JVM communication via pipes       |
 | Embedded  | `io.netty.channel.embedded`   | Unit testing ChannelHandlers         |
@@ -42,11 +43,20 @@ connections.
 
 **Epoll** uses JNI to call Linux's `epoll()` directly, bypassing the JDK's
 NIO layer. It is faster than the NIO transport, fully non-blocking, and
-exposes Linux-specific socket options like `SO_REUSEPORT`. Linux-only.
+exposes Linux-specific socket options like `SO_REUSEPORT`.
 
 **KQueue** is the macOS/BSD equivalent of Epoll. It uses JNI to call
 `kqueue()` directly, offering the same performance benefits on those
 platforms.
+
+**io_uring** uses Linux's completion-based I/O interface. Where Epoll is
+readiness-based (tells you a socket is ready, then you perform the I/O),
+io_uring is completion-based (you submit I/O, the kernel notifies you
+when it finishes). Submissions and completions flow through shared
+memory-mapped ring buffers, allowing multiple operations to be batched
+into a single `io_uring_enter()` syscall or none at all in polling mode.
+Requires Linux kernel 5.9+. Graduated from incubator to mainline in
+Netty 4.2.
 
 **OIO** wraps the classic `java.net` blocking sockets. Deprecated since Netty
 4.1.32 (November 2018) — use NIO, Epoll, or KQueue instead.

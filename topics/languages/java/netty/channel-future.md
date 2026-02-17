@@ -60,8 +60,8 @@ When a ChannelFuture is returned, the operation may be in any state:
 `sync()` and `await()` exist for setup code (e.g., Bootstrap
 configuration) but must never be called inside a ChannelHandler. The
 handler runs on the EventLoop. Calling `sync()` tells the EventLoop to
-stop and wait — but the EventLoop is the thread that would complete the
-I/O operation. The result is a deadlock.
+wait for the I/O operation to finish — but the EventLoop is the very
+thread that would complete it, so it deadlocks.
 
 ## Ordering guarantee
 

@@ -45,19 +45,9 @@ is only delivered to inbound handlers.
 
 Each handler in the pipeline is wrapped in a ChannelHandlerContext that
 represents its binding to the pipeline. The context is the handle used to
-forward events to the next handler in the chain.
-
-This context also enables a critical distinction in how outbound writes
-are initiated:
-
-| Entry point                     | Starting position | Scope                                |
-|---------------------------------|-------------------|--------------------------------------|
-| `Channel.write()`               | Tail of pipeline  | Flows through all outbound handlers  |
-| `ChannelHandlerContext.write()` | Next handler      | Bypasses preceding outbound handlers |
-
-Writing via the context is useful when a handler knows that earlier
-outbound handlers are irrelevant to its message, avoiding unnecessary
-processing.
+forward events to the next handler in the chain. Invoking methods on the
+context rather than the Channel or Pipeline controls where propagation
+begins.
 
 ## Adapters
 
@@ -70,8 +60,8 @@ letting the application override only the methods it needs.
 
 - [Channel handler](channel-handler.md) - The individual processing units
   in the pipeline
-- [Channel handler context](channel-handler-context.md) - Full API and
-  advanced usage of the handler-pipeline binding
+- [Channel handler context](channel-handler-context.md) - Scoped
+  propagation and @Sharable handlers
 - [Channel](channel.md) - The connection that owns a pipeline
 - [Event loop](event-loop.md) - The thread that drives pipeline execution
 

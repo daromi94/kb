@@ -19,26 +19,6 @@ Context-level propagation is the preferred path inside handlers. It avoids
 delivering events to handlers that have already processed them or have no
 interest, reducing overhead in hot paths.
 
-## API surface
-
-| Category       | Key methods                             | Behavior                                                   |
-|----------------|-----------------------------------------|------------------------------------------------------------|
-| I/O operations | `write`, `read`, `flush`, `connect`     | Triggers outbound I/O from the next handler                |
-| Event triggers | `fireChannelRead`, `fireChannelActive`  | Forwards inbound events to the next inbound handler        |
-| Accessors      | `channel()`, `pipeline()`, `executor()` | Returns the associated Channel, Pipeline, or EventExecutor |
-| State          | `isRemoved()`                           | True if the handler was removed from the pipeline          |
-
-## Caching and thread safety
-
-A context reference is stable for the lifetime of its handler in the
-pipeline. It is safe to store a context in a field and invoke methods on it
-later, even from a different thread. This is useful for deferred writes
-triggered by external events such as timer callbacks or completed futures.
-
-Calling `pipeline()` on a cached context gives access to dynamic pipeline
-manipulation — adding, removing, or replacing handlers at runtime to support
-protocol upgrades or feature negotiation.
-
 ## @Sharable handlers
 
 A handler instance can be added to multiple pipelines (and thus bound to

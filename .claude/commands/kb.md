@@ -171,15 +171,16 @@ nouns/acronyms (e.g., "# Consistent hashing", "# CRUSH algorithm",
 "# CAP theorem"). Never prefix with the parent topic name; the directory
 path already provides context ("# Consistency" not "# Cassandra consistency").
 
-**Link text must match titles:** In `_index.md` entries and `## Related`
-cross-references, the link text must match the note's `# Title` exactly.
+**Link text must match titles:** In `_index.md` entries, `## Related`
+cross-references, and `Return to [...](_index.md)` footers, the link
+text must match the target's `# Title` exactly.
 
 Standards: Single blank lines between elements, language tags on code blocks.
 
 ### 8. Index File
 
 ```markdown
-# Topic Name
+# Topic name
 
 Brief description.
 

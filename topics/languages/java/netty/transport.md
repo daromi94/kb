@@ -10,20 +10,23 @@ ChannelPipeline, and ChannelHandler regardless of the underlying I/O model.
 ## Switching transports
 
 Because the transport is an implementation detail hidden behind Netty's
-abstractions, migrating from blocking to non-blocking I/O reduces to swapping
-the EventLoopGroup and Channel class in the bootstrap configuration:
+abstractions, switching between I/O mechanisms reduces to swapping the
+`IoHandlerFactory` and Channel class in the bootstrap configuration:
 
 ```java
-// Blocking (OIO)
-bootstrap.group(oioGroup).channel(OioServerSocketChannel.class)
+// NIO
+var group = new MultiThreadIoEventLoopGroup(NioIoHandler.newFactory());
+bootstrap.group(group).channel(NioServerSocketChannel.class);
 
-// Non-blocking (NIO)
-bootstrap.group(nioGroup).channel(NioServerSocketChannel.class)
+// Epoll (Linux)
+var group = new MultiThreadIoEventLoopGroup(EpollIoHandler.newFactory());
+bootstrap.group(group).channel(EpollServerSocketChannel.class);
 ```
 
-The rest of the application — handlers, pipeline, business logic — remains
-untouched. This is in sharp contrast to raw JDK code, where the OIO and NIO
-versions of the same program share almost no structure.
+`MultiThreadIoEventLoopGroup` is the unified EventLoopGroup implementation
+for all transports. The `IoHandlerFactory` argument selects which I/O
+mechanism to use. The rest of the application — handlers, pipeline, business
+logic — remains untouched.
 
 ## Available transports
 
@@ -33,7 +36,7 @@ versions of the same program share almost no structure.
 | Epoll     | `io.netty.channel.epoll`      | Linux-optimized high performance     |
 | KQueue    | `io.netty.channel.kqueue`     | macOS/BSD-optimized high performance |
 | io_uring  | `io.netty.channel.uring`      | Linux completion-based I/O           |
-| OIO       | `io.netty.channel.socket.oio` | Deprecated since 4.1.32              |
+| OIO       | `io.netty.channel.socket.oio` | Deprecated — use NIO or native       |
 | Local     | `io.netty.channel.local`      | In-JVM communication via pipes       |
 | Embedded  | `io.netty.channel.embedded`   | Unit testing ChannelHandlers         |
 
@@ -52,11 +55,10 @@ platforms.
 **io_uring** uses Linux's completion-based I/O interface. Where Epoll is
 readiness-based (tells you a socket is ready, then you perform the I/O),
 io_uring is completion-based (you submit I/O, the kernel notifies you
-when it finishes). Requires Linux kernel 5.9+. Graduated from incubator
-to mainline in Netty 4.2.
+when it finishes). Requires Linux kernel 5.9+.
 
-**OIO** wraps the classic `java.net` blocking sockets. Deprecated since Netty
-4.1.32 (November 2018) — use NIO, Epoll, or KQueue instead.
+**OIO** wraps the classic `java.net` blocking sockets. Deprecated — use NIO,
+Epoll, or KQueue instead.
 
 **Local** enables asynchronous communication between components in the same
 JVM through the same Channel API, without touching the network stack.

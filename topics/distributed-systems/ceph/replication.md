@@ -4,7 +4,7 @@ Replication is Ceph's fundamental mechanism for data durability and high
 availability. Multiple identical copies of every object are maintained across
 different physical nodes.
 
-## Primary-Log Model
+## Primary-copy model
 
 Ceph uses synchronous, primary-copy replication. For any piece of data, one OSD
 is the "Primary" responsible for coordinating writes to all "Secondary"

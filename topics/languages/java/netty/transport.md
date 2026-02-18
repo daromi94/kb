@@ -37,7 +37,6 @@ logic — remains untouched.
 | KQueue    | `io.netty.channel.kqueue`     | macOS/BSD-optimized high performance |
 | io_uring  | `io.netty.channel.uring`      | Linux completion-based I/O           |
 | OIO       | `io.netty.channel.socket.oio` | Deprecated — use NIO or native       |
-| Local     | `io.netty.channel.local`      | In-JVM communication via pipes       |
 | Embedded  | `io.netty.channel.embedded`   | Unit testing ChannelHandlers         |
 
 **NIO** is the default choice for production. It uses I/O multiplexing via a
@@ -55,13 +54,10 @@ platforms.
 **io_uring** uses Linux's completion-based I/O interface. Where Epoll is
 readiness-based (tells you a socket is ready, then you perform the I/O),
 io_uring is completion-based (you submit I/O, the kernel notifies you
-when it finishes). Requires Linux kernel 5.9+.
+when it finishes). Requires a recent Linux kernel.
 
 **OIO** wraps the classic `java.net` blocking sockets. Deprecated — use NIO,
 Epoll, or KQueue instead.
-
-**Local** enables asynchronous communication between components in the same
-JVM through the same Channel API, without touching the network stack.
 
 **Embedded** provides a test harness that drives data through a pipeline
 in-process, allowing assertions on handler output without binding to a real

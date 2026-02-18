@@ -28,10 +28,10 @@ callback-style notification system. A ChannelFuture allows registering
 a ChannelFutureListener. The EventLoop invokes the listener once the
 operation completes, regardless of whether it succeeded or failed:
 
-1. **Initiate:** `cf = channel.write(data)` returns immediately
+1. **Initiate:** `cf = channel.writeAndFlush(data)` returns immediately
 2. **Attach:** `cf.addListener(myListener)` registers a callback
 3. **Continue:** The calling thread is free for other work
-4. **Notify:** Once data reaches the OS buffer, Netty triggers
+4. **Notify:** Once the write and flush completes, Netty triggers
    `myListener.operationComplete(cf)`
 
 ## Completion states
@@ -77,8 +77,9 @@ ChannelFuture f = channel.writeAndFlush(msg);
 f.addListener(ChannelFutureListener.CLOSE);
 ```
 
-`ChannelFutureListener.CLOSE` is a built-in listener that waits for the
-write to be confirmed by the OS before initiating the close sequence.
+`ChannelFutureListener.CLOSE` is a built-in listener that closes the
+Channel unconditionally when the future completes, regardless of whether
+the operation succeeded or failed.
 
 ## Related
 

@@ -23,8 +23,8 @@ of the box while allowing custom protocol implementations.
 
 ### Channel
 
-Represents an open connection to a network socket, file, or hardware
-device capable of I/O operations such as reading or writing.
+Represents an open connection to a network socket or I/O component
+capable of operations such as reading, writing, connecting, and binding.
 
 ### EventLoop
 

@@ -1,11 +1,10 @@
 # Channel
 
-A Channel is the fundamental abstraction for any I/O operation in Java NIO
-and Netty. It represents an open connection to an entity — a network
-socket, file, or hardware device — capable of reading and writing. Where
-traditional I/O uses unidirectional streams (one InputStream, one
-OutputStream), a Channel is a bidirectional conduit through which data
-flows in both directions.
+A Channel is the fundamental abstraction for any I/O operation in Java
+NIO and Netty. It represents an open connection to a network socket or
+I/O component capable of reading and writing. Where traditional I/O uses
+unidirectional streams (one InputStream, one OutputStream), a Channel is
+a bidirectional conduit through which data flows in both directions.
 
 ## Key properties
 

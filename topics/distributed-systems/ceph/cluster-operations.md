@@ -14,6 +14,8 @@ The cluster's coordination begins with **Monitors** maintaining the Cluster Map:
 | Monitor Map | Which monitors are in quorum          |
 | CRUSH Map   | Physical hierarchy of the data center |
 | PG Map      | Placement Group states                |
+| MDS Map     | Metadata server ranks and state       |
+| Manager Map | Active and standby manager daemons    |
 
 To perform any action, a client first contacts a Monitor to get the latest map.
 Once obtained, the client no longer needs the Monitor for data I/O.

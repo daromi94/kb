@@ -6,8 +6,8 @@ consistency.
 
 ## Write Path
 
-Ceph prioritizes strong consistency. A write succeeds only after all replicas
-acknowledge.
+Ceph prioritizes strong consistency. A write succeeds after `min_size`
+replicas acknowledge (default 2 out of 3).
 
 1. **Client calculation:** Using `librados` or a high-level driver, the client
    runs CRUSH to find which OSD is Primary for the target PG.

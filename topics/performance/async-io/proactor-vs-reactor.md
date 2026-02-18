@@ -14,12 +14,12 @@ The application asks the OS to monitor file descriptors. When data is available
 ```
 App: "Watch this socket"
 OS:  "Socket is ready to read"
-App: read(socket, buffer)  // App does the I/O
+App: read(socket, buffer) // App does the I/O
 ```
 
 ## Proactor pattern (completion-based)
 
-Used by `io_uring` and Windows IOCP.
+Used by `io_uring`.
 
 **Model:** "Do this read and tell me when you're done."
 

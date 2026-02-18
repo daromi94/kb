@@ -36,8 +36,8 @@ kubectl debug -it web-app --image=busybox --target=main-container
 ```
 
 - `--image=busybox`: Image containing debugging tools
-- `--target=main-container`: Share process namespace with this container
-  (requires `shareProcessNamespace: true` in Pod spec)
+- `--target=main-container`: Target a specific container for debugging
+  (`shareProcessNamespace: true` helps for viewing its processes)
 
 ## Use cases
 

@@ -11,8 +11,8 @@ Changing data structures can invalidate existing data or require a synchronized
 
 ## Compatibility Mechanisms
 
-**Backward compatibility:** Newer binaries can handle the absence of old fields
-without crashing. Missing fields receive default values.
+**Backward compatibility:** New code can read data written by old code.
+Fields added after the old schema receive default values.
 
 **Forward compatibility:** Older binaries can ignore new fields they don't
 recognize. The skip logic in the wire format makes this possible.

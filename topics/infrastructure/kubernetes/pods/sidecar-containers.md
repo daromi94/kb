@@ -1,7 +1,7 @@
 # Sidecar containers
 
-Native sidecar containers (stable in Kubernetes v1.29) solve long-standing
-issues with startup and shutdown ordering for helper containers.
+Native sidecar containers solve long-standing issues with startup and
+shutdown ordering for helper containers.
 
 ## Definition
 
@@ -32,18 +32,18 @@ This hybrid placement gives them unique properties:
 
 - **Start before app containers:** Being in `initContainers`, they begin first
 - **Don't block app containers:** Unlike standard init containers, they don't
-  need to exit; app starts once sidecar is ready
+  need to exit; app starts once sidecar has started
 - **Stay running:** Continue for the entire Pod lifetime like regular containers
 
 ## Problems solved
 
 Before native sidecars, managing helper containers was difficult:
 
-| Problem            | Old behavior                          | Native sidecar behavior         |
-|--------------------|---------------------------------------|---------------------------------|
-| Startup race       | App might start before proxy is ready | Sidecar ready before app starts |
-| Shutdown data loss | Log exporter might die before app     | Sidecar dies after app          |
-| Job completion     | Sidecar prevents Job from completing  | Exits automatically with Job    |
+| Problem            | Old behavior                          | Native sidecar behavior      |
+|--------------------|---------------------------------------|------------------------------|
+| Startup race       | App might start before proxy is ready | Sidecar started before app   |
+| Shutdown data loss | Log exporter might die before app     | Sidecar dies after app       |
+| Job completion     | Sidecar prevents Job from completing  | Exits automatically with Job |
 
 ## Common use cases
 
@@ -57,7 +57,7 @@ Before native sidecars, managing helper containers was difficult:
 **Startup:**
 
 1. Kubernetes starts `initContainers` in order
-2. When reaching the sidecar, waits until it's ready
+2. When reaching the sidecar, waits until it has started
 3. Moves to next init container or main `containers`
 
 **Termination:**
@@ -72,14 +72,14 @@ Before native sidecars, managing helper containers was difficult:
 |----------------|---------------------------------|--------------------------|
 | Section        | `containers`                    | `initContainers`         |
 | Startup order  | Parallel with main app          | Before main app          |
-| Ready state    | Doesn't block others            | Blocks until ready       |
+| Started state  | Doesn't block others            | Blocks until started     |
 | Shutdown order | Random/Parallel                 | After main app exits     |
 | Jobs           | Prevents Job from finishing     | Allows Job to finish     |
 | Probes         | All supported                   | All supported            |
 
 Unlike traditional init containers (which don't support probes), native sidecars
 support startup, readiness, and liveness probes. This allows Kubernetes to wait
-for a sidecar proxy to be fully ready before starting the main application.
+for a sidecar proxy to have started before launching the main application.
 
 ---
 

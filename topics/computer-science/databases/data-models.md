@@ -10,8 +10,8 @@ blueprint using that model (e.g., "an Artist table with name and year columns").
 
 ## Relational model
 
-The dominant model for general-purpose DBMS, proposed by Ted Codd in the late
-1960s to solve the rigidity of earlier systems.
+The dominant model for general-purpose DBMS, proposed by Ted Codd around
+1970 to solve the rigidity of earlier systems.
 
 | Concept              | Description                                        |
 |----------------------|----------------------------------------------------|

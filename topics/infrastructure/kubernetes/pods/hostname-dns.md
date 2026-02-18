@@ -11,7 +11,7 @@ By default, a Pod's hostname is simply its `metadata.name`.
 In a standard Deployment, Pods get random, ephemeral names:
 
 - **Hostname:** `web-574cc94f9-2zbd7`
-- **FQDN:** `web-574cc94f9-2zbd7.default.svc.cluster.local`
+- **DNS record:** `<pod-ip-dashed>.default.pod.cluster.local`
 
 The hostname changes if the Pod is recreated. You typically use a Service to
 load-balance rather than connecting to Pods by hostname.

@@ -36,8 +36,8 @@ serve static files quickly.
 **`mmap()`:** Maps a file directly into memory space. Reading a variable in
 code actually reads the kernel's file cache directly. Avoids the read copy.
 
-**`splice()`:** Moves data between two file descriptors (pipe and socket)
-entirely within the kernel, without passing through user space.
+**`splice()`:** Moves data between two file descriptors (one must be a
+pipe) entirely within the kernel, without passing through user space.
 
 ## Connection to io_uring
 

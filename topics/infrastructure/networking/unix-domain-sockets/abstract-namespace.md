@@ -1,4 +1,4 @@
-# Abstract Namespace
+# Abstract namespace
 
 A Linux-specific feature that solves the UDS cleanup problem.
 

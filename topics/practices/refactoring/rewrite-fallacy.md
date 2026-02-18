@@ -1,4 +1,4 @@
-# Rewrite Fallacy
+# Rewrite fallacy
 
 A total rewrite is rarely a technical optimization; it is usually a
 manifestation of developer ego.

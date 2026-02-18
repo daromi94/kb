@@ -1,4 +1,4 @@
-# UDS Lifecycle
+# UDS lifecycle
 
 The UDS API mirrors TCP but with filesystem-specific setup and teardown.
 

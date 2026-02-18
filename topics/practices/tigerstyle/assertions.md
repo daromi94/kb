@@ -1,4 +1,4 @@
-# TigerStyle assertions
+# Assertions
 
 Assertions identify programmer errors. They represent the correct response to
 corrupt code, catching bugs at the earliest possible moment.

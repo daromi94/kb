@@ -1,4 +1,4 @@
-# Client-Server Architecture
+# Client-server architecture
 
 In client-server architecture, tasks are partitioned between two components: the
 **client** (service requester) and the **server** (service provider). Unlike
@@ -59,4 +59,4 @@ the entire system is paralyzed for all clients.
 
 ---
 
-Return to [Networking Fundamentals](_index.md)
+Return to [Networking fundamentals](_index.md)

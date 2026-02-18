@@ -1,4 +1,4 @@
-# TigerStyle safety
+# Safety
 
 TigerStyle's safety principles derive from NASA's Power of Ten guidelines,
 fundamentally reshaping coding practices to prevent defects before they occur.

@@ -1,4 +1,4 @@
-# Pod fundamentals
+# Fundamentals
 
 A Pod is the smallest deployable unit in Kubernetes. You never run containers
 directly; instead, you wrap them in a Pod that provides an execution

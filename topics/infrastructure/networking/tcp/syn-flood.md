@@ -1,4 +1,4 @@
-# SYN Flood Attack
+# SYN flood attack
 
 A SYN flood exploits TCP's stateful handshake to exhaust server resources. It's
 one of the most common DDoS attack vectors.
@@ -62,8 +62,8 @@ sysctl net.ipv4.tcp_max_syn_backlog
 
 ## Related
 
-- [Connection Lifecycle](connection-lifecycle.md) - The three-way handshake
-- [TCP State Machine](state-machine.md) - SYN_RCVD state
+- [Connection lifecycle](connection-lifecycle.md) - The three-way handshake
+- [State machine](state-machine.md) - SYN_RCVD state
 
 ---
 

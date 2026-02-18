@@ -1,4 +1,4 @@
-# TigerStyle naming
+# Naming
 
 Exceptional names capture essence and facilitate intuitive understanding. Naming
 is one of the hardest problems in computer science, deserving significant

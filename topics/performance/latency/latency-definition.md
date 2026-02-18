@@ -1,4 +1,4 @@
-# Latency Definition
+# Latency definition
 
 **Latency:** The time delay between a cause and its observed effect.
 

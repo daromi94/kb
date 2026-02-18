@@ -1,4 +1,4 @@
-# TCP Overview
+# Overview
 
 TCP (Transmission Control Protocol) operates at the Transport Layer (Layer 4) and
 provides reliable, ordered data delivery over IP's unreliable packet-switched
@@ -12,7 +12,7 @@ network.
 | Reliable            | Guarantees delivery via ACKs and retransmission       |
 | Ordered             | Guarantees byte order via sequence numbers            |
 | Full-duplex         | Data flows both directions independently              |
-| Stream-based        | No message boundaries (see [TCP Streams](streams.md)) |
+| Stream-based        | No message boundaries (see [Streams](streams.md))     |
 
 ## Header Overhead
 
@@ -32,9 +32,9 @@ for real-time applications where occasional loss is acceptable.
 
 ## Related
 
-- [Connection Lifecycle](connection-lifecycle.md) - Handshake and termination
-- [TCP Segment](segment.md) - Header structure details
-- [TCP Streams](streams.md) - Stream semantics and framing
+- [Connection lifecycle](connection-lifecycle.md) - Handshake and termination
+- [Segment structure](segment.md) - Header structure details
+- [Streams](streams.md) - Stream semantics and framing
 
 ---
 

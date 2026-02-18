@@ -1,4 +1,4 @@
-# Exit Strategy
+# Exit strategy
 
 Refactoring is a hypothesis that the new architecture will be superior. Like any
 hypothesis, it can be disproven.

@@ -1,4 +1,4 @@
-# Unix Domain Sockets
+# Unix domain sockets
 
 A Unix Domain Socket (UDS) is an inter-process communication mechanism that
 allows bidirectional data exchange between processes on the same host. While

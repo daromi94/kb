@@ -102,4 +102,4 @@ logic (BGP, OSPF) to determine paths.
 
 ---
 
-Return to [Networking Fundamentals](_index.md)
+Return to [Networking fundamentals](_index.md)

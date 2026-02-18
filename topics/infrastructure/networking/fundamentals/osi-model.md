@@ -1,4 +1,4 @@
-# OSI Model
+# OSI model
 
 The **OSI (Open Systems Interconnection) Model** is a conceptual framework that
 standardizes communication functions into seven abstract layers. Developed by
@@ -176,4 +176,4 @@ industry standard for troubleshooting, teaching, and security analysis.
 
 ---
 
-Return to [Networking Fundamentals](_index.md)
+Return to [Networking fundamentals](_index.md)

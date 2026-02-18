@@ -1,4 +1,4 @@
-# Wire Format
+# Wire format
 
 The wire format is the binary representation of data on the network or disk.
 Unlike JSON, which includes field names in every message, Protobuf uses numeric

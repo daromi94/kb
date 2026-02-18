@@ -1,4 +1,4 @@
-# Bandwidth and Throughput
+# Bandwidth and throughput
 
 Three metrics describe system performance. Using a water pipe analogy:
 

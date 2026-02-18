@@ -1,4 +1,4 @@
-# Use Cases
+# Use cases
 
 Protobuf is designed for both ephemeral data (RPC calls) and persistent storage
 (disk). Its efficiency makes it suitable for high-performance and

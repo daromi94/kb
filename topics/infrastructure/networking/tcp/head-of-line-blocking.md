@@ -1,4 +1,4 @@
-# TCP Head-of-Line Blocking
+# Head-of-line blocking
 
 Head-of-line (HOL) blocking is TCP's fundamental limitation and the primary
 reason the industry is moving toward UDP-based protocols like QUIC.
@@ -58,7 +58,7 @@ This is why HTTP/3 (which uses QUIC) performs better on lossy networks.
 ## Related
 
 - [Reliability](reliability.md) - TCP's ordering guarantee
-- [TCP Streams](streams.md) - Stream abstraction
+- [Streams](streams.md) - Stream abstraction
 
 ---
 

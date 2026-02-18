@@ -1,4 +1,4 @@
-# Pod lifecycle
+# Lifecycle
 
 A Pod follows a defined lifecycle from `Pending` through `Running` to either
 `Succeeded` or `Failed`.

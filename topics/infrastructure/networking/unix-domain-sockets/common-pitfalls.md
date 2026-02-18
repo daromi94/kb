@@ -1,4 +1,4 @@
-# Common Pitfalls
+# Common pitfalls
 
 Mistakes that surface repeatedly in UDS programming, along with their
 standard fixes.

@@ -1,4 +1,4 @@
-# TigerStyle overview
+# Overview
 
 TigerStyle is TigerBeetle's coding style guide, representing a synthesis of
 engineering discipline and aesthetic consideration. It functions as a design

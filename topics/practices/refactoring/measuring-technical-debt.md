@@ -1,4 +1,4 @@
-# Measuring Technical Debt
+# Measuring technical debt
 
 "Code smell" is subjective; technical debt should be measurable. Before
 starting a refactor, define the ROI with objective metrics.

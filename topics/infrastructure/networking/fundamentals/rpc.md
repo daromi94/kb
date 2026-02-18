@@ -1,4 +1,4 @@
-# Remote Procedure Call
+# Remote procedure call
 
 **RPC (Remote Procedure Call)** is a protocol that allows a program to execute a
 function on a different computer as if it were a local call. The developer calls
@@ -66,4 +66,4 @@ forget the network exists:
 
 ---
 
-Return to [Networking Fundamentals](_index.md)
+Return to [Networking fundamentals](_index.md)

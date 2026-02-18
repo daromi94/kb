@@ -48,4 +48,4 @@ When tasks overwhelm a single server, the architecture allows two scaling types:
 
 ---
 
-Return to [Networking Fundamentals](_index.md)
+Return to [Networking fundamentals](_index.md)

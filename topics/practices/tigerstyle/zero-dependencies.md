@@ -1,4 +1,4 @@
-# TigerStyle zero dependencies
+# Zero dependencies
 
 TigerBeetle maintains a zero dependencies policy beyond the Zig toolchain. This
 applies to both runtime libraries and development tools.

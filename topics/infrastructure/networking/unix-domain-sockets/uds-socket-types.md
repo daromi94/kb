@@ -1,4 +1,4 @@
-# UDS Socket Types
+# UDS socket types
 
 Unix Domain Sockets support three socket types, each with different semantics
 for connection state and message boundaries.

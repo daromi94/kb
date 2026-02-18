@@ -1,4 +1,4 @@
-# TCP Connection Lifecycle
+# Connection lifecycle
 
 TCP connections follow a strict state machine with formal establishment and
 termination sequences.
@@ -49,8 +49,8 @@ delayed packets and ensure the final ACK arrives.
 
 ## Related
 
-- [TCP State Machine](state-machine.md) - States like TIME_WAIT and CLOSE_WAIT
-- [TCP Segment](segment.md) - Flag fields (SYN, FIN, ACK)
+- [State machine](state-machine.md) - States like TIME_WAIT and CLOSE_WAIT
+- [Segment structure](segment.md) - Flag fields (SYN, FIN, ACK)
 
 ---
 

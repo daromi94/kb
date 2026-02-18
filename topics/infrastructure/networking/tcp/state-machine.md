@@ -1,4 +1,4 @@
-# TCP State Machine
+# State machine
 
 TCP connections transition through well-defined states. Two states are
 particularly important for diagnosing system issues.
@@ -59,8 +59,8 @@ netstat -an | grep CLOSE_WAIT
 
 ## Related
 
-- [Connection Lifecycle](connection-lifecycle.md) - Handshake and termination
-- [TCP Keepalives](keepalives.md) - Detecting dead connections
+- [Connection lifecycle](connection-lifecycle.md) - Handshake and termination
+- [Keepalives](keepalives.md) - Detecting dead connections
 
 ---
 

@@ -1,4 +1,4 @@
-# TCP Statefulness
+# Statefulness
 
 TCP is stateful: both endpoints must maintain connection state in memory. This
 is fundamental to how TCP provides reliability but comes with significant costs.
@@ -59,9 +59,9 @@ balancing problem.
 
 ## Related
 
-- [TCP State Machine](state-machine.md) - Connection states
-- [SYN Flood](syn-flood.md) - Exploiting statefulness
-- [TCP Sockets](sockets.md) - Kernel structures
+- [State machine](state-machine.md) - Connection states
+- [SYN flood attack](syn-flood.md) - Exploiting statefulness
+- [Sockets](sockets.md) - Kernel structures
 
 ---
 

@@ -1,4 +1,4 @@
-# Incremental Refactoring
+# Incremental refactoring
 
 Large-scale refactors are difficult to merge and harder to debug. Favor
 incremental state transitions.

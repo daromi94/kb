@@ -1,4 +1,4 @@
-# TCP Streams
+# Streams
 
 TCP provides a **byte stream** abstraction with no concept of message
 boundaries. This fundamental property affects how applications must handle
@@ -74,8 +74,8 @@ single bytes rapidly, TCP waits briefly to batch them into one segment.
 
 ## Related
 
-- [TCP Segment](segment.md) - Actual packet structure
-- [TCP Performance](performance.md) - Nagle and TCP_NODELAY details
+- [Segment structure](segment.md) - Actual packet structure
+- [Performance](performance.md) - Nagle and TCP_NODELAY details
 
 ---
 

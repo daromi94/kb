@@ -1,4 +1,4 @@
-# TCP Performance
+# Performance
 
 Modern TCP includes various optimizations and tuning options for high-throughput
 and low-latency scenarios.
@@ -88,9 +88,9 @@ sysctl -w net.ipv4.tcp_wmem="4096 131072 16777216"
 
 ## Related
 
-- [Flow Control](flow-control.md) - Window mechanics
-- [Congestion Control](congestion-control.md) - cwnd and algorithms
-- [TCP Sockets](sockets.md) - Buffer interaction
+- [Flow control](flow-control.md) - Window mechanics
+- [Congestion control](congestion-control.md) - cwnd and algorithms
+- [Sockets](sockets.md) - Buffer interaction
 
 ---
 

@@ -1,4 +1,4 @@
-# Latency Constants
+# Latency constants
 
 The speed of light establishes hard physical limits on system design. Grace
 Hopper famously distributed 11.8-inch wires to visualize a nanosecond.

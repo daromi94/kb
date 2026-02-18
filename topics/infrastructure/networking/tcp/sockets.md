@@ -1,4 +1,4 @@
-# TCP Sockets
+# Sockets
 
 Applications interact with TCP through the socket API. The kernel mediates
 between user-space operations and the protocol state machine.
@@ -98,9 +98,9 @@ ss -ti
 
 ## Related
 
-- [Flow Control](flow-control.md) - Buffer and window interaction
-- [TCP Keepalives](keepalives.md) - Detecting dead peers
-- [TCP Performance](performance.md) - Buffer tuning
+- [Flow control](flow-control.md) - Buffer and window interaction
+- [Keepalives](keepalives.md) - Detecting dead peers
+- [Performance](performance.md) - Buffer tuning
 
 ---
 

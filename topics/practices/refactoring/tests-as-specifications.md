@@ -1,4 +1,4 @@
-# Tests as Specifications
+# Tests as specifications
 
 In a refactor, your test suite is your primary deployment gate. Tests are living
 documentation of behavioral requirements.

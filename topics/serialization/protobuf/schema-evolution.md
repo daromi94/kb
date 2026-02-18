@@ -1,4 +1,4 @@
-# Schema Evolution
+# Schema evolution
 
 In distributed systems, updating a data structure often breaks services that
 haven't been updated yet. Protobuf solves this through backward and forward

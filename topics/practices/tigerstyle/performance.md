@@ -1,4 +1,4 @@
-# TigerStyle performance
+# Performance
 
 TigerStyle treats performance as a design-phase concern rather than an
 afterthought. Preliminary sketches targeting resource constraints prevent

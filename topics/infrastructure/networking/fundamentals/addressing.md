@@ -118,9 +118,9 @@ they can't read it.
 
 ## Related
 
-- [OSI Model](osi-model.md) - The layer model for networking
+- [OSI model](osi-model.md) - The layer model for networking
 - [Encapsulation](encapsulation.md) - How addresses are added to frames/packets
 
 ---
 
-Return to [Networking Fundamentals](_index.md)
+Return to [Networking fundamentals](_index.md)

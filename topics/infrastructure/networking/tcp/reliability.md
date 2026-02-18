@@ -1,4 +1,4 @@
-# TCP Reliability
+# Reliability
 
 TCP creates the illusion of a reliable stream over IP's unreliable
 packet-switched network using sequence numbers and acknowledgments.
@@ -63,8 +63,8 @@ triggering retransmission via timeout.
 
 ## Related
 
-- [TCP Segment](segment.md) - Sequence and ACK fields in header
-- [Congestion Control](congestion-control.md) - How retransmission interacts
+- [Segment structure](segment.md) - Sequence and ACK fields in header
+- [Congestion control](congestion-control.md) - How retransmission interacts
   with congestion algorithms
 
 ---

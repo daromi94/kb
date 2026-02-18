@@ -1,4 +1,4 @@
-# Socket Buffers
+# Socket buffers
 
 The kernel maintains a **send queue** (TX) and **receive queue** (RX) for each
 side of a UDS connection. These kernel-space buffers decouple producers from

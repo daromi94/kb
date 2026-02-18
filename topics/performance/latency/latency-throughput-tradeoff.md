@@ -1,4 +1,4 @@
-# Latency-Throughput Tradeoff
+# Latency-throughput tradeoff
 
 Latency and throughput represent fundamentally different optimization targets
 that often conflict.

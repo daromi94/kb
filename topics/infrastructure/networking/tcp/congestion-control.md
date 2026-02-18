@@ -1,4 +1,4 @@
-# TCP Congestion Control
+# Congestion control
 
 While flow control prevents overwhelming the receiver, congestion control
 prevents overwhelming the network. TCP treats packet loss as a signal of
@@ -58,9 +58,9 @@ ss -ti | grep cwnd
 
 ## Related
 
-- [Flow Control](flow-control.md) - Receiver-side throttling
+- [Flow control](flow-control.md) - Receiver-side throttling
 - [Reliability](reliability.md) - Retransmission triggers
-- [TCP Performance](performance.md) - Tuning options
+- [Performance](performance.md) - Tuning options
 
 ---
 

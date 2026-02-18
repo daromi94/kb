@@ -1,4 +1,4 @@
-# Hidden Invariants
+# Hidden invariants
 
 Legacy code often contains hidden invariants—logic that must remain true even if
 the implementation looks suboptimal. Before opening a PR, perform a behavioral

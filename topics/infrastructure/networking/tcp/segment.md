@@ -1,4 +1,4 @@
-# TCP Segment Structure
+# Segment structure
 
 Every TCP segment consists of a header (minimum 20 bytes) followed by optional
 data payload.
@@ -63,7 +63,7 @@ data payload.
 ## Related
 
 - [Reliability](reliability.md) - How sequence numbers enable ordering
-- [Flow Control](flow-control.md) - Window size mechanics
+- [Flow control](flow-control.md) - Window size mechanics
 
 ---
 

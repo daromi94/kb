@@ -1,4 +1,4 @@
-# TCP Keepalives
+# Keepalives
 
 TCP connections can sit idle indefinitely. If a peer crashes or the network
 path breaks while no data is flowing, the other side will never know. Keepalive
@@ -73,8 +73,8 @@ Examples: gRPC keepalive pings, WebSocket ping/pong, database connection pools
 
 ## Related
 
-- [TCP State Machine](state-machine.md) - Connection states
-- [TCP Sockets](sockets.md) - Socket options
+- [State machine](state-machine.md) - Connection states
+- [Sockets](sockets.md) - Socket options
 
 ---
 

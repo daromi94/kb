@@ -1,4 +1,4 @@
-# TCP Flow Control
+# Flow control
 
 Flow control prevents a fast sender from overwhelming a slow receiver's buffer.
 TCP implements this through the sliding window mechanism.
@@ -63,9 +63,9 @@ handshake.
 
 ## Related
 
-- [TCP Segment](segment.md) - Window Size field
-- [Congestion Control](congestion-control.md) - Network-side throttling
-- [TCP Sockets](sockets.md) - Kernel buffer interaction
+- [Segment structure](segment.md) - Window Size field
+- [Congestion control](congestion-control.md) - Network-side throttling
+- [Sockets](sockets.md) - Kernel buffer interaction
 
 ---
 

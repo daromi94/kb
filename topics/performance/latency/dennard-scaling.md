@@ -1,4 +1,4 @@
-# Dennard Scaling
+# Dennard scaling
 
 The collapse of Dennard scaling is why latency became a software engineering
 problem rather than something hardware engineers solved automatically.

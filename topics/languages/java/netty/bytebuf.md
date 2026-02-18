@@ -47,9 +47,7 @@ ByteBuf eliminates this by maintaining two independent indices:
 | Direct    | Native memory   | Zero-copy for socket I/O  | Expensive alloc, no backing array |
 | Composite | Virtual         | No-copy message assembly  | Slightly more complex access      |
 
-**Heap buffers** store bytes in a JVM byte array. Call `hasArray()` before
-accessing the backing array directly — direct and composite buffers do not
-have one and will throw `UnsupportedOperationException`.
+**Heap buffers** store bytes in a JVM byte array.
 
 **Direct buffers** allocate native (off-heap) memory. The kernel can read
 from and write to them without an intermediate copy, which is why the JVM

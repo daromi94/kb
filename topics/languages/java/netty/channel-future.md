@@ -62,14 +62,6 @@ handler runs on the EventLoop. Calling `sync()` tells the EventLoop to
 wait for the I/O operation to finish — but the EventLoop is the very
 thread that would complete it, so it deadlocks.
 
-## Ordering guarantee
-
-All operations on the same Channel are guaranteed to execute in the order
-they were invoked. If handler code calls `write(A)` then `write(B)`, the
-remote peer always receives A before B. This holds even though each write
-returns immediately — the EventLoop queues the operations and drains them
-sequentially, maintaining protocol integrity without manual synchronization.
-
 ## Write-then-close pattern
 
 A common pattern is sending a final message and closing the connection.

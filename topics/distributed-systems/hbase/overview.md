@@ -1,4 +1,4 @@
-# HBase overview
+# Overview
 
 Apache HBase is an open-source, distributed, wide-column NoSQL database
 built on top of HDFS. It is modeled after Google's Bigtable paper and provides

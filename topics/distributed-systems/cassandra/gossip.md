@@ -1,4 +1,4 @@
-# Cassandra gossip
+# Gossip
 
 In Cassandra, gossip is the peer-to-peer communication protocol that allows
 nodes to share state information and build a collective awareness of the

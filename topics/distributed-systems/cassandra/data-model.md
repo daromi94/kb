@@ -1,4 +1,4 @@
-# Cassandra data model
+# Data model
 
 In Cassandra, the data model is designed to support distributed scale by
 prioritizing how data is physically laid out on disk and across the network.

@@ -1,4 +1,4 @@
-# HBase data model
+# Data model
 
 HBase stores data in a sparse, multidimensional map indexed by row key, column
 family, column qualifier, and timestamp.

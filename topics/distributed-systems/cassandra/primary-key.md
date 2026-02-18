@@ -1,4 +1,4 @@
-# Cassandra primary key
+# Primary key
 
 In Cassandra, the primary key is the most critical part of your table schema. It
 does more than ensure uniqueness; it dictates how data is distributed across the

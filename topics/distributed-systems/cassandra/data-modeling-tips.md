@@ -1,4 +1,4 @@
-# Cassandra data modeling tips
+# Data modeling tips
 
 In Cassandra, data modeling is the art of query-driven design. Unlike relational
 databases where you model based on entity relationships (normalization), in

@@ -1,4 +1,4 @@
-# HBase architecture
+# Architecture
 
 HBase uses a master/slave architecture with strong consistency guarantees.
 The system separates coordination, request handling, and storage into distinct

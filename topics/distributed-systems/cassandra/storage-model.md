@@ -1,4 +1,4 @@
-# Cassandra storage model
+# Storage model
 
 In Cassandra, the storage model is based on an LSM-tree (Log-Structured
 Merge-Tree) architecture. This design is specifically optimized for high write

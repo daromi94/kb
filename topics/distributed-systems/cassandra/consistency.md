@@ -1,4 +1,4 @@
-# Cassandra consistency
+# Consistency
 
 In Cassandra, consistency refers to how up-to-date and synchronized rows of data
 are across all their replicas. Unlike traditional relational databases that

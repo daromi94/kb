@@ -1,4 +1,4 @@
-# HBase storage engine
+# Storage engine
 
 HBase uses a Log-Structured Merge (LSM) tree for storage, optimizing for write
 throughput while maintaining good read performance through background

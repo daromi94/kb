@@ -1,4 +1,4 @@
-# Cassandra fault tolerance
+# Fault tolerance
 
 In Cassandra, fault tolerance is the ability of the system to continue operating
 and serving data correctly even when nodes, racks, or entire data centers fail.

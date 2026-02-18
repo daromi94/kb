@@ -1,4 +1,4 @@
-# Cassandra overview
+# Overview
 
 Apache Cassandra is an open-source, distributed NoSQL database designed to handle
 massive amounts of data across many commodity servers. Born at Facebook and later

@@ -1,4 +1,4 @@
-# Cassandra query routing
+# Query routing
 
 Query routing in Cassandra is a decentralized process that ensures any node in
 the cluster can handle any request. When a client application executes a query,

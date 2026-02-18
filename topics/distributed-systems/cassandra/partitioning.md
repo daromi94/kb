@@ -1,4 +1,4 @@
-# Cassandra partitioning
+# Partitioning
 
 Partitioning is the mechanism Cassandra uses to distribute data across a cluster
 of nodes. It relies on consistent hashing to ensure that data is spread evenly

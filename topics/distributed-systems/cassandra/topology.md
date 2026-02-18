@@ -1,4 +1,4 @@
-# Cassandra topology
+# Topology
 
 Topology in Cassandra is the logical and physical arrangement of the
 cluster. The hierarchy moves from the smallest unit (node) to the largest

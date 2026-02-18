@@ -1,4 +1,4 @@
-# HBase consistency model
+# Consistency model
 
 HBase is a CP system (Consistent and Partition Tolerant), enforcing strong
 consistency at the expense of availability during failures.

@@ -1,4 +1,4 @@
-# Cassandra replication
+# Replication
 
 In Cassandra, replication is the mechanism that ensures high availability and
 durability. While partitioning decides which node is the primary owner of data,

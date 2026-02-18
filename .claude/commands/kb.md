@@ -66,7 +66,9 @@ than creating a duplicate.
 sales pitches (competitive positioning, "unlike X we do Y", "best-in-class",
 customer testimonials, pricing/business arguments for adoption),
 dated references (version numbers, "as of 2024", "currently", "new in v3",
-release-specific features, "modern" without context)
+release-specific features, "modern" without context),
+deprecation notes ("deprecated since", "removed in", "replaced by X in v4",
+migration advice from old APIs — just document the current approach)
 
 **Preserve:** Core explanations, illuminating examples, tables/comparisons,
 code samples, LaTeX notation, depth and nuance

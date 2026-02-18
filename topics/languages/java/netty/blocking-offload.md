@@ -3,40 +3,58 @@
 Because one EventLoop thread multiplexes many Channels, a blocking call
 inside any handler stalls every connection assigned to that thread. Database
 queries, synchronous file reads, and legacy API calls are common offenders.
-The fix is to run blocking handlers on a separate thread pool while keeping
-I/O handlers on the EventLoop.
+The fix is to run blocking work on a separate thread pool while keeping I/O
+handlers on the EventLoop.
 
-## EventExecutorGroup
+## Explicit executor injection
 
-ChannelPipeline's `addLast()` and `addFirst()` accept an optional
-`EventExecutorGroup` argument. When provided, Netty dispatches events for
-that handler to a thread from the executor group instead of the EventLoop.
+Inject a standard Java `Executor` or `ExecutorService` into the handler and
+submit blocking work manually. When the work completes, call back into the
+pipeline through the `ChannelHandlerContext`, which is thread-safe and can
+be invoked from any thread.
 
 ```java
-EventExecutorGroup blockingGroup = new DefaultEventExecutorGroup(16);
+public class SlowDatabaseHandler extends ChannelInboundHandlerAdapter {
 
-pipeline.addLast(blockingGroup, new SlowDatabaseHandler());
+    private final Executor executor;
+
+    public SlowDatabaseHandler(Executor executor) {
+        this.executor = executor;
+    }
+
+    @Override
+    public void channelRead(ChannelHandlerContext ctx, Object msg) {
+        executor.execute(() -> {
+            try {
+                Object result = performBlockingQuery(msg);
+                ctx.fireChannelRead(result);
+            } finally {
+                ReferenceCountUtil.release(msg);
+            }
+        });
+    }
+}
 ```
 
-DefaultEventExecutorGroup is the standard implementation for non-I/O work.
-When the offloaded handler finishes, it uses its ChannelHandlerContext to
-pass results back into the pipeline, which re-enters the EventLoop thread
-for downstream I/O handlers.
+The handler has full control over thread safety, task ordering, and pool
+sizing. The application owns the executor lifecycle rather than delegating
+it to the pipeline.
 
 ## Execution comparison
 
-| Scenario                    | Execution thread   | Scalability impact                        |
-|-----------------------------|--------------------|-------------------------------------------|
-| Non-blocking logic          | EventLoop (I/O)    | Highest — minimal context switching       |
-| Blocking logic on EventLoop | EventLoop (I/O)    | Severe — blocks all connections on thread |
-| Blocking logic on executor  | EventExecutorGroup | Balanced — protects I/O, adds switching   |
+| Scenario                    | Execution thread     | Tradeoff                                   |
+|-----------------------------|----------------------|--------------------------------------------|
+| Non-blocking logic          | EventLoop (I/O)      | Highest throughput, minimal switching      |
+| Blocking logic on EventLoop | EventLoop (I/O)      | Severe — blocks all connections on thread  |
+| Explicit executor offload   | Application executor | Full control, clear ownership of threading |
 
 ## Related
 
 - [Event loop](event-loop.md) - The single-threaded I/O engine that must
   stay unblocked
-- [Channel pipeline](channel-pipeline.md) - Where handlers and executor
-  groups are configured
+- [Channel pipeline](channel-pipeline.md) - Where handlers are configured
+- [Channel handler context](channel-handler-context.md) - Thread-safe handle
+  used to re-enter the pipeline from executor threads
 
 ---
 

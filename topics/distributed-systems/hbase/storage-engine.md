@@ -71,7 +71,6 @@ Both use LSM trees but differ in where data lives:
 ## Related
 
 - [Data model](data-model.md) - Logical structure that maps to this storage
-- [Netty I/O](netty-io.md) - How writes reach HDFS efficiently
 
 ---
 

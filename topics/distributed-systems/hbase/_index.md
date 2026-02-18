@@ -10,7 +10,6 @@ Google's Bigtable.
 - [Data model](data-model.md) - Row keys, column families, qualifiers, timestamps
 - [Storage engine](storage-engine.md) - LSM tree with WAL, MemStore, and HFiles
 - [Consistency model](consistency-model.md) - CP system with single-owner guarantees
-- [Netty I/O](netty-io.md) - Event-driven RPC and async WAL
 
 ---
 

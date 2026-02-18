@@ -1,4 +1,4 @@
-# Ceph Overview
+# Ceph overview
 
 Ceph is an open-source, distributed storage platform providing object, block,
 and file storage from a single, unified cluster. It is architected to be

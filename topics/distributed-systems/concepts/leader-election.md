@@ -1,4 +1,4 @@
-# Leader Election
+# Leader election
 
 The mechanism by which a cluster chooses a single node to act as
 coordinator. When the current leader fails, the cluster must

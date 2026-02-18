@@ -1,4 +1,4 @@
-# Commit Log
+# Commit log
 
 The commit log is the database's crash recovery mechanism—an append-only file
 on disk that ensures data survives even if power is cut instantly.

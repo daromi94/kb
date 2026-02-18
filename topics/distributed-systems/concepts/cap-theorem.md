@@ -1,4 +1,4 @@
-# CAP Theorem
+# CAP theorem
 
 The CAP theorem (Brewer's theorem) states that a distributed data store
 cannot simultaneously guarantee more than two of: **consistency**,

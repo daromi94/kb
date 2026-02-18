@@ -1,4 +1,4 @@
-# Consistency and Durability
+# Consistency and durability
 
 The consistency model is built on writing the WAL to object storage
 and searching both indexed and unindexed data on every query.

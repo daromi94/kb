@@ -1,4 +1,4 @@
-# Data Placement
+# Data placement
 
 Ceph uses three layers of logical abstraction to partition data: Pools,
 Placement Groups, and (for CephFS) dynamic subtree partitioning.

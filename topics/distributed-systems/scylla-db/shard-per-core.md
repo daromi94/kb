@@ -1,4 +1,4 @@
-# Shard-per-Core Architecture
+# Shard-per-core architecture
 
 ScyllaDB's shard-per-core architecture tightly couples database software to
 hardware. Instead of treating a server as one large pool of resources, ScyllaDB

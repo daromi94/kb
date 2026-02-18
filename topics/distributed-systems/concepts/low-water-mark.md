@@ -1,4 +1,4 @@
-# Low-Water Mark
+# Low-water mark
 
 The low-water mark is the log index (or timestamp) before which all
 entries are guaranteed to be safely processed and stored elsewhere,

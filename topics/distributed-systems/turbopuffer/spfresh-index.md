@@ -1,4 +1,4 @@
-# SPFresh Index
+# SPFresh index
 
 Turbopuffer uses SPFresh, a centroid-based vector index, instead of
 the more common HNSW (Hierarchical Navigable Small World) graph

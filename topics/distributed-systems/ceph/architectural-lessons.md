@@ -1,4 +1,4 @@
-# Architectural Lessons
+# Architectural lessons
 
 Design patterns and insights from Ceph's architecture applicable to distributed
 systems broadly.

@@ -1,4 +1,4 @@
-# Bloom Filters
+# Bloom filters
 
 A Bloom filter is a space-efficient, probabilistic data structure for testing
 set membership. It can tell you with certainty that something is **not** in a

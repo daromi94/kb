@@ -1,4 +1,4 @@
-# Segmented Log
+# Segmented log
 
 A single, ever-growing write-ahead log eventually exhausts disk space and
 makes recovery slow. The segmented log pattern breaks the monolithic file

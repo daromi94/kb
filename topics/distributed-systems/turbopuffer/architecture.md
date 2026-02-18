@@ -73,8 +73,8 @@ from the S3 roundtrip.
 
 ## Related
 
-- [SPFresh Index](spfresh-index.md) - Search index designed for object storage access patterns
-- [Consistency and Durability](consistency-and-durability.md) - WAL design and consistency model
+- [SPFresh index](spfresh-index.md) - Search index designed for object storage access patterns
+- [Consistency and durability](consistency-and-durability.md) - WAL design and consistency model
 - [Multi-Tenancy](multi-tenancy.md) - Namespace isolation and resource sharing
 - [Tradeoffs](tradeoffs.md) - Deliberate design tradeoffs and fit assessment
 

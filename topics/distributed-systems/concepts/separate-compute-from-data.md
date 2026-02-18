@@ -1,4 +1,4 @@
-# Separate Compute from Data
+# Separate compute from data
 
 Decoupling compute and storage into independent layers allows each to scale
 according to its own demand rather than scaling together as a monolithic unit.

@@ -1,4 +1,4 @@
-# Multi-Tenancy
+# Multi-tenancy
 
 Multi-tenancy is implemented through namespace isolation and resource
 sharing across stateless compute nodes.

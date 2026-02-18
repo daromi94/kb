@@ -1,4 +1,4 @@
-# Building on Object Storage
+# Building on object storage
 
 A first-principles walkthrough of building a database on object
 storage, illustrating each design decision as a response to a

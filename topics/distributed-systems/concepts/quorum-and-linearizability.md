@@ -1,4 +1,4 @@
-# Quorum and Linearizability
+# Quorum and linearizability
 
 The quorum rule ($W + R > N$) guarantees that the set of nodes
 acknowledging a write and the set responding to a read always overlap.

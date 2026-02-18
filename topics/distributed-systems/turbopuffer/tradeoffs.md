@@ -41,8 +41,8 @@ metadata filters, at the cost of less control for advanced users.
 ## Related
 
 - [Architecture](architecture.md) - Core stateless compute model
-- [SPFresh Index](spfresh-index.md) - Index design aligned with these tradeoffs
-- [Consistency and Durability](consistency-and-durability.md) - Durability cost of the write path
+- [SPFresh index](spfresh-index.md) - Index design aligned with these tradeoffs
+- [Consistency and durability](consistency-and-durability.md) - Durability cost of the write path
 
 ---
 

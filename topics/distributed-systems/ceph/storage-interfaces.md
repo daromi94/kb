@@ -1,4 +1,4 @@
-# Storage Interfaces
+# Storage interfaces
 
 Ceph provides three distinct storage interfaces running on top of the same
 underlying RADOS cluster. This allows a single infrastructure to handle diverse

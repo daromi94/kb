@@ -1,4 +1,4 @@
-# Failure Detection at Scale
+# Failure detection at scale
 
 The scale of a cluster changes how heartbeats are managed. The core tension is
 between detection speed and network overhead.

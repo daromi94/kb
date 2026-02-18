@@ -1,4 +1,4 @@
-# Control Plane vs Data Plane
+# Control plane vs data plane
 
 The separation of control planes and data planes isolates concerns, optimizes
 performance, and enhances system resilience.

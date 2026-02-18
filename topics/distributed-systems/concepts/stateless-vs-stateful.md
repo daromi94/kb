@@ -1,4 +1,4 @@
-# Stateless vs Stateful
+# Stateless vs stateful
 
 Whether a process maintains information about previous interactions across
 requests determines how it scales, recovers from failure, and integrates

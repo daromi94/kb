@@ -1,4 +1,4 @@
-# Read and Write Paths
+# Read and write paths
 
 Ceph's read and write paths are governed by the **Primary OSD model**. One OSD
 coordinates all I/O for any given Placement Group, ensuring strict data

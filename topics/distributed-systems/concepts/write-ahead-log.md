@@ -1,4 +1,4 @@
-# Write-Ahead Log
+# Write-ahead log
 
 A Write-Ahead Log (WAL) provides **atomicity** and **durability** (the A and D
 in ACID). The core premise: any change must be recorded in a stable log file

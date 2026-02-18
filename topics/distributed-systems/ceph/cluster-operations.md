@@ -1,4 +1,4 @@
-# Cluster Operations
+# Cluster operations
 
 A Ceph cluster functions as a distributed, autonomous entity where intelligence
 is decentralized. Every component—including clients—can calculate data

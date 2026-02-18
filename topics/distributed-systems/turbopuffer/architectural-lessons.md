@@ -1,4 +1,4 @@
-# Architectural Lessons
+# Architectural lessons
 
 Turbopuffer reflects a post-cloud mindset: object storage is the
 primary driver of durability and state, not a backup target bolted
@@ -55,8 +55,8 @@ to any other node.
 ## Related
 
 - [Architecture](architecture.md) - Core stateless compute and storage model
-- [SPFresh Index](spfresh-index.md) - Centroid-based index designed for S3
-- [Multi-Tenancy](multi-tenancy.md) - Namespace isolation and sticky routing
+- [SPFresh index](spfresh-index.md) - Centroid-based index designed for S3
+- [Multi-tenancy](multi-tenancy.md) - Namespace isolation and sticky routing
 - [Tradeoffs](tradeoffs.md) - Deliberate design tradeoffs
 
 ---

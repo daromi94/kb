@@ -1,4 +1,4 @@
-# CRUSH Algorithm
+# CRUSH algorithm
 
 The **CRUSH** (Controlled Replication Under Scalable Hashing) algorithm is
 Ceph's defining technical innovation. It replaces centralized lookup tables

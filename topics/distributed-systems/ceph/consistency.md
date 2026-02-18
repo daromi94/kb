@@ -1,4 +1,4 @@
-# Consistency Model
+# Consistency model
 
 In the CAP theorem (Consistency, Availability, Partition Tolerance), Ceph is
 fundamentally a **CP system**. It prioritizes Consistency and Partition

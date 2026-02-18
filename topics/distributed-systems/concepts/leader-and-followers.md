@@ -1,4 +1,4 @@
-# Leader and Followers
+# Leader and followers
 
 A single node (the leader) accepts all writes and propagates them to
 follower nodes. By funneling mutations through one point, the system

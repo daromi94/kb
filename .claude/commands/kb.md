@@ -140,7 +140,7 @@ project being documented).
 ### 7. Note Format
 
 ```markdown
-# Note Title
+# Note title
 
 Opening paragraph establishing the concept.
 
@@ -166,8 +166,15 @@ Return to [Topic](_index.md)
 **Cross-references:** Never link to other notes inline within prose or headings.
 All cross-references go exclusively in the `## Related` section at the bottom.
 
-Standards: Single blank lines between elements, sentence case headers, language
-tags on code blocks.
+**Titles:** Sentence case — capitalize only the first word and proper
+nouns/acronyms (e.g., "# Consistent hashing", "# CRUSH algorithm",
+"# CAP theorem"). Never prefix with the parent topic name; the directory
+path already provides context ("# Consistency" not "# Cassandra consistency").
+
+**Link text must match titles:** In `_index.md` entries and `## Related`
+cross-references, the link text must match the note's `# Title` exactly.
+
+Standards: Single blank lines between elements, language tags on code blocks.
 
 ### 8. Index File
 

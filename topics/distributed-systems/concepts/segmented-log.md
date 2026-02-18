@@ -50,6 +50,8 @@ In systems like Kafka each segment consists of companion files:
 - `.log` — the actual messages or data entries
 - `.index` — a sparse index mapping offsets to byte positions in the
   `.log` file for fast lookups without a full scan
+- `.timeindex` — a sparse index mapping timestamps to offsets for
+  time-based lookups
 
 The result is a log that behaves like an infinite stream while physically
 consisting of finite, disposable files.

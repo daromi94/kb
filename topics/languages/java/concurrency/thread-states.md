@@ -21,8 +21,9 @@ Triggered by `Object.wait()`, `Thread.join()`, or `LockSupport.park()` without
 a timeout.
 
 **TIMED_WAITING:** Same as WAITING but with a deadline. Triggered by
-`Thread.sleep(ms)`, `Object.wait(ms)`, `Thread.join(ms)`, or
-`LockSupport.parkNanos()`. Wakes on signal or timeout, whichever comes first.
+`Thread.sleep(ms)`, `Object.wait(ms)`, `Thread.join(ms)`,
+`LockSupport.parkNanos()`, or `LockSupport.parkUntil()`. Wakes on signal
+or timeout, whichever comes first.
 
 **TERMINATED:** The `run()` method completed normally or an uncaught exception
 killed the thread. A terminated thread cannot be restarted—the pool must create
@@ -48,11 +49,11 @@ a new one.
 
 Transitions into blocking states:
 
-| Target state  | Trigger                                             |
-|---------------|-----------------------------------------------------|
-| BLOCKED       | Entering `synchronized` when lock is held           |
-| WAITING       | `wait()` / `join()` / `park()` (no timeout)         |
-| TIMED_WAITING | `sleep(n)` / `wait(n)` / `join(n)` / `parkNanos(n)` |
+| Target state  | Trigger                                                              |
+|---------------|----------------------------------------------------------------------|
+| BLOCKED       | Entering `synchronized` when lock is held                            |
+| WAITING       | `wait()` / `join()` / `park()` (no timeout)                          |
+| TIMED_WAITING | `sleep(n)` / `wait(n)` / `join(n)` / `parkNanos(n)` / `parkUntil(n)` |
 
 ## Thread pool context
 

@@ -45,7 +45,7 @@ shut it down:
 
 - **`shutdown()`:** Graceful shutdown. No new tasks accepted, but existing tasks
   (including queued ones) will finish
-- **`shutdownNow()`:** Attempts to stop active tasks and ignores queued tasks
+- **`shutdownNow()`:** Attempts to stop active tasks and returns queued tasks
 
 ## Example
 

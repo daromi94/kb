@@ -53,8 +53,8 @@ the middle. This makes writes fast because the disk head doesn't jump around
 
 ## ScyllaDB Adaptations
 
-In traditional databases like Cassandra, all threads fight for a lock to write
-to the commit log. ScyllaDB adapts this for shard-per-core:
+In traditional databases like Cassandra, threads contend for buffer space
+when writing to the commit log. ScyllaDB adapts this for shard-per-core:
 
 **No global locks.** Each shard manages its own write path, avoiding a single
 contention point.

@@ -34,7 +34,7 @@ conflict resolution complexity.
 
 **Leaderless (quorum-based).** Any node accepts writes. The system relies
 on a quorum of nodes agreeing on data to ensure consistency. Used by
-Cassandra and DynamoDB.
+Cassandra.
 
 ## Key patterns
 

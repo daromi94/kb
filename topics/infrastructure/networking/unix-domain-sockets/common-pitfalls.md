@@ -23,19 +23,24 @@ semantics.
 
 ## SIGPIPE on write to closed peer
 
-Writing to a socket whose reader has disconnected delivers `SIGPIPE`, which
-terminates the process by default. The first write after disconnect returns
-`EPIPE`; a second write triggers the signal.
+Writing to a socket whose reader has disconnected delivers a `SIGPIPE`
+signal, which terminates the process by default. If the signal is ignored
+or blocked, the same `write()` or `send()` call returns -1 with `errno`
+set to `EPIPE`.
 
 **Fix:** Ignore the signal globally or suppress it per-call:
 
 ```c
-signal(SIGPIPE, SIG_IGN);         // process-wide
-send(fd, buf, len, MSG_NOSIGNAL); // per-call
+// Option 1: Global (standard for most network daemons)
+signal(SIGPIPE, SIG_IGN);
+
+// Option 2: Per-call (requires send() instead of write())
+send(fd, buf, len, MSG_NOSIGNAL);
 ```
 
-`MSG_NOSIGNAL` converts the signal into an `EPIPE` return, letting the
-application handle the error in normal control flow.
+Using `MSG_NOSIGNAL` suppresses the `SIGPIPE` for that specific call,
+allowing the application to handle the disconnection via normal error
+logic (`if (errno == EPIPE)`) without risking a process crash.
 
 ## Permission race on bind
 

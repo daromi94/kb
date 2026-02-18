@@ -25,9 +25,9 @@ encounter is the one responsible for storing that data.
 The "consistency" in consistent hashing refers to how little data moves when the
 cluster configuration changes.
 
-**Adding a node:** When a new node is added to the ring, it only captures data
-from the node immediately following it in a counter-clockwise direction. Only a
-small fraction of the total keys ($1/N$) need to be re-mapped.
+**Adding a node:** When a new node is added to the ring, it takes over a
+key range from its clockwise successor. Only a small fraction of the
+total keys ($1/N$) need to be re-mapped.
 
 **Removing a node:** If a node fails or is removed, its keys simply fall to the
 next node clockwise. Only the data on the departing node is affected; the rest

@@ -14,7 +14,7 @@ touches 50+ files, it's not a refactor—it's a liability.
 | 10-20 files | Medium        | Medium        | Medium |
 | 50+ files   | Low           | Low           | High   |
 
-## Red-green-refactor loop
+## Change-verify-commit loop
 
 Use a tight feedback loop:
 

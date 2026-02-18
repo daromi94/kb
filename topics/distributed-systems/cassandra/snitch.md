@@ -32,11 +32,11 @@ metadata.
 The `DynamicEndpointSnitch` wraps the configured static snitch and adds
 real-time performance awareness.
 
-**Latency scoring:** It monitors request latency to every node and maintains
-a badness score modeled on phi accrual logic. If a physically closer node
-starts performing significantly worse than a distant one (due to compaction,
-disk I/O spikes, etc.), the dynamic snitch temporarily routes traffic away
-from the busy node.
+**Latency scoring:** It scores nodes based on latency (EWMA) and severity
+(background task pressure) to route requests to the best performing
+replica. If a physically closer node starts performing significantly
+worse than a distant one (due to compaction, disk I/O spikes, etc.), the
+dynamic snitch temporarily routes traffic away from the busy node.
 
 **Periodic reset:** Scores are reset on a regular interval so a node is not
 permanently penalized for a transient performance dip.

@@ -28,15 +28,15 @@ like `INSERT ... IF NOT EXISTS`.
 
 ## Performance cost
 
-An LWT requires four round-trips between the coordinator and replicas,
-compared to a single round-trip for a standard write.
+An LWT requires multiple round-trips between the coordinator and
+replicas, compared to a single round-trip for a standard write.
 
-| Metric      | Standard write              | LWT                                |
-|-------------|-----------------------------|------------------------------------|
-| Consistency | Eventual or strong          | Linearizable                       |
-| Round trips | 1 (coordinator to replicas) | 4 (prepare, read, propose, commit) |
-| Throughput  | Very high                   | Significantly lower                |
-| Latency     | Low (milliseconds)          | High (multi-phase coordination)    |
+| Metric      | Standard write              | LWT                             |
+|-------------|-----------------------------|---------------------------------|
+| Consistency | Eventual or strong          | Linearizable                    |
+| Round trips | 1 (coordinator to replicas) | Multiple (Paxos phases)         |
+| Throughput  | Very high                   | Significantly lower             |
+| Latency     | Low (milliseconds)          | High (multi-phase coordination) |
 
 LWTs are appropriate for low-frequency operations like account creation or
 unique constraints. Using them for high-frequency updates (e.g., sensor

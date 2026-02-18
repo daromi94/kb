@@ -30,7 +30,7 @@ When you call `net.Dial("tcp", "1.2.3.4:80")`, you create a logical
 point-to-point connection over a more complex physical network.
 
 - **Pros:** Maximum bandwidth, zero contention
-- **Cons:** Not scalable—connecting $N$ computers requires $N^2$ cables
+- **Cons:** Not scalable—connecting $N$ computers requires $\frac{N(N-1)}{2}$ cables
 
 ## Daisy Chain
 

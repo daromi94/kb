@@ -26,4 +26,4 @@ Foundational techniques and principles for distributed systems.
 
 ---
 
-Return to [Distributed Systems](../_index.md)
+Return to [Distributed systems](../_index.md)

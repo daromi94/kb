@@ -90,4 +90,4 @@ Any file descriptor:
 
 ---
 
-Return to [Unix Domain Sockets](_index.md)
+Return to [Unix domain sockets](_index.md)

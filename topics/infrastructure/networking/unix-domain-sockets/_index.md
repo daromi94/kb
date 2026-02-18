@@ -1,4 +1,4 @@
-# Unix Domain Sockets
+# Unix domain sockets
 
 Inter-process communication via the BSD socket API.
 

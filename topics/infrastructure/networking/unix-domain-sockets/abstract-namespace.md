@@ -82,4 +82,4 @@ process can connect if it knows the name. Use `SO_PEERCRED` for access control.
 
 ---
 
-Return to [Unix Domain Sockets](_index.md)
+Return to [Unix domain sockets](_index.md)

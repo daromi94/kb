@@ -1,4 +1,4 @@
-# Distributed Systems
+# Distributed systems
 
 Concepts, patterns, and systems for building reliable distributed applications.
 

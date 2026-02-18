@@ -10,4 +10,4 @@ Organized collections of inter-related data and the systems that manage them.
 
 ---
 
-Return to [Computer Science](../_index.md)
+Return to [Computer science](../_index.md)

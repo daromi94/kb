@@ -124,4 +124,4 @@ directory and bind with a relative path.
 
 ---
 
-Return to [Unix Domain Sockets](_index.md)
+Return to [Unix domain sockets](_index.md)

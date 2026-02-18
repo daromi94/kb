@@ -1,4 +1,4 @@
-# Computer Science
+# Computer science
 
 Foundational concepts in computing.
 

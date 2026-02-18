@@ -68,10 +68,18 @@ customer testimonials, pricing/business arguments for adoption),
 dated references (version numbers, "as of 2024", "currently", "new in v3",
 release-specific features, "modern" without context),
 deprecation notes ("deprecated since", "removed in", "replaced by X in v4",
-migration advice from old APIs — just document the current approach)
+migration advice from old APIs — just document the current approach),
+convoluted phrasing, roundabout explanations, unnecessary qualifiers
 
-**Preserve:** Core explanations, illuminating examples, tables/comparisons,
-code samples, LaTeX notation, depth and nuance
+**Writing style:** Get to the point. Use short, direct sentences. Lead with
+the fact or rule, not the context. Say what something *is* or *does* before
+explaining why. Avoid hedging ("it should be noted that", "it is worth
+mentioning", "one might consider"). Cut filler words ("basically",
+"essentially", "in order to", "the fact that"). Prefer active voice.
+Each note must be scannable and recallable in under 5 minutes.
+
+**Preserve:** Core explanations, essential examples, tables/comparisons,
+code samples, LaTeX notation, depth and nuance — but express them concisely
 
 **Format:** Fix inconsistencies, remove trailing whitespace, no double spaces in
 prose (table padding is fine), consistent heading hierarchy, ~80 char lines.

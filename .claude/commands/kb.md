@@ -5,7 +5,8 @@ arguments: <topic>
 
 # Knowledge Acquisition Skill
 
-Record knowledge into clean, atomic notes using Zettelkasten principles.
+Record knowledge into clean, atomic Zettelkasten notes. Each note must be
+readable and recallable in under 5 minutes.
 
 ## Directory Structure
 

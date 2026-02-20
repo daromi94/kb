@@ -27,14 +27,12 @@ durability before updating the tree.
 Maintaining single-digit latency under traffic spikes requires dynamic
 resource management at multiple levels.
 
-| Mechanism         | Scope     | Behaviour                                   |
-|-------------------|-----------|---------------------------------------------|
-| On-demand scaling | Table     | Instantly handles up to 2x previous peak    |
-| Bursting          | Partition | Taps unused capacity for short-lived spikes |
-| GAC               | Table     | Tracks global token consumption to prevent  |
-|                   |           | noisy-neighbour throttling                  |
-| Split for consume | Partition | Splits hot partitions by observed key       |
-|                   |           | distribution to spread load                 |
+| Mechanism         | Scope     | Behaviour                                           |
+|-------------------|-----------|-----------------------------------------------------|
+| On-demand scaling | Table     | Instantly handles up to 2x previous peak            |
+| Bursting          | Partition | Taps unused capacity for short-lived spikes         |
+| GAC               | Table     | Tracks global token use to prevent noisy neighbours |
+| Split for consume | Partition | Splits hot partitions by observed key distribution  |
 
 Global Admission Control (GAC) uses a token-bucket model. Each storage
 node reports its consumption to a central tracker, which balances

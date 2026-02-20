@@ -82,6 +82,8 @@ preventing two nodes from acting as leader simultaneously.
 
 - [Data model](data-model.md) - Partition key hashing and item
   placement
+- [Replica types](replica-types.md) - Storage replicas vs. log
+  replicas for quorum healing
 - [Performance](performance.md) - Request routing and admission
   control
 

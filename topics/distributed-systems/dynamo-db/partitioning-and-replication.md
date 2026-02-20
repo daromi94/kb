@@ -43,14 +43,14 @@ storage.
 ```
 Client --write--> Leader
                     |
-         generate WAL record
-          /                \
-     Follower-1          Follower-2
-     (persist)           (persist)
-          \                /
-      quorum (2 of 3) met
+           generate WAL record
+            /                \
+       Follower-1          Follower-2
+       (persist)           (persist)
+            \                /
+           quorum (2 of 3) met
                     |
-            ack to client
+               ack to client
 ```
 
 ## Read consistency

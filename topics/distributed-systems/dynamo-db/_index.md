@@ -5,6 +5,7 @@ latency at any scale.
 
 ## Notes
 
+- [Architecture](architecture.md) - Microservice decomposition, request path, and autoadmin control plane
 - [Data model](data-model.md) - Table structure, primary keys, and partition placement
 - [Partitioning and replication](partitioning-and-replication.md) - Partition layout, replication groups, and
   Multi-Paxos leader election

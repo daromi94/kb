@@ -191,9 +191,14 @@ Brief description.
 ## Notes
 
 - [Note name](note-name.md) - One-line description
+
+---
+
+Return to [Parent topic](../_index.md)
 ```
 
-Include Subtopics/Notes sections only when entries exist.
+Include Subtopics/Notes sections only when entries exist. Omit the
+return link for top-level topics (those directly under `topics/`).
 
 **Ordering:** List entries from general to specific, keeping related topics
 together. Overviews and foundational concepts come first, specialized or

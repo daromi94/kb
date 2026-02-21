@@ -9,6 +9,8 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
   how actors fix it
 - [Shared memory illusion](shared-memory-illusion.md) - Why shared memory is an abstraction and message passing
   matches hardware reality
+- [Call stack illusion](call-stack-illusion.md) - Why call-stack error handling breaks across threads and
+  failures must be modeled explicitly
 
 ---
 

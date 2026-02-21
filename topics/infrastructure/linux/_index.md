@@ -4,9 +4,9 @@ Linux kernel internals and system programming.
 
 ## Notes
 
-- [User and kernel space](user-and-kernel-space.md) - Privilege rings, system calls, and the user/kernel boundary
-- [Kernel modules](kernel-modules.md) - Loadable Kernel Modules for extending the kernel at runtime
-- [Processes](processes.md) - Process creation, virtual memory, scheduling, and /proc
-- [Virtual memory](virtual-memory.md) - Address translation, demand paging, and overcommit
-- [Segmentation faults](segmentation-faults.md) - SIGSEGV types and core dumps
-- [Kernel ring buffer](kernel-ring-buffer.md) - Kernel diagnostics via dmesg
+- [User and kernel space](user-and-kernel-space.md) - The privilege boundary between user programs and the kernel
+- [Kernel modules](kernel-modules.md) - Extending the kernel at runtime without rebooting
+- [Processes](processes.md) - How the kernel represents and manages running programs
+- [Virtual memory](virtual-memory.md) - How processes get isolated memory backed by physical RAM
+- [Segmentation faults](segmentation-faults.md) - What happens when a process makes an illegal memory access
+- [Kernel ring buffer](kernel-ring-buffer.md) - Kernel diagnostic messages and dmesg

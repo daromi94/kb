@@ -13,3 +13,7 @@ vector search at trillion-document scale.
 - [Building on object storage](building-on-object-storage.md) - First-principles database design walkthrough
 - [Tradeoffs](tradeoffs.md) - Write latency, cold starts, first-stage retrieval focus
 - [Architectural lessons](architectural-lessons.md) - Transferable design principles
+
+---
+
+Return to [Distributed systems](../_index.md)

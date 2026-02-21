@@ -1,9 +1,10 @@
 # Processes
 
-A process is a kernel construct. It exists as a task_struct in
-kernel memory — the data structure that holds the process's state,
-memory mappings, open file descriptors, scheduling info, and
-credentials.
+A process is a program in execution — code loaded into memory,
+assigned resources, and given CPU time. In the kernel it exists
+as a task_struct — the data structure that holds the process's
+state, memory mappings, open file descriptors, scheduling info,
+and credentials.
 
 ## Creation
 
@@ -13,6 +14,21 @@ calls. The kernel duplicates the parent's page tables using
 between parent and child. A page is copied only when one process
 writes to it. File descriptor tables are also copied, giving the
 child its own set of descriptors pointing to the same open files.
+
+The child typically calls `exec()` to replace its memory image
+with a new program.
+
+## States
+
+The kernel tracks each process in one of several states:
+
+| State      | Flag | Meaning                                      |
+|------------|------|----------------------------------------------|
+| Running    | R    | On CPU or in the run queue                   |
+| Sleeping   | S    | Waiting for an event, can be interrupted     |
+| Disk sleep | D    | Waiting for I/O, cannot be interrupted       |
+| Stopped    | T    | Suspended by signal                          |
+| Zombie     | Z    | Exited but parent has not read its exit code |
 
 ## Virtual address space
 
@@ -31,18 +47,18 @@ CPU state between processes thousands of times per second. From
 the user's perspective, hundreds of processes appear to run
 simultaneously.
 
-## The /proc filesystem
+## Observing processes
+
+| Tool           | Purpose                                       |
+|----------------|-----------------------------------------------|
+| `ps aux`       | Snapshot of all processes                     |
+| `top` / `htop` | Real-time process activity and resource usage |
+| `pstree`       | Parent-child hierarchy                        |
+| `/proc/<pid>/` | Kernel-exposed per-process state              |
 
 `/proc` is a pseudo-filesystem with no on-disk storage. The
 kernel generates its contents dynamically, exposing internal data
-structures as files. Each process gets a `/proc/<pid>/` directory
-containing its memory maps, open file descriptors, status, and
-more.
-
-```
-ps aux      # reads from /proc to list all processes
-ls /proc/1/ # inspect init's kernel-exposed state
-```
+structures as files.
 
 ## Related
 

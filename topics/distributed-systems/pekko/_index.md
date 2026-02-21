@@ -13,6 +13,8 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
   matches hardware reality
 - [Call stack illusion](call-stack-illusion.md) - Why call-stack error handling breaks across threads and
   failures must be modeled explicitly
+- [Supervision](supervision.md) - Parent-child hierarchy for fault handling, restart strategies, and
+  domain vs internal errors
 
 ---
 

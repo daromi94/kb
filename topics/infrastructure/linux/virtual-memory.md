@@ -6,7 +6,7 @@ doesn't know where its data physically resides, or whether it's in
 RAM at all (it could be swapped to disk). The kernel and the CPU's
 Memory Management Unit (MMU) maintain the illusion.
 
-## Why the kernel lies
+## Purpose
 
 **Isolation.** Virtual addresses in Process A map to different
 physical locations than those in Process B. Neither can see or

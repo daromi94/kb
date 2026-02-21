@@ -14,10 +14,6 @@ triggers a trap that transitions the CPU from Ring 3 to Ring 0,
 handing control to the kernel. The kernel performs the operation
 on the process's behalf, then returns to user mode.
 
-On x86-64, the `syscall` instruction provides a fast-path trap
-into the kernel. Older x86 code used `int 0x80` (a software
-interrupt) for the same purpose.
-
 ## Observing the boundary
 
 `strace` intercepts system calls made by a process, showing every

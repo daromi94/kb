@@ -59,7 +59,7 @@ scheduling; application logic should not depend on global ordering.
 
 ## Related
 
-- [Overview](overview.md) - High-level summary of the actor model
+- [Actors](actors.md) - The actor model and its primitives
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
   Why encapsulation breaks without actors
 - [Shared memory illusion](shared-memory-illusion.md) - Why local

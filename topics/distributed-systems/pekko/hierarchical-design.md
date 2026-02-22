@@ -40,7 +40,7 @@ contention and coarsens fault handling.
 
 - [Supervision](supervision.md) - The mechanism that makes hierarchies
   fault-tolerant
-- [Overview](overview.md) - Actor model fundamentals and the
+- [Actors](actors.md) - Actor model fundamentals and the
   organizational mental model
 
 ---

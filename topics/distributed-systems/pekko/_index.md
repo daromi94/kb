@@ -4,7 +4,7 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 
 ## Notes
 
-- [Overview](overview.md) - Programming model and modules
+- [Actors](actors.md) - The actor model and its primitives
 - [Concurrency terminology](concurrency-terminology.md) - Key concurrency definitions
 - [Progress conditions](progress-conditions.md) - Non-blocking guarantee hierarchy
 - [Message passing](message-passing.md) - Actor communication and execution model

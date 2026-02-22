@@ -47,15 +47,24 @@ they never block the parent.
 The parent defines a supervisor strategy when starting a child. The
 strategy maps failure types to recovery actions:
 
-| Action  | Effect                              |
-|---------|-------------------------------------|
-| Restart | Reinitialize child with fresh state |
-| Stop    | Terminate child permanently         |
+| Action  | Effect                                        |
+|---------|-----------------------------------------------|
+| Resume  | Keep the child running with its current state |
+| Restart | Reinitialize child with fresh state           |
+| Stop    | Terminate child permanently                   |
 
 Children never die silently (except infinite loops). A failing child
 triggers the supervisor strategy; a stopped child notifies interested
-parties. Restarts are invisible to collaborating actors — they can keep
-sending messages while the target actor restarts.
+parties. Restarts are invisible to collaborating actors — they can
+keep sending messages while the target actor restarts.
+
+## Failure propagation
+
+When all children of an actor stop unexpectedly, it often makes sense
+for the parent itself to restart or stop to restore a functional
+state. Combine supervision with death watch: the parent watches its
+children for termination and reacts accordingly, bubbling permanent
+failures up through the hierarchy.
 
 ## Related
 

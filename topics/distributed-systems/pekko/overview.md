@@ -16,6 +16,13 @@ Actors are the fundamental unit of computation. Each actor:
 This model eliminates locks and low-level concurrency primitives. The
 same code works transparently across local and remote boundaries.
 
+## Design mental model
+
+Think of actors as people in an organization. Assign sub-tasks to
+them, arrange their roles into a hierarchy, and define how failures
+escalate. This maps directly to supervision trees, message protocols,
+and task delegation in code.
+
 ## Key modules
 
 | Module            | Purpose                                           |

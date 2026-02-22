@@ -56,6 +56,9 @@ sending messages while the target actor restarts.
 
 - [Call stack illusion](call-stack-illusion.md) - The failure-handling
   problem that supervision solves
+- [Hierarchical design](hierarchical-design.md) - Structuring actor
+  hierarchies around supervision
+- [Actors](actors.md) - The actor model and its primitives
 
 ---
 

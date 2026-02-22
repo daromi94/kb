@@ -43,6 +43,9 @@ each actor is eventually terminated to release its resources.
 - [Message passing](message-passing.md) - How actors communicate
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
   Why shared mutable state breaks under concurrency
+- [Hierarchical design](hierarchical-design.md) - Structuring actor
+  hierarchies
+- [Supervision](supervision.md) - Parent-child fault handling
 - [Actor best practices](actor-best-practices.md) - Rules for
   well-behaved actors
 

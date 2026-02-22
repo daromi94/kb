@@ -47,6 +47,8 @@ works.
 
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
   The OOP-level argument for actors
+- [Message passing](message-passing.md) - The actor communication
+  model that aligns with hardware reality
 
 ---
 

@@ -48,9 +48,14 @@ Every actor consists of five components:
 5. The actor processes the message — modifying state, sending messages
 6. The actor is unscheduled, freeing the thread
 
-Millions of actors can share a small pool of threads. The scheduler
-multiplexes actors onto threads transparently, making task delegation
-the natural mode of operation.
+Actors are lightweight — roughly 300 bytes of overhead each. Millions
+of actors share a small pool of threads. The scheduler multiplexes
+actors onto threads transparently, making task delegation the natural
+mode of operation.
+
+In a large system the exact order in which actors process messages is
+not controllable and not intended to be. The system determines
+scheduling; application logic should not depend on global ordering.
 
 ## Related
 

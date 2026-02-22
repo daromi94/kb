@@ -4,7 +4,7 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 
 ## Notes
 
-- [Overview](overview.md) - Modules and programming model
+- [Overview](overview.md) - Programming model and modules
 - [Concurrency terminology](concurrency-terminology.md) - Key concurrency definitions
 - [Message passing](message-passing.md) - Actor communication and execution model
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency

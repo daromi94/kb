@@ -9,8 +9,7 @@ the OSI model.
 - [Encapsulation](encapsulation.md) - How data travels through protocol layers
 - [Topology](topology.md) - Physical and logical network structure
 - [Addressing](addressing.md) - IP vs MAC and host-to-host communication
-- [Client-server architecture](client-server.md) - The asymmetric model of
-  service requesters and providers
+- [Client-server architecture](client-server.md) - Asymmetric requester-provider model
 - [Remote procedure call](rpc.md) - RPC and transparent network communication
 - [Offloading](offloading.md) - Why servers handle expensive computation
 

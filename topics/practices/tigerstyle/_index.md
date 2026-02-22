@@ -6,7 +6,7 @@ experience.
 ## Notes
 
 - [Overview](overview.md) - Philosophy: why style, simplicity, zero technical debt
-- [Safety](safety.md) - NASA Power of Ten principles for control flow and memory
+- [Safety](safety.md) - Safe control flow and memory rules
 - [Assertions](assertions.md) - Assertion strategy for catching programmer errors
 - [Performance](performance.md) - Design-phase optimization and batching
 - [Naming](naming.md) - Naming conventions for clarity

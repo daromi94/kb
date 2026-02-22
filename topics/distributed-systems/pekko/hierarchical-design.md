@@ -26,6 +26,11 @@ maps to exactly one request.
 duty, it should watch that actor's liveness and react to termination
 notices. This applies across the hierarchy — not just parent-to-child.
 
+**Thin guardian.** The top-level actor is the innermost part of the
+error kernel. It should only start the application's subsystems and
+contain minimal logic. Overloading it strains a single point of
+contention and coarsens fault handling.
+
 **Single responsibility via children.** When an actor accumulates
 multiple responsibilities, push each one into a separate child. This
 keeps each actor's logic and state simple and independently

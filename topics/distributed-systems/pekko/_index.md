@@ -4,19 +4,13 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 
 ## Notes
 
-- [Overview](overview.md) - Core concepts and programming model
-- [Concurrency terminology](concurrency-terminology.md) - Definitions of concurrency, parallelism, blocking,
-  deadlock, starvation, livelock, and race conditions
-- [Message passing](message-passing.md) - Message semantics, sequential processing, actor anatomy, and
-  scheduling lifecycle
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP encapsulation breaks under concurrency and
-  how actors fix it
-- [Shared memory illusion](shared-memory-illusion.md) - Why shared memory is an abstraction and message passing
-  matches hardware reality
-- [Call stack illusion](call-stack-illusion.md) - Why call-stack error handling breaks across threads and
-  failures must be modeled explicitly
-- [Supervision](supervision.md) - Parent-child hierarchy for fault handling, restart strategies, and
-  domain vs internal errors
+- [Overview](overview.md) - Modules and programming model
+- [Concurrency terminology](concurrency-terminology.md) - Key concurrency definitions
+- [Message passing](message-passing.md) - Actor communication and execution model
+- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
+- [Shared memory illusion](shared-memory-illusion.md) - Hardware argument for message passing
+- [Call stack illusion](call-stack-illusion.md) - Why call stacks fail across threads
+- [Supervision](supervision.md) - Parent-child fault handling
 
 ---
 

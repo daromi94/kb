@@ -42,6 +42,15 @@ or stopping a child updates this list immediately. The actual
 creation and termination happen asynchronously behind the scenes —
 they never block the parent.
 
+## Supervision cycle
+
+When an actor throws an exception during message processing:
+
+1. The actor suspends its mailbox
+2. A failure signal (containing the exception) is sent to the parent
+3. The parent applies its supervisor strategy based on the failure type
+4. The child is instructed to resume, restart, or stop
+
 ## Supervisor strategies
 
 The parent defines a supervisor strategy when starting a child. The
@@ -57,6 +66,14 @@ Children never die silently (except infinite loops). A failing child
 triggers the supervisor strategy; a stopped child notifies interested
 parties. Restarts are invisible to collaborating actors — they can
 keep sending messages while the target actor restarts.
+
+## Backoff restarts
+
+When a restart fails immediately (e.g., a database is still down),
+the actor crashes again, creating a hot loop that wastes CPU.
+Backoff supervision adds exponential delay between restarts
+(e.g., 1s, 2s, 4s, 8s), giving the external resource time to
+recover before the actor reinitializes.
 
 ## Failure propagation
 

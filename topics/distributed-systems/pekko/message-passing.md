@@ -27,18 +27,6 @@ synchronization. Invariants hold automatically — no locks required.
 Different actors run concurrently with each other, so the system
 processes as many messages in parallel as hardware allows.
 
-## Actor anatomy
-
-Every actor consists of five components:
-
-| Component             | Role                                         |
-|-----------------------|----------------------------------------------|
-| Mailbox               | Queue where incoming messages accumulate     |
-| Behavior              | Current state and message-handling logic     |
-| Messages              | Data signals, analogous to method parameters |
-| Execution environment | Thread pool that drives actor scheduling     |
-| Address               | Identity used by other actors to send to it  |
-
 ## Message lifecycle
 
 1. Message arrives and is appended to the mailbox
@@ -47,6 +35,8 @@ Every actor consists of five components:
 4. The actor dequeues the message from the front of the mailbox
 5. The actor processes the message — modifying state, sending messages
 6. The actor is unscheduled, freeing the thread
+
+## Scheduling
 
 Actors are lightweight — roughly 300 bytes of overhead each. Millions
 of actors share a small pool of threads. The scheduler multiplexes

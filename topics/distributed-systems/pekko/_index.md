@@ -13,6 +13,7 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 - [Actor best practices](actor-best-practices.md) - Rules for well-behaved actors
 - [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
 - [Supervision](supervision.md) - Parent-child fault handling
+- [Guardian actors](guardian-actors.md) - Top-level /user and /system guardians
 
 ---
 

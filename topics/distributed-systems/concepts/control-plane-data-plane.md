@@ -6,8 +6,7 @@ performance, and enhances system resilience.
 ## Definitions
 
 **Data plane (forwarding plane):** The critical path of request processing.
-Handles high-velocity movement and transformation of data according to current
-system state.
+Moves and transforms data based on configuration the control plane provides.
 
 - Latency-sensitive, high throughput
 - Scales linearly with request volume — O(requests)

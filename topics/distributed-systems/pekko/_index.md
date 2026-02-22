@@ -5,6 +5,8 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 ## Notes
 
 - [Overview](overview.md) - Core concepts and programming model
+- [Concurrency terminology](concurrency-terminology.md) - Definitions of concurrency, parallelism, blocking,
+  deadlock, starvation, livelock, and race conditions
 - [Message passing](message-passing.md) - Message semantics, sequential processing, actor anatomy, and
   scheduling lifecycle
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP encapsulation breaks under concurrency and

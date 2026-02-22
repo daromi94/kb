@@ -68,8 +68,6 @@ more of the possible orderings produces an undesirable outcome.
 
 ## Related
 
-- [Progress conditions](progress-conditions.md) -
-  Wait-free, lock-free, obstruction-free guarantees
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
   How concurrency breaks OOP invariants
 - [Message passing](message-passing.md) - The asynchronous,

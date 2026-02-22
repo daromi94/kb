@@ -36,6 +36,30 @@ processes as many messages in parallel as hardware allows.
 5. The actor processes the message — modifying state, sending messages
 6. The actor is unscheduled, freeing the thread
 
+## Mailbox
+
+Each actor has exactly one mailbox. All senders enqueue messages into
+it. When the same actor sends multiple messages to the same target,
+they arrive in send order. Messages from different actors have no
+defined relative ordering.
+
+The default mailbox is a FIFO queue — messages are processed in
+enqueue order. A priority mailbox enqueues by message priority,
+potentially placing high-priority messages at the front.
+
+The current behavior must handle whatever message is dequeued next.
+There is no scanning the mailbox for a matching message. Failure to
+handle a message is treated as a failure.
+
+## Protocol typing
+
+Reply types are expressed by embedding a typed actor ref for the
+reply-to address inside the message. The receiver sends its reply
+through that ref, and the reply type is statically enforced. If the
+reply itself contains another typed ref, the conversation continues
+with a new message type — encoding the protocol's current state in
+the type system.
+
 ## Scheduling
 
 Actors are lightweight — roughly 300 bytes of overhead each. Millions
@@ -50,6 +74,8 @@ scheduling; application logic should not depend on global ordering.
 ## Related
 
 - [Actors](actors.md) - The actor model and its primitives
+- [Actor lifecycle](actor-lifecycle.md) - Creation, termination,
+  and dead letters
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
   Why encapsulation breaks without actors
 - [Shared memory illusion](shared-memory-illusion.md) - Why local

@@ -58,13 +58,14 @@ acquiring it is a classic example.
 
 ## Race condition
 
-A system's behavior depends on the sequence or timing of uncontrollable
-events. Race conditions commonly involve shared mutable state and
-interleaved thread operations, but shared state is not required. A
-client sending UDP packets P1 then P2 may see the server receive P2
-first — if the packets carry no ordering information, the server cannot
-detect the reordering. A race condition becomes a bug only when one or
-more of the possible orderings produces an undesirable outcome.
+In a race condition, a system's behavior depends on the sequence
+or timing of uncontrollable events. They commonly involve shared
+mutable state and interleaved thread operations, but the former
+is not required. A client sending UDP packets P1 then P2 may see
+the server receive P2 first — if the packets carry no ordering
+information, the server cannot detect the reordering. A race
+condition becomes a bug only when one or more of the possible
+orderings produces an undesirable outcome.
 
 ## Related
 

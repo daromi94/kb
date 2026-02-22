@@ -29,9 +29,18 @@ and task delegation in code.
 
 ## ActorRef
 
-Everything is encapsulated behind an ActorRef — the only handle other
-actors use to send messages. An actor's state, behavior, mailbox,
-children, and supervisor strategy are never directly accessible.
+Actors are never accessed directly. Instead, they are represented by
+ActorRefs — lightweight handles that can be passed around freely.
+The actual actor object is shielded behind the ref — its state,
+behavior, mailbox, children, and supervisor strategy are never
+directly accessible.
+
+This inner/outer split provides transparency: an actor can be
+restarted without updating references elsewhere, moved to a remote
+host, or sent messages regardless of where it runs.
+
+ActorRefs are typed. Only messages matching the ref's type parameter
+can be sent through it.
 
 ## Explicit lifecycle
 

@@ -64,8 +64,27 @@ strategy maps failure types to recovery actions:
 
 Children never die silently (except infinite loops). A failing child
 triggers the supervisor strategy; a stopped child notifies interested
-parties. Restarts are invisible to collaborating actors — they can
-keep sending messages while the target actor restarts.
+parties.
+
+## Restart mechanics
+
+On restart, the ActorRef stays the same — other actors keep sending
+messages to the same address. Behind the ref, the old behavior
+instance is replaced with a fresh one created from the original
+factory.
+
+The restart sequence:
+
+1. The old behavior receives a PreRestart signal (for resource
+   cleanup such as closing connections)
+2. A new behavior instance is created from the original factory
+3. The new instance resumes processing the next message in the
+   mailbox
+
+The mailbox is preserved — queued messages are not lost. The message
+that caused the failure is not re-processed. If it were, a
+systematic bug (e.g., a malformed message triggering divide-by-zero)
+would cause an infinite crash loop.
 
 ## Backoff restarts
 

@@ -37,6 +37,11 @@ recursively.
 Every actor has exactly one supervisor: its parent. There is always a
 responsible entity for managing an actor.
 
+The parent maintains a list of its children in its context. Spawning
+or stopping a child updates this list immediately. The actual
+creation and termination happen asynchronously behind the scenes —
+they never block the parent.
+
 ## Supervisor strategies
 
 The parent defines a supervisor strategy when starting a child. The

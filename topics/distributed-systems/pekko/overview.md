@@ -18,16 +18,20 @@ same code works transparently across local and remote boundaries.
 
 ## Key modules
 
-| Module           | Purpose                                         |
-|------------------|-------------------------------------------------|
-| Actors           | Core actor system and typed actor API           |
-| Streams          | Backpressured asynchronous stream processing    |
-| Cluster          | Membership, sharding, and distributed data      |
-| Persistence      | Event sourcing and durable state for actors     |
-| HTTP             | HTTP server and client built on Streams         |
-| gRPC             | gRPC server and client support                  |
-| Cluster Sharding | Distribute actors across cluster by entity ID   |
-| Connectors       | Integration with external systems (Kafka, etc.) |
+| Module            | Purpose                                           |
+|-------------------|---------------------------------------------------|
+| Actors            | Core typed actor system and message passing       |
+| Remoting          | Transparent message exchange across machines      |
+| Cluster           | Membership protocol for coordinated actor systems |
+| Cluster Sharding  | Distribute stateful actors across cluster nodes   |
+| Cluster Singleton | Single service instance across the cluster        |
+| Persistence       | Event sourcing and state recovery for actors      |
+| Projections       | Consume event streams for views or downstream     |
+| Distributed Data  | CRDTs for eventually consistent shared state      |
+| Streams           | Backpressured async stream processing             |
+| HTTP              | HTTP server and client built on Streams           |
+| gRPC              | gRPC with protobuf integration                    |
+| Connectors        | Infrastructure integrations (Kafka, etc.)         |
 
 ## Related
 

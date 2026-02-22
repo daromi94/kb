@@ -11,6 +11,7 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 - [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
 - [Shared memory illusion](shared-memory-illusion.md) - Hardware argument for message passing
 - [Call stack illusion](call-stack-illusion.md) - Why call stacks fail across threads
+- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
 - [Supervision](supervision.md) - Parent-child fault handling
 
 ---

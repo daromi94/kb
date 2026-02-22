@@ -1,0 +1,43 @@
+# Hierarchical design
+
+Actors naturally form hierarchies by splitting tasks into smaller,
+manageable pieces delegated to child actors. Each resulting actor has a
+clear role: which messages it handles, how it reacts, and how its
+failures are managed.
+
+## Why hierarchies beat defensive programming
+
+Layered software tends toward defensive programming — catching and
+suppressing every failure to prevent it from leaking out. Actor
+hierarchies take the opposite approach: failures propagate to the actor
+best positioned to handle them. Communicating problems to the right
+place produces better solutions than sweeping them under the carpet.
+
+## Design guidelines
+
+**Error Kernel Pattern.** An actor with important state should never
+risk that state by performing dangerous work directly. Instead, it
+delegates risky sub-tasks to disposable child actors and handles their
+failures through supervision. Creating a new child per request simplifies
+state management for collecting replies, since each child's lifecycle
+maps to exactly one request.
+
+**Death watch.** When an actor depends on another actor to carry out its
+duty, it should watch that actor's liveness and react to termination
+notices. This applies across the hierarchy — not just parent-to-child.
+
+**Single responsibility via children.** When an actor accumulates
+multiple responsibilities, push each one into a separate child. This
+keeps each actor's logic and state simple and independently
+supervisable.
+
+## Related
+
+- [Supervision](supervision.md) - The mechanism that makes hierarchies
+  fault-tolerant
+- [Overview](overview.md) - Actor model fundamentals and the
+  organizational mental model
+
+---
+
+Return to [Pekko](_index.md)

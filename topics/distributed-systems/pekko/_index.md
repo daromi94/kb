@@ -15,6 +15,7 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 - [Supervision](supervision.md) - Parent-child fault handling
 - [Death watch](death-watch.md) - Cross-hierarchy termination monitoring
 - [Guardian actors](guardian-actors.md) - Top-level /user and /system guardians
+- [Error kernel pattern](error-kernel-pattern.md) - Protecting state by delegating risk
 
 ---
 

@@ -10,12 +10,12 @@ Actor-based toolkit for concurrent, distributed, and resilient JVM systems.
 - [Call stack illusion](call-stack-illusion.md) - Why call stacks fail across threads
 - [Actors](actors.md) - The actor model and its primitives
 - [Message passing](message-passing.md) - Actor communication and execution model
-- [Actor best practices](actor-best-practices.md) - Rules for well-behaved actors
 - [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
 - [Supervision](supervision.md) - Parent-child fault handling
 - [Death watch](death-watch.md) - Cross-hierarchy termination monitoring
-- [Guardian actors](guardian-actors.md) - Top-level /user and /system guardians
 - [Error kernel pattern](error-kernel-pattern.md) - Protecting state by delegating risk
+- [Actor best practices](actor-best-practices.md) - Rules for well-behaved actors
+- [Guardian actors](guardian-actors.md) - Top-level /user and /system guardians
 
 ---
 

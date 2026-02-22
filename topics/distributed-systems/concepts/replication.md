@@ -7,11 +7,11 @@ geographic placement.
 
 ## Why replicate
 
-| Goal         | Description                                            | Key metric             |
-|--------------|--------------------------------------------------------|------------------------|
-| Durability   | Data survives disk and node failures                   | Mean Time to Data Loss |
-| Availability | System stays up during partial failures and outages    | Uptime ("the nines")   |
-| Performance  | Geo-replicas cut latency; followers scale read traffic | Latency and throughput |
+| Goal         | Description                                            |
+|--------------|--------------------------------------------------------|
+| Durability   | Data survives disk and node failures                   |
+| Availability | System stays up during partial failures and outages    |
+| Performance  | Geo-replicas cut latency; followers scale read traffic |
 
 ## Synchronous vs asynchronous
 

@@ -58,12 +58,13 @@ acquiring it is a classic example.
 
 ## Race condition
 
-An assumption about event ordering is violated by non-deterministic
-effects. Race conditions commonly involve shared mutable state and
+A system's behavior depends on the sequence or timing of uncontrollable
+events. Race conditions commonly involve shared mutable state and
 interleaved thread operations, but shared state is not required. A
 client sending UDP packets P1 then P2 may see the server receive P2
 first — if the packets carry no ordering information, the server cannot
-detect the reordering.
+detect the reordering. A race condition becomes a bug only when one or
+more of the possible orderings produces an undesirable outcome.
 
 ## Related
 

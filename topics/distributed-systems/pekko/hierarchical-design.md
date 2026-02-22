@@ -38,6 +38,10 @@ contention and coarsens fault handling.
 
 ## Related
 
+- [Single responsibility](single-responsibility.md) - When and why
+  to split into children
+- [Error kernel pattern](error-kernel-pattern.md) - Protecting state
+  by delegating risk
 - [Supervision](supervision.md) - The mechanism that makes hierarchies
   fault-tolerant
 - [Actors](actors.md) - Actor model fundamentals and the

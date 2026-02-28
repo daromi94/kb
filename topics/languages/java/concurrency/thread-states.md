@@ -40,7 +40,7 @@ a new one.
          |                |                 |
          v                v                 v
    +-----------+    +-----------+    +-----------------+
-   |  BLOCKED  |    |  WAITING  |    | TIMED_WAITING   |
+   |  BLOCKED  |    |  WAITING  |    |  TIMED_WAITING  |
    +-----------+    +-----------+    +-----------------+
 
    All three return to RUNNABLE when their condition

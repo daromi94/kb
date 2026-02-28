@@ -14,7 +14,7 @@ A server following this model uses a strictly synchronous pipeline:
 |       |          |
 |  TCP handshake   |  OS completes handshake, accept() returns Socket
 |       |          |
-|  dispatch        |  new Thread or ThreadPoolExecutor.execute()
+|   dispatch       |  new Thread or ThreadPoolExecutor.execute()
 |       v          |
 +------------------+
 | Worker thread    |  Owns the Socket for its full lifetime

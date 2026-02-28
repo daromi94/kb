@@ -9,7 +9,7 @@ ExecutorService, get a Future back immediately, and retrieve the result later.
 ```java
 Future<Integer> future = executor.submit(() -> performLongTask());
 
-// Main thread continues other work...
+// Main thread continues...
 
 Integer result = future.get(); // blocks until ready
 ```

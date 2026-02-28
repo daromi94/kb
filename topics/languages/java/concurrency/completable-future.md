@@ -62,6 +62,21 @@ fallback value. Analogous to a catch block.
 exception (or null). Transforms the output regardless of success or
 failure — more flexible than `exceptionally()`.
 
+## Manual completion
+
+Unlike Future, a CompletableFuture can be completed explicitly:
+
+```java
+CompletableFuture<String> cf = new CompletableFuture<>();
+
+cf.complete("done");
+
+cf.completeExceptionally(new RuntimeException("failed"));
+```
+
+This makes CompletableFuture useful as a callback bridge — wrap a
+callback-based API and expose it as a future.
+
 ## Timeouts
 
 CompletableFuture stages can wait indefinitely if a downstream service
@@ -101,21 +116,6 @@ List<String> results = futures.stream()
     .map(CompletableFuture::join)
     .toList();
 ```
-
-## Manual completion
-
-Unlike Future, a CompletableFuture can be completed explicitly:
-
-```java
-CompletableFuture<String> cf = new CompletableFuture<>();
-
-cf.complete("done");
-
-cf.completeExceptionally(new RuntimeException("failed"));
-```
-
-This makes CompletableFuture useful as a callback bridge — wrap a
-callback-based API and expose it as a future.
 
 ## Related
 

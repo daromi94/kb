@@ -12,6 +12,7 @@ Java concurrency in practice.
 - [Daemon threads](daemon-threads.md) - Background service threads
 - [Safety and liveness](safety-and-liveness.md) - Wrong answer vs. no answer
 - [Thread safety hazards](thread-safety-hazards.md) - Race conditions, visibility, and reordering
+- [Interruption](interruption.md) - Cooperative thread cancellation
 - [Concurrency models](concurrency-models.md) - Server I/O architecture patterns
 - [Thread-per-client](thread-per-client.md) - Dedicated thread per connection
 - [Blocking I/O](blocking-io.md) - Overlapping I/O waits with CPU work

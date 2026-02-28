@@ -53,25 +53,9 @@ encapsulates both the result and the failure.
 `get()` sequentially or polling `isDone()`. There is no way to say "when
 this future completes, run that task automatically."
 
-## CompletableFuture
-
-CompletableFuture implements Future but adds non-blocking composition:
-
-- **Callbacks:** `thenApply()`, `thenAccept()` define logic that runs
-  automatically when the result is ready
-- **Chaining:** Multiple async steps compose fluently without blocking
-- **Manual completion:** Unlike Future, a CompletableFuture can be completed
-  explicitly via `complete()` or `completeExceptionally()`
-
-| Feature    | Future                           | CompletableFuture         |
-|------------|----------------------------------|---------------------------|
-| Retrieval  | Blocking `get()`                 | Non-blocking callbacks    |
-| Completion | Managed by the executor          | Can be completed manually |
-| Chaining   | Not supported                    | Built-in fluent API       |
-| Errors     | `get()` throws wrapped exception | `exceptionally()` handler |
-
 ## Related
 
+- [CompletableFuture](completable-future.md) - Non-blocking composition
 - [Executor service](executor-service.md) - Thread pool abstraction
 - [Safety and liveness](safety-and-liveness.md) - Blocking as a liveness risk
 

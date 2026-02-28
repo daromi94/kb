@@ -18,6 +18,7 @@ Java concurrency in practice.
 - [I/O multiplexing](io-multiplexing.md) - select/poll and Java NIO
 - [Executor service](executor-service.md) - Thread pool abstraction
 - [Future](future.md) - Async result placeholder
+- [CompletableFuture](completable-future.md) - Non-blocking async composition
 - [Thread pool executor](thread-pool-executor.md) - Fine-tuning thread pools
 - [Fork join pool](fork-join-pool.md) - Work-stealing for recursive tasks
 - [Thread pool sizing](thread-pool-sizing.md) - Optimal thread count formulas

@@ -35,7 +35,7 @@ mode, where read/write calls return immediately if no data is available.
 `selector.select()` blocks until at least one channel is ready, then returns
 a set of selection keys identifying those channels.
 
-A basic accept-and-read loop using these two abstractions:
+Here's an example:
 
 ```java
 Selector selector = Selector.open();

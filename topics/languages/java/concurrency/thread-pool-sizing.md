@@ -2,7 +2,7 @@
 
 Determining the correct number of threads depends on task nature and hardware. A
 pool too small leads to underutilized resources and high latency; too large
-causes excessive context switching and risks `OutOfMemoryError` from thread
+causes excessive context switching and risks OutOfMemoryError from thread
 stack overhead.
 
 Per Brian Goetz in *Java Concurrency in Practice*, sizing splits into two
@@ -90,6 +90,12 @@ executor.getLargestPoolSize();    // high-water mark for threads
 
 - **Queue constantly full:** pool is undersized, increase thread count
 - **Threads mostly idle:** pool is over-provisioned, reduce threads
+
+## Related
+
+- [Thread pool executor](thread-pool-executor.md) - Fine-tuning thread pools
+- [Executor service](executor-service.md) - Thread pool abstraction
+- [Fork join pool](fork-join-pool.md) - Work-stealing for recursive tasks
 
 ---
 

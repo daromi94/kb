@@ -25,11 +25,10 @@ per ready event, scaling to hundreds of thousands of connections.
 
 ## Java NIO
 
-Introduced in Java 1.4, `java.nio` wraps OS multiplexing facilities into two
-abstractions:
+`java.nio` wraps OS multiplexing facilities into two abstractions:
 
 **Channel:** A bidirectional connection to a file descriptor (e.g.,
-`SocketChannel`, `ServerSocketChannel`). Channels can be set to non-blocking
+SocketChannel, ServerSocketChannel). Channels can be set to non-blocking
 mode, where read/write calls return immediately if no data is available.
 
 **Selector:** A multiplexer that monitors registered channels. Calling
@@ -95,8 +94,7 @@ interleaves work across many connections.
 ## Related
 
 - [Blocking I/O](blocking-io.md) - The synchronous model that multiplexing replaces
-- [Concurrency models](concurrency-models.md) - How multiplexing fits in the
-  evolution of server architectures
+- [Concurrency models](concurrency-models.md) - Server I/O architecture evolution
 
 ---
 

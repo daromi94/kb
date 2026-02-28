@@ -53,8 +53,7 @@ Correct concurrent programs must satisfy both properties simultaneously.
 
 ## Related
 
-- [Thread safety hazards](thread-safety-hazards.md) - Race conditions,
-  visibility, and reordering (the safety side in detail)
+- [Thread safety hazards](thread-safety-hazards.md) - The safety side in detail
 
 ---
 

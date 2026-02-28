@@ -57,15 +57,14 @@ points as concurrency grows:
 - **CPU overhead:** Context switching between thousands of threads consumes
   cycles that would otherwise run application code.
 
-Thread pools (via `ExecutorService`) bound thread count and queue excess
+Thread pools (via ExecutorService) bound thread count and queue excess
 connections, trading unbounded resource consumption for added latency when
 the pool is saturated. Virtual threads (JDK 21) remove the constraint
 entirely by multiplexing lightweight threads onto a small carrier pool.
 
 ## Related
 
-- [Concurrency models](concurrency-models.md) - How this model fits the
-  historical evolution of server architectures
+- [Concurrency models](concurrency-models.md) - Server I/O architecture evolution
 - [Blocking I/O](blocking-io.md) - The 1:1 thread-to-request mapping
 - [Thread memory](thread-memory.md) - Why local variables are thread-safe
 - [Executor service](executor-service.md) - Thread pool abstraction

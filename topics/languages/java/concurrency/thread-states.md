@@ -13,7 +13,7 @@ thread runnable even if it is waiting for the OS scheduler to assign CPU
 time—there is no distinction between "running" and "ready to run."
 
 **BLOCKED:** Waiting to acquire a monitor lock to enter a `synchronized` block
-or method. Only triggered by intrinsic locks—contention on `ReentrantLock`
+or method. Only triggered by intrinsic locks — contention on ReentrantLock
 shows as WAITING, not BLOCKED.
 
 **WAITING:** Waiting indefinitely for another thread to perform an action.

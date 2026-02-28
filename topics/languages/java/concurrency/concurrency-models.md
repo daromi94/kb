@@ -10,7 +10,7 @@ handles the full request lifecycle using blocking I/O. Code reads
 sequentially, making it easy to write, debug, and reason about.
 
 This model hit a wall when OS threads were expensive. Early Linux kernels
-using the `LinuxThreads` library had high thread-creation costs, O(n)
+using the LinuxThreads library had high thread-creation costs, O(n)
 schedulers that slowed as thread count grew, and per-thread stacks (typically
 1MB) that exhausted memory at thousands of connections.
 
@@ -29,7 +29,7 @@ making code harder to write, test, and debug.
 
 Several advances have made thread-per-client viable again at high scale:
 
-**NPTL (Native POSIX Thread Library):** Replaced `LinuxThreads` in Linux 2.6,
+**NPTL (Native POSIX Thread Library):** Replaced LinuxThreads in Linux 2.6,
 drastically reducing thread creation and synchronization overhead.
 
 **O(log n) schedulers:** The Completely Fair Scheduler (CFS) in Linux 2.6.23
@@ -40,10 +40,9 @@ count.
 and JVMs use guard pages and flexible stack management to reduce wasted memory
 for idle threads.
 
-**Virtual threads (Project Loom):** Introduced in JDK 21, virtual threads are
-managed by the JVM and multiplexed onto a small carrier thread pool. They
-restore sequential programming style while the runtime handles the
-multiplexing transparently.
+**Virtual threads:** Managed by the JVM and multiplexed onto a small carrier
+thread pool. They restore sequential programming style while the runtime
+handles the multiplexing transparently.
 
 ## The core difference
 

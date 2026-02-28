@@ -60,7 +60,7 @@ will ever become visible to another.
 **`synchronized`** provides all three: mutual exclusion (atomicity), memory
 fencing (visibility), and a happens-before edge (ordering).
 
-**`AtomicInteger`** and related classes use hardware Compare-and-Swap (CAS)
+**AtomicInteger** and related classes use hardware Compare-and-Swap (CAS)
 instructions to achieve atomicity and visibility without locking, at the cost
 of requiring retry loops under contention.
 

@@ -16,8 +16,8 @@ is shared, a reference to an object can be passed from one thread to another.
 compiled by the JIT that threads execute.
 
 **System resources:** File descriptors, socket handles, and signal handlers are
-owned by the process. If one thread closes a `FileInputStream`, another thread
-will encounter an `IOException` upon trying to read from it.
+owned by the process. If one thread closes a FileInputStream, another thread will
+encounter an IOException upon trying to read from it.
 
 ## Thread-private state (execution context)
 

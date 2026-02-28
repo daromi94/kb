@@ -38,9 +38,9 @@ operating system threads.
 
 ## Virtual threads
 
-As of Java 21, virtual threads (Project Loom) are managed by the JVM rather than
-the OS. They are extremely lightweight, allowing millions of threads on a single
-machine—ideal for high-throughput I/O tasks.
+Virtual threads are managed by the JVM rather than the OS. They are extremely
+lightweight, allowing millions of threads on a single machine — ideal for
+high-throughput I/O tasks.
 
 | Feature           | Platform threads          | Virtual threads                   |
 |-------------------|---------------------------|-----------------------------------|

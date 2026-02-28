@@ -30,7 +30,7 @@ Daemon threads exist only to support the primary work of the application.
 ## Creating a daemon thread
 
 Call `setDaemon(true)` **before** calling `start()`. Calling it after throws
-`IllegalThreadStateException`.
+IllegalThreadStateException.
 
 ```java
 Thread backgroundTask = new Thread(() -> {

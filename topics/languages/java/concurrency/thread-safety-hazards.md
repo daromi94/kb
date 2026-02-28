@@ -26,7 +26,7 @@ state:
 Thread A: read value  (sees 9)
 Thread B: read value  (sees 9)
 Thread A: write value (stores 10)
-Thread B: write value (stores 10)  <- Thread A's update is lost
+Thread B: write value (stores 10) <- Thread A's update is lost
 ```
 
 Two increments produced a net change of one. Thread B's read occurred before

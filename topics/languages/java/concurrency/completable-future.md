@@ -67,7 +67,6 @@ Unlike Future, a CompletableFuture can be completed explicitly:
 ```java
 CompletableFuture<String> cf = new CompletableFuture<>();
 
-// Some external event completes it later
 cf.complete("done");
 
 cf.completeExceptionally(new RuntimeException("failed"));

@@ -21,14 +21,17 @@ InterruptedException.
 
 **Active thread.** If a thread is running a tight loop, setting the
 interrupt flag does nothing automatically. The thread continues forever
-unless it explicitly checks:
+unless it explicitly checks. Use the flag as the loop guard:
 
 ```java
-if (Thread.currentThread().isInterrupted()) {
-    // clean up and exit
-    return;
+while (!Thread.currentThread().isInterrupted()) {
+    computeNextChunk();
 }
 ```
+
+`isInterrupted()` is an instance method that reads the flag without
+clearing it. `Thread.interrupted()` is a static method that reads and
+clears — only use it when you intend to consume the signal.
 
 ## Handling the flag
 
@@ -54,6 +57,37 @@ try {
     Thread.sleep(1000);
 } catch (InterruptedException e) {
     Thread.currentThread().interrupt();
+}
+```
+
+## I/O interruptibility
+
+Not all I/O responds to interruption.
+
+**`java.io` (blocking I/O).** Methods like `InputStream.read()` on a
+plain Socket are not interruptible for platform threads. Calling
+`interrupt()` has no effect — the only escape is closing the underlying
+socket. Virtual threads are the exception: interrupting a virtual thread
+blocked on a socket read wakes it and throws SocketException.
+
+**`java.nio` (interruptible channels).** Classes implementing
+InterruptibleChannel (like SocketChannel) throw
+ClosedByInterruptException and close the channel if the thread is
+interrupted while blocked on I/O.
+
+## Cleanup
+
+Use `try-finally` to release resources regardless of whether a task
+completes normally or via interruption.
+
+```java
+lock.lock();
+try {
+    while (!Thread.currentThread().isInterrupted()) {
+        doWork();
+    }
+} finally {
+    lock.unlock();
 }
 ```
 

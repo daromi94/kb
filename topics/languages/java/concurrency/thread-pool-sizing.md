@@ -19,7 +19,7 @@ it because the OS wastes time swapping threads on and off cores.
 
 **Optimal formula:**
 
-$$N_{threads} = N_{cpus} + 1$$
+$$N_{\text{threads}} = N_{\text{cpus}} + 1$$
 
 The "+1" acts as a spare. If a primary thread pauses (page fault, background OS
 task), the spare steps in so the CPU core never sits idle.
@@ -32,10 +32,10 @@ becomes available for other work.
 
 **Universal sizing formula:**
 
-$$N_{threads} = N_{cpus} \times U_{cpu} \times \left(1 + \frac{W}{C}\right)$$
+$$N_{\text{threads}} = N_{\text{cpus}} \times U_{\text{cpu}} \times \left(1 + \frac{W}{C}\right)$$
 
-- $N_{cpus}$ = number of cores (`Runtime.getRuntime().availableProcessors()`)
-- $U_{cpu}$ = desired CPU utilization (0.0 to 1.0)
+- $N_{\text{cpus}}$ = number of cores (`Runtime.getRuntime().availableProcessors()`)
+- $U_{\text{cpu}}$ = desired CPU utilization (0.0 to 1.0)
 - $W/C$ = ratio of waiting time to computing time
 
 **Example:** 4-core machine, 100% CPU utilization target, tasks spend 100ms

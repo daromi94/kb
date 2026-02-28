@@ -1,9 +1,8 @@
 # Threads
 
 A thread is the smallest unit of execution within a process. Multiple threads
-coexist inside the same process, sharing process-wide resources (memory, file
-handles) while each maintains its own program counter, stack, and local
-variables.
+share the same address space (memory, file handles) while each maintains its
+own program counter, stack, and local variables.
 
 Most operating systems treat threads, not processes, as the basic units of
 scheduling. Without explicit coordination, threads execute simultaneously and

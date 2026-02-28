@@ -4,7 +4,7 @@ While concurrency is the **composition** of independent processes, parallelism
 is the simultaneous **execution** of those processes.
 
 In a parallel system, multiple tasks happen at the exact same physical instant.
-This requires hardware with multiple processing units: a multi-core CPU, a GPU,
+This requires hardware with multiple processing units: a multicore CPU, a GPU,
 or a cluster of networked computers.
 
 ## Concurrency vs parallelism

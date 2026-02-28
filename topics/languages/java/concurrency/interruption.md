@@ -9,17 +9,6 @@ Threads own their own execution. One thread cannot force another to stop.
 Thread A sets the interrupt flag on Thread B, and Thread B periodically
 checks that flag and decides how to respond.
 
-## Sources of interruption
-
-**JVM/framework shutdown.** During a clean shutdown, the JVM or frameworks
-interrupt managed threads so they can close file handles, release locks,
-and commit transactions before the process terminates.
-
-**Blocking methods.** If a thread is parked or waiting (e.g., in
-`Thread.sleep()`, `Object.wait()`, or `Thread.join()`), it cannot check
-its own flag. The JVM wakes the thread, clears the interrupt flag, and
-throws InterruptedException.
-
 ## Blocked vs. active threads
 
 The mechanism works differently depending on thread state.

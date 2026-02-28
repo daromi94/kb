@@ -23,6 +23,8 @@ their results.
 
 **`allOf(f1, f2, ...)`:** Completes when all provided futures complete.
 Returns CompletableFuture\<Void\> — query individual futures for results.
+This is the basis of the **scatter-gather** pattern: fan out independent
+requests in parallel, then combine results after all complete.
 
 ### Competitive execution
 
@@ -59,6 +61,46 @@ fallback value. Analogous to a catch block.
 **`handle(BiFunction)`:** Receives both the result (or null) and the
 exception (or null). Transforms the output regardless of success or
 failure — more flexible than `exceptionally()`.
+
+## Timeouts
+
+CompletableFuture stages can wait indefinitely if a downstream service
+hangs. Two methods enforce liveness boundaries:
+
+**`orTimeout(long timeout, TimeUnit unit)`:** Completes the future
+exceptionally with a TimeoutException if it has not completed within
+the given duration.
+
+**`completeOnTimeout(T value, long timeout, TimeUnit unit)`:** Completes
+the future with the provided fallback value instead of failing. Useful
+when a degraded response is acceptable.
+
+```java
+CompletableFuture.supplyAsync(() -> fetchFromRemote(), ioExecutor)
+    .completeOnTimeout("cached-fallback", 5, TimeUnit.SECONDS)
+    .thenApply(this::process);
+```
+
+## Avoiding sequential traps
+
+When processing a collection of futures, do not call `join()` inside a
+lazy stream pipeline that also creates the futures. Intermediate stream
+operations are lazy — this causes each future to be created and joined
+before the next one starts, turning parallel work into sequential work.
+
+Separate creation from result retrieval:
+
+```java
+// Create all futures first (they start executing immediately)
+List<CompletableFuture<String>> futures = ids.stream()
+    .map(id -> CompletableFuture.supplyAsync(() -> fetch(id), executor))
+    .toList();
+
+// Then collect results
+List<String> results = futures.stream()
+    .map(CompletableFuture::join)
+    .toList();
+```
 
 ## Manual completion
 

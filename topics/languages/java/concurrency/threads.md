@@ -49,14 +49,6 @@ machine—ideal for high-throughput I/O tasks.
 | **Best use case** | CPU-intensive tasks       | I/O-intensive tasks (web servers) |
 | **Creation**      | `new Thread(runnable)`    | `Thread.ofVirtual().start(r)`     |
 
-## Thread lifecycle
-
-1. **NEW:** Thread object created, `start()` not yet called
-2. **RUNNABLE:** Ready to run, waiting for CPU time from the scheduler
-3. **BLOCKED:** Waiting to acquire a monitor lock (entering `synchronized`)
-4. **WAITING / TIMED_WAITING:** Waiting for another thread to perform an action
-5. **TERMINATED:** Finished executing or stopped due to an exception
-
 ## Creating threads
 
 ### Implementing Runnable (preferred)
@@ -90,6 +82,7 @@ worker.start();
 
 ## Related
 
+- [Thread states](thread-states.md) - The six JVM thread lifecycle states
 - [Thread memory](thread-memory.md) - Shared vs. thread-private state in the JVM
 - [Daemon threads](daemon-threads.md) - Background service threads
 - [Executor service](executor-service.md) - Managing thread pools instead of raw threads

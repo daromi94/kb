@@ -44,7 +44,7 @@ server.bind(new InetSocketAddress(8080));
 server.register(selector, SelectionKey.OP_ACCEPT);
 
 while (true) {
-    selector.select();  // blocks until at least one channel is ready
+    selector.select(); // blocks until at least one channel is ready
     Set<SelectionKey> keys = selector.selectedKeys();
     for (SelectionKey key : keys) {
         if (key.isAcceptable()) {

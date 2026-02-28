@@ -35,18 +35,6 @@ the task has not started, it should never run. If it is running, the
 `mayInterruptIfRunning` flag determines whether the worker thread is
 interrupted.
 
-## Callable vs Runnable
-
-Runnable has two limitations that Future and Callable solve:
-
-- **No return value:** `run()` is void. Getting data out requires shared
-  mutable state, introducing safety hazards
-- **No checked exceptions:** Errors inside `run()` cannot propagate to the
-  submitting thread
-
-Callable returns a value and throws checked exceptions. The Future
-encapsulates both the result and the failure.
-
 ## The blocking limitation
 
 `get()` is a blocking operation. Processing 100 futures requires calling

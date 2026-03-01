@@ -8,10 +8,10 @@ handlers on the EventLoop.
 
 ## Explicit executor injection
 
-Inject a standard Java `Executor` or `ExecutorService` into the handler and
+Inject a standard Java Executor or ExecutorService into the handler and
 submit blocking work manually. When the work completes, call back into the
-pipeline through the `ChannelHandlerContext`, which is thread-safe and can
-be invoked from any thread.
+pipeline through the ChannelHandlerContext, which is thread-safe and can be
+invoked from any thread.
 
 ```java
 public class SlowDatabaseHandler extends ChannelInboundHandlerAdapter {
@@ -50,11 +50,9 @@ it to the pipeline.
 
 ## Related
 
-- [Event loop](event-loop.md) - The single-threaded I/O engine that must
-  stay unblocked
+- [Event loop](event-loop.md) - I/O engine that must stay unblocked
 - [Channel pipeline](channel-pipeline.md) - Where handlers are configured
-- [Channel handler context](channel-handler-context.md) - Thread-safe handle
-  used to re-enter the pipeline from executor threads
+- [Channel handler context](channel-handler-context.md) - Re-entering the pipeline from other threads
 
 ---
 

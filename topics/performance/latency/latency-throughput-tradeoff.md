@@ -1,59 +1,46 @@
 # Latency-throughput tradeoff
 
-Latency and throughput are competing optimization targets.
+Low latency requires empty queues so each request is served immediately.
+High throughput requires full queues so workers never idle. A system
+optimized for one sacrifices the other.
 
-**Key asymmetry:**
+## Why they conflict
 
-- Bandwidth is fixable: buy more cables or network cards
-- Latency is stuck: you cannot buy faster light
+A worker is either idle or busy. Idle workers serve the next request
+instantly but waste capacity. Busy workers maximize utilization but
+force new arrivals to wait in line.
 
-## The laundry analogy
+Queuing theory quantifies this: response time stays flat
+until ~70% utilization, then climbs steeply toward infinity as
+utilization approaches 100%. You cannot run a system at full
+utilization and expect low latency.
 
-Consider a washer (30 min) and dryer (60 min) processing multiple loads.
+## Batching: the canonical mechanism
 
-### Serial approach (latency-optimized)
+Batching amortizes fixed per-operation costs — network round-trips,
+disk seeks, lock acquisitions — across multiple operations. Each
+item waits for the batch to fill, increasing its latency, but the
+cost per operation drops.
 
-Process one load completely before starting the next:
+| System          | Mechanism                  | What it trades              |
+|-----------------|----------------------------|-----------------------------|
+| Kafka producer  | `linger.ms` + `batch.size` | Send delay for fewer RPCs   |
+| TCP Nagle       | Buffer small segments      | Packet delay for efficiency |
+| Database INSERT | Multi-row batches          | Query delay for fewer txns  |
 
-```
-Load A: Wash (30m) → Dry (60m) = 90 minutes total
-```
+Every buffer in a system is a hidden waiting room where individual
+items trade their latency for the system's throughput.
 
-**Result:** Individual load completes in 90 minutes, but throughput is only 0.67
-loads/hour.
+## The asymmetry
 
-### Pipelined approach (throughput-optimized)
+Throughput scales with money: add servers, cables, cores. Latency is
+bounded by physics — light in fiber travels at 200,000 km/s, already
+two-thirds of its theoretical maximum.
 
-Create a 60-minute "heartbeat" synchronized to the slowest stage (dryer):
+Since latency cannot be bought away, systems hide it with caching,
+prefetching, and replication.
 
-```
-Time 0:00 - Load A enters dryer, Load B enters washer
-Time 0:30 - Load B finishes washing, WAITS for dryer
-Time 1:00 - Load A exits, Load B enters dryer
-Time 2:00 - Load B exits
-```
-
-**Load B's journey:**
-
-- Washing: 30 minutes
-- Waiting for dryer: 30 minutes (the penalty)
-- Drying: 60 minutes
-- **Total: 120 minutes**
-
-**Result:** Individual load takes 120 minutes (worse latency), but throughput
-improves to 1 load/hour (dryer never idles).
-
-## The hidden waiting room
-
-In pipelined systems, fast stages are held back by slow stages. The washer
-finishes in 30 minutes but must wait 30 minutes for the dryer, adding idle time
-to each item's latency.
-
-This explains why high-throughput systems (Kafka, batch processors) feel "slow"
-to individual users - they use queues and buffers to keep resources fully
-utilized.
-
-## The choice
+## The design choice
 
 | Target          | Strategy                   | Consequence                    |
 |-----------------|----------------------------|--------------------------------|
@@ -64,6 +51,7 @@ utilized.
 
 - [Dennard scaling](dennard-scaling.md) - Why parallelism became necessary
 - [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing the metrics
+- [Latency constants](latency-constants.md) - Physical limits at each timescale
 
 ---
 

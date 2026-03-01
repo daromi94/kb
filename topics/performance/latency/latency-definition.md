@@ -2,9 +2,6 @@
 
 **Latency:** The time delay between a cause and its observed effect.
 
-This definition transforms "it feels slow" (a feeling) into "it took 200ms" (a
-metric). You cannot optimize what you cannot measure.
-
 ## The stopwatch rule
 
 To measure latency, you must define exactly when to start and stop the clock:

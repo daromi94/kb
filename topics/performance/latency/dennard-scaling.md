@@ -1,7 +1,7 @@
 # Dennard scaling
 
-The collapse of Dennard scaling is why latency became a software engineering
-problem rather than something hardware engineers solved automatically.
+The collapse of Dennard scaling made latency a software engineering
+problem. Hardware no longer solves it automatically.
 
 ## The golden age (1974-2005)
 
@@ -33,14 +33,13 @@ significantly since.
 
 Unable to make single cores faster, manufacturers added more cores:
 
-| Era         | Strategy           | Software implication                          |
-|-------------|--------------------|-----------------------------------------------|
-| Before 2006 | One fast core      | Code runs faster automatically                |
-| After 2006  | Multiple mid cores | Code only faster if rewritten for parallelism |
+| Era         | Strategy       | Software implication                          |
+|-------------|----------------|-----------------------------------------------|
+| Before 2006 | One fast core  | Code runs faster automatically                |
+| After 2006  | Multiple cores | Code only faster if rewritten for parallelism |
 
-This is why concurrency, threading, and async I/O became essential skills. You
-can no longer rely on hardware to fix latency problems - the raw clock speed is
-never getting significantly faster again.
+This is why concurrent programming and async I/O became essential —
+clock speeds will not get significantly faster.
 
 ## Related
 

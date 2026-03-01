@@ -1,7 +1,6 @@
 # Latency-throughput tradeoff
 
-Latency and throughput represent fundamentally different optimization targets
-that often conflict.
+Latency and throughput are competing optimization targets.
 
 **Key asymmetry:**
 
@@ -28,10 +27,10 @@ loads/hour.
 Create a 60-minute "heartbeat" synchronized to the slowest stage (dryer):
 
 ```
-Time 0:00  - Load A enters dryer, Load B enters washer
-Time 0:30  - Load B finishes washing, WAITS for dryer
-Time 1:00  - Load A exits, Load B enters dryer
-Time 2:00  - Load B exits
+Time 0:00 - Load A enters dryer, Load B enters washer
+Time 0:30 - Load B finishes washing, WAITS for dryer
+Time 1:00 - Load A exits, Load B enters dryer
+Time 2:00 - Load B exits
 ```
 
 **Load B's journey:**
@@ -56,19 +55,15 @@ utilized.
 
 ## The choice
 
-| Optimization target | Strategy                   | Consequence             |
-|---------------------|----------------------------|-------------------------|
-| Low latency         | No queuing, idle resources | Inefficient utilization |
-| High throughput     | Pipelining, batching       | Items wait in queues    |
-
-- **Low latency:** The single user is happy, but machines sit idle
-- **High throughput:** Machines are always busy, but users wait in line
+| Target          | Strategy                   | Consequence                    |
+|-----------------|----------------------------|--------------------------------|
+| Low latency     | No queuing, idle resources | Users fast, machines underused |
+| High throughput | Pipelining, batching       | Machines busy, users wait      |
 
 ## Related
 
 - [Dennard scaling](dennard-scaling.md) - Why parallelism became necessary
-- [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing the
-  metrics
+- [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing the metrics
 
 ---
 

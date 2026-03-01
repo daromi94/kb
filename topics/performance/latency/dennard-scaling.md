@@ -44,8 +44,7 @@ never getting significantly faster again.
 
 ## Related
 
-- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Why adding
-  cores doesn't linearly improve performance
+- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Why more cores don't linearly help
 
 ---
 

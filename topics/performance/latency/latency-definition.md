@@ -20,16 +20,13 @@ optimizations target different layers.
 
 ## The cost of abstraction
 
-Consider the evolution from dumb switch to smart bulb:
+Every abstraction layer adds latency. To reduce latency, you often must
+remove layers, getting closer to raw hardware.
 
 **Dumb switch:** Close circuit → electrons flow → light. Nanoseconds.
 
-**Smart bulb:** Tap screen → phone CPU → WiFi → router → hub → Zigbee →
+**Smart bulb:** Tap screen → phone CPU → Wi-Fi → router → hub → Zigbee →
 bulb CPU → LED. Milliseconds to seconds.
-
-Every layer of abstraction (TCP/IP, Bluetooth, JSON, encryption) adds latency.
-To reduce latency, you often must remove layers, getting closer to raw hardware
-performance.
 
 ## The two questions
 
@@ -42,9 +39,8 @@ Without agreement on these boundaries, you cannot fix the problem.
 
 ## Related
 
-- [Latency constants](latency-constants.md) - Physical limits at each time scale
-- [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing speed
-  from volume
+- [Latency constants](latency-constants.md) - Physical limits at each timescale
+- [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing speed from volume
 
 ---
 

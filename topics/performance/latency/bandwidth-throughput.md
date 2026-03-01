@@ -10,20 +10,12 @@ Three metrics describe system performance. Using a water pipe analogy:
 
 ## The key distinction
 
-**Bandwidth** is theoretical maximum capacity defined by hardware (1 Gbps
-Ethernet, 54 Mbps WiFi).
+Throughput is always at most equal to bandwidth. A 1000 Mbps connection
+might only deliver 50 Mbps due to slow servers, packet loss, or
+inefficient code.
 
-**Throughput** is actual achieved rate, always less than or equal to bandwidth:
-
-```
-Throughput <= Bandwidth
-```
-
-You might have a 1000 Mbps connection (bandwidth) but only process 50 Mbps
-(throughput) due to slow servers, packet loss, or inefficient code.
-
-- Bandwidth says: "I *could* move 100 boxes per hour"
-- Throughput says: "I *actually* moved 80 boxes this hour"
+- Bandwidth: "I *could* move 100 boxes per hour"
+- Throughput: "I *actually* moved 80 boxes this hour"
 
 ## Why software engineers focus on throughput
 
@@ -47,8 +39,7 @@ throughput.
 ## Related
 
 - [Latency definition](latency-definition.md) - The stopwatch rule
-- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - The pipelining
-  tension
+- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Pipelining tension
 
 ---
 

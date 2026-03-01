@@ -9,6 +9,7 @@ Fundamentals of latency engineering.
 - [Bandwidth and throughput](bandwidth-throughput.md) - Capacity vs actual flow
 - [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Batching vs responsiveness
 - [Dennard scaling](dennard-scaling.md) - Transistor power-frequency scaling
+- [Little's Law](little-law.md) - Queuing theory's concurrency formula
 
 ---
 

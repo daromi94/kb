@@ -1,6 +1,6 @@
 # Latency definition
 
-**Latency:** The time delay between a cause and its observed effect.
+Latency is the delay between a cause and its observed effect.
 
 ## The stopwatch rule
 

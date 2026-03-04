@@ -11,6 +11,7 @@ Observability framework for traces, metrics, and logs.
 - [Log data model](log-data-model.md) - Structured log records
 - [Context and propagation](context-propagation.md) - Cross-boundary state
 - [Context deep dive](context-deep-dive.md) - Context mechanics in depth
+- [Custom carrier propagation](custom-carrier-propagation.md) - Non-HTTP transport tracing
 - [Data pipeline](data-pipeline.md) - Collection and export
 
 ---

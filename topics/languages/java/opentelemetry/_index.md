@@ -13,6 +13,8 @@ Observability framework for traces, metrics, and logs.
 - [Context deep dive](context-deep-dive.md) - Context mechanics in depth
 - [Custom carrier propagation](custom-carrier-propagation.md) - Non-HTTP transport tracing
 - [Data pipeline](data-pipeline.md) - Collection and export
+- [Agent configuration](agent-configuration.md) - Java agent setup
+- [Instrumentation tuning](instrumentation-tuning.md) - Module and sampling control
 
 ---
 

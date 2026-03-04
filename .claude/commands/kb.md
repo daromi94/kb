@@ -200,15 +200,17 @@ Return to [Parent topic](../_index.md)
 Include Subtopics/Notes sections only when entries exist. Omit the
 return link for top-level topics (those directly under `topics/`).
 
-**Descriptions:** Keep descriptions short (3-7 words) and stable. Describe
-the note's topic, not its contents. Avoid enumerating what the note covers
-— that couples the index to the note's internal structure and goes stale
-when the note changes. The title already carries most of the meaning; the
+**Descriptions:** Keep descriptions short (3-5 words) and stable. Describe
+the note's *topic area*, not its contents or internal structure. Do not
+list sections, enumerate sub-concepts, or reveal what the note covers —
+that couples the index to the note's internals and goes stale when the
+note changes. The title already carries most of the meaning; the
 description just disambiguates.
 
 Good: `- [Supervision](supervision.md) - Parent-child fault handling`
-Bad: `- [Supervision](supervision.md) - Parent-child hierarchy for fault
-  handling, restart strategies, and domain vs internal errors`
+Good: `- [Context deep dive](context-deep-dive.md) - Context mechanics in depth`
+Bad:  `- [Supervision](supervision.md) - Restart strategies, error types`
+Bad:  `- [Context deep dive](context-deep-dive.md) - Scope, thread propagation, W3C headers, Baggage`
 
 **Ordering:** List entries from general to specific, keeping related topics
 together. Overviews and foundational concepts come first, specialized or

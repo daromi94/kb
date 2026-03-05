@@ -42,6 +42,10 @@ The JVM can also trigger GC when direct buffer allocation approaches
 +--------------------------+     +-------------------------+
 ```
 
+## Related
+
+- [Heap architecture](heap-architecture.md) - Generational heap layout
+
 ---
 
 Return to [Native interop](_index.md)

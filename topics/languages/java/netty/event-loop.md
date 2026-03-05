@@ -14,14 +14,14 @@ groups: a boss group that accepts connections and a worker group that handles
 traffic on accepted channels.
 
 ```
-+----------------------------------------------+
-| EventLoopGroup                               |
-| +----------+  +----------+  +----------+     |
-| | EventLoop|  | EventLoop|  | EventLoop| ... |
-| | (Thread) |  | (Thread) |  | (Thread) |     |
-| |  Ch Ch   |  |  Ch Ch   |  |  Ch      |     |
-| +----------+  +----------+  +----------+     |
-+----------------------------------------------+
++-------------------------------------------------+
+| EventLoopGroup                                  |
+| +-----------+  +-----------+  +-----------+     |
+| | EventLoop |  | EventLoop |  | EventLoop | ... |
+| | (Thread)  |  | (Thread)  |  | (Thread)  |     |
+| |  Ch Ch    |  |  Ch Ch    |  |  Ch       |     |
+| +-----------+  +-----------+  +-----------+     |
++-------------------------------------------------+
 ```
 
 ## Channel registration

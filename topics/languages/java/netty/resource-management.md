@@ -2,13 +2,13 @@
 
 Pooled ByteBuf instances are borrowed from a memory pool and must be
 explicitly returned. Forgetting to release a buffer leaks native memory
-and eventually causes `OutOfMemoryError`. Netty logs an ERROR-level
+and eventually causes OutOfMemoryError. Netty logs an ERROR-level
 message when it detects leaked resources, but by that point memory is
 already being wasted.
 
 ## Ownership in channelRead
 
-When a `ChannelInboundHandler` receives a message through `channelRead()`,
+When a ChannelInboundHandler receives a message through `channelRead()`,
 the handler owns the buffer. Two valid outcomes:
 
 1. **Pass it downstream** — call `ctx.fireChannelRead(msg)` to transfer
@@ -20,23 +20,23 @@ Failing to do either is the most common source of Netty memory leaks.
 
 ## SimpleChannelInboundHandler
 
-`SimpleChannelInboundHandler<T>` releases the message automatically after
+SimpleChannelInboundHandler releases the message automatically after
 `channelRead0()` returns. This eliminates manual release bugs but imposes
 a constraint: the buffer must not be stored or accessed after the method
 exits. Attempting to use a released buffer throws
-`IllegalReferenceCountException`.
+IllegalReferenceCountException.
 
-Use `SimpleChannelInboundHandler` for terminal business logic where the
-message is fully consumed in place. Use `ChannelInboundHandler` when the
+Use SimpleChannelInboundHandler for terminal business logic where the
+message is fully consumed in place. Use ChannelInboundHandler when the
 message must be forwarded or retained beyond the callback.
 
 ## Handler comparison
 
-| Aspect    | `ChannelInboundHandler`           | `SimpleChannelInboundHandler`     |
+| Aspect    | ChannelInboundHandler             | SimpleChannelInboundHandler       |
 |-----------|-----------------------------------|-----------------------------------|
 | Callback  | `channelRead()`                   | `channelRead0()`                  |
 | Ownership | Caller owns the message           | Handler releases automatically    |
-| Release   | Manual `ReferenceCountUtil`       | Automatic after callback returns  |
+| Release   | Manual ReferenceCountUtil         | Automatic after callback returns  |
 | Use case  | Forwarding or retaining a message | Terminal consumption of a message |
 
 ## Outbound discarding
@@ -46,7 +46,7 @@ the message, it must do two things:
 
 1. **Release the buffer** — call `ReferenceCountUtil.release(msg)`
 2. **Notify the ChannelPromise** — mark it as success or failure so that
-   any `ChannelFutureListener` waiting on the write is notified;
+   any ChannelFutureListener waiting on the write is notified;
    otherwise the application may hang
 
 ## When Netty releases automatically

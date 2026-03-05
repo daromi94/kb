@@ -1,6 +1,6 @@
 # Leak detection
 
-Netty's `ResourceLeakDetector` monitors pooled ByteBuf allocations to
+Netty's ResourceLeakDetector monitors pooled ByteBuf allocations to
 catch buffers that are garbage-collected without being released. By
 default, it samples 1 in 128 allocations, keeping overhead low while
 still surfacing leaks as `LEAK` error log messages.

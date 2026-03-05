@@ -1,10 +1,10 @@
 # ByteBuf
 
-ByteBuf is Netty's replacement for the JDK's `ByteBuffer`. It serves as the
+ByteBuf is Netty's replacement for the JDK's ByteBuffer. It serves as the
 primary container for bytes flowing through the framework and was designed to
 fix the usability and performance shortcomings of the standard NIO buffer API.
 
-A companion interface, `ByteBufHolder`, wraps a ByteBuf when additional
+A companion interface, ByteBufHolder, wraps a ByteBuf when additional
 metadata needs to travel alongside the payload (e.g. HTTP headers attached to
 a body).
 
@@ -30,7 +30,7 @@ ByteBuf eliminates this by maintaining two independent indices:
 
 ## ByteBuf vs ByteBuffer
 
-| Aspect           | JDK `ByteBuffer`           | Netty `ByteBuf`                  |
+| Aspect           | JDK ByteBuffer             | Netty ByteBuf                    |
 |------------------|----------------------------|----------------------------------|
 | Index management | Single position index      | Separate reader and writer index |
 | Mode switching   | Requires `flip()`          | Automatic                        |
@@ -55,7 +55,7 @@ silently copies heap data into a temporary direct buffer on every socket
 send. Allocating direct buffers is more expensive than heap buffers, but
 the pooling system amortizes that cost.
 
-**Composite buffers** (`CompositeByteBuf`) present multiple buffers — any
+**Composite buffers** (CompositeByteBuf) present multiple buffers — any
 mix of heap and direct — as a single logical ByteBuf without memcpy. Netty
 further optimizes socket writes on composites using scatter/gather I/O,
 flushing all components in a single system call.

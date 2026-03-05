@@ -30,7 +30,7 @@ rarely need custom codec work.
 ## SimpleChannelInboundHandler
 
 Once a decoder has produced a typed Java object, the application needs a
-handler for business logic. `SimpleChannelInboundHandler<T>` fills this
+handler for business logic. SimpleChannelInboundHandler fills this
 role:
 
 - **Type safety:** The generic parameter `T` restricts the handler to a

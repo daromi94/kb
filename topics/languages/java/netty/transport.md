@@ -11,7 +11,7 @@ ChannelPipeline, and ChannelHandler regardless of the underlying I/O model.
 
 Because the transport is an implementation detail hidden behind Netty's
 abstractions, switching between I/O mechanisms reduces to swapping the
-`IoHandlerFactory` and Channel class in the bootstrap configuration:
+IoHandlerFactory and Channel class in the bootstrap configuration:
 
 ```java
 // NIO
@@ -23,8 +23,8 @@ var group = new MultiThreadIoEventLoopGroup(EpollIoHandler.newFactory());
 bootstrap.group(group).channel(EpollServerSocketChannel.class);
 ```
 
-`MultiThreadIoEventLoopGroup` is the unified EventLoopGroup implementation
-for all transports. The `IoHandlerFactory` argument selects which I/O
+MultiThreadIoEventLoopGroup is the unified EventLoopGroup implementation
+for all transports. The IoHandlerFactory argument selects which I/O
 mechanism to use. The rest of the application — handlers, pipeline, business
 logic — remains untouched.
 

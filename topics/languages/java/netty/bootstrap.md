@@ -11,11 +11,11 @@ The choice between the two classes depends solely on whether the application
 initiates connections or accepts them, regardless of the protocol or data
 being processed.
 
-| Aspect          | `Bootstrap` (client)      | `ServerBootstrap` (server)            |
-|-----------------|---------------------------|---------------------------------------|
-| Network action  | Connects to a remote host | Binds to a local port                 |
-| EventLoopGroups | 1                         | 2 (boss + worker)                     |
-| Channel type    | `SocketChannel`           | `ServerSocketChannel` + child sockets |
+| Aspect          | Bootstrap (client)        | ServerBootstrap (server)            |
+|-----------------|---------------------------|-------------------------------------|
+| Network action  | Connects to a remote host | Binds to a local port               |
+| EventLoopGroups | 1                         | 2 (boss + worker)                   |
+| Channel type    | SocketChannel             | ServerSocketChannel + child sockets |
 
 ## Boss and worker groups
 
@@ -32,24 +32,24 @@ Netty models this with a parent/child EventLoopGroup pair:
          Incoming connections
                  |
                  v
-+--------------------------------------+
-| Boss group (parent)                  |
-| +----------------------------------+ |
-| | EventLoop                        | |
-| |   accept() -> create child Ch    | |
-| +----------------------------------+ |
-+--------------------------------------+
++-------------------------------------+
+| Boss group (parent)                 |
+| +---------------------------------+ |
+| | EventLoop                       | |
+| |   accept() -> create child Ch   | |
+| +---------------------------------+ |
++-------------------------------------+
                  |
         hand off new Channel
                  |
                  v
-+--------------------------------+
-| Worker group (child)           |
-| +----------+  +----------+     |
-| | EventLoop|  | EventLoop| ... |
-| |  Ch Ch   |  |  Ch Ch   |     |
-| +----------+  +----------+     |
-+--------------------------------+
++----------------------------------+
+| Worker group (child)             |
+| +-----------+  +-----------+     |
+| | EventLoop |  | EventLoop | ... |
+| |  Ch Ch    |  |  Ch Ch    |     |
+| +-----------+  +-----------+     |
++----------------------------------+
 ```
 
 **Boss group:** Its EventLoop accepts incoming connection requests and

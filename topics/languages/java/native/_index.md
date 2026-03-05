@@ -8,6 +8,7 @@ JVM interaction with native code and memory.
 - [Heap vs off-heap memory](heap-vs-off-heap.md) - GC-managed vs native memory
 - [MemorySegment](memory-segment.md) - FFM memory access abstraction
 - [Arena](arena.md) - Off-heap memory lifecycle
+- [Marshaling](marshaling.md) - Data conversion across JVM/native boundary
 
 ---
 

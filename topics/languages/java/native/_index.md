@@ -9,6 +9,7 @@ JVM interaction with native code and memory.
 - [MemorySegment](memory-segment.md) - FFM memory access abstraction
 - [Arena](arena.md) - Off-heap memory lifecycle
 - [Marshaling](marshaling.md) - Data conversion across JVM/native boundary
+- [Downcall](downcall.md) - Calling native functions from Java
 
 ---
 

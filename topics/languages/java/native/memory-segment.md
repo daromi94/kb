@@ -60,7 +60,9 @@ out-of-bounds access.
 
 ## Related
 
-- [Heap vs off-heap memory](heap-vs-off-heap.md) - GC-managed vs native memory
+- [Heap vs off-heap memory](heap-vs-off-heap.md) - GC-managed vs
+  native memory
+- [Arena](arena.md) - Off-heap memory lifecycle
 
 ---
 

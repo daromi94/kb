@@ -26,7 +26,7 @@ When a process reads or writes through an FD, the kernel navigates
 three layers:
 
 ```
-Per-process FD table ──> Open file table ──> Inode table
+Per-process FD table --> Open file table --> Inode table
 (private per process)    (system-wide)       (on-disk metadata)
 ```
 

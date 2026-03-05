@@ -19,10 +19,23 @@ mid-call, the result is memory corruption or a crash.
 ## Off-heap memory
 
 Off-heap (native) memory is allocated outside the GC-managed heap,
-in the process's virtual address space via OS-level calls analogous
-to `malloc`/`free`. Once allocated, an off-heap region keeps its
-virtual address until explicitly freed. The GC will never scan,
-compact, or relocate off-heap contents.
+in the process's virtual address space via the C library's `malloc`
+(which internally uses `brk` or `mmap` depending on allocation
+size). Once allocated, an off-heap region keeps its virtual address
+until explicitly freed. The GC will never scan, compact, or
+relocate off-heap contents.
+
+Two properties make off-heap memory essential for performance and
+native interop:
+
+**Deterministic latency.** The GC does not scan off-heap memory for
+reachability. Storing large datasets (gigabytes of cached data)
+off-heap prevents GC pause times from growing with dataset size.
+
+**Stable virtual addresses.** Off-heap memory is never relocated by
+GC compaction. A native C function or OS kernel call can safely
+receive a pointer to an off-heap region without risk of the address
+becoming invalid mid-call.
 
 The GC is not entirely uninvolved, though. A DirectByteBuffer has a
 small on-heap wrapper with a Cleaner (PhantomReference). When the GC

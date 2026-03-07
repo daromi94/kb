@@ -16,6 +16,8 @@ Four roles make up the pattern:
 | Base Decorator     | Implements Component, delegates to the wrapped |
 | Concrete Decorator | Overrides methods to inject behavior           |
 
+A data source decorated with encryption and compression:
+
 ```
 +---------------------+
 |    <<Component>>    |
@@ -35,6 +37,8 @@ Four roles make up the pattern:
   | EncryptionDecorator |  | CompressionDecorator |
   +---------------------+  +----------------------+
 ```
+
+The same example in pseudocode:
 
 ```
 interface DataSource:

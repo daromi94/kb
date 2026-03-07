@@ -6,16 +6,16 @@ that share network, storage, and lifecycle.
 ## Notes
 
 - [Fundamentals](fundamentals.md) - Core concepts and why Pods exist
-- [Lifecycle](lifecycle.md) - Phases, container states, probes, and termination
-- [Graceful termination](graceful-termination.md) - Handling shutdown in practice
+- [Lifecycle](lifecycle.md) - Pod phases and health checking
 - [Init containers](init-containers.md) - Setup containers that run before app starts
 - [Sidecar containers](sidecar-containers.md) - Native sidecar feature for helper containers
-- [Ephemeral containers](ephemeral-containers.md) - Debugging containers for live Pods
+- [Scheduling](scheduling.md) - Pod placement controls
 - [QoS classes](qos-classes.md) - Resource guarantees and eviction priority
-- [Scheduling](scheduling.md) - Affinity, taints, and topology spread
-- [Disruptions](disruptions.md) - Voluntary and involuntary disruptions with PDBs
 - [Hostname and DNS](hostname-dns.md) - Pod naming and DNS resolution
-- [Advanced configuration](advanced-configuration.md) - Overhead, RuntimeClass, HugePages
+- [Disruptions](disruptions.md) - Pod availability guarantees
+- [Graceful termination](graceful-termination.md) - Handling shutdown in practice
+- [Ephemeral containers](ephemeral-containers.md) - Debugging containers for live Pods
+- [Advanced configuration](advanced-configuration.md) - Runtime and resource tuning
 
 ---
 

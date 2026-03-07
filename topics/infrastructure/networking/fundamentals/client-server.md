@@ -59,4 +59,4 @@ the entire system is paralyzed for all clients.
 
 ---
 
-Return to [Networking fundamentals](_index.md)
+Return to [Fundamentals](_index.md)

@@ -1,4 +1,4 @@
-# Networking fundamentals
+# Fundamentals
 
 Core concepts underlying computer networks, from client-server architecture to
 the OSI model.

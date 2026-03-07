@@ -176,4 +176,4 @@ industry standard for troubleshooting, teaching, and security analysis.
 
 ---
 
-Return to [Networking fundamentals](_index.md)
+Return to [Fundamentals](_index.md)

@@ -107,4 +107,4 @@ If the receiver gets the packet but the application doesn't respond, check:
 
 ---
 
-Return to [Networking fundamentals](_index.md)
+Return to [Fundamentals](_index.md)

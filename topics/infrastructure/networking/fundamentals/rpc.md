@@ -66,4 +66,4 @@ forget the network exists:
 
 ---
 
-Return to [Networking fundamentals](_index.md)
+Return to [Fundamentals](_index.md)

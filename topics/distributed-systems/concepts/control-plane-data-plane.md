@@ -85,6 +85,13 @@ In large-scale systems, the pattern becomes recursive:
   planes for fault tolerance (low latency), autoscaling (metric-driven), and
   provisioning (customer-facing CRUD)
 
+## Related
+
+- [Separate compute from data](separate-compute-from-data.md) - Similar
+  separation between processing and storage layers
+- [Stateless vs stateful](stateless-vs-stateful.md) - Data plane is often
+  stateless, control plane is stateful
+
 ---
 
 Return to [Concepts](_index.md)

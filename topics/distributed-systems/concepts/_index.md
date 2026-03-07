@@ -4,22 +4,22 @@ Foundational techniques and principles for distributed systems.
 
 ## Notes
 
-- [CAP theorem](cap-theorem.md) - Consistency, availability, and partition tolerance trade-offs
-- [Stateless vs stateful](stateless-vs-stateful.md) - How state retention affects scaling and recovery
-- [Control plane vs data plane](control-plane-data-plane.md) - Separating configuration from request processing
+- [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
+- [Stateless vs stateful](stateless-vs-stateful.md) - State and scaling implications
 - [Separate compute from data](separate-compute-from-data.md) - Decoupling compute and storage
-- [Replication](replication.md) - Strategies and patterns for copying data across nodes
-- [Partitioning](partitioning.md) - Splitting datasets across nodes for scalability
-- [Leader and followers](leader-and-followers.md) - Single-leader coordination for total ordering of writes
-- [Heartbeat](heartbeat.md) - Periodic liveness signal, timing inequality, and lease renewal
+- [Control plane vs data plane](control-plane-data-plane.md) - Configuration vs request processing
+- [Replication](replication.md) - Multi-node data copying
+- [Partitioning](partitioning.md) - Splitting data across nodes
+- [Leader and followers](leader-and-followers.md) - Single-leader write coordination
+- [Heartbeat](heartbeat.md) - Periodic liveness signaling
 - [Failure detection at scale](failure-detection-at-scale.md) - Heartbeat topology at scale
-- [Leader election](leader-election.md) - Choosing and replacing the cluster coordinator
-- [Quorum](quorum.md) - The intersection rule, common configurations, and strict vs sloppy quorum
-- [Quorum and linearizability](quorum-and-linearizability.md) - Quorum overlap and consistency gaps
+- [Leader election](leader-election.md) - Choosing the cluster coordinator
+- [Quorum](quorum.md) - Minimum agreement for operations
+- [Quorum and linearizability](quorum-and-linearizability.md) - Quorum overlap and consistency
 - [Write-ahead log](write-ahead-log.md) - Durability through sequential logging
-- [Segmented log](segmented-log.md) - Breaking WAL files into manageable segments
-- [Low-water mark](low-water-mark.md) - Safe deletion boundary for segmented log cleanup
-- [Bloom filters](bloom-filters.md) - Probabilistic data structure for set membership
+- [Segmented log](segmented-log.md) - Splitting WAL into segments
+- [Low-water mark](low-water-mark.md) - Safe log deletion boundary
+- [Bloom filters](bloom-filters.md) - Probabilistic set membership
 
 ---
 

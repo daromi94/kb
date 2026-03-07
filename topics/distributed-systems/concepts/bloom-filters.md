@@ -4,14 +4,14 @@ A Bloom filter is a space-efficient, probabilistic data structure for testing
 set membership. It can tell you with certainty that something is **not** in a
 set, but only that something is **probably** in the set.
 
-## Core Trade-off
+## Core trade-off
 
 Storing a massive list (millions of malicious URLs) takes huge amounts of RAM.
 A Bloom filter uses a tiny fraction of that space, but may occasionally report
 false positives—saying a safe URL is malicious when it isn't. It will never
 report false negatives—it will never say a malicious URL is safe.
 
-## How It Works
+## How it works
 
 A Bloom filter has two components:
 
@@ -36,7 +36,7 @@ A Bloom filter has two components:
 2. Bit 2 is 1, bit 8 is 1, but bit 9 is 0
 3. "Apple" is **definitely not** in the set—if it were, bit 9 would be 1
 
-## False Positives
+## False positives
 
 Checking for "Yahoo" might return positions 2, 5, and 8—already set by
 "Google". The filter returns true even though "Yahoo" was never inserted.
@@ -44,7 +44,7 @@ Checking for "Yahoo" might return positions 2, 5, and 8—already set by
 Making the bit array larger or using more hash functions reduces false positive
 rates but cannot eliminate them entirely.
 
-## Use Cases
+## Use cases
 
 Bloom filters serve as a first line of defense to avoid expensive operations.
 

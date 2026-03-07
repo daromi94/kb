@@ -7,6 +7,7 @@ Foundational techniques and principles for distributed systems.
 - [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
 - [Stateless vs stateful](stateless-vs-stateful.md) - State and scaling implications
 - [Separate compute from data](separate-compute-from-data.md) - Decoupling compute and storage
+- [Distributed monolith](distributed-monolith.md) - Coupled services antipattern
 - [Control plane vs data plane](control-plane-data-plane.md) - Configuration vs request processing
 - [Replication](replication.md) - Multi-node data copying
 - [Partitioning](partitioning.md) - Splitting data across nodes

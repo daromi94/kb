@@ -66,13 +66,6 @@ between nodes.
 For general-purpose networking, the operational risk of a single misconfigured
 port outweighs the marginal throughput gain.
 
-## Related
-
-- [Encapsulation](../fundamentals/encapsulation.md) - How data travels
-  through protocol layers
-- [OSI model](../fundamentals/osi-model.md) - The seven-layer communication
-  framework
-
 ---
 
 Return to [Ethernet](_index.md)

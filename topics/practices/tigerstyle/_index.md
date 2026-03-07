@@ -5,10 +5,10 @@ experience.
 
 ## Notes
 
-- [Overview](overview.md) - Philosophy: why style, simplicity, zero technical debt
-- [Safety](safety.md) - Safe control flow and memory rules
-- [Assertions](assertions.md) - Assertion strategy for catching programmer errors
-- [Performance](performance.md) - Design-phase optimization and batching
+- [Overview](overview.md) - Design philosophy and priorities
+- [Safety](safety.md) - Control flow and memory rules
+- [Assertions](assertions.md) - Catching programmer errors at runtime
+- [Performance](performance.md) - Design-phase optimization
 - [Naming](naming.md) - Naming conventions for clarity
 - [Zero dependencies](zero-dependencies.md) - Policy against external dependencies
 

@@ -1,56 +1,29 @@
 # Overview
 
-TigerStyle is TigerBeetle's coding style guide, representing a synthesis of
-engineering discipline and aesthetic consideration. It functions as a design
-methodology with substance beyond mere appearance.
+TigerBeetle's coding style guide. Priorities in order: safety, performance,
+developer experience. Readability serves these goals — it is not an end in
+itself.
 
-## Why have style
+## Simplicity
 
-Style serves concrete goals rather than existing as an end unto itself. The
-project prioritizes safety, performance, and developer experience in that order.
-Readability forms a necessary foundation but represents means rather than
-purpose.
+Simplicity is a design discipline, not a shortcut. It demands multiple
+drafts, thorough revision, and sometimes discarding an approach entirely.
+The heaviest investment happens during design, but pays back across
+implementation, testing, and maintenance.
 
-> "The design is not just what it looks like and feels like. The design is how
-> it works." — Steve Jobs
-
-Style becomes unnecessary where understanding is complete. The guide exists to
-codify lessons learned and establish shared practices where intuition alone
-would be insufficient.
-
-## Simplicity and elegance
-
-Simplicity operates as a design discipline rather than a shortcut. It reconciles
-seemingly competing objectives into unified, elegant solutions.
-
-> "Simplicity and elegance are unpopular because they require hard work and
-> discipline to achieve" — Edsger Dijkstra
-
-Achieving simplicity demands iterative refinement: multiple drafts, thorough
-revision, and occasional wholesale abandonment of initial approaches. The
-heaviest investment occurs during design phases, yielding exponential returns
-across implementation, testing, and long-term maintenance.
-
-Simple and elegant systems tend to be easier and faster to design correctly,
-more efficient in execution, and much more reliable.
+Simple systems tend to be faster to design correctly, more efficient, and
+far more reliable.
 
 ## Zero technical debt
 
-TigerBeetle maintains a zero technical debt policy, addressing fundamental
-issues during design and implementation phases rather than deferring solutions
-to production environments.
-
-Problems discovered early cost exponentially less to resolve than those
-surfacing after deployment. This approach ensures shipped code meets design
-objectives, establishing sustainable progress built upon verified quality.
-
-> "You shall not pass!" — Gandalf
+Fix problems during design and implementation, not after deployment. Bugs
+found early cost exponentially less than bugs found in production.
 
 ## Related
 
-- [Safety](safety.md) - Safety principles derived from NASA guidelines
-- [Performance](performance.md) - Design-phase optimization approach
-- [Naming](naming.md) - Naming conventions for clarity
+- [Safety](safety.md) - Top priority in the hierarchy
+- [Performance](performance.md) - Second priority after safety
+- [Naming](naming.md) - Developer experience through clear naming
 
 ---
 

@@ -1,44 +1,38 @@
 # Performance
 
-TigerStyle treats performance as a design-phase concern rather than an
-afterthought. Preliminary sketches targeting resource constraints prevent
-architectural mistakes that no amount of later optimization can fix.
+Performance is a design-phase concern. Back-of-the-envelope sketches
+targeting resource constraints prevent architectural mistakes that no later
+optimization can fix.
 
 > "The lack of back-of-the-envelope performance sketches is the root of all
 > evil." — Rivacindela Hudsoni
 
-## Design-phase optimization
+## Design-phase sketches
 
-- Consider performance implications from project inception
-- Conduct preliminary performance sketches targeting the four resources:
-  network, disk, memory, CPU
-- Achieve "roughly correct" estimates reaching approximately 90% of theoretical
-  maximum
-- Address slowest resources first, adjusted for usage frequency
+- Estimate against the four resources: network, disk, memory, CPU
+- Aim for ~90% of theoretical maximum ("roughly correct")
+- Address the slowest resource first, adjusted for access frequency
 
 ## Batching
 
-Batching is the central optimization technique, amortizing costs across all four
-resource types:
+The central optimization technique. Batching amortizes costs across all
+four resource types:
 
-- Distinguish control and data planes; leverage batching for assertion safety
-  without performance costs
-- Amortize network, disk, memory, and CPU expenses through batching
-- Provide CPUs large work units rather than forcing frequent context switching
+- Separate control plane from data plane; batch the data plane
+- Give CPUs large work units instead of frequent small ones
+- Batching also enables assertion-heavy code without performance cost —
+  checks run on the control plane, not inside the hot path
 
 ## Hot loops
 
 Extract hot loops into standalone functions with primitive arguments. This
-facilitates compiler optimization by:
-
-- Reducing function complexity visible to the optimizer
-- Enabling better inlining decisions
-- Allowing the compiler to focus optimization effort on critical paths
+helps the compiler by reducing function complexity, enabling better
+inlining, and focusing optimization on the critical path.
 
 ## Related
 
-- [Safety](safety.md) - How batching enables safety without performance cost
-- [Overview](overview.md) - Performance as the second priority after safety
+- [Safety](safety.md) - Batching as both safety and performance tool
+- [Overview](overview.md) - Performance as second priority after safety
 
 ---
 

@@ -1,39 +1,37 @@
 # Assertions
 
-Assertions identify programmer errors. They represent the correct response to
-corrupt code, catching bugs at the earliest possible moment.
+Assertions catch programmer errors by validating assumptions at runtime.
+They are the correct response to corrupt internal state.
 
-## Assertion strategy
+## Strategy
 
-- Validate all function arguments, return values, preconditions, postconditions,
-  and invariants
-- Target a minimum average of two assertions per function
-- Employ dual assertions for critical properties: check validity before writing
-  data and again after reading
-- Prefer simple, single-line assertions over compound conditions
-- Split compound assertions: `assert(a); assert(b);` over `assert(a and b);`
+- Validate all function arguments, return values, preconditions,
+  postconditions, and invariants
+- Target at least two assertions per function on average
+- Use dual assertions for critical properties: check before writing, check
+  again after reading
+- Keep assertions simple and single-line
+- Split compound conditions: `assert(a); assert(b);` not `assert(a and b);`
 
 ## Implication checks
 
-Use `if (a) assert(b);` syntax for implication checks. This expresses "if
-condition A holds, then condition B must also hold" without failing when A is
-false.
+Use `if (a) assert(b);` for implication checks — "if A holds, then B must
+also hold." Does not fire when A is false.
 
 ## Compile-time validation
 
-Validate compile-time constant relationships as design sanity checks. These
-assertions cost nothing at runtime and catch configuration errors during
-compilation.
+Validate constant relationships at compile time. These cost nothing at
+runtime and catch configuration errors during builds.
 
 ## Boundary testing
 
-Assert both valid and invalid conditions. Intersection points between valid and
-invalid boundaries reveal subtle bugs that single-sided checks miss.
+Assert both valid and invalid conditions. The intersection between valid
+and invalid boundaries reveals bugs that single-sided checks miss.
 
 ## Limitations
 
-Assertions complement rather than replace human understanding. They catch bugs
-but do not prove correctness. Design thinking remains essential.
+Assertions catch bugs but do not prove correctness. Design thinking remains
+essential.
 
 ## Related
 

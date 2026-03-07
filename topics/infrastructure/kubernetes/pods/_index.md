@@ -7,6 +7,7 @@ that share network, storage, and lifecycle.
 
 - [Fundamentals](fundamentals.md) - Core concepts and why Pods exist
 - [Lifecycle](lifecycle.md) - Phases, container states, probes, and termination
+- [Graceful termination](graceful-termination.md) - Handling shutdown in practice
 - [Init containers](init-containers.md) - Setup containers that run before app starts
 - [Sidecar containers](sidecar-containers.md) - Native sidecar feature for helper containers
 - [Ephemeral containers](ephemeral-containers.md) - Debugging containers for live Pods

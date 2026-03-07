@@ -37,45 +37,38 @@ Kubernetes uses three probe types to manage container health:
 
 ## Termination process
 
-When a Pod is deleted (rolling update, manual deletion):
+When a Pod is deleted (rolling update, node drain, resource pressure):
 
 ```
-+---------------------------+
-|  1. Grace period starts   |
-|     (default 30s)         |
-+------------+--------------+
-             |
-             v
-+---------------------------+
-|  2. PreStop hook runs     |
-|     (if defined)          |
-+------------+--------------+
-             |
-             v
-+---------------------------+
-|  3. SIGTERM sent to PID 1 |
-|     in each container     |
-+------------+--------------+
-             |
-             | (simultaneously)
-             v
-+---------------------------+
-|  4. Pod removed from      |
-|     Service endpoints     |
-+------------+--------------+
-             |
-             | (after grace period)
-             v
-+---------------------------+
-|  5. SIGKILL if still      |
-|     running               |
-+------------+--------------+
-             |
-             v
-+---------------------------+
-|  6. Pod object removed    |
-|     from API server       |
-+---------------------------+
++-------------------------------+
+|  1. Pod marked Terminating    |
+|     Grace period timer starts |
++-------+--------------+--------+
+        |              |
+        v              v  (parallel)
++---------------+  +-------------------+
+|  2. PreStop   |  |  Endpoint removal |
+|     hook runs |  |  begins (async)   |
++-------+-------+  +-------------------+
+        |
+        v
++---------------+
+|  3. SIGTERM   |
+|     sent      |
++-------+-------+
+        |
+        | (after grace period)
+        v
++---------------+
+|  4. SIGKILL   |
+|     if alive  |
++-------+-------+
+        |
+        v
++---------------+
+|  5. Pod       |
+|     removed   |
++---------------+
 ```
 
 ## Restart policy
@@ -87,6 +80,10 @@ The `restartPolicy` determines how the kubelet reacts when a container exits:
 | Always    | Restart regardless of exit code (default) | Deployments, DaemonSets |
 | OnFailure | Restart only on non-zero exit             | Jobs                    |
 | Never     | Never restart                             | One-shot tasks          |
+
+## Related
+
+- [Graceful termination](graceful-termination.md) - Handling shutdown in practice
 
 ---
 

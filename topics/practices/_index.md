@@ -1,11 +1,11 @@
 # Practices
 
-Software development practices, style guides, and programming principles.
+How to write and structure software.
 
 ## Subtopics
 
-- [Principles](principles/_index.md) - Foundational design principles
-- [Clean code](clean-code/_index.md) - Practices for maintainable, readable software
-- [Refactoring](refactoring/_index.md) - Techniques for restructuring code safely
+- [Principles](principles/_index.md) - Foundational design guidelines
 - [Patterns](patterns/_index.md) - Patterns for everyday use
-- [TigerStyle](tigerstyle/_index.md) - TigerBeetle's safety-first coding style
+- [Clean code](clean-code/_index.md) - Writing maintainable software
+- [Refactoring](refactoring/_index.md) - Restructuring code safely
+- [TigerStyle](tigerstyle/_index.md) - TigerBeetle's coding style

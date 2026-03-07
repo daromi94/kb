@@ -212,10 +212,11 @@ Good: `- [Context deep dive](context-deep-dive.md) - Context mechanics in depth`
 Bad:  `- [Supervision](supervision.md) - Restart strategies, error types`
 Bad:  `- [Context deep dive](context-deep-dive.md) - Scope, thread propagation, W3C headers, Baggage`
 
-**Ordering:** List entries from general to specific, keeping related topics
-together. Overviews and foundational concepts come first, specialized or
-niche topics last. When adding a new entry, insert it at the position that
-maintains this order rather than appending to the end.
+**Ordering:** Arrange entries so the index reads like a book top-to-bottom:
+general to specific, with related topics grouped together. Overviews and
+foundational concepts come first, specialized or niche topics last. When
+adding a new entry, insert it at the position that maintains this narrative
+flow rather than appending to the end.
 
 ### 9. Save and Report
 

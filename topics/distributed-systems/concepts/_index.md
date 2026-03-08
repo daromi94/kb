@@ -4,6 +4,7 @@ Foundational techniques and principles for distributed systems.
 
 ## Notes
 
+- [Overview](overview.md) - Definition and motivation
 - [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
 - [Stateless vs stateful](stateless-vs-stateful.md) - State and scaling implications
 - [Separate compute from data](separate-compute-from-data.md) - Decoupling compute and storage

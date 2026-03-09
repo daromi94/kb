@@ -1,8 +1,7 @@
 # Two pointers
 
 Two index variables traverse an array simultaneously, turning
-$O(n^2)$ nested scans into a single $O(n)$ pass. Each pointer
-advances based on a condition, not a fixed step.
+$O(n^2)$ nested scans into a single $O(n)$ pass.
 
 ## Collision (opposite ends)
 

@@ -30,11 +30,11 @@ dereference.
 `new int[26]` for lowercase letters. Faster than a HashMap due to no
 hashing or boxing overhead.
 
-**Memoization.** 1D or 2D arrays are the standard DP cache. Much faster
-than map-based state caching.
-
 **Two pointers and sliding window.** Arrays pair naturally with algorithms
 that advance left/right pointers over a contiguous range.
+
+**Memoization.** 1D or 2D arrays are the standard DP cache. Much faster
+than map-based state caching.
 
 **Underlying storage.** Arrays back ArrayList, PriorityQueue (binary heap),
 StringBuilder, and hash tables.

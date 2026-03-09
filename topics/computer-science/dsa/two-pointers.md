@@ -54,17 +54,32 @@ int[] twoSum(int[] nums, int target) {
 }
 ```
 
-## Fast and slow
+## Read/write (partitioning)
 
-Both start at the beginning. Fast scans every element; slow advances
-only when fast finds a qualifying element. Slow marks the boundary of
-the processed region.
+Both pointers start at the beginning. Fast advances every iteration,
+scanning each element. Slow advances only when fast finds a qualifying
+element. Everything before slow is the "processed" region — this
+partitions the array in place without extra space.
+
+The loop runs exactly $n$ iterations (fast visits every element once).
+If the work per iteration is $O(1)$, the total is $O(n)$.
+
+```
+slow = 0
+
+for fast in range(length):
+    if qualifies(arr[fast]):
+        arr[slow] = arr[fast]
+        slow++
+
+// arr[0..slow-1] contains the kept elements
+```
 
 Use for:
 
 - Removing duplicates from a sorted array in place
-- Cycle detection in linked lists or sequences
-- Finding the middle element in one pass
+- Filtering elements (e.g., move zeroes to end)
+- In-place partitioning
 
 ```java
 int removeDuplicates(int[] nums) {
@@ -80,6 +95,38 @@ int removeDuplicates(int[] nums) {
     return slow + 1; // Length of unique segment
 }
 ```
+
+## Tortoise and hare (speed-based)
+
+Both pointers start at the beginning and advance every iteration, but
+at different speeds — slow moves one step, fast moves two. Because
+fast covers ground twice as quickly, the two pointers reveal structural
+properties of the sequence.
+
+```
+slow = head
+fast = head
+
+while fast != null AND fast.next != null:
+    slow = slow.next      // 1 step
+    fast = fast.next.next // 2 steps
+    if slow == fast:
+        return true // cycle detected
+
+return false // no cycle
+
+// variant: skip the equality check and run to completion
+// — when fast hits the end, slow is at the midpoint
+```
+
+Use for:
+
+- Cycle detection (Floyd's algorithm) — if a cycle exists, the
+  pointers will meet inside it
+- Finding the middle element in one pass — when fast reaches the
+  end, slow is at the midpoint
+- Finding the cycle start — after detection, reset one pointer to
+  head and advance both at speed 1 until they meet
 
 ## Two-input traversal
 
@@ -136,18 +183,18 @@ int[] merge(int[] a, int[] b) {
 }
 ```
 
-Runs in $O(n + m)$ time and $O(1)$ extra space (excluding output).
-
 ## When to apply
 
-| Problem signal          | Pattern             |
-|-------------------------|---------------------|
-| Sorted array            | Collision           |
-| In-place / $O(1)$ space | Fast and slow       |
-| Pairs or triplets       | Sort + collision    |
-| Contiguous subarray     | Equi-directional    |
-| Two sorted inputs       | Two-input traversal |
-| Subsequence check       | Two-input traversal |
+| Problem signal        | Pattern             |
+|-----------------------|---------------------|
+| Sorted array          | Collision           |
+| Pairs or triplets     | Sort + collision    |
+| In-place filter/dedup | Read/write          |
+| Cycle detection       | Tortoise and hare   |
+| Find middle element   | Tortoise and hare   |
+| Contiguous subarray   | Equi-directional    |
+| Two sorted inputs     | Two-input traversal |
+| Subsequence check     | Two-input traversal |
 
 ## Limitations
 

@@ -1,8 +1,8 @@
 # Arrays
 
 An array stores a fixed number of same-typed elements in contiguous memory.
-The address of element $i$ is just base + $i \times$ element size, so random
-access is $O(1)$.
+The address of element $i$ is $\text{base} + i \times \text{size}$, so
+random access is $O(1)$.
 
 ## Memory layout in Java
 

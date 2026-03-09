@@ -16,7 +16,7 @@ col   = index % C
 
 Example — 8x8 board, position $(2, 3)$:
 
-$$2 \times 8 + 3 = 19 \quad \longrightarrow \quad 19 / 8 = 2,\; 19 \bmod 8 = 3$$
+$$2 \times 8 + 3 = 19 \quad \longrightarrow \quad 19 / 8 = 2 \; 19 \bmod 8 = 3$$
 
 ## Benefits
 

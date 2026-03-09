@@ -1,9 +1,8 @@
 # Arrays
 
-An array is a fixed-size collection of elements stored at contiguous memory
-locations. Every element has the same type. Because the memory is contiguous,
-the address of any index is computed from the base address and element size,
-making random access $O(1)$.
+An array stores a fixed number of same-typed elements in contiguous memory.
+The address of element $i$ is just base + $i \times$ element size, so random
+access is $O(1)$.
 
 ## Memory layout in Java
 

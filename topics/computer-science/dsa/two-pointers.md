@@ -96,38 +96,6 @@ int removeDuplicates(int[] nums) {
 }
 ```
 
-## Tortoise and hare (speed-based)
-
-Both pointers start at the beginning and advance every iteration, but
-at different speeds — slow moves one step, fast moves two. Because
-fast covers ground twice as quickly, the two pointers reveal structural
-properties of the sequence.
-
-```
-slow = head
-fast = head
-
-while fast != null AND fast.next != null:
-    slow = slow.next      // 1 step
-    fast = fast.next.next // 2 steps
-    if slow == fast:
-        return true // cycle detected
-
-return false // no cycle
-
-// variant: skip the equality check and run to completion
-// — when fast hits the end, slow is at the midpoint
-```
-
-Use for:
-
-- Cycle detection (Floyd's algorithm) — if a cycle exists, the
-  pointers will meet inside it
-- Finding the middle element in one pass — when fast reaches the
-  end, slow is at the midpoint
-- Finding the cycle start — after detection, reset one pointer to
-  head and advance both at speed 1 until they meet
-
 ## Two-input traversal
 
 One pointer per input, both starting at index 0. Loop while both
@@ -190,8 +158,6 @@ int[] merge(int[] a, int[] b) {
 | Sorted array          | Collision           |
 | Pairs or triplets     | Sort + collision    |
 | In-place filter/dedup | Read/write          |
-| Cycle detection       | Tortoise and hare   |
-| Find middle element   | Tortoise and hare   |
 | Two sorted inputs     | Two-input traversal |
 | Subsequence check     | Two-input traversal |
 

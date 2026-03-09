@@ -3,7 +3,7 @@
 An array is a fixed-size collection of elements stored at contiguous memory
 locations. Every element has the same type. Because the memory is contiguous,
 the address of any index is computed from the base address and element size,
-making random access O(1).
+making random access $O(1)$.
 
 ## Memory layout in Java
 
@@ -16,14 +16,14 @@ dereference.
 
 ## Complexity
 
-| Operation                     | Time    | Note                    |
-|-------------------------------|---------|-------------------------|
-| Access by index               | O(1)    | Address arithmetic      |
-| Search (unsorted)             | O(n)    | Linear scan             |
-| Search (sorted)               | O(lg n) | Binary search           |
-| Insert/delete at end          | O(1)    | If tracking active size |
-| Insert/delete at start/middle | O(n)    | Shift required          |
-| Space                         | O(n)    | Fixed allocation        |
+| Operation                     | Time       | Note                    |
+|-------------------------------|------------|-------------------------|
+| Access by index               | $O(1)$     | Address arithmetic      |
+| Search (unsorted)             | $O(n)$     | Linear scan             |
+| Search (sorted)               | $O(\lg n)$ | Binary search           |
+| Insert/delete at end          | $O(1)$     | If tracking active size |
+| Insert/delete at start/middle | $O(n)$     | Shift required          |
+| Space                         | $O(n)$     | Fixed allocation        |
 
 ## Common patterns
 
@@ -43,7 +43,7 @@ StringBuilder, and hash tables.
 ## Limitations
 
 **Fixed size.** A Java array cannot grow after creation. Resizing requires
-allocating a new array and copying all elements — O(n).
+allocating a new array and copying all elements — $O(n)$.
 
 **Costly mid-sequence mutation.** Inserting or deleting anywhere except the
 end shifts all subsequent elements, making arrays a poor fit for queues or
@@ -66,10 +66,20 @@ default on object arrays leads to NullPointerException.
 arrays only. For 2D, loop through each row:
 
 ```java
-for(int[] row :arr){
-    Arrays.fill(row, value);
+void fill2D(int[][] arr, int value) {
+    for (int[] row : arr) {
+        Arrays.fill(row, value);
+    }
 }
 ```
+
+## Related
+
+- [Grid flattening](grid-flattening.md) - 2D-to-1D conversion
+- [Circular indexing](circular-indexing.md) - Modulo wrap-around
+- [Two pointers](two-pointers.md) - Dual-index traversal
+- [Sliding window](sliding-window.md) - Incremental subarray scan
+- [Prefix sums](prefix-sums.md) - Cumulative range queries
 
 ---
 

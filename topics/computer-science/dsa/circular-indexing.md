@@ -46,8 +46,9 @@ and dequeue with no allocation:
          tail        head
 ```
 
-**Head** — next write position. **Tail** — oldest unread element. Both
-advance forward. The buffer is full when head would lap tail.
+**Head** is the next write position. **Tail** is the oldest unread
+element. Both advance forward. The buffer is full when head would lap
+tail.
 
 ## Limitations
 

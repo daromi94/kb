@@ -1,9 +1,9 @@
 # Sliding window
 
-A left and right boundary define a contiguous subarray that slides
-through the input. Each step adds one element and removes another —
-never recomputing the whole window. This turns $O(n^2)$ brute-force
-into $O(n)$.
+A left and right boundary define a contiguous subarray that moves
+through the input. Each step extends or shrinks the boundaries rather
+than recomputing from scratch. This turns $O(n^2)$ brute-force into
+$O(n)$.
 
 ## Fixed-size window
 

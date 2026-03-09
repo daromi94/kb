@@ -32,7 +32,7 @@ Use for:
 
 - Pairs that sum to a target in a sorted array
 - Reversing elements in place
-- Partitioning (e.g., Dutch national flag)
+- Partitioning around a pivot
 
 ```java
 int[] twoSum(int[] nums, int target) {
@@ -192,7 +192,6 @@ int[] merge(int[] a, int[] b) {
 | In-place filter/dedup | Read/write          |
 | Cycle detection       | Tortoise and hare   |
 | Find middle element   | Tortoise and hare   |
-| Contiguous subarray   | Equi-directional    |
 | Two sorted inputs     | Two-input traversal |
 | Subsequence check     | Two-input traversal |
 

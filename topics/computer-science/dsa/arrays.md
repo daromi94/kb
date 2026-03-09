@@ -8,7 +8,7 @@ so random access is $O(1)$.
 
 Arrays are heap-allocated objects. A primitive array like `int[]` stores
 values directly in contiguous memory. An object array like `String[]` stores
-contiguous *references* — the objects themselves are scattered across the
+contiguous references — the objects themselves are scattered across the
 heap. This distinction matters for cache locality: primitive arrays benefit
 from sequential prefetching while object arrays suffer cache misses on every
 dereference.

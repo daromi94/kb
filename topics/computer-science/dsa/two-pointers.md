@@ -71,6 +71,13 @@ int removeDuplicates(int[] nums) {
 | Pairs or triplets       | Sort + collision |
 | Contiguous subarray     | Equi-directional |
 
+## Limitations
+
+Two pointers rely on structure in the data — sorted order,
+partitioning, or a monotonic property — to skip work. If no such
+structure exists and every pair must be examined, the technique does
+not help.
+
 ## Related
 
 - [Sliding window](sliding-window.md) - Equi-directional variant in depth

@@ -49,6 +49,12 @@ and dequeue with no allocation:
 **Head** — next write position. **Tail** — oldest unread element. Both
 advance forward. The buffer is full when head would lap tail.
 
+## Limitations
+
+Ring buffers have a fixed capacity set at creation. If the producer
+can outpace the consumer indefinitely, a growable queue is a better
+fit.
+
 ## Related
 
 - [Arrays](arrays.md) - Underlying data structure

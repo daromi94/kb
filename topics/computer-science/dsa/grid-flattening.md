@@ -34,6 +34,13 @@ than a two-element coordinate array.
 **Required for 1D-indexed structures.** Union-Find on a grid needs a
 flat parent array — flatten coordinates to map cells into it.
 
+## Limitations
+
+Flattening assumes a rectangular grid. Jagged arrays (rows of
+different lengths) cannot be flattened without padding. Sparse grids
+waste memory on empty cells — a map from coordinates to values is
+more space-efficient.
+
 ## Related
 
 - [Arrays](arrays.md) - Underlying data structure

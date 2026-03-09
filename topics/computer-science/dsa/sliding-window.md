@@ -67,6 +67,14 @@ int minSubArrayLen(int[] nums, int target) {
 }
 ```
 
+## Limitations
+
+The window must be a contiguous subarray — sliding window does not
+apply to subsequences with gaps. The window property must also be
+monotonic: expanding the window can only make the condition harder (or
+easier) to satisfy, never both. If adding an element can both help
+and hurt, the shrink logic breaks.
+
 ## Related
 
 - [Arrays](arrays.md) - Underlying data structure

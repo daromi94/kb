@@ -43,6 +43,9 @@ elements are updated between queries, the entire prefix array must be
 rebuilt in $O(n)$. For dynamic updates, use a Fenwick tree or segment
 tree instead.
 
+**Single query.** If you only need one range sum, a direct $O(n)$
+scan is simpler and avoids the extra space.
+
 ## Related
 
 - [Arrays](arrays.md) - Underlying data structure

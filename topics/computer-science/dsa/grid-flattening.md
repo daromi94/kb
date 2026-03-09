@@ -10,7 +10,6 @@ Translate between `(row, col)` and a flat index:
 
 ```text
 index = row * C + col
-
 row   = index / C
 col   = index % C
 ```

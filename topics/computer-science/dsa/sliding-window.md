@@ -1,16 +1,14 @@
 # Sliding window
 
-Maintain a contiguous subarray "window" between a left and right
-boundary that advances through the array. Only account for the element
-entering the front and the element leaving the back — never recompute
-the entire window. This turns an $O(n^2)$ brute-force scan into an
-$O(n)$ single pass.
+A left and right boundary define a contiguous subarray that slides
+through the input. Each step adds one element and removes another —
+never recomputing the whole window. This turns $O(n^2)$ brute-force
+into $O(n)$.
 
 ## Fixed-size window
 
-The problem dictates the window length k. Build the initial window over
-the first k elements, then slide one step at a time, adding the
-incoming element and subtracting the outgoing one.
+The window length k is given. Build the initial window over the first
+k elements, then slide one position at a time:
 
 Use for:
 
@@ -21,12 +19,14 @@ Use for:
 int maxSumOfSizeK(int[] arr, int k) {
     int maxSum = 0, windowSum = 0;
 
+    // Build initial window
     for (int i = 0; i < k; i++) {
         windowSum += arr[i];
     }
 
     maxSum = windowSum;
 
+    // Slide: add incoming, drop outgoing
     for (int i = k; i < arr.length; i++) {
         windowSum += arr[i] - arr[i - k];
         maxSum = Math.max(maxSum, windowSum);
@@ -38,23 +38,25 @@ int maxSumOfSizeK(int[] arr, int k) {
 
 ## Dynamic window
 
-The window expands and shrinks based on a constraint. The right pointer
-grows the window in a for loop; a while loop shrinks from the left
-when the constraint is violated. Both boundaries advance at most n
-times total, keeping the cost $O(n)$.
+The window expands and shrinks to satisfy a constraint. Right grows
+the window in a for loop; a while loop shrinks from the left when the
+constraint breaks. Each boundary advances at most n times total, so
+the cost is $O(n)$.
 
 Use for:
 
 - Longest substring with at most k distinct characters
-- Smallest subarray with sum >= target
+- Smallest subarray whose sum meets a target
 
 ```java
 int minSubArrayLen(int[] nums, int target) {
     int minLen = Integer.MAX_VALUE, windowSum = 0, left = 0;
 
     for (int right = 0; right < nums.length; right++) {
+        // Expand window
         windowSum += nums[right];
 
+        // Shrink window while valid
         while (windowSum >= target) {
             minLen = Math.min(minLen, right - left + 1);
             windowSum -= nums[left++];
@@ -64,19 +66,6 @@ int minSubArrayLen(int[] nums, int target) {
     return minLen == Integer.MAX_VALUE ? 0 : minLen;
 }
 ```
-
-## When to update the answer
-
-| Goal           | Update where           | Why                        |
-|----------------|------------------------|----------------------------|
-| Longest valid  | After the shrink loop  | Window is guaranteed valid |
-| Shortest valid | Inside the shrink loop | Constraint still holds     |
-
-## Pitfalls
-
-**Frequency tracking.** For character-frequency problems, use
-`new int[128]` instead of a HashMap. The array lookup is $O(1)$ with a
-much smaller constant factor.
 
 ## Related
 

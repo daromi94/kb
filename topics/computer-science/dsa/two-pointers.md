@@ -58,7 +58,7 @@ int removeDuplicates(int[] nums) {
         }
     }
 
-    return slow + 1; // length of unique segment
+    return slow + 1; // Length of unique segment
 }
 ```
 

@@ -1,14 +1,14 @@
 # Two pointers
 
-Use two index variables to traverse an array simultaneously, reducing
-$O(n^2)$ nested loops to a single $O(n)$ pass. The pointers advance
-based on logical conditions rather than fixed iteration.
+Two index variables traverse an array simultaneously, turning
+$O(n^2)$ nested scans into a single $O(n)$ pass. Each pointer
+advances based on a condition, not a fixed step.
 
 ## Collision (opposite ends)
 
-One pointer starts at index 0, the other at the last index. On a sorted
-array the pointers form a narrowing funnel: moving left increases the
-value, moving right decreases it. They converge until they meet.
+One pointer starts at 0, the other at the last index. On a sorted
+array, moving left increases the value and moving right decreases it,
+so the pointers converge toward the answer.
 
 Use for:
 
@@ -36,12 +36,11 @@ int[] twoSum(int[] nums, int target) {
 }
 ```
 
-## Fast and slow (tortoise and hare)
+## Fast and slow
 
-Both pointers start at the beginning. The fast pointer scans every
-element; the slow pointer advances only when the fast pointer finds a
-qualifying element. The slow pointer marks the boundary of the
-processed region.
+Both start at the beginning. Fast scans every element; slow advances
+only when fast finds a qualifying element. Slow marks the boundary of
+the processed region.
 
 Use for:
 

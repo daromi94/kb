@@ -33,7 +33,7 @@ Using a WAL is more efficient than updating main data files immediately.
 Updating a B-Tree or heap file involves random I/O — the disk head jumps to
 different physical locations. A WAL is **append-only**, using sequential I/O.
 Writing to the end of a file is vastly faster than updating pages scattered
-across a disk. The system calls **fsync** to force the OS to flush the log
+across a disk. The system calls `fsync` to force the OS to flush the log
 entry to stable storage before acknowledging the write.
 
 ### Immutability and segmentation

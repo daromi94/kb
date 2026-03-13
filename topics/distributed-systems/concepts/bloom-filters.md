@@ -7,9 +7,10 @@ set, but only that something is **probably** in the set.
 ## Core trade-off
 
 Storing a massive list (millions of malicious URLs) takes huge amounts of RAM.
-A Bloom filter uses a tiny fraction of that space, but may occasionally report
-false positives—saying a safe URL is malicious when it isn't. It will never
-report false negatives—it will never say a malicious URL is safe.
+A Bloom filter uses a tiny fraction of that space, but may occasionally
+report false positives — saying a safe URL is malicious when it isn't. It
+will never report false negatives — it will never say a malicious URL is
+safe.
 
 ## How it works
 
@@ -34,11 +35,11 @@ A Bloom filter has two components:
 
 1. Hash functions return 2, 8, and 9
 2. Bit 2 is 1, bit 8 is 1, but bit 9 is 0
-3. "Apple" is **definitely not** in the set—if it were, bit 9 would be 1
+3. "Apple" is **definitely not** in the set — if it were, bit 9 would be 1
 
 ## False positives
 
-Checking for "Yahoo" might return positions 2, 5, and 8—already set by
+Checking for "Yahoo" might return positions 2, 5, and 8 — already set by
 "Google". The filter returns true even though "Yahoo" was never inserted.
 
 Making the bit array larger or using more hash functions reduces false positive
@@ -59,12 +60,17 @@ cached if they hit the Bloom filter a second time.
 
 ## Properties
 
-| Property        | Behavior                                         |
-|-----------------|--------------------------------------------------|
-| False positives | Possible—may say "yes" when answer is "no"       |
-| False negatives | Impossible—never says "no" when answer is "yes"  |
-| Deletion        | Not supported—removing a bit affects other items |
-| Space usage     | Constant—grows with item count, not item size    |
+| Property        | Behavior                                           |
+|-----------------|----------------------------------------------------|
+| False positives | Possible — may say "yes" when answer is "no"       |
+| False negatives | Impossible — never says "no" when answer is "yes"  |
+| Deletion        | Not supported — removing a bit affects other items |
+| Space usage     | Constant — grows with item count, not item size    |
+
+## Related
+
+- [Segmented log](segmented-log.md) - Bloom filters help skip segments
+  during key lookups
 
 ---
 

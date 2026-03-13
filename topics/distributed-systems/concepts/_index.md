@@ -6,6 +6,7 @@ Foundational techniques and principles for distributed systems.
 
 - [Overview](overview.md) - Definition and motivation
 - [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
+- [CALM theorem](calm-theorem.md) - Monotonicity and coordination
 - [Stateless vs stateful](stateless-vs-stateful.md) - State and scaling implications
 - [Separate compute from data](separate-compute-from-data.md) - Decoupling compute and storage
 - [Control plane vs data plane](control-plane-data-plane.md) - Configuration vs request processing

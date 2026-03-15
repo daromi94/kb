@@ -29,7 +29,7 @@ metadata.
 
 ## Dynamic snitch
 
-The `DynamicEndpointSnitch` wraps the configured static snitch and adds
+The DynamicEndpointSnitch wraps the configured static snitch and adds
 real-time performance awareness.
 
 **Latency scoring:** It scores nodes based on latency (EWMA) and severity

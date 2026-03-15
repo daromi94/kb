@@ -43,11 +43,11 @@ hints simultaneously, potentially overwhelming the recovering node.
 
 Cassandra manages this through two constraints:
 
-**Time window:** Hints are stored for a configurable period (default is
-typically 3 hours). If a node is down longer than this window, hints are
+**Time window:** Hints are stored for a configurable period (default is 3
+hours). If a node is down longer than this window, hints are
 discarded and the node must be repaired using anti-entropy repair.
 
-**Throttling:** The `HintsService` limits the delivery rate to prevent
+**Throttling:** The HintsService limits the delivery rate to prevent
 flooding the recovering node.
 
 ## Summary

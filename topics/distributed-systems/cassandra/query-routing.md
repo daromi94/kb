@@ -28,7 +28,7 @@ copy of the cluster's topology and health.
 2. **Ring lookup:** It compares that token against the ranges on the token ring
    to find the primary owner.
 3. **Replication strategy:** It then applies the replication strategy (like
-   `NetworkTopologyStrategy`) to identify all other nodes that store a copy of
+   NetworkTopologyStrategy) to identify all other nodes that store a copy of
    that data.
 
 ## Dispatch and the snitch

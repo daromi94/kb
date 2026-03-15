@@ -36,7 +36,7 @@ When phi crosses the configured `phi_convict_threshold`, the gossiper
 convicts the node:
 
 1. The node's status is set to `DOWN` in the local gossip state
-2. Internal components (`StorageService`) are notified
+2. Internal components (StorageService) are notified
 3. The coordinator stops routing queries to that node
 4. Writes intended for the downed node are stored as hints for later
    replay

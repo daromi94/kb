@@ -29,7 +29,7 @@ keeping multiple copies (replicas) of every row.
 **Replication factor (RF):** If $RF=3$, your data exists on three separate
 nodes.
 
-**Rack and DC awareness:** Using `NetworkTopologyStrategy`, Cassandra ensures
+**Rack and DC awareness:** Using NetworkTopologyStrategy, Cassandra ensures
 that replicas are not all on the same physical rack. It intelligently places
 copies across different power supplies and network switches. Even if an entire
 rack goes offline, the other two replicas in different racks stay available.

@@ -52,6 +52,8 @@ efficiently as subword fragments than as whole-word units.
 
 ## Related
 
+- [Vector embeddings](vector-embeddings.md) - The next step: converting
+  token IDs into semantic vectors
 - [Language models](language-models.md) - The models that operate on
   tokenized input
 

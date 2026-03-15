@@ -29,6 +29,10 @@ grammar, semantics, and long-range context in a single pass.
 
 ## Related
 
+- [Tokenization](tokenization.md) - How text becomes the token
+  sequences language models consume
+- [Completion paradigm](completion-paradigm.md) - How next-token
+  prediction generalizes to arbitrary tasks
 - [Foundation models](foundation-models.md) - Pretrained base models
   built on language model architectures
 

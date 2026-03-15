@@ -38,6 +38,8 @@ structure steers the same completion mechanism toward different tasks.
 
 - [Language models](language-models.md) - The underlying prediction
   mechanics
+- [Foundation models](foundation-models.md) - The pretrained bases that
+  operate under this paradigm
 
 ---
 

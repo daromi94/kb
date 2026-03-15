@@ -6,6 +6,7 @@ Building and adapting AI systems for practical applications.
 
 - [Tokenization](tokenization.md) - Text-to-token input representation
 - [Language models](language-models.md) - Token prediction and generation
+- [Completion paradigm](completion-paradigm.md) - All tasks as next-token prediction
 - [Foundation models](foundation-models.md) - General-purpose pretrained models
 
 ---

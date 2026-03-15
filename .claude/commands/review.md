@@ -28,73 +28,73 @@ structured report — do not fix anything yet.
 
 #### Writing quality
 
-| Issue               | What to look for                                         |
-|---------------------|----------------------------------------------------------|
-| Filler words        | "basically", "essentially", "in order to", "the fact     |
-|                     | that", "actually", "simply", "just", "very", "really"    |
-| Hedging             | "it should be noted that", "it is worth mentioning",     |
-|                     | "one might consider", "arguably", "perhaps"              |
-| Passive voice       | "is performed by", "was designed to" — prefer active     |
+| Issue               | What to look for                                          |
+|---------------------|-----------------------------------------------------------|
+| Filler words        | "basically", "essentially", "in order to", "the fact      |
+|                     | that", "actually", "simply", "just", "very", "really"     |
+| Hedging             | "it should be noted that", "it is worth mentioning",      |
+|                     | "one might consider", "arguably", "perhaps"               |
+| Passive voice       | "is performed by", "was designed to" — prefer active      |
 | Roundabout openings | Sentences that delay the point with throat-clearing       |
-| Long sentences      | Sentences over ~25 words that could be split or trimmed  |
-| Explaining before   | Context before the fact — lead with what it *is*, then   |
-| stating             | explain *why*                                            |
+| Long sentences      | Sentences over ~25 words that could be split or trimmed   |
+| Explaining before   | Context before the fact — lead with what it *is*, then    |
+| stating             | explain *why*                                             |
 | Redundancy          | Same idea expressed twice in different words              |
-| Marketing language  | "powerful", "best-in-class", "seamlessly", "elegant"     |
-| Dated references    | Version numbers, "as of", "currently", "new in", "modern"|
-| Deprecation notes   | "deprecated since", "removed in", migration advice       |
+| Marketing language  | "powerful", "best-in-class", "seamlessly", "elegant"      |
+| Dated references    | Version numbers, "as of", "currently", "new in", "modern" |
+| Deprecation notes   | "deprecated since", "removed in", migration advice        |
 
 #### Format compliance
 
-| Rule                   | Spec                                                   |
-|------------------------|--------------------------------------------------------|
-| Title case             | Sentence case — only first word and proper              |
-|                        | nouns/acronyms capitalized                             |
-| Title prefix           | Must not repeat parent topic name                      |
-| Opening paragraph      | Must exist, must establish the concept directly        |
-| Heading hierarchy      | No skipped levels (`## ` under `# `, not `### `)       |
-| Cross-references       | Only in `## Related` — never inline in prose/headings  |
-| Related link text      | Must match the target note's `# Title` exactly         |
-| Return link            | `Return to [Topic](_index.md)` with correct title      |
-| Horizontal rule        | `---` before the return link                           |
-| Line length            | ~80 chars, no trailing whitespace                      |
-| Blank lines            | Single blank line between elements, no double blanks   |
-| Code blocks            | Must have language tags                                |
-| Table formatting       | Single-line rows, aligned columns, padded cells,       |
-|                        | no-space separator row                                 |
-| Class/interface names  | Plain text in prose (Channel, ByteBuf), not backticks  |
-| Backticks              | Only for code literals: method calls, package paths,   |
-|                        | inline snippets                                        |
+| Rule                  | Spec                                                  |
+|-----------------------|-------------------------------------------------------|
+| Title case            | Sentence case — only first word and proper            |
+|                       | nouns/acronyms capitalized                            |
+| Title prefix          | Must not repeat parent topic name                     |
+| Opening paragraph     | Must exist, must establish the concept directly       |
+| Heading hierarchy     | No skipped levels (`## ` under `# `, not `### `)      |
+| Cross-references      | Only in `## Related` — never inline in prose/headings |
+| Related link text     | Must match the target note's `# Title` exactly        |
+| Return link           | `Return to [Topic](_index.md)` with correct title     |
+| Horizontal rule       | `---` before the return link                          |
+| Line length           | ~80 chars, no trailing whitespace                     |
+| Blank lines           | Single blank line between elements, no double blanks  |
+| Code blocks           | Must have language tags                               |
+| Table formatting      | Single-line rows, aligned columns, padded cells,      |
+|                       | no-space separator row                                |
+| Class/interface names | Plain text in prose (Channel, ByteBuf), not backticks |
+| Backticks             | Only for code literals: method calls, package paths,  |
+|                       | inline snippets                                       |
 
 #### Content quality
 
-| Check                  | What to assess                                         |
-|------------------------|--------------------------------------------------------|
-| Atomicity              | One clear concept per note — not two ideas merged      |
-| Self-contained         | Understandable without reading other notes first       |
-| Scannability           | Can the key point be grasped in a quick scan?          |
-| Opening paragraph      | Does it immediately tell you what this thing *is*?     |
-| Accuracy               | Do claims match current official documentation?        |
-| Completeness           | Is anything critical about the concept missing?        |
-| Depth balance          | Enough depth to be useful, not so much it buries       |
-|                        | the core idea                                          |
+| Check             | What to assess                                     |
+|-------------------|----------------------------------------------------|
+| Atomicity         | One clear concept per note — not two ideas merged  |
+| Self-contained    | Understandable without reading other notes first   |
+| Scannability      | Can the key point be grasped in a quick scan?      |
+| Opening paragraph | Does it immediately tell you what this thing *is*? |
+| Accuracy          | Do claims match current official documentation?    |
+| Completeness      | Is anything critical about the concept missing?    |
+| Depth balance     | Enough depth to be useful, not so much it buries   |
+|                   | the core idea                                      |
 
 ### 3. Audit Index
 
 Review each `_index.md` in the topic:
 
-| Check              | Spec                                                      |
-|---------------------|---------------------------------------------------------|
-| Descriptions        | 3-5 words, stable, describe topic area not contents     |
-| Description style   | Must not list sections, enumerate sub-concepts, or      |
-|                     | reveal internal structure                               |
-| Ordering            | General to specific, foundational before specialized,   |
-|                     | reads like a book top-to-bottom                         |
-| Link text           | Must match the target note's `# Title` exactly          |
-| Completeness        | Every `.md` file in the directory has an index entry     |
-| No dangling refs    | Every index entry points to an existing file             |
-| Return link         | Points to correct parent; omitted for top-level topics  |
-| Subtopics/Notes     | Sections only present when entries exist                 |
+| Check             | Spec                                                   |
+|-------------------|--------------------------------------------------------|
+| Descriptions      | 3-5 words, stable, describe topic area not contents    |
+| Description style | Must not list sections, enumerate sub-concepts, or     |
+|                   | reveal internal structure                              |
+| Ordering          | General to specific, foundational before specialized,  |
+|                   | reads like a book top-to-bottom                        |
+| Link text         | Must match the target note's `# Title` exactly         |
+| Completeness      | Every `.md` file in the directory has an index entry   |
+| No dangling refs  | Every index entry points to an existing file           |
+| Return link       | Points to correct parent; omitted for top-level topics |
+| Subtopics/Notes   | Sections only present when entries exist               |
 
 ### 4. Cross-Reference Audit
 

@@ -28,15 +28,15 @@ topics/<topic>/
 
 Ask: "How would you like to provide content? (1) URL (2) Paste (3) Book reference (4) File"
 
-**Critical:** Save all input to `/tmp/kb-input.md` before processing. This prevents
+**Critical:** Save all input to `/tmp/ingest-input.md` before processing. This prevents
 raw content from polluting conversation context:
 
-- **URL:** Fetch content, write to `/tmp/kb-input.md`
-- **Paste:** User pastes content, write to `/tmp/kb-input.md`
-- **Book reference:** User provides text, write to `/tmp/kb-input.md`
-- **File:** Copy file contents to `/tmp/kb-input.md` (or use directly if already a tmp file)
+- **URL:** Fetch content, write to `/tmp/ingest-input.md`
+- **Paste:** User pastes content, write to `/tmp/ingest-input.md`
+- **Book reference:** User provides text, write to `/tmp/ingest-input.md`
+- **File:** Copy file contents to `/tmp/ingest-input.md` (or use directly if already a tmp file)
 
-Then read from `/tmp/kb-input.md` for all subsequent processing steps. Delete the tmp
+Then read from `/tmp/ingest-input.md` for all subsequent processing steps. Delete the tmp
 file after notes are created.
 
 ### 3. Match Existing Notes
@@ -246,20 +246,20 @@ One-line message, no co-author.
 ## Examples
 
 ```
-/kb practices/clean-code + paste -> Created:
+/ingest practices/clean-code + paste -> Created:
   shutdown-surgery.md - Decommissioning legacy systems
   _index.md - Updated
 
-/kb languages/java/concurrency + paste -> Created:
+/ingest languages/java/concurrency + paste -> Created:
   topics/languages/java/concurrency/threads.md
   topics/languages/java/concurrency/executor-service.md
   Updated topics/languages/java/_index.md with subtopic link
 
-/kb performance/async-io + paste (with match) -> Updated:
+/ingest performance/async-io + paste (with match) -> Updated:
   asynchronous-io.md - Added event loop section
   Created blocking.md - When sync I/O fits
 
-/kb databases/postgres + file ~/notes/postgres-indexes.md -> Created:
+/ingest databases/postgres + file ~/notes/postgres-indexes.md -> Created:
   btree-indexes.md - B-tree index structure and usage
   index-only-scans.md - Covering indexes for query optimization
 ```

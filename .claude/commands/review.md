@@ -6,7 +6,7 @@ arguments: <topic>
 # Knowledge Review Skill
 
 Review existing Zettelkasten notes for readability, accuracy, and format
-compliance. This is the counterpart to `/kb` — while `/kb` creates notes,
+compliance. This is the counterpart to `/ingest` — while `/ingest` creates notes,
 `/review` audits and improves them.
 
 **Goal:** Every note must be readable and recallable in under 5 minutes.
@@ -166,7 +166,7 @@ numbers to accept, or numbers to reject)"
 - Edit files **sequentially** (not in parallel) to avoid conflicts
 - Apply only the changes the user accepted
 - For writing issues: rewrite the problematic text following the rules
-  in `/kb` step 5 (Process Content)
+  in `/ingest` step 5 (Process Content)
 - For format issues: fix to match the spec exactly
 - For content issues: rewrite or restructure as needed, preserving the
   note's core knowledge

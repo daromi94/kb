@@ -1,9 +1,9 @@
-# Steve Huynh on high agency
+# High agency
 
-Steve Huynh on high agency as a career differentiator. High agency
-is the default assumption that you own the outcome regardless of
-circumstances. A low-agency person sees a roadblock and waits for
-help. A high-agency person treats it as their problem to solve.
+High agency is the default assumption that you own the outcome
+regardless of circumstances. A low-agency person sees a roadblock
+and waits for help. A high-agency person treats it as their problem
+to solve.
 
 ## Reject the victim mindset
 
@@ -28,8 +28,8 @@ lowers the threshold for the next one.
 
 ## Related
 
-- [Philip Su on scaling your impact](philip-su-scaling-impact.md) -
-  Ownership thinking from a complementary angle
+- [Scaling your impact](scaling-your-impact.md) - Ownership thinking
+  from a complementary angle
 
 ---
 

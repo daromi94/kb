@@ -1,9 +1,7 @@
-# Steve Huynh on asking questions
+# Asking questions
 
-Steve Huynh on why asking "dumb" questions is a professional
-superpower. The job of a senior professional is not to know
-everything — it is to force clarity and eliminate ambiguity for
-everyone in the room.
+The job of a senior professional is not to know everything — it is
+to force clarity and eliminate ambiguity for everyone in the room.
 
 ## Lead with what you do not know
 
@@ -28,8 +26,8 @@ unstuck faster than pretending to have all the answers.
 
 ## Related
 
-- [Steve Huynh on managing up](steve-huynh-managing-up.md) -
-  Complementary advice on professional communication
+- [Managing up](managing-up.md) - Complementary advice on
+  professional communication
 
 ---
 

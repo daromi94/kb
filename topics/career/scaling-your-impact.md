@@ -1,10 +1,8 @@
-# Philip Su on scaling your impact
+# Scaling your impact
 
-Philip Su (Distinguished Engineer at Meta, early OpenAI employee) on
-growing beyond individual code output. Every engineer eventually hits
-a ceiling where personal output maxes out. Reaching distinguished
-levels requires shifting focus to helping the team choose the right
-things to work on.
+Every engineer eventually hits a ceiling where personal code output
+maxes out. Reaching distinguished levels requires shifting focus to
+helping the team choose the right things to work on.
 
 ## Ownership thinking
 
@@ -38,6 +36,11 @@ settling on a scoped approach. This prevents premature narrowing.
 Lean into difficult conversations. Give feedback directly and attach
 your name to it rather than hiding behind anonymity. Honest,
 attributed feedback builds trust and drives better outcomes.
+
+## Related
+
+- [High agency](high-agency.md) - Ownership from a complementary
+  angle
 
 ---
 

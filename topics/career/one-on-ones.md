@@ -1,9 +1,8 @@
-# Steve Huynh on one-on-ones
+# Effective one-on-ones
 
-Steve Huynh on making 1:1 meetings high-leverage. Most people waste
-their 1:1s by treating them as status reports. Your relationship with
-your manager is the biggest predictor of career success, so treat
-this dedicated time accordingly.
+Most people waste their 1:1s by treating them as status reports.
+Your relationship with your manager is the biggest predictor of
+career success, so treat this dedicated time accordingly.
 
 ## The three conversations
 
@@ -43,10 +42,10 @@ thinking beyond your own backlog.
 
 ## Related
 
-- [Philip Su on scaling your impact](philip-su-scaling-impact.md) -
-  Complementary advice on career growth
-- [Steve Huynh on managing up](steve-huynh-managing-up.md) -
-  Broader strategies for standing out
+- [Scaling your impact](scaling-your-impact.md) - Complementary
+  advice on career growth
+- [Managing up](managing-up.md) - Broader strategies for standing
+  out
 
 ---
 

@@ -1,9 +1,9 @@
-# Steve Huynh on managing up
+# Managing up
 
-Steve Huynh on how to move from baseline performer to star in your
-manager's eyes. The shift does not happen through gradual improvement
-in daily tasks. It happens in discrete leaps when you take
-high-leverage actions that make your manager's life easier.
+Moving from baseline performer to star does not happen through
+gradual improvement in daily tasks. It happens in discrete leaps
+when you take high-leverage actions that make your manager's life
+easier.
 
 ## Act visibly on feedback
 
@@ -37,8 +37,8 @@ work to help them succeed.
 
 ## Related
 
-- [Steve Huynh on one-on-ones](steve-huynh-one-on-ones.md) -
-  Complementary advice on structuring 1:1 meetings
+- [Effective one-on-ones](one-on-ones.md) - Complementary advice on
+  structuring 1:1 meetings
 
 ---
 

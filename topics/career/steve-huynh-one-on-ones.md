@@ -45,6 +45,8 @@ thinking beyond your own backlog.
 
 - [Philip Su on scaling your impact](philip-su-scaling-impact.md) -
   Complementary advice on career growth
+- [Steve Huynh on managing up](steve-huynh-managing-up.md) -
+  Broader strategies for standing out
 
 ---
 

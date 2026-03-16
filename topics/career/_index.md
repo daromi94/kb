@@ -5,6 +5,7 @@ Engineering career growth and professional development.
 ## Notes
 
 - [Scaling your impact](scaling-your-impact.md) - Growing beyond code output
+- [Force multiplication](force-multiplication.md) - Amplifying your team
 - [High agency](high-agency.md) - Owning outcomes regardless of circumstances
 - [Effective one-on-ones](one-on-ones.md) - Making 1:1 meetings count
 - [Managing up](managing-up.md) - Standing out with your manager

@@ -1,42 +1,141 @@
 # Backlog
 
-## Languages / Java / OTel
+## Observability
 
+### OpenTelemetry
+- [ ] OTel Collector — pipelines, processors, exporters
+- [ ] OTel SDK instrumentation (auto vs manual)
+- [ ] OTel semantic conventions
 - [ ] OpenTelemetry proto structure
+- [ ] Context propagation and W3C trace context
 
-## Languages / Java / Debugging
+### Metrics
+- [ ] Prometheus
+- [ ] Mimir
+- [ ] Metric types (counters, gauges, histograms, summaries)
 
-- [ ] Remote debugging
+### Tracing
+- [ ] Tempo
+- [ ] Jaeger
+- [ ] Distributed tracing patterns (span modeling, sampling)
+- [ ] Sampling strategies (head vs tail)
 
-## Languages / Java / Gradle
-
-- [ ] Gradle basics
-- [ ] Multi-module projects
-- [ ] Multi-project builds
-
-## Languages / Java / Logging
-
+### Logging
+- [ ] Loki
 - [ ] SLF4J
 - [ ] Log4j2
+- [ ] Structured logging patterns
+- [ ] Log correlation with traces
 
-## Performance
+### Dashboards and alerting
+- [ ] Grafana
+- [ ] Alertmanager
+- [ ] SLOs, SLIs, and error budgets
+- [ ] Runbooks and on-call patterns
 
+### Other
 - [ ] Profiling with Pyroscope
+- [ ] Kafka as telemetry transport
+
+## Networking
+
+### Protocols
+- [ ] IP (IPv4, IPv6, routing, ICMP)
+- [ ] UDP
+- [ ] DNS
+- [ ] TLS and mTLS
+- [ ] HTTP/2
+- [ ] QUIC and HTTP/3
+- [ ] gRPC
+- [ ] BGP and OSPF
+
+### Cloud networking
+- [ ] VPCs and subnets
+- [ ] Security groups and firewalls
+- [ ] NAT gateways
+- [ ] Network policies
+- [ ] Load balancing (L4 vs L7)
+- [ ] Service mesh
+- [ ] Overlay networks (VXLAN, GRE, WireGuard)
+
+### Linux networking
+- [ ] iptables, netfilter, and nftables
+- [ ] Network namespaces (container networking)
+- [ ] Traffic control and QoS
+- [ ] Socket families (AF_NETLINK, AF_PACKET)
+- [ ] MTU and path MTU discovery
+
+### Tooling
+- [ ] tcpdump and packet analysis
+- [ ] Connection pooling
 
 ## Infrastructure
 
-- [ ] NX and monorepo tools
-- [ ] Loki
-- [ ] Elasticsearch
+### Kubernetes
+- [ ] Kubernetes Services
+- [ ] Kubernetes ConfigMaps
+- [ ] Kubernetes Secrets
+- [ ] Kubernetes RBAC and admission controllers
+- [ ] Kubernetes Custom Resource Definitions and operators
+- [ ] Kubernetes Horizontal Pod Autoscaler
+- [ ] Kubernetes Vertical Pod Autoscaler
+- [ ] Kubernetes resource quotas and LimitRanges
 - [ ] Kubernetes descheduler
+
+### Platform tooling
+- [ ] Helm
+- [ ] ArgoCD and GitOps
+- [ ] Terraform
+- [ ] Cilium
+- [ ] eBPF
+- [ ] Elasticsearch
+- [ ] NX
 
 ## Distributed Systems
 
+### Systems
 - [ ] Apache Ignite
+- [ ] ZooKeeper
+- [ ] etcd
+- [ ] Redis internals
+- [ ] Lucene internals
+
+### Deep dives
+- [ ] Cassandra internals (deeper)
+- [ ] HBase internals (deeper)
+- [ ] Pekko internals (deeper)
+
+### Patterns
+- [ ] Saga pattern
+- [ ] Circuit breaker
+- [ ] Bulkhead
+- [ ] Backpressure
+- [ ] Retry and timeout strategies
+- [ ] Sidecar pattern
+- [ ] Ambassador pattern
+- [ ] Strangler fig pattern
+- [ ] Outbox pattern
+- [ ] Two-phase commit
+- [ ] Idempotency
+- [ ] Cache patterns (aside, through, behind)
 
 ## Serialization
 
 - [ ] FlatBuffers
+- [ ] Avro
+- [ ] Cap'n Proto
+- [ ] MessagePack
+- [ ] Thrift
+
+## Languages / Java
+
+### Build
+- [ ] Gradle basics
+- [ ] Multi-module projects
+- [ ] Multi-project builds
+
+### Debugging
+- [ ] Remote debugging
 
 ## Practices
 

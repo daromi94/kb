@@ -25,13 +25,20 @@ Present the current backlog and ask the user what they'd like to do:
 ### 3. Add
 
 Ask the user only **what** they want to learn. A single free-text answer.
+They may also include one or more links (articles, talks, repos, docs).
 
 Infer the topic from context: the item's subject, existing topics
 in `topics/`, and existing sections in `BACKLOG.md`. If a reasonable
 match exists, use it. If not, create a new section. Do not ask the user
 to confirm the topic — just place it, and they can correct if needed.
 
-Append to the appropriate section in `BACKLOG.md`.
+Append to the appropriate section in `BACKLOG.md`. If links are
+provided, add them as indented sub-items beneath the entry.
+
+### 3a. Add Link
+
+The user may also provide a link to attach to an **existing** item.
+Find the matching item and append the link as an indented sub-item.
 
 ### 4. Remove
 
@@ -59,6 +66,8 @@ Continue until the user says they're done.
 ## Topic Name
 
 - [ ] Item title
+  - [Article about item](https://example.com/article)
+  - [Repo](https://github.com/example/repo)
 - [ ] Item title
 
 ## Another Topic
@@ -67,4 +76,5 @@ Continue until the user says they're done.
 ```
 
 Items are grouped by topic. New topics go at the end. Items within a
-topic are ordered by priority (highest first).
+topic are ordered by priority (highest first). Links are indented
+sub-items under the entry they relate to, formatted as markdown links.

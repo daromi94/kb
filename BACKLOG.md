@@ -114,6 +114,9 @@
 - [ ] Ambassador pattern
 - [ ] Strangler fig pattern
 - [ ] Outbox pattern
+- [ ] Consensus algorithms
+  - [Mathematics of Consensus — Accidental Lecture](https://tigerbeetle.com/blog/2025-11-22-mathematics-of-consensus/)
+  - [Notes on Paxos](https://matklad.github.io/2020/11/01/notes-on-paxos.html)
 - [ ] Two-phase commit
 - [ ] Idempotency
 - [ ] Cache patterns (aside, through, behind)
@@ -135,6 +138,19 @@
 
 ### Debugging
 - [ ] Remote debugging
+
+## Computer Science
+
+- [ ] Recursion patterns
+  - [Recursion in Practice: Iteration and Subproblems](https://newsletter.francofernando.com/p/recursion-in-practice-iteration-and)
+- [ ] SIMD and vectorization
+  - [Roadmap: Vectorization (Cornell)](https://cvw.cac.cornell.edu/vector)
+  - [Designing a SIMD Algorithm from Scratch](https://mcyoung.xyz/2023/11/27/simd-base64/)
+
+## Languages / Go
+
+- [ ] Go performance optimization
+  - [Go Optimization Guide](https://goperf.dev/)
 
 ## Practices
 

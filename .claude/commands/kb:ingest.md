@@ -232,11 +232,6 @@ When fixing issues across multiple files, edit files sequentially (not in
 parallel) to avoid file-modified conflicts. Avoid batch scripts which may break
 ASCII diagrams or other structured content.
 
-### 11. Commits
-
-When asked to commit, use conventional commit format with `docs(kb):` prefix.
-One-line message, no co-author.
-
 ## Filename Convention
 
 - "WTFs per Minute" -> `wtfs-per-minute.md`

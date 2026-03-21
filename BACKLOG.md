@@ -12,7 +12,6 @@
 ### Metrics
 - [ ] Prometheus
 - [ ] Mimir
-- [ ] Metric types (counters, gauges, histograms, summaries)
 
 ### Tracing
 - [ ] Tempo

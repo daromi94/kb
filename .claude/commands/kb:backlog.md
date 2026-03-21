@@ -65,9 +65,11 @@ Continue until the user says they're done.
 
 ## Topic Name
 
+### Subsection
+
 - [ ] Item title
-  - [Article about item](https://example.com/article)
-  - [Repo](https://github.com/example/repo)
+    - [Article about item](https://example.com/article)
+    - [Repo](https://github.com/example/repo)
 - [ ] Item title
 
 ## Another Topic
@@ -76,5 +78,6 @@ Continue until the user says they're done.
 ```
 
 Items are grouped by topic. New topics go at the end. Items within a
-topic are ordered by priority (highest first). Links are indented
-sub-items under the entry they relate to, formatted as markdown links.
+topic are ordered by priority (highest first). Links are 4-space
+indented sub-items under the entry they relate to, formatted as
+markdown links. Leave a blank line after every heading.

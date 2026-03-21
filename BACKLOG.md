@@ -3,6 +3,7 @@
 ## Observability
 
 ### OpenTelemetry
+
 - [ ] OTel Collector — pipelines, processors, exporters
 - [ ] OTel SDK instrumentation (auto vs manual)
 - [ ] OTel semantic conventions
@@ -10,16 +11,19 @@
 - [ ] Context propagation and W3C trace context
 
 ### Metrics
+
 - [ ] Prometheus
 - [ ] Mimir
 
 ### Tracing
+
 - [ ] Tempo
 - [ ] Jaeger
 - [ ] Distributed tracing patterns (span modeling, sampling)
 - [ ] Sampling strategies (head vs tail)
 
 ### Logging
+
 - [ ] Loki
 - [ ] SLF4J
 - [ ] Log4j2
@@ -27,18 +31,21 @@
 - [ ] Log correlation with traces
 
 ### Dashboards and alerting
+
 - [ ] Grafana
 - [ ] Alertmanager
 - [ ] SLOs, SLIs, and error budgets
 - [ ] Runbooks and on-call patterns
 
 ### Other
+
 - [ ] Profiling with Pyroscope
 - [ ] Kafka as telemetry transport
 
 ## Networking
 
 ### Protocols
+
 - [ ] IP (IPv4, IPv6, routing, ICMP)
 - [ ] UDP
 - [ ] DNS
@@ -49,6 +56,7 @@
 - [ ] BGP and OSPF
 
 ### Cloud networking
+
 - [ ] VPCs and subnets
 - [ ] Security groups and firewalls
 - [ ] NAT gateways
@@ -58,6 +66,7 @@
 - [ ] Overlay networks (VXLAN, GRE, WireGuard)
 
 ### Linux networking
+
 - [ ] iptables, netfilter, and nftables
 - [ ] Network namespaces (container networking)
 - [ ] Traffic control and QoS
@@ -65,12 +74,14 @@
 - [ ] MTU and path MTU discovery
 
 ### Tooling
+
 - [ ] tcpdump and packet analysis
 - [ ] Connection pooling
 
 ## Infrastructure
 
 ### Kubernetes
+
 - [ ] Kubernetes Services
 - [ ] Kubernetes ConfigMaps
 - [ ] Kubernetes Secrets
@@ -82,6 +93,7 @@
 - [ ] Kubernetes descheduler
 
 ### Platform tooling
+
 - [ ] Helm
 - [ ] ArgoCD and GitOps
 - [ ] Terraform
@@ -93,6 +105,7 @@
 ## Distributed Systems
 
 ### Systems
+
 - [ ] Apache Ignite
 - [ ] ZooKeeper
 - [ ] etcd
@@ -100,11 +113,13 @@
 - [ ] Lucene internals
 
 ### Deep dives
+
 - [ ] Cassandra internals (deeper)
 - [ ] HBase internals (deeper)
 - [ ] Pekko internals (deeper)
 
 ### Patterns
+
 - [ ] Saga pattern
 - [ ] Circuit breaker
 - [ ] Bulkhead
@@ -115,8 +130,8 @@
 - [ ] Strangler fig pattern
 - [ ] Outbox pattern
 - [ ] Consensus algorithms
-  - [Mathematics of Consensus — Accidental Lecture](https://tigerbeetle.com/blog/2025-11-22-mathematics-of-consensus/)
-  - [Notes on Paxos](https://matklad.github.io/2020/11/01/notes-on-paxos.html)
+    - [Mathematics of Consensus — Accidental Lecture](https://tigerbeetle.com/blog/2025-11-22-mathematics-of-consensus/)
+    - [Notes on Paxos](https://matklad.github.io/2020/11/01/notes-on-paxos.html)
 - [ ] Two-phase commit
 - [ ] Idempotency
 - [ ] Cache patterns (aside, through, behind)
@@ -132,25 +147,27 @@
 ## Languages / Java
 
 ### Build
+
 - [ ] Gradle basics
 - [ ] Multi-module projects
 - [ ] Multi-project builds
 
 ### Debugging
+
 - [ ] Remote debugging
 
 ## Computer Science
 
 - [ ] Recursion patterns
-  - [Recursion in Practice: Iteration and Subproblems](https://newsletter.francofernando.com/p/recursion-in-practice-iteration-and)
+    - [Recursion in Practice: Iteration and Subproblems](https://newsletter.francofernando.com/p/recursion-in-practice-iteration-and)
 - [ ] SIMD and vectorization
-  - [Roadmap: Vectorization (Cornell)](https://cvw.cac.cornell.edu/vector)
-  - [Designing a SIMD Algorithm from Scratch](https://mcyoung.xyz/2023/11/27/simd-base64/)
+    - [Roadmap: Vectorization (Cornell)](https://cvw.cac.cornell.edu/vector)
+    - [Designing a SIMD Algorithm from Scratch](https://mcyoung.xyz/2023/11/27/simd-base64/)
 
 ## Languages / Go
 
 - [ ] Go performance optimization
-  - [Go Optimization Guide](https://goperf.dev/)
+    - [Go Optimization Guide](https://goperf.dev/)
 
 ## Practices
 

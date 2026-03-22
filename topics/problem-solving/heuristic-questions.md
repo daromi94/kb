@@ -23,8 +23,7 @@ changes your view of it.
 
 ## Related
 
-- [The four-phase method](four-phase-method.md) - The overarching
-  process these heuristics support
+- [The four-phase method](four-phase-method.md) - Overarching process
 
 ---
 

@@ -1,7 +1,7 @@
 # The four-phase method
 
-The four-phase method decomposes problem-solving into a linear,
-iterative process: understand, plan, execute, review.
+A linear, iterative process for problem-solving: understand, plan,
+execute, review.
 
 ## 1. Understanding the problem
 
@@ -17,7 +17,7 @@ Then probe the condition:
 - Is it sufficient to determine the unknown, or insufficient?
 - Is it redundant or contradictory?
 
-Separate the various parts of the condition and write them down.
+Separate the parts of the condition and write them down.
 Draw a figure or introduce notation to make constraints visible.
 
 ## 2. Devising a plan
@@ -39,13 +39,13 @@ clearly that this step is correct? Can you prove it?
 
 ## 4. Looking back
 
-The most neglected but most valuable phase. Examining the completed
-solution strengthens your ability to solve future problems.
-
 - **Verify the result.** Can you check the argument? Can you derive
   the result by a different method?
 - **Generalize.** Can this method or result be applied to other
   problems?
+
+Examining the completed solution strengthens your ability to solve
+future problems.
 
 ## Related
 

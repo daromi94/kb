@@ -44,19 +44,13 @@ logging) into every RPC.
 
 ## State machine
 
-| State             | Description                                   |
-|-------------------|-----------------------------------------------|
-| IDLE              | No connection. Transitions to CONNECTING on   |
-|                   | first RPC.                                    |
-| CONNECTING        | Establishing TCP, negotiating TLS, exchanging |
-|                   | HTTP/2 settings.                              |
-| READY             | Transport established. Multiplexing RPC       |
-|                   | streams.                                      |
-| TRANSIENT_FAILURE | Connection lost. Retries with exponential     |
-|                   | backoff.                                      |
-| SHUTDOWN          | Terminated by application. New RPCs fail      |
-|                   | immediately. Pending RPCs continue until      |
-|                   | cancelled.                                    |
+| State             | Description                                        |
+|-------------------|----------------------------------------------------|
+| IDLE              | No connection yet. Connects on first RPC.          |
+| CONNECTING        | Establishing TCP + TLS + HTTP/2 settings.          |
+| READY             | Transport up. Multiplexing RPC streams.            |
+| TRANSIENT_FAILURE | Connection lost. Retries with exponential backoff. |
+| SHUTDOWN          | New RPCs rejected. Pending RPCs continue.          |
 
 ## Lifecycle
 

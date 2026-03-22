@@ -54,7 +54,8 @@ Protobuf and unmarshals responses.
 
 **Channel:** Long-lived object managing all network concerns —
 interceptors, name resolution, load balancing, and subchannels
-(persistent HTTP/2 connections to resolved backends).
+(logical abstractions that each manage an HTTP/2 connection to one
+resolved backend).
 
 **Transport:** A single TCP connection multiplexes many concurrent
 RPCs, each mapped to one HTTP/2 stream.

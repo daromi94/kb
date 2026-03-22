@@ -1,8 +1,7 @@
 # Deadlines and cancellation
 
 gRPC calls can fail for reasons beyond application logic: network
-issues, slow servers, or explicit cancellation. Three mechanisms govern
-how calls end.
+issues, slow servers, or explicit cancellation.
 
 ## Deadlines
 

@@ -7,8 +7,9 @@ exchanges between client and server.
 
 1. Client calls a stub method. The server receives client metadata,
    the method name, and the deadline.
-2. Server sends back its own initial metadata (must be sent before any
-   response) or waits for the client's request message.
+2. Server may send its own initial metadata immediately or wait for
+   the client's request message first. Either way, initial metadata
+   must precede any response data.
 3. Server processes the request and returns a response with status
    details and optional trailing metadata.
 4. Client receives the response, completing the call.

@@ -15,12 +15,17 @@ others), enforcing schema agreement between communicating services.
 ```protobuf
 service HelloService {
   rpc SayHello (HelloRequest) returns (HelloResponse);
-
   rpc LotsOfReplies (HelloRequest) returns (stream HelloResponse);
-
   rpc LotsOfGreetings (stream HelloRequest) returns (HelloResponse);
-
   rpc BidiHello (stream HelloRequest) returns (stream HelloResponse);
+}
+
+message HelloRequest {
+  string greeting = 1;
+}
+
+message HelloResponse {
+  string reply = 1;
 }
 ```
 

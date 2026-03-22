@@ -27,9 +27,12 @@ naturally with binary IDLs like Protocol Buffers.
 
 ## Streaming
 
-HTTP/2 streams allow both endpoints to send frames independently at the
-framing layer. gRPC leverages this for its client streaming, server
-streaming, and bidirectional streaming patterns.
+Each HTTP/2 stream is full-duplex at the framing layer: client and
+server send `DATA` frames independently without waiting for each other.
+gRPC maps one RPC to one stream, so a single call can carry concurrent
+message flows in both directions. This is what makes client streaming,
+server streaming, and bidirectional streaming possible without
+workarounds like WebSockets or long-polling.
 
 ## HPACK header compression
 

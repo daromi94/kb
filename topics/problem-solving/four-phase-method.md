@@ -65,7 +65,6 @@ solution — expect to revisit earlier phases.
 ## Related
 
 - [Working through the phases](working-through-phases.md) - Operational walkthrough
-- [Analogy](analogy.md) - Solving by structural similarity
 
 ---
 

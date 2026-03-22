@@ -11,10 +11,10 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [Signs of progress](signs-of-progress.md) - Persist or abandon signals
 - [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble
 - [Analogy](analogy.md) - Solving by structural similarity
+- [Generalization](generalization.md) - Solving the broader case first
 - [Auxiliary problems](auxiliary-problems.md) - Stepping-stone problems
 - [Auxiliary elements](auxiliary-elements.md) - Introducing bridging components
-- [Generalization](generalization.md) - Solving the broader case first
-- [Indirect proof](indirect-proof.md) - Proof by contradiction
-- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
 - [Figures](figures.md) - Spatial representation of constraints
+- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
+- [Indirect proof](indirect-proof.md) - Proof by contradiction
 - [Bright idea](bright-idea.md) - Insight through incubation

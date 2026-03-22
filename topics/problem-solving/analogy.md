@@ -27,11 +27,11 @@ problem.
 
 ## Examples
 
-| Problem               | Analogous problem     | Why it works                            |
-|-----------------------|-----------------------|-----------------------------------------|
-| Solid geometry        | Plane geometry        | Reduces dimensions, keeps spatial logic |
-| System of n equations | System of 2 equations | Clarifies elimination steps             |
-| Abstract logic        | Physical mechanics    | Leverages intuition about equilibrium   |
+| Problem                | Analogous problem      | Why it works                            |
+|------------------------|------------------------|-----------------------------------------|
+| Distributed consensus  | Single-machine locking | Reduces coordination to one process     |
+| Network packet routing | Graph shortest path    | Same structure, well-studied algorithms |
+| Concurrent pipeline    | Unix shell pipeline    | Clarifies stage isolation and buffering |
 
 ## Conjecture, not proof
 

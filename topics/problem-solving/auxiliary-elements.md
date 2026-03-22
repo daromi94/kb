@@ -14,25 +14,25 @@ theorem requires.
 
 ## Examples
 
-**Geometry.** Draw an extra line, drop a perpendicular, or extend a
-segment to complete a familiar shape. Drawing a line parallel to the
-base of a triangle through the opposite vertex proves the interior
-angles sum to 180°.
+**Sentinel nodes.** Add a dummy head to a linked list so that
+insert and delete never need to special-case an empty list. The
+sentinel carries no data — it just eliminates edge cases.
 
-**Algebra.** Introduce a temporary variable (like $u = x^2$) to
-reduce a high-degree polynomial to a standard quadratic equation.
-Add and subtract the same term to complete a square.
+**Intermediate data structures.** Build a hash map from the input
+so that a later pass can look up values in O(1). The map is not
+part of the output — it bridges the gap between input and answer.
 
-**Algorithms.** Add a dummy node or sentinel value to a data
-structure to eliminate edge-case logic.
+**Virtual nodes in graphs.** Add a virtual source or sink that
+connects to multiple real nodes, reducing a multi-source problem
+to a single-source shortest path.
 
 ## Application questions
 
-- Is there a known theorem that almost applies? What element must
+- Is there a known method that almost applies? What element must
   be added to use it?
-- Can a figure be completed to make use of all the given data?
-- Can an intermediate variable break a complex expression into
-  simpler parts?
+- Can you introduce something new that connects disparate pieces
+  of the given data?
+- Can you add a component that eliminates special cases?
 
 ## Related
 

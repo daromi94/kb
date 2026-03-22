@@ -20,7 +20,8 @@ Then probe the condition:
 - Is it redundant or contradictory?
 
 Separate the parts of the condition and write them down.
-Draw a figure or introduce notation to make constraints visible.
+Draw a figure or introduce suitable notation to make constraints
+visible.
 
 ## 2. Devising a plan
 

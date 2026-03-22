@@ -15,4 +15,5 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [Figures](figures.md) - Spatial representation of constraints
 - [Generalization](generalization.md) - Solving the broader case first
 - [Indirect proof](indirect-proof.md) - Proof by contradiction
+- [Signs of progress](signs-of-progress.md) - Persist or abandon signals
 - [Bright idea](bright-idea.md) - Insight through incubation

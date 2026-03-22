@@ -5,6 +5,7 @@ RPC framework using Protocol Buffers over HTTP/2.
 ## Notes
 
 - [Overview](overview.md) - Architecture and communication patterns
+- [Architecture](architecture.md) - End-to-end component stack
 - [Design principles](design-principles.md) - Core design philosophy
 - [HTTP/2 transport](http2-transport.md) - Why gRPC uses HTTP/2
 - [Wire protocol](wire-protocol.md) - HTTP/2 frame mapping

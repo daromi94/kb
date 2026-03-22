@@ -1,10 +1,14 @@
 # Channels
 
-A Channel is the core client-side abstraction that isolates the
-application layer from the complexities of network transport,
-connection pooling, and routing. It handles name resolution, load
-balancing, connection management, and the interceptor pipeline. Client
-stubs are created from a Channel.
+A Channel represents a virtual connection to a logical target, not a
+single TCP connection. It is analogous to a database connection pool:
+the application talks to one Channel, and the Channel manages a set
+of real HTTP/2 connections (subchannels) to resolved backend addresses
+underneath. Client stubs are created from a Channel.
+
+A Channel handles name resolution, load balancing, connection
+management, and the interceptor pipeline — isolating application code
+from network transport.
 
 ## Responsibilities
 

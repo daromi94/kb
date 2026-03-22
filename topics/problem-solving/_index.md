@@ -14,4 +14,5 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [Examine your guess](examine-your-guess.md) - Guided iteration from failure
 - [Figures](figures.md) - Spatial representation of constraints
 - [Generalization](generalization.md) - Solving the broader case first
+- [Indirect proof](indirect-proof.md) - Proof by contradiction
 - [Bright idea](bright-idea.md) - Insight through incubation

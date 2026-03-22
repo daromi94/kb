@@ -25,12 +25,26 @@ Draw a figure or introduce notation to make constraints visible.
 Find the connection between the data and the unknown. If no direct
 connection is visible, consider auxiliary problems:
 
-- **Have you seen it before?** Look for the same unknown in a slightly
-  different form.
-- **Relate to a solved problem.** Reuse a previous result or method.
-- **Restate the problem.** If you cannot solve the proposed problem,
-  solve a related one first — a variation, specialization, or
-  generalization.
+- **Have you seen it before?** Look for the same unknown in a
+  slightly different form.
+- **Look at the unknown.** Think of a familiar problem with the
+  same or a similar unknown.
+- **Do you know a useful theorem?** A known result may bridge the
+  gap directly.
+- **Relate to a solved problem.** Could you use its result? Its
+  method? Introduce an auxiliary element to make its use possible?
+- **Restate the problem.** Try a different formulation. Go back to
+  definitions.
+- **Solve a related problem.** A more general one? A more special
+  one? An analogous one? Could you solve a part of the problem?
+- **Relax constraints.** Drop part of the condition and keep the
+  rest. How far is the unknown then determined? How can it vary?
+- **Work the data.** Could you derive something useful from the
+  data? Think of other data that would determine the unknown.
+- **Close the gap.** Change the unknown or the data (or both) so
+  that the new unknown and new data are nearer to each other.
+- **Check completeness.** Did you use all the data? The whole
+  condition? All essential notions involved in the problem?
 
 ## 3. Carrying out the plan
 

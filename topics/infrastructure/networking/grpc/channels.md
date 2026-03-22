@@ -16,10 +16,23 @@ addresses. `pick_first` tries addresses in order and sends all RPCs
 to the first one that connects. `round_robin` distributes across all
 available backends.
 
-**Subchannels:** Each resolved backend address gets a subchannel — a
-logical abstraction that wraps connection management, connectivity
-state, and reconnection logic for that address. A channel may be
-backed by many HTTP/2 connections through its subchannels.
+**Subchannels:** The channel creates one subchannel per resolved
+backend address. Each subchannel owns the actual HTTP/2 connection to
+a specific IP:port and runs its own connectivity state machine
+independently — if one backend goes down, only its subchannel retries
+while the others keep serving.
+
+```
+Channel (logical target)
+  └─ Load Balancer
+       ├─ Subchannel A (10.0.0.1:443) ── HTTP/2 conn
+       ├─ Subchannel B (10.0.0.2:443) ── HTTP/2 conn
+       └─ Subchannel C (10.0.0.3:443) ── HTTP/2 conn
+```
+
+The load balancer picks which subchannel receives each RPC. The
+channel's own state derives from its subchannels — READY if any
+subchannel is READY, TRANSIENT_FAILURE if all are.
 
 **Interceptors:** The channel is the entry point for client-side
 interceptors, injecting cross-cutting concerns (auth tokens, tracing,

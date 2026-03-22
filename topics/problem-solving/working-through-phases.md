@@ -15,8 +15,8 @@ your memory and prepares you to recollect relevant points.
 Return to the statement of the problem once it is clear enough that
 you can lose sight of it for a while without losing it altogether.
 Isolate the principal parts: the unknown, the data, and the condition
-for a problem to find; the hypothesis and the conclusion for a
-problem to prove. Consider them one by one, in turn, and in various
+for a problem to find; the assumptions and the goal for a problem
+to verify. Consider them one by one, in turn, and in various
 combinations — relating each detail to other details and each to the
 whole. This prepares and clarifies the details that will play a role
 later.

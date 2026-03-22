@@ -13,4 +13,5 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble
 - [Examine your guess](examine-your-guess.md) - Guided iteration from failure
 - [Figures](figures.md) - Spatial representation of constraints
+- [Generalization](generalization.md) - Solving the broader case first
 - [Bright idea](bright-idea.md) - Insight through incubation

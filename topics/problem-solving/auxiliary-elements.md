@@ -9,8 +9,8 @@ embeds it into a richer context where known methods apply.
 When no direct connection exists between the data and the unknown,
 an auxiliary element reveals hidden relationships. It transforms an
 unfamiliar configuration into a familiar pattern, bridges disparate
-pieces of data, or artificially creates a condition that a powerful
-theorem requires.
+pieces of data, or artificially creates a condition that a known
+method requires.
 
 ## Application questions
 

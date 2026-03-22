@@ -13,8 +13,8 @@ structure, not shared details.
 hard, solve an analogous problem in two dimensions. Create a toy
 version with fewer variables.
 
-**Known models.** Use a solved model — an established theorem or a
-physical reality — to guide the logic of an unsolved abstract
+**Known models.** Use a solved model — an established result or a
+well-understood system — to guide the logic of an unsolved abstract
 problem.
 
 ## Application questions

@@ -29,7 +29,7 @@ Find the connection between the data and the unknown. If no direct
 connection is visible, consider auxiliary problems:
 
 - **Recall.** Have you seen this problem or its unknown before? Do
-  you know a solved problem or theorem you could reuse — its
+  you know a solved problem or known result you could reuse — its
   result, its method? Introduce an auxiliary element to make it
   applicable?
 - **Restate the problem.** Try a different formulation. Go back to

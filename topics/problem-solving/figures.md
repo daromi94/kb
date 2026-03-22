@@ -8,8 +8,8 @@ explicit mapping of the data, the unknown, and the condition.
 
 A figure exposes structural connections that text and equations
 obscure. It also provides a visual sandbox for experimenting with
-auxiliary elements — drawing extra lines, extending boundaries,
-adding labels.
+auxiliary elements — adding components, extending structures,
+introducing labels.
 
 ## Rules for effective figures
 

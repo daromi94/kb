@@ -1,6 +1,6 @@
 # The four-phase method
 
-George Polya's approach decomposes problem-solving into a linear,
+The four-phase method decomposes problem-solving into a linear,
 iterative process: understand, plan, execute, review.
 
 ## 1. Understanding the problem

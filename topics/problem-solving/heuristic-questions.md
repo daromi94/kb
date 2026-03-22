@@ -1,7 +1,7 @@
 # Heuristic questions
 
-Polya identifies specific mental operations that trigger progress when
-you are stuck in the planning phase.
+Mental operations that trigger progress when you are stuck in the
+planning phase.
 
 ## Analogy
 

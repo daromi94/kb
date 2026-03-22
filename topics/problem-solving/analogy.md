@@ -17,14 +17,6 @@ version with fewer variables.
 physical reality — to guide the logic of an unsolved abstract
 problem.
 
-## Applying analogy
-
-- Do you know a related problem with the same unknown or a similar
-  condition?
-- Can you solve a simpler analogous problem?
-- Can you use its method or its result? Sometimes the result is
-  useless but the method provides the breakthrough.
-
 ## Examples
 
 | Problem                | Analogous problem      | Why it works                            |
@@ -32,6 +24,14 @@ problem.
 | Distributed consensus  | Single-machine locking | Reduces coordination to one process     |
 | Network packet routing | Graph shortest path    | Same structure, well-studied algorithms |
 | Concurrent pipeline    | Unix shell pipeline    | Clarifies stage isolation and buffering |
+
+## Application questions
+
+- Do you know a related problem with the same unknown or a similar
+  condition?
+- Can you solve a simpler analogous problem?
+- Can you use its method or its result? Sometimes the result is
+  useless but the method provides the breakthrough.
 
 ## Conjecture, not proof
 

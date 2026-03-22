@@ -14,17 +14,11 @@ theorem requires.
 
 ## Examples
 
-**Sentinel nodes.** Add a dummy head to a linked list so that
-insert and delete never need to special-case an empty list. The
-sentinel carries no data — it just eliminates edge cases.
-
-**Intermediate data structures.** Build a hash map from the input
-so that a later pass can look up values in O(1). The map is not
-part of the output — it bridges the gap between input and answer.
-
-**Virtual nodes in graphs.** Add a virtual source or sink that
-connects to multiple real nodes, reducing a multi-source problem
-to a single-source shortest path.
+| Element               | Effect                                              |
+|-----------------------|-----------------------------------------------------|
+| Sentinel node         | Eliminates empty-list edge cases in insert/delete   |
+| Intermediate hash map | Bridges input to answer with O(1) lookups           |
+| Virtual graph node    | Reduces multi-source to single-source shortest path |
 
 ## Application questions
 

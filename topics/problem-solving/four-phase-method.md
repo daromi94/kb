@@ -64,6 +64,7 @@ solution — expect to revisit earlier phases.
 
 ## Related
 
+- [Working through the phases](working-through-phases.md) - Operational walkthrough
 - [Heuristic questions](heuristic-questions.md) - Tactics for phase 2
 
 ---

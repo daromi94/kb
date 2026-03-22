@@ -11,6 +11,7 @@ RPC framework using Protocol Buffers over HTTP/2.
 - [Message ordering](message-ordering.md) - Per-stream ordering guarantees
 - [RPC lifecycle](lifecycle.md) - Call flow and metadata exchange
 - [Deadlines and cancellation](deadlines-and-cancellation.md) - Timeout and termination semantics
+- [Channels](channels.md) - Client connection abstraction
 
 ---
 

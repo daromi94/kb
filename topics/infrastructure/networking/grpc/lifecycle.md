@@ -45,13 +45,6 @@ gRPC does not interpret user-defined metadata. It exists for clients
 and servers to pass out-of-band information (auth tokens, tracing
 context) alongside calls.
 
-## Channels
-
-A Channel is the client's connection abstraction to a gRPC server at a
-given host and port. Client stubs are created from a Channel. Channels
-track connection state (connected, idle) and accept arguments that
-modify behavior such as message compression.
-
 ---
 
 Return to [gRPC](_index.md)

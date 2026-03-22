@@ -55,8 +55,8 @@ clearly that this step is correct? Can you prove it?
 - **Generalize.** Can this method or result be applied to other
   problems?
 
-Examining the completed solution strengthens your ability to solve
-future problems.
+Examine the result and the path that led to it. This strengthens
+your ability to solve future problems.
 
 Your conception of the problem is incomplete when you start. It
 shifts as you make progress and shifts again as you near the

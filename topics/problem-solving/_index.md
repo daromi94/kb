@@ -8,13 +8,13 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [Working through the phases](working-through-phases.md) - Operational walkthrough
 - [The intelligent solver](intelligent-solver.md) - Mindset and attitude
 - [Heuristics vs. algorithms](heuristics-vs-algorithms.md) - Nature of heuristic guidance
-- [Analogy](analogy.md) - Solving by structural similarity
-- [Auxiliary elements](auxiliary-elements.md) - Introducing bridging components
-- [Auxiliary problems](auxiliary-problems.md) - Stepping-stone problems
+- [Signs of progress](signs-of-progress.md) - Persist or abandon signals
 - [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble
-- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
-- [Figures](figures.md) - Spatial representation of constraints
+- [Analogy](analogy.md) - Solving by structural similarity
+- [Auxiliary problems](auxiliary-problems.md) - Stepping-stone problems
+- [Auxiliary elements](auxiliary-elements.md) - Introducing bridging components
 - [Generalization](generalization.md) - Solving the broader case first
 - [Indirect proof](indirect-proof.md) - Proof by contradiction
-- [Signs of progress](signs-of-progress.md) - Persist or abandon signals
+- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
+- [Figures](figures.md) - Spatial representation of constraints
 - [Bright idea](bright-idea.md) - Insight through incubation

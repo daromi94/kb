@@ -11,9 +11,14 @@ You cannot solve what you do not define. Identify three things:
 - **Data:** What information is given?
 - **Condition:** What constraints connect the data to the unknown?
 
-Check whether the condition is satisfiable and sufficient to determine
-the unknown. Draw a figure or introduce notation to make constraints
-visible.
+Then probe the condition:
+
+- Is it satisfiable?
+- Is it sufficient to determine the unknown, or insufficient?
+- Is it redundant or contradictory?
+
+Separate the various parts of the condition and write them down.
+Draw a figure or introduce notation to make constraints visible.
 
 ## 2. Devising a plan
 

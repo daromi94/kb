@@ -55,6 +55,10 @@ clearly that this step is correct? Can you prove it?
 Examining the completed solution strengthens your ability to solve
 future problems.
 
+Your conception of the problem is incomplete when you start. It
+shifts as you make progress and shifts again as you near the
+solution — expect to revisit earlier phases.
+
 ## Related
 
 - [Heuristic questions](heuristic-questions.md) - Tactics for phase 2

@@ -6,6 +6,8 @@ RPC framework using Protocol Buffers over HTTP/2.
 
 - [Overview](overview.md) - Architecture and communication patterns
 - [HTTP/2 transport](http2-transport.md) - Why gRPC uses HTTP/2
+- [RPC lifecycle](lifecycle.md) - Call flow and metadata exchange
+- [Deadlines and cancellation](deadlines-and-cancellation.md) - Timeout and termination semantics
 
 ---
 

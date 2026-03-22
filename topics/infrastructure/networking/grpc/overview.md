@@ -12,6 +12,21 @@ method definitions. The `protoc` compiler generates client stubs and
 server base classes across languages (Go, Java, C++, Python, and
 others), enforcing schema agreement between communicating services.
 
+```protobuf
+service HelloService {
+  rpc SayHello (HelloRequest) returns (HelloResponse);
+
+  rpc LotsOfReplies (HelloRequest) returns (stream HelloResponse);
+
+  rpc LotsOfGreetings (stream HelloRequest) returns (HelloResponse);
+
+  rpc BidiHello (stream HelloRequest) returns (stream HelloResponse);
+}
+```
+
+The `stream` keyword before a request or response type declares that
+side as a message stream rather than a single message.
+
 ## Communication patterns
 
 | Pattern                 | Client sends | Server sends |
@@ -32,6 +47,8 @@ server, which returns a single response after processing the stream.
 **Bidirectional streaming:** Both sides send message sequences over
 independent read-write streams. The two streams operate independently,
 so each side reads and writes in whatever order it chooses.
+
+gRPC guarantees message ordering within each individual stream.
 
 ---
 

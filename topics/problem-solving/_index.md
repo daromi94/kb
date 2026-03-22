@@ -11,4 +11,5 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [Auxiliary elements](auxiliary-elements.md) - Introducing bridging components
 - [Auxiliary problems](auxiliary-problems.md) - Stepping-stone problems
 - [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble
+- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
 - [Bright idea](bright-idea.md) - Insight through incubation

@@ -17,14 +17,6 @@ output unlocks the next.
 **Simplified problems.** Drop a challenging constraint to see how
 the core system behaves in an ideal state.
 
-## Examples
-
-| Form       | Problem                     | Auxiliary problem                          |
-|------------|-----------------------------|--------------------------------------------|
-| Equivalent | Service dependency analysis | Find longest path in the equivalent DAG    |
-| Chain      | Source code to machine code | Lex, parse, IR, codegen in sequence        |
-| Simplified | Distributed state machine   | Design for a perfect network, add failures |
-
 ## Application questions
 
 - Is there a related problem that has already been solved?

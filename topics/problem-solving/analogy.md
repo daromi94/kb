@@ -17,14 +17,6 @@ version with fewer variables.
 physical reality — to guide the logic of an unsolved abstract
 problem.
 
-## Examples
-
-| Problem                | Analogous problem      | Why it works                            |
-|------------------------|------------------------|-----------------------------------------|
-| Distributed consensus  | Single-machine locking | Reduces coordination to one process     |
-| Network packet routing | Graph shortest path    | Same structure, well-studied algorithms |
-| Concurrent pipeline    | Unix shell pipeline    | Clarifies stage isolation and buffering |
-
 ## Application questions
 
 - Do you know a related problem with the same unknown or a similar

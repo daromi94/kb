@@ -12,14 +12,6 @@ unfamiliar configuration into a familiar pattern, bridges disparate
 pieces of data, or artificially creates a condition that a powerful
 theorem requires.
 
-## Examples
-
-| Element               | Effect                                              |
-|-----------------------|-----------------------------------------------------|
-| Sentinel node         | Eliminates empty-list edge cases in insert/delete   |
-| Intermediate hash map | Bridges input to answer with O(1) lookups           |
-| Virtual graph node    | Reduces multi-source to single-source shortest path |
-
 ## Application questions
 
 - Is there a known method that almost applies? What element must

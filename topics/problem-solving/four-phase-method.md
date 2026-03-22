@@ -5,7 +5,9 @@ execute, review.
 
 ## 1. Understanding the problem
 
-You cannot solve what you do not define. Identify three things:
+You cannot solve what you do not define. Restate the problem in your
+own words — if you cannot state it fluently, you do not yet understand
+it. Identify three things:
 
 - **Unknown:** What are you trying to find or prove?
 - **Data:** What information is given?

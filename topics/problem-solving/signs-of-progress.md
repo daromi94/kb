@@ -21,8 +21,11 @@ territory maps back to known territory.
 
 ## Negative signs
 
-If the problem becomes more convoluted, or requires increasingly
-arbitrary assumptions, stop. Step back and devise a new plan.
+If the problem becomes more convoluted, requires increasingly
+arbitrary assumptions, or each step feels forced rather than natural,
+the current plan is failing. Complexity should decrease as you
+approach the solution, not increase. Stop, step back, and devise a
+new plan.
 
 ## Application questions
 
@@ -35,7 +38,7 @@ arbitrary assumptions, stop. Step back and devise a new plan.
 ## Related
 
 - [The four-phase method](four-phase-method.md) - Overarching process
-- [Working through the phases](working-through-phases.md) - Carrying out the plan
+- [Working through the phases](working-through-phases.md) - Operational walkthrough
 
 ---
 

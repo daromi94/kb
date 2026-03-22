@@ -63,7 +63,7 @@ knowledge and develops your ability to solve problems.
 
 ## Related
 
-- [The four-phase method](four-phase-method.md) - Concise checklist
+- [The four-phase method](four-phase-method.md) - Overarching process
 
 ---
 

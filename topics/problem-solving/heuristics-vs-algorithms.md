@@ -1,16 +1,11 @@
 # Heuristics vs. algorithms
 
-Heuristics are provisional, plausible guidelines that require
-judgment to apply. They are not mechanical operations that guarantee
-an answer. Problem-solving cannot be reduced to a flawless,
-automated process.
-
-## The distinction
-
 An algorithm terminates with a correct answer for every valid input.
 A heuristic steers thought toward a solution but offers no such
-guarantee. The value of a heuristic lies in narrowing the search
-space — trading certainty for practical progress.
+guarantee — it is a provisional, plausible guideline that requires
+judgment to apply. The value of a heuristic lies in narrowing the
+search space, trading certainty for practical progress.
+Problem-solving cannot be reduced to a flawless, automated process.
 
 ## Application questions
 

@@ -1,7 +1,7 @@
 # The four-phase method
 
-A linear, iterative process for problem-solving: understand, plan,
-execute, review.
+A four-step process for problem-solving — understand, plan, execute,
+review — revisited as understanding deepens.
 
 ## 1. Understanding the problem
 

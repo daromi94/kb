@@ -6,6 +6,7 @@ Frameworks and techniques for approaching unfamiliar problems.
 
 - [The four-phase method](four-phase-method.md) - Iterative problem-solving process
 - [Working through the phases](working-through-phases.md) - Operational walkthrough
+- [The intelligent solver](intelligent-solver.md) - Mindset and attitude
 - [Heuristics vs. algorithms](heuristics-vs-algorithms.md) - Nature of heuristic guidance
 - [Analogy](analogy.md) - Solving by structural similarity
 - [Auxiliary elements](auxiliary-elements.md) - Introducing bridging components

@@ -1,7 +1,6 @@
 # Design principles
 
-gRPC's design principles, from the original motivation document by
-the team that built it.
+Core design choices that shaped gRPC's architecture and scope.
 
 ## Services not objects
 

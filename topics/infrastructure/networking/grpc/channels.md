@@ -1,12 +1,12 @@
 # Channels
 
-A Channel represents a virtual connection to a logical target, not a
+A channel represents a virtual connection to a logical target, not a
 single TCP connection. It is analogous to a database connection pool:
-the application talks to one Channel, and the Channel manages a set
-of real HTTP/2 connections (subchannels) to resolved backend addresses
-underneath. Client stubs are created from a Channel.
+the application talks to one channel, and the channel manages a set
+of subchannels to resolved backend addresses underneath. Client stubs
+are created from a channel.
 
-A Channel handles name resolution, load balancing, connection
+A channel handles name resolution, load balancing, connection
 management, and the interceptor pipeline — isolating application code
 from network transport.
 
@@ -21,8 +21,8 @@ to the first one that connects. `round_robin` distributes across all
 available backends.
 
 **Subchannels:** The channel creates one subchannel per resolved
-backend address. Each subchannel owns the actual HTTP/2 connection to
-a specific IP:port and runs its own connectivity state machine
+backend address. Each subchannel manages the HTTP/2 connection to a
+specific IP:port and runs its own connectivity state machine
 independently — if one backend goes down, only its subchannel retries
 while the others keep serving.
 

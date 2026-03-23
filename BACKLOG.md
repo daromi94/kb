@@ -176,6 +176,11 @@
 - [ ] Go performance optimization
     - [Go Optimization Guide](https://goperf.dev/)
 
+## Career
+
+- [ ] Radical Candor — Kim Scott
+- [ ] Crucial Conversations — Kerry Patterson
+
 ## Practices
 
 - [ ] Test-driven development

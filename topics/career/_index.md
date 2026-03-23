@@ -2,15 +2,7 @@
 
 Engineering career growth and professional development.
 
-## Notes
+## Topics
 
-- [High agency](high-agency.md) - Owning outcomes regardless of circumstances
-- [Scaling your impact](scaling-your-impact.md) - Growing beyond code output
-- [Force multiplication](force-multiplication.md) - Amplifying your team
-- [Asking questions](asking-questions.md) - Forcing clarity through questions
-- [Navigating ambiguity](navigating-ambiguity.md) - Defining vague problems systematically
-- [Deep focus](deep-focus.md) - Protecting uninterrupted work blocks
-- [Eisenhower Matrix](eisenhower-matrix.md) - Urgency vs importance prioritization
-- [Eliminating zero days](eliminating-zero-days.md) - Reclaiming downtime for high-impact work
-- [Effective one-on-ones](one-on-ones.md) - Making 1:1 meetings count
-- [Managing up](managing-up.md) - Standing out with your manager
+- [General](general/_index.md) - Career growth and professional development
+- [Radical Candor](radical-candor/_index.md) - Notes from *Radical Candor* by Kim Scott

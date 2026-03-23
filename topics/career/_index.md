@@ -9,6 +9,7 @@ Engineering career growth and professional development.
 - [Force multiplication](force-multiplication.md) - Amplifying your team
 - [Asking questions](asking-questions.md) - Forcing clarity through questions
 - [Navigating ambiguity](navigating-ambiguity.md) - Defining vague problems systematically
+- [Deep focus](deep-focus.md) - Protecting uninterrupted work blocks
 - [Eisenhower Matrix](eisenhower-matrix.md) - Urgency vs importance prioritization
 - [Eliminating zero days](eliminating-zero-days.md) - Reclaiming downtime for high-impact work
 - [Effective one-on-ones](one-on-ones.md) - Making 1:1 meetings count

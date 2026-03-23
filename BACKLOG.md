@@ -52,7 +52,14 @@
 - [ ] TLS and mTLS
 - [ ] HTTP/2
 - [ ] QUIC and HTTP/3
-- [ ] gRPC
+- [ ] gRPC performance and optimization
+    - [Performance best practices](https://grpc.io/docs/guides/performance/)
+    - [Optimizing gRPC part 1](https://grpc.io/blog/optimizing-grpc-part-1/)
+    - [Optimizing gRPC part 2](https://grpc.io/blog/optimizing-grpc-part-2/)
+- [ ] gRPC load balancing
+    - [Load balancing in gRPC](https://grpc.io/blog/grpc-load-balancing/)
+- [ ] gRPC on HTTP/2 deep dive
+    - [gRPC on HTTP/2](https://grpc.io/blog/grpc-on-http2/)
 - [ ] BGP and OSPF
 
 ### Cloud networking

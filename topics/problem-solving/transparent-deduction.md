@@ -37,7 +37,7 @@ introduce an established result to bridge it.
 argument backward. Verify that the final state logically dictates
 the preceding step, continuing until reaching the initial data.
 
-## Diagnostic questions
+## Application questions
 
 When evaluating a proposed solution, demand answers to these:
 

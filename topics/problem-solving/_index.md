@@ -7,7 +7,6 @@ Frameworks and techniques for approaching unfamiliar problems.
 - [The four-phase method](four-phase-method.md) - Iterative problem-solving process
 - [Working through the phases](working-through-phases.md) - Operational walkthrough
 - [The intelligent solver](intelligent-solver.md) - Mindset and attitude
-- [Heuristics vs. algorithms](heuristics-vs-algorithms.md) - Nature of heuristic guidance
 - [Signs of progress](signs-of-progress.md) - Persist or abandon signals
 - [Cultivating depth](cultivating-depth.md) - Building lasting understanding
 - [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble

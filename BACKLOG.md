@@ -173,6 +173,7 @@
 
 ### Posts
 
+- [ ] [The absolute beginners guide to databasemaxxing](https://pthorpe92.dev/databasemaxxing/)
 - [ ] [Recursion in Practice](https://newsletter.francofernando.com/p/recursion-in-practice-iteration-and)
 - [ ] [Roadmap: Vectorization](https://cvw.cac.cornell.edu/vector)
 - [ ] [Designing a SIMD Algorithm from Scratch](https://mcyoung.xyz/2023/11/27/simd-base64/)
@@ -199,6 +200,8 @@
 ### Concepts
 
 - [ ] Test-driven development
+- [ ] Architecture decision records
+    - [Architecture Decision Record](https://martinfowler.com/bliki/ArchitectureDecisionRecord.html)
 
 ### Books
 

@@ -135,6 +135,7 @@
 
 ### Posts
 
+- [ ] Jepsen analyses — Kyle Kingsbury
 - [ ] [Mathematics of Consensus](https://tigerbeetle.com/blog/2025-11-22-mathematics-of-consensus/)
 - [ ] [Notes on Paxos](https://matklad.github.io/2020/11/01/notes-on-paxos.html)
 
@@ -164,11 +165,15 @@
 
 ### Concepts
 
+- [ ] Hoare logic
+- [ ] TLA+
 - [ ] Recursion patterns
 - [ ] SIMD and vectorization
 
 ### Books
 
+- [ ] Types and Programming Languages — Benjamin Pierce
+- [ ] Specifying Systems — Leslie Lamport
 - [ ] Database Internals — Alex Petrov
 
 ### Posts
@@ -199,11 +204,16 @@
 
 ### Concepts
 
+- [ ] Design by Contract
+- [ ] Error handling paradigms
+- [ ] Parse, don't validate
 - [ ] Test-driven development
 - [ ] Architecture decision records
     - [Architecture Decision Record](https://martinfowler.com/bliki/ArchitectureDecisionRecord.html)
 
 ### Books
 
+- [ ] Code Complete — Steve McConnell
+- [ ] Object-Oriented Software Construction — Bertrand Meyer
 - [ ] The Pragmatic Programmer — Andrew Hunt, David Thomas
 - [ ] Fundamentals of Software Architecture — Mark Richards, Neal Ford

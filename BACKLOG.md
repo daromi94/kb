@@ -205,7 +205,7 @@
 ### Concepts
 
 - [x] Design by Contract
-- [ ] Error handling paradigms
+- [x] Error handling paradigms
 - [ ] Parse, don't validate
 - [ ] Test-driven development
 - [ ] Architecture decision records

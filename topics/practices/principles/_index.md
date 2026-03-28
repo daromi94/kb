@@ -16,6 +16,7 @@ Foundational design principles for software architecture.
 - [Command-query separation](command-query-separation.md) - Separating state changes from queries
 - [Information expert](information-expert.md) - Placing responsibility with data
 - [Getter eradicator](getter-eradicator.md) - Diagnostic exercise: challenge every getter
+- [Error handling paradigms](error-handling-paradigms.md) - Approaches to managing failure
 - [Design by Contract](design-by-contract.md) - Formal correctness specifications
 - [Defensive programming](defensive-programming.md) - Anticipating failure
 - [Barricades](barricades.md) - Trust zones and validation boundaries

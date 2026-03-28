@@ -204,7 +204,7 @@
 
 ### Concepts
 
-- [ ] Design by Contract
+- [x] Design by Contract
 - [ ] Error handling paradigms
 - [ ] Parse, don't validate
 - [ ] Test-driven development

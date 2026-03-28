@@ -16,6 +16,7 @@ Foundational design principles for software architecture.
 - [Command-query separation](command-query-separation.md) - Separating state changes from queries
 - [Information expert](information-expert.md) - Placing responsibility with data
 - [Getter eradicator](getter-eradicator.md) - Diagnostic exercise: challenge every getter
+- [Design by Contract](design-by-contract.md) - Formal correctness specifications
 - [Defensive programming](defensive-programming.md) - Anticipating failure
 - [Anemic domain model](anemic-domain-model.md) - Anti-pattern of behavior-free domain objects
 

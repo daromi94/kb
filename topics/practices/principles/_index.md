@@ -21,6 +21,7 @@ Foundational design principles for software architecture.
 - [Defensive programming](defensive-programming.md) - Anticipating failure
 - [Barricades](barricades.md) - Trust zones and validation boundaries
 - [Anemic domain model](anemic-domain-model.md) - Anti-pattern of behavior-free domain objects
+- [One Version Rule](one-version-rule.md) - Single dependency version per repository
 
 ---
 

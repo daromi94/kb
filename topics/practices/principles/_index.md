@@ -18,6 +18,7 @@ Foundational design principles for software architecture.
 - [Getter eradicator](getter-eradicator.md) - Diagnostic exercise: challenge every getter
 - [Design by Contract](design-by-contract.md) - Formal correctness specifications
 - [Defensive programming](defensive-programming.md) - Anticipating failure
+- [Barricades](barricades.md) - Trust zones and validation boundaries
 - [Anemic domain model](anemic-domain-model.md) - Anti-pattern of behavior-free domain objects
 
 ---

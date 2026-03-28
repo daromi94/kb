@@ -59,6 +59,49 @@ recovering service, and circuit breakers stop calling a failing
 dependency so it has time to recover. These are defensive tools, not
 optional extras.
 
+## Barricades
+
+A barricade is the boundary where thorough validation happens.
+Outside the barricade, data is untrusted and every input gets
+checked rigorously — type, range, format, semantic validity.
+Inside the barricade, code operates in a zone of relative trust
+because everything crossing in has already been validated and
+converted to a trusted internal representation.
+
+This answers "how much checking is enough?" Protect heavily at
+zone boundaries. Use assertions for internal invariants. Trust
+validated data inside the zones. Concentrate protection where it
+matters instead of spreading shallow checks everywhere.
+
+The degenerate form — every function checking every input against
+every possible invalid state — is counterproductive. Redundant
+internal checks bloat the code, reduce signal-to-noise, and
+paradoxically mask the absence of proper boundary checks. Every
+check should exist because there is a specific scenario where it
+prevents harm.
+
+## Anti-patterns
+
+**Swallowing errors silently.** Catching an exception and returning
+a default value converts a detectable problem into an undetectable
+one. The caller never knows something failed.
+
+**Correcting bad data.** Silently truncating strings, clamping
+numbers to valid ranges, or substituting defaults hides bugs in
+calling code. The "corrected" data may be structurally valid but
+semantically wrong — a truncated address, a clamped price at the
+minimum instead of the intended value.
+
+**Checking the wrong thing.** Validating that a string is non-empty
+when the requirement is a valid email address. Checking that a
+number is positive when the requirement is a product ID that exists
+in the database. Surface-level checks create false security.
+
+**Inconsistent protection.** Checking inputs rigorously in some
+functions but not others based on intuition about what "could" go
+wrong. The functions that seem safe become unsafe after a refactor
+changes the assumptions.
+
 ## Log for reconstruction
 
 When something breaks at 3am, the logs are the only witness. Capture

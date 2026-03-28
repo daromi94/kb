@@ -62,21 +62,6 @@ immediately, and the assertion trace pinpoints which side failed.
 Without contracts, a crash in function G might be caused by bad data
 introduced in function A and passed undetected from B through F.
 
-## The `old` expression
-
-The `old` keyword in postconditions refers to a value as it was when
-the method was entered. This lets postconditions describe state
-transitions, not just final state.
-
-```text
-method deposit(amount)
-    require: amount > 0
-    ensure:  balance == old balance + amount
-```
-
-"The balance increased by exactly the deposited amount" is a far
-stronger guarantee than "the balance is positive."
-
 ## The subcontracting rule
 
 When a subclass overrides a method, the contract must obey:

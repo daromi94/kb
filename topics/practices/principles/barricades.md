@@ -100,9 +100,43 @@ cleanly across layers.
 
 Interior code sheds all validation armor. Without a barricade, a
 function three layers deep is half validation checks making policy
-decisions that belong at the boundary. With a barricade, the same
-function is pure business logic — shorter, easier to read, test,
-and verify.
+decisions that belong at the boundary:
+
+```text
+function calculateTotal(order):
+    if order is null
+        throw error "order is null"
+    if order.items is null or order.items is empty
+        throw error "order has no items"
+
+    total = 0
+    for each item in order.items
+        if item is null
+            skip to next item
+        if item.price is null or item.price < 0
+            throw error "invalid price"
+        if item.quantity is null or item.quantity < 1
+            throw error "invalid quantity"
+        total = total + (item.price * item.quantity)
+
+    if order.discount is not null and order.discount >= 0 and order.discount <= 1
+        total = total * (1 - order.discount)
+    return total
+```
+
+With a barricade, the same function is pure business logic:
+
+```text
+// ValidatedOrder guarantees: items is non-empty,
+// every item has positive price and quantity,
+// discount is between 0.0 and 1.0
+
+function calculateTotal(order: ValidatedOrder):
+    subtotal = sum of (item.price * item.quantity) for each item in order.items
+    result = subtotal * (1 - order.discount)
+    assert result >= 0
+    return result
+```
 
 Assertions still have a role in the interior. They guard
 against internal bugs (a calculation returning a negative total)
@@ -132,10 +166,39 @@ Bypass is insidious because the system appears protected — the
 barricade exists and validates thoroughly, but there is a hole in
 the wall. Architectural enforcement is more reliable than developer
 discipline. The strongest pattern in typed languages: make internal
-types unconstructable outside the barricade. If ValidatedOrder can
-only be created by a factory method inside the validation module,
-bypass requires a conscious, visible act that shows up in code
-review.
+types unconstructable outside the barricade.
+
+```text
+type ValidatedOrder =
+    productId  : ProductId
+    quantity   : Integer
+    customerId : CustomerId
+
+    private constructor
+
+    static function validate(raw) -> ValidatedOrder:
+        if raw["product_id"] is not a string
+            throw ValidationError("product_id is required")
+
+        if raw["quantity"] is not an integer
+            throw ValidationError("quantity must be an integer")
+        if raw["quantity"] < 1 or raw["quantity"] > MAX_ORDER_QUANTITY
+            throw ValidationError("quantity out of range")
+
+        if raw["customer_id"] is not a string
+            throw ValidationError("customer_id is required")
+
+        return new ValidatedOrder(
+            productId  = ProductId(raw["product_id"]),
+            quantity   = raw["quantity"],
+            customerId = CustomerId(raw["customer_id"])
+        )
+```
+
+The only way to get a ValidatedOrder is through `validate()`.
+Circumventing this requires reflection or modifying the type
+definition — both obvious, reviewable decisions, not silent
+oversights.
 
 ## Related
 

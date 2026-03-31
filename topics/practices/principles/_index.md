@@ -5,6 +5,7 @@ Foundational design principles for software architecture.
 ## Notes
 
 - [Abstraction](abstraction.md) - Hiding implementation to manage complexity
+- [Leaky abstractions](leaky-abstractions.md) - Spolsky's law of imperfect hiding
 - [Premature abstraction](premature-abstraction.md) - Risks of early abstraction
 - [Rule of three](rule-of-three.md) - Wait for three instances before generalizing
 - [Uniform access](uniform-access.md) - Hide whether a value is stored or computed

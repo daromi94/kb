@@ -5,6 +5,7 @@ Patterns for everyday use.
 ## Notes
 
 - [Decorator](decorator.md) - Dynamic behavior composition
+- [Flyweight](flyweight.md) - Memory optimization via sharing
 
 ---
 

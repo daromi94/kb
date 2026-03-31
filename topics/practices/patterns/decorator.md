@@ -18,7 +18,7 @@ Four roles make up the pattern:
 
 A data source decorated with encryption and compression:
 
-```
+```text
 +---------------------+
 |    <<Component>>    |
 |   writeData(data)   |
@@ -40,7 +40,7 @@ A data source decorated with encryption and compression:
 
 The same example in pseudocode:
 
-```
+```text
 interface DataSource:
     method writeData(data)
     method readData(): data
@@ -116,9 +116,9 @@ Factory or Builder, not in calling code.
 construction becomes brittle. A Factory or Builder centralizes the
 wrapping order and keeps client code decoupled.
 
-## Tradeoffs
+## Trade-offs
 
-| Advantage                                              | Disadvantage                                            |
+| Benefit                                                | Cost                                                    |
 |--------------------------------------------------------|---------------------------------------------------------|
 | Extends behavior without modifying existing code (OCP) | Decorated object loses identity — equality checks break |
 | Combines behaviors at runtime                          | Deep wrapper stacks obscure debugging                   |
@@ -139,6 +139,10 @@ breaker, and timeout layers.
 
 **UI components.** Visual elements wrap in scrollbar, border, or shadow
 decorators without altering the base drawing logic.
+
+## Related
+
+- [Flyweight](flyweight.md) - Decorator adds behavior, Flyweight shares state
 
 ---
 

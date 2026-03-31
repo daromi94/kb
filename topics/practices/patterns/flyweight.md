@@ -1,6 +1,6 @@
 # Flyweight
 
-A structural pattern that reduces memory consumption when an application
+A structural pattern that reduces memory footprint when an application
 needs a massive number of similar objects. Instead of each object owning
 all its data, the pattern factors out shared, immutable state into a
 single reusable instance — the flyweight — and lets callers supply

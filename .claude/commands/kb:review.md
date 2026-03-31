@@ -18,13 +18,21 @@ Refer to `/kb:ingest` for all formatting and structural standards.
 - Glob `topics/<topic-path>/**/*.md` to find all notes
 - Read `_index.md` and every note in the topic
 
-### 2. Check format compliance
+### 2. Read-through
+
+Read each note as a whole and assess whether it reads well. Does it
+flow naturally from start to finish? Does the structure serve the
+content? Are sections in the right order? Does each paragraph earn
+its place? Flag anything that feels off — orphaned thoughts,
+awkward transitions, sections that don't belong where they are.
+
+### 3. Check format compliance
 
 Verify each note against the standards defined in `/kb:ingest`:
 formatting, tables, titles, links, cross-references, index
 descriptions, prose style. List any deviations.
 
-### 3. Check readability and clarity
+### 4. Check readability and clarity
 
 For each note, assess:
 
@@ -47,7 +55,7 @@ For each note, assess:
 - **Consistency within the topic:** Are the same concepts described
   the same way across different notes? Are there contradictions?
 
-### 4. Check index ordering
+### 5. Check index ordering
 
 Assess whether the `_index.md` reads like a book top-to-bottom:
 
@@ -57,21 +65,23 @@ Assess whether the `_index.md` reads like a book top-to-bottom:
 - If the ordering could be improved, propose a reordering with the
   grouping rationale
 
-### 5. Present findings
+### 6. Present findings
 
 Report issues in a numbered list grouped by category:
 
-1. **Format issues** — deviations from `/kb:ingest` standards
-2. **Clarity issues** — vague concepts, ambiguous phrasing, missing
+1. **Flow issues** — structural problems, orphaned thoughts, awkward
+   transitions
+2. **Format issues** — deviations from `/kb:ingest` standards
+3. **Clarity issues** — vague concepts, ambiguous phrasing, missing
    arguments, thin sections
-3. **Consistency issues** — contradictions between notes, same concept
+4. **Consistency issues** — contradictions between notes, same concept
    described differently
-4. **Ordering** — index reordering suggestions (if any)
+5. **Ordering** — index reordering suggestions (if any)
 
 For each issue, state: the file, the problem, and a suggested fix.
 Ask the user to confirm before making changes.
 
-### 6. Apply fixes
+### 7. Apply fixes
 
 Edit files sequentially (not in parallel) to avoid file-modified
 conflicts. Do not change substance — only improve how existing ideas

@@ -1,6 +1,6 @@
 # Error handling paradigms
 
-Six major approaches to communicating and managing failure in
+Five major approaches to communicating and managing failure in
 software, each with a distinct philosophy and tradeoffs.
 
 The choice of error handling strategy shapes the entire architecture:
@@ -177,10 +177,8 @@ cannot be caught by normal error handling).
 
 ## Related
 
-- [Defensive programming](defensive-programming.md) - How these
-  paradigms apply in practice
-- [Design by Contract](design-by-contract.md) - Contracts define
-  what constitutes a programming error
+- [Defensive programming](defensive-programming.md) - How these paradigms apply in practice
+- [Design by Contract](design-by-contract.md) - Contracts define what constitutes a programming error
 
 ---
 

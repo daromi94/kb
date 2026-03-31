@@ -145,8 +145,7 @@ ignore.
 
 ## Related
 
-- [Defensive programming](defensive-programming.md) - Complementary
-  approach for external boundaries
+- [Defensive programming](defensive-programming.md) - Complementary approach for external boundaries
 
 ---
 

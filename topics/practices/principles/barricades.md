@@ -202,8 +202,7 @@ oversights.
 
 ## Related
 
-- [Defensive programming](defensive-programming.md) - The broader
-  principle barricades implement
+- [Defensive programming](defensive-programming.md) - The broader principle barricades implement
 
 ---
 

@@ -22,7 +22,7 @@ The pattern separates these concerns:
 
 ## Layered hierarchy
 
-```
+```text
 +---------------------------------+
 |  Guardian (thin, boots system)  |
 +---------+-----------------------+

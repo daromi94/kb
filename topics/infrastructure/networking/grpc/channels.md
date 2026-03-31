@@ -26,7 +26,7 @@ specific IP:port and runs its own connectivity state machine
 independently — if one backend goes down, only its subchannel retries
 while the others keep serving.
 
-```
+```text
 Channel (logical target)
   └─ Load Balancer
        ├─ Subchannel A (10.0.0.1:443) ── HTTP/2 conn

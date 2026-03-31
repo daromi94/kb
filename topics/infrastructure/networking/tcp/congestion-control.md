@@ -9,7 +9,7 @@ network congestion.
 The sender maintains a congestion window limiting bytes in flight,
 **independent** of the receiver's advertised window. The effective limit is:
 
-```
+```text
 send_limit = min(cwnd, receiver_window)
 ```
 

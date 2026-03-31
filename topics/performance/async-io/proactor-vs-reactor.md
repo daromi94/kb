@@ -11,7 +11,7 @@ Used by `epoll`, `kqueue`, and most event loops (Node.js, Nginx).
 The application asks the OS to monitor file descriptors. When data is available
 (ready), the OS notifies the app, which then performs the actual read/write.
 
-```
+```text
 App: "Watch this socket"
 OS:  "Socket is ready to read"
 App: read(socket, buffer) // App does the I/O
@@ -26,7 +26,7 @@ Used by `io_uring`.
 The application submits the I/O operation itself. The OS performs the operation
 and notifies when complete.
 
-```
+```text
 App: "Read from this socket into this buffer"
 OS:  [performs read asynchronously]
 OS:  "Read complete, 1024 bytes in buffer"

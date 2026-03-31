@@ -83,7 +83,7 @@ machine.
 
 #### TCP 3-Way Handshake
 
-```
+```text
 Client                    Server
    |                         |
    |-------- SYN ----------->|  "I want to talk"

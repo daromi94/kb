@@ -25,7 +25,7 @@ makes FD 1 refer to `out.txt` instead of the terminal.
 When a process reads or writes through an FD, the kernel navigates
 three layers:
 
-```
+```text
 Per-process FD table --> Open file table --> Inode table
 (private per process)    (system-wide)       (on-disk metadata)
 ```

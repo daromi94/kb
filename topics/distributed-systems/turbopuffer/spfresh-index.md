@@ -17,7 +17,7 @@ requires dozens of hops, making the cumulative latency unacceptable.
 SPFresh organizes vectors into clusters, each represented by a
 centroid. Search proceeds in two phases:
 
-```
+```text
 +---------------------------+
 |  Query Vector             |
 |         |                 |

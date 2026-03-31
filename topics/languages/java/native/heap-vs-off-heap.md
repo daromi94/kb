@@ -43,7 +43,7 @@ collects that wrapper, the Cleaner deallocates the off-heap memory.
 The JVM can also trigger GC when direct buffer allocation approaches
 `-XX:MaxDirectMemorySize`.
 
-```
+```text
 +--------------------------+     +-------------------------+
 | JVM heap                 |     | Off-heap memory         |
 |                          |     |                         |

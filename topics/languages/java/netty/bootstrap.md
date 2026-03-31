@@ -28,7 +28,7 @@ A server manages two distinct sets of Channels simultaneously:
 
 Netty models this with a parent/child EventLoopGroup pair:
 
-```
+```text
          Incoming connections
                  |
                  v

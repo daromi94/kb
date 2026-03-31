@@ -22,7 +22,7 @@ Custom application metadata is sent as additional headers.
 Before entering HTTP/2 DATA frames, every message is wrapped in a
 5-byte prefix:
 
-```
+```text
 +-----------+----------------+-----------------------+
 | Comp (1B) | Length (4B BE) | Protobuf payload ...  |
 +-----------+----------------+-----------------------+

@@ -8,7 +8,7 @@ and low-latency scenarios.
 **Problem**: Original 16-bit window field limits to 64KB. On high-bandwidth,
 high-latency links, this is far too small.
 
-```
+```text
 BDP = Bandwidth × RTT
 1 Gbps × 100ms = 12.5 MB needed
 ```

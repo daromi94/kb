@@ -41,7 +41,7 @@ Host A compares Host B's IP with its own using the **subnet mask**.
 Hardware only understands MAC addresses. If Host A knows the IP but not the MAC,
 it uses ARP:
 
-```
+```text
 Host A                                 All Hosts on LAN
    |                                        |
    |-- "Who has 192.168.1.50? Tell me." --->| (broadcast)

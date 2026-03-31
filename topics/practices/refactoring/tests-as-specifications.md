@@ -13,7 +13,7 @@ a business requirement—not that the test is wrong.
 Avoid modifying tests and implementation simultaneously. If you must update a
 test to match a new API, do it as a separate, isolated commit.
 
-```
+```text
 commit 1: Update test API expectations
 commit 2: Refactor implementation to new API
 ```

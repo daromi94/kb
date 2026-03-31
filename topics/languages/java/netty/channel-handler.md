@@ -36,7 +36,7 @@ A ChannelPipeline is an ordered chain of handlers that data traverses
 sequentially. Each handler performs one step and passes the result to the
 next:
 
-```
+```text
 Inbound:  bytes --> [Decoder] --> [Auth] --> [Business logic]
 Outbound: bytes <-- [Encoder] <------------- [Business logic]
 ```

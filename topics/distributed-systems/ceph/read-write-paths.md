@@ -25,7 +25,7 @@ replicas acknowledge (default 2 out of 3).
 6. **Client acknowledgment:** Once Primary confirms its own write and receives
    enough replica ACKs to meet `min_size`, it notifies the client of success.
 
-```
+```text
 Client
    |
    | write

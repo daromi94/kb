@@ -39,7 +39,7 @@ explicit synchronization.
 When an event occurs, it flows through a ChannelPipeline — a chain of
 ChannelHandlers that each perform a discrete processing step:
 
-```
+```text
 Inbound                                             Outbound
 +----------------+  +-----------------+  +-------+  +-----------------+  +---------------+
 | Decoder        |->| Decoder         |->| Biz   |->| Encoder         |->| Encoder       |

@@ -8,14 +8,14 @@ and how much trace data is exported.
 
 Disable all instrumentation at once, then selectively re-enable:
 
-```
+```text
 OTEL_INSTRUMENTATION_COMMON_DEFAULT_ENABLED=false
 OTEL_INSTRUMENTATION_SPRING_WEB_ENABLED=true
 ```
 
 Or suppress individual noisy modules while keeping everything else on:
 
-```
+```text
 OTEL_INSTRUMENTATION_JDBC_ENABLED=false
 ```
 
@@ -27,7 +27,7 @@ names use underscores (e.g., `SPRING_WEB`, `KAFKA_CLIENTS`).
 Raw hostnames or IPs in outbound spans can be mapped to logical service
 names:
 
-```
+```text
 OTEL_INSTRUMENTATION_COMMON_PEER_SERVICE_MAPPING=10.0.0.5=user-database
 ```
 

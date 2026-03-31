@@ -5,7 +5,7 @@ handle the request path and system management.
 
 ## Request path
 
-```
+```text
 Client
   |
   v

@@ -11,7 +11,7 @@ cannot use it—their file tables are independent.
 
 `SCM_RIGHTS` makes the kernel perform magic:
 
-```
+```text
 Process A (fd=4)              Kernel                    Process B
 +---------------+        +---------------+        +---------------+
 | fd table      |        |               |        | fd table      |

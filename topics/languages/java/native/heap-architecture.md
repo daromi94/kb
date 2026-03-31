@@ -19,7 +19,7 @@ live objects into one empty Survivor space. On subsequent Minor GCs,
 survivors are copied between S0 and S1 while an internal age counter
 increments each cycle.
 
-```
+```text
 +--------------------------------------+
 | Young generation                     |
 |                                      |

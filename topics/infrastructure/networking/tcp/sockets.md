@@ -5,7 +5,7 @@ between user-space operations and the protocol state machine.
 
 ## Architecture
 
-```
+```text
 +-----------------------------------------------------------+
 |  User Space                                               |
 |    Application (file descriptor fd=3)                     |

@@ -16,7 +16,7 @@ position — a common source of bugs when forgotten or called twice.
 
 ByteBuf eliminates this by maintaining two independent indices:
 
-```
+```text
 +-------------------+------------------+------------------+
 | discardable bytes |  readable bytes  |  writable bytes  |
 +-------------------+------------------+------------------+

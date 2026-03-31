@@ -24,7 +24,7 @@ bytes into a buffer or write a buffer's contents to the underlying entity.
 
 A Channel progresses through these states in order:
 
-```
+```text
 Unregistered --> Registered --> Active --> Inactive --> Unregistered
 ```
 

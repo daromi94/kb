@@ -82,7 +82,7 @@ permissions, intercepting connections.
 **Fix:** Use `/run` (or `/var/run`) and create a subdirectory owned by the
 service user:
 
-```
+```text
 /run/my-service/service.sock
 ```
 

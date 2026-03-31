@@ -3,7 +3,7 @@
 Radical Candor maps feedback behavior along two axes: Care Personally
 and Challenge Directly. The combination produces four quadrants.
 
-```
+```text
           Care Personally
                 ^
                 |

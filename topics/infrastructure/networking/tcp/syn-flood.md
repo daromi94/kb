@@ -12,7 +12,7 @@ one of the most common DDoS attack vectors.
 5. Half-open connection table fills up
 6. Server cannot accept legitimate connections
 
-```
+```text
 Attacker                              Server
    |                                   |
    |---- SYN (spoofed IP) ------------>|  allocate state

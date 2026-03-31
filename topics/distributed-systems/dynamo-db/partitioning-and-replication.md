@@ -20,7 +20,7 @@ Each partition is stored as a replication group — a set of replicas
 spread across multiple availability zones. If an entire AZ or a single
 node fails, the remaining replicas continue to serve traffic.
 
-```
+```text
        Replication group (one partition)
 
     AZ-a            AZ-b            AZ-c
@@ -40,7 +40,7 @@ replicas. The write is acknowledged to the caller once a quorum
 (two out of three replicas) has persisted the log record to local
 storage.
 
-```
+```text
 Client --write--> Leader
                     |
            generate WAL record

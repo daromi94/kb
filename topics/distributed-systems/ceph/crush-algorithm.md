@@ -32,7 +32,7 @@ to contact without asking a "master" server.
 
 The algorithm uses a hierarchical map of the physical infrastructure:
 
-```
+```text
 root default
     rack rack1
         host server1

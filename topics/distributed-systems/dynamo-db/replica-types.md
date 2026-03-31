@@ -34,7 +34,7 @@ The extra quorum participant also narrows the durability risk window.
 If a second failure occurs during repair, more copies of recent WAL
 entries exist to recover from.
 
-```
+```text
             Replication group during repair
 
     AZ-a                AZ-b                AZ-c

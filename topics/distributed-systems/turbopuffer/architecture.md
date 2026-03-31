@@ -12,7 +12,7 @@ deflates when data goes cold.
 The system manages three tiers of data access to balance cost and
 performance:
 
-```
+```text
 +--------------------------+
 |       RAM (hottest)      |  ~8ms queries
 +--------------------------+

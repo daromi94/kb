@@ -10,7 +10,7 @@ Unlike UDP (discrete datagrams), TCP presents a continuous stream of bytes.
 
 **The problem**: If you send "Hello" then "World":
 
-```
+```text
 Sender:  write("Hello")  write("World")
 ```
 
@@ -27,7 +27,7 @@ TCP guarantees bytes arrive **in order**, but not **grouped as sent**.
 Large writes are chopped into segments fitting the MSS (Maximum Segment Size,
 typically ~1460 bytes based on MTU).
 
-```
+```text
 Application: write(1GB)
     ↓
 TCP: chop into ~700,000 segments
@@ -56,7 +56,7 @@ to delimit messages.
 
 **Length prefix example:**
 
-```
+```text
 Sender:  [4 bytes: length=5][5 bytes: "Hello"]
 Receiver: read 4 bytes → know to read 5 more → have complete message
 ```

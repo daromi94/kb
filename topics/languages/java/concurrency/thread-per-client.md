@@ -8,7 +8,7 @@ classic concurrency architecture for network servers.
 
 A server following this model uses a strictly synchronous pipeline:
 
-```
+```text
 +------------------+
 | Acceptor thread  |  ServerSocket.accept() blocks in a loop
 |       |          |

@@ -7,7 +7,7 @@ termination sequences.
 
 Before data transfer, client and server must agree on initial sequence numbers.
 
-```
+```text
 Client                              Server
    |                                   |
    |---- SYN (seq=x) ----------------->|
@@ -30,7 +30,7 @@ Client                              Server
 Because TCP is full-duplex, each side must terminate its sending capability
 independently.
 
-```
+```text
 Client                              Server
    |                                   |
    |---- FIN ------------------------->|  "I'm done sending"

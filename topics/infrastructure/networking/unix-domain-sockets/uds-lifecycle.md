@@ -4,7 +4,7 @@ The UDS API mirrors TCP but with filesystem-specific setup and teardown.
 
 ## Server Lifecycle
 
-```
+```text
 +------------------+
 |  socket()        | Create endpoint (AF_UNIX, SOCK_STREAM)
 +------------------+
@@ -47,7 +47,7 @@ Process umask affects permissions.
 
 ## Client Lifecycle
 
-```
+```text
 +------------------+
 |  socket()        | Create endpoint (AF_UNIX, SOCK_STREAM)
 +------------------+
@@ -82,7 +82,7 @@ descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 
 ## Complete Flow
 
-```
+```text
       SERVER                              CLIENT
       ------                              ------
 1. socket() -> fd=3

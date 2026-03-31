@@ -67,7 +67,7 @@ assumptions.
 Real systems have nested barricades at different granularities,
 each handling concerns appropriate to its level.
 
-```
+```text
 +---------------------------------------------------+
 | Outer barricade                                   |
 | Structural validation, type conversion            |

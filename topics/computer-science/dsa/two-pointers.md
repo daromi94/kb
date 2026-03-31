@@ -19,7 +19,7 @@ current pair overshoots the target, moving right is the only way to
 reduce it — left can only grow. This lets you eliminate candidates
 without checking every pair.
 
-```
+```text
 left = 0
 right = length - 1
 
@@ -64,7 +64,7 @@ partitions the array in place without extra space.
 The loop runs exactly $n$ iterations (fast visits every element once).
 If the work per iteration is $O(1)$, the total is $O(n)$.
 
-```
+```text
 slow = 0
 
 for fast in range(length):
@@ -106,7 +106,7 @@ The main loop stops when either pointer reaches the end, so the other
 input may have remaining elements. If all elements must be processed,
 drain the unfinished input with a secondary loop.
 
-```
+```text
 i = j = 0
 
 while i < a.length AND j < b.length:

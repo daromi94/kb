@@ -6,7 +6,7 @@ compaction.
 
 ## Write path
 
-```
+```text
 +-------------------+
 |   Client Write    |
 +---------+---------+

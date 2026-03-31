@@ -13,7 +13,7 @@ distributes new Channels among them. A typical server bootstrap creates two
 groups: a boss group that accepts connections and a worker group that handles
 traffic on accepted channels.
 
-```
+```text
 +-------------------------------------------------+
 | EventLoopGroup                                  |
 | +-----------+  +-----------+  +-----------+     |

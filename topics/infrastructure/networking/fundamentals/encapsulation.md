@@ -8,7 +8,7 @@ sender **encapsulates** data (wraps it in layers), and the receiver
 
 Each layer adds its own header with instructions.
 
-```
+```text
 +----------------------------------------------------------+
 | Layer 7-5  |  HTTP POST + session + encryption = DATA    |
 +----------------------------------------------------------+
@@ -56,7 +56,7 @@ Data doesn't travel directly to the destination. At each router:
 4. Source and destination IP addresses (Layer 3) **never change** during the
    journey
 
-```
+```text
 +----------+          +----------+          +----------+
 |  Host A  |--------->| Router 1 |--------->| Router 2 |--------->...
 +----------+          +----------+          +----------+

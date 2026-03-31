@@ -5,7 +5,7 @@ family, column qualifier, and timestamp.
 
 ## Structure
 
-```
+```text
 Row Key -> Column Family -> Column Qualifier -> Timestamp -> Value
 
 Example:
@@ -36,7 +36,7 @@ The data model is sparse—nulls take up no storage space. Unlike relational
 databases where every row has the same columns, HBase rows can have completely
 different column qualifiers within the same column family.
 
-```
+```text
 Row "user1": info:name, info:email
 Row "user2": info:name, info:phone, info:address
 Row "user3": info:email

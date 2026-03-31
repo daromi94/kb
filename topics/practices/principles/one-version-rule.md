@@ -21,7 +21,7 @@ intend. These conflicts produce unpredictable runtime failures
 that can take days or weeks to diagnose because the symptoms appear far
 from the root cause.
 
-```
+```text
      A
     / \
    B   C

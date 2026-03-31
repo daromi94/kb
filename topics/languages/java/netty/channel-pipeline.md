@@ -19,7 +19,7 @@ setup sequence is:
 
 Inbound and outbound events traverse the pipeline in opposite directions:
 
-```
+```text
 Head                                                  Tail
  |                                                     |
  |  Inbound:  --> [Decoder] --> [Auth] --> [Business]  |

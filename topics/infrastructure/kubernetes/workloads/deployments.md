@@ -20,7 +20,7 @@ Deployments provide:
 A Deployment doesn't manage Pods directly. It manages a ReplicaSet, which in
 turn manages the Pods:
 
-```
+```text
 +-------------+
 | Deployment  |  Defines strategy and Pod template
 +------+------+

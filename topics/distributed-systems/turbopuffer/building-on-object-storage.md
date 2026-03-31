@@ -9,7 +9,7 @@ concrete scaling problem.
 The simplest possible database on object storage is a write-ahead
 log. Each write creates an immutable file in a `/wal` prefix:
 
-```
+```text
 /wal/1.bin
 /wal/2.bin
 /wal/3.bin
@@ -46,7 +46,7 @@ new WAL entries, then update the index from any cached entries.
 In-memory indexes are lost when nodes restart. Serialize the index
 to object storage alongside a pointer to the WAL entry it covers:
 
-```
+```text
 /btree.bin  (covers through /wal/42.bin)
 ```
 

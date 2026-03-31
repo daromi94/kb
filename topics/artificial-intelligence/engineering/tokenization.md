@@ -27,7 +27,7 @@ efficiently as subword fragments than as whole-word units.
 
 ## Processing pipeline
 
-```
+```text
 "unbreakable"
    |
    | segmentation

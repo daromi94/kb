@@ -7,7 +7,7 @@ Connecting to `localhost:8080` (TCP) hits the network stack. Connecting to
 
 Even on `127.0.0.1`, a TCP packet traverses:
 
-```
+```text
 +---------------------------+
 |  Application              |
 |          |                |
@@ -42,7 +42,7 @@ Even on `127.0.0.1`, a TCP packet traverses:
 
 ## UDS Path
 
-```
+```text
 +---------------------------+
 |  Application              |
 |          |                |

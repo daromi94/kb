@@ -11,7 +11,7 @@ placing a task on a shared queue), it gives up the call stack. If the
 worker thread fails, the exception propagates to the worker's own
 exception handler — the caller is never notified.
 
-```
+```text
 Caller thread        Shared queue       Worker thread
      |                   |                   |
      |--- put task ----->|                   |

@@ -39,7 +39,7 @@ Kubernetes uses three probe types to manage container health:
 
 When a Pod is deleted (rolling update, node drain, resource pressure):
 
-```
+```text
 +-------------------------------+
 |  1. Pod marked Terminating    |
 |     Grace period timer starts |

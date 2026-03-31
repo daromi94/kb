@@ -31,7 +31,7 @@ failures.
 
 **Split-brain prevention sequence:**
 
-```
+```text
 1. RegionServer loses contact
          |
          v

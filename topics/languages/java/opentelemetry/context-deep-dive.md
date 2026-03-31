@@ -180,7 +180,7 @@ The core interface for inter-process propagation. It operates on
 "carriers" — objects that support string key-value pair access, like
 HTTP headers or Kafka record headers.
 
-```
+```text
 +-----------+      headers      +-----------+
 | Service A | ----------------> | Service B |
 |           |                   |           |
@@ -237,7 +237,7 @@ The standard propagation format, supported by default. Two headers:
 Carries the core trace routing fields in a single dash-separated
 string:
 
-```
+```text
 traceparent: 00-0af7651916cd43dd8448eb211c80319c-b7ad6b7169203331-01
              |        |                          |                |
              version  trace-id (16 B)            parent-id (8 B)  flags
@@ -261,7 +261,7 @@ Optional header carrying vendor-specific key-value pairs. Multiple
 tracing systems can participate in the same trace by appending their
 own entries without overwriting others:
 
-```
+```text
 tracestate: vendor1=value1,vendor2=value2
 ```
 

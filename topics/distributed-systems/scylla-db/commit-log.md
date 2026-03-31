@@ -27,7 +27,7 @@ the middle. This makes writes fast because the disk head doesn't jump around
 
 ## Write Path
 
-```
+```text
        +----------------+
        |  Client Write  |
        +-------+--------+

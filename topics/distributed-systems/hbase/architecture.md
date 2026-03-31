@@ -6,7 +6,7 @@ layers.
 
 ## Components
 
-```
+```text
 +------------------+
 |     HMaster      |  Coordination
 +--------+---------+

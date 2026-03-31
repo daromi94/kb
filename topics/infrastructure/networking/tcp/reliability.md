@@ -19,7 +19,7 @@ sequence number of the first data byte in each segment.
 The receiver sends ACKs indicating the sequence number of the **next byte it
 expects**. This implicitly acknowledges all prior bytes.
 
-```
+```text
 Sender                              Receiver
    |                                   |
    |---- seq=1000, 100 bytes --------->|
@@ -48,7 +48,7 @@ of packets 3-5 unnecessarily.
 
 **SACK option** allows the receiver to report non-contiguous blocks:
 
-```
+```text
 "I have 1, and I also have the block 3-5"
 ```
 

@@ -11,7 +11,7 @@ local to a core — writes by one core are invisible to another until the
 cache line is explicitly shipped to the other core's cache via the cache
 coherence protocol.
 
-```
+```text
 Core A              Core B
 +----------+        +----------+
 | Cache L1 |        | Cache L1 |

@@ -31,7 +31,7 @@ a new one.
 
 ## State transitions
 
-```
+```text
 +-----+   start()   +----------+   run() ends   +------------+
 | NEW | ----------> | RUNNABLE | -------------> | TERMINATED |
 +-----+             +----+-----+                +------------+

@@ -19,7 +19,7 @@ on the process's behalf, then returns to user mode.
 `strace` intercepts system calls made by a process, showing every
 crossing from user space into the kernel:
 
-```
+```text
 strace -c ls # summary of syscalls used by ls
 ```
 

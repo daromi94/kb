@@ -21,7 +21,7 @@ interleave arbitrarily. The encapsulation boundary offers no protection
 — both threads read and write internal fields with no coordination.
 Invariants are violated silently.
 
-```
+```text
 Thread A          Object           Thread B
    |--- method() -->|                 |
    |                |<--- method() ---|

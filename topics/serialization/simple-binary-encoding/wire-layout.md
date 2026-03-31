@@ -6,7 +6,7 @@ is what gives SBE its speed.
 
 ## Message structure
 
-```
+```text
 +---------------------------------------------+
 | Message header                              |
 |   blockLength | templateId | schemaId | ver |

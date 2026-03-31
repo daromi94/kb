@@ -13,7 +13,7 @@ up or shut down based on demand.
 Storage, or a distributed file system) responsible for durability and
 accessibility.
 
-```
+```text
 +-------------------+     +-------------------+
 |  Compute Node A   |     |  Compute Node B   |
 |   (stateless)     |     |   (stateless)     |

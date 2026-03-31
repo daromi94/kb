@@ -26,7 +26,7 @@ tracking "File_A," Ceph tracks "PG_1.0."
 
 **The hashing process:** Object name is hashed, then modulo by PG count:
 
-```
+```text
 hash(object_name) % pg_count → PG ID
 ```
 

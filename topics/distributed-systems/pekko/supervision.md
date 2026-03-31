@@ -22,7 +22,7 @@ another actor becomes its parent. This mirrors how operating systems
 organize processes. When a parent stops, all its children stop
 recursively.
 
-```
+```text
       +----------+
       |  Parent  |
       +----+-----+

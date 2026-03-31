@@ -66,7 +66,7 @@ The Reactor pattern structures NIO applications around a single event loop
 (the "Reactor" thread) that demultiplexes I/O events and dispatches them to
 handlers.
 
-```
+```text
 +------------------+      +-----------+
 | Selector         |      | Worker    |
 | (Reactor thread) |----->| Pool      |

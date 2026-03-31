@@ -4,7 +4,7 @@ End-to-end component stack for a gRPC call, from client business
 logic down through the transport and back up to the server
 implementation.
 
-```
+```text
 +----------------------------------------------------+
 |  CLIENT                                            |
 |                                                    |

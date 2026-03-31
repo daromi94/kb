@@ -6,7 +6,7 @@ consumers, allowing asynchronous data exchange between processes.
 
 ## Queue Architecture
 
-```
+```text
   Process A                  Kernel                 Process B
 +-----------+    write()   +--------+   internal   +--------+    read()   +-----------+
 | Userspace | -----------> | Send Q | -----------> | Recv Q | ----------> | Userspace |

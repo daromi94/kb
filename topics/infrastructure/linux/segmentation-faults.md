@@ -27,7 +27,7 @@ dump — an ELF file containing the process's memory segments and
 register state at the moment of the crash. A debugger like `gdb`
 can load this file to inspect exactly what went wrong:
 
-```
+```text
 gdb ./program core
 ```
 

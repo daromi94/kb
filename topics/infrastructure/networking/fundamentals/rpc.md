@@ -18,7 +18,7 @@ RPC uses two messengers called **stubs** to make remote calls appear local:
 
 When you call a remote function, these steps happen in milliseconds:
 
-```
+```text
 +--------+     +-------------+                    +-------------+     +--------+
 | Client |---->| Client Stub |---- Network ------>| Server Stub |---->| Server |
 |  App   |     |  marshall   |    (TCP/UDP)       |  unmarshall |     |  Func  |

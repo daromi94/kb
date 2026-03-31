@@ -21,7 +21,7 @@ coordination.
 - Prioritizes strong consistency (CP in CAP) over high availability
 - Handles complex logic (leader election, sharding) asynchronously
 
-```
+```text
 +-------------------+
 |   Control Plane   |
 |   (consistency)   |

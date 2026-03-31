@@ -20,7 +20,7 @@ scheduler, consuming resources without performing useful work.
 Every Java thread requires its own stack memory. At the default 1MB stack
 size on 64-bit JVMs, the arithmetic is straightforward:
 
-```
+```text
 10,000 connections x 1MB per thread = 10GB RAM
 ```
 

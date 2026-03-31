@@ -19,7 +19,7 @@ int fd = socket(AF_UNIX, SOCK_STREAM, 0);
 
 **Message boundary problem:**
 
-```
+```text
 Sender: write("Hello") then write("World")
 
 Receiver: might read "HelloWorld" in one chunk

@@ -44,7 +44,7 @@ Consider two tasks on a single core:
 Serial execution takes **150ms**. With concurrency, Task B's CPU work runs
 during Task A's I/O wait, finishing in **100ms**.
 
-```
+```text
 Serial:
   [A cpu 50ms][A io 50ms][B cpu 50ms]  = 150ms
 

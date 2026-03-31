@@ -22,7 +22,7 @@ A race condition occurs when correctness depends on the relative timing of
 multiple threads. The classic example is **read-modify-write** on shared
 state:
 
-```
+```text
 Thread A: read value  (sees 9)
 Thread B: read value  (sees 9)
 Thread A: write value (stores 10)

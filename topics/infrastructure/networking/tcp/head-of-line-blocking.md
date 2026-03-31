@@ -10,7 +10,7 @@ all subsequent packets until the missing one is retransmitted.
 
 **Scenario**: Browser loads a page with 5 images over one TCP connection:
 
-```
+```text
         Packet 1 (Image 1, part A)  ✓
         Packet 2 (Image 1, part B)  ✗ LOST
         Packet 3 (Image 2)          ✓ (buffered, waiting)
@@ -38,7 +38,7 @@ blocking at the TCP layer still affects all streams when any packet is lost.
 QUIC runs over UDP and implements its own reliability. Each stream has
 independent ordering, so a lost packet only blocks its own stream:
 
-```
+```text
 QUIC Stream 1: packet lost → Stream 1 waits
 QUIC Stream 2: packets arrived → delivered immediately
 QUIC Stream 3: packets arrived → delivered immediately

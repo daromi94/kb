@@ -3,7 +3,7 @@
 A process's virtual address space is divided into segments that
 separate code, static data, and dynamic data from each other.
 
-```
+```text
 High addresses
 +------------------------+
 |          Stack         | grows downward

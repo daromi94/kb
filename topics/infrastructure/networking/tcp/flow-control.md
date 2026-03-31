@@ -8,7 +8,7 @@ TCP implements this through the sliding window mechanism.
 Every ACK packet includes a **Window Size** field advertising how many bytes
 the receiver can currently accept.
 
-```
+```text
 Byte stream:
 [Sent & ACKed][Sent, unACKed][  Usable Window  ][Cannot send yet]
               |<---- In flight ---->|
@@ -52,7 +52,7 @@ sysctl net.ipv4.tcp_wmem
 **Bandwidth-Delay Product**: For high-bandwidth, high-latency links, buffers
 must be large enough to keep the pipe full:
 
-```
+```text
 BDP = Bandwidth × RTT
 1 Gbps × 100ms = 12.5 MB
 ```

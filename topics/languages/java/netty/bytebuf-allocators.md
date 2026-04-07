@@ -62,7 +62,7 @@ memory is constrained.
 
 ## Related
 
-- [ByteBuf](bytebuf.md) - Buffer types and dual index overview
+- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
 - [Resource management](resource-management.md) - Ownership and release
   rules in handlers
 - [Leak detection](leak-detection.md) - Diagnosing unreleased buffers

@@ -4,7 +4,7 @@ Asynchronous, event-driven network application framework for Java.
 
 ## Notes
 
-- [Netty](netty.md) - Framework overview and motivation
+- [Netty](netty.md) - Architecture and design rationale
 - [BIO scaling walls](bio-scaling-walls.md) - Thread-per-connection bottlenecks
 - [Non-blocking sockets](non-blocking-sockets.md) - Non-blocking socket mechanics
 - [Selector](selector.md) - I/O readiness multiplexing
@@ -12,8 +12,8 @@ Asynchronous, event-driven network application framework for Java.
 - [Event loop](event-loop.md) - Threading and I/O dispatch
 - [Channel](channel.md) - Bidirectional I/O conduit
 - [Channel future](channel-future.md) - Listener-based async tracking
-- [ByteBuf](bytebuf.md) - Pooled buffer over JDK ByteBuffer
-- [ByteBuf allocators](bytebuf-allocators.md) - Allocator internals and tuning
+- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
+- [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory pooling
 - [Resource management](resource-management.md) - Buffer ownership and release
 - [Leak detection](leak-detection.md) - Unreleased buffer diagnostics
 - [Channel handler](channel-handler.md) - Pipeline event processing units

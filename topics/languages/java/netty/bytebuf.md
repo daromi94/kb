@@ -79,7 +79,7 @@ promptly rather than waiting for garbage collection.
 
 ## Related
 
-- [ByteBuf allocators](bytebuf-allocators.md) - Allocator internals
+- [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory pooling
 - [Channel](channel.md) - Reads and writes always go through a ByteBuf
 - [Codecs](codecs.md) - Decode ByteBuf into objects and encode back
 - [Netty](netty.md) - Framework overview

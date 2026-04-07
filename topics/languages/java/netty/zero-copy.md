@@ -1,12 +1,6 @@
 # Zero copy
 
-"Zero-copy" in Netty refers to two distinct layers: kernel-level
-transfers that bypass userspace entirely, and application-level
-buffer manipulation that avoids memcpy within the JVM. Both compose
-— a well-designed server uses OS zero-copy for static file serving
-and application zero-copy for protocol processing.
-
-## Two layers
+"Zero-copy" in Netty means two different things.
 
 **OS-level zero-copy** moves bytes from a file descriptor to a
 socket without copying into userspace. The CPU never touches the
@@ -15,10 +9,8 @@ FileRegion, which maps to `sendfile(2)` on Linux.
 
 **Application-level zero-copy** manipulates ByteBuf instances
 without memcpy inside the JVM. Slices, composites, and wrapped
-buffers create views and compositions over existing memory. The
-payload still lives in userspace and eventually reaches the NIC via
-the socket write path, but no redundant copies occur as the message
-passes through handlers.
+buffers create views over existing memory rather than allocating
+and copying into new buffers at each pipeline stage.
 
 ## Gathering writes
 
@@ -31,12 +23,11 @@ This is why `write/write/write/flush` outperforms three separate
 `writeAndFlush` calls — the latter forces three syscalls and defeats
 batching.
 
-CompositeByteBuf and gathering writes are complementary. The
-composite gives pipeline handlers a single logical buffer to reason
-about. At write time, Netty unwraps the composite into its native
-ByteBuffer component array and hands that to `writev`.
+At write time, Netty unwraps a CompositeByteBuf into its native
+ByteBuffer component array and hands that to `writev`, combining
+logical composition with syscall-level batching.
 
-## Wrapping external arrays
+## Wrapping existing memory
 
 `Unpooled.wrappedBuffer(byte[])` and
 `Unpooled.wrappedBuffer(ByteBuffer)` produce a ByteBuf that reuses
@@ -56,16 +47,6 @@ arrays and dangerous for reusable scratch buffers.
 | `writeBytes(otherBuf)` to concatenate | CompositeByteBuf or gathering writes |
 | Passing ByteBuf to JDK `byte[]` API   | Redesign to keep hot path in Netty   |
 | `toString(charset)` in logger         | Guard with `isDebugEnabled()`        |
-
-Other pitfalls:
-
-- `ByteBuf.array()` on a direct buffer throws. On a heap buffer it
-  returns the backing array, which may be larger than capacity —
-  downstream code that treats the array as the full contents will
-  read stale bytes beyond the writerIndex.
-- A transforming outbound handler (compression, chunked encoding)
-  between a FileRegion source and the socket kills OS zero-copy
-  silently. No error, just degraded performance.
 
 ## Measurement
 

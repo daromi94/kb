@@ -165,6 +165,7 @@ Return to [Topic](_index.md)
 
 **Cross-references:** Never link to other notes inline within prose or headings.
 All cross-references go exclusively in the `## Related` section at the bottom.
+Each entry must fit on a single line — shorten the description to make it fit.
 
 **Titles:** Sentence case — capitalize only the first word and proper
 nouns/acronyms (e.g., "# Consistent hashing", "# CRUSH algorithm",

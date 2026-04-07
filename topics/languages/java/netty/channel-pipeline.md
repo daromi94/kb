@@ -58,10 +58,8 @@ letting the application override only the methods it needs.
 
 ## Related
 
-- [Channel handler](channel-handler.md) - The individual processing units
-  in the pipeline
-- [Channel handler context](channel-handler-context.md) - Scoped
-  propagation and @Sharable handlers
+- [Channel handler](channel-handler.md) - Processing units in the pipeline
+- [Channel handler context](channel-handler-context.md) - Scoped event propagation
 - [Channel](channel.md) - The connection that owns a pipeline
 - [Event loop](event-loop.md) - The thread that drives pipeline execution
 

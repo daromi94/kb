@@ -45,8 +45,7 @@ automatically notifies listeners on the corresponding ChannelPromise.
 ## Related
 
 - [Channel handler](channel-handler.md) - The `exceptionCaught` callback
-- [Channel future](channel-future.md) - Listener-based completion
-  notification
+- [Channel future](channel-future.md) - Completion notification via listeners
 - [Channel pipeline](channel-pipeline.md) - The chain exceptions traverse
 
 ---

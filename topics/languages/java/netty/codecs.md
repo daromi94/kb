@@ -44,10 +44,8 @@ As with all handlers, `channelRead0` must not block the EventLoop thread.
 
 ## Related
 
-- [Channel handler](channel-handler.md) - The handler abstraction codecs
-  build on
-- [Channel pipeline](channel-pipeline.md) - Where codecs are installed in
-  the processing chain
+- [Channel handler](channel-handler.md) - Handler abstraction codecs build on
+- [Channel pipeline](channel-pipeline.md) - Where codecs sit in the chain
 
 ---
 

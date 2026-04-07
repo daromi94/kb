@@ -63,8 +63,7 @@ sharing is preferred over strict separation.
 
 ## Related
 
-- [Event loop](event-loop.md) - EventLoop threading model and Channel
-  registration
+- [Event loop](event-loop.md) - Threading model and Channel registration
 - [Channel](channel.md) - The I/O conduit created during bootstrapping
 - [Netty](netty.md) - Framework overview and core components
 

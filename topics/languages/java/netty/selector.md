@@ -64,11 +64,9 @@ focus on business logic.
 
 ## Related
 
-- [Non-blocking sockets](non-blocking-sockets.md) - The socket mode that
-  requires a Selector
-- [Netty](netty.md) - The framework that wraps Selector complexity
-- [Partial I/O](partial-io.md) - One of the key challenges Selectors
-  introduce
+- [Non-blocking sockets](non-blocking-sockets.md) - Socket mode requiring a Selector
+- [Netty](netty.md) - Framework that wraps Selector complexity
+- [Partial I/O](partial-io.md) - Key challenge Selectors introduce
 
 ---
 

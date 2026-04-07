@@ -64,16 +64,13 @@ Inbound                                             Outbound
 
 ## Related
 
-- [BIO scaling walls](bio-scaling-walls.md) - The problem Netty was built
-  to solve
-- [Non-blocking sockets](non-blocking-sockets.md) - OS-level mechanics
-  Netty abstracts away
+- [BIO scaling walls](bio-scaling-walls.md) - Problem Netty was built to solve
+- [Non-blocking sockets](non-blocking-sockets.md) - OS-level mechanics Netty abstracts
 - [Selector](selector.md) - The multiplexer at the heart of NIO
 - [Channel](channel.md) - The bidirectional I/O conduit
 - [Channel handler](channel-handler.md) - Modular event processing
 - [Channel future](channel-future.md) - Listener-based async tracking
-- [Partial I/O](partial-io.md) - How Netty handles incomplete reads and
-  writes
+- [Partial I/O](partial-io.md) - Handling incomplete reads and writes
 
 ---
 

@@ -63,8 +63,7 @@ port.
 
 - [Bootstrap](bootstrap.md) - Where the transport is configured
 - [Channel](channel.md) - The I/O conduit abstraction transports implement
-- [BIO scaling walls](bio-scaling-walls.md) - Why blocking transport fails
-  at scale
+- [BIO scaling walls](bio-scaling-walls.md) - Why blocking fails at scale
 - [Event loop](event-loop.md) - Thread model tied to transport choice
 
 ---

@@ -67,12 +67,9 @@ wakes the application only when a socket is genuinely ready.
 
 ## Related
 
-- [Selector](selector.md) - The multiplexer that makes non-blocking
-  sockets practical
-- [Partial I/O](partial-io.md) - Handling incomplete reads and writes in
-  detail
-- [BIO scaling walls](bio-scaling-walls.md) - The blocking model these
-  sockets replace
+- [Selector](selector.md) - Multiplexer for non-blocking sockets
+- [Partial I/O](partial-io.md) - Incomplete reads and writes in detail
+- [BIO scaling walls](bio-scaling-walls.md) - Blocking model these sockets replace
 
 ---
 

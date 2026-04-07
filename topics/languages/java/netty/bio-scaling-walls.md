@@ -58,10 +58,8 @@ and per-connection thread allocation.
 ## Related
 
 - [Netty](netty.md) - Framework built to abstract NIO complexity
-- [Non-blocking sockets](non-blocking-sockets.md) - How non-blocking mode
-  works at the OS level
-- [Selector](selector.md) - The multiplexer that replaces per-connection
-  threads
+- [Non-blocking sockets](non-blocking-sockets.md) - OS-level non-blocking mode
+- [Selector](selector.md) - Multiplexer replacing per-connection threads
 
 ---
 

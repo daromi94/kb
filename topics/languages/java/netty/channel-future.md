@@ -82,8 +82,7 @@ the operation succeeded or failed.
 ## Related
 
 - [Channel](channel.md) - The connection whose operations produce futures
-- [Channel handler](channel-handler.md) - Where listener-based futures
-  replace blocking calls
+- [Channel handler](channel-handler.md) - Where futures replace blocking calls
 - [Netty](netty.md) - Framework overview and core components
 
 ---

@@ -69,10 +69,8 @@ richer object that integrates with the framework:
 
 ## Related
 
-- [Channel handler](channel-handler.md) - Logic that processes data
-  flowing through a Channel
-- [Channel future](channel-future.md) - Tracking asynchronous Channel
-  operations
+- [Channel handler](channel-handler.md) - Processing logic for Channel data
+- [Channel future](channel-future.md) - Async Channel operation tracking
 - [Netty](netty.md) - Framework overview and core components
 
 ---

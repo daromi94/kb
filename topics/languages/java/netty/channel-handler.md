@@ -56,11 +56,9 @@ offloaded to a separate thread pool.
 
 ## Related
 
-- [Channel pipeline](channel-pipeline.md) - The ordered chain that
-  handlers plug into
+- [Channel pipeline](channel-pipeline.md) - Ordered chain handlers plug into
 - [Channel](channel.md) - The connection that handlers process
-- [Channel future](channel-future.md) - Tracking async results from
-  handler operations
+- [Channel future](channel-future.md) - Async results from handler operations
 - [Netty](netty.md) - Framework overview and core components
 
 ---

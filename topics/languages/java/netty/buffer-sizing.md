@@ -89,8 +89,7 @@ frames are uniform. Set via `ChannelOption.RCVBUF_ALLOCATOR`.
 ## Related
 
 - [ByteBuf](bytebuf.md) - Netty's buffer abstraction
-- [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory
-  pooling
+- [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory pooling
 - [Codecs](codecs.md) - Encoder/decoder handler base classes
 
 ---

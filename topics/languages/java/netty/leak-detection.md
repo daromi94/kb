@@ -22,8 +22,7 @@ access traces pinpoint which handler failed to release.
 
 ## Related
 
-- [Resource management](resource-management.md) - Ownership rules that
-  prevent leaks
+- [Resource management](resource-management.md) - Ownership rules preventing leaks
 - [ByteBuf](bytebuf.md) - Buffer structure and reference counting
 
 ---

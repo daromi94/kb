@@ -47,13 +47,18 @@ ByteBuf eliminates this by maintaining two independent indices:
 | Direct    | Native memory   | Zero-copy for socket I/O  | Expensive alloc, no backing array |
 | Composite | Virtual         | No-copy message assembly  | Slightly more complex access      |
 
-**Heap buffers** store bytes in a JVM byte array.
+**Heap buffers** (HeapByteBuf) wrap a `byte[]` on the JVM heap. Cheap
+to allocate, GC-managed, fast for application-level processing, but
+require a copy into a native buffer before the kernel can do a socket
+write.
 
-**Direct buffers** allocate native (off-heap) memory. The kernel can read
-from and write to them without an intermediate copy, which is why the JVM
-silently copies heap data into a temporary direct buffer on every socket
-send. Allocating direct buffers is more expensive than heap buffers, but
-the pooling system amortizes that cost.
+**Direct buffers** (DirectByteBuf) live in native memory outside the
+Java heap, allocated via `Unsafe.allocateMemory()` or
+`ByteBuffer.allocateDirect()`. They avoid the copy on socket I/O
+(zero-copy), which is why Netty defaults to direct buffers for socket
+reads and writes. Allocation and deallocation are expensive compared
+to heap, and they don't participate in normal GC — the pooling
+system amortizes that cost.
 
 **Composite buffers** (CompositeByteBuf) present multiple buffers — any
 mix of heap and direct — as a single logical ByteBuf without memcpy. Netty
@@ -74,6 +79,7 @@ promptly rather than waiting for garbage collection.
 
 ## Related
 
+- [ByteBuf allocators](bytebuf-allocators.md) - Allocator internals
 - [Channel](channel.md) - Reads and writes always go through a ByteBuf
 - [Codecs](codecs.md) - Decode ByteBuf into objects and encode back
 - [Netty](netty.md) - Framework overview

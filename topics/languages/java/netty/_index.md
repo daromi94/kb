@@ -13,6 +13,7 @@ Asynchronous, event-driven network application framework for Java.
 - [Channel](channel.md) - Bidirectional I/O conduit
 - [Channel future](channel-future.md) - Listener-based async tracking
 - [ByteBuf](bytebuf.md) - Pooled buffer over JDK ByteBuffer
+- [ByteBuf allocators](bytebuf-allocators.md) - Allocator internals and tuning
 - [Resource management](resource-management.md) - Buffer ownership and release
 - [Leak detection](leak-detection.md) - Unreleased buffer diagnostics
 - [Channel handler](channel-handler.md) - Pipeline event processing units

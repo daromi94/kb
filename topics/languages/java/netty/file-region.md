@@ -25,24 +25,17 @@ protected void channelRead0(ChannelHandlerContext ctx, FileRequest req) throws E
 
 ## Constraints
 
-**SSL/TLS defeats it.** Encryption requires reading bytes into
-userspace for transformation. When an SslHandler is in the pipeline,
-FileRegion cannot be used. The fallback for encrypted connections is
-ChunkedWriteHandler with ChunkedFile or ChunkedNioFile, which
-streams the file in fixed-size pieces to avoid loading the entire
-file into memory.
+Any handler that touches the bytes kills the zero-copy path:
 
-**Transforming handlers defeat it.** Compression, chunked transfer
-encoding, checksum computation — any outbound handler that needs to
-see the bytes forces a read-into-buffer fallback. A FileRegion
-written into a pipeline with an HttpContentCompressor silently
-degrades to standard I/O.
-
-**FileRegion is not a ByteBuf.** It is a separate type in the
-outbound path. Handlers that only know about ByteBuf pass it through
-unchanged (usually correct) or fail on an unchecked cast. Outbound
-handlers between the file source and the socket must either pass
-FileRegion through or explicitly convert it.
+- **SSL/TLS** — encryption must happen in userspace. When an
+  SslHandler is in the pipeline, use ChunkedWriteHandler with
+  ChunkedFile instead, which streams the file in fixed-size pieces.
+- **Compression and checksums** — any transforming outbound handler
+  forces a read-into-buffer fallback. An HttpContentCompressor in
+  the pipeline silently degrades FileRegion to standard I/O.
+- **Type mismatch** — FileRegion is not a ByteBuf. Outbound handlers
+  between the file source and the socket must pass it through or
+  explicitly convert it; an unchecked cast to ByteBuf will fail.
 
 ## Related
 

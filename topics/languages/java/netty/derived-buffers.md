@@ -41,8 +41,24 @@ variants:
 These increment the reference count at creation, keeping the backing
 memory alive until the derived buffer is also released.
 
+## Decoder and encoder patterns
+
+In decoders, prefer `readRetainedSlice(length)` over
+`readBytes(length)` when carving frames from a cumulation buffer.
+`readRetainedSlice` creates a zero-copy view with a reference count
+bump. `readBytes` allocates fresh memory and copies the bytes — at
+high throughput, this difference translates to gigabytes per second
+of wasted memory bandwidth.
+
+In encoders, avoid `writeBytes(payload)` when combining a header
+with a payload ByteBuf the caller provided. `writeBytes` between
+two ByteBuf instances is a memcpy. Emit the header separately and
+use a CompositeByteBuf to combine them without copying.
+
 ## Related
 
+- [Zero copy](zero-copy.md) - Pipeline-wide copy avoidance
+- [Composite ByteBuf](composite-bytebuf.md) - Logical buffer composition
 - [ByteBuf](bytebuf.md) - Netty's buffer abstraction
 - [Resource management](resource-management.md) - Buffer ownership and release
 

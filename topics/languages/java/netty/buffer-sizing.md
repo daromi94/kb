@@ -61,7 +61,8 @@ protected void encode(
 On the inbound side, Netty cannot ask application code how large the
 next message will be. The default RecvByteBufAllocator for socket
 channels is AdaptiveRecvByteBufAllocator, which maintains a predicted
-buffer size and adjusts it after each read:
+buffer size and adjusts it after each read. The allocator picks sizes
+from a precomputed table of increasing values and steps through it:
 
 - **Scale up:** If a read fills the buffer completely, the prediction
   jumps up by 4 index positions in the size table (aggressive ramp-up)

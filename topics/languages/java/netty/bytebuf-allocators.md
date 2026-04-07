@@ -6,8 +6,7 @@ through arena-based memory management and thread-local caching.
 
 ## Allocator strategies
 
-Netty ships two allocators, selectable via
-`-Dio.netty.allocator.type` or by passing one to the Bootstrap:
+Netty ships two allocators:
 
 - **PooledByteBufAllocator** — the default. Reuses memory through
   arenas and thread-local caches.

@@ -47,23 +47,19 @@ ByteBuf eliminates this by maintaining two independent indices:
 | Direct    | Native memory   | Zero-copy for socket I/O  | Expensive alloc, no backing array |
 | Composite | Virtual         | No-copy message assembly  | Slightly more complex access      |
 
-**Heap buffers** (HeapByteBuf) wrap a `byte[]` on the JVM heap. Cheap
-to allocate, GC-managed, fast for application-level processing, but
-require a copy into a native buffer before the kernel can do a socket
-write.
+**Heap buffers** store data in a `byte[]` on the JVM heap. The
+kernel cannot read from heap memory directly, so every socket write
+copies the bytes into a native buffer first.
 
-**Direct buffers** (DirectByteBuf) live in native memory outside the
-Java heap, allocated via `Unsafe.allocateMemory()` or
-`ByteBuffer.allocateDirect()`. They avoid the copy on socket I/O
-(zero-copy), which is why Netty defaults to direct buffers for socket
-reads and writes. Allocation and deallocation are expensive compared
-to heap, and they don't participate in normal GC — the pooling
-system amortizes that cost.
+**Direct buffers** store data in native memory outside the heap.
+Socket I/O reads from them directly — no copy needed. Netty
+defaults to direct buffers for this reason. Allocation is more
+expensive, but the pooling system amortizes that cost.
 
-**Composite buffers** (CompositeByteBuf) present multiple buffers — any
-mix of heap and direct — as a single logical ByteBuf without memcpy. Netty
-further optimizes socket writes on composites using scatter/gather I/O,
-flushing all components in a single system call.
+**Composite buffers** present multiple buffers — any mix of heap
+and direct — as a single logical ByteBuf without memcpy. Socket
+writes on composites use scatter/gather I/O, flushing all
+components in a single system call.
 
 ## Memory management
 

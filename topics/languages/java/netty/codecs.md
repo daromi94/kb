@@ -16,7 +16,7 @@ objects an application works with.
 Netty provides abstract base classes whose names reflect the conversion
 they perform:
 
-**ByteToMessageDecoder** handles inbound data. It overrides `channelRead`,
+**ByteToMessageDecoder** handles inbound data. It overrides `channelRead()`,
 calls a `decode()` method that subclasses implement, and forwards the
 resulting object to the next ChannelInboundHandler in the pipeline.
 

@@ -26,7 +26,7 @@ network or receiver can handle it. A 10MB file is written, but the kernel's
 fixed-size send buffer is mostly full and only accepts 64KB. The `write()`
 returns 65,536. The application is responsible for the remaining bytes. It
 cannot simply loop and call `write()` again immediately — that would likely
-return EAGAIN and waste CPU. Instead, the socket must be registered for an
+return `EAGAIN` and waste CPU. Instead, the socket must be registered for an
 `OP_WRITE` event so the OS signals when send buffer space is available.
 
 | Aspect          | Partial read                             | Partial write                                 |

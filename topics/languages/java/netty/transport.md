@@ -53,7 +53,7 @@ platforms.
 **io_uring** uses Linux's completion-based I/O interface. Where Epoll is
 readiness-based (tells you a socket is ready, then you perform the I/O),
 io_uring is completion-based (you submit I/O, the kernel notifies you
-when it finishes). Requires a recent Linux kernel.
+when it finishes).
 
 **Embedded** provides a test harness that drives data through a pipeline
 in-process, allowing assertions on handler output without binding to a real

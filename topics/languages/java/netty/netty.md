@@ -41,10 +41,10 @@ ChannelHandlers that each perform a discrete processing step:
 
 ```text
 Inbound                                             Outbound
-+----------------+  +-----------------+  +-------+  +-----------------+  +---------------+
-| Decoder        |->| Decoder         |->| Biz   |->| Encoder         |->| Encoder       |
-| (bytes->frame) |  | (frame->object) |  | logic |  | (object->frame) |  | (bytes->wire) |
-+----------------+  +-----------------+  +-------+  +-----------------+  +---------------+
++----------------+  +-----------------+  +-------+  +-----------------+  +----------------+
+| Decoder        |->| Decoder         |->| Biz   |->| Encoder         |->| Encoder        |
+| (bytes->frame) |  | (frame->object) |  | logic |  | (object->frame) |  | (frame->bytes) |
++----------------+  +-----------------+  +-------+  +-----------------+  +----------------+
 ```
 
 - **Decoder handlers** transform raw bytes into Java objects

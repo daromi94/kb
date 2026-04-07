@@ -38,7 +38,7 @@ with the same EventLoop for its entire lifetime.
 | Channel : EventLoop        | 1 : 1       | No thread migration, no locking needed   |
 
 Because a Channel never migrates between threads, handler code can safely
-use plain fields without volatile or synchronized — the EventLoop's
+use plain fields without `volatile` or `synchronized` — the EventLoop's
 single-thread contract provides the memory visibility guarantee.
 
 ## Related

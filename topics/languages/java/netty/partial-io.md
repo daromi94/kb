@@ -62,7 +62,7 @@ message has been sent, hiding the partial-write machinery entirely.
 
 - [Non-blocking sockets](non-blocking-sockets.md) - Why partial I/O occurs
 - [Netty](netty.md) - Framework that abstracts partial I/O handling
-- [Selector](selector.md) - The event loop driving read/write-ready
+- [Selector](selector.md) - The multiplexer driving read/write-ready
   notifications
 
 ---

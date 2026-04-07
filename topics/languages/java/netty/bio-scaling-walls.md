@@ -38,8 +38,8 @@ by application code.
 
 ## The NIO alternative
 
-Java NIO (introduced in JDK 1.4) addresses these walls by decoupling
-threads from connections. It rests on two pillars:
+Java NIO addresses these walls by decoupling threads from connections.
+It rests on two pillars:
 
 **Non-blocking sockets:** Calling `read()` on a non-blocking socket returns
 immediately with `EAGAIN` if no data is available, freeing the thread for

@@ -12,21 +12,21 @@ Asynchronous, event-driven network application framework for Java.
 - [Event loop](event-loop.md) - Threading and I/O dispatch
 - [Channel](channel.md) - Bidirectional I/O conduit
 - [Channel future](channel-future.md) - Listener-based async tracking
+- [Channel handler](channel-handler.md) - Pipeline event processing units
+- [Channel pipeline](channel-pipeline.md) - Handler chain and event flow
+- [Channel handler context](channel-handler-context.md) - Handler-pipeline binding
+- [Codecs](codecs.md) - Byte-object encoder/decoder handlers
+- [Exception handling](exception-handling.md) - Error propagation paths
+- [Blocking offload](blocking-offload.md) - Threading out blocking work
 - [ByteBuf](bytebuf.md) - Netty's buffer abstraction
 - [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory pooling
 - [Buffer sizing](buffer-sizing.md) - Encoder and Decoder allocations
 - [Derived buffers](derived-buffers.md) - Zero-copy views over ByteBuf
-- [Zero copy](zero-copy.md) - Avoiding redundant byte copies
 - [Composite ByteBuf](composite-bytebuf.md) - Logical buffer composition
 - [File region](file-region.md) - OS-level file transfer
+- [Zero copy](zero-copy.md) - Avoiding redundant byte copies
 - [Resource management](resource-management.md) - Buffer ownership and release
 - [Leak detection](leak-detection.md) - Unreleased buffer diagnostics
-- [Channel handler](channel-handler.md) - Pipeline event processing units
-- [Channel pipeline](channel-pipeline.md) - Handler chain and event flow
-- [Channel handler context](channel-handler-context.md) - Handler-pipeline binding
-- [Exception handling](exception-handling.md) - Error propagation paths
-- [Blocking offload](blocking-offload.md) - Threading out blocking work
-- [Codecs](codecs.md) - Byte-object encoder/decoder handlers
 - [Transport](transport.md) - Pluggable I/O mechanisms
 - [Bootstrap](bootstrap.md) - Client and server wiring
 

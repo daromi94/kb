@@ -29,7 +29,7 @@ reality behind it.
 
 ## Related
 
-- [Abstraction](abstraction.md) - Core concept and benefits
+- [Abstraction](abstraction.md) - The discipline abstractions build on
 - [Indirection](indirection.md) - Each layer of indirection is a potential leak point
 
 ---

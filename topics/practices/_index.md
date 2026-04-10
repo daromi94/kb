@@ -12,3 +12,4 @@ How to write and structure software.
 - [Refactoring](refactoring/_index.md) - Restructuring code safely
 - [TigerStyle](tigerstyle/_index.md) - TigerBeetle's coding style
 - [SRE](sre/_index.md) - Shipping and operating reliably
+- [Testing](testing/_index.md) - Strategies for verification

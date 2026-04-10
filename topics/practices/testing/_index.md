@@ -1,6 +1,6 @@
 # Testing
 
-Strategies for verifying software under real-world conditions.
+Strategies for verifying and validating software.
 
 ## Notes
 

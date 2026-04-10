@@ -37,7 +37,7 @@ integration drift when branches live too long.
 
 ## Related
 
-- [Trunk-based development](trunk-based-development.md) - Continuous integration alternative
+- [Trunk-based development](trunk-based-development.md) - Complementary integration workflow
 
 ---
 

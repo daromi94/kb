@@ -14,14 +14,9 @@ trunk constantly, unfinished work is hidden behind **feature flags**
 rather than isolated on branches.
 
 Releases are cut directly from trunk or from short-lived release
-branches that only receive cherry-picked fixes.
-
-## Feature flags
-
-Feature flags are essential to TBD. They decouple deployment from
-release — code ships to production continuously, but incomplete
-features stay invisible to users until the flag is turned on. This
-replaces branch isolation as the mechanism for hiding work in progress.
+branches that only receive cherry-picked fixes. Feature flags decouple
+deployment from release — code ships to production continuously, but
+incomplete features stay invisible to users until the flag is turned on.
 
 ## Requirements
 
@@ -40,7 +35,7 @@ workflows:
 
 Pays integration cost continuously in tiny increments rather than
 deferring it. Dramatically shortens feedback loops and is a
-prerequisite for true continuous delivery. Large-scale monorepos
+prerequisite for continuous delivery. Large-scale monorepos
 (Google, Meta) run on this model.
 
 The overhead is operational: teams need mature CI, flag management, and

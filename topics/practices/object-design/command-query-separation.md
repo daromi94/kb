@@ -61,8 +61,7 @@ different databases for reads and writes.
 ## Related
 
 - [Tell, don't ask](tell-dont-ask.md) - Complementary: TDA says command objects; CQS says don't mix
-- [Uniform access](uniform-access.md) - Also from Meyer; queries support uniform notation
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

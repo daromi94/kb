@@ -58,10 +58,9 @@ and any conforming implementation is substitutable.
 
 - [Leaky abstractions](leaky-abstractions.md) - When hidden complexity surfaces
 - [Premature abstraction](premature-abstraction.md) - Costs of abstracting too early
-- [Design by Contract](design-by-contract.md) - Formalizes abstraction by specification
 - [Indirection](indirection.md) - Closely related but serves different purpose
 - [Polymorphism](polymorphism.md) - Uses abstraction for dynamic behavior
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Abstraction](_index.md)

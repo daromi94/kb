@@ -64,11 +64,6 @@ temporary bypass (indirection), move the cars over (traffic shifting), tear down
 the old structure (amputation), and finally move traffic onto the permanent new
 bridge.
 
-## Related
-
-- [Indirection](../principles/indirection.md) - The isolation layer that makes surgery possible
-- [Abstraction](../principles/abstraction.md) - Clean interfaces enable safe decommissioning
-
 ---
 
-Return to [Clean code](_index.md)
+Return to [Refactoring](_index.md)

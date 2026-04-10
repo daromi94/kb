@@ -145,9 +145,8 @@ ignore.
 
 ## Related
 
-- [Abstraction](abstraction.md) - Specification as a form of abstraction
 - [Defensive programming](defensive-programming.md) - Complementary approach for external boundaries
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Correctness](_index.md)

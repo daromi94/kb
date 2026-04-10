@@ -90,8 +90,7 @@ rich behavior.
 ## Related
 
 - [Tell, don't ask](tell-dont-ask.md) - The principle that directly counters anemia
-- [Abstraction](abstraction.md) - Rich models use abstraction to hide state
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

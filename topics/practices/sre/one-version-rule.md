@@ -46,4 +46,4 @@ platform dependency constraints.
 
 ---
 
-Return to [Principles](_index.md)
+Return to [SRE](_index.md)

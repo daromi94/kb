@@ -71,8 +71,7 @@ apply to:
 ## Related
 
 - [Tell, don't ask](tell-dont-ask.md) - The practical application of LoD
-- [Abstraction](abstraction.md) - Proper interfaces enable LoD compliance
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

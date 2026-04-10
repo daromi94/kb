@@ -6,7 +6,6 @@ Practices for writing maintainable, readable software.
 
 - [Triad of maintainability](triad-of-maintainability.md) - Code maintainability framework
 - [WTFs per minute](wtfs-per-minute.md) - Code review quality metric
-- [Shutdown surgery](shutdown-surgery.md) - Safely decommissioning legacy systems
 
 ---
 

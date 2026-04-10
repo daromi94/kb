@@ -94,4 +94,4 @@ Every level of indirection comes with trade-offs:
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Abstraction](_index.md)

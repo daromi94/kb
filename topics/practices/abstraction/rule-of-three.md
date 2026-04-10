@@ -40,4 +40,4 @@ from specific implementations.
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Abstraction](_index.md)

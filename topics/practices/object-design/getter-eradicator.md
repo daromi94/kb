@@ -59,4 +59,4 @@ the object that holds the data.
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

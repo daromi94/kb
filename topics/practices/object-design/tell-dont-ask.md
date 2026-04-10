@@ -104,9 +104,7 @@ There are specific contexts where "asking" is appropriate:
 ## Related
 
 - [Law of Demeter](law-of-demeter.md) - TDA is the practical application of LoD
-- [Abstraction](abstraction.md) - Strong interfaces enable TDA
-- [Triad of maintainability](../clean-code/triad-of-maintainability.md) - TDA improves all three aspects
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

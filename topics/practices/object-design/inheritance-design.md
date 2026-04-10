@@ -68,11 +68,6 @@ Composition treats the other class as a black box, depending only on its
 public interface. It avoids the self-use and fragile base class problems
 entirely.
 
-## Related
-
-- [Polymorphism](polymorphism.md) - Subtype polymorphism works through interfaces, not just inheritance
-- [Abstraction](abstraction.md) - Composition depends on abstract interfaces
-
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

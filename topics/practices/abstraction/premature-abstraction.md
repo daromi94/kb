@@ -46,4 +46,4 @@ by contrast, is localized and easy to delete.
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Abstraction](_index.md)

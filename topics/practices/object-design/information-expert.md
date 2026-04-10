@@ -75,4 +75,4 @@ repetition; these belong in interceptors or middleware.
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Object design](_index.md)

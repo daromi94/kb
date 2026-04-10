@@ -10,6 +10,7 @@ Techniques for restructuring code without introducing regression.
 - [Incremental refactoring](incremental-refactoring.md) - Atomic commits and tight feedback loops
 - [Tests as specifications](tests-as-specifications.md) - Using tests as behavioral contracts
 - [Exit strategy](exit-strategy.md) - Knowing when to abort a refactor
+- [Shutdown surgery](shutdown-surgery.md) - Decommissioning legacy systems
 
 ---
 

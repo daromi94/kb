@@ -39,9 +39,7 @@ UAP applies to in-memory decisions, not I/O boundaries.
 ## Related
 
 - [Abstraction](abstraction.md) - UAP is a specific form of implementation hiding
-- [Information expert](information-expert.md) - The expert decides how to provide a value
-- [Getter eradicator](getter-eradicator.md) - UAP gives getters a legitimate role
 
 ---
 
-Return to [Principles](_index.md)
+Return to [Abstraction](_index.md)

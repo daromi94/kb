@@ -1,9 +1,7 @@
 # Mechanical sympathy
 
-Mechanical sympathy is designing software to work with the hardware
-rather than against it. The inverted index is not just a theoretical
-data structure — every design choice maps to a physical constraint of
-RAM, CPU caches, OS paging, or disk throughput.
+Every design choice in the inverted index maps to a physical constraint
+of RAM, CPU caches, OS paging, or disk throughput.
 
 ## Dictionary in RAM, postings on disk
 

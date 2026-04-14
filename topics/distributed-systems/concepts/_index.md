@@ -14,6 +14,7 @@ Foundational techniques and principles for distributed systems.
 - [Crash or continue](crash-or-continue.md) - Error handling as architecture
 - [Crash-only software](crash-only-software.md) - Structural properties for crash resilience
 - [Blast radius reduction](blast-radius-reduction.md) - Containment through compartmentalization
+- [Metastable failures](metastable-failures.md) - Bad states sustained by the system's own safeguards
 - [Replication](replication.md) - Multi-node data copying
 - [Partitioning](partitioning.md) - Splitting data across nodes
 - [Leader and followers](leader-and-followers.md) - Single-leader write coordination

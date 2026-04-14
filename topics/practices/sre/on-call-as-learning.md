@@ -14,9 +14,9 @@ with nothing left to learn.
 ## Investigate the unexpected
 
 Experts are placed on call to spend bandwidth on unusual behavior,
-edge cases, and unanticipated customer usage. Routine alerts are the
-background. The value comes from deep investigation of anomalies that
-monitoring cannot explain by itself.
+edge cases, and unanticipated customer usage. The value comes from
+deep investigation of anomalies that monitoring cannot explain by
+itself.
 
 Without this framing, on-call becomes rote work that senior engineers
 avoid, and the team loses its most valuable production learning
@@ -25,7 +25,7 @@ channel.
 ## Related
 
 - [Operational heroics](operational-heroics.md) - The anti-pattern this prevents
-- [Postmortem anatomy](postmortem-anatomy.md) - Where investigation output lands
+- [Postmortem anatomy](postmortem-anatomy.md) - Where incident findings become action items
 
 ---
 

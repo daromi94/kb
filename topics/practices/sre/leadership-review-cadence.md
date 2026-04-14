@@ -4,7 +4,7 @@ A culture of reliability has to be driven from the top. Senior
 leaders must spend their own bandwidth understanding why systems
 operate the way they do, not just reading summary metrics.
 
-## Mandatory, recurring, broad
+## Mandatory and recurring
 
 At AWS, a mandatory weekly meeting where senior leaders and engineers
 cross-examine correction of errors (COE) documents is cited as a core

@@ -11,6 +11,8 @@ Foundational techniques and principles for distributed systems.
 - [Separate compute from data](separate-compute-from-data.md) - Decoupling compute and storage
 - [Control plane vs data plane](control-plane-data-plane.md) - Configuration vs request processing
 - [Distributed monolith](distributed-monolith.md) - Coupled services antipattern
+- [Crash or continue](crash-or-continue.md) - Error handling as architecture
+- [Blast radius reduction](blast-radius-reduction.md) - Containment through compartmentalization
 - [Replication](replication.md) - Multi-node data copying
 - [Partitioning](partitioning.md) - Splitting data across nodes
 - [Leader and followers](leader-and-followers.md) - Single-leader write coordination

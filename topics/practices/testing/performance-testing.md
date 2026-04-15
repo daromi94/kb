@@ -30,10 +30,10 @@ network effects — do not scale linearly with cluster size, and a
 smaller stack hides exactly the contention paths the test most
 needs to exercise.
 
-Use infrastructure as code and container-based deployments so every
-run starts from the same environment. The cloud makes
-production-scale environments affordable on demand, so the cost
-argument for running against a scaled-down stack no longer holds.
+Cluster size is the obvious axis, but not the only one. A test
+against a ten-row table does not predict query planner behavior
+against ten million rows, and mocked downstream services hide the
+latency, retries, and backpressure that shape production under load.
 When full fidelity is impractical, document the reductions so later
 runs share a common baseline and stay comparable.
 

@@ -1,4 +1,4 @@
-# Scalability and performance testing
+# Performance testing
 
 A performance test asks whether a workload's throughput, latency
 percentiles, and error rate hold up under realistic load. The answer

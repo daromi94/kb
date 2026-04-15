@@ -7,10 +7,9 @@ percentiles — p50, p95, p99, and for high-volume services p99.9.
 ## Why averages lie
 
 A service with a 100ms average and a 5-second p99 is a service where
-one request in a hundred takes fifty times longer than typical. The
-average looks healthy. The user behind that one request is having a
-bad time, and at scale one in a hundred becomes thousands of bad
-sessions per hour.
+one request in a hundred takes five full seconds. The average looks
+healthy. The user behind that one request is having a bad time, and
+at scale one in a hundred becomes thousands of bad sessions per hour.
 
 The percentiles preserve the shape the average flattens. p50 is the
 typical request, p95 catches the common slow path, and p99 and p99.9

@@ -4,9 +4,8 @@ Strategies for verifying and validating software.
 
 ## Notes
 
-- [Load test planning](load-test-planning.md) - Objectives and methodology
-- [Load test types](load-test-types.md) - Performance test taxonomy
-- [Load test implications](load-test-implications.md) - Operational side effects
+- [Scalability and performance testing](scalability-and-performance-testing.md) - Non-functional requirements as a
+  continuous practice
 
 ---
 

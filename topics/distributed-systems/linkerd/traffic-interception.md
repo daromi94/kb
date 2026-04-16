@@ -8,7 +8,7 @@ the application starts.
 ## linkerd-init
 
 When a pod is injected, the proxy-injector adds an init container
-called linkerd-init. It runs before the application or proxy
+called `linkerd-init`. It runs before the application or proxy
 containers, configures iptables rules to redirect all inbound and
 outbound TCP traffic to the proxy's listening ports, then exits.
 

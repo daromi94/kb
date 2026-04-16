@@ -7,7 +7,7 @@ HTTP connection — the mesh is invisible.
 ## Outbound path
 
 1. The application sends a request to
-   `service-b.namespace.svc.cluster.local`
+   `service-x.namespace.svc.cluster.local`
 2. iptables rules redirect the outbound connection to the local
    sidecar proxy
 3. The proxy resolves the destination using endpoint data streamed
@@ -30,10 +30,10 @@ that crosses their path.
 
 ## Related
 
-- [Traffic interception](traffic-interception.md) - iptables redirection
-- [Automatic mTLS](mtls.md) - TLS handshake
-- [Reliability](reliability.md) - EWMA endpoint selection
-- [Golden metrics](golden-metrics.md) - What both proxies record
+- [Traffic interception](traffic-interception.md) - How iptables redirects to the proxy
+- [Automatic mTLS](mtls.md) - How the proxy-to-proxy TLS connection works
+- [Reliability](reliability.md) - How EWMA selects the target endpoint
+- [Golden metrics](golden-metrics.md) - What both proxies measure per request
 
 ---
 

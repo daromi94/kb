@@ -38,6 +38,19 @@ policy scope, Endpoints for service discovery, admission webhooks for
 proxy injection. This coupling means the mesh feels native rather
 than bolted on, at the cost of not supporting other platforms.
 
+## Intentional omissions
+
+What the control plane does not do is as deliberate as what it does:
+
+- No built-in metrics storage — Prometheus lives in the viz extension
+- No built-in tracing collector — use an OpenTelemetry collector
+- No rate limiting
+- No complex traffic routing (header-based routing, fault injection,
+  traffic mirroring) — traffic splits via HTTPRoute are supported,
+  but Linkerd is not a full traffic management platform
+- No WASM or plugin system — the proxy is a closed system
+- No proxy configuration beyond annotations and CRDs
+
 ## Related
 
 - [Architecture](architecture.md) - The structure these decisions produced

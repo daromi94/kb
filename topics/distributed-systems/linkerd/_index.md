@@ -8,6 +8,8 @@ all traffic entering and leaving it.
 ## Notes
 
 - [Architecture](architecture.md) - Control plane and data plane
+- [Destination service](destination-service.md) - Service discovery, policy, and routing hub
+- [Proxy injector](proxy-injector.md) - Admission webhook and sidecar injection
 - [Proxy internals](proxy-internals.md) - Rust runtime and dynamic config
 - [Traffic interception](traffic-interception.md) - Transparent iptables redirection
 - [Request lifecycle](request-lifecycle.md) - End-to-end request flow
@@ -16,6 +18,7 @@ all traffic entering and leaving it.
 - [Golden metrics](golden-metrics.md) - Proxy-layer traffic metrics
 - [Reliability](reliability.md) - Load balancing, retries, timeouts
 - [Design decisions](design-decisions.md) - Architectural trade-offs
+- [High availability](high-availability.md) - Production resilience and degradation
 
 ---
 

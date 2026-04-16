@@ -37,7 +37,7 @@ namespace (`linkerd` by default). It is written primarily in Go.
 The policy controller is not a separate deployment. It runs as a
 container inside the destination pod and shares its lifecycle.
 
-## Data flow
+## Inside a meshed pod
 
 ```
 +---------------------------+
@@ -57,6 +57,44 @@ container inside the destination pod and shares its lifecycle.
              v
           network
 ```
+
+## System-level coordination
+
+```
++-------------------------------+
+|        Kubernetes API         |
++-------+---------+-------------+
+        |         |             |
+watches | watches |   validates |
+        |         | pod, admits |
+        |         |             |
++-------v-----+ +-v--------+ +--v-------+
+| destination | | identity | | proxy    |
+| service     | | service  | | injector |
++-------+-----+ +----+-----+ +----------+
+        |             |
+   gRPC |        cert |
+streams |     issuing |
+        |             |
++-------v-------------v--+
+|     linkerd2-proxy     |
+|     (in every pod)     |
++------------------------+
+```
+
+## Pod startup sequence
+
+1. Pod creation request reaches the API server
+2. Proxy injector webhook mutates the pod spec (adds init +
+   proxy containers)
+3. Init container runs, sets up iptables rules, exits
+4. Proxy container starts
+5. Proxy generates a key pair and requests a certificate from
+   the identity service
+6. Identity service validates the request and issues a cert
+7. Proxy opens gRPC streams to the destination service
+8. Proxy is ready — traffic flows through it with mTLS, metrics,
+   and policy enforcement
 
 ## Related
 

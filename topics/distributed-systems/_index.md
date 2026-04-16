@@ -13,3 +13,4 @@ Concepts, patterns, and systems for building reliable distributed applications.
 - [Turbopuffer](turbopuffer/_index.md) - Vector database with stateless compute on object storage
 - [Pekko](pekko/_index.md) - Actor-based toolkit for concurrent, distributed systems
 - [Ceph](ceph/_index.md) - Unified distributed storage with CRUSH algorithm
+- [Linkerd](linkerd/_index.md) - Kubernetes service mesh with sidecar proxies

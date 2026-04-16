@@ -72,11 +72,11 @@ watches | watches |   validates |
 | destination | | identity | | proxy    |
 | service     | | service  | | injector |
 +-------+-----+ +----+-----+ +----------+
-        |             |
-   gRPC |        cert |
-streams |     issuing |
-        |             |
-+-------v-------------v--+
+        |            |
+   gRPC |       cert |
+streams |    issuing |
+        |            |
++-------v------------v---+
 |     linkerd2-proxy     |
 |     (in every pod)     |
 +------------------------+

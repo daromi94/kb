@@ -13,6 +13,11 @@ connection entering or leaving the pod. It handles mTLS, routing,
 retries, load balancing, and metric collection on behalf of the
 application.
 
+An init container (`linkerd-init`) configures iptables rules to
+redirect all pod TCP traffic through the proxy before the application
+starts. The interception is transparent — application code needs no
+changes.
+
 Because the proxy is purpose-built for the mesh use case rather than a
 general-purpose reverse proxy, it has a small resource footprint and
 low per-hop latency.
@@ -55,6 +60,9 @@ container inside the destination pod and shares its lifecycle.
 
 ## Related
 
+- [Proxy internals](proxy-internals.md) - Rust runtime and dynamic config
+- [Traffic interception](traffic-interception.md) - iptables and linkerd-init
+- [Request lifecycle](request-lifecycle.md) - End-to-end request flow
 - [Automatic mTLS](mtls.md) - How identity issues proxy certs
 - [Protocol detection](protocol-detection.md) - How proxies classify traffic
 - [Golden metrics](golden-metrics.md) - What the proxy measures

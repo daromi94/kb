@@ -58,6 +58,10 @@ CoreDNS is driven by a single config file, the Corefile, shipped as the
 }
 ```
 
+## Related
+
+- [kube-proxy](kube-proxy.md) - Routes the ClusterIP that CoreDNS returns
+
 ---
 
 Return to [Networking](_index.md)

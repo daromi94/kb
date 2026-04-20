@@ -4,7 +4,7 @@ CoreDNS is the cluster DNS server. It turns Service names into ClusterIPs
 and forwards anything outside the cluster domain to upstream resolvers.
 
 It runs as a Deployment in `kube-system` behind a ClusterIP Service. Each
-pod's `/etc/resolv.conf` is written by kubelet at start-up, with
+pod's `/etc/resolv.conf` is written by the kubelet at start-up, with
 `nameserver` pointing at that Service IP and `search` built from the
 cluster domain — so lookups reach CoreDNS without the pod knowing it.
 

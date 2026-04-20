@@ -51,7 +51,7 @@ either answers it or falls through to the next.
 ## The Corefile
 
 CoreDNS is driven by a single config file, the Corefile, shipped as the
-`coredns` ConfigMap in `kube-system`. A stock one looks like:
+`coredns` ConfigMap in `kube-system`. The default looks like this:
 
 ```text
 .:53 {

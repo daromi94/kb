@@ -58,13 +58,25 @@ The controller rewrites a slice when:
 - A Pod's labels change, adding or removing it from the match
 - A Pod's readiness, serving, or terminating condition changes
 
-Each update fans out as a watch event to every client of that slice
-— primarily kube-proxy on each node, plus in-cluster load balancers
-and Gateway API controllers.
+Each update fans out as a watch event to every client subscribed to
+that slice. Typical consumers:
+
+- **kube-proxy** — reprograms iptables, nftables, or IPVS on every
+  node for the ClusterIP dataplane.
+- **CoreDNS** — rewrites DNS records for headless Services so
+  lookups resolve to the current Pod IPs.
+- **Cloud controller manager** — updates the external load
+  balancer's backend pool for LoadBalancer Services.
+- **Gateway API controllers** — refresh L7 routing to match the
+  current endpoints.
+- **Service mesh data planes** — proxies like Envoy refresh their
+  upstream lists.
+- **Custom operators** — anything with a watch on EndpointSlices.
 
 ## Related
 
 - [kube-proxy](kube-proxy.md) - Consumes EndpointSlices to program DNAT
+- [CoreDNS](coredns.md) - Resolves headless Services from slice entries
 
 ---
 

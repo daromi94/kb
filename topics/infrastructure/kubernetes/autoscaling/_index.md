@@ -7,6 +7,7 @@ Scaling Kubernetes workloads and clusters to match demand.
 - [Autoscaling types](autoscaling-types.md) - HPA vs VPA vs Cluster Autoscaler
 - [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Control loop and configuration
 - [Metrics registry](metrics-registry.md) - How metrics reach the autoscaler
+- [cAdvisor](cadvisor.md) - Per-node container metrics daemon
 
 ---
 

@@ -10,6 +10,7 @@ that share network, storage, and lifecycle.
 - [Init containers](init-containers.md) - Setup containers that run before app starts
 - [Sidecar containers](sidecar-containers.md) - Native sidecar feature for helper containers
 - [Scheduling](scheduling.md) - Pod placement controls
+- [Resource requests and limits](resource-requests-and-limits.md) - CPU and memory allocation controls
 - [QoS classes](qos-classes.md) - Resource guarantees and eviction priority
 - [Hostname and DNS](hostname-dns.md) - Pod naming and DNS resolution
 - [Disruptions](disruptions.md) - Pod availability guarantees

@@ -6,6 +6,7 @@ that share network, storage, and lifecycle.
 ## Notes
 
 - [Fundamentals](fundamentals.md) - Core concepts and why Pods exist
+- [Creation flow](creation-flow.md) - Control-plane path from apply to running
 - [Lifecycle](lifecycle.md) - Pod phases and health checking
 - [Init containers](init-containers.md) - Setup containers that run before app starts
 - [Sidecar containers](sidecar-containers.md) - Native sidecar feature for helper containers

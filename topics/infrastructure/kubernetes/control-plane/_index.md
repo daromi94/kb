@@ -1,7 +1,8 @@
 # Control plane
 
-The components that accept declarative intent, decide cluster state,
-and push changes out to every node.
+Clients declare desired state; the control plane — API server,
+etcd, scheduler, controller managers — continuously reconciles the
+cluster toward it.
 
 ## Notes
 

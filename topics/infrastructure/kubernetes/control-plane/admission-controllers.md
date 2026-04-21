@@ -1,12 +1,12 @@
 # Admission controllers
 
-Admission controllers intercept write requests after authentication
-and authorization but before persistence. They can modify the
-object, reject it, or both — and they are where cluster operators
-enforce policy the built-in schema does not capture.
+Admission controllers intercept writes after authentication and
+authorization but before persistence. They can modify the object,
+reject it, or both — where cluster operators enforce policy beyond
+the built-in schema.
 
-Reads (`get`, `list`, `watch`) bypass admission entirely; policing
-reads is the job of authorization.
+Reads bypass admission entirely; policing reads is authorization's
+job.
 
 ## Two phases
 

@@ -1,8 +1,9 @@
 # Leadership review cadence
 
-A culture of reliability has to be driven from the top. Senior
-leaders must spend their own bandwidth understanding why systems
-operate the way they do, not just reading summary metrics.
+A standing forum where senior leaders cross-examine correction of
+errors (COE) documents on a fixed schedule. The cadence is the point:
+reliability review is a recurring obligation, not a reaction to big
+outages.
 
 ## Mandatory and recurring
 

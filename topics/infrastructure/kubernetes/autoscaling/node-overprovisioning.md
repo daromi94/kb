@@ -100,9 +100,8 @@ predictable workloads.
 
 ## Related
 
-- [Autoscaling lead time](autoscaling-lead-time.md) - Scale-up latency breakdown
+- [Lead time](lead-time.md) - Scale-up latency breakdown
 - [Cluster Autoscaler](cluster-autoscaler.md) - Reacts to pending placeholders
-- [Node reserved resources](../best-practices/node-reserved-resources.md) - What allocatable excludes
 
 ---
 

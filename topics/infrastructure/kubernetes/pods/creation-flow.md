@@ -2,9 +2,9 @@
 
 A Pod passes through four components between `kubectl apply` and a
 running process: the API server, etcd, the scheduler, and the kubelet
-on the target node. The Pod has an IP once the kubelet wires it up,
-but the control plane does not learn that IP until the kubelet
-reports it back.
+on the target node. The Pod has an IP once the kubelet sets up its
+network namespace, but the control plane does not learn that IP
+until the kubelet reports it back.
 
 ## End-to-end sequence
 
@@ -73,7 +73,7 @@ plugin interfaces:
 | CSI       | Mount volumes into the containers           |
 
 CRI handles both container startup and image pulling — its API
-defines `RuntimeService` and `ImageService`.
+defines RuntimeService and ImageService.
 
 Once CNI reports a successful IP assignment, the Pod is reachable
 from anything already on its network — but the control plane does

@@ -21,12 +21,12 @@ which sends it to the node's upstream resolvers.
 A query traverses a chain of plugins in declaration order. Each plugin
 either answers it or falls through to the next.
 
-| Plugin     | Role                                            |
-|------------|-------------------------------------------------|
-| kubernetes | Resolves names inside the cluster domain        |
-| forward    | Sends non-cluster queries to upstream resolvers |
-| cache      | Caches positive and negative answers in memory  |
-| prometheus | Exposes query metrics for scraping              |
+| Plugin       | Role                                            |
+|--------------|-------------------------------------------------|
+| `kubernetes` | Resolves names inside the cluster domain        |
+| `forward`    | Sends non-cluster queries to upstream resolvers |
+| `cache`      | Caches positive and negative answers in memory  |
+| `prometheus` | Exposes query metrics for scraping              |
 
 Other directives in the default Corefile (`errors`, `health`, `ready`,
 `loop`, `reload`, `loadbalance`) cover lifecycle, health-check endpoints,

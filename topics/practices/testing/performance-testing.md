@@ -65,10 +65,6 @@ reveals which request mixes and which resource behaviors actually
 matter. Fold those observations into new test cases, or the suite
 slowly drifts away from what production does.
 
-## Related
-
-- [Service level objectives](../sre/service-level-objectives.md) - The targets the tests check against
-
 ---
 
 Return to [Testing](_index.md)

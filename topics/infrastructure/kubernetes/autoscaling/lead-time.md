@@ -1,4 +1,4 @@
-# Autoscaling lead time
+# Lead time
 
 The time from a traffic spike to a new pod serving requests is the
 sum of four sequential delays: HPA reaction, CA reaction, VM

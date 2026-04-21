@@ -4,11 +4,11 @@ Scaling Kubernetes workloads and clusters to match demand.
 
 ## Notes
 
-- [Autoscaling types](autoscaling-types.md) - HPA vs VPA vs Cluster Autoscaler
-- [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Control loop and configuration
+- [Scaling mechanisms](scaling-mechanisms.md) - HPA, VPA, and Cluster Autoscaler
+- [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
 - [Cluster Autoscaler](cluster-autoscaler.md) - Node provisioning from pending pods
 - [Expanders](expanders.md) - Picking a node group on scale-up
-- [Autoscaling lead time](autoscaling-lead-time.md) - End-to-end scale-up latency
+- [Lead time](lead-time.md) - End-to-end scale-up latency
 - [Node overprovisioning](node-overprovisioning.md) - Spare nodes via placeholder pods
 - [Metrics registry](metrics-registry.md) - How metrics reach the autoscaler
 - [cAdvisor](cadvisor.md) - Per-node container metrics daemon

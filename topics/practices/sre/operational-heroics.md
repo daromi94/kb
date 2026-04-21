@@ -1,8 +1,9 @@
 # Operational heroics
 
-Mistaking heroics for strong ownership is a critical failure mode of
-immature postmortem cultures. A team fighting the same fires every
-week feels engaged from the inside but is decaying from the outside.
+Perpetual firefighting — all-nighters, hacking around outages, page
+floods — mistaken for strong ownership. Teams reading as engaged from
+the inside are decaying from the outside, and immature postmortem
+cultures miss the signal.
 
 ## The illusion
 
@@ -27,7 +28,7 @@ and memorable, not a weekly routine.
 ## Related
 
 - [On-call as learning](on-call-as-learning.md) - The healthier alternative
-- [Systemic pattern fixes](systemic-pattern-fixes.md) - Breaking recurring classes of error
+- [Systemic pattern fixes](systemic-pattern-fixes.md) - Breaking recurring error classes
 
 ---
 

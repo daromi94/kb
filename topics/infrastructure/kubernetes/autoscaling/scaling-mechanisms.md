@@ -1,4 +1,4 @@
-# Autoscaling types
+# Scaling mechanisms
 
 Kubernetes has three independent autoscaling mechanisms. They solve
 different problems, ship in different projects, and can be used

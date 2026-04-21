@@ -24,7 +24,8 @@ general infrastructure.
 - A cluster outage takes down everything
 - Weak isolation between unrelated apps
 - Broad RBAC surface — many teams need access
-- Hits a ceiling around 5,000 nodes, with practical pain well before
+- Hits the 5,000-node control-plane ceiling, with API-server latency
+  and etcd pressure biting well before that
 
 ### Many small single-use clusters
 

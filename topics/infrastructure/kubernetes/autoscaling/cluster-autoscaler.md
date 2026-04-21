@@ -87,10 +87,9 @@ has room to grow into while CA catches up.
 
 ## Related
 
-- [Autoscaling types](autoscaling-types.md) - HPA vs VPA vs Cluster Autoscaler
+- [Scaling mechanisms](scaling-mechanisms.md) - HPA vs VPA vs Cluster Autoscaler
 - [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
 - [Expanders](expanders.md) - Picking a node group on scale-up
-- [Node reserved resources](../best-practices/node-reserved-resources.md) - What reduces schedulable capacity
 
 ---
 

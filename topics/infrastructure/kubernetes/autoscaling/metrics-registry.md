@@ -87,7 +87,7 @@ Setup is four steps:
 ## Related
 
 - [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - The client of the metrics registry
-- [Autoscaling types](autoscaling-types.md) - HPA in context
+- [Scaling mechanisms](scaling-mechanisms.md) - HPA in context
 
 ---
 

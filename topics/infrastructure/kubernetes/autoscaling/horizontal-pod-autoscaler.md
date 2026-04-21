@@ -98,7 +98,7 @@ count for each and picks the maximum.
 
 ## Related
 
-- [Autoscaling types](autoscaling-types.md) - HPA vs VPA vs Cluster Autoscaler
+- [Scaling mechanisms](scaling-mechanisms.md) - HPA vs VPA vs Cluster Autoscaler
 - [Metrics registry](metrics-registry.md) - How metrics reach the HPA
 
 ---

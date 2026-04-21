@@ -51,7 +51,7 @@ becomes a cycle when many components do it at once.
 
 ## Why this happens at all
 
-Each common-case optimization lets the system run a little hotter:
+Each common-case optimization lets the system run closer to saturation:
 slightly larger buffers, slightly more retries, slightly higher
 cache dependency, slightly tighter timeouts. Steady-state efficiency
 improves, every dashboard turns greener, and the operating point

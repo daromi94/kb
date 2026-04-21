@@ -19,7 +19,7 @@ entirely.
 ## Related
 
 - [Performance signals](performance-signals.md) - Where latency sits in the metric set
-- [Performance testing](performance-testing.md) - Continuous tests that watch the percentiles
+- [Performance testing](performance-testing.md) - Tests that watch the percentiles
 
 ---
 

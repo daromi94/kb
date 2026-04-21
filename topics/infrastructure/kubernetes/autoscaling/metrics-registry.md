@@ -42,7 +42,7 @@ Cloud Monitoring, etc.) that register the same API groups.
 
 End-to-end, a per-Pod request-rate metric reaches the HPA like this:
 
-```
+```text
 +---------------------+
 |   Application Pod   |
 |  /metrics endpoint  |

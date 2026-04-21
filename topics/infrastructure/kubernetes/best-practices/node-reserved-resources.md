@@ -4,7 +4,7 @@ A Kubernetes node does not offer all its CPU and memory to pods.
 The kubelet, the OS, and an eviction buffer are carved out first,
 and the scheduler only sees what's left:
 
-```
+```text
 Allocatable = Capacity − Kube reserved − System reserved − Eviction
 ```
 

@@ -39,7 +39,7 @@ container inside the destination pod and shares its lifecycle.
 
 ## Inside a meshed pod
 
-```
+```text
 +---------------------------+
 |  Application pod          |
 |                           |
@@ -60,7 +60,7 @@ container inside the destination pod and shares its lifecycle.
 
 ## System-level coordination
 
-```
+```text
 +-------------------------------+
 |        Kubernetes API         |
 +-------+---------+-------------+

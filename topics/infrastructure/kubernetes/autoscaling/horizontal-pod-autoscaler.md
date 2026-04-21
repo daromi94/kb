@@ -13,7 +13,7 @@ DaemonSets cannot be horizontally scaled.
 
 Every sync period, the controller runs three steps for each HPA:
 
-```
+```text
 +---------------------------+
 |  1. Query scaling metric  |
 |        from metrics API   |
@@ -38,7 +38,7 @@ manager.
 
 ## Scaling formula
 
-```
+```text
 desiredReplicas = ceil(currentReplicas * (currentMetric / targetMetric))
 ```
 

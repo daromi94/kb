@@ -61,7 +61,7 @@ node that already has the image cached starts in seconds.
 
 ## Worst-case total
 
-```
+```text
 HPA delay:         1m25s
 CA delay:          0m30s  (small cluster)
 VM provisioning:   4m

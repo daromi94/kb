@@ -17,7 +17,7 @@ pressure. When the scheduler cannot place a pod, it writes a
 PodCondition with `status: False` and `reason: Unschedulable`. CA
 watches the API server for pods carrying that condition.
 
-```
+```text
 +-------------------+     +--------------------+
 | Scheduler cannot  |     | Cluster Autoscaler |
 | place Pod -> sets |---->| sees condition,    |

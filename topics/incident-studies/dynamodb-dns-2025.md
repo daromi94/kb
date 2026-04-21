@@ -32,7 +32,7 @@ components manage the automation:
   Each instance polls for new plans, applies them to Route 53 via
   transactions, and garbage-collects plans many generations old.
 
-```
+```text
 +-----------+
 | Planner   |
 | generates |

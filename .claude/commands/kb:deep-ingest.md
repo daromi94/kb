@@ -120,7 +120,7 @@ separate, manual step.
 
 ## Examples
 
-```
+```text
 /kb:deep-ingest distributed-systems/concepts https://brooker.co.za/blog/2021/05/24/metastable.html
 
 /kb:deep-ingest practices/sre  (then paste the content)

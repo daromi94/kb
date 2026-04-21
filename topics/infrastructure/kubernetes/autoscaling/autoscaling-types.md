@@ -29,7 +29,7 @@ nodes that are underutilized.
 Horizontal scaling changes how many replicas run. Vertical scaling
 changes how much each replica gets.
 
-```
+```text
 Horizontal                 Vertical
 +---+  +---+  +---+        +---------+
 | P |  | P |  | P |   vs   |    P    |

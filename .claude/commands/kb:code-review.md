@@ -14,7 +14,7 @@ width, table style, title casing, prose style, cross-references, etc.).
 
 ## Directory Structure
 
-```
+```text
 topics/code-review/<project>/
   _index.md            # Project overview
   <insight-slug>.md    # Individual insight notes
@@ -134,7 +134,7 @@ conflicts.
 
 ## Examples
 
-```
+```text
 /kb:code-review redis + paste -> Created:
   topics/code-review/redis/_index.md
   topics/code-review/redis/event-loop-simplicity.md

@@ -1,15 +1,15 @@
 # Kubernetes
 
-Container orchestration platform for automating deployment, scaling, and
-management of containerized applications.
+Container orchestration platform for deploying, scaling, and managing
+applications.
 
 ## Subtopics
 
-- [Control plane](control-plane/_index.md) - API server and its pipeline
 - [Pods](pods/_index.md) - The smallest deployable unit
 - [Workloads](workloads/_index.md) - Controllers for running applications
 - [Autoscaling](autoscaling/_index.md) - Scaling apps to match demand
-- [Networking](networking/_index.md) - Pod, Service, and cluster traffic
+- [Networking](networking/_index.md) - How traffic flows through the cluster
+- [Control plane](control-plane/_index.md) - The cluster's orchestration brain
 - [Best practices](best-practices/_index.md) - Architectural and operational guidance
 
 ---

@@ -5,6 +5,7 @@ management of containerized applications.
 
 ## Subtopics
 
+- [Control plane](control-plane/_index.md) - API server and its pipeline
 - [Pods](pods/_index.md) - The smallest deployable unit
 - [Workloads](workloads/_index.md) - Controllers for running applications
 - [Autoscaling](autoscaling/_index.md) - Scaling apps to match demand

@@ -46,8 +46,8 @@ End-to-end this takes minutes, dominated by VM boot time.
 CA never compares pod requests directly against existing node
 capacity. For each node group it builds a **template node** —
 what a fresh node from that group would look like — and simulates
-scheduling the pending pod against each template. The first group
-whose template fits wins.
+scheduling the pending pod against each template. Every group whose
+template can host the pod becomes a scale-up candidate.
 
 Two node groups with identical instance types can behave differently
 if their taints, labels, or DaemonSets differ. The pod must match
@@ -89,6 +89,7 @@ has room to grow into while CA catches up.
 
 - [Autoscaling types](autoscaling-types.md) - HPA vs VPA vs Cluster Autoscaler
 - [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
+- [Expanders](expanders.md) - Picking a node group on scale-up
 - [Node reserved resources](../best-practices/node-reserved-resources.md) - What reduces schedulable capacity
 
 ---

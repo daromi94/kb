@@ -20,20 +20,20 @@ Custom vs External is about association. A request rate per Pod is a
 custom metric (associated with a Pod). An SQS queue depth that happens
 to drive scaling decisions is external (no cluster object owns it).
 
-## Collectors and API servers
+## Collectors and adapters
 
-Each metric API is served by a **metric API server** registered as an
-APIService with the Kubernetes API server. Behind each API server is a
+Each metric API is served by a **metrics adapter** registered as an
+APIService with the Kubernetes API server. Behind each adapter is a
 **metrics collector** that gathers raw data from the actual sources.
 
-| API              | Collector             | API server         |
+| API              | Collector             | Adapter            |
 |------------------|-----------------------|--------------------|
 | Resource         | cAdvisor (in kubelet) | Metrics Server     |
 | Custom, External | Prometheus            | Prometheus Adapter |
 
 cAdvisor is embedded in the kubelet, so the collector side of the
-Resource Metrics pipeline is already running on every node. The API
-server side (Metrics Server) is not installed by default.
+Resource Metrics pipeline is already running on every node. The
+adapter (Metrics Server) is not installed by default.
 
 Other vendors ship their own collector/adapter pairs (Datadog, Google
 Cloud Monitoring, etc.) that register the same API groups.

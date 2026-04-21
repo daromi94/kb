@@ -56,8 +56,8 @@ thrashing on noisy metrics.
 
 ## HorizontalPodAutoscaler resource
 
-The manifest specifies four things: the target workload, a replica
-range, one or more scaling metrics, and a target value per metric.
+The manifest specifies the target workload, a replica range, and one
+or more metrics with per-metric target values.
 
 ```yaml
 apiVersion: autoscaling/v2

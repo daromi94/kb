@@ -3,8 +3,7 @@
 The watch API is how controllers, kubelets, and schedulers learn
 about cluster state changes. A component opens a long-lived HTTP
 connection and receives change events as they happen, instead of
-polling for current state. This is the mechanism that lets
-Kubernetes be event-driven at scale.
+polling for current state.
 
 ## How it works on the wire
 

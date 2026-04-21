@@ -79,9 +79,10 @@ validate.
 Only the API server reads or writes etcd. Every controller, kubelet,
 or external tool goes through the API server instead.
 
-Centralizing access has two payoffs. Authorization, validation, and
-encoding choices live in one place. And etcd's schema or storage
-format can evolve without any client needing to change.
+Centralizing access has two payoffs. First, authorization,
+validation, and encoding choices live in one place. Second, etcd's
+schema or storage format can evolve without any client needing to
+change.
 
 On write, objects are:
 
@@ -96,25 +97,10 @@ the client asked for. This is why an older API version can be
 deprecated in the schema without rewriting any data in etcd —
 conversion happens at request time.
 
-## Audit levels
-
-Audit policy selects how much of each request is recorded:
-
-| Level           | Captures                                      |
-|-----------------|-----------------------------------------------|
-| None            | Nothing                                       |
-| Metadata        | Who, what, when — no request or response body |
-| Request         | Metadata plus request body                    |
-| RequestResponse | Metadata, request body, and response body     |
-
-RequestResponse is expensive — bodies can be large — but essential
-for reconstructing what actually happened during an incident.
-
 ## Related
 
 - [Admission controllers](admission-controllers.md) - Stages 3 and 5 in detail
 - [Watch API](watch-api.md) - Stage 7 fan-out mechanism
-- [Server-Side Apply](server-side-apply.md) - How writes track field ownership
 - [API extension](api-extension.md) - Teaching the server new types
 
 ---

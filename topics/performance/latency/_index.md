@@ -6,6 +6,7 @@ Fundamentals of latency engineering.
 
 - [Latency definition](latency-definition.md) - Time between cause and effect
 - [Latency constants](latency-constants.md) - Speed-of-light physical limits
+- [Memory hierarchy geometry](memory-hierarchy-geometry.md) - Why location beats algorithm
 - [Bandwidth and throughput](bandwidth-throughput.md) - Capacity vs actual flow
 - [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Batching vs responsiveness
 - [Dennard scaling](dennard-scaling.md) - Transistor power-frequency scaling

@@ -12,6 +12,7 @@ Fundamentals of latency engineering.
 - [Dennard scaling](dennard-scaling.md) - Transistor power-frequency scaling
 - [Little's Law](little-law.md) - Queuing theory's concurrency formula
 - [Cycle budgeting](cycle-budgeting.md) - CPU cycles per request
+- [Rarity as frequency](rarity-as-frequency.md) - Rare events become common at scale
 
 ---
 

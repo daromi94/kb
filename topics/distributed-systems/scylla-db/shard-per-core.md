@@ -7,7 +7,7 @@ unit is called a **shard**.
 
 This architecture is built on the **Seastar** C++ framework.
 
-## Shared-Nothing design
+## Shared-nothing design
 
 In most databases, threads share memory and compete for locks. In ScyllaDB,
 each core is a fully independent worker that shares nothing with other cores.
@@ -40,7 +40,7 @@ accessing RAM on a different CPU socket is slower. ScyllaDB ensures a shard on
 Socket A primarily uses RAM attached to Socket A, preventing expensive
 cross-socket memory trips.
 
-## Thread-Pool vs shard-per-Core
+## Thread-pool vs shard-per-core
 
 | Feature     | Thread-Pool (Cassandra)                            | Shard-per-Core (ScyllaDB)                     |
 |-------------|----------------------------------------------------|-----------------------------------------------|

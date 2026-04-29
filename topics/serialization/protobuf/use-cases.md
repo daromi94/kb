@@ -21,7 +21,7 @@ validation.
 Saves disk space when storing billions of structured records. The compact binary
 format provides significant savings over JSON or XML for archival data.
 
-## Mobile and ioT
+## Mobile and IoT
 
 Efficient data transfer for devices with limited bandwidth or battery life.
 Smaller payloads mean less radio time and lower power consumption.

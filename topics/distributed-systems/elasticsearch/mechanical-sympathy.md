@@ -12,7 +12,7 @@ lists live on disk. The in-memory dictionary stores a byte offset for
 each term, so locating a postings list is a single direct access rather
 than a search.
 
-## Sorted ids and delta encoding
+## Sorted IDs and delta encoding
 
 Moving bytes from RAM to the CPU is itself a bottleneck. Sorted doc IDs
 enable delta encoding, which compresses the gaps to a handful of bits:

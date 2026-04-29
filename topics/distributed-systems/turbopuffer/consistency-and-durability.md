@@ -3,7 +3,7 @@
 The consistency model is built on writing the WAL to object storage
 and searching both indexed and unindexed data on every query.
 
-## Write-Ahead log
+## Write-ahead log
 
 Every write is durably committed to a WAL in S3 before the API
 returns success. A write acknowledged with `200 OK` is guaranteed

@@ -12,19 +12,19 @@ they complete, unbounded spawning floods the system — blowing past CPU
 cores, exhausting memory, saturating file descriptors, or hammering a
 downstream database with too many connections.
 
-A pool exposes a single knob — pool size — that bounds the whole problem.
-It also amortizes worker setup cost (thread creation, connection
-handshakes) across many tasks rather than paying it per call.
+A pool exposes a single knob — pool size — that bounds all of them. It
+also amortizes worker setup cost (thread creation, connection handshakes)
+across many tasks rather than paying it per call.
 
 ## Components
 
-| Part       | Role                                                       |
-|------------|------------------------------------------------------------|
-| Task queue | Buffer (usually FIFO) holding tasks until a worker is free |
-| Workers    | Fixed set of threads or processes looping over the queue   |
-| Dispatcher | Producer that pushes tasks into the queue                  |
-| Results    | Optional return path for answers back to callers           |
-| Shutdown   | Signal that lets workers exit cleanly on program exit      |
+| Part       | Role                                                        |
+|------------|-------------------------------------------------------------|
+| Task queue | Buffer (usually FIFO) holding tasks until a worker is free  |
+| Workers    | Fixed set of threads or processes looping over the queue    |
+| Dispatcher | Producer that pushes tasks into the queue                   |
+| Results    | Optional return path for results to callers                 |
+| Shutdown   | Signal that lets workers stop cleanly when the program ends |
 
 ## Flow
 
@@ -91,17 +91,17 @@ for the same threads.
 
 **Never let a pooled task wait on another task in the same pool.**
 Dependent tasks can fill every worker and then wait on subtasks that
-can never be scheduled — thread-starvation deadlock. Push downstream
-stages onto a separate pool, or compose them non-blockingly with
-futures, callbacks, or pipelines.
+can never be scheduled — thread-starvation deadlock. Push the subtasks
+onto a separate pool, or compose them non-blockingly with futures,
+callbacks, or pipelines.
 
 **Don't let exceptions silently kill workers.** An uncaught error can
-take its worker down with it. Even if the pool spawns a replacement,
+take the worker down with it. Even if the pool spawns a replacement,
 the original failure leaves no trace. Catch and log inside every task
-body, and hook into the pool's task-completion callback when one is
-exposed. Errors captured inside result futures stay invisible until
-someone reads the future — log on the worker side too, not only at
-the consumer.
+body, and hook into the pool's task-completion callback if the pool
+exposes one. Errors captured inside result futures stay invisible
+until someone reads the future — log on the worker side too, not only
+at the consumer.
 
 **Make tasks cancellation-aware and bound their runtime.** Cancellation
 delivers a signal — a flag, context, or token — that the task must
@@ -144,7 +144,7 @@ dispatch incoming work to a fixed-size pool tuned for downstream-call
 latency.
 
 **Batch processing.** Independent units of work — files, URLs, queued
-jobs — pulled steadily by a fixed crew of reusable workers.
+jobs — pulled steadily by a fixed set of reusable workers.
 
 **Network resiliency.** A separate bulkhead pool per downstream
 dependency contains the blast radius when one slows or fails.

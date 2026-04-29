@@ -12,7 +12,7 @@ is a small random read. On local NVMe this is fast, but on S3 each
 hop becomes a high-latency network roundtrip. A typical HNSW search
 requires dozens of hops, making the cumulative latency unacceptable.
 
-## Centroid-Based search
+## Centroid-based search
 
 SPFresh organizes vectors into clusters, each represented by a
 centroid. Search proceeds in two phases:

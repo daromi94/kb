@@ -28,7 +28,7 @@ handshakes) across many tasks rather than paying it per call.
 
 ## Flow
 
-```
+```text
 producer --> [ task queue ] --> worker 1 --+
                             --> worker 2 --+--> [ results ]
                             --> worker N --+

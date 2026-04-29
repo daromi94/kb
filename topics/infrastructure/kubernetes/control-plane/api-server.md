@@ -8,7 +8,7 @@ It is not a thin CRUD shim over etcd. Every write walks an ordered
 pipeline before being persisted, and every persisted change fans
 out as watch events to the rest of the cluster.
 
-## HTTP and the openAPI schema
+## HTTP and the OpenAPI schema
 
 The API is a plain HTTP server. Any kubectl request can be replayed
 with curl and a bearer token. Resources live at REST paths like

@@ -34,11 +34,6 @@ volume, every dropped packet, every timing race, every memory
 bit-flip, every TCP reset happens constantly. The rare-event path
 *is* the common case, just distributed across many types of rare.
 
-## Related
-
-- [Fanout tail amplification](fanout-tail-amplification.md) - Tails compound under fanout
-- [Tail-targeted engineering](tail-targeted-engineering.md) - Handling the constant tail
-
 ---
 
 Return to [Latency](_index.md)

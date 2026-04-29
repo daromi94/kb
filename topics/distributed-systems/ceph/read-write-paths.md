@@ -86,7 +86,7 @@ settings).
 ## Related
 
 - [Replication](replication.md) - How replicas are managed
-- [Consistency](consistency.md) - The CAP trade-offs
+- [Consistency model](consistency.md) - The CAP trade-offs
 
 ---
 

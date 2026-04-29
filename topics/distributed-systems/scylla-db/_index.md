@@ -6,7 +6,7 @@ eliminates thread contention.
 
 ## Notes
 
-- [Shard-per-core](shard-per-core.md) - Thread-per-core architecture for linear scalability
+- [Shard-per-core architecture](shard-per-core.md) - Thread-per-core architecture for linear scalability
 - [Commit log](commit-log.md) - Append-only durability mechanism for crash recovery
 
 ---

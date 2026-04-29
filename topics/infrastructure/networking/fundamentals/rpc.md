@@ -62,7 +62,7 @@ forget the network exists:
 
 ## Related
 
-- [Client-Server](client-server.md) - The architecture RPC operates within
+- [Client-server architecture](client-server.md) - The architecture RPC operates within
 
 ---
 

@@ -56,7 +56,7 @@ inconsistent data temporarily.
 
 ## Related
 
-- [Read/write paths](read-write-paths.md) - How consistency is enforced
+- [Read and write paths](read-write-paths.md) - How consistency is enforced
 - [Replication](replication.md) - The synchronous replication model
 - [Cluster operations](cluster-operations.md) - How failures are detected
 

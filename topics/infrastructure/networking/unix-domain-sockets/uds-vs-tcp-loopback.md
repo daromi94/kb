@@ -1,4 +1,4 @@
-# UDS vs TCP Loopback
+# UDS vs TCP loopback
 
 Connecting to `localhost:8080` (TCP) hits the network stack. Connecting to
 `/tmp/app.sock` (UDS) bypasses it entirely.

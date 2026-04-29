@@ -91,7 +91,7 @@ for every minor event.
 
 - [CRUSH algorithm](crush-algorithm.md) - Calculation over lookup in detail
 - [Cluster operations](cluster-operations.md) - Self-healing and epochs
-- [Consistency](consistency.md) - The CP trade-off
+- [Consistency model](consistency.md) - The CP trade-off
 
 ---
 

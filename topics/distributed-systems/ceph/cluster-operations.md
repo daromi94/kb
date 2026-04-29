@@ -61,9 +61,9 @@ While Monitors handle cluster "state," the **Manager** handles "status":
 
 ## Related
 
-- [Read/write paths](read-write-paths.md) - Detailed I/O flow
+- [Read and write paths](read-write-paths.md) - Detailed I/O flow
 - [CRUSH algorithm](crush-algorithm.md) - How locations are calculated
-- [Consistency](consistency.md) - What happens during failures
+- [Consistency model](consistency.md) - What happens during failures
 
 ---
 

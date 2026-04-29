@@ -44,7 +44,7 @@ When tasks overwhelm a single server, the architecture allows two scaling types:
 
 ## Related
 
-- [Client-Server](client-server.md) - The architecture that enables offloading
+- [Client-server architecture](client-server.md) - The architecture that enables offloading
 
 ---
 

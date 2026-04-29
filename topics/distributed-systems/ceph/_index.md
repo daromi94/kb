@@ -13,8 +13,8 @@ point of failure.
 - [CRUSH algorithm](crush-algorithm.md) - Decentralized data placement
 - [Data placement](data-placement.md) - Pools and Placement Groups
 - [Cluster operations](cluster-operations.md) - Maps, heartbeating, self-healing
-- [Read/write paths](read-write-paths.md) - I/O flow through the system
-- [Consistency](consistency.md) - CAP theorem analysis
+- [Read and write paths](read-write-paths.md) - I/O flow through the system
+- [Consistency model](consistency.md) - CAP theorem analysis
 - [Replication](replication.md) - Data protection and erasure coding
 - [CephFS vs NFS](cephfs-vs-nfs.md) - When to use each
 - [Architectural lessons](architectural-lessons.md) - Design patterns from Ceph

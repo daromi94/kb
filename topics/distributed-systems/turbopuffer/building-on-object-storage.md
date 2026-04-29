@@ -138,7 +138,7 @@ cost.
 ## Related
 
 - [Architecture](architecture.md) - Turbopuffer's production architecture
-- [Consistency and Durability](consistency-and-durability.md) - WAL and consistency model
+- [Consistency and durability](consistency-and-durability.md) - WAL and consistency model
 - [Tradeoffs](tradeoffs.md) - Design tradeoffs in practice
 
 ---

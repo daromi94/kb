@@ -55,7 +55,7 @@ the entire system is paralyzed for all clients.
 ## Related
 
 - [Offloading](offloading.md) - Why servers handle expensive tasks
-- [RPC](rpc.md) - Making remote calls feel local
+- [Remote procedure call](rpc.md) - Making remote calls feel local
 
 ---
 

@@ -59,9 +59,9 @@ When an OSD fails:
 
 ## Related
 
-- [Read/write paths](read-write-paths.md) - How replication fits in I/O flow
+- [Read and write paths](read-write-paths.md) - How replication fits in I/O flow
 - [CRUSH algorithm](crush-algorithm.md) - How replica locations are determined
-- [Consistency](consistency.md) - Why synchronous replication matters
+- [Consistency model](consistency.md) - Why synchronous replication matters
 
 ---
 

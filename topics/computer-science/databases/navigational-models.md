@@ -37,7 +37,7 @@ declare *what* data you want and the DBMS determines *how* to retrieve it.
 
 ## Related
 
-- [Data models](data-models.md) — Overview of all data models
+- [Data models](data-models.md) - Overview of all data models
 
 ---
 

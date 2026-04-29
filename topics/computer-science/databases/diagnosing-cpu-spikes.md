@@ -64,7 +64,7 @@ concurrency and keep authenticated connections warm.
 
 ## Related
 
-- [CPU-bound databases](cpu-bound-databases.md) — Why CPU not I/O is the bottleneck
+- [CPU-bound databases](cpu-bound-databases.md) - Why CPU not I/O is the bottleneck
 
 ---
 

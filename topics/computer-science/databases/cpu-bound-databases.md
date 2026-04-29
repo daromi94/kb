@@ -30,8 +30,8 @@ the CPU pegs.
 
 ## Related
 
-- [Overview](overview.md) — Database vs DBMS, why not flat files
-- [Diagnosing CPU spikes](diagnosing-cpu-spikes.md) — Workload causes of high CPU
+- [Overview](overview.md) - Database vs DBMS, why not flat files
+- [Diagnosing CPU spikes](diagnosing-cpu-spikes.md) - Workload causes of high CPU
 
 ---
 

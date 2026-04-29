@@ -36,7 +36,7 @@ setsockopt(fd, SOL_SOCKET, SO_SNDBUF, &size, sizeof(size));
 setsockopt(fd, SOL_SOCKET, SO_RCVBUF, &size, sizeof(size));
 ```
 
-## Blocking vs non-Blocking
+## Blocking vs non-blocking
 
 Queue fullness determines whether I/O calls block or return immediately:
 

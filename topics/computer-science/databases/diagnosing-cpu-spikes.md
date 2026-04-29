@@ -37,8 +37,9 @@ If the application sends literal SQL — `WHERE id = 123` instead of
 `WHERE id = ?` — the engine cannot reuse plans. Every execution pays the
 full optimizer cost, turning the database into a compilation engine.
 
-**Action:** Track the ratio of compilations to batch requests. Convert
-ad-hoc statements to parameterized or prepared queries.
+**Action:** Track the ratio of compilations to queries — a high ratio
+means the engine is compiling more than running. Convert ad-hoc
+statements to parameterized or prepared queries.
 
 ## Connection storms
 
@@ -63,7 +64,7 @@ concurrency and keep authenticated connections warm.
 
 ## Related
 
-- [CPU-bound databases](cpu-bound-databases.md) - Why CPU not I/O is the bottleneck
+- [CPU-bound databases](cpu-bound-databases.md) — Why CPU not I/O is the bottleneck
 
 ---
 

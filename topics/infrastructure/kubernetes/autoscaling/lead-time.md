@@ -98,8 +98,8 @@ smaller share.
 
 ## Related
 
-- [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
-- [Cluster Autoscaler](cluster-autoscaler.md) - Node provisioning from pending pods
+- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
+- [Cluster autoscaler](cluster-autoscaler.md) - Node provisioning from pending pods
 - [Metrics registry](metrics-registry.md) - Where HPA reads metrics from
 
 ---

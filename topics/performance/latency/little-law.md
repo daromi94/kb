@@ -1,6 +1,6 @@
-# Little's Law
+# Little's law
 
-Little's Law relates three metrics in any stable queuing system:
+Little's law relates three metrics in any stable queuing system:
 
 $$L = \lambda \times W$$
 

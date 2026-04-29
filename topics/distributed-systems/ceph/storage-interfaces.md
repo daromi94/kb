@@ -4,7 +4,7 @@ Ceph provides three distinct storage interfaces running on top of the same
 underlying RADOS cluster. This allows a single infrastructure to handle diverse
 workloads simultaneously.
 
-## Block Storage (RBD)
+## Block storage (RBD)
 
 The **RADOS Block Device** provides virtual disks attachable to bare-metal
 servers, virtual machines, or containers.
@@ -21,7 +21,7 @@ To the operating system, it appears as a standard SCSI or local disk.
 **Use cases:** Root disks for VMs (OpenStack, KVM/Proxmox), Persistent Volumes
 for Kubernetes.
 
-## Object Storage (RGW)
+## Object storage (RGW)
 
 The **RADOS Gateway** provides a RESTful interface compatible with Amazon S3 and
 OpenStack Swift APIs.
@@ -38,7 +38,7 @@ objects with associated metadata.
 **Use cases:** Media files, long-term backups, data lakes, web application
 assets.
 
-## File Storage (CephFS)
+## File storage (CephFS)
 
 **CephFS** is a POSIX-compliant file system providing a shared, distributed
 directory tree.

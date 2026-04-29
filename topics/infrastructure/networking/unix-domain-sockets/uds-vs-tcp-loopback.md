@@ -3,7 +3,7 @@
 Connecting to `localhost:8080` (TCP) hits the network stack. Connecting to
 `/tmp/app.sock` (UDS) bypasses it entirely.
 
-## TCP Loopback Path
+## TCP loopback path
 
 Even on `127.0.0.1`, a TCP packet traverses:
 
@@ -40,7 +40,7 @@ Even on `127.0.0.1`, a TCP packet traverses:
 
 **Cost:** CPU overhead for encapsulation/decapsulation and context switches.
 
-## UDS Path
+## UDS path
 
 ```text
 +---------------------------+

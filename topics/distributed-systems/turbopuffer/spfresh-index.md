@@ -5,14 +5,14 @@ the more common HNSW (Hierarchical Navigable Small World) graph
 index. This choice is driven entirely by the realities of searching
 over object storage.
 
-## Why HNSW Fails on Object Storage
+## Why HNSW fails on object storage
 
 HNSW navigates a graph by following edges from node to node. Each hop
 is a small random read. On local NVMe this is fast, but on S3 each
 hop becomes a high-latency network roundtrip. A typical HNSW search
 requires dozens of hops, making the cumulative latency unacceptable.
 
-## Centroid-Based Search
+## Centroid-Based search
 
 SPFresh organizes vectors into clusters, each represented by a
 centroid. Search proceeds in two phases:
@@ -52,7 +52,7 @@ SPFresh maintains 90-95% recall, even under complex metadata filters.
 The system is tuned for high accuracy out of the box rather than
 exposing index tuning parameters that users might misconfigure.
 
-## Search Modes
+## Search modes
 
 Turbopuffer supports three search modes built on this foundation:
 

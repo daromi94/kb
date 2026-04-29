@@ -25,7 +25,7 @@ ensure both speed and durability:
    node sends an acknowledgment back to the coordinator/client. This is why
    writes are so fast; there is no waiting for complex disk seeks.
 
-## SSTables (Sorted String Tables)
+## SSTables (sorted string tables)
 
 When a memtable reaches a certain size threshold (or when the node is shut
 down), it is flushed to disk as an SSTable.

@@ -4,7 +4,7 @@ A Deployment is the standard way to manage stateless applications in Kubernetes.
 It provides a declarative abstraction on top of ReplicaSets for updating,
 scaling, and maintaining Pods.
 
-## Why Use a Deployment
+## Why use a Deployment
 
 Creating individual Pods directly is rarely appropriate for production.
 Deployments provide:
@@ -15,7 +15,7 @@ Deployments provide:
 - **Zero-downtime updates:** Rolling updates replace old Pods incrementally
 - **Rollbacks:** Revert to a previous revision instantly if a deployment fails
 
-## The Hierarchy
+## The hierarchy
 
 A Deployment doesn't manage Pods directly. It manages a ReplicaSet, which in
 turn manages the Pods:
@@ -36,7 +36,7 @@ turn manages the Pods:
 +-------------+
 ```
 
-## Manifest Structure
+## Manifest structure
 
 Labels and selectors are the glue that allows a Deployment to find its Pods:
 
@@ -62,7 +62,7 @@ spec:
             - containerPort: 80
 ```
 
-## Update Strategies
+## Update strategies
 
 When the Pod template changes (e.g., new image), the Deployment controller
 applies one of two strategies:

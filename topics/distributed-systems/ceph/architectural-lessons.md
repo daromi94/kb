@@ -3,7 +3,7 @@
 Design patterns and insights from Ceph's architecture applicable to distributed
 systems broadly.
 
-## 1. Intelligence at the Edge (Smart Clients)
+## 1. Intelligence at the edge (smart clients)
 
 Traditional systems use a central gateway to route every request—a hard
 bottleneck.
@@ -14,7 +14,7 @@ locations independently.
 **Takeaway:** If every node can "calculate" truth instead of "asking" for it,
 you scale to thousands of nodes without a centralized master.
 
-## 2. Decoupling Data and Control Planes
+## 2. Decoupling data and control planes
 
 In CephFS, file contents (data) and file names/permissions (metadata) live in
 separate systems.
@@ -25,7 +25,7 @@ separate systems.
 **Takeaway:** Decouple data path from control path. Scale metadata performance
 (more MDS) and storage capacity (more OSDs) independently.
 
-## 3. Calculation Over Lookup
+## 3. Calculation over lookup
 
 Most systems find data via database lookup—$O(1)$ or $O(\log n)$ but requires
 memory and synchronization.
@@ -35,7 +35,7 @@ memory and synchronization.
 **Takeaway:** Tables require coordination; math is free and locally executable.
 Replace "where is X?" with "calculate the location of X."
 
-## 4. Autonomic Self-Healing
+## 4. Autonomic self-healing
 
 Ceph doesn't wait for administrators. OSDs monitor each other through
 heartbeating and trigger rebalancing automatically.
@@ -44,7 +44,7 @@ heartbeating and trigger rebalancing automatically.
 A distributed system is only as strong as its ability to survive partial failure
 without human intervention.
 
-## 5. CAP Realism
+## 5. CAP realism
 
 Ceph is a CP system. It blocks I/O rather than risk split-brain where nodes
 disagree on data.
@@ -56,7 +56,7 @@ non-negotiable. Make the trade-off explicit.
 Capabilities—centralized authority delegates "leases" for safe caching while
 retaining revocation rights.
 
-## 6. Dynamic Subtree Partitioning
+## 6. Dynamic subtree partitioning
 
 Standard hashing balances load but destroys locality (keeping a folder's files
 together).
@@ -67,7 +67,7 @@ dynamically migrate that subtree to a less busy MDS.
 **Takeaway:** Preserving metadata locality while providing horizontal
 scalability is the "Holy Grail" of distributed file systems.
 
-## 7. Versioned State (Epochs)
+## 7. Versioned state (epochs)
 
 Cluster state is versioned. Every message carries a version number.
 

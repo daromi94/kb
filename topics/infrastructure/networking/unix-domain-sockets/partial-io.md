@@ -4,7 +4,7 @@ A `read()` or `write()` on a stream socket can transfer fewer bytes than
 requested. This is standard behavior, not an error — robust code must handle
 it.
 
-## Why It Happens
+## Why it happens
 
 The kernel's send and receive queues are finite. System calls bridge
 application memory and these buffers, transferring only what fits or what is
@@ -19,7 +19,7 @@ On a non-blocking socket the kernel writes 40 KB and returns immediately.
 receive queue. The kernel copies the available 2 KB and returns rather than
 waiting for more data (unless `MSG_WAITALL` is set).
 
-## Return Value Semantics
+## Return value semantics
 
 The return value of `read()` and `write()` is the **short count** — the actual
 number of bytes transferred:
@@ -30,7 +30,7 @@ number of bytes transferred:
 | `0` from read    | Peer closed connection (EOF)   |
 | `-1`             | Error occurred (check `errno`) |
 
-## Common Causes
+## Common causes
 
 | Cause                | Effect                                                                           |
 |----------------------|----------------------------------------------------------------------------------|
@@ -38,7 +38,7 @@ number of bytes transferred:
 | Buffer pressure      | `SO_SNDBUF` / `SO_RCVBUF` limit reached                                          |
 | Stream fragmentation | `SOCK_STREAM` has no message boundaries — the kernel splits data at buffer edges |
 
-## Datagram Exception
+## Datagram exception
 
 `SOCK_DGRAM` sockets are **atomic**. A `send()` either transmits the entire
 message or fails with `EMSGSIZE` if it exceeds the buffer. Partial datagrams

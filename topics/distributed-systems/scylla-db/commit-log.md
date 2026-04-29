@@ -3,7 +3,7 @@
 The commit log is the database's crash recovery mechanism—an append-only file
 on disk that ensures data survives even if power is cut instantly.
 
-## Why It Exists
+## Why it exists
 
 Databases face a speed vs. safety dilemma:
 
@@ -19,13 +19,13 @@ The commit log bridges this gap. When you send a write:
 If power fails, RAM data is lost. On restart, the node replays the commit log
 to restore the memtable.
 
-## Append-Only Design
+## Append-Only design
 
 The commit log only adds new records to the end—never editing or deleting in
 the middle. This makes writes fast because the disk head doesn't jump around
 (sequential I/O). Once written, entries are immutable.
 
-## Write Path
+## Write path
 
 ```text
        +----------------+
@@ -51,7 +51,7 @@ the middle. This makes writes fast because the disk head doesn't jump around
           +-----------+
 ```
 
-## ScyllaDB Adaptations
+## ScyllaDB adaptations
 
 In traditional databases like Cassandra, threads contend for buffer space
 when writing to the commit log. ScyllaDB adapts this for shard-per-core:

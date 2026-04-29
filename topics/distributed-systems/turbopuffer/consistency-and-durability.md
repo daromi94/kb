@@ -3,7 +3,7 @@
 The consistency model is built on writing the WAL to object storage
 and searching both indexed and unindexed data on every query.
 
-## Write-Ahead Log
+## Write-Ahead log
 
 Every write is durably committed to a WAL in S3 before the API
 returns success. A write acknowledged with `200 OK` is guaranteed
@@ -19,7 +19,7 @@ to be in object storage.
 If query nodes crash, they reconstruct state by replaying the WAL
 from object storage.
 
-## Consistency Model
+## Consistency model
 
 **Strong consistency (default).** Every query searches two sources:
 
@@ -35,7 +35,7 @@ to check for new WAL entries. Drops query latency to sub-10ms but
 data may be up to 60 seconds stale. Useful when freshness is less
 important than speed.
 
-## ACID Properties
+## ACID properties
 
 | Property    | Behavior                              |
 |-------------|---------------------------------------|
@@ -44,7 +44,7 @@ important than speed.
 | Durability  | Committed to S3 before acknowledgment |
 | Isolation   | Varies by operation (see below)       |
 
-## Isolation Levels
+## Isolation levels
 
 | Operation              | Isolation Level | Mechanism                                                |
 |------------------------|-----------------|----------------------------------------------------------|
@@ -56,7 +56,7 @@ lost updates without requiring general-purpose transactions. Filter
 operations may miss documents inserted between the find and apply
 phases.
 
-## CAP Theorem Stance
+## CAP theorem stance
 
 Turbopuffer chooses consistency over availability (CP). If object
 storage is unreachable, the system returns errors rather than serving

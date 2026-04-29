@@ -3,7 +3,7 @@
 With TCP, you know only the source IP. With UDS, the kernel knows exactly who
 is on the other end.
 
-## What It Provides
+## What it provides
 
 The receiving process can retrieve peer credentials via `getsockopt()`:
 
@@ -21,7 +21,7 @@ printf("PID: %d, UID: %d, GID: %d\n", cred.pid, cred.uid, cred.gid);
 | uid   | User ID of peer          |
 | gid   | Primary group ID of peer |
 
-## Zero-Trust Local Authentication
+## Zero-Trust local authentication
 
 This enables authentication without passwords or tokens:
 
@@ -38,7 +38,7 @@ if (cred.uid == 0) {
 **Unforgeable:** The kernel fills in these values. A process cannot lie about
 its uid or pid.
 
-## Real-World Uses
+## Real-World uses
 
 **Docker daemon:**
 When you run `docker ps`, the CLI connects to `/var/run/docker.sock`. The
@@ -55,7 +55,7 @@ processes can call which methods.
 Authorization framework checks caller uid/pid to decide if an action (like
 mounting a disk) is allowed.
 
-## Compared to TCP Authentication
+## Compared to TCP authentication
 
 | Aspect      | TCP                          | UDS with SO_PEERCRED    |
 |-------------|------------------------------|-------------------------|

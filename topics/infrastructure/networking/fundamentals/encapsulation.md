@@ -4,7 +4,7 @@ The "sandwich" process describes how data travels through the OSI model. The
 sender **encapsulates** data (wraps it in layers), and the receiver
 **decapsulates** it (unwraps it).
 
-## Sending: Encapsulation (Down the Stack)
+## Sending: encapsulation (down the stack)
 
 Each layer adds its own header with instructions.
 
@@ -46,7 +46,7 @@ Each layer adds its own header with instructions.
    **Frame**
 5. **Layer 1:** Converts to electrical pulses or light. Output: **Bits**
 
-## In Transit: Routers
+## In transit: routers
 
 Data doesn't travel directly to the destination. At each router:
 
@@ -66,7 +66,7 @@ Data doesn't travel directly to the destination. At each router:
      |                     |                     |  (L3 unchanged)
 ```
 
-## Receiving: Decapsulation (Up the Stack)
+## Receiving: decapsulation (up the stack)
 
 Each layer strips its header to reveal the payload inside.
 
@@ -79,7 +79,7 @@ Each layer strips its header to reveal the payload inside.
    Reassembles segments in order
 5. **Layers 5-7:** Decrypts, processes HTTP request
 
-## What Each Layer Checks
+## What each layer checks
 
 | Layer | Sender Action  | Receiver Check        | PDU     |
 |-------|----------------|-----------------------|---------|
@@ -88,7 +88,7 @@ Each layer strips its header to reveal the payload inside.
 | L2    | Add router MAC | Is this my MAC?       | Frame   |
 | L1    | Send as light  | Receive light         | Bits    |
 
-## Debugging with Layers
+## Debugging with layers
 
 If the receiver never gets the frame (Layer 2), check:
 

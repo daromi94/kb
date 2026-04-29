@@ -64,7 +64,7 @@ Eventually consistent reads spread load across all replicas and offer
 lower latency, but a recent write may not yet have propagated to the
 replica serving the read.
 
-## Leader election with Multi-Paxos
+## Leader election with multi-Paxos
 
 Each replication group uses Multi-Paxos for leader election and write
 consensus. Any replica can trigger an election when it detects the

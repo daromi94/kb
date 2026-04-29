@@ -4,7 +4,7 @@ Handling expensive tasks is a primary reason for using the client-server model.
 Modern mobile apps and web services depend on **offloading** heavy workloads to
 powerful servers.
 
-## Computation Offloading
+## Computation offloading
 
 Expensive tasks like 3D rendering, complex simulations, or AI model inference
 require significant CPU/GPU power and RAM.
@@ -16,7 +16,7 @@ would overheat the device, drain the battery, and likely crash the app.
 data center. The server does the heavy lifting and returns only the final
 result.
 
-## Resource Pooling
+## Resource pooling
 
 Servers use enterprise-grade hardware far more powerful than consumer devices.
 
@@ -25,7 +25,7 @@ Servers use enterprise-grade hardware far more powerful than consumer devices.
 - **Specialized Hardware:** Servers can house TPUs for AI or massive NVMe arrays
   that standard laptops cannot accommodate
 
-## Data Locality
+## Data locality
 
 Sometimes a task is expensive because of data volume (searching petabytes of
 logs).
@@ -33,7 +33,7 @@ logs).
 **The Efficiency:** Sending a small search query to where data already lives is
 much faster than downloading 100GB to your phone just to find one line of text.
 
-## Scaling Strategies
+## Scaling strategies
 
 When tasks overwhelm a single server, the architecture allows two scaling types:
 

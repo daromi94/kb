@@ -4,13 +4,13 @@ TCP connections can sit idle indefinitely. If a peer crashes or the network
 path breaks while no data is flowing, the other side will never know. Keepalive
 probes detect these "dead peers."
 
-## The Problem
+## The problem
 
 TCP is silent by default. If you unplug a server's cable during idle time, the
 client's socket remains ESTABLISHED forever, consuming memory and file
 descriptors.
 
-## How Keepalives Work
+## How keepalives work
 
 1. **Idle timer**: After no data for `tcp_keepalive_time` (default: 2 hours),
    kernel wakes up
@@ -22,7 +22,7 @@ descriptors.
       intervals
 4. **Failure**: After all probes fail, kernel closes connection with ETIMEDOUT
 
-## Linux Tuning
+## Linux tuning
 
 Default 2-hour wait is unacceptable for high-availability systems.
 
@@ -41,7 +41,7 @@ net.ipv4.tcp_keepalive_probes = 3
 
 Total detection time: 60 + (10 × 3) = 90 seconds
 
-## Enabling Keepalives
+## Enabling keepalives
 
 Keepalives are disabled by default. Enable per-socket:
 
@@ -52,7 +52,7 @@ setsockopt(fd, SOL_SOCKET, SO_KEEPALIVE, &optval, sizeof(optval));
 
 Or in application frameworks (Java, Python, etc.) via socket options.
 
-## TCP vs HTTP Keep-Alive
+## TCP vs HTTP keep-Alive
 
 These are completely different concepts:
 
@@ -61,7 +61,7 @@ These are completely different concepts:
 | TCP Keepalive   | Detect dead connections (liveness probe) |
 | HTTP Keep-Alive | Reuse connection for multiple requests   |
 
-## Application-Level Heartbeats
+## Application-Level heartbeats
 
 For finer control, many protocols implement their own heartbeats:
 

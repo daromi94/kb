@@ -27,7 +27,7 @@ brain to enter a concentrated state on arrival.
 
 ## Related
 
-- [Eisenhower Matrix](eisenhower-matrix.md) - Prioritizing Q2 work
+- [Eisenhower matrix](eisenhower-matrix.md) - Prioritizing Q2 work
   that focus time protects
 - [Eliminating zero days](eliminating-zero-days.md) - Filling
   downtime with high-value work

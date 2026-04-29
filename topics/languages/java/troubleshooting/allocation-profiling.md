@@ -32,7 +32,7 @@ sites weighted by bytes:
 This directly shows the hot path — the code allocating gigabytes per
 second of temporary `byte[]` or boxed primitives.
 
-## JDK Flight Recorder
+## JDK flight recorder
 
 JFR gives allocation data with lower overhead and is always available:
 

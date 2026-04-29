@@ -4,7 +4,7 @@ A ReplicaSet ensures that a specific number of identical Pods are running at all
 times. While you rarely create ReplicaSets directly—Deployments manage them for
 you—understanding them is essential for troubleshooting scaling behavior.
 
-## The Reconciliation Loop
+## The reconciliation loop
 
 A ReplicaSet operates on a continuous reconciliation loop:
 
@@ -24,7 +24,7 @@ A ReplicaSet manifest has three main parts:
 you manually create a Pod with labels matching a ReplicaSet's selector, the
 ReplicaSet will adopt it—and may delete it if already at capacity.
 
-## Version History via ReplicaSets
+## Version history via ReplicaSets
 
 When a Deployment updates (e.g., image `v1` to `v2`), it doesn't modify the
 existing ReplicaSet. Instead:

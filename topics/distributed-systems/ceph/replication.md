@@ -15,7 +15,7 @@ replicas.
 3. **Replica acknowledgment:** Secondaries write and ACK back to Primary
 4. **Commit:** Primary confirms to client after its own write + all replica ACKs
 
-## Key Parameters
+## Key parameters
 
 Two pool parameters control replication:
 
@@ -26,7 +26,7 @@ Two pool parameters control replication:
 If active OSDs for a PG fall below `min_size`, Ceph stops accepting I/O for
 that PG to prevent inconsistency.
 
-## Replication vs Erasure Coding
+## Replication vs erasure coding
 
 | Feature            | Replication          | Erasure Coding (EC)           |
 |--------------------|----------------------|-------------------------------|
@@ -35,7 +35,7 @@ that PG to prevent inconsistency.
 | Recovery Speed     | Fast (simple copy)   | Slower (math reconstruction)  |
 | Best For           | Small, random I/O    | Large, sequential I/O         |
 
-## Fault Domains
+## Fault domains
 
 Replication is only effective if copies are physically separated. CRUSH ensures
 replicas land on different disks, servers, or racks based on configuration.
@@ -47,7 +47,7 @@ replicas land on different disks, servers, or racks based on configuration.
 | `rack`         | Entire rack power loss |
 | `datacenter`   | Site-level disaster    |
 
-## Self-Healing (Backfilling)
+## Self-Healing (backfilling)
 
 When an OSD fails:
 

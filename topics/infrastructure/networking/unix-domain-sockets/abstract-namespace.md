@@ -2,7 +2,7 @@
 
 A Linux-specific feature that solves the UDS cleanup problem.
 
-## The Problem with Normal UDS
+## The problem with normal UDS
 
 Normal Unix sockets create a file on disk:
 
@@ -23,7 +23,7 @@ bind(fd, &addr, sizeof(addr)); // Creates /tmp/app.sock
 **Common workaround:** Always `unlink()` before `bind()`. But this is error-prone
 and creates race conditions.
 
-## The Abstract Namespace Solution
+## The abstract namespace solution
 
 If the first byte of `sun_path` is a null byte (`\0`), the socket exists only
 in kernel memory:
@@ -52,7 +52,7 @@ $ ss -x | grep abstract
 u_str  LISTEN  @/tmp/dbus-XYZ123
 ```
 
-## Real-World Uses
+## Real-world uses
 
 **D-Bus:**
 The system and session message buses commonly use abstract sockets to avoid

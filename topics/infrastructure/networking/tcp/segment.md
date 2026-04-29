@@ -3,7 +3,7 @@
 Every TCP segment consists of a header (minimum 20 bytes) followed by optional
 data payload.
 
-## Header Fields
+## Header fields
 
 ```text
  0                   1                   2                   3
@@ -25,7 +25,7 @@ data payload.
 +-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
 ```
 
-## Field Details
+## Field details
 
 | Field            | Bits | Description                                      |
 |------------------|------|--------------------------------------------------|
@@ -38,7 +38,7 @@ data payload.
 | Checksum         | 16   | Error detection (covers pseudo-header too)       |
 | Urgent Pointer   | 16   | End of urgent data (when URG set, rarely used)   |
 
-## Control Flags
+## Control flags
 
 | Flag | Purpose                                         |
 |------|-------------------------------------------------|
@@ -51,7 +51,7 @@ data payload.
 | ECE  | ECN-Echo (congestion notification)              |
 | CWR  | Congestion Window Reduced                       |
 
-## Common Options
+## Common options
 
 | Option       | Purpose                                           |
 |--------------|---------------------------------------------------|

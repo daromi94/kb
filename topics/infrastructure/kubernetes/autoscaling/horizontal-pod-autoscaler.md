@@ -1,4 +1,4 @@
-# Horizontal Pod Autoscaler
+# Horizontal pod autoscaler
 
 The Horizontal Pod Autoscaler (HPA) scales a workload by adjusting its
 replica count in response to observed metrics. It is a controller in

@@ -4,9 +4,9 @@ The core of every Ceph cluster is **RADOS** (Reliable Autonomic Distributed
 Object Store). Every piece of data—whether from a virtual disk, S3 bucket, or
 file system—is stored as an object within this layer.
 
-## Core Daemons
+## Core daemons
 
-### OSD (Object Storage Daemon)
+### OSD (object storage daemon)
 
 The primary worker. Stores data on behalf of clients, handles replication,
 recovery, and rebalancing. Also provides heartbeat information to Monitors.
@@ -29,12 +29,12 @@ coordination. High availability requires an odd number (3 or 5).
 Tracks runtime metrics (storage utilization, performance counters). Hosts the
 Ceph Dashboard and orchestration modules like `cephadm`.
 
-### Metadata Server (MDS)
+### Metadata server (MDS)
 
 Only required for CephFS. Stores file system metadata (directory structures,
 permissions) so data can be retrieved directly from OSDs.
 
-## Storage Backend: BlueStore
+## Storage backend: BlueStore
 
 In modern Ceph releases, **BlueStore** is the default OSD backend. Unlike older
 implementations that stored data on top of a Linux file system (XFS), BlueStore
@@ -47,7 +47,7 @@ Benefits:
 - Internal RocksDB instance for metadata
 - Write-Ahead Log (WAL) for durability
 
-## Architecture Diagram
+## Architecture diagram
 
 ```text
 +------------------+  +------------------+  +------------------+

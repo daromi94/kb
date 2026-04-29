@@ -80,7 +80,7 @@ This enables correct nesting — an inner span activates, does work,
 closes its Scope (restoring the outer span's Context), and the outer
 span continues as current.
 
-### Failure modes when Scope is not closed
+### Failure modes when scope is not closed
 
 - The Span remains "current" on the thread. Subsequent unrelated
   operations on the same thread (common with thread pools) parent
@@ -145,7 +145,7 @@ traced.execute(() -> {
 });
 ```
 
-### Automatic transfer via the Java Agent
+### Automatic transfer via the Java agent
 
 The OpenTelemetry Java Agent instruments standard concurrency
 libraries via bytecode injection. When a Runnable or Callable is
@@ -228,7 +228,7 @@ Trace ID and parent Span ID but has no local Span object. The
 server's new Span references it as its parent, linking the two
 services in the same trace.
 
-## W3C Trace Context
+## W3C trace context
 
 The standard propagation format, supported by default. Two headers:
 

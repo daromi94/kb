@@ -4,7 +4,7 @@ A first-principles walkthrough of building a database on object
 storage, illustrating each design decision as a response to a
 concrete scaling problem.
 
-## WAL as the Database
+## WAL as the database
 
 The simplest possible database on object storage is a write-ahead
 log. Each write creates an immutable file in a `/wal` prefix:
@@ -21,14 +21,14 @@ deletes. This is a real database: it supports any query, has full
 time-travel capability, and never loses data. It just scales
 terribly.
 
-## Adding a Cache Layer
+## Adding a cache layer
 
 WAL entries are immutable, so they cache perfectly. Add an in-memory
 cache, then an NVMe SSD cache tier. Queries check caches before
 fetching from object storage. Performance improves dramatically for
 warm data.
 
-## Derived Indexes
+## Derived indexes
 
 Full scans are slow. Build in-memory derived indexes over the WAL:
 
@@ -41,7 +41,7 @@ The index is rebuilt from the WAL on startup. For strong consistency,
 issue a `LIST` call to object storage before each query to discover
 new WAL entries, then update the index from any cached entries.
 
-## Persisting Indexes
+## Persisting indexes
 
 In-memory indexes are lost when nodes restart. Serialize the index
 to object storage alongside a pointer to the WAL entry it covers:
@@ -54,7 +54,7 @@ On cold start, download the persisted index and replay only WAL
 entries after entry 42. This drastically reduces recovery time
 compared to replaying the entire log.
 
-## Reducing Round Trips
+## Reducing round trips
 
 Walking a B-tree stored in object storage requires one round trip
 per tree level. At ~250ms per S3 GET (p90), a tree of depth 20
@@ -63,7 +63,7 @@ B+-tree nodes so the tree has only 3-4 levels, bringing cold point
 lookups down to hundreds of milliseconds. Cache upper layers for
 frequently accessed data.
 
-## Evolution Toward LSM
+## Evolution toward LSM
 
 Rewriting the entire index to object storage on every update creates
 enormous write amplification. Instead, flush sorted batches of index
@@ -72,7 +72,7 @@ the core LSM idea: append sorted runs, compact them periodically.
 Compaction merges small files into larger ones, reducing read
 amplification at the cost of background I/O.
 
-## Conflict Resolution for Multiple Writers
+## Conflict resolution for multiple writers
 
 | Strategy           | Mechanism                                | Ordering    |
 |--------------------|------------------------------------------|-------------|
@@ -86,7 +86,7 @@ attempt to write `/wal/4.bin` with a condition that the key does
 not exist. If another writer already created it, the write is
 rejected and the client retries with a higher sequence number.
 
-## Group Commits and Batching
+## Group commits and batching
 
 Individual writes to object storage are expensive (~100-250ms each).
 Group commit coalesces writes arriving within a time window into a
@@ -104,7 +104,7 @@ every N ms) is simpler. Size-based batching (flush at N bytes) caps
 network utilization. A blanket answer does not exist; production
 systems use a hybrid tuned to real workload characteristics.
 
-## Serialization Formats
+## Serialization formats
 
 | Format    | Deserialization Speed | Random Access | Readability |
 |-----------|-----------------------|---------------|-------------|
@@ -119,7 +119,7 @@ eliminates CPU overhead when loading gigabytes of index data. They
 chose a custom format over Arrow/Parquet for full control over on-
 disk layout and round-trip minimization.
 
-## Workload Separation
+## Workload separation
 
 | Workload    | Resource Profile           | Separation Rationale           |
 |-------------|----------------------------|--------------------------------|

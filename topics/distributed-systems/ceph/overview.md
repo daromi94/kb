@@ -5,7 +5,7 @@ and file storage from a single, unified cluster. It is architected to be
 self-healing and self-managing, with no single point of failure, capable of
 scaling from a few nodes to thousands of servers.
 
-## Unified Storage
+## Unified storage
 
 Unlike traditional systems that require separate infrastructure for different
 storage types, Ceph runs all three interfaces on top of the same underlying
@@ -17,7 +17,7 @@ storage types, Ceph runs all three interfaces on top of the same underlying
 | Object (RGW)  | S3/Swift REST API | Backups, media files, data lakes      |
 | File (CephFS) | POSIX mount       | Shared directories, HPC scratch space |
 
-## Key Characteristics
+## Key characteristics
 
 **Scalability:** Performance and capacity scale linearly by adding commodity
 hardware. No central controller bottleneck.
@@ -31,7 +31,7 @@ redistributes data to restore the configured replica count.
 **Hardware Agnostic:** Runs on standard x86 servers, avoiding vendor lock-in
 with proprietary storage arrays.
 
-## The CRUSH Innovation
+## The CRUSH innovation
 
 The defining technical feature is the **CRUSH** (Controlled Replication Under
 Scalable Hashing) algorithm. Unlike traditional storage that uses a central

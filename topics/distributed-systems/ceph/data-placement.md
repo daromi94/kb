@@ -16,7 +16,7 @@ erasure coding (for efficiency).
 **Quotas:** Limits on space or object count prevent one application from
 starving others.
 
-## Placement Groups (PGs)
+## Placement groups (PGs)
 
 Managing millions of individual objects would overwhelm memory and CPU. Ceph
 shards each pool into a configurable number of **Placement Groups**.
@@ -33,7 +33,7 @@ hash(object_name) % pg_count → PG ID
 **Dynamic balancing:** Adding OSDs doesn't move individual objects—entire PGs
 migrate. This makes rebalancing significantly faster.
 
-## Metadata Partitioning (CephFS)
+## Metadata partitioning (CephFS)
 
 Unique to CephFS, metadata (names, permissions, hierarchy) is managed by
 Metadata Servers using **Dynamic Subtree Partitioning**.
@@ -47,7 +47,7 @@ multiple MDS daemons.
 **Adaptive:** If `/home/users` becomes extremely busy, Ceph dynamically moves
 that subtree to a different MDS without client awareness.
 
-## Layers Summary
+## Layers summary
 
 | Layer      | Unit            | Purpose                                     |
 |------------|-----------------|---------------------------------------------|

@@ -4,7 +4,7 @@ Shut down a multi-subsystem service by broadcasting a signal and
 waiting for every subsystem to acknowledge completion, with a hard
 timeout as a backstop.
 
-## How Linkerd2-proxy does it
+## How linkerd2-proxy does it
 
 A drain primitive is shared with every subsystem at startup. When
 shutdown is triggered, every subsystem observes the signal and begins

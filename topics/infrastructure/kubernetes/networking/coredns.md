@@ -32,7 +32,7 @@ Other directives in the default Corefile (`errors`, `health`, `ready`,
 `loop`, `reload`, `loadbalance`) cover lifecycle, health-check endpoints,
 and response shuffling.
 
-## The Corefile
+## The corefile
 
 CoreDNS is driven by a single config file, the Corefile, shipped as the
 `coredns` ConfigMap in `kube-system`. The default looks like this:

@@ -4,7 +4,7 @@ Ceph's read and write paths are governed by the **Primary OSD model**. One OSD
 coordinates all I/O for any given Placement Group, ensuring strict data
 consistency.
 
-## Write Path
+## Write path
 
 Ceph prioritizes strong consistency. A write succeeds after `min_size`
 replicas acknowledge (default 2 out of 3).
@@ -48,7 +48,7 @@ Client
 **BlueStore detail:** The write is "committed" once safely in the Write-Ahead
 Log (WAL), even before flushing to the main data disk.
 
-## Read Path
+## Read path
 
 Reads are simpler—usually a single network hop.
 
@@ -57,7 +57,7 @@ Reads are simpler—usually a single network hop.
 3. **Local retrieval:** Primary reads from BlueStore, performs checksum.
 4. **Return:** Data sent directly to client.
 
-## Erasure Coded Pools
+## Erasure coded pools
 
 In EC pools, the write path is more complex:
 
@@ -67,7 +67,7 @@ In EC pools, the write path is more complex:
 
 Reads require fetching at least $k$ chunks to reconstruct the original object.
 
-## Read from Replica
+## Read from replica
 
 While Ceph typically reads from Primary for consistency, certain configurations
 allow **localized reads**. If a client is geographically closer to a replica,

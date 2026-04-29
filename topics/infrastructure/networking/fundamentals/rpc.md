@@ -44,13 +44,13 @@ When you call a remote function, these steps happen in milliseconds:
 | Coupling    | Tight (strict contract/schema)          | Loose (URL + data format)          |
 | Performance | Often faster (binary formats like gRPC) | Slower (text-heavy JSON/HTTP)      |
 
-## Common Implementations
+## Common implementations
 
 - **gRPC:** Google's high-performance framework, widely used in microservices
 - **NFS:** Network File System uses RPC to make remote files feel local
 - **Java RMI:** Java-specific RPC for communication between JVMs
 
-## The Cost of Transparency
+## The cost of transparency
 
 The danger of RPC is that it *looks* like a local call, causing developers to
 forget the network exists:

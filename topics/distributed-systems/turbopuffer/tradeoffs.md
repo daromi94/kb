@@ -4,14 +4,14 @@ Turbopuffer's architecture makes deliberate engineering tradeoffs to
 optimize for cost and scale over instantaneous writes and built-in
 complexity.
 
-## Write Latency vs. Throughput
+## Write latency vs. throughput
 
 Every write must be durably committed to S3 before acknowledgment,
 creating a ~285ms write latency floor. In return, the append-only WAL
 design delivers massive aggregate throughput (10,000+ vectors/sec per
 namespace) without the rebalancing complexity of stateful clusters.
 
-## Cold Start vs. Storage Cost
+## Cold start vs. storage cost
 
 The first query to an inactive namespace takes ~400ms because data
 must be fetched from S3. Subsequent queries hit the NVMe cache at
@@ -21,7 +21,7 @@ inactive data remains in object storage.
 Applications mitigate cold starts with pre-warming: issuing a
 preflight query to hydrate the cache before the user begins searching.
 
-## First-Stage Retrieval Focus
+## First-Stage retrieval focus
 
 Turbopuffer is specialized for candidate generation, not end-to-end
 ranking. It scans billions of vectors and narrows results to the top
@@ -31,7 +31,7 @@ This is a deliberate scope limitation. The system avoids a complex
 query DSL for deep ranking. Applications are expected to perform
 second-stage reranking externally.
 
-## Precision over Configuration
+## Precision over configuration
 
 The system exposes few tuning knobs. Index parameters are managed
 internally rather than requiring users to configure HNSW settings or

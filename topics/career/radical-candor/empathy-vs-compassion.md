@@ -25,7 +25,7 @@ enough distance to act. You remove the boulder.
 
 Compassion = empathy + action.
 
-## Compassionate Candor vs. Ruinous Empathy
+## Compassionate candor vs. ruinous empathy
 
 | Mode                 | Emotional state        | Action                                 |
 |----------------------|------------------------|----------------------------------------|

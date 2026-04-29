@@ -69,7 +69,7 @@ without reproducing the scenario.
 ## Related
 
 - [Barricades](barricades.md) - Trust zones and validation boundaries
-- [Design by Contract](design-by-contract.md) - Formal correctness specifications
+- [Design by contract](design-by-contract.md) - Formal correctness specifications
 
 ---
 

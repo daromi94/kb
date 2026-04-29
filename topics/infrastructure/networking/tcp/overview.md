@@ -4,7 +4,7 @@ TCP (Transmission Control Protocol) operates at the Transport Layer (Layer 4) an
 provides reliable, ordered data delivery over IP's unreliable packet-switched
 network.
 
-## Core Properties
+## Core properties
 
 | Property            | Description                                           |
 |---------------------|-------------------------------------------------------|
@@ -12,9 +12,9 @@ network.
 | Reliable            | Guarantees delivery via ACKs and retransmission       |
 | Ordered             | Guarantees byte order via sequence numbers            |
 | Full-duplex         | Data flows both directions independently              |
-| Stream-based        | No message boundaries (see [Streams](streams.md))     |
+| Stream-based        | No message boundaries                                 |
 
-## Header Overhead
+## Header overhead
 
 TCP headers are minimum 20 bytes containing source/destination ports, sequence
 and acknowledgment numbers, flags, and window size. Options can extend this.

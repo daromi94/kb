@@ -3,7 +3,7 @@
 The killer feature of Unix Domain Sockets: passing open file descriptors
 between processes.
 
-## Why This Is Special
+## Why this is special
 
 A file descriptor is just an integer index into a process's file table. If
 Process A sends the integer `4` to Process B over a normal channel, Process B
@@ -27,7 +27,7 @@ Process A (fd=4)              Kernel                    Process B
 Process B receives a different integer (e.g., `7`) but it points to the same
 underlying file.
 
-## How to Use It
+## How to use it
 
 Requires `sendmsg()`/`recvmsg()` with ancillary data (control messages).
 
@@ -48,7 +48,7 @@ cmsg->cmsg_len = CMSG_LEN(sizeof(int));
 sendmsg(socket_fd, &msg, 0);
 ```
 
-## Real-World Uses
+## Real-World uses
 
 **Nginx zero-downtime upgrades:**
 The old master process passes listening socket fds to the new master. New
@@ -66,7 +66,7 @@ Pass fds for namespaces, cgroups, or pre-opened files to sandboxed processes.
 PgBouncer-style proxies can pass established connections between worker
 processes.
 
-## What Can Be Passed
+## What can be passed
 
 Any file descriptor:
 

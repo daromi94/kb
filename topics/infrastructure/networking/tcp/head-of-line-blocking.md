@@ -3,7 +3,7 @@
 Head-of-line (HOL) blocking is TCP's fundamental limitation and the primary
 reason the industry is moving toward UDP-based protocols like QUIC.
 
-## The Problem
+## The problem
 
 TCP guarantees **ordered delivery**. If any packet is lost, the kernel buffers
 all subsequent packets until the missing one is retransmitted.
@@ -22,18 +22,18 @@ all subsequent packets until the missing one is retransmitted.
 the application until Image 1's lost packet is retransmitted. One lost packet
 stalls the entire stream.
 
-## Why This Happens
+## Why this happens
 
 TCP's stream abstraction guarantees bytes arrive in order. The kernel cannot
 deliver byte 1001 until bytes 1-1000 are complete. This is a feature for
 some applications but a bug for multiplexed protocols.
 
-## HTTP/2's Workaround
+## HTTP/2's workaround
 
 HTTP/2 multiplexes multiple logical streams over one TCP connection. But HOL
 blocking at the TCP layer still affects all streams when any packet is lost.
 
-## QUIC's Solution
+## QUIC's solution
 
 QUIC runs over UDP and implements its own reliability. Each stream has
 independent ordering, so a lost packet only blocks its own stream:
@@ -46,7 +46,7 @@ QUIC Stream 3: packets arrived → delivered immediately
 
 This is why HTTP/3 (which uses QUIC) performs better on lossy networks.
 
-## When HOL Blocking Matters
+## When HOL blocking matters
 
 | Scenario             | Impact                              |
 |----------------------|-------------------------------------|

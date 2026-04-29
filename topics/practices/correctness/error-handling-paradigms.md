@@ -178,7 +178,7 @@ cannot be caught by normal error handling).
 ## Related
 
 - [Defensive programming](defensive-programming.md) - How these paradigms apply in practice
-- [Design by Contract](design-by-contract.md) - Contracts define what constitutes a programming error
+- [Design by contract](design-by-contract.md) - Contracts define what constitutes a programming error
 
 ---
 

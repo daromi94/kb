@@ -4,7 +4,7 @@ The kernel maintains a **send queue** (TX) and **receive queue** (RX) for each
 side of a UDS connection. These kernel-space buffers decouple producers from
 consumers, allowing asynchronous data exchange between processes.
 
-## Queue Architecture
+## Queue architecture
 
 ```text
   Process A                  Kernel                 Process B
@@ -19,7 +19,7 @@ moves it to the peer's receive queue. A `read()` copies data out to the
 reader's userspace buffer. Two copies total — user-to-kernel and
 kernel-to-user — but no network stack processing.
 
-## Buffer Sizing
+## Buffer sizing
 
 Queue sizes are governed by system defaults and per-socket overrides:
 
@@ -36,7 +36,7 @@ setsockopt(fd, SOL_SOCKET, SO_SNDBUF, &size, sizeof(size));
 setsockopt(fd, SOL_SOCKET, SO_RCVBUF, &size, sizeof(size));
 ```
 
-## Blocking vs Non-Blocking
+## Blocking vs non-Blocking
 
 Queue fullness determines whether I/O calls block or return immediately:
 
@@ -48,7 +48,7 @@ Queue fullness determines whether I/O calls block or return immediately:
 Non-blocking sockets pair with `epoll`, `select`, or `poll` to retry when
 the kernel signals readiness.
 
-## Kernel Synchronization
+## Kernel synchronization
 
 When multiple threads share a socket file descriptor:
 

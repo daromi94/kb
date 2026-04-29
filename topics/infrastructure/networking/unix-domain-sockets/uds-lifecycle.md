@@ -2,7 +2,7 @@
 
 The UDS API mirrors TCP but with filesystem-specific setup and teardown.
 
-## Server Lifecycle
+## Server lifecycle
 
 ```text
 +------------------+
@@ -35,7 +35,7 @@ The UDS API mirrors TCP but with filesystem-specific setup and teardown.
 +------------------+
 ```
 
-### Key Differences from TCP
+### Key differences from TCP
 
 **`unlink()` before bind:** If the socket file exists from a previous crash,
 `bind()` fails with `EADDRINUSE`. Always unlink first.
@@ -45,7 +45,7 @@ Process umask affects permissions.
 
 **`chmod()` for security:** Control who can connect via file permissions.
 
-## Client Lifecycle
+## Client lifecycle
 
 ```text
 +------------------+
@@ -58,14 +58,14 @@ Process umask affects permissions.
 +------------------+
 ```
 
-### What connect() Does
+### What connect() does
 
 1. VFS lookup for socket file inode
 2. Check file permissions (client needs write access)
 3. Verify file is actually a socket
 4. Place client in server's listen queue
 
-## Data Transfer
+## Data transfer
 
 Once connected, "client" and "server" distinction disappears. Both hold file
 descriptors pointing to each other.
@@ -80,7 +80,7 @@ read(fd, buf, 100);    // Read from kernel buffer
 **Advanced I/O:** Use `sendmsg()`/`recvmsg()` for ancillary data like file
 descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 
-## Complete Flow
+## Complete flow
 
 ```text
       SERVER                              CLIENT
@@ -104,7 +104,7 @@ descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 7. close(fd=5)                      4. close(fd=4)
 ```
 
-## API Comparison
+## API comparison
 
 | API       | TCP Behavior            | UDS Behavior             |
 |-----------|-------------------------|--------------------------|

@@ -16,17 +16,17 @@ Reduces latency and bandwidth in inter-service communication. The binary format
 and code generation eliminate the overhead of text parsing and runtime schema
 validation.
 
-## Large-Scale Storage
+## Large-Scale storage
 
 Saves disk space when storing billions of structured records. The compact binary
 format provides significant savings over JSON or XML for archival data.
 
-## Mobile and IoT
+## Mobile and ioT
 
 Efficient data transfer for devices with limited bandwidth or battery life.
 Smaller payloads mean less radio time and lower power consumption.
 
-## When to Use Protobuf
+## When to use Protobuf
 
 | Scenario                           | Fit   |
 |------------------------------------|-------|

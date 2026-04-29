@@ -4,7 +4,7 @@ The **OSI (Open Systems Interconnection) Model** is a conceptual framework that
 standardizes communication functions into seven abstract layers. Developed by
 ISO in the 1980s, it acts as a universal language for networking.
 
-## Why Communication Models Matter
+## Why communication models matter
 
 In the 1970s-80s, every manufacturer (IBM, DEC, Apple) had proprietary ways of
 sending data. An IBM computer could only talk to another IBM. Communication
@@ -18,11 +18,11 @@ models solve this "Tower of Babel" problem:
 | Specialization      | Companies focus on one layer (routers, encryption) |
 | Managing Complexity | Break networking into manageable pieces            |
 
-## The Seven Layers
+## The seven layers
 
 Mnemonic: **"All People Seem To Need Data Processing"** (top to bottom).
 
-### Layer 7: Application
+### Layer 7: application
 
 The layer closest to the user, providing network services to applications.
 
@@ -34,7 +34,7 @@ The layer closest to the user, providing network services to applications.
 **Security:** Web Application Firewalls (WAFs) operate here to block SQL
 injection and XSS attacks that lower layers cannot detect.
 
-### Layer 6: Presentation
+### Layer 6: presentation
 
 The "syntax layer" or "translator." Ensures data sent by one system can be read
 by another.
@@ -47,7 +47,7 @@ by another.
 
 **Standards:** JPEG, PNG, MPEG, QuickTime, ASCII, UTF-8
 
-### Layer 5: Session
+### Layer 5: session
 
 The "coordinator" managing dialogue between computers.
 
@@ -59,7 +59,7 @@ The "coordinator" managing dialogue between computers.
 
 **Protocols:** NetBIOS, RPC, PPTP, NFS
 
-### Layer 4: Transport
+### Layer 4: transport
 
 The "reliability and logistics hub." Gets data to the specific application on a
 machine.
@@ -94,7 +94,7 @@ Client                    Server
    |                         |
 ```
 
-### Layer 3: Network
+### Layer 3: network
 
 The "traffic controller." Moves data between different networks.
 
@@ -109,7 +109,7 @@ The "traffic controller." Moves data between different networks.
 **Developer relevance:** Subnets, ICMP (ping), public vs private IPs, cloud
 networking.
 
-### Layer 2: Data Link
+### Layer 2: data link
 
 Provides reliable communication between devices on the **same local network**.
 
@@ -128,7 +128,7 @@ Provides reliable communication between devices on the **same local network**.
 **PDU:** Frames
 **Hardware:** Switches (maintain MAC address tables)
 
-### Layer 1: Physical
+### Layer 1: physical
 
 The foundation dealing with actual physical media and raw bit transmission.
 
@@ -151,7 +151,7 @@ The foundation dealing with actual physical media and raw bit transmission.
 **PDU:** Bits
 **Hardware:** Hubs, repeaters, cables, NICs
 
-## Layer Comparison
+## Layer comparison
 
 | Layer | Name         | PDU     | Key Function        | Hardware     |
 |-------|--------------|---------|---------------------|--------------|

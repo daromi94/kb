@@ -4,7 +4,7 @@ While flow control prevents overwhelming the receiver, congestion control
 prevents overwhelming the network. TCP treats packet loss as a signal of
 network congestion.
 
-## Congestion Window (cwnd)
+## Congestion window (cwnd)
 
 The sender maintains a congestion window limiting bytes in flight,
 **independent** of the receiver's advertised window. The effective limit is:
@@ -13,7 +13,7 @@ The sender maintains a congestion window limiting bytes in flight,
 send_limit = min(cwnd, receiver_window)
 ```
 
-## Slow Start
+## Slow start
 
 New connections have no knowledge of network capacity. Slow start probes
 conservatively with exponential growth.
@@ -26,7 +26,7 @@ conservatively with exponential growth.
 **Cold connection penalty**: New connections are slow. This is why connection
 pooling and HTTP persistent connections matter, keeping cwnd "warm."
 
-## Congestion Avoidance
+## Congestion avoidance
 
 After slow start threshold, growth becomes linear (additive increase) to probe
 more cautiously. On packet loss, cwnd is reduced aggressively (multiplicative

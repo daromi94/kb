@@ -25,18 +25,18 @@ need to know how to reach the network, not every device.
 - MAC address stays the same (you're the same device)
 - IP address changes (you're at a new location)
 
-## Host-to-Host Communication
+## Host-to-Host communication
 
 When Host A wants to communicate with Host B:
 
-### Step 1: Local or Remote?
+### Step 1: local or remote?
 
 Host A compares Host B's IP with its own using the **subnet mask**.
 
 - **Local (same subnet):** Send directly to Host B's MAC address
 - **Remote (different subnet):** Send to the default gateway (router)
 
-### Step 2: ARP (Address Resolution Protocol)
+### Step 2: ARP (address resolution protocol)
 
 Hardware only understands MAC addresses. If Host A knows the IP but not the MAC,
 it uses ARP:
@@ -52,7 +52,7 @@ Host A                                 All Hosts on LAN
 ARP broadcasts to `FF:FF:FF:FF:FF:FF` (all devices). Only the matching host
 replies.
 
-### Step 3: The Journey
+### Step 3: the journey
 
 For remote destinations, the packet traverses multiple routers. Each router:
 
@@ -60,7 +60,7 @@ For remote destinations, the packet traverses multiple routers. Each router:
 - Wraps in a new frame for the next hop
 - Source and destination IPs **never change**
 
-## Local vs Remote Communication
+## Local vs remote communication
 
 | Feature     | Local (Same Subnet) | Remote (Different Subnet) |
 |-------------|---------------------|---------------------------|
@@ -68,15 +68,15 @@ For remote destinations, the packet traverses multiple routers. Each router:
 | Dest MAC    | Target host's MAC   | Router's interface MAC    |
 | IP Handling | Direct delivery     | Multi-hop routing         |
 
-## Broadcast vs Unicast
+## Broadcast vs unicast
 
-### Unicast (Point-to-Point)
+### Unicast (point-to-Point)
 
 With modern **switches**, unicast traffic is delivered only to the destination
 port. The switch maintains a MAC address table and sends frames only where
 needed. Other computers never see the message.
 
-### Broadcast (Everyone)
+### Broadcast (everyone)
 
 Some scenarios require all devices to receive the message:
 
@@ -86,18 +86,18 @@ Some scenarios require all devices to receive the message:
 The switch sends broadcasts to all ports. Every device receives it, but only the
 relevant one responds.
 
-### Legacy: Hubs
+### Legacy: hubs
 
 Old **hubs** (Layer 1 devices) copied all signals to all ports. Every NIC
 received every frame but only accepted frames addressed to its MAC.
 
-### Wireless Networks
+### Wireless networks
 
 Wi-Fi is a shared medium. Radio waves physically reach all devices in range.
 Each device's NIC checks the destination MAC and drops frames not addressed to
 it. This is why encryption (WPA2/3) is critical - the signal reaches everyone.
 
-## Promiscuous Mode
+## Promiscuous mode
 
 The "only accept your own frames" rule is a software choice. Putting a NIC into
 **promiscuous mode** tells it to accept all frames regardless of destination
@@ -107,7 +107,7 @@ On unencrypted networks or legacy hubs, this enables packet sniffing. This is
 why Layer 6 encryption (HTTPS) matters - even if someone captures your traffic,
 they can't read it.
 
-## Common Failures
+## Common failures
 
 | Problem          | Cause                                         |
 |------------------|-----------------------------------------------|

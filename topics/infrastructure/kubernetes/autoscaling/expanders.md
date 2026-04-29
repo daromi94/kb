@@ -56,7 +56,7 @@ placement, business rules, or multi-cluster coordination.
 
 ## Related
 
-- [Cluster Autoscaler](cluster-autoscaler.md) - Scale-up trigger and templates
+- [Cluster autoscaler](cluster-autoscaler.md) - Scale-up trigger and templates
 
 ---
 

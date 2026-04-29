@@ -4,7 +4,7 @@ Run the admin interface on a separate thread with its own event loop,
 giving operators a control plane into the service without touching the
 data path.
 
-## How Linkerd2-proxy does it
+## How linkerd2-proxy does it
 
 The admin server runs on a dedicated thread, independent of the
 proxy's main runtime. It exposes:

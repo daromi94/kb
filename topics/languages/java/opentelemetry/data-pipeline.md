@@ -18,7 +18,7 @@ variants:
 
 If an SDK supports only one transport, it should be `http/protobuf`.
 
-## The Collector
+## The collector
 
 The OpenTelemetry Collector is a vendor-agnostic telemetry pipeline
 that receives, processes, and exports observability data. Rather than

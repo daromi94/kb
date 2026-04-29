@@ -60,7 +60,7 @@ int fd = socket(AF_UNIX, SOCK_SEQPACKET, 0);
 **Use case:** Protocols needing sessions and discrete messages without manual
 parsing.
 
-## Flow Control
+## Flow control
 
 Unlike TCP's sliding window with ACKs, UDS uses kernel buffer locking:
 

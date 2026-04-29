@@ -7,7 +7,7 @@ act as an ephemeral cache layer. The name "pufferfish" reflects this
 design: the cache inflates on demand to serve active queries, then
 deflates when data goes cold.
 
-## Storage Hierarchy
+## Storage hierarchy
 
 The system manages three tiers of data access to balance cost and
 performance:
@@ -32,14 +32,14 @@ Inactive data remains in S3.
 | Cold        | Object Storage | ~400ms        | First query, rare access |
 | Warm        | NVMe SSD / RAM | ~8ms          | Active search traffic    |
 
-## Stateless Compute
+## Stateless compute
 
 Query nodes are stateless binaries. Because all persistent state
 lives in object storage, nodes are interchangeable. A failed node is
 replaced without data rebalancing or state synchronization. New nodes
 pull the required data from S3 on demand.
 
-## Compute-Compute Separation
+## Compute-Compute separation
 
 The system splits processing into two specialized node types:
 
@@ -51,7 +51,7 @@ The system splits processing into two specialized node types:
 Both types auto-scale independently. A massive data import on indexing
 nodes does not affect query latency for other tenants.
 
-## Hydration Model
+## Hydration model
 
 The system uses pull-on-demand caching:
 
@@ -63,7 +63,7 @@ The system uses pull-on-demand caching:
 Resource consumption scales with active query traffic, not total
 dataset size.
 
-## Durability via Object Storage Replication
+## Durability via object storage replication
 
 Traditional vector databases replicate data across multiple local SSDs
 or EBS volumes for durability. Turbopuffer delegates replication to

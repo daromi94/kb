@@ -3,7 +3,7 @@
 TCP connections transition through well-defined states. Two states are
 particularly important for diagnosing system issues.
 
-## Key States
+## Key states
 
 | State       | Description                                      |
 |-------------|--------------------------------------------------|
@@ -18,7 +18,7 @@ particularly important for diagnosing system issues.
 | TIME_WAIT   | Waiting for delayed packets to expire            |
 | CLOSED      | No connection                                    |
 
-## CLOSE_WAIT: The Application Leak
+## CLOSE_WAIT: the application leak
 
 When the remote side sends FIN, the kernel ACKs it and enters CLOSE_WAIT. The
 connection remains here until **your application** calls `close()`.
@@ -26,7 +26,7 @@ connection remains here until **your application** calls `close()`.
 **Thousands of CLOSE_WAIT sockets indicate an application bug**: the code is
 failing to close connections properly, leaking file descriptors.
 
-## TIME_WAIT: The Safety Net
+## TIME_WAIT: the safety net
 
 After sending the final ACK, the active closer enters TIME_WAIT for 2×MSL
 (Maximum Segment Lifetime), typically 60 seconds.
@@ -48,7 +48,7 @@ they're tied up in TIME_WAIT.
 net.ipv4.tcp_tw_reuse = 1
 ```
 
-## Inspecting States
+## Inspecting states
 
 ```bash
 # View socket states

@@ -4,7 +4,7 @@ Treat configuration as a typed, validated tree that is parsed once at
 startup, consumed by subsystem builders, and then discarded. The config
 struct exists only long enough to prove the system can start correctly.
 
-## How Linkerd2-proxy does it
+## How linkerd2-proxy does it
 
 Configuration is a nested struct tree that mirrors the subsystem
 hierarchy — each subsystem owns its own typed config. The config

@@ -4,7 +4,7 @@ A Ceph cluster functions as a distributed, autonomous entity where intelligence
 is decentralized. Every component—including clients—can calculate data
 locations independently.
 
-## The Cluster Map
+## The cluster map
 
 The cluster's coordination begins with **Monitors** maintaining the Cluster Map:
 
@@ -20,7 +20,7 @@ The cluster's coordination begins with **Monitors** maintaining the Cluster Map:
 To perform any action, a client first contacts a Monitor to get the latest map.
 Once obtained, the client no longer needs the Monitor for data I/O.
 
-## Versioned State (Epochs)
+## Versioned state (epochs)
 
 Cluster state is versioned by **Epochs**. Every message carries a version
 number.
@@ -43,7 +43,7 @@ responding, OSD 5 and OSD 22 report it to Monitors.
 data from OSD 12 now belongs elsewhere. OSDs migrate data among themselves to
 restore replica count.
 
-## Data Ingestion Flow
+## Data ingestion flow
 
 1. **Discovery:** Client gets Cluster Map from Monitor
 2. **Calculation:** Client runs CRUSH to identify OSDs
@@ -51,7 +51,7 @@ restore replica count.
 4. **Safety:** Primary replicates to Secondary OSDs
 5. **Maintenance:** Cluster detects failures and rebalances
 
-## The Manager Role
+## The manager role
 
 While Monitors handle cluster "state," the **Manager** handles "status":
 

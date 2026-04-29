@@ -28,7 +28,7 @@ between user-space operations and the protocol state machine.
 +-----------------------------------------------------------+
 ```
 
-## System Call Behavior
+## System call behavior
 
 ### connect()
 
@@ -68,7 +68,7 @@ Copies data from kernel receive buffer to user space.
 
 Reading frees buffer space, increasing the advertised window.
 
-## Socket Options
+## Socket options
 
 | Option       | Purpose                                      |
 |--------------|----------------------------------------------|
@@ -79,7 +79,7 @@ Reading frees buffer space, increasing the advertised window.
 | SO_SNDBUF    | Set send buffer size                         |
 | SO_RCVBUF    | Set receive buffer size                      |
 
-## Inspecting Socket State
+## Inspecting socket state
 
 ```bash
 ss -ti

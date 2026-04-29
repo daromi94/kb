@@ -32,7 +32,7 @@ Instead of passing a massive data structure, a small memory address is passed.
 This allows multiple parts of a program to share and modify the same data
 without duplicating it.
 
-### Domain Name System (DNS)
+### Domain name system (DNS)
 
 The internet relies on indirection. If a web server's IP address changes, the
 entire world doesn't need to update their bookmarks. DNS allows a human-readable
@@ -44,7 +44,7 @@ A VM or container provides indirection between software and hardware. The
 application "thinks" it's talking to a physical CPU and RAM, but it's actually
 talking to a hypervisor that manages those resources.
 
-### File descriptors (Unix/Linux)
+### File descriptors (unix/Linux)
 
 When a process writes to a file, it doesn't talk to the disk directly. It uses
 a file descriptor (an integer). The kernel uses this integer as an index into

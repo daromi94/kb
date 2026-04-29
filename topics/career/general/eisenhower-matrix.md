@@ -1,4 +1,4 @@
-# Eisenhower Matrix
+# Eisenhower matrix
 
 A prioritization framework that evaluates tasks along two axes:
 urgency (immediate consequences if delayed) and importance

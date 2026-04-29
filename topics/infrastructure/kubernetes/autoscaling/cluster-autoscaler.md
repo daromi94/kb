@@ -1,4 +1,4 @@
-# Cluster Autoscaler
+# Cluster autoscaler
 
 The Cluster Autoscaler (CA) adjusts the number of nodes in a cluster.
 It adds nodes when pods cannot be scheduled and removes nodes that
@@ -88,7 +88,7 @@ has room to grow into while CA catches up.
 ## Related
 
 - [Scaling mechanisms](scaling-mechanisms.md) - HPA vs VPA vs Cluster Autoscaler
-- [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
+- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
 - [Expanders](expanders.md) - Picking a node group on scale-up
 
 ---

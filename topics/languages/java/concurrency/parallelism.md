@@ -37,7 +37,7 @@ On a modern smartphone, one core handles the cellular radio's background data,
 another renders the UI of a game, and a third decodes an MP3 file. These tasks
 progress truly independently in time.
 
-## Amdahl's Law
+## Amdahl's law
 
 A common misconception is that doubling processors doubles speed. The speedup is
 limited by the **sequential fraction**—parts of the code that cannot be

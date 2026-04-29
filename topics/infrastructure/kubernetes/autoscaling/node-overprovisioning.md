@@ -101,7 +101,7 @@ predictable workloads.
 ## Related
 
 - [Lead time](lead-time.md) - Scale-up latency breakdown
-- [Cluster Autoscaler](cluster-autoscaler.md) - Reacts to pending placeholders
+- [Cluster autoscaler](cluster-autoscaler.md) - Reacts to pending placeholders
 
 ---
 

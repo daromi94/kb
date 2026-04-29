@@ -5,7 +5,7 @@ persistent storage. Unlike Deployments where Pods are interchangeable, a
 StatefulSet Pod that dies is replaced with one having the same name, network
 identity, and access to the same data.
 
-## Core Guarantees
+## Core guarantees
 
 StatefulSets provide four guarantees that Deployments do not:
 
@@ -18,7 +18,7 @@ StatefulSets provide four guarantees that Deployments do not:
 - **Ordered termination:** Scaling down terminates Pods in reverse order
   (N-1 to 0), ensuring data safety for distributed databases
 
-## Headless Service Requirement
+## Headless Service requirement
 
 For stable network identity, a StatefulSet requires a Headless Service
 (`clusterIP: None`). Instead of providing a single load-balanced IP, the DNS
@@ -27,13 +27,13 @@ communication (e.g., follower connecting to leader for replication).
 
 DNS format: `$(pod-name).$(service-name).$(namespace).svc.cluster.local`
 
-## Volume Claim Templates
+## Volume claim templates
 
 Deployments typically share a volume or use ephemeral storage. StatefulSets use
 `volumeClaimTemplate` to create a unique PersistentVolumeClaim for each Pod,
 ensuring `mariadb-0` and `mariadb-1` each have dedicated storage.
 
-## When to Use
+## When to use
 
 StatefulSets are appropriate for:
 

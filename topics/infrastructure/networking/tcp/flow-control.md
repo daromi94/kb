@@ -3,7 +3,7 @@
 Flow control prevents a fast sender from overwhelming a slow receiver's buffer.
 TCP implements this through the sliding window mechanism.
 
-## The Sliding Window
+## The sliding window
 
 Every ACK packet includes a **Window Size** field advertising how many bytes
 the receiver can currently accept.
@@ -17,7 +17,7 @@ Byte stream:
 
 As ACKs arrive, the window "slides" right, allowing new data to be sent.
 
-## Buffer Interaction
+## Buffer interaction
 
 The window directly reflects free space in the kernel receive buffer:
 
@@ -29,7 +29,7 @@ The window directly reflects free space in the kernel receive buffer:
 **If the application is slow to read** (e.g., processing data, GC pause), the
 buffer fills up and the window shrinks.
 
-## Zero Window
+## Zero window
 
 When the receive buffer is completely full, the receiver advertises **Window=0**.
 The sender must stop transmitting immediately.
@@ -38,7 +38,7 @@ The sender must stop transmitting immediately.
 probe packets. When the receiver's application reads data and frees buffer
 space, it sends a **Window Update** and transmission resumes.
 
-## Buffer Sizing
+## Buffer sizing
 
 ```bash
 # View current buffer sizes

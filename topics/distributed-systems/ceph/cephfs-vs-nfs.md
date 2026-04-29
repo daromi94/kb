@@ -4,7 +4,7 @@ Comparing CephFS and NFS involves evaluating a distributed, software-defined
 storage cluster against a traditional client-server protocol. Both provide
 shared file systems but differ significantly in architecture and use cases.
 
-## Architectural Comparison
+## Architectural comparison
 
 | Feature     | NFS                    | CephFS                            |
 |-------------|------------------------|-----------------------------------|
@@ -14,9 +14,9 @@ shared file systems but differ significantly in architecture and use cases.
 | Data Path   | Client → Server → Disk | Client → OSD Cluster (direct I/O) |
 | Redundancy  | RAID on server or HA   | Replication or Erasure Coding     |
 
-## Key Differences
+## Key differences
 
-### Scalability and Bottlenecks
+### Scalability and bottlenecks
 
 **NFS:** Performance limited by single server's CPU, RAM, and network. More
 clients create bottlenecks for both data throughput and metadata operations.
@@ -24,7 +24,7 @@ clients create bottlenecks for both data throughput and metadata operations.
 **CephFS:** Designed for petabyte scale. Add nodes for more performance/capacity.
 Data striped across OSDs, metadata distributed across multiple active MDS.
 
-### Data Path
+### Data path
 
 **NFS:** Every request goes through the NFS server. Simple but creates
 congestion. For small workloads, often has lower latency due to less overhead.
@@ -48,7 +48,7 @@ File system stays accessible as long as cluster maintains quorum.
 **CephFS:** High management overhead. Requires dedicated server cluster, robust
 network (10GbE minimum), distributed systems expertise.
 
-## When to Use Which
+## When to use which
 
 ### Use NFS if:
 
@@ -64,7 +64,7 @@ network (10GbE minimum), distributed systems expertise.
 - Large-scale environment (OpenStack, Kubernetes, HPC)
 - Unified storage platform also providing Block and Object storage
 
-## The Trade-off
+## The trade-off
 
 **Simplicity vs Scalability.** NFS for ease of use and low latency at small
 scale. CephFS for resilience and massive throughput at large scale.

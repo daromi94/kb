@@ -1,4 +1,4 @@
-# One Version Rule
+# One version rule
 
 For any dependency, exactly one version exists in the repository. No
 multiple versions of a package, no forks under different names, no

@@ -5,7 +5,7 @@ allows bidirectional data exchange between processes on the same host. While
 UDS uses the standard BSD socket API (`socket`, `bind`, `connect`, `accept`),
 it is fundamentally different from network sockets.
 
-## Key Characteristics
+## Key characteristics
 
 | Aspect     | Network Socket    | Unix Domain Socket        |
 |------------|-------------------|---------------------------|
@@ -14,7 +14,7 @@ it is fundamentally different from network sockets.
 | Data path  | Network stack     | Direct kernel memory copy |
 | Scope      | Network-reachable | Same host only            |
 
-## The Address Structure
+## The address structure
 
 ```c
 struct sockaddr_un {
@@ -26,7 +26,7 @@ struct sockaddr_un {
 **Path length constraint:** The 108-character limit is historical. Deeply
 nested paths (common in Kubernetes volumes) can cause `bind()` to fail.
 
-## How Data Flows
+## How data flows
 
 Data never touches a network card:
 
@@ -37,7 +37,7 @@ Data never touches a network card:
 No headers, checksums, sequence numbers, or acknowledgments after initial
 connection.
 
-## Common Examples
+## Common examples
 
 - `/var/run/docker.sock` - Docker daemon
 - `/var/run/mysqld/mysqld.sock` - MySQL

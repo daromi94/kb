@@ -1,4 +1,4 @@
-# Design by Contract
+# Design by contract
 
 A software correctness methodology where components interact through
 formal, enforceable specifications rather than implicit trust.

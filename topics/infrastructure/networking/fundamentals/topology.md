@@ -7,7 +7,7 @@ Think of it like a city's layout: buildings are nodes, streets are physical
 connections. How you lay out those streets affects traffic flow, construction
 cost, and what happens when a road gets blocked.
 
-## Physical vs Logical
+## Physical vs logical
 
 | Aspect    | Physical Topology              | Logical Topology                     |
 |-----------|--------------------------------|--------------------------------------|
@@ -32,7 +32,7 @@ point-to-point connection over a more complex physical network.
 - **Pros:** Maximum bandwidth, zero contention
 - **Cons:** Not scalable—connecting $N$ computers requires $\frac{N(N-1)}{2}$ cables
 
-## Daisy Chain
+## Daisy chain
 
 Nodes connected in series, one after the other. If Node A wants to talk to
 Node C, data must pass through Node B. A linear chain has a beginning and end;

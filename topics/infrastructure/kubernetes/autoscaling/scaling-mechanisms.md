@@ -58,7 +58,7 @@ mode alongside HPA, or drive HPA off a signal other than CPU/memory
 
 ## Related
 
-- [Horizontal Pod Autoscaler](horizontal-pod-autoscaler.md) - HPA control loop and config
+- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - HPA control loop and config
 - [Metrics registry](metrics-registry.md) - Where HPA reads metrics from
 
 ---

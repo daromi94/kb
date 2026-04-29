@@ -5,7 +5,7 @@ the cluster. Unlike Deployments with explicit replica counts, DaemonSets scale
 automatically with cluster size—adding Pods when nodes join and garbage
 collecting them when nodes leave.
 
-## Use Cases
+## Use cases
 
 DaemonSets are typically used for infrastructure-level services that must exist
 on every machine:
@@ -18,7 +18,7 @@ on every machine:
   each node contributes storage
 - **Networking:** The kube-proxy or CNI plugins (Calico, Flannel)
 
-## Scheduling Control
+## Scheduling control
 
 By default, a DaemonSet places a Pod on every node. Control placement with:
 
@@ -37,7 +37,7 @@ By default, a DaemonSet places a Pod on every node. Control placement with:
 | Use case      | Web apps, APIs, microservices           | Monitoring, logging, networking      |
 | Node addition | No new pods unless manually scaled      | Pod automatically starts on new node |
 
-## Update Behavior
+## Update behavior
 
 DaemonSets use RollingUpdate by default:
 
@@ -47,7 +47,7 @@ DaemonSets use RollingUpdate by default:
 
 This keeps infrastructure services available across the cluster during updates.
 
-## Example Manifest
+## Example manifest
 
 A Fluentd logging agent running on every node:
 

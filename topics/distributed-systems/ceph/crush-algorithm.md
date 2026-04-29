@@ -5,7 +5,7 @@ Ceph's defining technical innovation. It replaces centralized lookup tables
 with deterministic calculation, enabling clusters to scale to thousands of
 nodes without a metadata bottleneck.
 
-## The Problem with Lookup Tables
+## The problem with lookup tables
 
 Traditional storage systems maintain a central table mapping every object to its
 physical location. This creates:
@@ -15,7 +15,7 @@ physical location. This creates:
 - Memory pressure as the table grows
 - Synchronization overhead across nodes
 
-## Calculation Over Lookup
+## Calculation over lookup
 
 CRUSH eliminates the table entirely. When a client needs to read or write data:
 
@@ -28,7 +28,7 @@ CRUSH eliminates the table entirely. When a client needs to read or write data:
 Because this is a mathematical calculation, the client knows exactly which OSD
 to contact without asking a "master" server.
 
-## The CRUSH Map
+## The CRUSH map
 
 The algorithm uses a hierarchical map of the physical infrastructure:
 
@@ -47,7 +47,7 @@ root default
             osd.5
 ```
 
-## Failure Domains
+## Failure domains
 
 CRUSH rules specify how replicas are distributed across the hierarchy. Setting
 the failure domain to `rack` ensures replicas land on different racks:
@@ -59,7 +59,7 @@ the failure domain to `rack` ensures replicas land on different racks:
 | `rack`         | Entire rack power loss |
 | `datacenter`   | Site-level disaster    |
 
-## Why This Matters
+## Why this matters
 
 | Traditional Approach    | CRUSH Approach                 |
 |-------------------------|--------------------------------|

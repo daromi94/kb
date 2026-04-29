@@ -3,7 +3,7 @@
 A SYN flood exploits TCP's stateful handshake to exhaust server resources. It's
 one of the most common DDoS attack vectors.
 
-## The Attack
+## The attack
 
 1. Attacker sends thousands of SYN packets with spoofed source IPs
 2. Server allocates memory (half-open connection state) for each SYN
@@ -24,7 +24,7 @@ Legitimate                             |
    |---- SYN ------------------------->|  DROPPED (no room)
 ```
 
-## Defense: SYN Cookies
+## Defense: SYN cookies
 
 Linux uses SYN cookies to handle SYN floods without storing state.
 
@@ -40,7 +40,7 @@ Linux uses SYN cookies to handle SYN floods without storing state.
 **Trade-off**: Some TCP options (like SACK, window scaling) cannot be
 preserved in the cookie, so performance may be slightly reduced.
 
-## Enabling SYN Cookies
+## Enabling SYN cookies
 
 ```bash
 # Usually enabled by default in modern Linux
@@ -51,7 +51,7 @@ sysctl net.ipv4.tcp_syncookies
 sysctl net.ipv4.tcp_max_syn_backlog
 ```
 
-## Other Mitigations
+## Other mitigations
 
 | Technique            | Description                          |
 |----------------------|--------------------------------------|

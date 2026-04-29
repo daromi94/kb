@@ -2,7 +2,7 @@
 
 Protobuf is an integrated ecosystem consisting of four distinct layers.
 
-## Component Layers
+## Component layers
 
 **Definition Language (IDL):** The `.proto` file. A platform-independent schema
 used to define data structures (messages) and service interfaces.
@@ -17,7 +17,7 @@ underlying logic of encoding and decoding the binary stream.
 **Wire Format:** The compact binary representation of the data transmitted over
 a network or stored on disk.
 
-## Native Language Bindings
+## Native language bindings
 
 Unlike JSON, which requires manual mapping or reflection-based parsing at
 runtime, Protobuf uses code generation:
@@ -27,7 +27,7 @@ runtime, Protobuf uses code generation:
 - This eliminates CPU overhead from parsing strings and validating schemas
   during execution
 
-## Technical Neutrality
+## Technical neutrality
 
 **Language-Neutral:** A service written in Java can communicate with a service
 in C++ using the same `.proto` definition. The binary wire format remains

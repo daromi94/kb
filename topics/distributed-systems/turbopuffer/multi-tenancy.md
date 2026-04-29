@@ -14,7 +14,7 @@ application context). This natural partitioning means the system only
 hydrates the data needed for a specific query, rather than scanning a
 single massive global index.
 
-## Documents and Schema
+## Documents and schema
 
 Each document has a unique primary key (ID) that can be `u64`,
 `UUID`, or string. Using native types like `u64` or `UUID` instead
@@ -30,7 +30,7 @@ Each `./tpuf` binary serves multiple tenants. Small namespaces share
 compute resources on the same node. Resource consumption scales with
 active query volume, not the number of tenants.
 
-## Sticky Routing
+## Sticky routing
 
 The load balancer routes requests for a specific namespace to the
 same query node when possible. This keeps the NVMe cache warm for

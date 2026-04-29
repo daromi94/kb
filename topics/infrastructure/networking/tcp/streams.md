@@ -4,7 +4,7 @@ TCP provides a **byte stream** abstraction with no concept of message
 boundaries. This fundamental property affects how applications must handle
 data.
 
-## No Message Boundaries
+## No message boundaries
 
 Unlike UDP (discrete datagrams), TCP presents a continuous stream of bytes.
 
@@ -41,7 +41,7 @@ Application: read() sees continuous stream
 
 The receiver never knows or cares about segment boundaries.
 
-## Framing: The Application's Job
+## Framing: the application's job
 
 Since TCP destroys message boundaries, applications must implement **framing**
 to delimit messages.
@@ -61,7 +61,7 @@ Sender:  [4 bytes: length=5][5 bytes: "Hello"]
 Receiver: read 4 bytes → know to read 5 more → have complete message
 ```
 
-## Nagle's Algorithm
+## Nagle's algorithm
 
 By default, TCP buffers small writes to improve efficiency. If you write
 single bytes rapidly, TCP waits briefly to batch them into one segment.

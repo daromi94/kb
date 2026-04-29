@@ -49,7 +49,7 @@ work each can do.
 
 ## Related
 
-- [Little's Law](little-law.md) - The concurrency half of the same filter
+- [Little's law](little-law.md) - The concurrency half of the same filter
 
 ---
 

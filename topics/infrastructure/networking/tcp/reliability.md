@@ -3,7 +3,7 @@
 TCP creates the illusion of a reliable stream over IP's unreliable
 packet-switched network using sequence numbers and acknowledgments.
 
-## Sequence Numbers
+## Sequence numbers
 
 Every byte in the stream has a sequence number. The sender includes the
 sequence number of the first data byte in each segment.
@@ -40,7 +40,7 @@ it assumes the packet was lost and retransmits.
 handle variance. Too short causes spurious retransmissions; too long delays
 recovery.
 
-## Selective Acknowledgment (SACK)
+## Selective acknowledgment (SACK)
 
 Standard ACKs can only indicate "I have everything up to X." If packet 2 of 5
 is lost, the receiver can only ACK packet 1, potentially causing retransmission

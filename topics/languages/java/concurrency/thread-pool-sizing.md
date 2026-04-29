@@ -54,7 +54,7 @@ own stack memory, typically 1MB by default.
 - **Rule of thumb:** If calculations suggest 1,000 threads, but you only have
   2 GB RAM, lower the thread count and increase queue size instead
 
-## Little's Law for queue sizing
+## Little's law for queue sizing
 
 To determine work queue size, use Little's Law to predict items in a stable
 system:

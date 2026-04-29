@@ -4,7 +4,7 @@ A Job is a controller for tasks that run to completion rather than continuously.
 It creates Pods and ensures a specified number successfully terminate (exit
 code 0). Once finished, the Job is considered complete.
 
-## Use Cases
+## Use cases
 
 Jobs handle one-off tasks:
 
@@ -14,12 +14,12 @@ Jobs handle one-off tasks:
 - **Backups:** Creating disk snapshots or database dumps
 - **Cleanup:** Removing old files from storage
 
-## Retry Behavior
+## Retry behavior
 
 The Job controller is persistent. If a Pod fails (process crash or node death),
 the Job starts a new Pod until reaching `backoffLimit` (default: 6 retries).
 
-## Configuration Options
+## Configuration options
 
 | Field                   | Description                                       | Default |
 |-------------------------|---------------------------------------------------|---------|
@@ -31,7 +31,7 @@ the Job starts a new Pod until reaching `backoffLimit` (default: 6 retries).
 With 10 completions and parallelism of 2, Kubernetes runs 2 Pods at a time until
 10 have succeeded.
 
-## Example Manifest
+## Example manifest
 
 A Job that calculates Pi to 2000 places:
 

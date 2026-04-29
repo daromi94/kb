@@ -6,7 +6,7 @@ peer-to-peer networks where every machine is equal, this model is inherently
 asymmetric. The server sits in a passive state listening for requests, while the
 client actively initiates communication.
 
-## Core Components
+## Core components
 
 **The Client:** A user-facing device or application (web browser, mobile app,
 terminal). Handles the presentation layer, rendering the UI and capturing user
@@ -18,7 +18,7 @@ manages resources. Waits for requests, processes them, and sends responses.
 **The Network and Protocol:** The connection between them. Both must agree on
 rules like HTTP/HTTPS for web traffic or FTP for files.
 
-## Request-Response Cycle
+## Request-Response cycle
 
 The interaction follows a strict pattern:
 
@@ -27,7 +27,7 @@ The interaction follows a strict pattern:
    queries a database
 3. **Response:** Server sends the result (data, status code, or error) back
 
-## Architecture Tiers
+## Architecture tiers
 
 As systems grow complex, architecture is split into tiers to separate concerns:
 

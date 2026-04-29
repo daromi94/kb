@@ -76,7 +76,7 @@ class CompressionDecorator extends DataSourceDecorator:
     method readData(): data:
         return decompress(super.readData())
 
-// Compose at runtime:
+# compose at runtime
 source = FileDataSource("data.txt")
 source = EncryptionDecorator(source)
 source = CompressionDecorator(source)

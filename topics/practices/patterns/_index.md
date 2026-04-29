@@ -6,6 +6,7 @@ Patterns for everyday use.
 
 - [Decorator](decorator.md) - Dynamic behavior composition
 - [Flyweight](flyweight.md) - Memory optimization via sharing
+- [Worker pool](worker-pool.md) - Fixed workers pulling from a shared queue
 
 ---
 

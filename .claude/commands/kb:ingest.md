@@ -167,10 +167,12 @@ Return to [Topic](_index.md)
 All cross-references go exclusively in the `## Related` section at the bottom.
 Each entry must fit on a single line — shorten the description to make it fit.
 
-**Titles:** Sentence case — capitalize only the first word and proper
-nouns/acronyms (e.g., "# Consistent hashing", "# CRUSH algorithm",
-"# CAP theorem"). Never prefix with the parent topic name; the directory
-path already provides context ("# Consistency" not "# Cassandra consistency").
+**Titles and headings:** Sentence case at every level — capitalize only
+the first word and proper nouns/acronyms. Applies to `#`, `##`, and `###`
+headings alike. Examples: "# Consistent hashing", "## Write path",
+"### Sequence numbers". Never prefix the H1 title with the parent topic
+name; the directory path already provides context ("# Consistency" not
+"# Cassandra consistency").
 
 **Link text must match titles:** In `_index.md` entries, `## Related`
 cross-references, and `Return to [...](_index.md)` footers, the link

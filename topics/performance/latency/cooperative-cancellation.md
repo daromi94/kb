@@ -10,14 +10,14 @@ stop the work.
 A coordinator owns a root cancel token; each fanout worker derives a
 child. Canceling the root cancels every descendant. Children cannot
 cancel their parent — signals flow down only. The tree gives mass
-cancel for free: one signal reaches every sibling.
+cancel for free: one signal reaches every descendant.
 
 ## When to cancel siblings
 
 - **Global deadline expires** — coordinator cancels the root.
 - **First success in a hedged set** — winner cancels losers.
-- **Fatal error from any worker** — no point continuing when the
-  result is already unusable.
+- **Fatal error from any worker** — coordinator cancels the rest;
+  the result is unusable.
 
 ## Workers must poll
 

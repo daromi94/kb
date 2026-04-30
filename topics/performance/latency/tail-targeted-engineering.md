@@ -45,6 +45,8 @@ Variance is the adversary.
 
 - [Fanout tail amplification](fanout-tail-amplification.md) - Why tails dominate user latency
 - [Rarity as frequency](rarity-as-frequency.md) - Tail events at scale
+- [Deadline propagation](deadline-propagation.md) - Carrying a budget through the call tree
+- [Cooperative cancellation](cooperative-cancellation.md) - Actually stopping work on deadline
 
 ---
 

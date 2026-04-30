@@ -31,6 +31,8 @@ Optimize the tail, not the mean.
 
 - [Rarity as frequency](rarity-as-frequency.md) - Distribution thinking at scale
 - [Tail-targeted engineering](tail-targeted-engineering.md) - Variance-reduction techniques
+- [Deadline propagation](deadline-propagation.md) - Carrying a budget through the call tree
+- [Cooperative cancellation](cooperative-cancellation.md) - Actually stopping work on deadline
 
 ---
 

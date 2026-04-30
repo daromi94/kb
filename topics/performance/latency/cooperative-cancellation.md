@@ -1,18 +1,18 @@
 # Cooperative cancellation
 
 A cancel signal does not stop work — it asks the receiver to stop.
-Closing a connection frees the channel, not the CPU. To halt fanout
-on a deadline, every worker must observe the signal and return.
+Closing the connection frees the wire, not the work. Cancellation is
+cooperative: the runtime delivers the signal; only the worker can
+stop the work.
 
 ## The cancellation tree
 
 A coordinator owns a root cancel token; each fanout worker derives a
 child. Canceling the root cancels every descendant. Children cannot
-cancel their parent — signals flow down only. The pattern shows up
-across runtimes as Go's `context.Context`, Rust's
-`CancellationToken`, and structured-concurrency scopes elsewhere.
+cancel their parent — signals flow down only. The tree gives mass
+cancel for free: one signal reaches every sibling.
 
-## Three triggers cancel siblings
+## When to cancel siblings
 
 - **Global deadline expires** — coordinator cancels the root.
 - **First success in a hedged set** — winner cancels losers.
@@ -22,16 +22,15 @@ across runtimes as Go's `context.Context`, Rust's
 ## Workers must poll
 
 The runtime cannot interrupt arbitrary application code. A worker
-that does not check the cancel signal between I/O steps keeps
-burning CPU after the deadline, no matter how good the upstream
-signaling is. A long CPU loop without polling is functionally
-uncancellable.
+that does not check the cancel signal between steps runs to
+completion, burning resources for a result nobody will read. A loop
+without polling is functionally uncancellable.
 
-## Cancel-after-commit
+## What cancel cannot undo
 
 Side effects already begun — DB writes, external API calls — do not
-roll back when the cancel arrives. Idempotency keys make a
-cancel-after-commit survivable on retry rather than catastrophic.
+roll back when the cancel arrives. Idempotency keys make a canceled
+side effect survivable on retry rather than catastrophic.
 
 ## Related
 

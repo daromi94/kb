@@ -15,8 +15,8 @@ Fundamentals of latency engineering.
 - [Rarity as frequency](rarity-as-frequency.md) - Rare events become common at scale
 - [Fanout tail amplification](fanout-tail-amplification.md) - Tails compound across sub-requests
 - [Tail-targeted engineering](tail-targeted-engineering.md) - Narrowing variance, not mean
-- [Deadline propagation](deadline-propagation.md) - Carrying a budget through the call tree
-- [Cooperative cancellation](cooperative-cancellation.md) - Actually stopping work on deadline
+- [Deadline propagation](deadline-propagation.md) - End-to-end request budgets
+- [Cooperative cancellation](cooperative-cancellation.md) - Stopping in-flight work
 
 ---
 

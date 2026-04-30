@@ -2,8 +2,7 @@
 
 A deadline is an absolute point in time by which a request must
 finish — "complete by 14:30:05," not "wait five seconds." The edge
-service stamps each request with `deadline = now + budget` to fix
-the target.
+service stamps each request with `deadline = now + budget`.
 
 The deadline carries through every downstream call. Each hop
 subtracts elapsed time and forwards the remainder, not a fresh
@@ -11,8 +10,8 @@ per-hop timeout.
 
 ## Risks
 
-Without a deadline, a request runs until the service's maximum. The
-costs compound:
+Without a deadline, a request runs until the service's maximum
+timeout. The costs compound:
 
 - **Resources stay held** — connections, thread slots, and buffers
   locked per in-flight request for the full window.
@@ -33,15 +32,15 @@ sum; deadlines compose.
 
 Clocks across machines disagree by more than network transit time,
 so an absolute timestamp on the wire would be misread on arrival.
-Each side keeps the deadline as an absolute timestamp locally; the
-wire carries a remaining duration, computed just before sending and
+Each side stores the deadline as an absolute timestamp; the wire
+carries a remaining duration, computed just before sending and
 converted back to an absolute deadline against the receiver's clock
 on arrival. The reconstruction is off by one network transit at
 most, not by however far the clocks differ.
 
-Each hop should also subtract a small local processing budget before
-forwarding. Otherwise, the downstream call starts with a deadline
-already about to fire on the caller, leaving no time to act on the
+Each hop should also reserve a slice of the budget for its own
+processing before forwarding. Otherwise, the downstream call starts
+with a deadline about to expire, leaving no time to act on the
 response.
 
 ## Reject when the budget is gone

@@ -12,7 +12,7 @@ child. Canceling the root cancels every descendant. Children cannot
 cancel their parent — signals flow down only. The tree gives mass
 cancel for free: one signal reaches every descendant.
 
-## When to cancel siblings
+## When to cancel
 
 - **Global deadline expires** — coordinator cancels the root.
 - **First success in a hedged set** — winner cancels losers.

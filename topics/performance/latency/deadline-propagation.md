@@ -24,6 +24,20 @@ propagated 100 ms deadline, every hop sees a budget that has already
 shrunk and abandons work it cannot finish in time. Per-hop timeouts
 sum; deadlines compose.
 
+## Forwarding
+
+A deadline is conceptually an absolute timestamp, but clocks across
+machines disagree by more than network transit time — an absolute
+timestamp on the wire would be misread on arrival. Ship a remaining
+duration instead; the receiver reconstructs the deadline against its
+own clock. The reconstruction is off by one network transit at most,
+not by however far the clocks differ.
+
+Each hop should also subtract a small local processing budget before
+forwarding. Otherwise, the downstream call starts with a deadline
+already about to fire on the caller, leaving no time to act on the
+response.
+
 ## Reject when the budget is gone
 
 A worker that picks up a request whose budget has expired is about to

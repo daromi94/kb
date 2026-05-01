@@ -8,6 +8,7 @@ heterogeneous sources, with no storage layer of its own.
 - [Overview](overview.md) - What Trino is and when it fits
 - [Architecture](architecture.md) - Coordinator, workers, and connectors
 - [Coordinator deep dive](coordinator-deep-dive.md) - Coordinator internals in depth
+- [Discovery service](discovery-service.md) - Worker registry and liveness
 - [Connector API](connector-api.md) - How Trino plugs into data sources
 - [Query lifecycle](query-lifecycle.md) - From SQL to running tasks
 - [Query optimization](query-optimization.md) - Cost-based planning and pushdown

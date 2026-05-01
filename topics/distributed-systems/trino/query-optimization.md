@@ -23,8 +23,8 @@ plan, especially for queries with multiple joins.
 
 Filters move as close to the scan as possible, ideally into the connector
 itself so the source evaluates them. A `WHERE region = 'EU'` against a Hive
-table becomes a partition prune; against PostgreSQL, it becomes part of the
-SQL sent to PostgreSQL.
+table becomes a partition prune; against PostgreSQL, the connector embeds
+it in the SQL statement.
 
 ### Projection pushdown
 

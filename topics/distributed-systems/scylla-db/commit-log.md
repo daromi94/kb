@@ -28,27 +28,27 @@ the middle. This makes writes fast because the disk head doesn't jump around
 ## Write path
 
 ```text
-       +----------------+
-       |  Client Write  |
-       +-------+--------+
-               |
-               v
-       +-------+--------+
-       |  ScyllaDB Node |
-       +---+--------+---+
-           |        |
-           v        v
-   +-------+----+ +-+---------+
-   | Commit Log | |  Memtable |
-   |   (Disk)   | |   (RAM)   |
-   +-----+------+ +----+------+
-         |             |
-         +------+------+
-                |
-                v
-          +-----+-----+
-          |    Ack    |
-          +-----------+
+    +----------------+
+    |  Client Write  |
+    +-------+--------+
+            |
+            v
+    +-------+---------+
+    |  ScyllaDB Node  |
+    +---+---------+---+
+        |         |
+        v         v
++-------+----+ +--+-------+
+| Commit Log | | Memtable |
+|   (Disk)   | |  (RAM)   |
++-------+----+ +--+-------+
+        |         |
+        +---------+
+             |
+             v
+       +-----+-----+
+       |    Ack    |
+       +-----------+
 ```
 
 ## ScyllaDB adaptations

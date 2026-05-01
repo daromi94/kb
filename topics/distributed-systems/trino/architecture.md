@@ -6,7 +6,7 @@ with respect to user data — all data lives in the sources behind connectors.
 
 ## Coordinator
 
-The coordinator is the cluster's control plane:
+The coordinator handles:
 
 - Accepts client SQL submissions over HTTP.
 - Parses, analyzes, and plans queries.

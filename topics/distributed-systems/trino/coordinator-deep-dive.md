@@ -99,7 +99,7 @@ data.
 ## Cluster management
 
 Beyond planning a single query, the coordinator runs the cluster's
-control-plane services.
+management services.
 
 ### Discovery
 

@@ -60,7 +60,7 @@ machine code on the hot path.
 
 ## Putting it together
 
-```
+```text
 Connector ---> Page ---> Operator ---> Page ---> Exchange ---> Page ---> ...
     ^                       ^                        |
     |                       |                        v

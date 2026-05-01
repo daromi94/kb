@@ -42,7 +42,7 @@ allowing seamless joins across sources.
 
 ## Cluster topology
 
-```
+```text
     +---------------------+
     |  Client (CLI/JDBC)  |
     +----------+----------+

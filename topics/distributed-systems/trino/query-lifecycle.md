@@ -6,7 +6,7 @@ representation of the work to be done.
 
 ## Phases
 
-```
+```text
   SQL text
      |
      v

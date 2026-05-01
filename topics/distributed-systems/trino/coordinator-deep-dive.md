@@ -111,7 +111,7 @@ heartbeating drop out of the scheduler's pool.
 
 Every active query lives as a state machine on the coordinator:
 
-```
+```text
 QUEUED -> PLANNING -> STARTING -> RUNNING -> FINISHING -> FINISHED
                                          \-> FAILED
 ```

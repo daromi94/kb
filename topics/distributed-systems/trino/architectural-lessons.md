@@ -1,8 +1,6 @@
 # Architectural lessons
 
-Trino's design choices reflect deliberate tradeoffs that have aged
-well in production. The lessons below are transferable principles,
-not Trino-specific mechanics.
+The lessons below are drawn from Trino's production-tested design.
 
 ## Separate what changes at different rates
 
@@ -21,10 +19,11 @@ systems cannot match.
 
 ## Narrow plugin interfaces beat rich ones
 
-The connector SPI is small. A connector implements a handful of
-interfaces — for metadata, splits, and page sources — and almost
-everything else lives in the engine. Most of what makes Trino useful
-is the third-party ecosystem written against this surface.
+The connector SPI — the Service Provider Interface that plugins
+implement — is small. A connector implements a handful of interfaces
+for metadata, splits, and page sources, and almost everything else
+lives in the engine. Most of what makes Trino useful is the
+third-party ecosystem written against this surface.
 
 The lesson is not "have a plugin system." It is that the surface area
 of the interface determines who can extend the system and how stable
@@ -43,12 +42,12 @@ scheduling, and admission are genuinely hard to distribute correctly:
 they need consensus, raise split-brain risks, and depend on
 consistent metadata views. The workload — queries lasting seconds to
 minutes — does not demand it. Workers, by contrast, are nearly
-stateless and trivially scalable.
+stateless and easy to scale.
 
-Don't reflexively distribute everything. Identify which parts of the
-system genuinely need distribution for the workload, and centralize
-the rest where it is simpler and faster. Distributed consensus is
-expensive — if you can avoid needing it, avoid it.
+Avoid distributing components without need. Identify which parts of
+the system genuinely need distribution for the workload, and
+centralize the rest where it is simpler and faster. Distributed
+consensus is expensive; avoid it when the workload permits.
 
 ## Match the consistency model to the workload
 
@@ -75,7 +74,7 @@ resources without any central rate limiter.
 In a pipelined system, backpressure is what keeps queues bounded and
 latency predictable. The cure is making "I can't take more right now"
 a first-class signal at every boundary, with producers respecting it.
-Adding it after the fact is brutal — every component has to learn to
+Adding it after the fact is costly — every component has to learn to
 block, every queue has to grow a backpressure signal, every test has
 to verify it. Build it in from the start.
 
@@ -103,12 +102,12 @@ discovery service. There are no persistent streaming connections, no
 callbacks, no push notifications.
 
 Polling looks primitive next to streaming protocols, but it composes
-beautifully. Load balancers handle it without configuration; firewalls
-do not choke; network blips are absorbed by the next poll. State
-lives in HTTP requests rather than connection objects, so a
-coordinator restart does not drop everything mid-flight. Push
-protocols feel cleaner but couple liveness to connection state, and
-that coupling is where bugs live.
+well. Load balancers handle it without configuration; firewalls do
+not choke; network blips are absorbed by the next poll. State lives
+in HTTP requests rather than connection objects, so a coordinator
+restart does not drop everything mid-flight. Push protocols feel
+cleaner but couple liveness to connection state, and that coupling
+is fragile.
 
 ## Put the optimization budget where it matters
 
@@ -118,13 +117,11 @@ over a long execution where the savings dwarf the planning cost. A
 predicate pushdown that turns a ten-minute scan into a ten-second
 scan is worth a 200-millisecond planner pass.
 
-The worker hot path, by contrast, is brutally optimized: per-query
+The worker hot path, by contrast, is heavily optimized: per-query
 bytecode generation, columnar pages so loops vectorize, careful
 avoidance of allocation in inner loops. Operators run billions of
 times; planners run once. Identify which code paths run at which
-rates and spend your optimization budget accordingly. Most systems
-get this backwards — heavy frameworks in the hot path, sloppy logic
-at the boundaries.
+rates and spend your optimization budget accordingly.
 
 ## Decouple speed and resilience at the right seam
 
@@ -145,17 +142,17 @@ get to make big changes later without big rewrites.
 ## Operational simplicity through fewer dependencies
 
 Trino has no coordination service of its own, no storage layer, no
-daemon to babysit. A cluster is one coordinator and N worker JVMs
+daemon to operate. A cluster is one coordinator and N worker JVMs
 sharing a config directory. It runs in Kubernetes, on bare metal, on
 a laptop, with the same model.
 
-Every external dependency is a permanent operational tax — version
+Every external dependency is a permanent operational cost — version
 mismatches, network partitions, capacity planning, on-call burden.
 Internalizing the small dependencies (embedded discovery, no
 persistent metadata of its own, ephemeral state only) makes the
 system harder to break and easier to operate. Some dependencies are
-worth paying for; the default should be to do without and prove the
-dependency earns its keep.
+worth paying for; the default should be to do without, and add a
+dependency only when its value is clear.
 
 ## A system is the constraints it accepts
 
@@ -166,9 +163,9 @@ distributed, storage external. Inside those constraints it is a
 remarkably coherent piece of engineering. Outside them, it is the
 wrong tool.
 
-Most architectural failure comes from systems trying to be everything.
-Most architectural success comes from systems that pick their
-constraints early and hold them.
+Architectural failures often come from trying to do everything;
+architectural success tends to come from picking constraints early
+and holding them.
 
 ## Related
 

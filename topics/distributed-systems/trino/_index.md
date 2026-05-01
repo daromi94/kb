@@ -11,6 +11,7 @@ heterogeneous sources, with no storage layer of its own.
 - [Coordinator deep dive](coordinator-deep-dive.md) - Coordinator internals in depth
 - [Discovery service](discovery-service.md) - Worker liveness registry
 - [Query tracker](query-tracker.md) - Per-coordinator query registry
+- [Resource groups](resource-groups.md) - Cluster-wide admission control
 - [Query termination](query-termination.md) - How queries end early
 - [Query lifecycle](query-lifecycle.md) - From SQL to running tasks
 - [Query optimization](query-optimization.md) - Cost-based plan rewriting

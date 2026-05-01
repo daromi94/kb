@@ -5,6 +5,10 @@ coordinator and exposed over HTTP. It tracks which workers are alive and
 where they are reachable. The scheduler consults it on every query to
 decide where to place tasks.
 
+There is no external registry — no ZooKeeper, no etcd, no Raft. The
+registry is a single in-memory map on the coordinator, rebuilt from
+worker announcements after every restart.
+
 ## Heartbeat mechanism
 
 Workers push periodic HTTP heartbeats to the coordinator. There are no
@@ -47,6 +51,31 @@ with a `last-seen` timestamp.
 Eviction is final: a removed worker must re-announce itself before it is
 considered for scheduling again.
 
+### Active failure detection
+
+Alongside TTL-based eviction, the coordinator runs an HTTP probe that
+contacts each known worker directly. It tracks success rates over a
+rolling window and removes nodes that fail to respond, even when those
+nodes are still managing to announce themselves. This catches GC death
+spirals — the announcement thread is alive but the worker cannot serve
+requests.
+
+## Node states
+
+The coordinator classifies known nodes into four states, exposed to the
+scheduler through the NodeManager:
+
+| State         | Meaning                                              |
+|---------------|------------------------------------------------------|
+| Active        | Recently announced and reachable                     |
+| Missing       | Active but momentarily silent; TTL has not expired   |
+| Inactive      | TTL expired or failure detector marked the node dead |
+| Shutting down | Worker reported SHUTTING_DOWN via `/v1/info/state`   |
+
+The scheduler only places splits on Active nodes. Shutting-down workers
+finish in-flight tasks and exit; the coordinator stops sending them new
+work as soon as it sees the state change.
+
 ## Integration with scheduling
 
 The execution layer reads the registry through the NodeManager, which
@@ -69,6 +98,25 @@ response depends on the execution mode:
 
 In default mode, in-flight work on the dead worker is unrecoverable — its
 intermediate state lived only in that worker's memory.
+
+## Tradeoffs
+
+The single-coordinator, in-memory design suits Trino's analytics workload:
+
+- **No external dependency:** Nothing extra to operate alongside the
+  cluster.
+- **Coordinator is the SPOF for membership** — but it is already the SPOF
+  for query planning, so this adds no new failure mode.
+- **Eventually consistent:** A new worker takes seconds to become
+  schedulable; a dead worker takes up to ~30s to fall out. Acceptable for
+  query latencies in seconds-to-minutes; unsuitable for a low-latency
+  RPC mesh.
+- **Stateless:** A coordinator restart wipes the registry, but workers
+  re-announce within seconds and the cluster reconverges.
+
+Multi-coordinator high availability requires a routing gateway in front:
+each coordinator runs its own discovery registry against its own pool of
+workers; the discovery layer itself is not clustered.
 
 ## Related
 

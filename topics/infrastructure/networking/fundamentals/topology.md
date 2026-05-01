@@ -1,11 +1,8 @@
 # Topology
 
 Topology is the "map" of a network, describing how nodes (computers, routers,
-switches) connect and how data moves between them.
-
-Think of it like a city's layout: buildings are nodes, streets are physical
-connections. How you lay out those streets affects traffic flow, construction
-cost, and what happens when a road gets blocked.
+switches) connect and how data moves between them. The chosen layout affects
+traffic flow, cost, and what happens when a link fails.
 
 ## Physical vs logical
 

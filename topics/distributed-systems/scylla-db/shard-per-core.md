@@ -59,14 +59,6 @@ pauses keeps P99 latencies low and stable.
 **Better hardware utilization.** The same workload runs on fewer servers
 because CPUs aren't wasting cycles managing threads or waiting for locks.
 
-## Analogy
-
-Traditional (Cassandra): 50 chefs share one giant cutting board. They
-constantly bump into each other waiting for the knife.
-
-ScyllaDB: 32 separate stations. Each has one chef, one cutting board, one set
-of ingredients. They never collide and work at maximum speed.
-
 ---
 
 Return to [ScyllaDB](_index.md)

@@ -28,7 +28,7 @@ Google Bigtable's data model.
 - [Fault tolerance](fault-tolerance.md) - Self-healing and resilience
 - [Hinted handoff](hinted-handoff.md) - Store-and-forward during failures
 - [Anti-entropy](anti-entropy.md) - Replica synchronization
-- [Architectural lessons](architectural-lessons.md) - Broader design principles
+- [Architectural lessons](architectural-lessons.md) - Transferable design principles
 
 ---
 

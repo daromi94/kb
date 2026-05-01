@@ -17,7 +17,7 @@ point of failure.
 - [Consistency model](consistency.md) - CAP theorem analysis
 - [Replication](replication.md) - Data protection and erasure coding
 - [CephFS vs NFS](cephfs-vs-nfs.md) - When to use each
-- [Architectural lessons](architectural-lessons.md) - Design patterns from Ceph
+- [Architectural lessons](architectural-lessons.md) - Transferable design principles
 
 ---
 

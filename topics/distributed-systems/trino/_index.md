@@ -16,6 +16,7 @@ heterogeneous sources, with no storage layer of its own.
 - [Query lifecycle](query-lifecycle.md) - From SQL to running tasks
 - [Query optimization](query-optimization.md) - Cost-based plan rewriting
 - [Execution model](execution-model.md) - In-memory pipelined processing
+- [Backpressure](backpressure.md) - Memory-bounded flow control
 - [Runtime code generation](runtime-codegen.md) - Per-query JVM bytecode
 - [Fault-tolerant execution](fault-tolerant-execution.md) - Resilient execution for batch
 

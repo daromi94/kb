@@ -21,6 +21,7 @@ Foundational techniques and principles for distributed systems.
 - [Leader election](leader-election.md) - Choosing the cluster coordinator
 - [Heartbeat](heartbeat.md) - Periodic liveness signaling
 - [Failure detection at scale](failure-detection-at-scale.md) - Heartbeat topology at scale
+- [Centralized task state](centralized-task-state.md) - Coordinator owns task lifecycle
 - [Quorum](quorum.md) - Minimum agreement for operations
 - [Quorum and linearizability](quorum-and-linearizability.md) - Quorum overlap and consistency
 - [Write-ahead log](write-ahead-log.md) - Durability through sequential logging

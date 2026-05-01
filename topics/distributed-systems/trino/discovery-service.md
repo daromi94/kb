@@ -21,13 +21,13 @@ thread then PUTs heartbeats to the coordinator's announcement endpoint
 
 Each heartbeat carries the metadata the scheduler needs:
 
-| Field        | Purpose                                             |
-|--------------|-----------------------------------------------------|
-| Node UUID    | Stable identity for this JVM instance               |
-| Internal URI | HTTP(S) address peers use for callbacks             |
-| Node version | Trino build; mismatched versions are rejected       |
-| Pool tags    | Resource pool membership                            |
-| State        | ACTIVE, INACTIVE, or SHUTTING_DOWN (graceful drain) |
+| Field        | Purpose                                              |
+|--------------|------------------------------------------------------|
+| Node UUID    | Stable identity for this JVM instance                |
+| Internal URI | HTTP(S) address other nodes use to reach this worker |
+| Node version | Trino build; mismatched versions are rejected        |
+| Pool tags    | Resource pool membership                             |
+| State        | ACTIVE, INACTIVE, or SHUTTING_DOWN (graceful drain)  |
 
 Version matching keeps mismatched workers out during a rolling upgrade —
 they cannot accept tasks until their build matches the coordinator's.

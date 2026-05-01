@@ -104,8 +104,8 @@ control-plane services.
 ### Discovery
 
 The coordinator embeds a discovery service. Workers send periodic HTTP
-heartbeats announcing themselves, their state, and resource utilization.
-Nodes that stop heartbeating drop out of the scheduler's pool.
+heartbeats announcing themselves and their state. Nodes that stop
+heartbeating drop out of the scheduler's pool.
 
 ### Query tracking
 

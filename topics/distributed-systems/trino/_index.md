@@ -19,6 +19,7 @@ heterogeneous sources, with no storage layer of its own.
 - [Backpressure](backpressure.md) - Memory-bounded flow control
 - [Runtime code generation](runtime-codegen.md) - Per-query JVM bytecode
 - [Fault-tolerant execution](fault-tolerant-execution.md) - Resilient execution for batch
+- [Architectural lessons](architectural-lessons.md) - Transferable design principles
 
 ---
 

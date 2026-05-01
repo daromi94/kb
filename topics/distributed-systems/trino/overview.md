@@ -20,12 +20,12 @@ This decoupling means:
 
 ## Use cases
 
-| Workload          | Why Trino fits                                     |
-|-------------------|----------------------------------------------------|
-| Lakehouse SQL     | ANSI SQL over Iceberg/Delta tables on object store |
-| Federated queries | One query spans multiple heterogeneous sources     |
-| Interactive BI    | Sub-second to seconds latency for ad-hoc analysis  |
-| ETL (with FTE)    | Long-running batch jobs via fault-tolerant mode    |
+| Workload             | Why Trino fits                                     |
+|----------------------|----------------------------------------------------|
+| Lakehouse SQL        | ANSI SQL over Iceberg/Delta tables on object store |
+| Federated queries    | One query spans multiple heterogeneous sources     |
+| Interactive BI       | Sub-second to seconds latency for ad-hoc analysis  |
+| ETL (fault-tolerant) | Long-running batch jobs via fault-tolerant mode    |
 
 ## SQL surface
 

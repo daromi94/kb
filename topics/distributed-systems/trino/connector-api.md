@@ -6,11 +6,11 @@ queries against the source as if it were native SQL storage.
 
 ## Three core APIs
 
-| API           | Provides                               | Used during      |
-|---------------|----------------------------------------|------------------|
-| Metadata      | Schemas, tables, columns, types        | Parsing/analysis |
-| Statistics    | Row counts, NDV, sizes, null fractions | Optimization     |
-| Data location | Splits and the workers to assign them  | Scheduling       |
+| API           | Provides                                                       | Used during      |
+|---------------|----------------------------------------------------------------|------------------|
+| Metadata      | Schemas, tables, columns, types                                | Parsing/analysis |
+| Statistics    | Row counts, distinct value counts (NDV), null fractions, sizes | Optimization     |
+| Data location | Splits and the workers to assign them                          | Scheduling       |
 
 ### Metadata API
 

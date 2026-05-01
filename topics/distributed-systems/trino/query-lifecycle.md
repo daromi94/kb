@@ -64,12 +64,6 @@ move data over the network. Results stream back to the coordinator and out
 to the client as soon as they are ready — there is no "wait until the whole
 query finishes" step.
 
-## Why the hierarchy matters
-
-Stages → tasks → pipelines → drivers → operators → pages is the unit of work
-at every level of granularity. Concurrency, scheduling, memory accounting,
-and back-pressure all hook into this hierarchy.
-
 ## Related
 
 - [Architecture](architecture.md) - Coordinator and worker roles

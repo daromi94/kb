@@ -26,8 +26,8 @@ through the pipeline, so:
 - Memory pressure is bounded by what is in flight, not by the full
   intermediate dataset.
 
-Compare this to materializing-stage engines (classic MapReduce), where each
-stage writes its full output before the next stage starts.
+Compare this to materializing-stage engines, where each stage writes its
+full output before the next stage starts.
 
 ## Multi-threaded driver model
 

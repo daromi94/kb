@@ -12,6 +12,7 @@ Concepts, patterns, and systems for building reliable distributed applications.
 - [ScyllaDB](scylla-db/_index.md) - High-performance NoSQL with shard-per-core architecture
 - [Turbopuffer](turbopuffer/_index.md) - Vector database with stateless compute on object storage
 - [Trino](trino/_index.md) - Distributed SQL query engine for federated analytics
+- [Ballista](ballista/_index.md) - Distributed compute on DataFusion and Arrow
 - [Pekko](pekko/_index.md) - Actor-based toolkit for concurrent, distributed systems
 - [Ceph](ceph/_index.md) - Unified distributed storage with CRUSH algorithm
 - [Linkerd](linkerd/_index.md) - Kubernetes service mesh with sidecar proxies

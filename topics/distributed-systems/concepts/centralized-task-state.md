@@ -26,8 +26,8 @@ it back. Stale or out-of-order worker reports are dropped, not applied.
 | Failure correlation | Coordinator picks root cause | Each node decides locally |
 | Topology knowledge  | Coordinator only             | Every worker              |
 
-Workers gossiping state requires every worker to know the full DAG topology
-and produces $O(n^2)$ messaging during failures. Centralizing gives $O(n)$
+Workers gossiping state requires every worker to know every peer and
+produces $O(n^2)$ messaging during failures. Centralizing gives $O(n)$
 failure broadcast and lets the coordinator de-duplicate and correlate worker
 reports into a single decision.
 
@@ -45,7 +45,7 @@ A worker failure becomes a coordinator-owned transition:
 
 1. Worker reports the failure to the coordinator.
 2. Coordinator marks the task FAILED.
-3. Coordinator pushes CANCELED to every sibling task.
+3. Coordinator pushes CANCELED to the remaining tasks.
 
 Failure propagation reduces to two coordinator decisions, not a broadcast
 storm among workers.

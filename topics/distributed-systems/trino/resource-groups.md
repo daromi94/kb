@@ -1,61 +1,55 @@
 # Resource groups
 
-Resource groups are the coordinator's admission gate. Every submitted
-query is routed to one group, which controls how many queries from
-that group can run, how deep its queue can grow, and how much cluster
-memory it can collectively consume.
+Resource groups are the coordinator's admission gate. Every query is
+routed to one group, and the group's limits decide whether the query
+runs immediately, waits in a queue, or is rejected outright.
 
-A group has no execution machinery of its own — it is a budget that
-gates queries before they reach the query tracker.
+A group does not run queries — it only decides which ones may start.
 
 ## Routing
 
-When a query is submitted, the coordinator matches it against rules
-based on the user's identity, source application, tags, or query
-properties, and assigns it to a group. The match is deterministic and
-fixed for the query's lifetime.
+The coordinator matches each submitted query against a rule set keyed
+on the user, source application, tags, or query properties. The
+matched group is fixed for the query's lifetime.
 
-Groups can nest. A child group's limits are evaluated alongside its
-parents' — a query has to fit in every level above it before it can
-run.
+## Three caps
 
-## Limits
+A group enforces three independent caps. Hitting any one holds the
+query in a queue or rejects it.
 
-Each group enforces three kinds of cap:
+| Cap            | Behavior at the cap                             |
+|----------------|-------------------------------------------------|
+| Concurrency    | Extra queries wait in QUEUED                    |
+| Queue depth    | Submissions over the queue cap are rejected     |
+| Cluster memory | Queries wait even if a concurrency slot is open |
 
-| Limit          | What happens at the cap                        |
-|----------------|------------------------------------------------|
-| Concurrency    | Excess queries are held in QUEUED              |
-| Queue depth    | Excess queries are rejected at submission      |
-| Cluster memory | Queries wait for memory even if a slot is free |
+**Concurrency** caps the number of running queries from this group at
+once. A queued query consumes no memory or CPU until a running slot
+frees up.
 
-**Concurrency.** A hard cap on how many queries from this group can
-be RUNNING at once. The cap-plus-first query is held QUEUED without
-consuming memory or CPU until a slot frees up.
+**Queue depth** caps how many queries can wait. Without it, a flood
+of submissions could grow the coordinator's queue indefinitely; once
+the queue is full, new submissions are rejected at the door.
 
-**Queue depth.** Bounds the QUEUED set. When both the running and
-queued caps are full, new submissions are rejected immediately so the
-coordinator's own memory does not grow unboundedly.
-
-**Cluster memory.** The aggregate memory used by the group's running
+**Cluster memory** caps the aggregate memory of the group's running
 queries. A query that would push the group over its memory cap stays
-QUEUED, even if a concurrency slot is open.
+in QUEUED until memory frees, even if a concurrency slot is open.
 
 ## Killing running queries
 
-A group can be configured to kill running queries when cluster memory
-pressure spikes. The memory manager picks a target from the offending
-group based on the configured policy. This intersects with the
-cluster's global out-of-memory killer — both can fail a query, and
-whichever transition lands first wins.
+A group can also kill running queries when the cluster runs short on
+memory. The cluster memory manager picks one of the over-budget
+group's queries based on the configured policy. This and the
+cluster-wide out-of-memory killer can both fail a query; whichever
+fires first wins.
 
 ## Why it matters
 
 Without admission control, a single user submitting many heavy queries
-can swamp the coordinator's planning queue or exhaust cluster memory.
-Resource groups make capacity multi-tenant: each group has its own
-envelope, and queries that would otherwise compete are queued within
-their group instead of dragging on every other query in the cluster.
+can drown the coordinator's planning threads or exhaust cluster
+memory. Resource groups give each tenant its own envelope: queries
+that would otherwise compete with the rest of the cluster are queued
+within their group, so one heavy workload cannot stall everyone else.
 
 ## Related
 

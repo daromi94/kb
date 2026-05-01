@@ -5,9 +5,8 @@ coordinator and exposed over HTTP. It tracks which workers are alive and
 where they are reachable. The scheduler consults it on every query to
 decide where to place tasks.
 
-There is no external registry — no ZooKeeper, no etcd, no Raft. The
-registry is a single in-memory map on the coordinator, rebuilt from
-worker announcements after every restart.
+The registry has no external dependency — no ZooKeeper, no etcd, no
+consensus protocol. It is a single in-memory map on the coordinator.
 
 ## Heartbeat mechanism
 
@@ -53,17 +52,16 @@ considered for scheduling again.
 
 ### Active failure detection
 
-Alongside TTL-based eviction, the coordinator runs an HTTP probe that
-contacts each known worker directly. It tracks success rates over a
-rolling window and removes nodes that fail to respond, even when those
-nodes are still managing to announce themselves. This catches GC death
-spirals — the announcement thread is alive but the worker cannot serve
-requests.
+Alongside TTL-based eviction, the coordinator probes each known worker
+over HTTP and tracks success rates over a rolling window. A worker
+failing too many probes is dropped from the active set even if it is
+still announcing itself. This catches workers whose announcement thread
+runs while the rest of the JVM is unresponsive — typically a GC
+death-spiral.
 
 ## Node states
 
-The coordinator classifies known nodes into four states, exposed to the
-scheduler through the NodeManager:
+The coordinator classifies every known node into one of four states:
 
 | State         | Meaning                                              |
 |---------------|------------------------------------------------------|
@@ -101,22 +99,22 @@ intermediate state lived only in that worker's memory.
 
 ## Tradeoffs
 
-The single-coordinator, in-memory design suits Trino's analytics workload:
+The single-coordinator, in-memory design suits an analytics workload:
 
-- **No external dependency:** Nothing extra to operate alongside the
-  cluster.
-- **Coordinator is the SPOF for membership** — but it is already the SPOF
-  for query planning, so this adds no new failure mode.
+- **No external dependency:** Nothing else to run alongside the cluster.
+- **No new failure mode:** The coordinator is a single point of failure
+  for membership, but it is already the single point of failure for
+  query planning.
 - **Eventually consistent:** A new worker takes seconds to become
-  schedulable; a dead worker takes up to ~30s to fall out. Acceptable for
-  query latencies in seconds-to-minutes; unsuitable for a low-latency
-  RPC mesh.
+  schedulable; a dead worker takes up to ~30s to fall out. Fine when
+  queries last seconds to minutes; too slow for a low-latency RPC mesh.
 - **Stateless:** A coordinator restart wipes the registry, but workers
   re-announce within seconds and the cluster reconverges.
 
-Multi-coordinator high availability requires a routing gateway in front:
-each coordinator runs its own discovery registry against its own pool of
-workers; the discovery layer itself is not clustered.
+Multi-coordinator high availability requires a routing gateway: each
+coordinator runs its own registry against its own pool of workers, and
+clients reach the gateway rather than any individual coordinator. The
+discovery layer itself is never clustered.
 
 ## Related
 

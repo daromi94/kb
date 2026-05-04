@@ -18,9 +18,8 @@ redirect all pod TCP traffic through the proxy before the application
 starts. The interception is transparent — application code needs no
 changes.
 
-Because the proxy is purpose-built for the mesh use case rather than a
-general-purpose reverse proxy, it has a small resource footprint and
-low per-hop latency.
+The proxy is purpose-built for the mesh use case, with a small resource
+footprint and low per-hop latency.
 
 ## Control plane
 

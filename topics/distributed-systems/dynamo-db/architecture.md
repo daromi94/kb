@@ -53,12 +53,9 @@ and restore the replication group to full strength.
 
 ## Related
 
-- [Partitioning and replication](partitioning-and-replication.md) -
-  Replication groups, write path, and leader election
-- [Performance](performance.md) - MemDS routing and admission
-  control
-- [Operational lessons](operational-lessons.md) - Continuous
-  verification and deployment safety
+- [Partitioning and replication](partitioning-and-replication.md) - Replication groups and write path
+- [Performance](performance.md) - Routing and admission control
+- [Operational lessons](operational-lessons.md) - Continuous verification
 
 ---
 

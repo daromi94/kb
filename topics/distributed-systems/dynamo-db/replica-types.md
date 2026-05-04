@@ -15,9 +15,9 @@ overhead to manage the on-disk index.
 ## Log replicas
 
 A log replica persists only recent WAL entries — it carries no B-tree
-and cannot serve reads. Its role is analogous to a Paxos acceptor: it
-votes in the write quorum to confirm that a log entry has been durably
-recorded, but holds no application state.
+and cannot serve reads. It acts as a Paxos acceptor: votes in the write
+quorum to confirm a log entry is durably recorded, but holds no
+application state.
 
 Because there is no B-tree to copy, a log replica can join a
 replication group in seconds. Bootstrapping a full storage replica
@@ -42,7 +42,7 @@ entries exist to recover from.
 | Storage      |   | Storage      |   | Log replica    |
 | (leader)     |   | (follower)   |   | (WAL only,     |
 | WAL + B-tree |   | WAL + B-tree |   |  added in sec) |
-+------------- +   +--------------+   +----------------+
++--------------+   +--------------+   +----------------+
       |                   ^                   ^
       +------------ WAL replicated -----------+
                     quorum: 2 of 3
@@ -50,8 +50,7 @@ entries exist to recover from.
 
 ## Related
 
-- [Partitioning and replication](partitioning-and-replication.md) -
-  Replication groups and write path
+- [Partitioning and replication](partitioning-and-replication.md) - Replication groups and write path
 
 ---
 

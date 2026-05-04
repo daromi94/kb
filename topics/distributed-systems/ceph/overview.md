@@ -11,7 +11,7 @@ Unlike traditional systems that require separate infrastructure for different
 storage types, Ceph runs all three interfaces on top of the same underlying
 **RADOS** (Reliable Autonomic Distributed Object Store) cluster:
 
-| Interface     | Protocol          | Use Case                              |
+| Interface     | Protocol          | Use case                              |
 |---------------|-------------------|---------------------------------------|
 | Block (RBD)   | Kernel/librbd     | VM disks, Kubernetes PVs              |
 | Object (RGW)  | S3/Swift REST API | Backups, media files, data lakes      |
@@ -25,10 +25,10 @@ hardware. No central controller bottleneck.
 **Durability:** Data protected via replication (multiple copies) or erasure
 coding (RAID-like parity across nodes).
 
-**Self-Healing:** When a disk or node fails, the cluster automatically
+**Self-healing:** When a disk or node fails, the cluster automatically
 redistributes data to restore the configured replica count.
 
-**Hardware Agnostic:** Runs on standard x86 servers, avoiding vendor lock-in
+**Hardware-agnostic:** Runs on standard x86 servers, avoiding vendor lock-in
 with proprietary storage arrays.
 
 ## The CRUSH innovation

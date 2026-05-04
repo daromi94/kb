@@ -69,18 +69,17 @@ Reads require fetching at least $k$ chunks to reconstruct the original object.
 
 ## Read from replica
 
-While Ceph typically reads from Primary for consistency, certain configurations
-allow **localized reads**. If a client is geographically closer to a replica,
-it can read from that replica to reduce latency (requires specific pool
-settings).
+While Ceph typically reads from Primary for consistency, **localized reads**
+allow a client geographically closer to a replica to read from that replica
+to reduce latency.
 
 ## Comparison
 
-| Aspect        | Write Path                       | Read Path                 |
+| Aspect        | Write path                       | Read path                 |
 |---------------|----------------------------------|---------------------------|
-| Primary Actor | Primary OSD                      | Primary OSD (typically)   |
+| Primary actor | Primary OSD                      | Primary OSD (typically)   |
 | Consistency   | Strong (min_size replicas ACK)   | High (read from Primary)  |
-| Network Hops  | Client → Primary → Replicas      | Client → Primary          |
+| Network hops  | Client → Primary → Replicas      | Client → Primary          |
 | Load          | High (hashing, WAL, replication) | Low (hashing, local read) |
 
 ## Related

@@ -6,8 +6,8 @@ eliminates thread contention.
 
 ## Notes
 
-- [Shard-per-core architecture](shard-per-core.md) - Thread-per-core architecture for linear scalability
-- [Commit log](commit-log.md) - Append-only durability mechanism for crash recovery
+- [Shard-per-core architecture](shard-per-core.md) - Per-core processing units
+- [Commit log](commit-log.md) - Append-only durability log
 
 ---
 

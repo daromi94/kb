@@ -34,8 +34,8 @@ writes.
 **MemStore:** Data is then written to an in-memory sorted buffer. Each column
 family has its own MemStore.
 
-**HFile:** When the MemStore fills up (configurable threshold), it flushes to
-disk as an immutable HFile. HFiles are never modified after creation.
+**HFile:** When the MemStore fills up, it flushes to disk as an immutable
+HFile. HFiles are never modified after creation.
 
 ## Compaction
 

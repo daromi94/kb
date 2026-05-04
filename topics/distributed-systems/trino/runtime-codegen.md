@@ -45,7 +45,7 @@ rows, this is a clear win.
 
 ## Related
 
-- [Execution model](execution-model.md) - The pipelined runtime that runs the generated code
+- [Execution model](execution-model.md) - Pipelined runtime that hosts codegen
 - [Query lifecycle](query-lifecycle.md) - When codegen happens during planning
 
 ---

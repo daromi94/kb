@@ -25,13 +25,10 @@ best-effort — do not rely on it for guaranteed delivery.
 
 ## Related
 
-- [Actors](actors.md) - The actor model and its primitives
-- [Message passing](message-passing.md) - Mailbox mechanics and
-  message processing
-- [Supervision](supervision.md) - Restart mechanics and fault
-  recovery
-- [Death watch](death-watch.md) - Observing termination from
-  other actors
+- [Actors](actors.md) - Actor model fundamentals
+- [Message passing](message-passing.md) - Mailbox mechanics
+- [Supervision](supervision.md) - Restart mechanics
+- [Death watch](death-watch.md) - Observing termination
 
 ---
 

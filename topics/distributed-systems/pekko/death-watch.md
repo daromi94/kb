@@ -55,10 +55,8 @@ all work is complete before shutting itself down.
 ## Related
 
 - [Supervision](supervision.md) - Parent-child fault handling
-- [Hierarchical design](hierarchical-design.md) - Design guidelines
-  including death watch
-- [Guardian actors](guardian-actors.md) - /system guardian uses
-  death watch for orderly shutdown
+- [Hierarchical design](hierarchical-design.md) - Hierarchy design guidelines
+- [Guardian actors](guardian-actors.md) - Top-level guardians and shutdown
 
 ---
 

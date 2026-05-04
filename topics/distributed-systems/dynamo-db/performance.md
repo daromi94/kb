@@ -8,12 +8,12 @@ callers and degrades the entire user experience.
 ## Request routing
 
 The partition key is hashed to determine which storage node holds an
-item. A Request Router uses this hash to contact the correct node
+item. A request router uses this hash to contact the correct node
 directly, avoiding any scanning. Routing metadata lives in MemDS, a
 distributed in-memory datastore that holds partition-to-node mappings
 in a highly compressed form. MemDS eliminates the bimodal latency
-problem of traditional caches: even on a local cache hit, the Request
-Router sends an asynchronous refresh to MemDS so the backing
+problem of traditional caches: even on a local cache hit, the request
+router sends an asynchronous refresh to MemDS so the backing
 infrastructure always sees constant traffic and stays warm.
 
 ## Storage
@@ -27,12 +27,12 @@ durability before updating the tree.
 Maintaining single-digit latency under traffic spikes requires dynamic
 resource management at multiple levels.
 
-| Mechanism         | Scope     | Behaviour                                           |
-|-------------------|-----------|-----------------------------------------------------|
-| On-demand scaling | Table     | Instantly handles up to 2x previous peak            |
-| Bursting          | Partition | Taps unused capacity for short-lived spikes         |
-| GAC               | Table     | Tracks global token use to prevent noisy neighbours |
-| Split for consume | Partition | Splits hot partitions by observed key distribution  |
+| Mechanism         | Scope     | Behavior                                           |
+|-------------------|-----------|----------------------------------------------------|
+| On-demand scaling | Table     | Instantly handles up to 2x previous peak           |
+| Bursting          | Partition | Taps unused capacity for short-lived spikes        |
+| GAC               | Table     | Tracks global token use to prevent noisy neighbors |
+| Split for consume | Partition | Splits hot partitions by observed key distribution |
 
 Global Admission Control (GAC) uses a token-bucket model. Each storage
 node reports its consumption to a central tracker, which balances
@@ -41,8 +41,7 @@ others sharing the same table allocation.
 
 ## Related
 
-- [Operational lessons](operational-lessons.md) - Principles behind
-  DynamoDB's reliability at scale
+- [Operational lessons](operational-lessons.md) - Principles from operating at scale
 
 ---
 

@@ -48,8 +48,7 @@ traffic surge the backend cannot absorb.
 
 ## Related
 
-- [Performance](performance.md) - Architectural mechanisms delivering
-  low-latency reads and writes
+- [Performance](performance.md) - Latency and admission control
 
 ---
 

@@ -3,9 +3,7 @@
 Turbopuffer is built on a stateless-compute, stateful-storage model
 that decouples query processing from data persistence. Object storage
 (S3/GCS) serves as the sole source of truth while NVMe SSDs and RAM
-act as an ephemeral cache layer. The name "pufferfish" reflects this
-design: the cache inflates on demand to serve active queries, then
-deflates when data goes cold.
+act as an ephemeral cache layer.
 
 ## Storage hierarchy
 
@@ -39,7 +37,7 @@ lives in object storage, nodes are interchangeable. A failed node is
 replaced without data rebalancing or state synchronization. New nodes
 pull the required data from S3 on demand.
 
-## Compute-Compute separation
+## Compute-compute separation
 
 The system splits processing into two specialized node types:
 

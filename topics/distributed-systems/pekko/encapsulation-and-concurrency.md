@@ -37,11 +37,11 @@ objects — that drive execution.
 
 Locks are the standard fix, but they introduce three problems:
 
-| Problem          | Impact                                          |
-|------------------|-------------------------------------------------|
-| Limited concurr. | OS must suspend and restore threads — expensive |
-| Caller blocking  | Thread cannot do useful work while waiting      |
-| Deadlocks        | Multiple locks create circular-wait hazards     |
+| Problem         | Impact                                          |
+|-----------------|-------------------------------------------------|
+| Cost            | OS must suspend and restore threads — expensive |
+| Caller blocking | Thread cannot do useful work while waiting      |
+| Deadlocks       | Multiple locks create circular-wait hazards     |
 
 The result is a no-win situation: too few locks corrupt state, too many
 locks kill performance and invite deadlocks.
@@ -67,11 +67,9 @@ under concurrency, and extends naturally to distributed systems.
 
 ## Related
 
-- [Actors](actors.md) - The actor model and its primitives
-- [Message passing](message-passing.md) - How actors communicate
-  without sharing state
-- [Shared memory illusion](shared-memory-illusion.md) - The hardware
-  argument for message passing
+- [Actors](actors.md) - Actor model fundamentals
+- [Message passing](message-passing.md) - How actors communicate without sharing state
+- [Shared memory illusion](shared-memory-illusion.md) - Hardware reality of memory
 
 ---
 

@@ -69,10 +69,8 @@ orderings produces an undesirable outcome.
 
 ## Related
 
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
-  How concurrency breaks OOP invariants
-- [Message passing](message-passing.md) - The asynchronous,
-  non-blocking communication model actors use
+- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
+- [Message passing](message-passing.md) - Asynchronous communication model
 
 ---
 

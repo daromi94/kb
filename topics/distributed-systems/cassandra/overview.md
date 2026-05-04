@@ -1,9 +1,9 @@
 # Overview
 
-Apache Cassandra is an open-source, distributed NoSQL database designed to handle
-massive amounts of data across many commodity servers. Born at Facebook and later
-open-sourced as an Apache project, it combines the distribution design of
-Amazon's Dynamo with the data model of Google's Bigtable.
+Apache Cassandra is a distributed NoSQL database that scales horizontally
+across commodity servers. Born at Facebook and later open-sourced as an
+Apache project, it combines the distribution design of Amazon's Dynamo
+with the data model of Google's Bigtable.
 
 ## Core architecture principles
 
@@ -18,7 +18,7 @@ the cluster continues to operate without needing an expensive election process.
 
 Cassandra scales horizontally. If a cluster of 10 nodes can handle 100,000
 transactions per second, adding 10 more nodes will reliably double that capacity
-to 200,000. You simply add nodes to the ring without taking the system offline.
+to 200,000. Add nodes to the ring without taking the system offline.
 
 ### High availability and fault tolerance
 
@@ -53,7 +53,7 @@ Cassandra excels in specific scenarios:
 
 - **IoT and telemetry:** High-velocity writes from millions of sensors
 - **Time-series data:** Logs or metrics indexed by time
-- **User profiles:** Scaling to hundreds of millions of users (Netflix, Spotify)
+- **User profiles:** Scaling to hundreds of millions of users
 - **Fraud detection:** Real-time analysis of transactions at scale
 
 **When to avoid:** Complex ACID transactions across multiple tables, heavy ad-hoc

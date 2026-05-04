@@ -43,12 +43,9 @@ Create a child actor when:
 
 ## Related
 
-- [Error kernel pattern](error-kernel-pattern.md) - Protecting
-  state by delegating risk to children
-- [Hierarchical design](hierarchical-design.md) - Broader design
-  guidelines for actor hierarchies
+- [Error kernel pattern](error-kernel-pattern.md) - Protecting state by delegating risk
+- [Hierarchical design](hierarchical-design.md) - Hierarchy design guidelines
 - [Supervision](supervision.md) - Per-child fault handling
-  strategies
 
 ---
 

@@ -73,15 +73,11 @@ scheduling; application logic should not depend on global ordering.
 
 ## Related
 
-- [Actors](actors.md) - The actor model and its primitives
-- [Actor lifecycle](actor-lifecycle.md) - Creation, termination,
-  and dead letters
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
-  Why encapsulation breaks without actors
-- [Shared memory illusion](shared-memory-illusion.md) - Why local
-  state with message passing matches hardware
-- [Call stack illusion](call-stack-illusion.md) - Why method-call
-  error handling fails across threads
+- [Actors](actors.md) - Actor model fundamentals
+- [Actor lifecycle](actor-lifecycle.md) - Actor creation and termination
+- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
+- [Shared memory illusion](shared-memory-illusion.md) - Hardware reality of memory
+- [Call stack illusion](call-stack-illusion.md) - Hardware reality of threads
 
 ---
 

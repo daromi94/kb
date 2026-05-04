@@ -2,8 +2,8 @@
 
 The Linkerd proxy applies three reliability techniques transparently
 to every request it carries: load balancing, retries, and timeouts.
-The application never sees failures or slow endpoints that the proxy
-can absorb on its behalf.
+Failures the proxy can absorb (retried, timed out, rerouted) never
+reach the application.
 
 ## Load balancing (EWMA)
 

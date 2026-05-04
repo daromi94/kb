@@ -56,12 +56,9 @@ demand the same failure model.
 
 ## Related
 
-- [Supervision](supervision.md) - The fault-handling mechanism that
-  replaces call-stack error propagation
-- [Shared memory illusion](shared-memory-illusion.md) - The hardware
-  argument for message passing
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
-  The OOP argument for actors
+- [Supervision](supervision.md) - Fault handling that replaces call-stack propagation
+- [Shared memory illusion](shared-memory-illusion.md) - Hardware reality of memory
+- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - The OOP argument for actors
 
 ---
 

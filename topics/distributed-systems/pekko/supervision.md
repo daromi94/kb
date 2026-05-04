@@ -104,11 +104,9 @@ failures up through the hierarchy.
 
 ## Related
 
-- [Call stack illusion](call-stack-illusion.md) - The failure-handling
-  problem that supervision solves
-- [Hierarchical design](hierarchical-design.md) - Structuring actor
-  hierarchies around supervision
-- [Actors](actors.md) - The actor model and its primitives
+- [Call stack illusion](call-stack-illusion.md) - Failure-handling problem supervision solves
+- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
+- [Actors](actors.md) - Actor model fundamentals
 
 ---
 

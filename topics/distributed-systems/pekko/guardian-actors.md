@@ -36,8 +36,7 @@ stays available throughout the shutdown of application actors.
 ## Related
 
 - [Supervision](supervision.md) - Parent-child fault handling
-- [Hierarchical design](hierarchical-design.md) - Structuring actor
-  hierarchies
+- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
 
 ---
 

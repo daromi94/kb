@@ -1,8 +1,8 @@
 # Overview
 
-Apache HBase is an open-source, distributed, wide-column NoSQL database
-built on top of HDFS. It is modeled after Google's Bigtable paper and provides
-random, real-time read/write access to billions of rows and millions of columns.
+Apache HBase is a distributed, wide-column NoSQL database built on top of
+HDFS. It is modeled after Google's Bigtable paper and provides random,
+real-time read/write access to billions of rows and millions of columns.
 
 ## Core concept
 
@@ -25,23 +25,22 @@ approach with tunable eventual consistency.
 - Massive datasets (petabytes)
 - Tight integration with Hadoop/Spark for batch processing
 - Range scans over sorted data
-- Text search backends
 
 **Poor fit:**
 
-- Simple setup requirements (HBase has many moving parts)
+- Operational simplicity (HBase requires HDFS and ZooKeeper)
 - Cannot tolerate occasional downtime during Master failover
 - High-write, always-on applications (consider Cassandra instead)
 
 ## HBase vs Cassandra
 
-| Feature      | HBase                               | Cassandra                         |
-|--------------|-------------------------------------|-----------------------------------|
-| Architecture | Master-Slave (HMaster/RegionServer) | Peer-to-Peer (Leaderless)         |
-| CAP theorem  | CP (Consistency, Partition)         | AP (Availability, Partition)      |
-| Consistency  | Strong (atomic single-row ops)      | Tunable (eventual to strong)      |
-| Best for     | Scans, batch processing             | High-write, always-on (IoT, chat) |
-| Internals    | Relies on HDFS & ZooKeeper          | Manages own storage & gossip      |
+| Feature      | HBase                               | Cassandra                    |
+|--------------|-------------------------------------|------------------------------|
+| Architecture | Master-Slave (HMaster/RegionServer) | Peer-to-Peer (Leaderless)    |
+| CAP theorem  | CP (Consistency, Partition)         | AP (Availability, Partition) |
+| Consistency  | Strong (atomic single-row ops)      | Tunable (eventual to strong) |
+| Best for     | Scans, batch processing             | High write rate, always-on   |
+| Internals    | Relies on HDFS & ZooKeeper          | Manages own storage & gossip |
 
 ## Related
 

@@ -1,17 +1,16 @@
 # Turbopuffer
 
 Vector database built on stateless compute with object storage as
-the sole source of truth. Designed for cost-effective multi-tenant
-vector search at trillion-document scale.
+the sole source of truth.
 
 ## Notes
 
-- [Architecture](architecture.md) - Stateless compute, tiered caching, hydration model
-- [SPFresh index](spfresh-index.md) - Centroid-based index optimized for object storage
-- [Consistency and durability](consistency-and-durability.md) - WAL on S3, strong/eventual consistency, ACID
-- [Multi-tenancy](multi-tenancy.md) - Namespace isolation, bin-packing, sticky routing
-- [Building on object storage](building-on-object-storage.md) - First-principles database design walkthrough
-- [Tradeoffs](tradeoffs.md) - Write latency, cold starts, first-stage retrieval focus
+- [Building on object storage](building-on-object-storage.md) - First-principles design walkthrough
+- [Architecture](architecture.md) - Compute and storage model
+- [SPFresh index](spfresh-index.md) - Centroid-based vector index
+- [Consistency and durability](consistency-and-durability.md) - Write durability and consistency
+- [Multi-tenancy](multi-tenancy.md) - Namespace isolation and routing
+- [Tradeoffs](tradeoffs.md) - Design tradeoffs in practice
 - [Architectural lessons](architectural-lessons.md) - Transferable design principles
 
 ---

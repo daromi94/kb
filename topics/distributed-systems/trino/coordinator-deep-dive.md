@@ -6,7 +6,7 @@ layers feeding a state machine for each in-flight query.
 
 ## Query processing pipeline
 
-```
+```text
   SQL string
  (over HTTP)
       |

@@ -59,9 +59,9 @@ containerized applications.
 
 | Feature         | Block (RBD)          | Object (RGW)         | File (CephFS)        |
 |-----------------|----------------------|----------------------|----------------------|
-| Access Method   | Kernel module/librbd | REST API (S3/Swift)  | POSIX mount/NFS/FUSE |
-| Unit of Storage | Block (virtual disk) | Object (file + meta) | File/directory       |
-| Shared Access   | No (single host)     | Yes (global)         | Yes (multiple hosts) |
+| Access method   | Kernel module/librbd | REST API (S3/Swift)  | POSIX mount/NFS/FUSE |
+| Unit of storage | Block (virtual disk) | Object (file + meta) | File/directory       |
+| Shared access   | No (single host)     | Yes (global)         | Yes (multiple hosts) |
 | Performance     | Low latency          | High throughput      | Balanced             |
 
 ## Related

@@ -3,7 +3,7 @@
 A query passes through five phases: plan generation, stage decomposition,
 task distribution, execution with shuffle, and result return. The
 scheduler owns the first three; executors do the fourth; the scheduler
-threads the result back to the client.
+streams the result back to the client.
 
 ## 1. Plan generation
 
@@ -30,7 +30,8 @@ have produced their shuffle output.
 Each stage is split into tasks, one per partition. Executors poll the
 scheduler for work; the scheduler assigns tasks based on registered
 executor capacity. The task payload is a serialized physical plan
-fragment plus partition identifiers — protobuf again over gRPC.
+fragment plus partition identifiers, encoded in protobuf and sent over
+gRPC.
 
 ## 4. Execution and shuffle
 

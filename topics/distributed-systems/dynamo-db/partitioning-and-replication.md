@@ -64,7 +64,7 @@ Eventually consistent reads spread load across all replicas and offer
 lower latency, but a recent write may not yet have propagated to the
 replica serving the read.
 
-## Leader election with multi-Paxos
+## Leader election with Multi-Paxos
 
 Each replication group uses Multi-Paxos for leader election and write
 consensus. Any replica can trigger an election when it detects the
@@ -80,12 +80,9 @@ preventing two nodes from acting as leader simultaneously.
 
 ## Related
 
-- [Data model](data-model.md) - Partition key hashing and item
-  placement
-- [Replica types](replica-types.md) - Storage replicas vs. log
-  replicas for quorum healing
-- [Performance](performance.md) - Request routing and admission
-  control
+- [Data model](data-model.md) - Partition key hashing
+- [Replica types](replica-types.md) - Replica roles in a group
+- [Performance](performance.md) - Routing and admission control
 
 ---
 

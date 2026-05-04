@@ -1,6 +1,6 @@
 # Phi accrual failure detector
 
-Cassandra uses the Phi Accrual Failure Detector instead of binary
+Cassandra uses the phi accrual failure detector instead of binary
 heartbeats to decide whether a node is alive or dead. By treating failure
 as a statistical probability rather than a binary event, the detector
 remains stable through network jitter and GC pauses that would cause

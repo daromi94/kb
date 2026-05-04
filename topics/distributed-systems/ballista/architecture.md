@@ -16,10 +16,9 @@ execution. Per query it:
 - Tracks executor liveness via heartbeats and assigns tasks to them.
 - Streams final results back to the submitting client.
 
-The scheduler does not process data pages. It owns planning, scheduling,
+The scheduler does not process row data. It owns planning, scheduling,
 and metadata only. Multiple scheduler processes can run for availability;
-state (executor registry, query graph) sits behind a configurable
-backend.
+executor registry and query graph state can be persisted for failover.
 
 ## Executor
 
@@ -28,8 +27,8 @@ Executors do the data work. Each executor:
 - Registers with the scheduler on startup, then heartbeats and polls
   for tasks.
 - Receives physical plan fragments (one task per partition) over gRPC.
-- Reads source data through DataFusion (Parquet, CSV, etc., often via
-  an object store).
+- Reads source data via DataFusion table providers (Parquet, CSV,
+  object stores).
 - Writes per-partition shuffle output as Arrow IPC files on local disk.
 - Serves Arrow Flight requests for shuffle output that downstream
   stages need to read.

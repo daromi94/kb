@@ -57,12 +57,9 @@ validity of all outstanding references.
 ## Related
 
 - [Message passing](message-passing.md) - How actors communicate
-- [Actor lifecycle](actor-lifecycle.md) - Creation, termination,
-  and dead letters
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
-  Why shared mutable state breaks under concurrency
-- [Hierarchical design](hierarchical-design.md) - Structuring actor
-  hierarchies
+- [Actor lifecycle](actor-lifecycle.md) - Actor creation and termination
+- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
+- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
 - [Supervision](supervision.md) - Parent-child fault handling
 
 ---

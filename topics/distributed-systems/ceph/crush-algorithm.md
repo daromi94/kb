@@ -52,7 +52,7 @@ root default
 CRUSH rules specify how replicas are distributed across the hierarchy. Setting
 the failure domain to `rack` ensures replicas land on different racks:
 
-| Failure Domain | Survives               |
+| Failure domain | Survives               |
 |----------------|------------------------|
 | `osd`          | Single disk failure    |
 | `host`         | Entire server failure  |
@@ -61,7 +61,7 @@ the failure domain to `rack` ensures replicas land on different racks:
 
 ## Why this matters
 
-| Traditional Approach    | CRUSH Approach                 |
+| Traditional approach    | CRUSH approach                 |
 |-------------------------|--------------------------------|
 | Central lookup table    | Local mathematical function    |
 | $O(1)$ lookup + sync    | $O(1)$ calculation, no sync    |

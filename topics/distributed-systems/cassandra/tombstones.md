@@ -41,7 +41,7 @@ the deletion via repair before the tombstone is discarded.
 
 **Risk:** If a node stays offline longer than `gc_grace_seconds`, its peers
 may have already compacted the tombstone away. When that node returns, it
-resurrects the data because the death certificate no longer exists.
+resurrects the data because the tombstone marker no longer exists.
 
 ## Performance impact
 

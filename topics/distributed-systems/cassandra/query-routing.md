@@ -10,9 +10,9 @@ consistency requirements.
 The process begins when a client (using a Cassandra driver) connects to any node
 in the cluster. This node becomes the coordinator for that specific operation.
 
-**Responsibility:** The coordinator acts as the traffic cop. It manages the
-lifecycle of the request, communicates with replicas, and collates the results
-before sending them back to the client.
+**Responsibility:** The coordinator manages the lifecycle of the request,
+communicates with replicas, and collates the results before sending them
+back to the client.
 
 **Intelligence:** The coordinator uses its internal token map to identify
 exactly which nodes are the replicas for the specific partition key being
@@ -63,8 +63,8 @@ background.
 ## Failure handling (hinted handoff)
 
 If the coordinator attempts to route a write to a replica and finds that node is
-unresponsive (as determined by the gossip status and the Phi Accrual Failure
-Detector), it doesn't necessarily fail the query.
+unresponsive (as determined by the gossip status and the phi accrual failure
+detector), it doesn't necessarily fail the query.
 
 **Hints:** If the consistency level can still be met by other nodes, the
 coordinator accepts the write and stores a hint on its local disk.

@@ -56,8 +56,8 @@ Alongside TTL-based eviction, the coordinator probes each known worker
 over HTTP and tracks success rates over a rolling window. A worker
 failing too many probes is dropped from the active set even if it is
 still announcing itself. This catches workers whose announcement thread
-runs while the rest of the JVM is unresponsive — typically a GC
-death-spiral.
+runs while the rest of the JVM is unresponsive — typically a long GC
+pause.
 
 ## Node states
 
@@ -120,7 +120,7 @@ discovery layer itself is never clustered.
 
 - [Architecture](architecture.md) - Where the coordinator fits in the cluster
 - [Coordinator deep dive](coordinator-deep-dive.md) - Other coordinator subsystems
-- [Fault-tolerant execution](fault-tolerant-execution.md) - The retry path on lost workers
+- [Fault-tolerant execution](fault-tolerant-execution.md) - Retry path on lost workers
 
 ---
 

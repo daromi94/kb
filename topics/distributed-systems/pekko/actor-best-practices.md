@@ -28,10 +28,8 @@ guarantees.
 ## Related
 
 - [Message passing](message-passing.md) - How actors communicate
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) -
-  Why shared mutable state breaks under concurrency
-- [Hierarchical design](hierarchical-design.md) - Structuring actor
-  hierarchies
+- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
+- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
 
 ---
 

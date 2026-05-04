@@ -8,11 +8,11 @@ shared file systems but differ significantly in architecture and use cases.
 
 | Feature     | NFS                    | CephFS                            |
 |-------------|------------------------|-----------------------------------|
-| Model       | Client-Server          | Distributed Cluster               |
+| Model       | Client-server          | Distributed cluster               |
 | Scalability | Vertical (scale-up)    | Horizontal (scale-out)            |
 | Metadata    | Single server          | Cluster of MDS daemons            |
-| Data Path   | Client → Server → Disk | Client → OSD Cluster (direct I/O) |
-| Redundancy  | RAID on server or HA   | Replication or Erasure Coding     |
+| Data path   | Client → Server → Disk | Client → OSD cluster (direct I/O) |
+| Redundancy  | RAID on server or HA   | Replication or erasure coding     |
 
 ## Key differences
 
@@ -35,7 +35,7 @@ operations due to distributed consistency overhead.
 
 ### Availability
 
-**NFS:** Single Point of Failure by default. HA requires external tools
+**NFS:** Single point of failure by default. HA requires external tools
 (Heartbeat, Pacemaker, DRBD) for failover.
 
 **CephFS:** HA built-in. Disk or node failure triggers automatic re-replication.

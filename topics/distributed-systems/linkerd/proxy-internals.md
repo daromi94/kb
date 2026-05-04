@@ -14,9 +14,7 @@ predictable tail latencies — important for a component sitting in the
 hot path of every request.
 
 The narrow scope also matters. A purpose-built proxy carries less
-code, a smaller configuration surface, and a smaller attack surface
-than a general-purpose proxy handling edge routing, API gateway, and
-mesh duties simultaneously.
+code, a smaller configuration surface, and a smaller attack surface.
 
 ## Dynamic configuration
 
@@ -28,8 +26,7 @@ connected proxy immediately. This push-based model means fast
 convergence after changes and lower load on the Kubernetes API server
 compared to polling.
 
-Eliminating proxy config files removes misconfiguration as a failure
-mode entirely.
+No proxy config files means no proxy-config misconfiguration.
 
 ## Related
 

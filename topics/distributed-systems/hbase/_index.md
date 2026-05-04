@@ -5,11 +5,11 @@ Google's Bigtable.
 
 ## Notes
 
-- [Overview](overview.md) - High-level concept and use cases
-- [Architecture](architecture.md) - Master/Slave model with HMaster and RegionServers
-- [Data model](data-model.md) - Row keys, column families, qualifiers, timestamps
-- [Storage engine](storage-engine.md) - LSM tree with WAL, MemStore, and HFiles
-- [Consistency model](consistency-model.md) - CP system with single-owner guarantees
+- [Overview](overview.md) - HBase at a glance
+- [Architecture](architecture.md) - Coordination and request handling
+- [Consistency model](consistency-model.md) - Strong-consistency trade-offs
+- [Data model](data-model.md) - Logical structure
+- [Storage engine](storage-engine.md) - On-disk layout
 
 ---
 

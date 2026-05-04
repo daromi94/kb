@@ -8,14 +8,14 @@ locations independently.
 
 The cluster's coordination begins with **Monitors** maintaining the Cluster Map:
 
-| Sub-Map     | Contents                              |
+| Sub-map     | Contents                              |
 |-------------|---------------------------------------|
-| OSD Map     | Which disks are up/down and in/out    |
-| Monitor Map | Which monitors are in quorum          |
-| CRUSH Map   | Physical hierarchy of the data center |
-| PG Map      | Placement Group states                |
-| MDS Map     | Metadata server ranks and state       |
-| Manager Map | Active and standby manager daemons    |
+| OSD map     | Which disks are up/down and in/out    |
+| Monitor map | Which monitors are in quorum          |
+| CRUSH map   | Physical hierarchy of the data center |
+| PG map      | Placement group states                |
+| MDS map     | Metadata server ranks and state       |
+| Manager map | Active and standby manager daemons    |
 
 To perform any action, a client first contacts a Monitor to get the latest map.
 Once obtained, the client no longer needs the Monitor for data I/O.
@@ -29,7 +29,7 @@ Instead of perfect real-time synchronization, nodes "catch up" lazily. If OSD A
 notices OSD B has an older map epoch, A gossips the incremental updates to B.
 This lazy distribution keeps the cluster in sync without global broadcasts.
 
-## Self-Healing
+## Self-healing
 
 The cluster repairs itself without human intervention through continuous
 monitoring:

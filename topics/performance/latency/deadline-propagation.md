@@ -2,16 +2,15 @@
 
 A deadline is an absolute point in time by which a request must
 finish — "complete by 14:30:05," not "wait five seconds." The edge
-service stamps each request with `deadline = now + budget`.
-
-The deadline carries through every downstream call. Each hop
-subtracts elapsed time and forwards the remainder, not a fresh
+stamps each request with `deadline = now + budget`, and every
+downstream hop forwards what's left rather than starting a fresh
 per-hop timeout.
 
 ## Risks
 
-Without a deadline, a request runs until the service's maximum
-timeout. The costs compound:
+A request without a deadline runs until something else stops it —
+the service's worst-case timeout, an exhausted connection pool, a
+crashed process. The costs pile up before any of those trip:
 
 - **Resources stay held** — connections, thread slots, and buffers
   locked per in-flight request for the full window.
@@ -20,30 +19,30 @@ timeout. The costs compound:
   retire.
 - **The process crashes** when memory or connections exhaust.
 
-## Why deadlines beat per-hop timeouts
+## Per-hop timeouts don't compose
 
-A five-deep call tree with a 100 ms timeout at each hop will accept up
-to 500 ms of work for a request the user abandoned at 100 ms. With a
-propagated 100 ms deadline, every hop sees a budget that has already
-shrunk and abandons work it cannot finish in time. Per-hop timeouts
-sum; deadlines compose.
+A five-deep call tree with a 100 ms timeout at each hop accepts up to
+500 ms of work for a request the user abandoned at 100 ms. Each layer
+enforces only its own slice; nobody sees the request's total budget.
+A propagated deadline shrinks as the request travels, so every hop
+abandons work it cannot finish in time. Per-hop timeouts sum;
+deadlines compose.
 
-## Forwarding
+## On the wire
 
-Clocks across machines disagree by more than network transit time,
-so an absolute timestamp on the wire would be misread on arrival.
-Each side stores the deadline as an absolute timestamp; the wire
-carries a remaining duration, computed just before sending and
-converted back to an absolute deadline against the receiver's clock
-on arrival. The reconstruction is off by one network transit at
-most, not by however far the clocks differ.
+Clocks across machines disagree by more than network transit time, so
+an absolute timestamp on the wire would be misread on arrival. Each
+side stores the deadline against its own clock; the wire carries a
+remaining duration, computed just before sending and converted back
+to an absolute deadline on arrival. The reconstruction is off by one
+network transit at most, not by however far the clocks differ.
 
 Each hop should also reserve a slice of the budget for its own
 processing before forwarding. Otherwise, the downstream call starts
 with a deadline about to expire, leaving no time to act on the
 response.
 
-## Reject when the budget is gone
+## Reject expired work at dequeue
 
 A worker that picks up a request whose budget has expired is about to
 do work nobody will read. Check the budget at dequeue and fail the

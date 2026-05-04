@@ -19,14 +19,14 @@ representation of the work to be done.
                                          Workers execute
 ```
 
-### 1. Parse and analyze
+### Parse and analyze
 
 The SQL text is parsed into an Abstract Syntax Tree (AST). The analyzer
 resolves names against connector metadata, type-checks expressions, and
 rewrites references into fully qualified form. Errors here are syntactic or
 semantic — invalid SQL, unknown tables, type mismatches.
 
-### 2. Plan and optimize
+### Plan and optimize
 
 The AST is lowered to a logical plan: a tree of relational operators
 (`Scan`, `Filter`, `Project`, `Join`, `Aggregate`). The optimizer rewrites
@@ -40,7 +40,7 @@ this tree using rules and a cost-based search:
 The result is a physical plan annotated with how each operator runs and how
 data flows between them.
 
-### 3. Schedule
+### Schedule
 
 The physical plan is split at exchange boundaries into stages.
 
@@ -56,7 +56,7 @@ The physical plan is split at exchange boundaries into stages.
 Stages form a DAG: leaf stages read from connectors, intermediate stages
 shuffle between workers, the root stage returns results to the coordinator.
 
-### 4. Execute
+### Execute
 
 Each worker runs its assigned tasks. Drivers pull pages through their
 operator pipeline. Pages cross stage boundaries via exchange operators that

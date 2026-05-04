@@ -24,7 +24,7 @@ Turbopuffer infers types from data or accepts a defined schema. All
 vectors within a namespace must share the same dimensions, and
 attribute types must be consistent across documents.
 
-## Bin-Packing
+## Bin-packing
 
 Each `./tpuf` binary serves multiple tenants. Small namespaces share
 compute resources on the same node. Resource consumption scales with
@@ -38,7 +38,7 @@ that namespace, avoiding repeated S3 fetches. If the preferred node
 is unavailable, any other node can serve the request by pulling data
 from object storage.
 
-## Pre-Warming
+## Pre-warming
 
 Applications can issue a preflight query to hydrate the cache before
 the user starts searching. This hides cold-start latency by

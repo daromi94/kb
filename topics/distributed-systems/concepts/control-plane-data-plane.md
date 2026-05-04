@@ -1,7 +1,8 @@
 # Control plane vs data plane
 
-The separation of control planes and data planes isolates concerns, optimizes
-performance, and enhances system resilience.
+A control plane manages configuration and metadata; a data plane processes
+requests on the critical path. Splitting them isolates concerns, optimizes
+performance, and improves resilience.
 
 ## Definitions
 

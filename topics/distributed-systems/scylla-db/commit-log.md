@@ -19,11 +19,11 @@ The commit log bridges this gap. When you send a write:
 If power fails, RAM data is lost. On restart, the node replays the commit log
 to restore the memtable.
 
-## Append-Only design
+## Append-only design
 
 The commit log only adds new records to the end—never editing or deleting in
-the middle. This makes writes fast because the disk head doesn't jump around
-(sequential I/O). Once written, entries are immutable.
+the middle. Sequential I/O is faster than random I/O—appends never seek. Once
+written, entries are immutable.
 
 ## Write path
 

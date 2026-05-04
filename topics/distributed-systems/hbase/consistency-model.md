@@ -20,7 +20,7 @@ or vector clocks.
 
 ## Partition tolerance via HDFS
 
-HBase separates computing (RegionServers) from storage (HDFS). Even if a
+HBase separates compute (RegionServers) from storage (HDFS). Even if a
 RegionServer is partitioned from the network, data remains safely replicated 3x
 across HDFS DataNodes.
 

@@ -85,12 +85,9 @@ worker's lifecycle maps to exactly one operation.
 
 ## Related
 
-- [Hierarchical design](hierarchical-design.md) - Design guidelines
-  including the error kernel principle
-- [Supervision](supervision.md) - The mechanism that makes the
-  pattern work
-- [Death watch](death-watch.md) - Cross-hierarchy termination
-  monitoring for disposable workers
+- [Hierarchical design](hierarchical-design.md) - Hierarchy design guidelines
+- [Supervision](supervision.md) - Mechanism that makes the pattern work
+- [Death watch](death-watch.md) - Termination monitoring for workers
 
 ---
 

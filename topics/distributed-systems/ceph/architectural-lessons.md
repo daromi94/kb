@@ -65,7 +65,7 @@ together).
 dynamically migrate that subtree to a less busy MDS.
 
 **Takeaway:** Preserving metadata locality while providing horizontal
-scalability is the "Holy Grail" of distributed file systems.
+scalability is a hard problem in distributed file systems.
 
 ## 7. Versioned state (epochs)
 

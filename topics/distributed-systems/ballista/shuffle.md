@@ -1,8 +1,8 @@
 # Shuffle
 
-When a query crosses a stage boundary, partitions must be rerouted
-between executors. Ballista materializes the upstream stage's output to
-local disk in Arrow IPC format, then streams it on demand to downstream
+When a query crosses a stage boundary, data must be repartitioned across
+executors. Ballista materializes the upstream stage's output to local
+disk in Arrow IPC format, then streams it on demand to downstream
 executors over Apache Arrow Flight.
 
 ## Why a stage boundary exists
@@ -18,8 +18,8 @@ on a different key, so streams can no longer be local.
 The last operator of a non-final stage is a shuffle writer. For each
 partition of input it produces an Arrow IPC file on the executor's
 local disk, partitioned by the downstream stage's expected key. Layout
-on disk matches the in-memory Arrow layout, so writing is a buffered
-copy — no row-level encoding step.
+on disk matches the in-memory Arrow layout, so writing is bulk byte
+transfer of Arrow buffers — no row-level encoding.
 
 When the task finishes, the executor reports the shuffle file locations
 back to the scheduler.

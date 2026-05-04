@@ -66,7 +66,7 @@ it updates its local state.
 ## Failure detection
 
 Gossip heartbeats are the primary input for failure detection. Rather than
-a binary up/down check, Cassandra uses the Phi Accrual Failure Detector,
+a binary up/down check, Cassandra uses the phi accrual failure detector,
 which tracks heartbeat arrival intervals and calculates a probabilistic
 suspicion level. When the suspicion crosses a threshold, the node is
 convicted and the coordinator stops routing queries to it.

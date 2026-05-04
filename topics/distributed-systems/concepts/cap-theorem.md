@@ -30,7 +30,7 @@ data is up to date. Correctness over availability.
 - Nodes return errors or time out when they cannot communicate
 - Suits banking systems, distributed locks — wrong data is worse than no
   data
-- Examples: MongoDB (certain configurations), etcd, ZooKeeper
+- Examples: etcd, ZooKeeper, HBase
 
 ### AP (availability + partition tolerance)
 

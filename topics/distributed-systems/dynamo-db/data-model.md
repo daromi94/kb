@@ -37,8 +37,8 @@ millisecond latency regardless of table size.
 
 ## Related
 
-- [Performance](performance.md) - Request routing and admission
-  control mechanisms
+- [Partitioning and replication](partitioning-and-replication.md) - Partition placement
+- [Performance](performance.md) - Routing and admission control
 
 ---
 

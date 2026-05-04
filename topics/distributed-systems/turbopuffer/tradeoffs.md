@@ -21,7 +21,7 @@ inactive data remains in object storage.
 Applications mitigate cold starts with pre-warming: issuing a
 preflight query to hydrate the cache before the user begins searching.
 
-## First-Stage retrieval focus
+## First-stage retrieval focus
 
 Turbopuffer is specialized for candidate generation, not end-to-end
 ranking. It scans billions of vectors and narrows results to the top

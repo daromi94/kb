@@ -70,10 +70,9 @@ once.
 A background sweep evicts terminated queries when two limits are both
 exceeded:
 
-- A minimum age before a finished query becomes eligible for removal
-  (typically 15 minutes), so clients can still fetch results after the
-  query technically finished.
-- A maximum number of finished queries to retain (typically 100).
+- A minimum age before a finished query is eligible for removal, so
+  clients can still fetch results after the query technically finished.
+- A maximum number of finished queries to retain.
 
 Once evicted, the only persistent record is whatever the event-listener
 plugin wrote at completion.

@@ -51,13 +51,12 @@ If power is lost before the buffer cache flushes to data files:
 - On restart, the database reads the WAL from the last checkpoint
 - It replays committed transactions in order to restore consistent state
 
-## WAL in distributed systems
+## WAL in distributed storage engines
 
-In distributed databases like ScyllaDB or Cassandra, the WAL is called a
-**CommitLog**. When a write request arrives, it writes to the CommitLog and the
-in-memory Memtable simultaneously. Because the Memtable is volatile, the
-CommitLog serves as the source of truth if a node reboots before the Memtable
-flushes to an SSTable (the immutable on-disk storage).
+Storage engines that buffer writes in memory before flushing to immutable
+on-disk files use the WAL as the durability anchor. A write hits the
+in-memory buffer and the log together; on restart, the log replays any
+data not yet flushed.
 
 | Feature     | Standard update (no WAL)          | WAL-based update                  |
 |-------------|-----------------------------------|-----------------------------------|
@@ -69,7 +68,6 @@ flushes to an SSTable (the immutable on-disk storage).
 
 - [Segmented log](segmented-log.md) - Breaking the WAL into manageable
   file segments for cleanup and recovery
-- [Commit log](../scylla-db/commit-log.md) - ScyllaDB's WAL implementation
 
 ---
 

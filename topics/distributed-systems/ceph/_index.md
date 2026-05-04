@@ -7,15 +7,15 @@ point of failure.
 
 ## Notes
 
-- [Overview](overview.md) - Unified storage platform introduction
-- [Storage interfaces](storage-interfaces.md) - RBD, RGW, and CephFS comparison
+- [Overview](overview.md) - Unified storage platform
+- [Storage interfaces](storage-interfaces.md) - Block, object, and file APIs
 - [RADOS architecture](rados.md) - Core storage layer and daemons
 - [CRUSH algorithm](crush-algorithm.md) - Decentralized data placement
-- [Data placement](data-placement.md) - Pools and Placement Groups
-- [Cluster operations](cluster-operations.md) - Maps, heartbeating, self-healing
+- [Data placement](data-placement.md) - Logical partitioning layers
+- [Cluster operations](cluster-operations.md) - Coordination and self-healing
+- [Replication](replication.md) - Data durability mechanisms
 - [Read and write paths](read-write-paths.md) - I/O flow through the system
 - [Consistency model](consistency.md) - CAP theorem analysis
-- [Replication](replication.md) - Data protection and erasure coding
 - [CephFS vs NFS](cephfs-vs-nfs.md) - When to use each
 - [Architectural lessons](architectural-lessons.md) - Transferable design principles
 

@@ -32,17 +32,17 @@ This thread runs a userspace task scheduler that manages all operations—reads,
 writes, compaction, replication—for that core.
 
 **Message passing.** If Core 1 needs data on Core 2, it sends an asynchronous
-message rather than reaching into Core 2's memory. This resembles how servers
-communicate over a network, but happens inside the CPU at high speed.
+message rather than reaching into Core 2's memory. Cross-shard data access
+uses asynchronous messaging, not shared memory.
 
-**NUMA awareness.** Modern servers have Non-Uniform Memory Access where
+**NUMA awareness.** Multi-socket servers have Non-Uniform Memory Access where
 accessing RAM on a different CPU socket is slower. ScyllaDB ensures a shard on
 Socket A primarily uses RAM attached to Socket A, preventing expensive
 cross-socket memory trips.
 
 ## Thread-pool vs shard-per-core
 
-| Feature     | Thread-Pool (Cassandra)                            | Shard-per-Core (ScyllaDB)                     |
+| Feature     | Thread-pool (Cassandra)                            | Shard-per-core (ScyllaDB)                     |
 |-------------|----------------------------------------------------|-----------------------------------------------|
 | Concurrency | Hundreds of threads; constant OS context switching | One thread per core; no context switching     |
 | Memory      | Shared heap with lock contention                   | Partitioned per core; no contention           |

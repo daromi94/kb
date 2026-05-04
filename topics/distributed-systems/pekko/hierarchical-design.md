@@ -15,7 +15,7 @@ place produces better solutions than sweeping them under the carpet.
 
 ## Design guidelines
 
-**Error Kernel Pattern.** An actor with important state should never
+**Error kernel pattern.** An actor with important state should never
 risk that state by performing dangerous work directly. Instead, it
 delegates risky sub-tasks to disposable child actors and handles their
 failures through supervision. Creating a new child per request simplifies
@@ -38,14 +38,10 @@ contention and coarsens fault handling.
 
 ## Related
 
-- [Single responsibility](single-responsibility.md) - When and why
-  to split into children
-- [Error kernel pattern](error-kernel-pattern.md) - Protecting state
-  by delegating risk
-- [Supervision](supervision.md) - The mechanism that makes hierarchies
-  fault-tolerant
-- [Actors](actors.md) - Actor model fundamentals and the
-  organizational mental model
+- [Single responsibility](single-responsibility.md) - When to split into children
+- [Error kernel pattern](error-kernel-pattern.md) - Protecting state by delegating risk
+- [Supervision](supervision.md) - Fault-tolerant hierarchies
+- [Actors](actors.md) - Actor model fundamentals
 
 ---
 

@@ -41,9 +41,9 @@ becomes `[17, 25, 1]`. Gaps are small integers and compress to one or two
 bytes per posting with PFOR-delta over fixed blocks.
 
 **Skip-based intersection.** To answer `cat AND dog`, walk both postings
-lists with two cursors, advancing whichever is behind. Sparse forward
-pointers let the cursor for *the* (millions of postings) leap ahead to
-catch up with *fox* (a few hundred) without decoding everything in
+lists with two cursors, advancing whichever is behind. Skip pointers let
+the cursor for the common term (millions of postings) leap ahead to catch
+up with the rare one (a few hundred) without decoding everything in
 between. Postings flow through scoring block by block; the engine never
 holds a full list in memory.
 

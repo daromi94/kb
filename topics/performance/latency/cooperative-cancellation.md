@@ -1,36 +1,28 @@
 # Cooperative cancellation
 
-A cancel signal does not stop work — it asks the receiver to stop.
-Closing the connection frees the wire, not the work. Cancellation is
-cooperative: the runtime delivers the signal; only the worker can
-stop the work.
-
-## The cancellation tree
-
-A coordinator owns a root cancel token; each fanout worker derives a
-child. Canceling the root cancels every descendant. Children cannot
-cancel their parent — signals flow down only. The tree gives mass
-cancel for free: one signal reaches every descendant.
-
-## When to cancel
-
-- **Global deadline expires** — coordinator cancels the root.
-- **First success in a hedged set** — winner cancels losers.
-- **Fatal error from any worker** — coordinator cancels the rest;
-  the result is unusable.
+A cancel signal does not stop work — it asks the worker to stop.
+Closing the connection frees the wire, not the work. Cancellation
+is cooperative: the runtime delivers the signal; only the worker
+can act on it.
 
 ## Workers must poll
 
-The runtime cannot interrupt arbitrary application code. A worker
-that does not check the cancel signal between steps runs to
-completion, burning resources for a result nobody will read. A loop
-without polling is functionally uncancellable.
+The runtime cannot interrupt arbitrary code. A worker that does not
+check the cancel signal between steps runs to completion, burning
+resources on a result nobody will read. A loop without polling is
+uncancellable.
 
-## What cancel cannot undo
+## When to cancel
 
-Side effects already begun — DB writes, external API calls — do not
-roll back when the cancel arrives. Idempotency keys make a canceled
-side effect survivable on retry rather than catastrophic.
+- **Deadline expires** — cancel anything still running.
+- **Hedge winner returns** — cancel the losers.
+- **Fatal error** — the result is unusable; cancel the rest.
+
+## Side effects don't undo
+
+Side effects already begun do not roll back — DB writes, external
+API calls. Idempotency keys make a canceled side effect safe on
+retry rather than catastrophic.
 
 ## Related
 

@@ -35,9 +35,9 @@ Distributed algorithms exploit emergence on purpose.
   proposes, votes, and counts majorities. The cluster agrees on a
   single sequence of operations, even through partitions and crashes.
 
-The pattern is the same: a local rule correct in isolation, composed
-under a quorum or epidemic structure, produces a global guarantee
-that emerges from the interactions — no node enforces it.
+The pattern is the same: a local rule correct in isolation produces
+a global guarantee that emerges from the interactions — no node
+enforces it.
 
 ## Negative emergence
 

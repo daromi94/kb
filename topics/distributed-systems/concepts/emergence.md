@@ -12,43 +12,36 @@ programmed to perform.
 
 ## Why behavior emerges
 
-Three conditions force it:
+Three properties of distributed systems make emergence unavoidable:
 
-- **Concurrency.** Nodes run independently. There is no shared memory
-  and no global clock. Order exists only where the protocol creates it.
-- **Partial observability.** Each node sees its neighbors and its
-  recent messages. No node holds the global state.
+- **Concurrency.** No shared memory, no global clock. Order exists
+  only where a protocol creates it.
+- **Partial observability.** Each node sees its neighbors and recent
+  messages. No node holds the global state.
 - **Unreliable communication.** Messages are delayed, reordered, or
-  dropped. A silent peer looks identical to a slow one.
-
-Local decisions made under these conditions interact at scale to
-produce macro-level behavior.
+  dropped. A silent peer is indistinguishable from a slow one.
 
 ## Positive emergence
 
-Distributed algorithms exploit emergence on purpose. Each node follows
-simple rules; the aggregate produces a global property no node
-coordinates.
+Distributed algorithms exploit emergence on purpose.
 
 - **Gossip.** Each node periodically forwards its state to a few
-  peers. Information reaches the whole cluster in time logarithmic in
-  cluster size, with no central broadcaster.
-- **Control loops.** Each controller compares observed state to
-  desired state on its slice and issues corrections. Independent
-  loops together migrate work off failing hardware without a global
-  scheduler.
+  peers. Information reaches the whole cluster in logarithmic time,
+  with no central broadcaster.
+- **Control loops.** Each controller watches its piece of the system,
+  compares observed state to desired state, and issues corrections.
+  The cluster converges, with no central scheduler.
 - **Consensus.** In protocols like Raft or Paxos, each node only
   proposes, votes, and counts majorities. The cluster agrees on a
   single sequence of operations, even through partitions and crashes.
 
-The pattern is the same: a local rule that is correct in isolation,
-plus a quorum or epidemic structure that lifts it into a global
-guarantee.
+The pattern is the same: a local rule correct in isolation, composed
+under a quorum or epidemic structure, produces a global guarantee
+that emerges from the interactions — no node enforces it.
 
 ## Negative emergence
 
-The same interaction structure produces destructive behaviors no node
-was designed to exhibit.
+The same dynamics also produce destructive behaviors.
 
 - **Cascading failure.** A slow component causes callers to hold
   connections longer, exhausting their pools. Failed health checks
@@ -61,16 +54,16 @@ was designed to exhibit.
   state. A feedback loop built from retries, queues, or fallbacks
   keeps it there after the trigger clears.
 
-The structure is identical: a local action that is correct in
+The pattern mirrors the positive case: a local action correct in
 isolation — retry on failure, fall through to the source of truth,
-fail a health check when overloaded — becomes pathological when many
-nodes take it together.
+fail a health check when overloaded — produces systemic failure when
+many nodes take it at the same time.
 
 ## Engineering implication
 
-Designing a distributed system is mostly choosing local rules whose
-aggregate behavior is the one you want. Two questions shape almost
-every decision:
+Designing a distributed system is mostly about choosing local rules
+whose aggregate behavior is the one you intend. Two questions shape
+almost every decision:
 
 1. What global property does this rule produce when every node follows
    it under load and partial failure?

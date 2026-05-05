@@ -1,12 +1,12 @@
 # Emergence
 
-Emergence is what a distributed system does that no single node was
-programmed to do. The behavior lives in the interactions between
-nodes — messages, retries, timeouts, failure detection — each
-following simple rules on a partial view of the cluster. Nodes
-are deterministic. The cluster is not.
+Emergent behavior occurs when a system exhibits properties or
+behaviors that its components do not possess on their own. In a
+distributed system, this arises because nodes operate concurrently,
+hold a partial view of the system's state, and communicate over an
+asynchronous, unreliable network.
 
-This is the defining property of distributed engineering: local rules
+This is the defining property of distributed systems: local rules
 produce global behaviors, intended and unintended, that no node was
 programmed to perform.
 

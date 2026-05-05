@@ -35,8 +35,7 @@ be misread on arrival. Instead, each side holds the deadline as a
 local timestamp, and the wire carries the remaining duration. The
 sender computes that duration just before transmitting; the receiver
 converts it back to an absolute deadline against its own clock. The
-result is off by one network transit at most — never by however far
-the clocks differ.
+result is off by one network transit at most.
 
 Each hop should also reserve a slice of the budget for its own
 processing before forwarding. Otherwise, the downstream call starts

@@ -1,20 +1,21 @@
 # Worker pool
 
-A concurrency pattern: a fixed number of long-lived workers share a queue
-and pull tasks from it, instead of spawning a fresh thread or process for
-every unit of work. Pool size sets the concurrency cap — eight workers
-means at most eight tasks run in parallel, no matter how many are pending.
+A concurrency pattern in which a fixed set of long-lived workers pull
+tasks from a shared queue, rather than spawning a fresh thread or process
+per unit of work. Pool size caps concurrency: eight workers means at most
+eight tasks run in parallel, no matter how many are pending.
 
 ## Why use it
 
 Per-task spawning is fine when work is rare. Once tasks arrive faster than
-they complete, unbounded spawning floods the system — blowing past CPU
+they complete, unbounded spawning floods the system — overcommitting CPU
 cores, exhausting memory, saturating file descriptors, or hammering a
 downstream database with too many connections.
 
-A pool exposes a single knob — pool size — that bounds all of them. It
-also amortizes worker setup cost (thread creation, connection handshakes)
-across many tasks rather than paying it per call.
+A pool exposes a single knob — pool size — that bounds every one of those
+failure modes at once. It also amortizes worker setup cost (thread
+creation, connection handshakes) across many tasks rather than paying it
+per call.
 
 ## Components
 
@@ -70,12 +71,12 @@ until memory runs out, so failure surfaces as an OOM rather than a clear
 saturation signal. A bounded queue forces an explicit choice when full:
 block the producer, drop tasks, or reject them outright.
 
-**Choose a rejection policy.** Four standard options exist: abort returns
-an error to the caller; caller-runs makes the producer execute the task
-itself, throttling submission naturally; drop-oldest and drop-newest
-discard tasks. Caller-runs is the canonical backpressure mechanism. Drop
-policies hide overload, so reach for them only when losing work is
-actually acceptable.
+**Choose a rejection policy.** Four standard options: **abort** returns
+an error to the caller; **caller-runs** makes the producer execute the
+task itself, throttling submission naturally; **drop-oldest** and
+**drop-newest** silently discard tasks. Caller-runs is the canonical
+backpressure mechanism — drop policies hide overload, so reach for them
+only when losing work is actually acceptable.
 
 **Size for the workload type.** CPU-bound work wants roughly $N = cores$
 — extra threads only buy context-switch overhead. I/O-bound work follows
@@ -90,18 +91,18 @@ pool — blocking I/O, CPU work, and request handlers should not compete
 for the same threads.
 
 **Never let a pooled task wait on another task in the same pool.**
-Dependent tasks can fill every worker and then wait on subtasks that
-can never be scheduled — thread-starvation deadlock. Push the subtasks
-onto a separate pool, or compose them non-blockingly with futures,
-callbacks, or pipelines.
+Dependent tasks can occupy every worker and then block on subtasks that
+have no free worker left to run on — thread-starvation deadlock. Push
+the subtasks onto a separate pool, or compose them non-blockingly with
+futures, callbacks, or pipelines.
 
 **Don't let exceptions silently kill workers.** An uncaught error can
-take the worker down with it. Even if the pool spawns a replacement,
+take the worker down with it; even if the pool spawns a replacement,
 the original failure leaves no trace. Catch and log inside every task
-body, and hook into the pool's task-completion callback if the pool
-exposes one. Errors captured inside result futures stay invisible
-until someone reads the future — log on the worker side too, not only
-at the consumer.
+body, and hook into the pool's task-completion callback when one is
+exposed. Errors captured inside result futures stay invisible until
+someone reads the future — log on the worker side too, not only at the
+consumer.
 
 **Make tasks cancellation-aware and bound their runtime.** Cancellation
 delivers a signal — a flag, context, or token — that the task must

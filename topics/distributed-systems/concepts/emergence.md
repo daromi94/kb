@@ -1,10 +1,10 @@
 # Emergence
 
-A distributed system's behavior is not in its code. It lives in the
-interactions between nodes — messages, retries, timeouts, failure
-detection — where each node follows a simple local rule with only a
-partial view of the cluster. Nodes are deterministic. The cluster is
-not.
+Emergence is what a distributed system does that no single node was
+programmed to do. The behavior lives in the interactions between
+nodes — messages, retries, timeouts, failure detection — each
+following simple rules on a partial view of the cluster. Nodes
+are deterministic. The cluster is not.
 
 This is the defining property of distributed engineering: local rules
 produce global behaviors, intended and unintended, that no node was
@@ -27,7 +27,7 @@ produce macro-level behavior.
 ## Positive emergence
 
 Distributed algorithms exploit emergence on purpose. Each node follows
-a simple rule. The aggregate produces a global property no node
+simple rules; the aggregate produces a global property no node
 coordinates.
 
 - **Gossip.** Each node periodically forwards its state to a few

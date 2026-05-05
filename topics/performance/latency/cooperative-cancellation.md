@@ -15,14 +15,14 @@ uncancellable.
 ## When to cancel
 
 - **Deadline expires** — cancel anything still running.
+- **Fatal error** — cancel the rest; the result is unusable.
 - **Hedge winner returns** — cancel the losers.
-- **Fatal error** — the result is unusable; cancel the rest.
 
 ## Side effects don't undo
 
 Side effects already begun do not roll back — DB writes, external
-API calls. Idempotency keys make a canceled side effect safe on
-retry rather than catastrophic.
+API calls. Idempotency keys make a canceled side effect safe to
+retry.
 
 ## Related
 

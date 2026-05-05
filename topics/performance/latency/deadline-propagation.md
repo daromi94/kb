@@ -12,7 +12,7 @@ timeout — long after the caller has given up. The damage piles up
 while it does:
 
 - **Resources stay held** — connections, thread slots, and buffers
-  remain locked per in-flight request.
+  remain locked.
 - **Memory pressure climbs** as long-running requests accumulate.
 - **Queues grow** as new work arrives faster than slow requests
   retire.
@@ -37,10 +37,11 @@ sender computes that duration just before transmitting; the receiver
 converts it back to an absolute deadline against its own clock. The
 result is off by one network transit at most.
 
-Each hop should also reserve a slice of the budget for its own
-processing before forwarding. Otherwise, the downstream call starts
-with a deadline about to expire, leaving no time to act on the
-response.
+## Reserve a per-hop slice
+
+Each hop should reserve a slice of the budget for its own processing
+before forwarding. Otherwise, the downstream call starts with a
+deadline about to expire, leaving no time to act on the response.
 
 ## Reject expired work at dequeue
 

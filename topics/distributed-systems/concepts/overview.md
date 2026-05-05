@@ -6,11 +6,14 @@ service. Clients see a single logical entity — state management,
 coordination, and network communication are hidden behind that
 abstraction.
 
+- **Behavior** emerges from the behavior of each component and the
+  interactions between them.
+- **Complexity** emerges from the complexity of each component and
+  the intricacy of those interactions.
+
 The primary domain is foundational infrastructure: distributed file
-systems, consensus-backed configuration stores, key-value databases,
-and batch-processing frameworks. These services handle replication,
-sharding, and consensus so application logic does not deal with node
-placement or network topology.
+systems, coordination services, key-value databases, and
+batch-processing engines.
 
 ## Engineering challenges
 
@@ -55,6 +58,7 @@ memory leak is physically contained, limiting blast radius.
 
 ## Related
 
+- [Emergence](emergence.md) - Behavior arising from local interactions
 - [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
 - [Replication](replication.md) - Multi-node data copying
 - [Partitioning](partitioning.md) - Splitting data across nodes

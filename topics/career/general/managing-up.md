@@ -35,11 +35,6 @@ Your manager has a boss and their own metrics. Find out what
 specific deliverables they are evaluated on and actively align your
 work to help them succeed.
 
-## Related
-
-- [Effective one-on-ones](one-on-ones.md) - Complementary advice on
-  structuring 1:1 meetings
-
 ---
 
 Return to [Career](_index.md)

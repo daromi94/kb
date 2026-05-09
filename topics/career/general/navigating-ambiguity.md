@@ -40,13 +40,6 @@ roadmap. A vague directive like "improve reliability" becomes
 "reduce customer-impacting incidents by 80% within six months while
 maintaining current performance metrics."
 
-## Related
-
-- [Asking questions](asking-questions.md) - Forcing clarity in
-  conversations
-- [High agency](high-agency.md) - Taking ownership of ambiguous
-  situations
-
 ---
 
 Return to [Career](_index.md)

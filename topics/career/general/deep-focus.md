@@ -25,13 +25,6 @@ scroll, or perform distracting habits in that space. Over time, the
 consistent pairing of location and focused effort conditions the
 brain to enter a concentrated state on arrival.
 
-## Related
-
-- [Eisenhower matrix](eisenhower-matrix.md) - Prioritizing Q2 work
-  that focus time protects
-- [Eliminating zero days](eliminating-zero-days.md) - Filling
-  downtime with high-value work
-
 ---
 
 Return to [Career](_index.md)

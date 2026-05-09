@@ -26,11 +26,6 @@ courage. Initiate the uncomfortable conversation you have been
 avoiding. Volunteer for the messy task no one wants. Each small act
 lowers the threshold for the next one.
 
-## Related
-
-- [Scaling your impact](scaling-your-impact.md) - Ownership thinking
-  from a complementary angle
-
 ---
 
 Return to [Career](_index.md)

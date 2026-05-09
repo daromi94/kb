@@ -40,13 +40,6 @@ you have ground-level insights (customer complaints, code friction)
 they cannot see. Raising strategy or industry trends signals you are
 thinking beyond your own backlog.
 
-## Related
-
-- [Scaling your impact](scaling-your-impact.md) - Complementary
-  advice on career growth
-- [Managing up](managing-up.md) - Broader strategies for standing
-  out
-
 ---
 
 Return to [Career](_index.md)

@@ -43,11 +43,6 @@ you care about their growth. Skip the feedback sandwich — focus on
 specific observations, the impact of the behavior, and a clear
 actionable alternative.
 
-## Related
-
-- [Scaling your impact](scaling-your-impact.md) - Personal growth
-  that precedes multiplying others
-
 ---
 
 Return to [Career](_index.md)

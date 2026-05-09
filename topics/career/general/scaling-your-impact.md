@@ -37,11 +37,6 @@ Lean into difficult conversations. Give feedback directly and attach
 your name to it rather than hiding behind anonymity. Honest,
 attributed feedback builds trust and drives better outcomes.
 
-## Related
-
-- [High agency](high-agency.md) - Ownership from a complementary
-  angle
-
 ---
 
 Return to [Career](_index.md)

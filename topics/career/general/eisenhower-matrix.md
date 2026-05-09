@@ -28,11 +28,6 @@ Investing in Q2 reduces the number of crises that end up in Q1.
 Strategic planning prevents fires; skill-building prevents
 bottlenecks; relationship-building prevents misalignment.
 
-## Related
-
-- [Eliminating zero days](eliminating-zero-days.md) - A practical
-  system for capturing and executing Q2 work
-
 ---
 
 Return to [Career](_index.md)

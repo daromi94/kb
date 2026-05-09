@@ -34,13 +34,6 @@ for it?" The answer must be one of:
 
 If the answer is none of these, the task was busywork.
 
-## Related
-
-- [High agency](high-agency.md) - Owning outcomes instead of
-  reacting to circumstances
-- [Scaling your impact](scaling-your-impact.md) - Choosing
-  high-leverage work over busywork
-
 ---
 
 Return to [Career](_index.md)

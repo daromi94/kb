@@ -24,11 +24,6 @@ work with. Expose the uncertain parts of your reasoning instead of
 performing confidence. This invites collaboration and gets the team
 unstuck faster than pretending to have all the answers.
 
-## Related
-
-- [Managing up](managing-up.md) - Complementary advice on
-  professional communication
-
 ---
 
 Return to [Career](_index.md)

@@ -35,11 +35,6 @@ Compassion = empathy + action.
 Unregulated empathy leads to burnout or withdrawal. Compassionate
 Candor requires stepping past the discomfort of empathy to be direct.
 
-## Related
-
-- [Feedback framework](feedback-framework.md) - The two-axis model
-- [Caring personally](caring-personally.md) - What the Care axis means
-
 ---
 
 Return to [Radical Candor](_index.md)

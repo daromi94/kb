@@ -306,13 +306,6 @@ Do not put sensitive data (tokens, PII) in Baggage, and keep the
 total size small — large Baggage adds overhead to every network call
 in the transaction.
 
-## Related
-
-- [Context and propagation](context-propagation.md) - Overview
-- [Signals](signals.md) - The three types of telemetry data
-- [Span anatomy](span-anatomy.md) - Span fields and structure
-- [API vs SDK](api-vs-sdk.md) - Interface/implementation separation
-
 ---
 
 Return to [OpenTelemetry](_index.md)

@@ -51,13 +51,6 @@ Encoders prepending a header to a payload ByteBuf should combine
 them with a CompositeByteBuf, not `writeBytes(payload)` — which
 copies the entire payload into the encoding buffer.
 
-## Related
-
-- [Zero copy](zero-copy.md) - Pipeline-wide copy avoidance
-- [Composite ByteBuf](composite-bytebuf.md) - Logical buffer composition
-- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
-- [Resource management](resource-management.md) - Buffer ownership and release
-
 ---
 
 Return to [Netty](_index.md)

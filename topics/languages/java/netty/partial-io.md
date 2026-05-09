@@ -58,12 +58,6 @@ invoke the OS `write()` immediately:
 Application code sees a ChannelFuture that completes once the entire
 message has been sent, hiding the partial-write machinery entirely.
 
-## Related
-
-- [Non-blocking sockets](non-blocking-sockets.md) - Why partial I/O occurs
-- [Netty](netty.md) - Framework that abstracts partial I/O handling
-- [Selector](selector.md) - Multiplexer driving readiness notifications
-
 ---
 
 Return to [Netty](_index.md)

@@ -67,10 +67,6 @@ methods:
 - `allocateFrom(String)` — converts to a null-terminated UTF-8 C
   string
 
-## Related
-
-- [MemorySegment](memory-segment.md) - FFM memory access abstraction
-
 ---
 
 Return to [Native interop](_index.md)

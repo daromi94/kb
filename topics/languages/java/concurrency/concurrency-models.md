@@ -66,14 +66,6 @@ only touches connections that have actual work, then returns to monitoring.
 | NIO (multiplexed)        | Low (few threads) | High            | High concurrency, chatty I/O      |
 | Modern thread-per-client | Low to moderate   | Low             | High-scale servers, microservices |
 
-## Related
-
-- [Thread-per-client](thread-per-client.md) - Workflow and benefits of the dedicated-thread model
-- [Threads](threads.md) - Platform threads vs. virtual threads
-- [Blocking I/O](blocking-io.md) - Why blocking creates a 1:1 thread-to-request mapping
-- [I/O multiplexing](io-multiplexing.md) - select/poll/epoll and Java NIO mechanics
-- [Thread pool sizing](thread-pool-sizing.md) - Sizing pools for each model
-
 ---
 
 Return to [Concurrency](_index.md)

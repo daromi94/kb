@@ -55,12 +55,6 @@ and per-connection thread allocation.
 | Thread usage   | 1 thread = 1 connection | 1 thread = many connections |
 | OS interaction | Blocking syscalls       | Event-based notifications   |
 
-## Related
-
-- [Netty](netty.md) - Framework built to abstract NIO complexity
-- [Non-blocking sockets](non-blocking-sockets.md) - OS-level non-blocking mode
-- [Selector](selector.md) - Multiplexer replacing per-connection threads
-
 ---
 
 Return to [Netty](_index.md)

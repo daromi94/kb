@@ -97,14 +97,6 @@ try (Arena arena = Arena.ofConfined()) {
 `invokeExact()` declares `throws Throwable`, requiring a catch
 block or throws clause.
 
-## Related
-
-- [Marshaling](marshaling.md) - Data conversion across JVM/native
-  boundary
-- [Arena](arena.md) - Off-heap memory lifecycle
-- [MemorySegment](memory-segment.md) - FFM memory access
-  abstraction
-
 ---
 
 Return to [Native interop](_index.md)

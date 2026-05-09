@@ -37,11 +37,6 @@ Any handler that touches the bytes kills the zero-copy path:
   between the file source and the socket must pass it through or
   explicitly convert it; an unchecked cast to ByteBuf will fail.
 
-## Related
-
-- [Zero copy](zero-copy.md) - Application-level techniques and the pipeline principle
-- [Transport](transport.md) - Pluggable I/O mechanisms
-
 ---
 
 Return to [Netty](_index.md)

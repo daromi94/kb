@@ -99,13 +99,6 @@ cached pool can spawn threads without limit during traffic spikes. Both fail
 catastrophically under sustained load. The custom configuration in the
 production example above avoids both failure modes.
 
-## Related
-
-- [Executor service](executor-service.md) - Thread pool abstraction
-- [Fork join pool](fork-join-pool.md) - Work-stealing for recursive tasks
-- [Thread pool sizing](thread-pool-sizing.md) - Optimal thread count formulas
-- [Thread states](thread-states.md) - Diagnosing pool worker states
-
 ---
 
 Return to [Concurrency](_index.md)

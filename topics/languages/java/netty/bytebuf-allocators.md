@@ -59,12 +59,6 @@ does not consume more than half of `-XX:MaxDirectMemorySize`.
 Tuning matters mainly when the event loop count is unusual or direct
 memory is constrained.
 
-## Related
-
-- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
-- [Resource management](resource-management.md) - Buffer ownership and release
-- [Leak detection](leak-detection.md) - Diagnosing unreleased buffers
-
 ---
 
 Return to [Netty](_index.md)

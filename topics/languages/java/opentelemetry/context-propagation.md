@@ -28,11 +28,6 @@ flags in a single string.
 The receiving service extracts these headers, reconstructs the Context,
 and continues the trace as a child of the propagated Span.
 
-## Related
-
-- [Context deep dive](context-deep-dive.md) - Scope, thread propagation, W3C headers, Baggage
-- [Signals](signals.md) - The three types of telemetry data
-
 ---
 
 Return to [OpenTelemetry](_index.md)

@@ -79,13 +79,6 @@ blocked thread, the system still reaches a standstill.
 | Code complexity | Low, straightforward          | High, requires selectors/callbacks  |
 | Best suited for | Long-lived heavy connections  | Many short-lived chatty connections |
 
-## Related
-
-- [Concurrency](concurrency.md) - Why overlapping tasks improves throughput
-- [I/O multiplexing](io-multiplexing.md) - Non-blocking alternative using selectors
-- [Thread memory](thread-memory.md) - Thread-private stack and shared heap
-- [Thread pool sizing](thread-pool-sizing.md) - Sizing pools for I/O-bound workloads
-
 ---
 
 Return to [Concurrency](_index.md)

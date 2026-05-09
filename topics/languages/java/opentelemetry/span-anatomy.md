@@ -45,12 +45,6 @@ Spans are created via the Tracer
 (`io.opentelemetry.api.trace.Tracer`). The active span is held in
 thread-local storage through the Context API.
 
-## Related
-
-- [Signals](signals.md) - Overview of the three signal types
-- [Context and propagation](context-propagation.md) - How trace
-  context flows between threads and services
-
 ---
 
 Return to [OpenTelemetry](_index.md)

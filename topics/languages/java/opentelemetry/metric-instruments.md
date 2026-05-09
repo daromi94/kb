@@ -50,10 +50,6 @@ Trace ID and Span ID. The backend stores this alongside the
 aggregated metric, enabling direct navigation from a latency spike
 to the specific trace that caused it.
 
-## Related
-
-- [Signals](signals.md) - Overview of the three signal types
-
 ---
 
 Return to [OpenTelemetry](_index.md)

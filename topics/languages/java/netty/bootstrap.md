@@ -61,12 +61,6 @@ EventLoop to handle all subsequent I/O and business logic.
 Both groups can be the same `EventLoopGroup` instance when resource
 sharing is preferred over strict separation.
 
-## Related
-
-- [Event loop](event-loop.md) - Threading model and Channel registration
-- [Channel](channel.md) - The I/O conduit created during bootstrapping
-- [Netty](netty.md) - Framework overview and core components
-
 ---
 
 Return to [Netty](_index.md)

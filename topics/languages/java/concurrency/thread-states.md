@@ -78,11 +78,6 @@ Threads sit idle on `queue.take()` with nothing to process.
 **Frequent NEW-to-TERMINATED cycling:** The `keepAliveTime` is too short,
 causing the pool to destroy and recreate threads instead of reusing them.
 
-## Related
-
-- [Threads](threads.md) - Thread fundamentals and creation
-- [Thread pool executor](thread-pool-executor.md) - Pool configuration and behavior
-
 ---
 
 Return to [Concurrency](_index.md)

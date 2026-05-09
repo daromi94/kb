@@ -68,11 +68,6 @@ and is computationally expensive.
 CPU caches. Changes to shared heap memory may not be immediately visible to
 other threads without explicit synchronization.
 
-## Related
-
-- [Thread safety hazards](thread-safety-hazards.md) - Race conditions, visibility, and reordering
-- [Threads](threads.md) - Thread fundamentals and creation
-
 ---
 
 Return to [Concurrency](_index.md)

@@ -87,12 +87,6 @@ monotonically over days — this is the unambiguous leak signature.
 Monitor heap-after-GC (not raw heap usage), GC pause time and
 frequency, and Old Gen occupancy.
 
-## Related
-
-- [Memory accounting](memory-accounting.md) - Building a memory budget
-- [Off-heap diagnostics](off-heap-diagnostics.md) - When heap is not the problem
-- [Allocation profiling](allocation-profiling.md) - When rate is the issue
-
 ---
 
 Return to [Troubleshooting](_index.md)

@@ -68,12 +68,6 @@ public class ExecutorExample {
 }
 ```
 
-## Related
-
-- [Thread pool executor](thread-pool-executor.md) - Fine-tuning thread pools
-- [Fork join pool](fork-join-pool.md) - Work-stealing for recursive tasks
-- [Thread pool sizing](thread-pool-sizing.md) - Optimal thread count formulas
-
 ---
 
 Return to [Concurrency](_index.md)

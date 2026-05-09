@@ -91,12 +91,6 @@ executor.getLargestPoolSize();    // high-water mark for threads
 - **Queue constantly full:** pool is undersized, increase thread count
 - **Threads mostly idle:** pool is over-provisioned, reduce threads
 
-## Related
-
-- [Thread pool executor](thread-pool-executor.md) - Fine-tuning thread pools
-- [Executor service](executor-service.md) - Thread pool abstraction
-- [Fork join pool](fork-join-pool.md) - Work-stealing for recursive tasks
-
 ---
 
 Return to [Concurrency](_index.md)

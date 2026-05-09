@@ -59,13 +59,6 @@ when it finishes).
 in-process, allowing assertions on handler output without binding to a real
 port.
 
-## Related
-
-- [Bootstrap](bootstrap.md) - Where the transport is configured
-- [Channel](channel.md) - The I/O conduit abstraction transports implement
-- [BIO scaling walls](bio-scaling-walls.md) - Why blocking fails at scale
-- [Event loop](event-loop.md) - Thread model tied to transport choice
-
 ---
 
 Return to [Netty](_index.md)

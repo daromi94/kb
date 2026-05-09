@@ -62,13 +62,6 @@ connections, trading unbounded resource consumption for added latency when
 the pool is saturated. Virtual threads (JDK 21) remove the constraint
 entirely by multiplexing lightweight threads onto a small carrier pool.
 
-## Related
-
-- [Concurrency models](concurrency-models.md) - Server I/O architecture evolution
-- [Blocking I/O](blocking-io.md) - The 1:1 thread-to-request mapping
-- [Thread memory](thread-memory.md) - Why local variables are thread-safe
-- [Executor service](executor-service.md) - Thread pool abstraction
-
 ---
 
 Return to [Concurrency](_index.md)

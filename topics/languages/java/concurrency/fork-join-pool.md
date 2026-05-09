@@ -59,12 +59,6 @@ Per Doug Lea and Brian Goetz:
 | **Efficiency goal**   | Throughput of many requests   | Minimum latency for one large task |
 | **Java usage**        | Tomcat, Netty, general APIs   | Parallel streams engine            |
 
-## Related
-
-- [Executor service](executor-service.md) - Thread pool abstraction
-- [Thread pool executor](thread-pool-executor.md) - Fine-tuning thread pools
-- [Thread pool sizing](thread-pool-sizing.md) - Optimal thread count formulas
-
 ---
 
 Return to [Concurrency](_index.md)

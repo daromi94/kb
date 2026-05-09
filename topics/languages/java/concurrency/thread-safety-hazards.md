@@ -64,12 +64,6 @@ fencing (visibility), and a happens-before edge (ordering).
 instructions to achieve atomicity and visibility without locking, at the cost
 of requiring retry loops under contention.
 
-## Related
-
-- [Safety and liveness](safety-and-liveness.md) - The broader correctness framework
-- [Thread memory](thread-memory.md) - Shared vs. thread-private state
-- [Threads](threads.md) - Thread fundamentals and creation
-
 ---
 
 Return to [Concurrency](_index.md)

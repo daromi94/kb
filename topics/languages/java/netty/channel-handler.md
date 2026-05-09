@@ -54,13 +54,6 @@ thousands of connections. Blocking inside a handler (long database query,
 `Thread.sleep()`) freezes all those connections. Heavy work must be
 offloaded to a separate thread pool.
 
-## Related
-
-- [Channel pipeline](channel-pipeline.md) - Ordered chain handlers plug into
-- [Channel](channel.md) - The connection that handlers process
-- [Channel future](channel-future.md) - Async results from handler operations
-- [Netty](netty.md) - Framework overview and core components
-
 ---
 
 Return to [Netty](_index.md)

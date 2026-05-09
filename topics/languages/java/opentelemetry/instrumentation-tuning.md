@@ -58,10 +58,6 @@ Built-in sampler values:
 For `traceidratio` and `parentbased_traceidratio`, pass the ratio as
 the sampler arg (e.g., `0.05` retains 5% of traces).
 
-## Related
-
-- [Agent configuration](agent-configuration.md) - Config sources and exporters
-
 ---
 
 Return to [OpenTelemetry](_index.md)

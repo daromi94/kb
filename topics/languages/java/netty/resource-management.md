@@ -59,13 +59,6 @@ You do not need to release a message manually when:
   pipeline (the transport layer), Netty releases it after the write
   completes or the Channel closes
 
-## Related
-
-- [Leak detection](leak-detection.md) - Diagnosing unreleased buffers
-- [ByteBuf](bytebuf.md) - Buffer structure, pooling, and reference counting
-- [Channel handler](channel-handler.md) - Handler callbacks and pipeline role
-- [Channel pipeline](channel-pipeline.md) - Chain where ownership transfers
-
 ---
 
 Return to [Netty](_index.md)

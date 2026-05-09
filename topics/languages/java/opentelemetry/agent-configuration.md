@@ -60,11 +60,6 @@ The `otel.javaagent.logging` property controls where agent logs go:
 | `none`        | Suppressed                                       |
 | `application` | Routed through the app's SLF4J/Logback framework |
 
-## Related
-
-- [Data pipeline](data-pipeline.md) - Exporters and the Collector
-- [Instrumentation tuning](instrumentation-tuning.md) - Module and sampling control
-
 ---
 
 Return to [OpenTelemetry](_index.md)

@@ -20,11 +20,6 @@ Set the level with the JVM option `-Dio.netty.leakDetection.level=<LEVEL>`:
 `PARANOID` when reproducing a specific leak in development — the
 access traces pinpoint which handler failed to release.
 
-## Related
-
-- [Resource management](resource-management.md) - Ownership rules preventing leaks
-- [ByteBuf](bytebuf.md) - Buffer structure and reference counting
-
 ---
 
 Return to [Netty](_index.md)

@@ -55,14 +55,6 @@ The high-performance pattern is to keep large data permanently
 off-heap, passing MemorySegment pointers between Java and C
 instead of marshaling the underlying bytes.
 
-## Related
-
-- [MemorySegment](memory-segment.md) - FFM memory access
-  abstraction
-- [Arena](arena.md) - Off-heap memory lifecycle
-- [Heap vs off-heap memory](heap-vs-off-heap.md) - GC-managed vs
-  native memory
-
 ---
 
 Return to [Native interop](_index.md)

@@ -41,12 +41,6 @@ interrupted.
 `get()` sequentially or polling `isDone()`. There is no way to say "when
 this future completes, run that task automatically."
 
-## Related
-
-- [CompletableFuture](completable-future.md) - Non-blocking composition
-- [Executor service](executor-service.md) - Thread pool abstraction
-- [Safety and liveness](safety-and-liveness.md) - Blocking as a liveness risk
-
 ---
 
 Return to [Concurrency](_index.md)

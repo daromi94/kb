@@ -33,10 +33,6 @@ one or more backends. It supports two deployment patterns:
 | Agent   | Runs alongside the app as a sidecar or co-process |
 | Gateway | Standalone service receiving from multiple apps   |
 
-## Related
-
-- [API vs SDK](api-vs-sdk.md) - Where exporter configuration lives
-
 ---
 
 Return to [OpenTelemetry](_index.md)

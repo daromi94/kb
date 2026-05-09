@@ -48,12 +48,6 @@ it to the pipeline.
 | Blocking logic on EventLoop | EventLoop (I/O)      | Severe — blocks all connections on thread  |
 | Explicit executor offload   | Application executor | Full control, clear ownership of threading |
 
-## Related
-
-- [Event loop](event-loop.md) - I/O engine that must stay unblocked
-- [Channel pipeline](channel-pipeline.md) - Where handlers are configured
-- [Channel handler context](channel-handler-context.md) - Re-entering the pipeline from other threads
-
 ---
 
 Return to [Netty](_index.md)

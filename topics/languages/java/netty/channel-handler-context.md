@@ -30,12 +30,6 @@ multiple contexts) when annotated with `@ChannelHandler.Sharable`.
 - Adding an unannotated handler to more than one pipeline throws an
   exception
 
-## Related
-
-- [Channel pipeline](channel-pipeline.md) - Ordered chain owning handler contexts
-- [Channel handler](channel-handler.md) - Processing unit a context wraps
-- [Event loop](event-loop.md) - The thread that drives context invocations
-
 ---
 
 Return to [Netty](_index.md)

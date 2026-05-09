@@ -66,13 +66,6 @@ between source and socket negates careful work elsewhere. Design the
 pipeline as a chain of views and compositions, and treat any point
 where bytes get memcpy'd as a deliberate choice.
 
-## Related
-
-- [Composite ByteBuf](composite-bytebuf.md) - Application-level buffer composition
-- [File region](file-region.md) - OS-level zero-copy via sendfile
-- [Derived buffers](derived-buffers.md) - Zero-copy views over ByteBuf
-- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
-
 ---
 
 Return to [Netty](_index.md)

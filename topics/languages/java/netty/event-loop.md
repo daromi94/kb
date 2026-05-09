@@ -41,12 +41,6 @@ Because a Channel never migrates between threads, handler code can safely
 use plain fields without `volatile` or `synchronized` — the EventLoop's
 single-thread contract provides the memory visibility guarantee.
 
-## Related
-
-- [Channel](channel.md) - The I/O conduit bound to an EventLoop
-- [Selector](selector.md) - The multiplexer an EventLoop uses internally
-- [Netty](netty.md) - Framework overview and core components
-
 ---
 
 Return to [Netty](_index.md)

@@ -42,11 +42,6 @@ role:
 
 As with all handlers, `channelRead0` must not block the EventLoop thread.
 
-## Related
-
-- [Channel handler](channel-handler.md) - Handler abstraction codecs build on
-- [Channel pipeline](channel-pipeline.md) - Where codecs sit in the chain
-
 ---
 
 Return to [Netty](_index.md)

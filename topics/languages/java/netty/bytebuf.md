@@ -73,13 +73,6 @@ reference to it. When the count drops to zero, the buffer is returned to
 the pool (or its memory is freed). This ensures pooled buffers are released
 promptly rather than waiting for garbage collection.
 
-## Related
-
-- [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory pooling
-- [Channel](channel.md) - Reads and writes always go through a ByteBuf
-- [Codecs](codecs.md) - Decode ByteBuf into objects and encode back
-- [Netty](netty.md) - Framework overview
-
 ---
 
 Return to [Netty](_index.md)

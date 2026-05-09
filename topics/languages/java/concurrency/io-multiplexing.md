@@ -93,11 +93,6 @@ cost of programming complexity. Application logic must be expressed as state
 machines or callbacks rather than sequential code, since a single thread
 interleaves work across many connections.
 
-## Related
-
-- [Blocking I/O](blocking-io.md) - The synchronous model that multiplexing replaces
-- [Concurrency models](concurrency-models.md) - Server I/O architecture evolution
-
 ---
 
 Return to [Concurrency](_index.md)

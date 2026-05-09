@@ -65,12 +65,6 @@ Non-blocking sockets must be paired with an I/O multiplexer (like `epoll`
 or Java's Selector) that blocks on behalf of all registered sockets and
 wakes the application only when a socket is genuinely ready.
 
-## Related
-
-- [Selector](selector.md) - Multiplexer for non-blocking sockets
-- [Partial I/O](partial-io.md) - Incomplete reads and writes in detail
-- [BIO scaling walls](bio-scaling-walls.md) - Blocking model these sockets replace
-
 ---
 
 Return to [Netty](_index.md)

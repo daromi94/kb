@@ -79,12 +79,6 @@ f.addListener(ChannelFutureListener.CLOSE);
 Channel unconditionally when the future completes, regardless of whether
 the operation succeeded or failed.
 
-## Related
-
-- [Channel](channel.md) - The connection whose operations produce futures
-- [Channel handler](channel-handler.md) - Where futures replace blocking calls
-- [Netty](netty.md) - Framework overview and core components
-
 ---
 
 Return to [Netty](_index.md)

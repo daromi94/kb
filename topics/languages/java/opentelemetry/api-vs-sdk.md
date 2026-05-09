@@ -30,11 +30,6 @@ Configure the SDK only in your final runnable application, never in a
 shared library. This keeps the decision of *where telemetry goes* and
 *how much to sample* in the hands of the application operator.
 
-## Related
-
-- [Data pipeline](data-pipeline.md) - Exporters and the Collector
-- [Signals](signals.md) - The three types of telemetry data
-
 ---
 
 Return to [OpenTelemetry](_index.md)

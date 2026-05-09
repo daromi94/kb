@@ -97,12 +97,6 @@ try {
 library. It does not rely on OS signals. On POSIX systems, it uses
 `pthread_cond_signal` to nudge the thread out of its waiting state.
 
-## Related
-
-- [Thread states](thread-states.md) - The six JVM lifecycle states
-- [Safety and liveness](safety-and-liveness.md) - Liveness failures from blocking
-- [Executor service](executor-service.md) - Thread pool abstraction
-
 ---
 
 Return to [Concurrency](_index.md)

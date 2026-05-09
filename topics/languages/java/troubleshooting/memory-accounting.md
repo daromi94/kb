@@ -105,12 +105,6 @@ pausing to request or release memory to the OS.
 In containers, `-XX:MaxRAMPercentage` is preferred over hardcoded
 `-Xmx` values to allow dynamic sizing relative to the container limit.
 
-## Related
-
-- [Symptom triage](symptom-triage.md) - Classifying the problem first
-- [Heap dump analysis](heap-dump-analysis.md) - MAT workflow and patterns
-- [Off-heap diagnostics](off-heap-diagnostics.md) - Non-heap investigation
-
 ---
 
 Return to [Troubleshooting](_index.md)

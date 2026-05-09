@@ -57,11 +57,6 @@ stages that have not started from executing.
 | AtomicBoolean  | Polling      | Yes (at checkpoint)  | CPU-intensive work        |
 | Close resource | IOException  | Yes (immediately)    | Non-interruptible sockets |
 
-## Related
-
-- [CompletableFuture](completable-future.md) - Async composition API
-- [Interruption](interruption.md) - Cooperative thread cancellation
-
 ---
 
 Return to [Concurrency](_index.md)

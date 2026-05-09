@@ -63,11 +63,6 @@ mirror object — not in Metaspace. JIT-compiled machine code occupies the
 CodeCache, a separate native memory region sized by
 `-XX:ReservedCodeCacheSize`.
 
-## Related
-
-- [Heap vs off-heap memory](heap-vs-off-heap.md) - GC-managed vs native
-  memory and the native boundary problem
-
 ---
 
 Return to [Native interop](_index.md)

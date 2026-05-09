@@ -62,12 +62,6 @@ Netty provides a consistent, high-performance wrapper that handles state
 management, buffer pooling, and OS-specific quirks so application code can
 focus on business logic.
 
-## Related
-
-- [Non-blocking sockets](non-blocking-sockets.md) - Socket mode requiring a Selector
-- [Netty](netty.md) - Framework that wraps Selector complexity
-- [Partial I/O](partial-io.md) - Key challenge Selectors introduce
-
 ---
 
 Return to [Netty](_index.md)

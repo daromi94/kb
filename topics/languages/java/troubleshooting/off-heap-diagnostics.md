@@ -98,11 +98,6 @@ attribute native allocations to call sites. async-profiler with
 `--nativemem` mode is an alternative that can profile native memory
 allocations without replacing the system allocator.
 
-## Related
-
-- [Memory accounting](memory-accounting.md) - Building a memory budget
-- [Symptom triage](symptom-triage.md) - Classifying the problem first
-
 ---
 
 Return to [Troubleshooting](_index.md)

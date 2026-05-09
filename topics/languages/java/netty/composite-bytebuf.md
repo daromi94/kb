@@ -64,13 +64,6 @@ Releasing the composite releases each component exactly once. Do not
 manually release buffers after adding them — double-release throws
 IllegalReferenceCountException.
 
-## Related
-
-- [Zero copy](zero-copy.md) - Gathering writes and the pipeline principle
-- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
-- [Derived buffers](derived-buffers.md) - Zero-copy views over ByteBuf
-- [Resource management](resource-management.md) - Buffer ownership and release
-
 ---
 
 Return to [Netty](_index.md)

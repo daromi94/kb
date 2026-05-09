@@ -72,13 +72,6 @@ MyWorker worker = new MyWorker();
 worker.start();
 ```
 
-## Related
-
-- [Thread states](thread-states.md) - The six JVM thread lifecycle states
-- [Thread memory](thread-memory.md) - Shared vs. thread-private state in the JVM
-- [Daemon threads](daemon-threads.md) - Background service threads
-- [Executor service](executor-service.md) - Managing thread pools instead of raw threads
-
 ---
 
 Return to [Concurrency](_index.md)

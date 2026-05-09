@@ -66,12 +66,6 @@ high heap utilization after a GC cycle completes is the earliest
 indicator of a problem — alert on post-GC occupancy, not raw heap
 usage.
 
-## Related
-
-- [Symptom triage](symptom-triage.md) - Classifying the problem first
-- [Heap dump analysis](heap-dump-analysis.md) - When retention is the issue
-- [Memory accounting](memory-accounting.md) - Building a memory budget
-
 ---
 
 Return to [Troubleshooting](_index.md)

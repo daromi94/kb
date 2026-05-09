@@ -117,12 +117,6 @@ List<String> results = futures.stream()
     .toList();
 ```
 
-## Related
-
-- [Future](future.md) - The blocking predecessor
-- [Fork join pool](fork-join-pool.md) - Default pool for async methods
-- [Executor service](executor-service.md) - Custom pools for async variants
-
 ---
 
 Return to [Concurrency](_index.md)

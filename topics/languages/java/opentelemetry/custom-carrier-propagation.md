@@ -122,11 +122,6 @@ executor thread. For executor-level wrapping with
 `Context.taskWrapping()`, see the in-process propagation section in
 the context deep dive.
 
-## Related
-
-- [Context deep dive](context-deep-dive.md) - Context mechanics in depth
-- [Context and propagation](context-propagation.md) - Overview
-
 ---
 
 Return to [OpenTelemetry](_index.md)

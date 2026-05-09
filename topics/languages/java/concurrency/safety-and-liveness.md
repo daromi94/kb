@@ -51,10 +51,6 @@ Safety and liveness pull in opposite directions:
 
 Correct concurrent programs must satisfy both properties simultaneously.
 
-## Related
-
-- [Thread safety hazards](thread-safety-hazards.md) - The safety side in detail
-
 ---
 
 Return to [Concurrency](_index.md)

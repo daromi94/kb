@@ -36,12 +36,6 @@ automatically via MDC population. With the SDK alone, you must install
 a logging bridge (e.g., the Logback MDC shim) and update your log
 pattern to include the MDC keys.
 
-## Related
-
-- [Context and propagation](context-propagation.md) - How trace
-  context flows between threads and services
-- [API vs SDK](api-vs-sdk.md) - Interface/implementation separation
-
 ---
 
 Return to [OpenTelemetry](_index.md)

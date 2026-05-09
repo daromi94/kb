@@ -42,12 +42,6 @@ automatically notifies listeners on the corresponding ChannelPromise.
 | Outbound | Future listener    | `future.addListener()` at the call site           |
 | Outbound | Promise completion | `promise.setFailure()` inside an outbound handler |
 
-## Related
-
-- [Channel handler](channel-handler.md) - The `exceptionCaught` callback
-- [Channel future](channel-future.md) - Completion notification via listeners
-- [Channel pipeline](channel-pipeline.md) - The chain exceptions traverse
-
 ---
 
 Return to [Netty](_index.md)

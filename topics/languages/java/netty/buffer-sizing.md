@@ -86,12 +86,6 @@ frames are uniform. Set via `ChannelOption.RCVBUF_ALLOCATOR`.
 | Variable/unbounded    | Accept 256-byte default, let buffer grow      |
 | Length-prefixed frame | Write placeholder, back-patch with `setInt()` |
 
-## Related
-
-- [ByteBuf](bytebuf.md) - Netty's buffer abstraction
-- [ByteBuf allocators](bytebuf-allocators.md) - Arena-based memory pooling
-- [Codecs](codecs.md) - Encoder/decoder handler base classes
-
 ---
 
 Return to [Netty](_index.md)

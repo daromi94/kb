@@ -56,13 +56,6 @@ The single biggest mistake is jumping to heap dumps for every memory
 problem. Half the time the heap is fine and the answer is in NMT, GC
 logs, or native profiling.
 
-## Related
-
-- [Memory accounting](memory-accounting.md) - Building a memory budget
-- [Heap dump analysis](heap-dump-analysis.md) - MAT workflow and patterns
-- [Off-heap diagnostics](off-heap-diagnostics.md) - Non-heap investigation
-- [Allocation profiling](allocation-profiling.md) - Rate vs retention
-
 ---
 
 Return to [Troubleshooting](_index.md)

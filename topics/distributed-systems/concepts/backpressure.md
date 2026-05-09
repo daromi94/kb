@@ -20,13 +20,13 @@ it and propagates it upstream while there is still time to act.
 
 ## Mechanisms
 
-**Blocking / pull-based flow control.** The consumer pulls work
-when ready. A bounded blocking queue is canonical: when full, the
-put operation blocks the producer. Stream APIs formalize this with
-explicit demand — the subscriber tells the publisher how many items
-it can accept, and the publisher never sends more. TCP's sliding
-window is the same idea at the transport layer: the receiver
-advertises a window size, and the sender cannot exceed it.
+**Pull-based flow control.** The consumer pulls work when ready. A
+bounded blocking queue is the canonical example: when full, writes
+block the producer. Stream APIs formalize this with explicit demand
+— the subscriber tells the publisher how many items it can accept,
+and the publisher never sends more. TCP's sliding window is the same
+idea at the transport layer: the receiver advertises a window size,
+and the sender cannot exceed it.
 
 **Credit-based schemes.** The consumer hands out credits; the
 producer spends one per message and stops when it runs out. This
@@ -48,28 +48,27 @@ likely past its deadline.
 
 ## Principles
 
-*Bounded everything.* Unbounded queues are the most common source
-of mysterious outages. Every buffer, thread pool, connection pool,
+*Bounded everything.* Unbounded queues silently absorb load until
+the system collapses. Every buffer, thread pool, connection pool,
 and channel should have a finite capacity, and the behavior at
-capacity should be a deliberate design decision rather than a
-default.
+capacity should be a deliberate design decision, not a default.
 
 *Propagate end-to-end.* If service A pushes back on service B but
-B's upstream load balancer keeps accepting connections, the
+the load balancer in front of B keeps accepting connections, the
 pressure just relocates to a different buffer. The signal needs a
 path all the way to whatever can actually slow down or reject.
 
-*Latency is a backpressure signal too.* Little's Law says that if
-arrival rate exceeds service rate, queue length grows without bound
-and so does latency. Rising p99 latency with stable throughput is
-often the first observable symptom that a system is at its capacity
-ceiling. Using latency as the control signal directly is more robust
-than measuring queue depth.
+*Latency is a backpressure signal too.* If arrival rate exceeds
+service rate, queue length grows without bound and so does latency.
+Rising p99 latency with stable throughput is often the first
+observable symptom that a system is at its capacity ceiling. Using
+latency as the control signal directly is more robust than measuring
+queue depth.
 
 *Retries without backpressure amplify load.* A struggling service
 that returns errors will see clients retry, multiplying the load it
-cannot handle. Retries need budgets, jitter, and circuit breakers
-— themselves a coarse form of backpressure.
+cannot handle. Retries need budgets, jitter, and circuit breakers.
+Circuit breakers are themselves a coarse form of backpressure.
 
 ## Network of queues
 

@@ -67,11 +67,6 @@ information, the server cannot detect the reordering. A race
 condition becomes a bug only when one or more of the possible
 orderings produces an undesirable outcome.
 
-## Related
-
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
-- [Message passing](message-passing.md) - Asynchronous communication model
-
 ---
 
 Return to [Pekko](_index.md)

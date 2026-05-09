@@ -37,11 +37,6 @@ notably higher than single-item reads and writes. The system is
 designed so that this overhead does not cascade into delays for
 non-transactional operations on the same table.
 
-## Related
-
-- [Performance](performance.md) - Routing and admission control
-- [Operational lessons](operational-lessons.md) - TLA+ verification
-
 ---
 
 Return to [DynamoDB](_index.md)

@@ -52,15 +52,6 @@ this mapping.
 | Ec2Snitch / Ec2MultiRegion  | Maps AWS regions and AZs to DCs and racks           |
 | SimpleSnitch                | Development only; single DC and rack                |
 
-## Related
-
-- [Overview](overview.md) - Architecture principles and the ring
-- [Snitch](snitch.md) - Static vs dynamic snitching in depth
-- [Consistent hashing](consistent-hashing.md) - Token ring that nodes sit on
-- [Replication](replication.md) - How replicas are placed across the topology
-- [Query routing](query-routing.md) - How the snitch informs routing decisions
-- [Gossip](gossip.md) - How topology information propagates
-
 ---
 
 Return to [Cassandra](_index.md)

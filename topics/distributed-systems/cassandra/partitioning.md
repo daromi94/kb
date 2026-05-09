@@ -59,12 +59,6 @@ are stored together in a single wide row on the same physical node.
 | **Hot spots**       | Low-cardinality keys cause uneven distribution (hot partitions) |
 | **Clustering**      | Within a partition, data is sorted by clustering columns        |
 
-## Related
-
-- [Primary key](primary-key.md) - Partition key and clustering column design
-- [Consistent hashing](consistent-hashing.md) - The algorithm behind partitioning
-- [Data modeling tips](data-modeling-tips.md) - Avoiding hot partitions
-
 ---
 
 Return to [Cassandra](_index.md)

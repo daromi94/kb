@@ -57,12 +57,6 @@ When an OSD fails:
 3. **Backfilling:** Cluster identifies new homes for missing replicas and copies
    data to restore full `size` count
 
-## Related
-
-- [Read and write paths](read-write-paths.md) - How replication fits in I/O flow
-- [CRUSH algorithm](crush-algorithm.md) - How replica locations are determined
-- [Consistency model](consistency.md) - Why synchronous replication matters
-
 ---
 
 Return to [Ceph](_index.md)

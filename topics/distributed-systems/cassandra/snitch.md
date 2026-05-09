@@ -64,12 +64,6 @@ minimizes network transfer and reduces overall query latency.
 | Purpose | Define rack/DC boundaries       | Optimize for lowest latency       |
 | Impact  | Replica placement (safety)      | Query routing (performance)       |
 
-## Related
-
-- [Topology](topology.md) - Nodes, racks, data centers, and the snitch
-- [Query routing](query-routing.md) - How the coordinator dispatches requests
-- [Phi accrual failure detector](phi-accrual.md) - Scoring model used by dynamic snitch
-
 ---
 
 Return to [Cassandra](_index.md)

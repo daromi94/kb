@@ -80,14 +80,6 @@ read repair might have missed.
 | **Rack failure**        | NetworkTopologyStrategy ensures replicas exist in other racks         |
 | **Data center failure** | Cross-DC replication allows traffic to failover to a different region |
 
-## Related
-
-- [Replication](replication.md) - How data redundancy is configured
-- [Hinted handoff](hinted-handoff.md) - Store-and-forward writes in depth
-- [Anti-entropy](anti-entropy.md) - Read repair and Merkle tree repair in depth
-- [Consistency](consistency.md) - Trade-offs between availability and consistency
-- [Gossip](gossip.md) - How failures are detected
-
 ---
 
 Return to [Cassandra](_index.md)

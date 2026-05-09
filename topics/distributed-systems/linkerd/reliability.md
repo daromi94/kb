@@ -37,11 +37,6 @@ Per-route timeouts bound how long the proxy will wait for a response
 before failing the call back to the client. This protects a caller
 from having its resources tied up by a slow or hung downstream.
 
-## Related
-
-- [Protocol detection](protocol-detection.md) - Retries need the HTTP path
-- [Golden metrics](golden-metrics.md) - How slowness becomes visible
-
 ---
 
 Return to [Linkerd](_index.md)

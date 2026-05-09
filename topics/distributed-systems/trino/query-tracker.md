@@ -110,12 +110,6 @@ coordinator — a client that routes to a different coordinator mid-query
 gets a lookup failure. There is no shared store, no replication, no
 cluster-wide query registry.
 
-## Related
-
-- [Coordinator deep dive](coordinator-deep-dive.md) - Other coordinator subsystems
-- [Discovery service](discovery-service.md) - The other coordinator-side registry
-- [Query lifecycle](query-lifecycle.md) - End-to-end phases of a query
-
 ---
 
 Return to [Trino](_index.md)

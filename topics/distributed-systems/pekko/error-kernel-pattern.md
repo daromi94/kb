@@ -83,12 +83,6 @@ Workers are typically ephemeral, spawned per-request:
 This per-request lifecycle simplifies state management — each
 worker's lifecycle maps to exactly one operation.
 
-## Related
-
-- [Hierarchical design](hierarchical-design.md) - Hierarchy design guidelines
-- [Supervision](supervision.md) - Mechanism that makes the pattern work
-- [Death watch](death-watch.md) - Termination monitoring for workers
-
 ---
 
 Return to [Pekko](_index.md)

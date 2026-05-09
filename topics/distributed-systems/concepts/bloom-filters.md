@@ -67,11 +67,6 @@ cached if they hit the Bloom filter a second time.
 | Deletion        | Not supported — removing a bit affects other items |
 | Space usage     | Constant — grows with item count, not item size    |
 
-## Related
-
-- [Segmented log](segmented-log.md) - Bloom filters help skip segments
-  during key lookups
-
 ---
 
 Return to [Concepts](_index.md)

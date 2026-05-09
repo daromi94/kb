@@ -54,12 +54,6 @@ inconsistent data temporarily.
 | Availability        | **Partial** | Sacrificed during partitions/quorum loss    |
 | Partition Tolerance | **High**    | Monitor quorum (Paxos) prevents split-brain |
 
-## Related
-
-- [Read and write paths](read-write-paths.md) - How consistency is enforced
-- [Replication](replication.md) - The synchronous replication model
-- [Cluster operations](cluster-operations.md) - How failures are detected
-
 ---
 
 Return to [Ceph](_index.md)

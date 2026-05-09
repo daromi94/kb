@@ -35,11 +35,6 @@ This hashing scheme lets the request router contact the correct
 storage node directly without scanning, maintaining single-digit
 millisecond latency regardless of table size.
 
-## Related
-
-- [Partitioning and replication](partitioning-and-replication.md) - Partition placement
-- [Performance](performance.md) - Routing and admission control
-
 ---
 
 Return to [DynamoDB](_index.md)

@@ -74,13 +74,6 @@ quotas, and circuit breakers exist to answer the second question.
 They are not optional features. They are the constraints that stop
 locally correct decisions from compounding into a global outage.
 
-## Related
-
-- [Overview](overview.md) - Definition and motivation
-- [Metastable failures](metastable-failures.md) - Self-sustaining failure states
-- [Blast radius reduction](blast-radius-reduction.md) - Containment through compartmentalization
-- [Failure detection at scale](failure-detection-at-scale.md) - Heartbeat topology at scale
-
 ---
 
 Return to [Concepts](_index.md)

@@ -68,12 +68,6 @@ parallel across all available executors.
           +-------------------------+
 ```
 
-## Related
-
-- [Overview](overview.md) - What Ballista is and where it fits
-- [Query lifecycle](query-lifecycle.md) - From submission to result
-- [Shuffle](shuffle.md) - How partitions move between stages
-
 ---
 
 Return to [Ballista](_index.md)

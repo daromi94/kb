@@ -58,11 +58,6 @@ locked indefinitely. Paxos is consensus-based: as long as a quorum of
 replicas is alive, the transaction can be resolved or timed out without
 locking the table.
 
-## Related
-
-- [Consistency](consistency.md) - Tunable consistency levels and strong consistency formula
-- [Replication](replication.md) - Quorum-based replica acknowledgment
-
 ---
 
 Return to [Cassandra](_index.md)

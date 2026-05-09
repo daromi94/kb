@@ -30,11 +30,6 @@ component or the network, and falls into one of two categories:
 At any moment, exactly one component or the network completes exactly
 one step; the system's behavior is the resulting sequence of states.
 
-## Related
-
-- [Overview](overview.md) - Definition and motivation
-- [Emergence](emergence.md) - Global behavior from local rules
-
 ---
 
 Return to [Concepts](_index.md)

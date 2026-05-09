@@ -52,11 +52,6 @@ The final stage streams its output back to the scheduler, which streams
 it on to the client. There is no cluster-side materialization of final
 results.
 
-## Related
-
-- [Architecture](architecture.md) - Component roles in detail
-- [Shuffle](shuffle.md) - The shuffle file format and Flight transport
-
 ---
 
 Return to [Ballista](_index.md)

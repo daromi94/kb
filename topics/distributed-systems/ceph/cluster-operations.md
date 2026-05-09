@@ -59,12 +59,6 @@ While Monitors handle cluster "state," the **Manager** handles "status":
 - Provides data to Prometheus or Ceph Dashboard
 - Runs the `balancer` module to fine-tune data distribution
 
-## Related
-
-- [Read and write paths](read-write-paths.md) - Detailed I/O flow
-- [CRUSH algorithm](crush-algorithm.md) - How locations are calculated
-- [Consistency model](consistency.md) - What happens during failures
-
 ---
 
 Return to [Ceph](_index.md)

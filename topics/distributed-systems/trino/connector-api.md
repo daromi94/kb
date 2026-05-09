@@ -68,12 +68,6 @@ The coordinator plans the join, pushes the region filter into the Hive
 scanner, fetches matching rows from both sources in parallel, and joins on a
 worker. The user sees one logical SQL surface across heterogeneous storage.
 
-## Related
-
-- [Architecture](architecture.md) - How connectors fit into the cluster
-- [Query optimization](query-optimization.md) - How statistics drive planning
-- [Query lifecycle](query-lifecycle.md) - Where splits enter scheduling
-
 ---
 
 Return to [Trino](_index.md)

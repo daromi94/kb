@@ -72,15 +72,6 @@ rejects any write carrying a token lower than the current one.
 | Dependency | None                                 | Requires maintaining a separate cluster    |
 | Best for   | Databases and core infrastructure    | Microservices and distributed applications |
 
-## Related
-
-- [Leader and followers](leader-and-followers.md) - The pattern that
-  depends on having an elected leader
-- [Replication](replication.md) - Replication strategies that rely on
-  leader coordination
-- [Segmented log](segmented-log.md) - Log completeness checks during
-  voting use the replicated log
-
 ---
 
 Return to [Concepts](_index.md)

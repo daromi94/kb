@@ -38,12 +38,6 @@ Scalable Hashing) algorithm. Unlike traditional storage that uses a central
 lookup table to find files, Ceph calculates data locations on the fly. Clients
 use CRUSH to determine which OSDs hold data, eliminating the central bottleneck.
 
-## Related
-
-- [Storage interfaces](storage-interfaces.md) - The three access methods
-- [RADOS architecture](rados.md) - Core storage layer and daemons
-- [CRUSH algorithm](crush-algorithm.md) - How data placement is calculated
-
 ---
 
 Return to [Ceph](_index.md)

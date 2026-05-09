@@ -68,10 +68,6 @@ Both use LSM trees but differ in where data lives:
 - MemStore → Memtable
 - HFile → SSTable (Sorted String Table)
 
-## Related
-
-- [Data model](data-model.md) - Logical structure that maps to this storage
-
 ---
 
 Return to [HBase](_index.md)

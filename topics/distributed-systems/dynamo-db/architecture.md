@@ -51,12 +51,6 @@ When a storage node or replica is unhealthy — bad hardware, high
 latency — autoadmin triggers recovery to replace affected replicas
 and restore the replication group to full strength.
 
-## Related
-
-- [Partitioning and replication](partitioning-and-replication.md) - Replication groups and write path
-- [Performance](performance.md) - Routing and admission control
-- [Operational lessons](operational-lessons.md) - Continuous verification
-
 ---
 
 Return to [DynamoDB](_index.md)

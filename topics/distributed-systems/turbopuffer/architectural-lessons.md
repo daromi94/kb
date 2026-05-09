@@ -52,13 +52,6 @@ maximizing NVMe cache hit rates and turning 400ms cold queries into
 8ms warm ones — without sacrificing the ability to fail over instantly
 to any other node.
 
-## Related
-
-- [Architecture](architecture.md) - Core stateless compute and storage model
-- [SPFresh index](spfresh-index.md) - Centroid-based index designed for S3
-- [Multi-tenancy](multi-tenancy.md) - Namespace isolation and sticky routing
-- [Tradeoffs](tradeoffs.md) - Deliberate design tradeoffs
-
 ---
 
 Return to [Turbopuffer](_index.md)

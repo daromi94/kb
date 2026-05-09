@@ -51,12 +51,6 @@ What the control plane does not do is as deliberate as what it does:
 - No WASM or plugin system — the proxy is a closed system
 - No proxy configuration beyond annotations and CRDs
 
-## Related
-
-- [Architecture](architecture.md) - The structure these decisions produced
-- [Proxy internals](proxy-internals.md) - Purpose-built proxy rationale
-- [Automatic mTLS](mtls.md) - Zero-config security in practice
-
 ---
 
 Return to [Linkerd](_index.md)

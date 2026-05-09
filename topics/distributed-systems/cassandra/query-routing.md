@@ -82,12 +82,6 @@ coordinator plays back the hint to bring the node up to date.
 | **Execution**      | Coordinator sends requests in parallel                          |
 | **Reconciliation** | Coordinator waits for enough acks to satisfy the CL             |
 
-## Related
-
-- [Gossip](gossip.md) - How nodes share cluster state
-- [Consistency](consistency.md) - Tunable consistency levels
-- [Replication](replication.md) - How replicas are identified
-
 ---
 
 Return to [Cassandra](_index.md)

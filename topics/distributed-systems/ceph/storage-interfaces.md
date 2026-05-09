@@ -64,11 +64,6 @@ containerized applications.
 | Shared access   | No (single host)     | Yes (global)         | Yes (multiple hosts) |
 | Performance     | Low latency          | High throughput      | Balanced             |
 
-## Related
-
-- [RADOS architecture](rados.md) - The underlying storage layer
-- [CephFS vs NFS](cephfs-vs-nfs.md) - When to use each
-
 ---
 
 Return to [Ceph](_index.md)

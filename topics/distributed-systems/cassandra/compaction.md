@@ -71,13 +71,6 @@ merge completes and the old files are deleted.
 cluster accumulates compaction debt: a growing backlog of small SSTables
 that degrades read performance.
 
-## Related
-
-- [Storage model](storage-model.md) - Write path and SSTable lifecycle
-- [Tombstones](tombstones.md) - Deletion markers purged during compaction
-- [Bloom filters](bloom-filters.md) - Rebuilt for each new SSTable
-- [LSM-tree](lsm-tree.md) - Architectural foundation for compaction
-
 ---
 
 Return to [Cassandra](_index.md)

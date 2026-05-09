@@ -66,11 +66,6 @@ Hybrid search combines semantic similarity (vector) with exact keyword
 matching (BM25), allowing retrieval that captures both meaning and
 specific terms.
 
-## Related
-
-- [Architecture](architecture.md) - Storage hierarchy that SPFresh is designed for
-- [Tradeoffs](tradeoffs.md) - First-stage retrieval philosophy
-
 ---
 
 Return to [Turbopuffer](_index.md)

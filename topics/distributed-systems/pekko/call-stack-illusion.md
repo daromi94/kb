@@ -54,12 +54,6 @@ These requirements are identical to those of distributed systems.
 Concurrency within a single machine and communication across a network
 demand the same failure model.
 
-## Related
-
-- [Supervision](supervision.md) - Fault handling that replaces call-stack propagation
-- [Shared memory illusion](shared-memory-illusion.md) - Hardware reality of memory
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - The OOP argument for actors
-
 ---
 
 Return to [Pekko](_index.md)

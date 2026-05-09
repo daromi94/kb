@@ -67,12 +67,6 @@ Benefits:
     +--------+           +--------+            +--------+
 ```
 
-## Related
-
-- [CRUSH algorithm](crush-algorithm.md) - How data placement is calculated
-- [Data placement](data-placement.md) - Pools and Placement Groups
-- [Cluster operations](cluster-operations.md) - How daemons coordinate
-
 ---
 
 Return to [Ceph](_index.md)

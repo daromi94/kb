@@ -135,12 +135,6 @@ candidate for separation due to its resource spikes. For vector
 databases, index building dwarfs traditional compaction in compute
 cost.
 
-## Related
-
-- [Architecture](architecture.md) - Turbopuffer's production architecture
-- [Consistency and durability](consistency-and-durability.md) - WAL and consistency model
-- [Tradeoffs](tradeoffs.md) - Design tradeoffs in practice
-
 ---
 
 Return to [Turbopuffer](_index.md)

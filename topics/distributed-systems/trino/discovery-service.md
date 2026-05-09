@@ -116,12 +116,6 @@ coordinator runs its own registry against its own pool of workers, and
 clients reach the gateway rather than any individual coordinator. The
 discovery layer itself is never clustered.
 
-## Related
-
-- [Architecture](architecture.md) - Where the coordinator fits in the cluster
-- [Coordinator deep dive](coordinator-deep-dive.md) - Other coordinator subsystems
-- [Fault-tolerant execution](fault-tolerant-execution.md) - Retry path on lost workers
-
 ---
 
 Return to [Trino](_index.md)

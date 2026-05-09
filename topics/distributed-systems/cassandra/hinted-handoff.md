@@ -61,13 +61,6 @@ flooding the recovering node.
 | Expiration        | Configurable time window (default ~3 hours)                |
 | Beyond expiration | Anti-entropy repair required                               |
 
-## Related
-
-- [Anti-entropy](anti-entropy.md) - Repair for data missed beyond the hint window
-- [Fault tolerance](fault-tolerance.md) - How hinted handoff fits into self-healing
-- [Gossip](gossip.md) - How node liveness is detected
-- [Consistency](consistency.md) - Tunable consistency levels
-
 ---
 
 Return to [Cassandra](_index.md)

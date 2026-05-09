@@ -39,10 +39,6 @@ node reports its consumption to a central tracker, which balances
 capacity across partitions so that one hot partition cannot starve
 others sharing the same table allocation.
 
-## Related
-
-- [Operational lessons](operational-lessons.md) - Principles from operating at scale
-
 ---
 
 Return to [DynamoDB](_index.md)

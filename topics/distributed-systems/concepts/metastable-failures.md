@@ -81,13 +81,6 @@ ask what margin it consumes and what the new boundary looks like —
 the optimization that makes today's graphs greener may be the one
 that sustains tomorrow's outage.
 
-## Related
-
-- [Crash or continue](crash-or-continue.md) - Error handling
-  decisions that prevent triggers from cascading
-- [Blast radius reduction](blast-radius-reduction.md) - Containment
-  so one workload's spike cannot recruit the whole fleet
-
 ---
 
 Return to [Concepts](_index.md)

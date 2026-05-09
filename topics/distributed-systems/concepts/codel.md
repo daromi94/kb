@@ -64,11 +64,6 @@ behaves under load:
   thing on any machine. A 10,000-item queue does not — its
   meaning shifts with every CPU upgrade or workload change.
 
-## Related
-
-- [Metastable failures](metastable-failures.md) - Self-sustaining failure states
-- [Blast radius reduction](blast-radius-reduction.md) - Containment through compartmentalization
-
 ---
 
 Return to [Concepts](_index.md)

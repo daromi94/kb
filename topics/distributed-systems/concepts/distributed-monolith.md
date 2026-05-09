@@ -76,13 +76,6 @@ systems that require cross-team coordination for every feature.
 one application is a method rename. Fixing an API between services
 requires versioning, backward compatibility, and coordinated rollouts.
 
-## Related
-
-- [Separate compute from data](separate-compute-from-data.md) - Splitting
-  compute without splitting data is a root cause
-- [Stateless vs stateful](stateless-vs-stateful.md) - Shared databases
-  violate clean state ownership
-
 ---
 
 Return to [Concepts](_index.md)

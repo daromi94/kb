@@ -42,11 +42,6 @@ approach with tunable eventual consistency.
 | Best for     | Scans, batch processing             | High write rate, always-on   |
 | Internals    | Relies on HDFS & ZooKeeper          | Manages own storage & gossip |
 
-## Related
-
-- [Architecture](architecture.md) - How master/slave coordination works
-- [Consistency model](consistency-model.md) - Why HBase chooses CP
-
 ---
 
 Return to [HBase](_index.md)

@@ -46,10 +46,6 @@ hit triggers an asynchronous backend call. The system is always
 provisioned for the "worst case," so a cache failure never causes a
 traffic surge the backend cannot absorb.
 
-## Related
-
-- [Performance](performance.md) - Latency and admission control
-
 ---
 
 Return to [DynamoDB](_index.md)

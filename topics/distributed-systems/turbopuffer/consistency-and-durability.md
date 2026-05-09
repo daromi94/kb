@@ -64,11 +64,6 @@ potentially stale or incorrect data. The single stateful dependency on
 object storage eliminates the consensus problems of multi-node
 stateful architectures.
 
-## Related
-
-- [Architecture](architecture.md) - Storage hierarchy and compute model
-- [Tradeoffs](tradeoffs.md) - Write latency cost of durable writes
-
 ---
 
 Return to [Turbopuffer](_index.md)

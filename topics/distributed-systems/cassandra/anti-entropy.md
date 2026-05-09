@@ -73,13 +73,6 @@ window (typically 3 hours) would permanently hold stale data. These
 protocols ensure that every replica eventually converges to the most recent
 state.
 
-## Related
-
-- [Hinted handoff](hinted-handoff.md) - Short-term store-and-forward for missed writes
-- [Replication](replication.md) - Replica placement and anti-entropy overview
-- [Fault tolerance](fault-tolerance.md) - Self-healing mechanisms
-- [Tombstones](tombstones.md) - How deletes interact with repair
-
 ---
 
 Return to [Cassandra](_index.md)

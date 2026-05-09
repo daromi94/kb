@@ -64,19 +64,6 @@ must catch up on missed log entries. This typically involves replaying
 from the segmented log, guided by the low-water mark to determine
 where to start.
 
-## Related
-
-- [Replication](replication.md) - Broader strategies including
-  multi-leader and leaderless approaches
-- [Leader election](leader-election.md) - How a leader is chosen and
-  replaced after failure
-- [Write-ahead log](write-ahead-log.md) - The log structure that
-  underpins the replication flow
-- [Low-water mark](low-water-mark.md) - Determines the safe boundary
-  for log cleanup and follower catch-up
-- [Quorum and linearizability](quorum-and-linearizability.md) - Why
-  quorum overlap alone does not guarantee strong consistency
-
 ---
 
 Return to [Concepts](_index.md)

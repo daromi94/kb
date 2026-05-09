@@ -54,10 +54,6 @@ Each row only stores the columns it actually has values for.
 - **Column qualifiers are lightweight:** Add freely as needed without schema
   changes.
 
-## Related
-
-- [Storage engine](storage-engine.md) - How this model maps to physical storage
-
 ---
 
 Return to [HBase](_index.md)

@@ -38,12 +38,6 @@ Per-pod annotations override namespace-level settings. This lets
 operators enable injection cluster-wide while opting out individual
 workloads that are incompatible with the sidecar.
 
-## Related
-
-- [Traffic interception](traffic-interception.md) - What linkerd-init does after injection
-- [Architecture](architecture.md) - Where the injector sits in the control plane
-- [Destination service](destination-service.md) - What the proxy connects to after injection
-
 ---
 
 Return to [Linkerd](_index.md)

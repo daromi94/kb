@@ -69,13 +69,6 @@ object storage, eliminating the need for application-level replication
 across disk-heavy servers. The tradeoff is higher per-write latency
 from the S3 roundtrip.
 
-## Related
-
-- [SPFresh index](spfresh-index.md) - Search index designed for object storage access patterns
-- [Consistency and durability](consistency-and-durability.md) - WAL design and consistency model
-- [Multi-tenancy](multi-tenancy.md) - Namespace isolation and resource sharing
-- [Tradeoffs](tradeoffs.md) - Deliberate design tradeoffs and fit assessment
-
 ---
 
 Return to [Turbopuffer](_index.md)

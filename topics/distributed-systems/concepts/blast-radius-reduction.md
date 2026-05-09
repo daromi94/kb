@@ -50,13 +50,6 @@ The failure is not prevented — it is contained. The system can tolerate
 imperfect judgment about when to crash, which is the realistic
 operating condition of any large codebase.
 
-## Related
-
-- [Crash or continue](crash-or-continue.md) - The decision framework
-  this mitigates
-- [Partitioning](partitioning.md) - Splitting data similarly bounds the
-  loss from a single failure
-
 ---
 
 Return to [Concepts](_index.md)

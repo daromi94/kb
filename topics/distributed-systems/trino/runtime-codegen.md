@@ -43,11 +43,6 @@ generated classes. In return, the per-row cost on the hot path drops by an
 order of magnitude or more. For analytical queries scanning millions of
 rows, this is a clear win.
 
-## Related
-
-- [Execution model](execution-model.md) - Pipelined runtime that hosts codegen
-- [Query lifecycle](query-lifecycle.md) - When codegen happens during planning
-
 ---
 
 Return to [Trino](_index.md)

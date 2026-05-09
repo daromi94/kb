@@ -23,12 +23,6 @@ container entirely.
 Only TCP traffic is intercepted. UDP bypasses the mesh completely —
 the proxy does not handle UDP at any layer.
 
-## Related
-
-- [Proxy internals](proxy-internals.md) - What the proxy does with intercepted traffic
-- [Architecture](architecture.md) - Where linkerd-init fits in the pod
-- [Request lifecycle](request-lifecycle.md) - Full request path through the mesh
-
 ---
 
 Return to [Linkerd](_index.md)

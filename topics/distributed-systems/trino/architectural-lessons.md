@@ -167,15 +167,6 @@ Architectural failures often come from trying to do everything;
 architectural success tends to come from picking constraints early
 and holding them.
 
-## Related
-
-- [Architecture](architecture.md) - Coordinator, workers, and connectors
-- [Connector API](connector-api.md) - The SPI in practice
-- [Backpressure](backpressure.md) - Self-regulating flow control
-- [Query termination](query-termination.md) - Idempotent state transitions
-- [Fault-tolerant execution](fault-tolerant-execution.md) - The exchange seam
-- [Discovery service](discovery-service.md) - Eventually consistent membership
-
 ---
 
 Return to [Trino](_index.md)

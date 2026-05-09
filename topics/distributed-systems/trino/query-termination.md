@@ -57,13 +57,6 @@ This is why a query that "won't die" is almost always a worker stuck
 in a non-cancellable native call. The coordinator already considers
 the query terminal; the wait is for the worker to notice.
 
-## Related
-
-- [Query tracker](query-tracker.md) - Where lifecycle limits are enforced
-- [Discovery service](discovery-service.md) - Where worker death is detected
-- [Coordinator deep dive](coordinator-deep-dive.md) - Memory enforcement
-- [Fault-tolerant execution](fault-tolerant-execution.md) - The retry alternative
-
 ---
 
 Return to [Trino](_index.md)

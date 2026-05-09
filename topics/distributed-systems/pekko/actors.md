@@ -54,14 +54,6 @@ Behaviors are typed to match their actor ref. A successor behavior
 must handle the same message type as its predecessor, preserving the
 validity of all outstanding references.
 
-## Related
-
-- [Message passing](message-passing.md) - How actors communicate
-- [Actor lifecycle](actor-lifecycle.md) - Actor creation and termination
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
-- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
-- [Supervision](supervision.md) - Parent-child fault handling
-
 ---
 
 Return to [Pekko](_index.md)

@@ -90,12 +90,6 @@ CREATE TABLE weather_data (
 | **Partition key**     | Cluster distribution | Fast node lookups; avoids cluster scans   |
 | **Clustering column** | Local sorting        | Fast range scans; efficient data grouping |
 
-## Related
-
-- [Partitioning](partitioning.md) - How data is distributed across the cluster
-- [Consistent hashing](consistent-hashing.md) - The algorithm behind partition placement
-- [Data modeling tips](data-modeling-tips.md) - Best practices for key design
-
 ---
 
 Return to [Cassandra](_index.md)

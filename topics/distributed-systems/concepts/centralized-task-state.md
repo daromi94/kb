@@ -57,14 +57,6 @@ every running task. Most systems accept this and require the client to
 retry; investing in coordinator high availability requires replicating the
 state machine itself.
 
-## Related
-
-- [Control plane vs data plane](control-plane-data-plane.md) - The coordinator
-  drives the control plane; workers exchange data out-of-band on the data plane
-- [Leader and followers](leader-and-followers.md) - Similar centralization for
-  durable replicated state rather than ephemeral task lifecycle
-- [Heartbeat](heartbeat.md) - Liveness signal that detects unresponsive workers
-
 ---
 
 Return to [Concepts](_index.md)

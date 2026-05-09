@@ -56,15 +56,6 @@ In systems like Kafka each segment consists of companion files:
 The result is a log that behaves like an infinite stream while physically
 consisting of finite, disposable files.
 
-## Related
-
-- [Write-ahead log](write-ahead-log.md) - The pattern that segmented
-  logs build on
-- [Low-water mark](low-water-mark.md) - Determines which segments are
-  safe to delete
-- [Bloom filters](bloom-filters.md) - Often used alongside segment
-  indexes to skip segments that cannot contain a key
-
 ---
 
 Return to [Concepts](_index.md)

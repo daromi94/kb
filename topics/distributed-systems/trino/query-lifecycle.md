@@ -64,12 +64,6 @@ move data over the network. Results stream back to the coordinator and out
 to the client as soon as they are ready — there is no "wait until the whole
 query finishes" step.
 
-## Related
-
-- [Architecture](architecture.md) - Coordinator and worker roles
-- [Query optimization](query-optimization.md) - What the optimizer decides
-- [Execution model](execution-model.md) - How drivers and pages run
-
 ---
 
 Return to [Trino](_index.md)

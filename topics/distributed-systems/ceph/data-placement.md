@@ -58,11 +58,6 @@ that subtree to a different MDS without client awareness.
 This multi-layered approach lets Ceph handle exabytes of data by replacing
 central lookup tables with calculations (CRUSH) and sharded structures (PGs).
 
-## Related
-
-- [CRUSH algorithm](crush-algorithm.md) - How placement is calculated
-- [Replication](replication.md) - How data is protected within PGs
-
 ---
 
 Return to [Ceph](_index.md)

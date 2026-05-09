@@ -78,12 +78,6 @@ new election. The newly elected leader waits for the previous leader's
 lease to expire before serving traffic — a pause of a few seconds —
 preventing two nodes from acting as leader simultaneously.
 
-## Related
-
-- [Data model](data-model.md) - Partition key hashing
-- [Replica types](replica-types.md) - Replica roles in a group
-- [Performance](performance.md) - Routing and admission control
-
 ---
 
 Return to [DynamoDB](_index.md)

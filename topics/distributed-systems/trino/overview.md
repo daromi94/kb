@@ -40,12 +40,6 @@ Trino with little or no change.
 - Tiny datasets where a single-node engine suffices.
 - Workloads needing strict ACID across multi-statement transactions.
 
-## Related
-
-- [Architecture](architecture.md) - Coordinator and worker roles
-- [Connector API](connector-api.md) - How Trino plugs into data sources
-- [Execution model](execution-model.md) - In-memory pipelined processing
-
 ---
 
 Return to [Trino](_index.md)

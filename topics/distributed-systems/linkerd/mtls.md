@@ -34,11 +34,6 @@ configured with. Rotating the trust anchor requires coordinating
 across every proxy in the cluster, so it is kept distinct from the
 short-lived leaf certs that rotate automatically.
 
-## Related
-
-- [Architecture](architecture.md) - Where the identity service runs
-- [Protocol detection](protocol-detection.md) - mTLS covers HTTP and opaque TCP
-
 ---
 
 Return to [Linkerd](_index.md)

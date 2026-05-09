@@ -82,11 +82,6 @@ to reduce latency.
 | Network hops  | Client → Primary → Replicas      | Client → Primary          |
 | Load          | High (hashing, WAL, replication) | Low (hashing, local read) |
 
-## Related
-
-- [Replication](replication.md) - How replicas are managed
-- [Consistency model](consistency.md) - The CAP trade-offs
-
 ---
 
 Return to [Ceph](_index.md)

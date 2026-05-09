@@ -23,13 +23,6 @@ DeadLetters. The actor ref's mailbox is replaced with a system
 mailbox that redirects all future messages to DeadLetters. This is
 best-effort — do not rely on it for guaranteed delivery.
 
-## Related
-
-- [Actors](actors.md) - Actor model fundamentals
-- [Message passing](message-passing.md) - Mailbox mechanics
-- [Supervision](supervision.md) - Restart mechanics
-- [Death watch](death-watch.md) - Observing termination
-
 ---
 
 Return to [Pekko](_index.md)

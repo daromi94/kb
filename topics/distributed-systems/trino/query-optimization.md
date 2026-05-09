@@ -56,12 +56,6 @@ constant folding, predicate simplification, subquery decorrelation,
 redundant projection removal, exchange elimination. These run repeatedly
 until the plan stabilizes.
 
-## Related
-
-- [Connector API](connector-api.md) - Where statistics and pushdown come from
-- [Query lifecycle](query-lifecycle.md) - When optimization happens
-- [Execution model](execution-model.md) - How chosen plans actually run
-
 ---
 
 Return to [Trino](_index.md)

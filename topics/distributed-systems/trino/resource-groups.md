@@ -51,12 +51,6 @@ memory. Resource groups give each tenant its own envelope: queries
 that would otherwise compete with the rest of the cluster are queued
 within their group, so one heavy workload cannot stall everyone else.
 
-## Related
-
-- [Query tracker](query-tracker.md) - The registry queries enter once admitted
-- [Query termination](query-termination.md) - Where memory-killer paths converge
-- [Coordinator deep dive](coordinator-deep-dive.md) - Other coordinator subsystems
-
 ---
 
 Return to [Trino](_index.md)

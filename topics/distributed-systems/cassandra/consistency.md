@@ -90,12 +90,6 @@ multi-phase prepare/propose/commit cycle. It ensures that a specific condition
 is met across the cluster before the write is finalized, though it carries a
 significant performance penalty compared to standard writes.
 
-## Related
-
-- [Replication](replication.md) - How replicas are created and placed
-- [Query routing](query-routing.md) - How the coordinator manages requests
-- [Fault tolerance](fault-tolerance.md) - How consistency interacts with failures
-
 ---
 
 Return to [Cassandra](_index.md)

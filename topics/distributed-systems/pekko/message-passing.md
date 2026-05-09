@@ -71,14 +71,6 @@ In a large system the exact order in which actors process messages is
 not controllable and not intended to be. The system determines
 scheduling; application logic should not depend on global ordering.
 
-## Related
-
-- [Actors](actors.md) - Actor model fundamentals
-- [Actor lifecycle](actor-lifecycle.md) - Actor creation and termination
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - Why OOP breaks under concurrency
-- [Shared memory illusion](shared-memory-illusion.md) - Hardware reality of memory
-- [Call stack illusion](call-stack-illusion.md) - Hardware reality of threads
-
 ---
 
 Return to [Pekko](_index.md)

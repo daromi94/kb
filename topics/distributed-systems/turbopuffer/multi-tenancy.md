@@ -45,11 +45,6 @@ the user starts searching. This hides cold-start latency by
 triggering the S3-to-NVMe transfer while the user is still
 navigating to the search interface.
 
-## Related
-
-- [Architecture](architecture.md) - Stateless compute and hydration model
-- [Tradeoffs](tradeoffs.md) - Cold start implications of the caching model
-
 ---
 
 Return to [Turbopuffer](_index.md)

@@ -74,13 +74,6 @@ translates them into rules that proxies enforce on inbound traffic.
 4. On every inbound request, the proxy checks the peer's mTLS
    identity against the policy and allows or rejects the call
 
-## Related
-
-- [Architecture](architecture.md) - Where the destination deployment sits
-- [Proxy internals](proxy-internals.md) - How proxies consume the gRPC streams
-- [Automatic mTLS](mtls.md) - Identities the policy controller authorizes
-- [Protocol detection](protocol-detection.md) - What opaque ports bypass
-
 ---
 
 Return to [Linkerd](_index.md)

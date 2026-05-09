@@ -33,11 +33,6 @@ stays available throughout the shutdown of application actors.
 3. /system shuts down infrastructure actors (logging, etc.)
 4. The ActorSystem terminates its threads
 
-## Related
-
-- [Supervision](supervision.md) - Parent-child fault handling
-- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
-
 ---
 
 Return to [Pekko](_index.md)

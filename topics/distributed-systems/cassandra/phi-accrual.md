@@ -58,12 +58,6 @@ The `phi_convict_threshold` controls sensitivity:
 | Reaction    | Sudden; prone to flapping | Gradual suspicion accumulation         |
 | Philosophy  | No heartbeat means dead   | How likely should I have heard by now? |
 
-## Related
-
-- [Gossip](gossip.md) - Provides the heartbeat data the detector analyzes
-- [Fault tolerance](fault-tolerance.md) - How conviction feeds into recovery mechanisms
-- [Query routing](query-routing.md) - How the coordinator uses gossip status
-
 ---
 
 Return to [Cassandra](_index.md)

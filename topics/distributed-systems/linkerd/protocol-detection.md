@@ -20,12 +20,6 @@ still terminates mTLS and reports byte-level metrics and connection
 counts, but it cannot see request boundaries inside the stream, so it
 cannot route, retry, or compute per-request latency.
 
-## Related
-
-- [Architecture](architecture.md) - Where the proxy sits
-- [Golden metrics](golden-metrics.md) - Why TCP has fewer metrics
-- [Reliability](reliability.md) - Retries require the HTTP pipeline
-
 ---
 
 Return to [Linkerd](_index.md)

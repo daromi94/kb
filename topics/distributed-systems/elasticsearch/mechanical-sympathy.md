@@ -45,10 +45,6 @@ access. Segments, once written, are sealed. The consequences:
   never tracks writes, invalidates caches, or flushes. Disk-backed data
   serves at near-RAM latency.
 
-## Related
-
-- [Inverted index](inverted-index.md) - Core data structure
-
 ---
 
 Return to [Elasticsearch](_index.md)

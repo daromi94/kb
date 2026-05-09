@@ -59,12 +59,6 @@ Cassandra excels in specific scenarios:
 **When to avoid:** Complex ACID transactions across multiple tables, heavy ad-hoc
 joins, or datasets small enough for a single relational server.
 
-## Related
-
-- [Data model](data-model.md) - How data is structured
-- [Consistent hashing](consistent-hashing.md) - How the ring distributes data
-- [Replication](replication.md) - How data is copied across nodes
-
 ---
 
 Return to [Cassandra](_index.md)

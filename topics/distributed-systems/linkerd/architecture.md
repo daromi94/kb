@@ -95,15 +95,6 @@ streams |    issuing |
 8. Proxy is ready — traffic flows through it with mTLS, metrics,
    and policy enforcement
 
-## Related
-
-- [Proxy internals](proxy-internals.md) - Rust runtime and dynamic config
-- [Traffic interception](traffic-interception.md) - iptables and linkerd-init
-- [Request lifecycle](request-lifecycle.md) - End-to-end request flow
-- [Automatic mTLS](mtls.md) - How identity issues proxy certs
-- [Protocol detection](protocol-detection.md) - How proxies classify traffic
-- [Golden metrics](golden-metrics.md) - What the proxy measures
-
 ---
 
 Return to [Linkerd](_index.md)

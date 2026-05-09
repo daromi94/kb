@@ -81,13 +81,6 @@ existing nodes to the new one to balance load.
 **Distributed joins.** Joining data across partitions on different machines
 is slow and often avoided in distributed database design.
 
-## Related
-
-- [Replication](replication.md) - Copies partitions across nodes for fault
-  tolerance
-- [CAP theorem](cap-theorem.md) - Trade-offs that shape partition behavior
-  during network splits
-
 ---
 
 Return to [Concepts](_index.md)

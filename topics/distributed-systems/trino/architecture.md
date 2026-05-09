@@ -70,12 +70,6 @@ allowing seamless joins across sources.
      External data sources
 ```
 
-## Related
-
-- [Overview](overview.md) - What Trino is and when it fits
-- [Connector API](connector-api.md) - Connector internals
-- [Query lifecycle](query-lifecycle.md) - From SQL to running tasks
-
 ---
 
 Return to [Trino](_index.md)

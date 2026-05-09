@@ -52,13 +52,6 @@ mitigate this with:
 - **Metadata services** — A separate service tracks where data lives in the
   storage layer so compute nodes avoid searching for it
 
-## Related
-
-- [Stateless vs stateful](stateless-vs-stateful.md) - Compute layer is
-  stateless, storage layer is stateful
-- [Control plane vs data plane](control-plane-data-plane.md) - Similar
-  separation of concerns between management and request processing
-
 ---
 
 Return to [Concepts](_index.md)

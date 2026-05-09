@@ -72,13 +72,6 @@ must successfully heartbeat a majority of followers to renew it. If
 heartbeats stop, the lease expires and the leader's authority is
 automatically revoked, preventing zombie leaders from corrupting data.
 
-## Related
-
-- [Leader election](leader-election.md) - Heartbeat timeout expiry is
-  the trigger for a new election
-- [Leader and followers](leader-and-followers.md) - The coordination
-  pattern that heartbeats keep alive
-
 ---
 
 Return to [Concepts](_index.md)

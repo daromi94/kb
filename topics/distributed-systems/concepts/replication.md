@@ -67,21 +67,6 @@ it up to date:
 - **Merkle trees** — Hash-based structures that quickly identify which
   pieces of data are out of sync without transferring the entire dataset
 
-## Related
-
-- [Partitioning](partitioning.md) - Splits data for scale; often combined
-  with replication for fault tolerance
-- [CAP theorem](cap-theorem.md) - Consistency vs availability trade-offs
-  during network partitions
-- [Write-ahead log](write-ahead-log.md) - The log that replication
-  propagates between nodes
-- [Low-water mark](low-water-mark.md) - Follower progress constrains
-  how aggressively old log segments can be cleaned
-- [Leader and followers](leader-and-followers.md) - The leader-follower
-  pattern in depth
-- [Quorum and linearizability](quorum-and-linearizability.md) - Why
-  quorum overlap does not guarantee strong consistency
-
 ---
 
 Return to [Concepts](_index.md)

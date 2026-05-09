@@ -62,11 +62,6 @@ Upstream stage task                       Downstream stage task
 +------------------+                               |
 ```
 
-## Related
-
-- [Query lifecycle](query-lifecycle.md) - Where shuffle sits in the flow
-- [Architecture](architecture.md) - Executor responsibilities
-
 ---
 
 Return to [Ballista](_index.md)

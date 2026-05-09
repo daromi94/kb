@@ -78,14 +78,6 @@ trees) to compare all data across replicas and synchronize any differences.
 | **Consistency** | Tunable at request time via the consistency level (CL)         |
 | **Durability**  | Achieved by distributing copies across different racks and DCs |
 
-## Related
-
-- [Consistency](consistency.md) - Tunable consistency levels
-- [Hinted handoff](hinted-handoff.md) - Store-and-forward for missed writes
-- [Anti-entropy](anti-entropy.md) - Read repair and Merkle tree repair
-- [Fault tolerance](fault-tolerance.md) - How replication enables resilience
-- [Query routing](query-routing.md) - How the coordinator works
-
 ---
 
 Return to [Cassandra](_index.md)

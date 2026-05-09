@@ -60,15 +60,6 @@ inconsistent reads. Achieving strong consistency requires additional
 mechanisms such as leader-based sequencing, read repair, or consensus
 protocols.
 
-## Related
-
-- [Quorum and linearizability](quorum-and-linearizability.md) - Why
-  quorum overlap alone does not guarantee strong consistency
-- [Replication](replication.md) - Quorum as a replication coordination
-  strategy
-- [CAP theorem](cap-theorem.md) - The trade-off space quorum
-  configurations navigate
-
 ---
 
 Return to [Concepts](_index.md)

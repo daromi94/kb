@@ -69,12 +69,6 @@ Connector ---> Page ---> Operator ---> Page ---> Exchange ---> Page ---> ...
                          pipeline
 ```
 
-## Related
-
-- [Query lifecycle](query-lifecycle.md) - Where pipelines and drivers come from
-- [Runtime code generation](runtime-codegen.md) - JIT-compiled operators
-- [Fault-tolerant execution](fault-tolerant-execution.md) - When in-memory is too fragile
-
 ---
 
 Return to [Trino](_index.md)

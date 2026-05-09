@@ -63,12 +63,6 @@ overwhelmed.
 | **Scalability**   | Hard to scale dynamically               | Designed for elastic scaling  |
 | **Load balance**  | Hard to tune                            | Tunable via virtual nodes     |
 
-## Related
-
-- [Partitioning](partitioning.md) - How Cassandra applies consistent hashing
-- [Replication](replication.md) - How data is copied after placement
-- [Fault tolerance](fault-tolerance.md) - How vnodes aid recovery
-
 ---
 
 Return to [Cassandra](_index.md)

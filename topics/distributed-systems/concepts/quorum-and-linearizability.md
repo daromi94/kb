@@ -71,17 +71,6 @@ mechanisms on top of quorum overlap:
 | Failure handling | May surface partially written data      | Only returns committed data                 |
 | Performance      | Low latency                             | Higher latency from additional coordination |
 
-## Related
-
-- [Quorum](quorum.md) - The intersection rule, configurations, and
-  strict vs sloppy quorum
-- [Replication](replication.md) - Quorum is one of several replication
-  coordination strategies
-- [Leader and followers](leader-and-followers.md) - Leader-based
-  sequencing as a path to linearizability
-- [CAP theorem](cap-theorem.md) - The consistency guarantee that
-  linearizability formalizes
-
 ---
 
 Return to [Concepts](_index.md)

@@ -59,10 +59,6 @@ background merge process rewrites small segments into larger ones and
 drops deleted documents. Essentially an LSM-tree applied to inverted
 indexes.
 
-## Related
-
-- [Mechanical sympathy](mechanical-sympathy.md) - Hardware reasoning behind the design
-
 ---
 
 Return to [Elasticsearch](_index.md)

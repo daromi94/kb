@@ -76,12 +76,6 @@ A distributed system is a network of queues. Stability requires
 that every queue has a way to say "no" or "slow down" to whatever
 feeds it. Backpressure is the name for that signal.
 
-## Related
-
-- [CoDel](codel.md) - Time-based load shedding
-- [Metastable failures](metastable-failures.md) - Self-sustaining failure states
-- [Blast radius reduction](blast-radius-reduction.md) - Containment through compartmentalization
-
 ---
 
 Return to [Concepts](_index.md)

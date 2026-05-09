@@ -102,12 +102,6 @@ state. Combine supervision with death watch: the parent watches its
 children for termination and reacts accordingly, bubbling permanent
 failures up through the hierarchy.
 
-## Related
-
-- [Call stack illusion](call-stack-illusion.md) - Failure-handling problem supervision solves
-- [Hierarchical design](hierarchical-design.md) - Structuring actor hierarchies
-- [Actors](actors.md) - Actor model fundamentals
-
 ---
 
 Return to [Pekko](_index.md)

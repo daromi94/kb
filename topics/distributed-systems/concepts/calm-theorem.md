@@ -42,15 +42,6 @@ CRDTs (Conflict-free Replicated Data Types) are a direct application:
 their merge operations are monotonic (commutative, associative,
 idempotent), so replicas converge without coordination.
 
-## Related
-
-- [CAP theorem](cap-theorem.md) - CAP identifies the trade-off
-  space; CALM identifies when coordination is needed
-- [Quorum](quorum.md) - A coordination mechanism CALM helps decide
-  when to use
-- [Replication](replication.md) - Monotonic operations simplify
-  replica convergence
-
 ---
 
 Return to [Concepts](_index.md)

@@ -46,13 +46,6 @@ notices and tells C and D, who tell others. The information spreads with
 a logarithmic infection rate, so the full cluster learns of the failure
 after several hops rather than all at once.
 
-## Related
-
-- [Heartbeat](heartbeat.md) - The underlying pattern and timing
-  inequality
-- [Leader election](leader-election.md) - Recovery action triggered by
-  heartbeat failure
-
 ---
 
 Return to [Concepts](_index.md)

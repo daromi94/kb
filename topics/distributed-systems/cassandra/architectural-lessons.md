@@ -93,18 +93,6 @@ system converges without human intervention.
 | Fixed heartbeat timeouts   | Probabilistic failure detection |
 | Strict ACID compliance     | Tunable consistency (BASE)      |
 
-## Related
-
-- [Overview](overview.md) - Architecture principles and the ring
-- [Consistency](consistency.md) - Tunable consistency levels in depth
-- [Data modeling tips](data-modeling-tips.md) - Query-driven denormalization
-- [Consistent hashing](consistent-hashing.md) - Hash ring and virtual nodes
-- [LSM-tree](lsm-tree.md) - Append-only storage architecture
-- [Bloom filters](bloom-filters.md) - Probabilistic read optimization
-- [Phi accrual failure detector](phi-accrual.md) - Adaptive failure detection
-- [Gossip](gossip.md) - Peer-to-peer cluster awareness
-- [Fault tolerance](fault-tolerance.md) - Self-healing mechanisms
-
 ---
 
 Return to [Cassandra](_index.md)

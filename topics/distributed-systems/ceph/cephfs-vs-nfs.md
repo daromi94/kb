@@ -69,11 +69,6 @@ network (10GbE minimum), distributed systems expertise.
 **Simplicity vs Scalability.** NFS for ease of use and low latency at small
 scale. CephFS for resilience and massive throughput at large scale.
 
-## Related
-
-- [Storage interfaces](storage-interfaces.md) - CephFS among Ceph's interfaces
-- [RADOS architecture](rados.md) - The foundation CephFS builds on
-
 ---
 
 Return to [Ceph](_index.md)

@@ -87,12 +87,6 @@ for every minor event.
 | Failures     | Admin intervention  | Autonomic recovery           |
 | State Sync   | Global broadcast    | Lazy epoch-based gossip      |
 
-## Related
-
-- [CRUSH algorithm](crush-algorithm.md) - Calculation over lookup in detail
-- [Cluster operations](cluster-operations.md) - Self-healing and epochs
-- [Consistency model](consistency.md) - The CP trade-off
-
 ---
 
 Return to [Ceph](_index.md)

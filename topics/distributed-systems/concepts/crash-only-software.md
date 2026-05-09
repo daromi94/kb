@@ -50,12 +50,6 @@ survive server restarts, route freely between instances, and remove a
 large class of subtle bugs where client and server disagree about what
 state the conversation is in.
 
-## Related
-
-- [Crash or continue](crash-or-continue.md) - When crashing is the right response
-- [Stateless vs stateful](stateless-vs-stateful.md) - Consequence of property 1
-- [Distributed monolith](distributed-monolith.md) - What property 2 prevents
-
 ---
 
 Return to [Concepts](_index.md)

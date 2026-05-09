@@ -66,13 +66,6 @@ lets Cassandra skip an entire SSTable section.
 | Compaction   | Tombstone and shadowed data merged      | Physically removes data from disk            |
 | Eviction     | Data is gone permanently                | Reclaims disk space and improves read speed  |
 
-## Related
-
-- [Compaction](compaction.md) - When tombstones are physically purged
-- [Anti-entropy](anti-entropy.md) - Repair that propagates deletions
-- [Storage model](storage-model.md) - SSTable immutability and the write path
-- [Data modeling tips](data-modeling-tips.md) - Avoiding tombstone buildup
-
 ---
 
 Return to [Cassandra](_index.md)

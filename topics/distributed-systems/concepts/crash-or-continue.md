@@ -69,11 +69,6 @@ stale inputs, keep going.
 | Serverless function on bad input | —            | Instant      | —            | Crash        |
 | Monolithic server with live bug  | —            | Minutes      | —            | Stay alive   |
 
-## Related
-
-- [Blast radius reduction](blast-radius-reduction.md) - Mitigation when
-  the decision is wrong
-
 ---
 
 Return to [Concepts](_index.md)

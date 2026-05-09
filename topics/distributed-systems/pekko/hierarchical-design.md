@@ -36,13 +36,6 @@ error kernel. It should only start the application's subsystems and
 contain minimal logic. Overloading it strains a single point of
 contention and coarsens fault handling.
 
-## Related
-
-- [Single responsibility](single-responsibility.md) - When to split into children
-- [Error kernel pattern](error-kernel-pattern.md) - Protecting state by delegating risk
-- [Supervision](supervision.md) - Fault-tolerant hierarchies
-- [Actors](actors.md) - Actor model fundamentals
-
 ---
 
 Return to [Pekko](_index.md)

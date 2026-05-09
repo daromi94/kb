@@ -94,14 +94,6 @@ Without a central name node or master, gossip provides:
 4. **Token metadata:** Keeping the token map updated so coordinators can route
    queries correctly
 
-## Related
-
-- [Phi accrual failure detector](phi-accrual.md) - Deep dive on probabilistic failure detection
-- [Topology](topology.md) - The cluster hierarchy gossip propagates
-- [Query routing](query-routing.md) - How gossip informs routing decisions
-- [Fault tolerance](fault-tolerance.md) - How failure detection enables resilience
-- [Replication](replication.md) - How hinted handoff uses gossip state
-
 ---
 
 Return to [Cassandra](_index.md)

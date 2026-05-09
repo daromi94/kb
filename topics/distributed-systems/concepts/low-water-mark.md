@@ -50,13 +50,6 @@ been deleted. In this case the follower cannot catch up incrementally
 and must instead undergo a **state transfer** where the leader sends a
 full snapshot of the current state rather than replaying log entries.
 
-## Related
-
-- [Segmented log](segmented-log.md) - The log structure that the
-  low-water mark cleans up
-- [Replication](replication.md) - Follower progress is a key input to
-  the low-water mark
-
 ---
 
 Return to [Concepts](_index.md)

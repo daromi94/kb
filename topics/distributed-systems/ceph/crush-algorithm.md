@@ -71,11 +71,6 @@ the failure domain to `rack` ensures replicas land on different racks:
 The insight: **tables require coordination; math is free and locally
 executable**. Replace "where is X?" with "calculate the location of X."
 
-## Related
-
-- [Data placement](data-placement.md) - Pools and Placement Groups
-- [Cluster operations](cluster-operations.md) - How maps are distributed
-
 ---
 
 Return to [Ceph](_index.md)

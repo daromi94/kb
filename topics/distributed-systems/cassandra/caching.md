@@ -58,12 +58,6 @@ returns to peak performance immediately after a maintenance window.
 | Chunk cache   | Off-heap      | Decompressed SSTable blocks     | Enabled  |
 | Counter cache | On-heap (JVM) | Recent counter values           | Enabled  |
 
-## Related
-
-- [Bloom filters](bloom-filters.md) - Probabilistic layer checked before caches
-- [Storage model](storage-model.md) - Write path and SSTable structure
-- [Compaction](compaction.md) - Invalidates cached data when SSTables merge
-
 ---
 
 Return to [Cassandra](_index.md)

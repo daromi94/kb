@@ -30,12 +30,6 @@ latency. A byte stream has no notion of a request.
 Observability requires no setup beyond meshing the service — no client
 library, no span instrumentation, no tracing backend.
 
-## Related
-
-- [Protocol detection](protocol-detection.md) - Why TCP gets fewer metrics
-- [Architecture](architecture.md) - Where measurement happens
-- [Reliability](reliability.md) - How the proxy reacts to slow endpoints
-
 ---
 
 Return to [Linkerd](_index.md)

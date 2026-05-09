@@ -65,12 +65,6 @@ The actor model sidesteps all of these problems. Each actor:
 This eliminates the need for locks entirely, preserves encapsulation
 under concurrency, and extends naturally to distributed systems.
 
-## Related
-
-- [Actors](actors.md) - Actor model fundamentals
-- [Message passing](message-passing.md) - How actors communicate without sharing state
-- [Shared memory illusion](shared-memory-illusion.md) - Hardware reality of memory
-
 ---
 
 Return to [Pekko](_index.md)

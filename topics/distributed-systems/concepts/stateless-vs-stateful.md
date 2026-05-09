@@ -56,13 +56,6 @@ service and the storage layer into a stateful service:
 This lets the compute layer scale elastically while the storage layer
 focuses on consistency and consensus.
 
-## Related
-
-- [Separate compute from data](separate-compute-from-data.md) - The
-  architecture that applies this distinction
-- [Write-ahead log](write-ahead-log.md) - Durability mechanism used by
-  stateful systems
-
 ---
 
 Return to [Concepts](_index.md)

@@ -48,10 +48,6 @@ entries exist to recover from.
                     quorum: 2 of 3
 ```
 
-## Related
-
-- [Partitioning and replication](partitioning-and-replication.md) - Replication groups and write path
-
 ---
 
 Return to [DynamoDB](_index.md)

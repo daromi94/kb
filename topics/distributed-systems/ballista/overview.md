@@ -30,12 +30,6 @@ Two design choices follow from this:
 | Embedding distributed compute in a Rust/Python app | First-class — local SessionContext API |
 | BI tools speaking Arrow Flight SQL (JDBC)          | Supported via Flight SQL endpoint      |
 
-## Related
-
-- [Architecture](architecture.md) - Scheduler, executor, and client roles
-- [Query lifecycle](query-lifecycle.md) - From submission to result
-- [Shuffle](shuffle.md) - How partitions move between stages
-
 ---
 
 Return to [Ballista](_index.md)

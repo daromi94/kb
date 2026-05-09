@@ -73,10 +73,6 @@ allowing concurrent modifications.
 - Master failover also causes temporary unavailability until standby activates
 - Trade-off is worthwhile when data correctness is more important than uptime
 
-## Related
-
-- [Architecture](architecture.md) - How master/slave enables this model
-
 ---
 
 Return to [HBase](_index.md)

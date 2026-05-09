@@ -28,12 +28,6 @@ compared to polling.
 
 No proxy config files means no proxy-config misconfiguration.
 
-## Related
-
-- [Architecture](architecture.md) - Where the proxy fits
-- [Traffic interception](traffic-interception.md) - How traffic reaches the proxy
-- [Protocol detection](protocol-detection.md) - What happens after traffic arrives
-
 ---
 
 Return to [Linkerd](_index.md)

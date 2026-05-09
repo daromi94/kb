@@ -62,12 +62,6 @@ storage:
 - **HBase** — Hadoop-based NoSQL database
 - **Bigtable** — Google's managed NoSQL service that inspired Cassandra
 
-## Related
-
-- [Storage model](storage-model.md) - Cassandra's write path and SSTable details
-- [Compaction](compaction.md) - How merged files are maintained
-- [Bloom filters](bloom-filters.md) - Read path optimization for LSM-trees
-
 ---
 
 Return to [Cassandra](_index.md)

@@ -41,12 +41,6 @@ Create a child actor when:
 | Testability | Complex setup, many paths | Focused unit tests           |
 | Throughput  | Single mailbox bottleneck | Children process in parallel |
 
-## Related
-
-- [Error kernel pattern](error-kernel-pattern.md) - Protecting state by delegating risk
-- [Hierarchical design](hierarchical-design.md) - Hierarchy design guidelines
-- [Supervision](supervision.md) - Per-child fault handling
-
 ---
 
 Return to [Pekko](_index.md)

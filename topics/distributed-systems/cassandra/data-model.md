@@ -56,12 +56,6 @@ reconciles these markers and eventually removes the old data.
 | **Consistency** | ACID                      | Tunable (eventual to strong)    |
 | **Scaling**     | Vertical (bigger servers) | Horizontal (more nodes)         |
 
-## Related
-
-- [Primary key](primary-key.md) - Partition keys and clustering columns
-- [Data modeling tips](data-modeling-tips.md) - Best practices for schema design
-- [Storage model](storage-model.md) - How data is stored on disk
-
 ---
 
 Return to [Cassandra](_index.md)

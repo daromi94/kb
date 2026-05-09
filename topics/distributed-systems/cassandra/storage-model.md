@@ -87,17 +87,6 @@ disk index lookups.
 | **SSTable**      | Disk     | Persistent, immutable storage      |
 | **Bloom filter** | RAM/Disk | Read optimization (skipping files) |
 
-## Related
-
-- [Data model](data-model.md) - Logical data structure
-- [LSM-tree](lsm-tree.md) - Architectural foundation for the storage engine
-- [Bloom filters](bloom-filters.md) - Probabilistic read path optimization
-- [Caching](caching.md) - Key, row, chunk, and counter caches
-- [Compaction](compaction.md) - SSTable merge strategies in depth
-- [Tombstones](tombstones.md) - Deletion markers and gc_grace_seconds
-- [Fault tolerance](fault-tolerance.md) - How the commit log aids recovery
-- [Data modeling tips](data-modeling-tips.md) - Avoiding tombstone buildup
-
 ---
 
 Return to [Cassandra](_index.md)

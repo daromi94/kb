@@ -59,10 +59,6 @@ The same pipeline runs at index time and query time, and they must
 agree. If the indexer lowercases but the query parser doesn't,
 searching for `Brutus` misses every document containing `brutus`.
 
-## Related
-
-- [Inverted index](inverted-index.md) - What analysis feeds into
-
 ---
 
 Return to [Elasticsearch](_index.md)

@@ -51,13 +51,6 @@ of moving large datasets across continents.
 and operational boundaries. A compromised node, kernel panic, or
 memory leak is physically contained, limiting blast radius.
 
-## Related
-
-- [Emergence](emergence.md) - Behavior arising from local interactions
-- [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
-- [Replication](replication.md) - Multi-node data copying
-- [Partitioning](partitioning.md) - Splitting data across nodes
-
 ---
 
 Return to [Concepts](_index.md)

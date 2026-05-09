@@ -63,15 +63,6 @@ healthy:
 This captures a common reality: even without failures, a system may choose
 weaker consistency to achieve lower latency.
 
-## Related
-
-- [Replication](replication.md) - The mechanism through which consistency
-  and availability trade-offs manifest
-- [Partitioning](partitioning.md) - Data distribution that network
-  partitions can disrupt
-- [Quorum and linearizability](quorum-and-linearizability.md) - The
-  consistency guarantee linearizability formalizes
-
 ---
 
 Return to [Concepts](_index.md)

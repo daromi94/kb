@@ -64,11 +64,6 @@ data not yet flushed.
 | Integrity   | Risk of partial writes/corruption | High (log is the source of truth) |
 | Performance | Latency tied to data file updates | Latency tied to simple appends    |
 
-## Related
-
-- [Segmented log](segmented-log.md) - Breaking the WAL into manageable
-  file segments for cleanup and recovery
-
 ---
 
 Return to [Concepts](_index.md)

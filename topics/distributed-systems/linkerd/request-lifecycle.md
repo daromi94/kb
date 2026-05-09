@@ -28,13 +28,6 @@ The response follows the same path in reverse. Both proxies record
 metrics (latency, status codes, bytes transferred) for every request
 that crosses their path.
 
-## Related
-
-- [Traffic interception](traffic-interception.md) - How iptables redirects to the proxy
-- [Automatic mTLS](mtls.md) - How the proxy-to-proxy TLS connection works
-- [Reliability](reliability.md) - How EWMA selects the target endpoint
-- [Golden metrics](golden-metrics.md) - What both proxies measure per request
-
 ---
 
 Return to [Linkerd](_index.md)

@@ -38,12 +38,6 @@ internally rather than requiring users to configure HNSW settings or
 recall targets. This maintains high recall (>90%) even under complex
 metadata filters, at the cost of less control for advanced users.
 
-## Related
-
-- [Architecture](architecture.md) - Core stateless compute model
-- [SPFresh index](spfresh-index.md) - Index design aligned with these tradeoffs
-- [Consistency and durability](consistency-and-durability.md) - Durability cost of the write path
-
 ---
 
 Return to [Turbopuffer](_index.md)

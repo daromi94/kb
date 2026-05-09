@@ -43,11 +43,6 @@ propagate data between them through explicit messages. This is exactly
 what the actor model does — and it aligns with how the hardware actually
 works.
 
-## Related
-
-- [Encapsulation and concurrency](encapsulation-and-concurrency.md) - The OOP argument for actors
-- [Message passing](message-passing.md) - Communication model aligned with hardware
-
 ---
 
 Return to [Pekko](_index.md)

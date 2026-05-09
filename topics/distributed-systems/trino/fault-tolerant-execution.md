@@ -52,11 +52,6 @@ Enable for:
 Leave disabled for interactive queries: the spool round-trip is not worth
 the latency.
 
-## Related
-
-- [Execution model](execution-model.md) - The default in-memory runtime
-- [Overview](overview.md) - Where ETL fits among Trino's use cases
-
 ---
 
 Return to [Trino](_index.md)

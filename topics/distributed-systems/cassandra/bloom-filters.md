@@ -56,12 +56,6 @@ When a read request arrives at a node:
    disk.
 5. Read the **SSTable** data block.
 
-## Related
-
-- [Storage model](storage-model.md) - Write path and SSTable lifecycle
-- [Caching](caching.md) - Key cache, row cache, and other layers
-- [Compaction](compaction.md) - Rebuilds bloom filters for merged SSTables
-
 ---
 
 Return to [Cassandra](_index.md)

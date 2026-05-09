@@ -127,13 +127,6 @@ exhausted, the OOM killer cancels the largest offender — preventing
 distributed deadlock where every worker is waiting on memory that no
 query is willing to release.
 
-## Related
-
-- [Architecture](architecture.md) - Coordinator, workers, and connectors
-- [Query lifecycle](query-lifecycle.md) - End-to-end phases of a query
-- [Query optimization](query-optimization.md) - Rules and CBO choices
-- [Connector API](connector-api.md) - Where metadata and splits come from
-
 ---
 
 Return to [Trino](_index.md)

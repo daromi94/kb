@@ -51,10 +51,6 @@ the **total cost of ownership**.
   to read, understand, and modify, the team can pivot or scale without the
   system collapsing under its own weight
 
-## Related
-
-- [WTFs per minute](wtfs-per-minute.md) - How to measure these qualities
-
 ---
 
 Return to [Clean code](_index.md)

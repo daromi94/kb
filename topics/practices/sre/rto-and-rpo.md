@@ -83,12 +83,6 @@ credentials locked in a vault that requires the down service to
 access, on-call rotations managed by a tool hosted on the affected
 infrastructure — these turn a four-hour RTO into a four-day outage.
 
-## Related
-
-- [Recovery strategies](recovery-strategies.md) - DR patterns mapped to RTO/RPO
-- [Service level objectives](service-level-objectives.md) - Defining reliability targets
-- [Error budgets](error-budgets.md) - Operationalizing reliability targets
-
 ---
 
 Return to [SRE](_index.md)

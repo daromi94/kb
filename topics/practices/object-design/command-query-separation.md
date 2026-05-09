@@ -58,10 +58,6 @@ to guarantee atomicity.
 CQRS applies the same separation at architectural scale, often using
 different databases for reads and writes.
 
-## Related
-
-- [Tell, don't ask](tell-dont-ask.md) - Complementary: TDA says command objects; CQS says don't mix
-
 ---
 
 Return to [Object design](_index.md)

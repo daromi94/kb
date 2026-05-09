@@ -60,12 +60,6 @@ much parallelism can help.
 slowest thing it calls. When that thing slows, the failure mode is
 rarely graceful — cascading timeouts and retry storms start here.
 
-## Related
-
-- [Saturation curve](saturation-curve.md) - The shape the bottleneck imposes
-- [Failure modes](failure-modes.md) - What happens when the bottleneck hits
-- [Performance signals](performance-signals.md) - Resource saturation as a metric
-
 ---
 
 Return to [Testing](_index.md)

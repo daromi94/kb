@@ -33,11 +33,6 @@ and invalid boundaries reveals bugs that single-sided checks miss.
 Assertions catch bugs but do not prove correctness. Design thinking remains
 essential.
 
-## Related
-
-- [Safety](safety.md) - Broader safety principles
-- [Overview](overview.md) - Why rigorous validation matters
-
 ---
 
 Return to [TigerStyle](_index.md)

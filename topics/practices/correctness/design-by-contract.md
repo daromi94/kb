@@ -143,10 +143,6 @@ The biggest barrier is cultural. Most languages lack first-class
 contract support, so contracts end up as assert statements easy to
 ignore.
 
-## Related
-
-- [Defensive programming](defensive-programming.md) - Complementary approach for external boundaries
-
 ---
 
 Return to [Correctness](_index.md)

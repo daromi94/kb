@@ -51,12 +51,6 @@ contexts, absorbing all fifty into that class creates a god object. The
 eradicator should move logic to the *right* object, not pile everything into
 the object that holds the data.
 
-## Related
-
-- [Tell, don't ask](tell-dont-ask.md) - The principle the eradicator enforces
-- [Anemic domain model](anemic-domain-model.md) - What unchecked getters produce
-- [Law of Demeter](law-of-demeter.md) - Getter chains violate LoD
-
 ---
 
 Return to [Object design](_index.md)

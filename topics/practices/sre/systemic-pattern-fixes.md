@@ -25,11 +25,6 @@ forever.
 The COE database is not just a log of what broke. It is the input to
 the team's strategic resilience roadmap.
 
-## Related
-
-- [Postmortem anatomy](postmortem-anatomy.md) - The input data
-- [Operational heroics](operational-heroics.md) - What this replaces
-
 ---
 
 Return to [SRE](_index.md)

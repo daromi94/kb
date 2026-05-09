@@ -69,10 +69,6 @@ hidden coupling to over-delivered reliability.
 behavior — does not pause launches, does not redirect work — the
 framework collapses into a dashboard nobody reads.
 
-## Related
-
-- [Error budgets](error-budgets.md) - Operationalizing SLO targets
-
 ---
 
 Return to [SRE](_index.md)

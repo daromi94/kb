@@ -76,13 +76,6 @@ garbage collection pausing, a queue backing up. Without that
 correlation a load test yields a number with no diagnosis attached,
 and the next regression has nothing to point at.
 
-## Related
-
-- [Bottlenecks](bottlenecks.md) - What runs out and forces the failure
-- [Saturation curve](saturation-curve.md) - The phases the failure plays out across
-- [Performance signals](performance-signals.md) - Server-side metrics to correlate
-- [Performance testing](performance-testing.md) - The discipline this fits inside
-
 ---
 
 Return to [Testing](_index.md)

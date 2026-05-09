@@ -32,12 +32,6 @@ abstraction will be tighter and more accurate to actual needs.
 refactor as requirements become clearer. Abstractions crystallize naturally
 from specific implementations.
 
-## Related
-
-- [Premature abstraction](premature-abstraction.md) - What happens when this
-  rule is ignored
-- [Abstraction](abstraction.md) - The concept this rule governs
-
 ---
 
 Return to [Abstraction](_index.md)

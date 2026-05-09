@@ -30,11 +30,6 @@ makes reliability decisions correct. Without this engagement,
 postmortem culture quietly drifts toward blame-avoidance and shallow
 root causes.
 
-## Related
-
-- [Postmortem anatomy](postmortem-anatomy.md) - What leaders review
-- [Systemic pattern fixes](systemic-pattern-fixes.md) - The output of sustained review
-
 ---
 
 Return to [SRE](_index.md)

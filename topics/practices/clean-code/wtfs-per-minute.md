@@ -40,10 +40,6 @@ looks at a block of code, they should immediately understand its intent, its
 inputs, and its expected output without needing to trace the entire execution
 stack.
 
-## Related
-
-- [Triad of maintainability](triad-of-maintainability.md) - The three layers clean code optimizes for
-
 ---
 
 Return to [Clean code](_index.md)

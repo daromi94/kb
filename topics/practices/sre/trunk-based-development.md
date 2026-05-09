@@ -41,10 +41,6 @@ prerequisite for continuous delivery. Large-scale monorepos
 The overhead is operational: teams need mature CI, flag management, and
 the discipline to keep commits small and trunk green.
 
-## Related
-
-- [Stable master](stable-master.md) - The quality invariant TBD depends on
-
 ---
 
 Return to [SRE](_index.md)

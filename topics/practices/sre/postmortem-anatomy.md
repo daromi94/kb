@@ -38,11 +38,6 @@ Fixes must address every layer the investigation surfaced:
 An action list that only patches the code has learned from only one
 layer.
 
-## Related
-
-- [Systemic pattern fixes](systemic-pattern-fixes.md) - Acting across many COEs
-- [Leadership review cadence](leadership-review-cadence.md) - Keeping the process honest
-
 ---
 
 Return to [SRE](_index.md)

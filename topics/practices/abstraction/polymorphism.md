@@ -68,11 +68,6 @@ occasionally hinder CPU optimizations like inlining. However, for most
 applications, the gain in clarity and maintainability far outweighs this
 minor cost.
 
-## Related
-
-- [Abstraction](abstraction.md) - Polymorphism builds on abstraction
-- [Indirection](indirection.md) - Dynamic dispatch is a form of indirection
-
 ---
 
 Return to [Abstraction](_index.md)

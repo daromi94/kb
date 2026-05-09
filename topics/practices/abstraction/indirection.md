@@ -87,11 +87,6 @@ Every level of indirection comes with trade-offs:
 3. **Memory usage:** Each layer requires storage for references, handles, or
    mapping tables
 
-## Related
-
-- [Abstraction](abstraction.md) - Hides complexity; indirection provides flexibility
-- [Polymorphism](polymorphism.md) - Dynamic dispatch is a form of indirection
-
 ---
 
 Return to [Abstraction](_index.md)

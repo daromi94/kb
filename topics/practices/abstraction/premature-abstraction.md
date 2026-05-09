@@ -38,12 +38,6 @@ abstraction accumulates special cases over time, becoming increasingly costly
 to change because every consumer depends on its current shape. Duplication,
 by contrast, is localized and easy to delete.
 
-## Related
-
-- [Abstraction](abstraction.md) - What abstraction is and when it helps
-- [Rule of three](rule-of-three.md) - Heuristic for when to generalize
-- [Indirection](indirection.md) - The flexibility layer that premature abstraction misuses
-
 ---
 
 Return to [Abstraction](_index.md)

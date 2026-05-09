@@ -47,10 +47,6 @@ problem to persist for a shorter minimum duration before firing.
 This prevents paging on transient blips while still catching real
 incidents quickly.
 
-## Related
-
-- [Service level objectives](service-level-objectives.md) - Defining SLIs, targets, and windows
-
 ---
 
 Return to [SRE](_index.md)

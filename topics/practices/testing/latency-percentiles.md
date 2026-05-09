@@ -16,11 +16,6 @@ typical request, p95 catches the common slow path, and p99 and p99.9
 expose the tail outliers that a single-number summary erases
 entirely.
 
-## Related
-
-- [Performance signals](performance-signals.md) - Where latency sits in the metric set
-- [Performance testing](performance-testing.md) - Tests that watch the percentiles
-
 ---
 
 Return to [Testing](_index.md)

@@ -36,10 +36,6 @@ internally. The interface stays simple while performance is preserved.
 network call, use an explicit name like `fetchData()` to signal the cost.
 UAP applies to in-memory decisions, not I/O boundaries.
 
-## Related
-
-- [Abstraction](abstraction.md) - UAP is a specific form of implementation hiding
-
 ---
 
 Return to [Abstraction](_index.md)

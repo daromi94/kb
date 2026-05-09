@@ -54,13 +54,6 @@ and any conforming implementation is substitutable.
 - **Rename wrapper.** Forwards every call to the thing it wraps, adding
   a layer without hiding anything
 
-## Related
-
-- [Leaky abstractions](leaky-abstractions.md) - When hidden complexity surfaces
-- [Premature abstraction](premature-abstraction.md) - Costs of abstracting too early
-- [Indirection](indirection.md) - Closely related but serves different purpose
-- [Polymorphism](polymorphism.md) - Uses abstraction for dynamic behavior
-
 ---
 
 Return to [Abstraction](_index.md)

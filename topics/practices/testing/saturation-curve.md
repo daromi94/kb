@@ -50,10 +50,6 @@ Whichever resource runs out first defines the ceiling. Removing it
 shifts saturation to the next-most-constrained resource — never to
 infinite capacity, just to a different bottleneck.
 
-## Related
-
-- [Performance testing](performance-testing.md) - Discovering the curve in CI
-
 ---
 
 Return to [Testing](_index.md)

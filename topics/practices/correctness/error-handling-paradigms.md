@@ -175,11 +175,6 @@ The principled approach: one mechanism for operational errors
 mechanism for programming errors (assertions or panics that
 cannot be caught by normal error handling).
 
-## Related
-
-- [Defensive programming](defensive-programming.md) - How these paradigms apply in practice
-- [Design by contract](design-by-contract.md) - Contracts define what constitutes a programming error
-
 ---
 
 Return to [Correctness](_index.md)

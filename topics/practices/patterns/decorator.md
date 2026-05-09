@@ -140,10 +140,6 @@ breaker, and timeout layers.
 **UI components.** Visual elements wrap in scrollbar, border, or shadow
 decorators without altering the base drawing logic.
 
-## Related
-
-- [Flyweight](flyweight.md) - Decorator adds behavior, Flyweight shares state
-
 ---
 
 Return to [Patterns](_index.md)

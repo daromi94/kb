@@ -29,11 +29,6 @@ Extract hot loops into standalone functions with primitive arguments. This
 helps the compiler by reducing function complexity, enabling better
 inlining, and focusing optimization on the critical path.
 
-## Related
-
-- [Safety](safety.md) - Batching as both safety and performance tool
-- [Overview](overview.md) - Performance as second priority after safety
-
 ---
 
 Return to [TigerStyle](_index.md)

@@ -27,11 +27,6 @@ and in predictable places. A bad one leaks constantly, forcing the
 consumer to hold two mental models at once: the abstraction and the
 reality behind it.
 
-## Related
-
-- [Abstraction](abstraction.md) - The discipline abstractions build on
-- [Indirection](indirection.md) - Each layer of indirection is a potential leak point
-
 ---
 
 Return to [Abstraction](_index.md)

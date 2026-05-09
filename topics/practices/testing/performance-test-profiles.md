@@ -84,11 +84,6 @@ integration hides which component is the bottleneck.
 The output is a per-component capacity number, not a system-level
 verdict. Use it during tuning, not as a release gate.
 
-## Related
-
-- [Performance testing](performance-testing.md) - The four choices behind a useful run
-- [Saturation curve](saturation-curve.md) - The curve stress and breakpoint tests trace
-
 ---
 
 Return to [Testing](_index.md)

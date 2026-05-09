@@ -67,12 +67,6 @@ infrastructure responsibilities.
 objects. Duplicating that logic in every expert class creates massive
 repetition; these belong in interceptors or middleware.
 
-## Related
-
-- [Tell, don't ask](tell-dont-ask.md) - Enforces the expert by commanding objects
-- [Getter eradicator](getter-eradicator.md) - Diagnostic tool guided by the expert
-- [Anemic domain model](anemic-domain-model.md) - What happens when the expert is ignored
-
 ---
 
 Return to [Object design](_index.md)

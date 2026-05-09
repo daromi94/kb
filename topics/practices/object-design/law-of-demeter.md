@@ -68,10 +68,6 @@ apply to:
   is not a violation because methods return the same context (the builder
   itself), not "stranger" objects
 
-## Related
-
-- [Tell, don't ask](tell-dont-ask.md) - The practical application of LoD
-
 ---
 
 Return to [Object design](_index.md)

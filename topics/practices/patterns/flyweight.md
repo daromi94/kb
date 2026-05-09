@@ -149,10 +149,6 @@ Python's small integer cache).
 **3D scene graphs.** Shared geometry, materials, shaders with
 per-instance transforms via instance buffers.
 
-## Related
-
-- [Decorator](decorator.md) - Decorator adds behavior, Flyweight shares state
-
 ---
 
 Return to [Patterns](_index.md)

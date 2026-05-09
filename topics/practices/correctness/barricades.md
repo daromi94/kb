@@ -200,10 +200,6 @@ Circumventing this requires reflection or modifying the type
 definition — both obvious, reviewable decisions, not silent
 oversights.
 
-## Related
-
-- [Defensive programming](defensive-programming.md) - The broader principle barricades implement
-
 ---
 
 Return to [Correctness](_index.md)

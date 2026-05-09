@@ -101,10 +101,6 @@ There are specific contexts where "asking" is appropriate:
   display it. The goal is ensuring the UI doesn't contain the logic for
   modifying that state
 
-## Related
-
-- [Law of Demeter](law-of-demeter.md) - TDA is the practical application of LoD
-
 ---
 
 Return to [Object design](_index.md)

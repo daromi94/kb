@@ -66,11 +66,6 @@ request identifiers, input values, the operation attempted, and the
 error returned. The goal is a complete trace from trigger to failure
 without reproducing the scenario.
 
-## Related
-
-- [Barricades](barricades.md) - Trust zones and validation boundaries
-- [Design by contract](design-by-contract.md) - Formal correctness specifications
-
 ---
 
 Return to [Correctness](_index.md)

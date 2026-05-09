@@ -22,11 +22,6 @@ Without this framing, on-call becomes rote work that senior engineers
 avoid, and the team loses its most valuable production learning
 channel.
 
-## Related
-
-- [Operational heroics](operational-heroics.md) - The anti-pattern this prevents
-- [Postmortem anatomy](postmortem-anatomy.md) - Where incident findings become action items
-
 ---
 
 Return to [SRE](_index.md)

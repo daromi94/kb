@@ -42,12 +42,6 @@ optimization.
 ~92% of catastrophic failures stem from mishandled non-fatal errors that
 were explicitly signaled. Handle every error.
 
-## Related
-
-- [Assertions](assertions.md) - Catching programmer errors at runtime
-- [Performance](performance.md) - Batching as both safety and performance tool
-- [Overview](overview.md) - Priority hierarchy
-
 ---
 
 Return to [TigerStyle](_index.md)

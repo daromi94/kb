@@ -45,13 +45,6 @@ specific to that task. Foundation models invert this by front-loading
 compute into one pre-training run, then amortizing that cost across
 many lightweight adaptations.
 
-## Related
-
-- [Self-supervised learning](self-supervised-learning.md) - The training
-  paradigm that makes foundation models possible
-- [Language models](language-models.md) - The dominant architecture for
-  text-based foundation models
-
 ---
 
 Return to [AI engineering](_index.md)

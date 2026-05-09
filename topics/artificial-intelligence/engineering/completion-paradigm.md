@@ -34,13 +34,6 @@ into a classifier.
 No separate translation or classification algorithm runs. The prompt
 structure steers the same completion mechanism toward different tasks.
 
-## Related
-
-- [Language models](language-models.md) - The underlying prediction
-  mechanics
-- [Foundation models](foundation-models.md) - The pretrained bases that
-  operate under this paradigm
-
 ---
 
 Return to [AI engineering](_index.md)

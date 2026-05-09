@@ -50,13 +50,6 @@ efficiently as subword fragments than as whole-word units.
 3. **Embedding.** Integer IDs are converted to dense, high-dimensional
    vectors that encode semantic relationships between tokens
 
-## Related
-
-- [Vector embeddings](vector-embeddings.md) - The next step: converting
-  token IDs into semantic vectors
-- [Language models](language-models.md) - The models that operate on
-  tokenized input
-
 ---
 
 Return to [AI engineering](_index.md)

@@ -37,11 +37,6 @@ The direction from Man to Woman captures a relationship that, when
 applied to King, lands near Queen. The same principle holds for verb
 tense, geography, and other systematic relationships.
 
-## Related
-
-- [Tokenization](tokenization.md) - The pipeline that produces the
-  integer IDs embeddings replace
-
 ---
 
 Return to [AI engineering](_index.md)

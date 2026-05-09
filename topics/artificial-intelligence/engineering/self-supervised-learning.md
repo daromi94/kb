@@ -47,13 +47,6 @@ meaning from an unrelated preceding text.
 response. During generation, predicting `<EOS>` is the signal that
 tells the model to stop producing output.
 
-## Related
-
-- [Foundation models](foundation-models.md) - Self-supervised learning
-  as a defining characteristic
-- [Language models](language-models.md) - The autoregressive prediction
-  loop this training produces
-
 ---
 
 Return to [AI engineering](_index.md)

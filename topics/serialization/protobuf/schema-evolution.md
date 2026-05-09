@@ -42,11 +42,6 @@ default value when the tag is absent.
 | Missing fields   | Default values for absent tags               |
 | Unknown fields   | Skip logic ignores unrecognized tags         |
 
-## Related
-
-- [Wire format](wire-format.md) - How skip logic enables compatibility
-- [Architecture](architecture.md) - The role of the `.proto` schema
-
 ---
 
 Return to [Protocol Buffers](_index.md)

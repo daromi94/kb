@@ -47,11 +47,6 @@ identical regardless of implementation language.
 | Performance      | High CPU overhead            | Low CPU overhead               |
 | Interoperability | Native to web/browsers       | Requires generated bindings    |
 
-## Related
-
-- [Wire format](wire-format.md) - How binary encoding achieves efficiency
-- [Schema evolution](schema-evolution.md) - How compatibility is maintained
-
 ---
 
 Return to [Protocol Buffers](_index.md)

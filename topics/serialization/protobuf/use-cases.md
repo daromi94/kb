@@ -37,11 +37,6 @@ Smaller payloads mean less radio time and lower power consumption.
 | Human-readable debugging needs     | Poor  |
 | Rapidly changing schemas           | Mixed |
 
-## Related
-
-- [Architecture](architecture.md) - Component model and JSON comparison
-- [Wire format](wire-format.md) - How efficiency is achieved
-
 ---
 
 Return to [Protocol Buffers](_index.md)

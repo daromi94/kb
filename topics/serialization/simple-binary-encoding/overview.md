@@ -83,11 +83,6 @@ require during decoding.
 SBE is the right choice when the message shape is known at compile time
 and a hot path demands deterministic, allocation-free encode/decode.
 
-## Related
-
-- [Wire layout](wire-layout.md) - How fields are arranged on the wire
-- [Schema evolution](schema-evolution.md) - Additive-only versioning rules
-
 ---
 
 Return to [Simple Binary Encoding](_index.md)

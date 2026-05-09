@@ -56,11 +56,6 @@ john.writeTo(output);
 Protobuf is optimized for messages up to a few megabytes, balancing compression
 with parsing speed.
 
-## Related
-
-- [Architecture](architecture.md) - The four-layer component model
-- [Schema evolution](schema-evolution.md) - How skip logic enables compatibility
-
 ---
 
 Return to [Protocol Buffers](_index.md)

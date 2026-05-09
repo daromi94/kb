@@ -60,11 +60,6 @@ Each missing feature protects the hot-path performance profile:
 | Maps                     | Would require hashing or searching         |
 | Self-describing messages | Field tags waste cache, force tag dispatch |
 
-## Related
-
-- [Mechanical sympathy](mechanical-sympathy.md) - Hardware costs avoided
-- [Overview](overview.md) - Flyweight pattern and codec tradeoffs
-
 ---
 
 Return to [Simple Binary Encoding](_index.md)

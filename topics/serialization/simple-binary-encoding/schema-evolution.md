@@ -37,11 +37,6 @@ added after its own schema version.
 The tradeoff is flexibility for performance — SBE locks down the layout
 so every field access remains a direct offset read.
 
-## Related
-
-- [Wire layout](wire-layout.md) - How blockLength enables skipping
-- [Overview](overview.md) - Why SBE constrains the format
-
 ---
 
 Return to [Simple Binary Encoding](_index.md)

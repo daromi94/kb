@@ -62,11 +62,6 @@ average-case savings.
 | Cache behavior      | Pointer-chasing, scattered   | Linear scan, prefetch-friendly |
 | Latency consistency | Jitter from GC and stalls    | Tight variance                 |
 
-## Related
-
-- [Overview](overview.md) - Flyweight pattern and design principles
-- [Wire layout](wire-layout.md) - Flat layout enabling these properties
-
 ---
 
 Return to [Simple Binary Encoding](_index.md)

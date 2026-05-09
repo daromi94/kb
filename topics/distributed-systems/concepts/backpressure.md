@@ -18,7 +18,7 @@ amplify load.
 Queues hide the imbalance until they don't. Backpressure exposes
 it and propagates it upstream while there is still time to act.
 
-## Common shapes
+## Mechanisms
 
 **Blocking / pull-based flow control.** The consumer pulls work
 when ready. A bounded blocking queue is canonical: when full, the
@@ -42,8 +42,9 @@ are expected to interpret.
 
 **Load shedding.** When buffers fill and the producer cannot be
 slowed, drop work — preferably the lowest-priority work, and
-preferably early. Head-drop beats tail-drop under sustained
-overload, since the oldest work is most likely past its deadline.
+preferably early. Head-drop (drop the oldest) beats tail-drop (drop
+the newest) under sustained overload, since the oldest work is most
+likely past its deadline.
 
 ## Principles
 
@@ -70,7 +71,7 @@ that returns errors will see clients retry, multiplying the load it
 cannot handle. Retries need budgets, jitter, and circuit breakers
 — themselves a coarse form of backpressure.
 
-## The model
+## Network of queues
 
 A distributed system is a network of queues. Stability requires
 that every queue has a way to say "no" or "slow down" to whatever

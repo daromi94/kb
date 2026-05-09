@@ -35,10 +35,6 @@ The relational model introduced **physical data independence**—allowing storag
 to change without breaking application logic. Instead of navigating, you
 declare *what* data you want and the DBMS determines *how* to retrieve it.
 
-## Related
-
-- [Data models](data-models.md) - Overview of all data models
-
 ---
 
 Return to [Databases](_index.md)

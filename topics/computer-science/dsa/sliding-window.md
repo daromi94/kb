@@ -75,12 +75,6 @@ monotonic: expanding the window can only make the condition harder (or
 easier) to satisfy, never both. If adding an element can both help
 and hurt, the shrink logic breaks.
 
-## Related
-
-- [Arrays](arrays.md) - Underlying data structure
-- [Two pointers](two-pointers.md) - General dual-index traversal
-- [Prefix sums](prefix-sums.md) - Alternative for range queries
-
 ---
 
 Return to [Data structures and algorithms](_index.md)

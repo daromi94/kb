@@ -44,11 +44,6 @@ obsolete for new applications.
 | Wide-Column  | Sparse data with many columns                            |
 | Array/Matrix | Scientific and analytical workloads                      |
 
-## Related
-
-- [Overview](overview.md) - Database fundamentals
-- [Navigational models](navigational-models.md) - IMS, CODASYL, and why they failed
-
 ---
 
 Return to [Databases](_index.md)

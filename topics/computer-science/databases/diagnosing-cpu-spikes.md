@@ -62,10 +62,6 @@ concurrency and keep authenticated connections warm.
 | CPU spike correlates with reconnects  | Connection storm, no pooling |
 | High CPU, low query throughput        | Latch contention             |
 
-## Related
-
-- [CPU-bound databases](cpu-bound-databases.md) - Why CPU not I/O is the bottleneck
-
 ---
 
 Return to [Databases](_index.md)

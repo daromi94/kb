@@ -28,11 +28,6 @@ signals that the workload — query shape, plan choices, concurrency — is
 hitting the engine's expensive operations. Disk graphs can look calm while
 the CPU pegs.
 
-## Related
-
-- [Overview](overview.md) - Database vs DBMS, why not flat files
-- [Diagnosing CPU spikes](diagnosing-cpu-spikes.md) - Workload causes of high CPU
-
 ---
 
 Return to [Databases](_index.md)

@@ -46,11 +46,6 @@ tree instead.
 **Single query.** If you only need one range sum, a direct $O(n)$
 scan is simpler and avoids the extra space.
 
-## Related
-
-- [Arrays](arrays.md) - Underlying data structure
-- [Sliding window](sliding-window.md) - Alternative for contiguous ranges
-
 ---
 
 Return to [Data structures and algorithms](_index.md)

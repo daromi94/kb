@@ -168,11 +168,6 @@ partitioning, or a monotonic property — to skip work. If no such
 structure exists and every pair must be examined, the technique does
 not help.
 
-## Related
-
-- [Sliding window](sliding-window.md) - Equi-directional variant in depth
-- [Arrays](arrays.md) - Underlying data structure
-
 ---
 
 Return to [Data structures and algorithms](_index.md)

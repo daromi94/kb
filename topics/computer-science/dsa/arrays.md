@@ -72,14 +72,6 @@ void fill2D(int[][] arr, int value) {
 }
 ```
 
-## Related
-
-- [Grid flattening](grid-flattening.md) - 2D-to-1D conversion
-- [Circular indexing](circular-indexing.md) - Modulo wrap-around
-- [Two pointers](two-pointers.md) - Dual-index traversal
-- [Sliding window](sliding-window.md) - Incremental subarray scan
-- [Prefix sums](prefix-sums.md) - Cumulative range queries
-
 ---
 
 Return to [Data structures and algorithms](_index.md)

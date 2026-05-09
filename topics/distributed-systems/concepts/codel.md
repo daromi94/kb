@@ -8,7 +8,7 @@ that happens when a queue stays full instead of draining.
 ## Why tail-drop fails under sustained load
 
 A tail-drop queue accepts requests until its capacity is reached,
-then drops on new arrivals. Transient bursts get absorbed and the
+then drops new arrivals. Transient bursts get absorbed and the
 queue drains. Under sustained overload — arrival rate persistently
 above service rate — the queue stays full and becomes a latency
 amplifier.

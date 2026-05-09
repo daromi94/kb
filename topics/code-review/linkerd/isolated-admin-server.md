@@ -44,11 +44,6 @@ liveness checks trustworthy — if admin shares the same event loop
 as request processing, a saturated loop makes the process appear
 dead to the orchestrator even when it is not.
 
-## Related
-
-- [Cooperative drain shutdown](cooperative-drain-shutdown.md) - Shutdown signaling
-- [Structured config loading](structured-config-loading.md) - Startup discipline
-
 ---
 
 Return to [Linkerd2-proxy](_index.md)

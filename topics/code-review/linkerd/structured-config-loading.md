@@ -32,11 +32,6 @@ make the config ephemeral, you force every subsystem to declare its
 requirements upfront. Nothing can silently depend on a value that was
 never validated.
 
-## Related
-
-- [Cooperative drain shutdown](cooperative-drain-shutdown.md) - Shutdown discipline
-- [Isolated admin server](isolated-admin-server.md) - Runtime operational interface
-
 ---
 
 Return to [Linkerd2-proxy](_index.md)

@@ -19,10 +19,6 @@ constraints.
 - Does solving the general case reveal a pattern that makes the
   specific case trivial?
 
-## Related
-
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

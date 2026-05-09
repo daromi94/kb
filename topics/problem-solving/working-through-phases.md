@@ -61,10 +61,6 @@ for use in other problems.
 Habitually reviewing solutions builds well-ordered, ready-to-use
 knowledge and develops your ability to solve problems.
 
-## Related
-
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

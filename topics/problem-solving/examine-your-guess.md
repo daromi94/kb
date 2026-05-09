@@ -19,10 +19,6 @@ trial-and-error into guided iteration.
 - If the condition has multiple parts, does the guess satisfy at
   least one of them?
 
-## Related
-
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

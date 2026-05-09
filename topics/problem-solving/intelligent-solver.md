@@ -31,11 +31,6 @@ plan is established.
 - If stuck, am I passively waiting or actively changing
   perspective?
 
-## Related
-
-- [Working through the phases](working-through-phases.md) - Operational walkthrough
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

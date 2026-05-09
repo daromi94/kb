@@ -20,11 +20,6 @@ method requires.
   of the given data?
 - Can you add a component that eliminates special cases?
 
-## Related
-
-- [Analogy](analogy.md) - Solving by structural similarity
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

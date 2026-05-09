@@ -23,10 +23,6 @@ falsity is impossible. Also known as reductio ad absurdum.
 - If the opposite of the goal is assumed, does an obvious line of
   deduction present itself?
 
-## Related
-
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

@@ -30,11 +30,6 @@ carrying-out phase before trusting it.
 - When insight strikes, what is the smallest test that can prove
   or disprove it?
 
-## Related
-
-- [Working through the phases](working-through-phases.md) - Hunting for the helpful idea
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

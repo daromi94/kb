@@ -32,11 +32,6 @@ focus anchored to the target.
   that the problem does not guarantee?
 - Is every known quantity labeled and the unknown visually marked?
 
-## Related
-
-- [Auxiliary elements](auxiliary-elements.md) - Adding components to the figure
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

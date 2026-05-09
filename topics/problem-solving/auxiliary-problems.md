@@ -25,11 +25,6 @@ the core system behaves in an ideal state.
 - If a specific constraint is temporarily ignored, does the path
   to the solution become clear?
 
-## Related
-
-- [Auxiliary elements](auxiliary-elements.md) - Adding components vs. solving different problems
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

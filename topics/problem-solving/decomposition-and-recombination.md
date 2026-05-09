@@ -22,11 +22,6 @@ exposes the connection you could not see before.
   recombined in a different order or grouping to form a familiar
   pattern?
 
-## Related
-
-- [Auxiliary problems](auxiliary-problems.md) - Chain-of-problems form
-- [The four-phase method](four-phase-method.md) - Overarching process
-
 ---
 
 Return to [Problem-solving](_index.md)

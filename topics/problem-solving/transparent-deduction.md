@@ -50,12 +50,6 @@ justification.
 known fact is replaced by an educated guess, explicitly inviting
 observers to test that specific weak point.
 
-## Related
-
-- [Working through the phases](working-through-phases.md) - Operational walkthrough
-- [Auxiliary problems](auxiliary-problems.md) - Stepping-stone problems
-- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
-
 ---
 
 Return to [Problem-solving](_index.md)

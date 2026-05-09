@@ -35,11 +35,6 @@ new plan.
 - Does the path forward feel forced and irregular, or is there a
   natural flow to the next step?
 
-## Related
-
-- [The four-phase method](four-phase-method.md) - Overarching process
-- [Working through the phases](working-through-phases.md) - Operational walkthrough
-
 ---
 
 Return to [Problem-solving](_index.md)

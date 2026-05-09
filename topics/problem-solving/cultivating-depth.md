@@ -31,12 +31,6 @@ has blind spots. Unstructured exploration — browsing physical
 resources, casual interactions outside targeted objectives —
 introduces adjacent concepts that deliberate searches miss.
 
-## Related
-
-- [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble
-- [Bright idea](bright-idea.md) - Insight through incubation
-- [Signs of progress](signs-of-progress.md) - Persist or abandon signals
-
 ---
 
 Return to [Problem-solving](_index.md)

@@ -62,10 +62,6 @@ Your conception of the problem is incomplete when you start. It
 shifts as you make progress and shifts again as you near the
 solution — expect to revisit earlier phases.
 
-## Related
-
-- [Working through the phases](working-through-phases.md) - Operational walkthrough
-
 ---
 
 Return to [Problem-solving](_index.md)

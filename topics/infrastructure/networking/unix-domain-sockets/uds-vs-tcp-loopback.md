@@ -75,11 +75,6 @@ Even on `127.0.0.1`, a TCP packet traverses:
 | Security    | Firewall, TLS            | File permissions, PEERCRED |
 | Special     | Can route to other hosts | Can pass file descriptors  |
 
-## Related
-
-- [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
-- [SCM_RIGHTS](scm-rights.md) - The feature TCP cannot replicate
-
 ---
 
 Return to [Unix domain sockets](_index.md)

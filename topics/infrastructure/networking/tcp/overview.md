@@ -30,12 +30,6 @@ TCP's reliability comes at a cost:
 UDP fires packets without guarantees but avoids these costs, making it suitable
 for real-time applications where occasional loss is acceptable.
 
-## Related
-
-- [Connection lifecycle](connection-lifecycle.md) - Handshake and termination
-- [Segment structure](segment.md) - Header structure details
-- [Streams](streams.md) - Stream semantics and framing
-
 ---
 
 Return to [TCP](_index.md)

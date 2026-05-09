@@ -60,10 +60,6 @@ forget the network exists:
   RPC, the server might complete the task but the network could fail before the
   success message reaches you
 
-## Related
-
-- [Client-server architecture](client-server.md) - The architecture RPC operates within
-
 ---
 
 Return to [Fundamentals](_index.md)

@@ -64,10 +64,6 @@ DaemonSets (kube-proxy, log agent, DNS cache, CSI driver) add
 another **fixed** per-node cost on top, which compounds the penalty
 on small clusters.
 
-## Related
-
-- [Worker node sizing](worker-node-sizing.md) - How overhead feeds into node-size choice
-
 ---
 
 Return to [Best practices](_index.md)

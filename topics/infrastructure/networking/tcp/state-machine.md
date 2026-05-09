@@ -57,11 +57,6 @@ ss -tan state close-wait | wc -l
 netstat -an | grep CLOSE_WAIT
 ```
 
-## Related
-
-- [Connection lifecycle](connection-lifecycle.md) - Handshake and termination
-- [Keepalives](keepalives.md) - Detecting dead connections
-
 ---
 
 Return to [TCP](_index.md)

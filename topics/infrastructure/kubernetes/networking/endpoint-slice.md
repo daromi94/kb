@@ -73,11 +73,6 @@ that slice. Typical consumers:
   upstream lists.
 - **Custom operators** — anything with a watch on EndpointSlices.
 
-## Related
-
-- [kube-proxy](kube-proxy.md) - Consumes EndpointSlices to program DNAT
-- [CoreDNS](coredns.md) - Resolves headless Services from slice entries
-
 ---
 
 Return to [Networking](_index.md)

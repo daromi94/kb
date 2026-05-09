@@ -70,12 +70,6 @@ ss -xl # Show Send-Q and Recv-Q for Unix domain sockets
 | Recv-Q consistently high | Consumer too slow to drain incoming data   |
 | Send-Q consistently high | Peer's recv buffer full, throttling sender |
 
-## Related
-
-- [Unix domain sockets](unix-domain-sockets.md) - Data flow overview
-- [UDS lifecycle](uds-lifecycle.md) - API calls for read/write
-- [UDS vs TCP loopback](uds-vs-tcp-loopback.md) - Why direct copy is faster
-
 ---
 
 Return to [Unix domain sockets](_index.md)

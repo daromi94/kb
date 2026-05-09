@@ -57,12 +57,6 @@ Protocols like QUIC implement reliability over UDP with connection IDs that
 allow migration between paths/addresses, partially addressing the load
 balancing problem.
 
-## Related
-
-- [State machine](state-machine.md) - Connection states
-- [SYN flood attack](syn-flood.md) - Exploiting statefulness
-- [Sockets](sockets.md) - Kernel structures
-
 ---
 
 Return to [TCP](_index.md)

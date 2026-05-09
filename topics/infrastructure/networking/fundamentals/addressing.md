@@ -116,11 +116,6 @@ they can't read it.
 | ICMP Blocked     | Firewall blocks ping but allows other traffic |
 | ARP Cache Stale  | Old MAC-to-IP mapping causes misdelivery      |
 
-## Related
-
-- [OSI model](osi-model.md) - The layer model for networking
-- [Encapsulation](encapsulation.md) - How addresses are added to frames/packets
-
 ---
 
 Return to [Fundamentals](_index.md)

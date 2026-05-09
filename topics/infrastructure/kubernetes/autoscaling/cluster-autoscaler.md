@@ -85,12 +85,6 @@ using low-priority placeholder pods that get evicted when real
 pods need the space, or run a small pool of oversized nodes so HPA
 has room to grow into while CA catches up.
 
-## Related
-
-- [Scaling mechanisms](scaling-mechanisms.md) - HPA vs VPA vs Cluster Autoscaler
-- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
-- [Expanders](expanders.md) - Picking a node group on scale-up
-
 ---
 
 Return to [Autoscaling](_index.md)

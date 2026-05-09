@@ -41,10 +41,6 @@ Default to a CRD. Reach for aggregation when the data does not
 belong in etcd — live metrics, computed views, external
 integrations.
 
-## Related
-
-- [API server](api-server.md) - Where extensions plug into the pipeline
-
 ---
 
 Return to [Control plane](_index.md)

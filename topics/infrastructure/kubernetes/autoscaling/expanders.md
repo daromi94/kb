@@ -54,10 +54,6 @@ returns the group to scale. This is the escape hatch for decision
 logic that doesn't fit the built-in strategies — workload-aware
 placement, business rules, or multi-cluster coordination.
 
-## Related
-
-- [Cluster autoscaler](cluster-autoscaler.md) - Scale-up trigger and templates
-
 ---
 
 Return to [Autoscaling](_index.md)

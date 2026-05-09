@@ -114,14 +114,6 @@ directory and bind with a relative path.
 | Permission race    | Unauthorized connects | Medium   |
 | Long paths         | `ENAMETOOLONG`        | Low      |
 
-## Related
-
-- [UDS lifecycle](uds-lifecycle.md) - Server bind/accept flow
-- [UDS socket types](uds-socket-types.md) - SEQPACKET avoids framing bugs
-- [Partial I/O](partial-io.md) - Short counts from buffer pressure
-- [SCM_RIGHTS](scm-rights.md) - FD passing mechanics
-- [Abstract namespace](abstract-namespace.md) - Linux-only convenience
-
 ---
 
 Return to [Unix domain sockets](_index.md)

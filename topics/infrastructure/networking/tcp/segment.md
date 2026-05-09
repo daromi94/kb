@@ -60,11 +60,6 @@ data payload.
 | SACK         | Selective acknowledgment of non-contiguous blocks |
 | Timestamps   | RTT measurement and PAWS protection               |
 
-## Related
-
-- [Reliability](reliability.md) - How sequence numbers enable ordering
-- [Flow control](flow-control.md) - Window size mechanics
-
 ---
 
 Return to [TCP](_index.md)

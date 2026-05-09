@@ -75,11 +75,6 @@ applies one of two strategies:
 **Recreate** is useful when an application cannot tolerate two versions running
 simultaneously, such as when holding database schema locks.
 
-## Related
-
-- [ReplicaSets](replicasets.md) - How Deployments track versions via ReplicaSets
-- [StatefulSets](statefulsets.md) - For applications requiring stable identity
-
 ---
 
 Return to [Workloads](_index.md)

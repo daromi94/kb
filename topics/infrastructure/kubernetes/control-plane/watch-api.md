@@ -45,10 +45,6 @@ the server sends a synthetic `BOOKMARK` event carrying the current
 resourceVersion. The client records it without doing any work and
 keeps a fresh resume point for free.
 
-## Related
-
-- [API server](api-server.md) - Watch is the pipeline's final fan-out stage
-
 ---
 
 Return to [Control plane](_index.md)

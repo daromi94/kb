@@ -96,12 +96,6 @@ ss -ti
 | rto    | Retransmission timeout (ms)               |
 | rtt    | Measured round-trip time                  |
 
-## Related
-
-- [Flow control](flow-control.md) - Buffer and window interaction
-- [Keepalives](keepalives.md) - Detecting dead peers
-- [Performance](performance.md) - Buffer tuning
-
 ---
 
 Return to [TCP](_index.md)

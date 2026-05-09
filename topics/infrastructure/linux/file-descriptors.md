@@ -71,11 +71,6 @@ Each entry is a symlink showing what the FD currently refers to
 (e.g., `/dev/pts/0` for a terminal, `socket:[12345]` for a network
 connection).
 
-## Related
-
-- [Processes](processes.md) - FDs live inside the per-process
-  task_struct and are copied on fork
-
 ---
 
 Return to [Linux](_index.md)

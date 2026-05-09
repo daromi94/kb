@@ -96,12 +96,6 @@ Only the last two eliminate VM provisioning from the critical path.
 The first two shrink the non-VM portion, which is already the
 smaller share.
 
-## Related
-
-- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - Replica-count control loop
-- [Cluster autoscaler](cluster-autoscaler.md) - Node provisioning from pending pods
-- [Metrics registry](metrics-registry.md) - Where HPA reads metrics from
-
 ---
 
 Return to [Autoscaling](_index.md)

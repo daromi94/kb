@@ -74,12 +74,6 @@ Uses abstract sockets for various internal communication channels.
 **Security note:** Abstract sockets cannot use filesystem permissions. Any
 process can connect if it knows the name. Use `SO_PEERCRED` for access control.
 
-## Related
-
-- [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
-- [UDS lifecycle](uds-lifecycle.md) - The unlink/bind pattern
-- [SO_PEERCRED](so-peercred.md) - Authentication for abstract sockets
-
 ---
 
 Return to [Unix domain sockets](_index.md)

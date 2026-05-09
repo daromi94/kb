@@ -33,13 +33,6 @@ gdb ./program core
 
 Core dump production requires `ulimit -c` to be non-zero.
 
-## Related
-
-- [Virtual memory](virtual-memory.md) - The address translation
-  mechanism that detects violations
-- [Processes](processes.md) - The kernel construct that receives
-  the signal
-
 ---
 
 Return to [Linux](_index.md)

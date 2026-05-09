@@ -23,11 +23,6 @@ crossing from user space into the kernel:
 strace -c ls # summary of syscalls used by ls
 ```
 
-## Related
-
-- [Processes](processes.md) - The kernel-side construct that
-  represents a running program
-
 ---
 
 Return to [Linux](_index.md)

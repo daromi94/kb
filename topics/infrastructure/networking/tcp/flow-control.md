@@ -61,12 +61,6 @@ The default 64KB window is far too small. Window Scaling option (RFC 1323)
 allows windows up to 1GB by applying a shift factor negotiated during
 handshake.
 
-## Related
-
-- [Segment structure](segment.md) - Window Size field
-- [Congestion control](congestion-control.md) - Network-side throttling
-- [Sockets](sockets.md) - Kernel buffer interaction
-
 ---
 
 Return to [TCP](_index.md)

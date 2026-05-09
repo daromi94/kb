@@ -97,12 +97,6 @@ the client asked for. This is why an older API version can be
 deprecated in the schema without rewriting any data in etcd —
 conversion happens at request time.
 
-## Related
-
-- [Admission controllers](admission-controllers.md) - Stages 3 and 5 in detail
-- [Watch API](watch-api.md) - Stage 7 fan-out mechanism
-- [API extension](api-extension.md) - Teaching the server new types
-
 ---
 
 Return to [Control plane](_index.md)

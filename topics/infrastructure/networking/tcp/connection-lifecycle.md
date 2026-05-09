@@ -47,11 +47,6 @@ Client                              Server
 The active closer enters TIME_WAIT for 2×MSL (typically 60 seconds) to handle
 delayed packets and ensure the final ACK arrives.
 
-## Related
-
-- [State machine](state-machine.md) - States like TIME_WAIT and CLOSE_WAIT
-- [Segment structure](segment.md) - Flag fields (SYN, FIN, ACK)
-
 ---
 
 Return to [TCP](_index.md)

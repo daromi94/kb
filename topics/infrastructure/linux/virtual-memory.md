@@ -46,15 +46,6 @@ The kernel enforces `RLIMIT_AS` (total address space) and
 via `ulimit`. Cgroup memory limits are enforced at page fault time
 when physical memory is actually committed.
 
-## Related
-
-- [Processes](processes.md) - Process creation and the virtual
-  address space each process receives
-- [Segmentation faults](segmentation-faults.md) - What happens
-  when a process violates memory rules
-- [User and kernel space](user-and-kernel-space.md) - The
-  privilege boundary that system calls cross
-
 ---
 
 Return to [Linux](_index.md)

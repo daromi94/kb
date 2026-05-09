@@ -52,11 +52,6 @@ As systems grow complex, architecture is split into tiers to separate concerns:
 The main risk is a **single point of failure**. If the central server goes down,
 the entire system is paralyzed for all clients.
 
-## Related
-
-- [Offloading](offloading.md) - Why servers handle expensive tasks
-- [Remote procedure call](rpc.md) - Making remote calls feel local
-
 ---
 
 Return to [Fundamentals](_index.md)

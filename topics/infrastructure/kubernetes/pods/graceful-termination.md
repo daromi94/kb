@@ -71,11 +71,6 @@ immediately — there is no unnecessary wait.
   `sleep` in the preStop hook (2-5 seconds) gives kube-proxy and ingress
   controllers time to update before the app stops serving.
 
-## Related
-
-- [Lifecycle](lifecycle.md) - Termination sequence and pod phases
-- [Disruptions](disruptions.md) - Voluntary and involuntary pod removal
-
 ---
 
 Return to [Pods](_index.md)

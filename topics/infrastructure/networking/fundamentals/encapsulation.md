@@ -100,11 +100,6 @@ If the receiver gets the packet but the application doesn't respond, check:
 - Layer 4: Is there a port mismatch?
 - Firewall: Is the port blocked?
 
-## Related
-
-- [OSI model](osi-model.md) - The seven-layer framework
-- [Addressing](addressing.md) - How IP and MAC work together
-
 ---
 
 Return to [Fundamentals](_index.md)

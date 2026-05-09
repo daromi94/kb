@@ -169,11 +169,6 @@ The modern internet uses the **TCP/IP model** which consolidates OSI into 4-5
 layers (Application, Transport, Internet, Link). However, OSI remains the
 industry standard for troubleshooting, teaching, and security analysis.
 
-## Related
-
-- [Encapsulation](encapsulation.md) - How data travels through layers
-- [Addressing](addressing.md) - IP vs MAC and host-to-host communication
-
 ---
 
 Return to [Fundamentals](_index.md)

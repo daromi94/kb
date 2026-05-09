@@ -60,13 +60,6 @@ simultaneously.
 kernel generates its contents dynamically, exposing internal data
 structures as files.
 
-## Related
-
-- [Virtual memory](virtual-memory.md) - How virtual address spaces
-  are backed by physical memory via demand paging
-- [User and kernel space](user-and-kernel-space.md) - The
-  privilege boundary processes operate within
-
 ---
 
 Return to [Linux](_index.md)

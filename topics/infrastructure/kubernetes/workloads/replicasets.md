@@ -47,10 +47,6 @@ back up.
 | Self-healing    | Yes                         | Yes (via ReplicaSet)                |
 | Rollback        | No                          | Yes (tracks multiple ReplicaSets)   |
 
-## Related
-
-- [Deployments](deployments.md) - Higher-level abstraction using ReplicaSets
-
 ---
 
 Return to [Workloads](_index.md)

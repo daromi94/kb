@@ -56,11 +56,6 @@ utilization ratio HPA is measuring. Run VPA in recommendation-only
 mode alongside HPA, or drive HPA off a signal other than CPU/memory
 (request rate, queue depth).
 
-## Related
-
-- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - HPA control loop and config
-- [Metrics registry](metrics-registry.md) - Where HPA reads metrics from
-
 ---
 
 Return to [Autoscaling](_index.md)

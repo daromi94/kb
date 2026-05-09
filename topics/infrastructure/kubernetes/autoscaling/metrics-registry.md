@@ -84,11 +84,6 @@ Setup is four steps:
    Metrics API.
 4. Create a HorizontalPodAutoscaler referencing that metric name.
 
-## Related
-
-- [Horizontal pod autoscaler](horizontal-pod-autoscaler.md) - The client of the metrics registry
-- [Scaling mechanisms](scaling-mechanisms.md) - HPA in context
-
 ---
 
 Return to [Autoscaling](_index.md)

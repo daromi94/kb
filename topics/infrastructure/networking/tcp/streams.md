@@ -72,11 +72,6 @@ single bytes rapidly, TCP waits briefly to batch them into one segment.
 
 **Disable with**: `TCP_NODELAY` socket option
 
-## Related
-
-- [Segment structure](segment.md) - Actual packet structure
-- [Performance](performance.md) - Nagle and TCP_NODELAY details
-
 ---
 
 Return to [TCP](_index.md)

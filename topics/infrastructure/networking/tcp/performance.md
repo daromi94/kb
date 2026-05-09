@@ -86,12 +86,6 @@ sysctl -w net.ipv4.tcp_rmem="4096 131072 16777216"
 sysctl -w net.ipv4.tcp_wmem="4096 131072 16777216"
 ```
 
-## Related
-
-- [Flow control](flow-control.md) - Window mechanics
-- [Congestion control](congestion-control.md) - cwnd and algorithms
-- [Sockets](sockets.md) - Buffer interaction
-
 ---
 
 Return to [TCP](_index.md)

@@ -56,10 +56,6 @@ StatefulSets are appropriate for:
 Strict ordering and persistent data make "stuck" updates common if a single Pod
 fails its health check.
 
-## Related
-
-- [Deployments](deployments.md) - For stateless applications
-
 ---
 
 Return to [Workloads](_index.md)

@@ -28,13 +28,6 @@ oldest entries.
 | `dmesg --level=err,warn` | Filter to errors and warnings only                      |
 | `dmesg -n <level>`       | Set which severity levels print to the physical console |
 
-## Related
-
-- [Kernel modules](kernel-modules.md) - Module load/unload
-  events appear in dmesg
-- [Segmentation faults](segmentation-faults.md) - Kernel logs
-  segfault details to the ring buffer
-
 ---
 
 Return to [Linux](_index.md)

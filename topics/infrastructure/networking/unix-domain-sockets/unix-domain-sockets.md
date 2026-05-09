@@ -43,12 +43,6 @@ connection.
 - `/var/run/mysqld/mysqld.sock` - MySQL
 - `/tmp/.X11-unix/X0` - X11 display server
 
-## Related
-
-- [UDS vs TCP loopback](uds-vs-tcp-loopback.md) - Why UDS is faster
-- [UDS lifecycle](uds-lifecycle.md) - API calls for server and client
-- [SCM_RIGHTS](scm-rights.md) - Passing file descriptors
-
 ---
 
 Return to [Unix domain sockets](_index.md)

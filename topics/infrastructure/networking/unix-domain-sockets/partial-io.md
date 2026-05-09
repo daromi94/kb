@@ -44,11 +44,6 @@ number of bytes transferred:
 message or fails with `EMSGSIZE` if it exceeds the buffer. Partial datagrams
 never occur.
 
-## Related
-
-- [Socket buffers](socket-buffers.md) - Kernel queues that cause short counts
-- [UDS socket types](uds-socket-types.md) - Stream vs datagram atomicity
-
 ---
 
 Return to [Unix domain sockets](_index.md)

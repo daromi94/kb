@@ -38,11 +38,6 @@ without rebooting.
 | `insmod <file.ko>` | Load a single `.ko` file (no dependency handling) |
 | `rmmod <name>`     | Unload a module                                   |
 
-## Related
-
-- [User and kernel space](user-and-kernel-space.md) - The Ring 0
-  privilege level that modules execute in
-
 ---
 
 Return to [Linux](_index.md)

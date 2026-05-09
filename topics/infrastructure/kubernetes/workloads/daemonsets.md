@@ -71,10 +71,6 @@ spec:
           image: quay.io/fluentd_elasticsearch/fluentd:v2.5.2
 ```
 
-## Related
-
-- [Deployments](deployments.md) - For applications with explicit replica counts
-
 ---
 
 Return to [Workloads](_index.md)

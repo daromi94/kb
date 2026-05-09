@@ -31,10 +31,6 @@ cAdvisor can also run standalone (binary, container, or DaemonSet)
 when a richer per-container view than the Resource Metrics API
 provides is needed.
 
-## Related
-
-- [Metrics registry](metrics-registry.md) - Resource Metrics pipeline cAdvisor feeds
-
 ---
 
 Return to [Autoscaling](_index.md)

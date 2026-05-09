@@ -61,12 +61,6 @@ Every segment includes a 16-bit checksum covering both header and data (plus a
 pseudo-header with IP addresses). Corrupted segments are silently dropped,
 triggering retransmission via timeout.
 
-## Related
-
-- [Segment structure](segment.md) - Sequence and ACK fields in header
-- [Congestion control](congestion-control.md) - How retransmission interacts
-  with congestion algorithms
-
 ---
 
 Return to [TCP](_index.md)

@@ -97,11 +97,6 @@ Nothing forces every node to be the same size. A common pattern is
 one general pool plus a dedicated pool for memory-heavy or GPU
 workloads — letting each class of work pick its own trade-off.
 
-## Related
-
-- [Cluster topologies](cluster-topologies.md) - How many clusters to run
-- [Node reserved resources](node-reserved-resources.md) - Overhead formulas in detail
-
 ---
 
 Return to [Best practices](_index.md)

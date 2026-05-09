@@ -70,11 +70,6 @@ mounting a disk) is allowed.
 - Only provides UID, GID, PID—not full user context
 - Credentials captured at connect time; if process changes uid later, stale
 
-## Related
-
-- [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
-- [SCM_RIGHTS](scm-rights.md) - The other UDS-only feature
-
 ---
 
 Return to [Unix domain sockets](_index.md)

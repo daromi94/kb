@@ -82,12 +82,6 @@ Any file descriptor:
 - Both processes must be on the same host
 - Receiver must handle the fd arriving with a different number
 
-## Related
-
-- [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
-- [SO_PEERCRED](so-peercred.md) - The other UDS-only feature
-- [UDS lifecycle](uds-lifecycle.md) - Using sendmsg/recvmsg
-
 ---
 
 Return to [Unix domain sockets](_index.md)

@@ -56,12 +56,6 @@ ss -ti | grep cwnd
 # cwnd:10 ssthresh:20 rtt:5/3
 ```
 
-## Related
-
-- [Flow control](flow-control.md) - Receiver-side throttling
-- [Reliability](reliability.md) - Retransmission triggers
-- [Performance](performance.md) - Tuning options
-
 ---
 
 Return to [TCP](_index.md)

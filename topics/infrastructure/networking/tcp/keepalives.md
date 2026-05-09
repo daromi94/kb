@@ -71,11 +71,6 @@ For finer control, many protocols implement their own heartbeats:
 
 Examples: gRPC keepalive pings, WebSocket ping/pong, database connection pools
 
-## Related
-
-- [State machine](state-machine.md) - Connection states
-- [Sockets](sockets.md) - Socket options
-
 ---
 
 Return to [TCP](_index.md)

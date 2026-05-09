@@ -98,11 +98,6 @@ Best fit for workloads with sharp traffic spikes where scale-up
 latency is user-facing. Not worth the extra compute for batch or
 predictable workloads.
 
-## Related
-
-- [Lead time](lead-time.md) - Scale-up latency breakdown
-- [Cluster autoscaler](cluster-autoscaler.md) - Reacts to pending placeholders
-
 ---
 
 Return to [Autoscaling](_index.md)

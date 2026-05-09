@@ -61,15 +61,6 @@ Threads within a process share the text, data, BSS, and heap
 segments. Each thread gets its own private stack and register set,
 so function call chains remain independent.
 
-## Related
-
-- [Processes](processes.md) - Process metadata tracked in
-  task_struct
-- [Virtual memory](virtual-memory.md) - How virtual addresses
-  map to physical RAM via demand paging
-- [Segmentation faults](segmentation-faults.md) - What happens
-  when access falls outside valid segments
-
 ---
 
 Return to [Linux](_index.md)

@@ -90,12 +90,6 @@ The asymmetry — kubelet knows first, API server learns second — is
 why tools reading from the API server can briefly disagree with
 what's actually running on the node.
 
-## Related
-
-- [Fundamentals](fundamentals.md) - What a Pod is
-- [Lifecycle](lifecycle.md) - States and transitions after creation
-- [Scheduling](scheduling.md) - How the scheduler picks a node
-
 ---
 
 Return to [Pods](_index.md)

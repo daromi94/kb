@@ -72,10 +72,6 @@ Completed Jobs and their Pods are not deleted automatically—they remain in
 - Deleting the Job manually (also deletes its Pods)
 - Setting `ttlSecondsAfterFinished` to auto-delete after a duration
 
-## Related
-
-- [Deployments](deployments.md) - For continuously running applications
-
 ---
 
 Return to [Workloads](_index.md)

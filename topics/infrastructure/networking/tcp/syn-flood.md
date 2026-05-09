@@ -60,11 +60,6 @@ sysctl net.ipv4.tcp_max_syn_backlog
 | Reduce SYN-ACK retry | `tcp_synack_retries` (default 5)     |
 | Hardware/cloud scrub | Filter attack traffic upstream       |
 
-## Related
-
-- [Connection lifecycle](connection-lifecycle.md) - The three-way handshake
-- [State machine](state-machine.md) - SYN_RCVD state
-
 ---
 
 Return to [TCP](_index.md)

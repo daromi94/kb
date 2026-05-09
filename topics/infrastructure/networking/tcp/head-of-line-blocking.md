@@ -55,11 +55,6 @@ This is why HTTP/3 (which uses QUIC) performs better on lossy networks.
 | Lossy networks       | Severe (frequent retransmissions)   |
 | Real-time data       | Severe (stale data still delivered) |
 
-## Related
-
-- [Reliability](reliability.md) - TCP's ordering guarantee
-- [Streams](streams.md) - Stream abstraction
-
 ---
 
 Return to [TCP](_index.md)

@@ -71,10 +71,6 @@ Applications have to be told their limits explicitly, or use
 cgroup-aware helpers (JVM `UseContainerSupport`, Uber `automaxprocs`
 for Go).
 
-## Related
-
-- [QoS classes](qos-classes.md) - How requests/limits determine eviction priority
-
 ---
 
 Return to [Pods](_index.md)

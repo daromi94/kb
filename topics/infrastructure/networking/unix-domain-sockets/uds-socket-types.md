@@ -79,11 +79,6 @@ Zero protocol overhead for backpressure.
 | SOCK_DGRAM     | No         | Preserved  | UDP (but reliable) |
 | SOCK_SEQPACKET | Yes        | Preserved  | SCTP               |
 
-## Related
-
-- [Unix domain sockets](unix-domain-sockets.md) - UDS fundamentals
-- [UDS lifecycle](uds-lifecycle.md) - API flow for each type
-
 ---
 
 Return to [Unix domain sockets](_index.md)

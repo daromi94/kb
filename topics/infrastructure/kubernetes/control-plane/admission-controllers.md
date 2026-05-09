@@ -40,10 +40,6 @@ pod, no external dependency. Use it for rules expressible in CEL
 (required fields, allowed values, cross-field consistency); reach
 for a webhook only when the rule needs state outside the object.
 
-## Related
-
-- [API server](api-server.md) - Where admission sits in the pipeline
-
 ---
 
 Return to [Control plane](_index.md)

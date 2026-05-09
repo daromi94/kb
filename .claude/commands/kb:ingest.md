@@ -154,18 +154,10 @@ Substantive content. Prose when it serves clarity.
 
 **Term:** Definition when introducing vocabulary.
 
-## Related
-
-- [Other note](other-note.md) - How it connects
-
 ---
 
 Return to [Topic](_index.md)
 ```
-
-**Cross-references:** Never link to other notes inline within prose or headings.
-All cross-references go exclusively in the `## Related` section at the bottom.
-Each entry must fit on a single line — shorten the description to make it fit.
 
 **Titles and headings:** Sentence case at every level — capitalize only
 the first word and proper nouns/acronyms. Applies to `#`, `##`, and `###`
@@ -174,9 +166,9 @@ headings alike. Examples: "# Consistent hashing", "## Write path",
 name; the directory path already provides context ("# Consistency" not
 "# Cassandra consistency").
 
-**Link text must match titles:** In `_index.md` entries, `## Related`
-cross-references, and `Return to [...](_index.md)` footers, the link
-text must match the target's `# Title` exactly.
+**Link text must match titles:** In `_index.md` entries and
+`Return to [...](_index.md)` footers, the link text must match the
+target's `# Title` exactly.
 
 Standards: Single blank lines between elements, language tags on code blocks.
 

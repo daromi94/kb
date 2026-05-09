@@ -10,7 +10,7 @@ and implementation techniques worth remembering. Each note focuses on one
 transferable lesson grounded in a concrete implementation.
 
 Refer to `/kb:ingest` for all formatting and structural standards (line
-width, table style, title casing, prose style, cross-references, etc.).
+width, table style, title casing, prose style, etc.).
 
 ## Directory Structure
 
@@ -106,10 +106,6 @@ alternatives exist and why are they worse?
 1-2 paragraphs distilling the general principle. This is what makes
 the note useful beyond "I read this source once."
 
-## Related
-
-- [Sibling insight](sibling.md) - How it connects
-
 ---
 
 Return to [<Project>](_index.md)
@@ -118,8 +114,6 @@ Return to [<Project>](_index.md)
 **Title:** Names the technique or pattern, not the project. The project
 context comes from the directory. Example: "Channel pipeline design"
 not "How Netty implements pipelines."
-
-**Cross-references:** Same-directory only, in `## Related`.
 
 ### 7. Save and Report
 

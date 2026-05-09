@@ -51,12 +51,6 @@ request when it cannot cover the estimated cost. Under overload this
 is decisive: rejecting at the door keeps the queue moving, while
 starting work and canceling it midway burns resources anyway.
 
-## Related
-
-- [Cooperative cancellation](cooperative-cancellation.md) - Actually stopping the work
-- [Fanout tail amplification](fanout-tail-amplification.md) - Why deep trees need this
-- [Tail-targeted engineering](tail-targeted-engineering.md) - Variance-reduction toolkit
-
 ---
 
 Return to [Latency](_index.md)

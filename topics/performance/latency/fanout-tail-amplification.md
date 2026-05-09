@@ -27,13 +27,6 @@ is p99.99.
 
 Optimize the tail, not the mean.
 
-## Related
-
-- [Rarity as frequency](rarity-as-frequency.md) - Distribution thinking at scale
-- [Tail-targeted engineering](tail-targeted-engineering.md) - Variance-reduction techniques
-- [Deadline propagation](deadline-propagation.md) - Carrying a budget through the call tree
-- [Cooperative cancellation](cooperative-cancellation.md) - Actually stopping work on deadline
-
 ---
 
 Return to [Latency](_index.md)

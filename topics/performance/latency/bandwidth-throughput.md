@@ -36,11 +36,6 @@ Latency and throughput often trade against each other:
 The goal of latency engineering is achieving low latency without destroying
 throughput.
 
-## Related
-
-- [Latency definition](latency-definition.md) - The stopwatch rule
-- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Pipelining tension
-
 ---
 
 Return to [Latency](_index.md)

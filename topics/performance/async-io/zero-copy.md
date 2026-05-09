@@ -57,11 +57,6 @@ io_uring supports zero copy through registered buffers:
 **Best use case:** Sending large files (video streaming, static web servers)
 where the application acts as a dumb pipe and doesn't modify the data.
 
-## Related
-
-- [io_uring](io-uring.md) - Supports registered buffers for zero copy
-- [Shared memory](shared-memory.md) - Related IPC optimization
-
 ---
 
 Return to [Async I/O](_index.md)

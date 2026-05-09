@@ -60,11 +60,6 @@ application and Linux kernel have mapped as shared memory:
 - Kernel reads that same memory location
 - No expensive syscalls needed to pass data back and forth
 
-## Related
-
-- [io_uring](io-uring.md) - Uses shared memory for ring buffers
-- [Zero copy](zero-copy.md) - Related optimization technique
-
 ---
 
 Return to [Async I/O](_index.md)

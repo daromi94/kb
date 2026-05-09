@@ -27,10 +27,6 @@ exist.
 The massive jump from microseconds to milliseconds explains why distributed
 systems pay such a high latency tax compared to local operations.
 
-## Related
-
-- [Latency definition](latency-definition.md) - The stopwatch rule for measurement
-
 ---
 
 Return to [Latency](_index.md)

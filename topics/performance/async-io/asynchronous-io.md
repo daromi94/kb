@@ -23,12 +23,6 @@ Highly effective for **I/O-bound tasks** (network requests, file reading)
 because it prevents the CPU from sitting idle while waiting for slow external
 resources.
 
-## Related
-
-- [Synchronous I/O](synchronous-io.md) - The blocking alternative
-- [Async I/O vs multithreading](async-vs-multithreading.md) - Comparison of
-  approaches
-
 ---
 
 Return to [Async I/O](_index.md)

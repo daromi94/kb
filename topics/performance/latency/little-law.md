@@ -80,13 +80,6 @@ machine.
 | Survive a latency spike | Shed load ($\lambda$) or increase $L$ |
 | Reduce infrastructure   | Reduce $W$ or restrict $\lambda$      |
 
-## Related
-
-- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) -
-  Qualitative tension between the two
-- [Bandwidth and throughput](bandwidth-throughput.md) -
-  Capacity vs actual flow
-
 ---
 
 Return to [Latency](_index.md)

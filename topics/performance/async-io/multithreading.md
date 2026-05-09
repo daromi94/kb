@@ -21,12 +21,6 @@ write thread-safe code using tools like mutexes (locks).
 Often used to handle multiple client connections or tasks where low latency and
 high-speed data sharing between tasks are required.
 
-## Related
-
-- [Threads are evil](threads-are-evil.md) - Why multithreading is dangerous
-- [Async I/O vs multithreading](async-vs-multithreading.md) - Comparison of
-  approaches
-
 ---
 
 Return to [Async I/O](_index.md)

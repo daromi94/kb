@@ -40,12 +40,6 @@ or mutexes, which can slow the program and cause deadlocks.
 For heavy CPU-bound tasks, multiprocessing is often better than either
 approach.
 
-## Related
-
-- [Asynchronous I/O](asynchronous-io.md) - The non-blocking model
-- [Multithreading](multithreading.md) - The concurrent threads model
-- [Threads are evil](threads-are-evil.md) - Problems with multithreading
-
 ---
 
 Return to [Async I/O](_index.md)

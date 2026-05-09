@@ -47,12 +47,6 @@ prefetching, and replication.
 | Low latency     | No queuing, idle resources | Users fast, machines underused |
 | High throughput | Pipelining, batching       | Machines busy, users wait      |
 
-## Related
-
-- [Dennard scaling](dennard-scaling.md) - Why parallelism became necessary
-- [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing the metrics
-- [Latency constants](latency-constants.md) - Physical limits at each timescale
-
 ---
 
 Return to [Latency](_index.md)

@@ -41,10 +41,6 @@ Unable to make single cores faster, manufacturers added more cores:
 This is why concurrent programming and async I/O became essential —
 clock speeds will not get significantly faster.
 
-## Related
-
-- [Latency-throughput tradeoff](latency-throughput-tradeoff.md) - Why more cores don't linearly help
-
 ---
 
 Return to [Latency](_index.md)

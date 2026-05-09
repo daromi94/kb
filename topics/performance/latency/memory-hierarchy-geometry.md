@@ -46,10 +46,6 @@ the computation down (move the code to where the data already
 lives). Everything else is rearranging deck chairs on the wrong
 tier.
 
-## Related
-
-- [Latency constants](latency-constants.md) - Speed-of-light limits
-
 ---
 
 Return to [Latency](_index.md)

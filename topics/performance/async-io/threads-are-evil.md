@@ -65,11 +65,6 @@ Modern technologies avoid threads for application logic:
 | Go / Erlang   | Message passing between actors/goroutines instead of shared memory |
 | Multi-process | Each task gets its own memory; one crash won't take down others    |
 
-## Related
-
-- [Multithreading](multithreading.md) - The model this critique addresses
-- [Asynchronous I/O](asynchronous-io.md) - A safer alternative for I/O tasks
-
 ---
 
 Return to [Async I/O](_index.md)

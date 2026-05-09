@@ -24,12 +24,6 @@ Side effects already begun do not roll back — DB writes, external
 API calls. Idempotency keys make a canceled side effect safe to
 retry.
 
-## Related
-
-- [Deadline propagation](deadline-propagation.md) - The signal that triggers cancel
-- [Fanout tail amplification](fanout-tail-amplification.md) - Why fanouts need this
-- [Tail-targeted engineering](tail-targeted-engineering.md) - Hedged and tied requests
-
 ---
 
 Return to [Latency](_index.md)

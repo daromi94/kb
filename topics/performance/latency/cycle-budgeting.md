@@ -47,10 +47,6 @@ Cycle budgeting is the computational twin of Little's Law. One
 caps how many requests can be in flight; the other caps how much
 work each can do.
 
-## Related
-
-- [Little's law](little-law.md) - The concurrency half of the same filter
-
 ---
 
 Return to [Latency](_index.md)

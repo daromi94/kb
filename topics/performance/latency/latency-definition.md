@@ -34,11 +34,6 @@ When analyzing any slow system:
 
 Without agreement on these boundaries, you cannot fix the problem.
 
-## Related
-
-- [Latency constants](latency-constants.md) - Physical limits at each timescale
-- [Bandwidth and throughput](bandwidth-throughput.md) - Distinguishing speed from volume
-
 ---
 
 Return to [Latency](_index.md)

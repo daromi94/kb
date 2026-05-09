@@ -16,10 +16,6 @@ request finishes and returns a result.
 **Ease of use:** The simplest model to write and understand because program
 flow matches the order of code on the page.
 
-## Related
-
-- [Asynchronous I/O](asynchronous-io.md) - The non-blocking alternative
-
 ---
 
 Return to [Async I/O](_index.md)

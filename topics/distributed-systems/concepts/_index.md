@@ -17,6 +17,7 @@ Foundational techniques and principles for distributed systems.
 - [Crash-only software](crash-only-software.md) - Structural properties for crash resilience
 - [Blast radius reduction](blast-radius-reduction.md) - Containment through compartmentalization
 - [Metastable failures](metastable-failures.md) - Self-sustaining failure states
+- [CoDel](codel.md) - Time-based load shedding
 - [Replication](replication.md) - Multi-node data copying
 - [Partitioning](partitioning.md) - Splitting data across nodes
 - [Leader and followers](leader-and-followers.md) - Single-leader write coordination

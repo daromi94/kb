@@ -1,9 +1,9 @@
 # Abstraction
 
 Hiding details that don't matter at a given level of reasoning, exposing
-only what is essential to use or think about something. Less a technique
-than a discipline: choosing which facts to promote into a concept and
-which to suppress as implementation noise.
+only what is essential to use or think about something. It is about
+choosing which facts to promote into concepts and which to suppress
+as noise.
 
 Abstraction manages how much of a system a human must hold in their head
 at once. Reuse, substitutability, and testability are downstream benefits.

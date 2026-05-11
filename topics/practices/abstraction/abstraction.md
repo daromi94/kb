@@ -1,32 +1,27 @@
 # Abstraction
 
-Hiding details that don't matter at a given level of reasoning, exposing
-only what is essential to use or think about something. It is about
-choosing which facts to promote into concepts and which to suppress
-as noise.
+Abstraction hides details that don't matter at a given level of reasoning,
+exposing only what is essential to use or think about something. It is about
+choosing which facts to promote into concepts and which to suppress as noise.
 
-Abstraction manages how much of a system a human must hold in their head
-at once. Reuse, substitutability, and testability are downstream benefits.
+Abstraction determines how much of a system a human must hold in their head
+at once. Reuse, substitutability, and testability are secondary benefits.
 When an abstraction stops shrinking the mental model, it has stopped
 earning its keep.
 
-## Two directions
+## How abstraction works
 
-- **Generalization:** Extract commonalities into a single representation
-  that covers all cases
-- **Detail hiding:** Expose the "what," conceal the "how"
-
-Generalization works through **parameterization** — replace fixed
+**Generalization** works through parameterization — replace fixed
 details with parameters so one construct serves many cases. Generics,
 higher-order functions, strategy objects, and dependency injection all
 live here.
 
-Detail hiding works through **specification** — define what something
-does without committing to how. A sorted collection guarantees ordering
-and lookup semantics; whether it is a red-black tree, a skip list, or
-a B-tree is beneath the line. Design by Contract formalizes this —
-preconditions, postconditions, and invariants are the specification,
-and any conforming implementation is substitutable.
+**Detail hiding** works through specification — define *what* something
+does without committing to *how*. A sorted collection guarantees
+ordering and lookup semantics; whether it is a red-black tree, a skip
+list, or a B-tree is behind the interface. Design by Contract
+formalizes this — preconditions, postconditions, and invariants are
+the specification, and any conforming implementation is substitutable.
 
 ## Properties
 

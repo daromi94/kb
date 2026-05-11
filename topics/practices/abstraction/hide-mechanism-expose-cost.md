@@ -1,7 +1,7 @@
 # Hide mechanism, expose cost
 
 An abstraction should hide the mechanism, but never the cost. Users
-should be able to reason about performance without going deep into the
+should be able to reason about cost without going deep into the
 implementation.
 
 ## The SQL cautionary tale

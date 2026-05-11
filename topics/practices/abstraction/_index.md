@@ -9,6 +9,7 @@ Managing complexity through hiding and generalization.
 - [Polymorphism](polymorphism.md) - Many shapes through common interfaces
 - [Uniform access principle](uniform-access.md) - Hide storage vs computation
 - [Leaky abstractions](leaky-abstractions.md) - When hidden complexity surfaces
+- [Hide mechanism, expose cost](hide-mechanism-expose-cost.md) - Choosing what to conceal
 - [Premature abstraction](premature-abstraction.md) - Risks of abstracting too early
 - [Rule of three](rule-of-three.md) - Wait for three instances before generalizing
 

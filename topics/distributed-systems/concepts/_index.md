@@ -7,6 +7,7 @@ Foundational techniques and principles for distributed systems.
 - [Overview](overview.md) - Definition and motivation
 - [Emergence](emergence.md) - Global behavior from local rules
 - [State machine model](state-machine-model.md) - Discrete-step abstraction
+- [Design at the abstract plane](design-at-the-abstract-plane.md) - Designing above the implementation
 - [CAP theorem](cap-theorem.md) - Fundamental consistency trade-offs
 - [CALM theorem](calm-theorem.md) - Monotonicity and coordination
 - [Stateless vs stateful](stateless-vs-stateful.md) - State and scaling implications

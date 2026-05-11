@@ -42,15 +42,13 @@ and any conforming implementation is substitutable.
 
 ## Failure modes
 
-- **Premature.** Invents concepts for imagined futures and ossifies the
-  wrong seams
-- **Under-abstraction.** Drowns readers in incidental detail and couples
-  modules that should be independent
-- **Wrong axis.** Generalizes along a dimension the domain doesn't vary
-  on — the symptom is a base class with one real subclass and a second
-  "example" nobody uses
-- **Rename wrapper.** Forwards every call to the thing it wraps, adding
-  a layer without hiding anything
+- **Premature.** Built before knowing what varies; leads to flexibility
+  where it's not needed and rigidity where it is
+- **Under-abstraction.** Too little hidden; raw mechanics show through
+  and modules couple
+- **Wrong axis.** Generalizes a dimension that doesn't actually vary;
+  the abstraction holds only one real case
+- **Rename wrapper.** A layer that hides nothing; pure overhead
 
 ---
 

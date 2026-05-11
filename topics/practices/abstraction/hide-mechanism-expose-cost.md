@@ -16,15 +16,9 @@ abstraction. SQL hides the mechanism well, and the cost with it.
 
 ## What "cost" means
 
-For a distributed system, cost has three dimensions:
-
-- **Latency.** Worst-case and tail behavior under load
-- **Throughput.** Sustainable rate and how it scales
-- **Blast radius.** What fails together when something fails
-
-A good abstraction lets the user predict each one. If predicting any of
-them requires going deep into the implementation, the abstraction is
-hiding the wrong things.
+Cost has many dimensions: latency, throughput, blast radius, and more.
+A good abstraction lets the user predict each one without going deep
+into the implementation. Otherwise, it's hiding the wrong things.
 
 ---
 

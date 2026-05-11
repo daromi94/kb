@@ -19,8 +19,7 @@ earning its keep.
 Generalization works through **parameterization** — replace fixed
 details with parameters so one construct serves many cases. Generics,
 higher-order functions, strategy objects, and dependency injection all
-live here. Instead of twenty sort routines, write one parameterized by
-a comparator.
+live here.
 
 Detail hiding works through **specification** — define what something
 does without committing to how. A sorted collection guarantees ordering
@@ -31,16 +30,15 @@ and any conforming implementation is substitutable.
 
 ## Properties
 
-- **Leak-resistant.** The user rarely needs to look underneath to predict
-  behavior. Spolsky's law of leaky abstractions reminds us this is an
-  ideal, not a guarantee
-- **Cohesive.** The things grouped under the concept genuinely belong
-  together, not a bag of unrelated operations sharing a name
-- **Consistent level.** Mixing "open a TCP socket" and "send a password
-  reset email" in the same module is a level violation
-- **Economically justified.** Every abstraction bets that the cost of
-  learning and maintaining the concept will be repaid by reuse, clarity,
-  or flexibility
+- **Leak-resistant.** Users predict behavior without looking
+  underneath; leaks should be rare and predictable
+- **Cohesive.** Everything grouped under the concept genuinely belongs
+  together; otherwise there is no concept, just a name
+- **Consistent level.** The abstraction lives at one level of detail;
+  mixing levels breaks it
+- **Economically justified.** The cost of learning and maintaining the
+  abstraction is repaid by reuse, clarity, or flexibility; otherwise
+  it's overhead
 
 ## Failure modes
 

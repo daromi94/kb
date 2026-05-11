@@ -9,9 +9,9 @@ specific implementation and obscures the alternatives.
 
 ## Abstraction is precision, not vagueness
 
-An abstract model defines its state, transitions, and invariants
-precisely. It is smaller than the real system because irrelevant
-details are omitted, not because it is vaguer.
+An abstract model defines its components precisely. It is smaller than
+the real system because irrelevant details are omitted, not because it
+is vaguer.
 
 Dijkstra: *"The purpose of abstraction is not to be vague, but to
 create a new semantic level in which one can be absolutely precise."*

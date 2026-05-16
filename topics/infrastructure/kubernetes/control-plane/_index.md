@@ -1,16 +1,6 @@
 # Control plane
 
-Clients declare desired state; the control plane — API server,
-etcd, scheduler, controller managers — continuously reconciles the
-cluster toward it.
-
-## Notes
-
-- [API server](api-server.md) - HTTP front door to the cluster
-- [Admission controllers](admission-controllers.md) - Policy gates for writes
-- [Watch API](watch-api.md) - Change notification streams
-- [API extension](api-extension.md) - Adding new resource types
-
----
-
-Return to [Kubernetes](../_index.md)
+- [API server](api-server.md)
+- [Admission controllers](admission-controllers.md)
+- [Watch API](watch-api.md)
+- [API extension](api-extension.md)

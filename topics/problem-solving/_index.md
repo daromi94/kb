@@ -1,21 +1,17 @@
 # Problem-solving
 
-Frameworks and techniques for approaching unfamiliar problems.
-
-## Notes
-
-- [The four-phase method](four-phase-method.md) - Iterative problem-solving process
-- [Working through the phases](working-through-phases.md) - Operational walkthrough
-- [The intelligent solver](intelligent-solver.md) - Mindset and attitude
-- [Signs of progress](signs-of-progress.md) - Persist or abandon signals
-- [Cultivating depth](cultivating-depth.md) - Building lasting understanding
-- [Decomposition and recombination](decomposition-and-recombination.md) - Break apart and reassemble
-- [Analogy](analogy.md) - Solving by structural similarity
-- [Generalization](generalization.md) - Solving the broader case first
-- [Auxiliary problems](auxiliary-problems.md) - Stepping-stone problems
-- [Auxiliary elements](auxiliary-elements.md) - Introducing bridging components
-- [Figures](figures.md) - Spatial representation of constraints
-- [Examine your guess](examine-your-guess.md) - Guided iteration from failure
-- [Transparent deduction](transparent-deduction.md) - Step-by-step reasoning under scrutiny
-- [Indirect proof](indirect-proof.md) - Proof by contradiction
-- [Bright idea](bright-idea.md) - Insight through incubation
+- [The four-phase method](four-phase-method.md)
+- [Working through the phases](working-through-phases.md)
+- [The intelligent solver](intelligent-solver.md)
+- [Signs of progress](signs-of-progress.md)
+- [Cultivating depth](cultivating-depth.md)
+- [Decomposition and recombination](decomposition-and-recombination.md)
+- [Analogy](analogy.md)
+- [Generalization](generalization.md)
+- [Auxiliary problems](auxiliary-problems.md)
+- [Auxiliary elements](auxiliary-elements.md)
+- [Figures](figures.md)
+- [Examine your guess](examine-your-guess.md)
+- [Transparent deduction](transparent-deduction.md)
+- [Indirect proof](indirect-proof.md)
+- [Bright idea](bright-idea.md)

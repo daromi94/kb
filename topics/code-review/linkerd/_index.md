@@ -1,13 +1,5 @@
 # Linkerd2-proxy
 
-Lightweight Kubernetes sidecar proxy written in Rust.
-
-## Notes
-
-- [Structured config loading](structured-config-loading.md) - One-shot validated config tree
-- [Cooperative drain shutdown](cooperative-drain-shutdown.md) - Broadcast-and-wait graceful shutdown
-- [Isolated admin server](isolated-admin-server.md) - Admin on a separate thread
-
----
-
-Return to [Code review](../_index.md)
+- [Structured config loading](structured-config-loading.md)
+- [Cooperative drain shutdown](cooperative-drain-shutdown.md)
+- [Isolated admin server](isolated-admin-server.md)

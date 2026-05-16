@@ -1,16 +1,8 @@
 # Native interop
 
-JVM interaction with native code and memory.
-
-## Notes
-
-- [Heap architecture](heap-architecture.md) - Generational heap layout
-- [Heap vs off-heap memory](heap-vs-off-heap.md) - GC-managed vs native memory
-- [MemorySegment](memory-segment.md) - FFM memory access abstraction
-- [Arena](arena.md) - Off-heap memory lifecycle
-- [Marshaling](marshaling.md) - Data conversion across JVM/native boundary
-- [Downcall](downcall.md) - Calling native functions from Java
-
----
-
-Return to [Java](../_index.md)
+- [Heap architecture](heap-architecture.md)
+- [Heap vs off-heap memory](heap-vs-off-heap.md)
+- [MemorySegment](memory-segment.md)
+- [Arena](arena.md)
+- [Marshaling](marshaling.md)
+- [Downcall](downcall.md)

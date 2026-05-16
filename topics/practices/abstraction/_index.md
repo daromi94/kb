@@ -1,18 +1,10 @@
 # Abstraction
 
-Managing complexity through hiding and generalization.
-
-## Notes
-
-- [Abstraction](abstraction.md) - Core concept and mechanisms
-- [Indirection](indirection.md) - Layers between requester and provider
-- [Polymorphism](polymorphism.md) - Many shapes through common interfaces
-- [Uniform access principle](uniform-access.md) - Hide storage vs computation
-- [Leaky abstractions](leaky-abstractions.md) - When hidden complexity surfaces
-- [Hide mechanism, expose cost](hide-mechanism-expose-cost.md) - Hide how it works, not what it costs
-- [Premature abstraction](premature-abstraction.md) - Risks of abstracting too early
-- [Rule of three](rule-of-three.md) - Wait for three instances before generalizing
-
----
-
-Return to [Practices](../_index.md)
+- [Abstraction](abstraction.md)
+- [Indirection](indirection.md)
+- [Polymorphism](polymorphism.md)
+- [Uniform access principle](uniform-access.md)
+- [Leaky abstractions](leaky-abstractions.md)
+- [Hide mechanism, expose cost](hide-mechanism-expose-cost.md)
+- [Premature abstraction](premature-abstraction.md)
+- [Rule of three](rule-of-three.md)

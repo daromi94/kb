@@ -10,6 +10,7 @@ Java concurrency in practice.
 - [Thread states](thread-states.md) - The six JVM lifecycle states
 - [Thread memory](thread-memory.md) - Shared vs. thread-private state
 - [Daemon threads](daemon-threads.md) - Background service threads
+- [Shutdown hooks](shutdown-hooks.md) - Cleanup callbacks at JVM exit
 - [Safety and liveness](safety-and-liveness.md) - Wrong answer vs. no answer
 - [Thread safety hazards](thread-safety-hazards.md) - Race conditions, visibility, and reordering
 - [Interruption](interruption.md) - Cooperative thread cancellation

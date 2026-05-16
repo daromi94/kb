@@ -28,6 +28,15 @@ A previously registered hook can be removed with
 `removeShutdownHook(Thread)`, which returns `true` if the hook was found
 and deregistered.
 
+## Common uses
+
+- **Resource cleanup:** Closing database connections, network sockets,
+  or open file streams.
+- **State saving:** Flushing in-memory buffers to disk or persisting
+  session state.
+- **Housekeeping:** Deleting temporary files created during the run.
+- **Logging:** Recording the time and reason the application stopped.
+
 ## When hooks run
 
 The JVM starts the shutdown sequence on three triggers:

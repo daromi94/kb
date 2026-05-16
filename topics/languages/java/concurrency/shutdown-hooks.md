@@ -49,7 +49,7 @@ Shutdown hooks are not a guarantee. They are skipped on abrupt
 termination:
 
 - `Runtime.halt(int)` exits immediately without initiating the shutdown
-  sequence.
+  sequence
 - The OS kills the process forcibly (SIGKILL, `kill -9`)
 - A fatal JVM error or native crash aborts the process
 

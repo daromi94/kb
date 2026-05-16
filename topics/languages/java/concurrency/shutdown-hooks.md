@@ -11,9 +11,9 @@ Register a hook by passing an unstarted Thread to
 throws IllegalArgumentException.
 
 ```java
-public class Main {
-    public static void main(String[] args) {
-        Thread cleanup = new Thread(() -> {
+class Main {
+    public static void main(final String[] args) {
+        final var cleanup = new Thread(() -> {
             // Clean up
         });
 

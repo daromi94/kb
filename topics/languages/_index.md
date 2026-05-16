@@ -1,6 +1,6 @@
 # Languages
 
-Idioms, constructs, patterns, and runtime behavior.
+Language semantics, idioms, and runtime behavior.
 
 ## Subtopics
 

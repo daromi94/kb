@@ -37,37 +37,6 @@ not arrived yet.
 3. **Completion:** Call `future.get()` to retrieve the result (blocks until
    done)
 
-## Shutting down
-
-ExecutorService does not stop when your code finishes. Worker threads are
-user threads, so they keep the JVM alive. You must shut down explicitly:
-
-- **`shutdown()`:** No new tasks accepted, but queued tasks finish
-- **`shutdownNow()`:** Attempts to stop active tasks and returns queued tasks
-
-## Example
-
-```java
-import java.util.concurrent.*;
-
-public class ExecutorExample {
-    public static void main(String[] args) throws Exception {
-        ExecutorService executor = Executors.newFixedThreadPool(3);
-
-        Future<String> future = executor.submit(() -> {
-            Thread.sleep(1000);
-            return "Task Complete";
-        });
-
-        // Do other work here...
-
-        System.out.println(future.get()); // Blocks until ready
-
-        executor.shutdown();
-    }
-}
-```
-
 ---
 
 Return to [Concurrency](_index.md)

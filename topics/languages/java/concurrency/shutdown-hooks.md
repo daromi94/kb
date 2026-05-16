@@ -27,6 +27,7 @@ if the hook was found and removed.
 
 ## Common uses
 
+- **Draining:** Letting active requests or tasks complete before exit
 - **Resource cleanup:** Closing database connections, network sockets,
   or open file streams
 - **State saving:** Flushing in-memory buffers to disk or persisting

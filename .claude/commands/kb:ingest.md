@@ -12,17 +12,21 @@ readable and recallable in under 5 minutes.
 
 ```
 topics/<topic>/
-  _index.md         # Topic overview
+  _index.md         # Plain link list (only for directories that contain notes)
   <note-slug>.md    # Individual notes
   <subtopic>/       # Optional nested subtopic
 ```
+
+A directory that contains notes gets an `_index.md` (a "leaf index").
+A directory that contains only further subtopic directories does not —
+discovery there happens via directory listing.
 
 ## Workflow
 
 ### 1. Initialize
 
 - Glob `topics/<topic>/**/*.md` to check if topic exists
-- Read `_index.md` if present to see what's covered
+- Read `_index.md` if present to see what notes already exist
 
 ### 2. Gather Input
 
@@ -43,7 +47,7 @@ file after notes are created.
 
 After receiving content, semantically match against existing notes:
 
-- Read note titles and descriptions from `_index.md`
+- Read note titles from `_index.md`
 - For potential matches, read the actual note to assess overlap
 - Consider conceptual similarity, not just keyword overlap
 - Merge into existing notes when the new content extends the same concept
@@ -177,35 +181,15 @@ Standards: Single blank lines between elements, language tags on code blocks.
 ```markdown
 # Topic name
 
-Brief description.
-
-## Subtopics
-
-- [Subtopic](subtopic/_index.md) - Description
-
-## Notes
-
-- [Note name](note-name.md) - Short, stable description
-
----
-
-Return to [Parent topic](../_index.md)
+- [Note name](note-name.md)
+- [Another note](another-note.md)
 ```
 
-Include Subtopics/Notes sections only when entries exist. Omit the
-return link for top-level topics (those directly under `topics/`).
-
-**Descriptions:** Keep descriptions short (3-5 words) and stable. Describe
-the note's *topic area*, not its contents or internal structure. Do not
-list sections, enumerate sub-concepts, or reveal what the note covers —
-that couples the index to the note's internals and goes stale when the
-note changes. The title already carries most of the meaning; the
-description just disambiguates.
-
-Good: `- [Supervision](supervision.md) - Parent-child fault handling`
-Good: `- [Context deep dive](context-deep-dive.md) - Context mechanics in depth`
-Bad:  `- [Supervision](supervision.md) - Restart strategies, error types`
-Bad:  `- [Context deep dive](context-deep-dive.md) - Scope, thread propagation, W3C headers, Baggage`
+The leaf `_index.md` is a plain list of links to the notes in the
+directory — no topic blurb, no `## Notes` heading, no parent backlink,
+no per-link descriptions. Intermediate directories (those that contain
+only further subtopic directories, not notes) do not get an `_index.md`
+at all.
 
 **Ordering:** Arrange entries so the index reads like a book top-to-bottom:
 general to specific, with related topics grouped together. Overviews and
@@ -217,8 +201,7 @@ flow rather than appending to the end.
 
 - Create `topics/<topic>/` if needed
 - Write notes as `<slug>.md` (kebab-case)
-- Update `_index.md` with new entries only
-- For nested subtopics, update parent `_index.md`
+- Update the leaf `_index.md` with new entries only
 - Report what was created/updated with brief summaries
 
 ### 10. Fixing Issues
@@ -237,19 +220,19 @@ ASCII diagrams or other structured content.
 
 ```
 /ingest practices/clean-code + paste -> Created:
-  shutdown-surgery.md - Decommissioning legacy systems
+  shutdown-surgery.md
   _index.md - Updated
 
 /ingest languages/java/concurrency + paste -> Created:
   topics/languages/java/concurrency/threads.md
   topics/languages/java/concurrency/executor-service.md
-  Updated topics/languages/java/_index.md with subtopic link
+  topics/languages/java/concurrency/_index.md - Updated
 
 /ingest performance/async-io + paste (with match) -> Updated:
   asynchronous-io.md - Added event loop section
-  Created blocking.md - When sync I/O fits
+  Created blocking.md
 
 /ingest databases/postgres + file ~/notes/postgres-indexes.md -> Created:
-  btree-indexes.md - B-tree index structure and usage
-  index-only-scans.md - Covering indexes for query optimization
+  btree-indexes.md
+  index-only-scans.md
 ```

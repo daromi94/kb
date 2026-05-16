@@ -16,30 +16,25 @@ width, table style, title casing, prose style, etc.).
 
 ```text
 topics/code-review/<project>/
-  _index.md            # Project overview
+  _index.md            # Plain link list of insight notes
   <insight-slug>.md    # Individual insight notes
 ```
+
+`topics/code-review/` itself has no `_index.md` — projects are
+discovered via directory listing.
 
 ## Workflow
 
 ### 1. Initialize
 
 - Glob `topics/code-review/<project>/**/*.md` to check if project exists
-- If the project directory does not exist, create it and its `_index.md`:
+- If the project directory does not exist, create it and a minimal
+  `_index.md`:
 
 ```markdown
 # <Project name>
-
-<One-line description of the project.>
-
-## Notes
-
----
-
-Return to [Code review](../_index.md)
 ```
 
-- Add the project to `topics/code-review/_index.md` under `## Subtopics`
 - Read existing `_index.md` if present to see what insights are already
   captured
 
@@ -57,7 +52,7 @@ created.
 
 Semantically match against existing insight notes for this project:
 
-- Read note titles and descriptions from `_index.md`
+- Read note titles from `_index.md`
 - For potential matches, read the actual note to assess overlap
 - Merge into existing notes when the new content extends the same insight
 
@@ -132,7 +127,6 @@ conflicts.
 /kb:code-review redis + paste -> Created:
   topics/code-review/redis/_index.md
   topics/code-review/redis/event-loop-simplicity.md
-  Updated topics/code-review/_index.md with subtopic link
 
 /kb:code-review netty + paste (with match) -> Updated:
   topics/code-review/netty/channel-pipeline-design.md - Added section

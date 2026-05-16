@@ -29,7 +29,7 @@ awkward transitions, sections that don't belong where they are.
 ### 3. Check format compliance
 
 Verify each note against the standards defined in `/kb:ingest`:
-formatting, tables, titles, links, index descriptions, prose style.
+formatting, tables, titles, links, index structure, prose style.
 List any deviations.
 
 ### 4. Check readability and clarity

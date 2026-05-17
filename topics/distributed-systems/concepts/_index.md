@@ -30,3 +30,4 @@
 - [Segmented log](segmented-log.md)
 - [Low-water mark](low-water-mark.md)
 - [Bloom filters](bloom-filters.md)
+- [LSM tree](lsm-tree.md)

@@ -1,8 +1,8 @@
 # Triad of maintainability
 
-Clean code is defined by how little resistance it offers to a developer's mind.
-When code is "easy," it minimizes the time between looking at a file and being
-able to safely change it. This lifecycle involves three distinct stages.
+Clean code offers minimal resistance to a developer's mind, shortening the time
+between looking at a file and being able to safely change it. This lifecycle
+involves three distinct stages.
 
 ## 1. Easy to read (the visual layer)
 

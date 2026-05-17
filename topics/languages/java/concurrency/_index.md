@@ -16,6 +16,7 @@
 - [Blocking I/O](blocking-io.md)
 - [I/O multiplexing](io-multiplexing.md)
 - [Executor service](executor-service.md)
+- [Executor service shutdown](executor-service-shutdown.md)
 - [Future](future.md)
 - [CompletableFuture](completable-future.md)
 - [CompletableFuture cancellation](cf-cancellation.md)

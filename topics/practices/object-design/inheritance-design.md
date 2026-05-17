@@ -4,16 +4,14 @@ Design and document for inheritance or prohibit it. A class is either a
 documented foundation built for extension or a sealed leaf. Leaving a class
 open without deliberate design creates the fragile base class problem.
 
-From Joshua Bloch, *Effective Java*.
-
 ## The fragile base class
 
 Inheritance is the strongest form of coupling. Two risks arise when a class
 is extended without explicit design:
 
-**Internal self-use:** If superclass method `A` calls its own method `B`, a
-subclass overriding `B` breaks `A` without warning. The subclass author has
-no way to know that `B` is called internally.
+**Internal self-use:** If superclass method A calls its own method B, a
+subclass overriding B breaks A without warning. The subclass author has
+no way to know that B is called internally.
 
 **Evolution risk:** Adding a method to the superclass that collides with a
 subclass method causes compilation errors or silent behavioral changes.

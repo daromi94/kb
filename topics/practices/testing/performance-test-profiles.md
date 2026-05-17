@@ -40,14 +40,14 @@ hides its failure mode until production is not.
 
 ## Spike test
 
-Inject a sudden, massive surge in a very short window. Models a
+Inject a sudden, large surge in a very short window. Models a
 viral event, a flash sale, or a thundering herd from a synchronized
 restart. The gradual ramp of a stress test gives autoscalers and
 rate limiters time to react; a spike does not.
 
 Spike tests answer whether load balancers and autoscaling groups
 respond in time, whether queue management absorbs the shock, whether
-load shedding engages, and whether the explosive concurrency exposes
+load shedding engages, and whether the sudden concurrency exposes
 race conditions invisible at lower rates.
 
 ## Soak test
@@ -65,7 +65,7 @@ expose what slowly decays.
 ## Volume test
 
 Decouple concurrency from data size. Hold the user load constant
-and populate databases, queues, and storage with an enormous corpus
+and populate databases, queues, and storage with a large corpus
 of historical data. The question is whether the data path scales
 with the corpus, not with the user count.
 

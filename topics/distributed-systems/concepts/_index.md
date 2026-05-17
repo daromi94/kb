@@ -6,6 +6,7 @@
 - [Design at the abstract plane](design-at-the-abstract-plane.md)
 - [CAP theorem](cap-theorem.md)
 - [CALM theorem](calm-theorem.md)
+- [OLTP](oltp.md)
 - [Stateless vs stateful](stateless-vs-stateful.md)
 - [Separate compute from data](separate-compute-from-data.md)
 - [Control plane vs data plane](control-plane-data-plane.md)

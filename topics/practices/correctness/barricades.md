@@ -38,8 +38,7 @@ data passed every check.
 A barricade sits at every point where data crosses a trust boundary.
 
 **External input.** HTTP handlers, CLI parsers, file readers,
-message queue consumers. The most critical barricade. Data here has
-zero guarantees.
+message queue consumers. Data here has zero guarantees.
 
 **Third-party integrations.** Responses from external APIs and
 partner systems. Often under-barricaded because developers trust
@@ -54,7 +53,7 @@ match current expectations.
 
 **Configuration loading.** Validate at startup: types, ranges,
 required fields, mutual consistency. A config failure at boot is
-far preferable to discovering an invalid value at 3am.
+preferable to discovering an invalid value during runtime.
 
 **Inter-module boundaries.** Controversial for single-team
 codebases where assertions and types suffice. Compelling in large

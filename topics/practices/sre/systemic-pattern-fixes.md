@@ -1,6 +1,6 @@
 # Systemic pattern fixes
 
-The most powerful use of a correction of errors (COE) database is
+The highest-leverage use of a correction of errors (COE) database is
 finding patterns across dozens of unrelated incidents. Individual
 postmortems fix individual bugs. The outer loop fixes whole classes
 of error.

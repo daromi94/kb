@@ -76,7 +76,7 @@ an error to the caller; **caller-runs** makes the producer execute the
 task itself, throttling submission naturally; **drop-oldest** and
 **drop-newest** silently discard tasks. Caller-runs is the canonical
 backpressure mechanism — drop policies hide overload, so reach for them
-only when losing work is actually acceptable.
+only when losing work is acceptable.
 
 **Size for the workload type.** CPU-bound work wants roughly $N = cores$
 — extra threads only buy context-switch overhead. I/O-bound work follows

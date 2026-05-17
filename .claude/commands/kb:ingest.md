@@ -77,11 +77,13 @@ migration advice from old APIs — just document the current approach),
 convoluted phrasing, roundabout explanations, unnecessary qualifiers
 
 **Writing style:** Get to the point. Use short, direct sentences. Lead with
-the fact or rule, not the context. Say what something *is* or *does* before
-explaining why. Avoid hedging ("it should be noted that", "it is worth
-mentioning", "one might consider"). Cut filler words ("basically",
-"essentially", "in order to", "the fact that"). Prefer active voice.
-Each note must be scannable and recallable in under 5 minutes.
+the fact or rule, not the context. For each section, identify in ≤12 words
+the one thing it says; develop only that and cut sentences that don't carry
+it. Say what something *is* or *does* before explaining why. Avoid hedging
+("it should be noted that", "it is worth mentioning", "one might consider").
+Cut filler words ("basically", "essentially", "in order to", "the fact
+that"). Prefer active voice. Each note must be scannable and recallable in
+under 5 minutes.
 
 **Preserve:** Core explanations, essential examples, tables/comparisons,
 code samples, LaTeX notation, depth and nuance — but express them concisely

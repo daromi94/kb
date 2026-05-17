@@ -1,7 +1,7 @@
 # Flyweight
 
 A structural pattern that reduces memory footprint when an application
-needs a massive number of similar objects. Instead of each object owning
+needs a large number of similar objects. Instead of each object owning
 all its data, the pattern factors out shared, immutable state into a
 single reusable instance — the flyweight — and lets callers supply
 context-dependent state at operation time.
@@ -84,18 +84,17 @@ exactly once.
 
 ## Design guidelines
 
-**Get the intrinsic/extrinsic split right.** The make-or-break
-decision. Intrinsic state is data that would be identical if two
-instances were placed in completely different contexts. If a value
-depends on *where*, *when*, or *who* is using the object, it's
-extrinsic. Too much intrinsic state creates too many unique flyweights
-(defeating the purpose); too much extrinsic state burdens every call
-site.
+**Get the intrinsic/extrinsic split right.** Intrinsic state is data
+that would be identical if two instances were placed in completely
+different contexts. If a value depends on *where*, *when*, or *who* is
+using the object, it's extrinsic. Too much intrinsic state creates too
+many unique flyweights (defeating the purpose); too much extrinsic
+state burdens every call site.
 
-**Intrinsic state must be immutable.** A hard invariant. The moment
-shared state becomes mutable, every consumer is coupled to every other
-consumer's mutations. Enforce at the language level — `final` fields,
-frozen objects, `const` references.
+**Intrinsic state must be immutable.** The moment shared state becomes
+mutable, every consumer is coupled to every other consumer's mutations.
+Enforce at the language level — `final` fields, frozen objects, `const`
+references.
 
 **Route all creation through the factory.** The factory is the single
 source of truth for identity and deduplication. Direct instantiation

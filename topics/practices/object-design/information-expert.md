@@ -1,9 +1,9 @@
 # Information expert
 
-Information expert is a GRASP pattern for assigning responsibilities in
-object-oriented design. The rule: assign a responsibility to the class that
-has the information necessary to fulfill it. "Information" means data stored
-in fields, knowledge of related objects, or the ability to derive a value.
+Information expert is a GRASP pattern: assign a responsibility to the class
+that has the information needed to fulfill it. "Information" means data
+stored in fields, knowledge of related objects, or the ability to derive a
+value.
 
 ## Identifying the expert
 
@@ -13,29 +13,30 @@ aggregates.
 
 ### Example: sale total
 
-A `Sale` contains `SalesLineItem` objects. Each line item knows its quantity
+A Sale contains SalesLineItem objects. Each line item knows its quantity
 and product price; the sale knows its line items.
 
 ```java
-class SalesLineItem {
+public class SalesLineItem {
     private int quantity;
+
     private Money unitPrice;
 
-    Money subtotal() {
+    public Money subtotal() {
         return unitPrice.times(quantity);
     }
 }
 
-class Sale {
+public class Sale {
     private List<SalesLineItem> items;
 
-    Money total() {
+    public Money total() {
         return items.stream().map(SalesLineItem::subtotal).reduce(Money.ZERO, Money::add);
     }
 }
 ```
 
-No `PricingService` reaches into these objects. Each class computes what it
+No PricingService reaches into these objects. Each class computes what it
 can from its own data, and the sale assembles the result.
 
 ## Benefits
@@ -58,7 +59,7 @@ elsewhere:
 touching its fields becomes bloated. Split responsibilities across
 collaborators when cohesion drops.
 
-**Infrastructure concerns:** A `User` object holds enough information to
+**Infrastructure concerns:** A User object holds enough information to
 persist itself, but database access belongs in a repository, not a domain
 object. Layered architecture takes precedence over the expert for
 infrastructure responsibilities.

@@ -1,9 +1,8 @@
 # WTFs per minute
 
-The most practical measurement of code quality is not found in static analysis
-tools or cyclomatic complexity scores, but in the hallway outside a code review
-room. The **WTFs per minute** metric evaluates how often a developer's brain
-hits a cognitive "speed bump" while trying to parse the logic.
+The **WTFs per minute** metric evaluates how often a developer's brain hits a
+cognitive "speed bump" while trying to parse the logic. It captures code quality
+better than static analysis tools or cyclomatic complexity scores.
 
 ## The two states of code review
 

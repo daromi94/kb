@@ -3,7 +3,7 @@
 TCP connections follow a strict state machine with formal establishment and
 termination sequences.
 
-## Establishment: three-Way handshake
+## Establishment: three-way handshake
 
 Before data transfer, client and server must agree on initial sequence numbers.
 
@@ -25,7 +25,7 @@ Client                              Server
    ISN+1
 3. **ACK**: Client acknowledges server's ISN+1; connection established
 
-## Termination: four-Way wave
+## Termination: four-way wave
 
 Because TCP is full-duplex, each side must terminate its sending capability
 independently.

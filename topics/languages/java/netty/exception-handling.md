@@ -8,8 +8,7 @@ Outbound exceptions surface asynchronously through futures and promises.
 
 An inbound exception — a decoder failure, an unexpected disconnect — flows
 head-to-tail through the pipeline, the same direction as data. Each handler
-gets a chance to handle it via `exceptionCaught(ChannelHandlerContext,
-Throwable)`.
+gets a chance to handle it via `exceptionCaught(ChannelHandlerContext, Throwable)`.
 
 A common pattern is a catch-all handler at the tail of the pipeline. Because
 exceptions propagate forward, placing the handler last ensures nothing slips

@@ -5,11 +5,9 @@ module should be available through a single notation that does not reveal
 whether the service is implemented via storage or computation. A client
 should neither know nor care how a value is produced.
 
-Coined by Bertrand Meyer in *Object-Oriented Software Construction*.
-
 ## Storage vs computation
 
-A `Circle` might store its area as a field updated when the radius changes,
+A Circle might store its area as a field updated when the radius changes,
 or compute it on the fly. Under UAP, both cases use the same syntax:
 
 ```python

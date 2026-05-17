@@ -29,7 +29,7 @@ else
 
 The C tradition. Dominant in systems programming, embedded
 development, and Go. If the caller forgets to check the return
-code, the error is silently ignored — the worst possible outcome.
+code, the error is silently ignored.
 
 ## Exceptions
 
@@ -54,10 +54,10 @@ than being silently ignored. The cost: hidden control flow jumps,
 expensive stack unwinding, and resource cleanup complications.
 
 **Checked vs unchecked.** Checked exceptions (Java) force callers
-to handle or declare every exception at compile time. Widely
-considered a failed experiment — the verbosity they impose leads
-developers to swallow exceptions rather than handle them properly.
-Unchecked exceptions provide no compile-time enforcement at all.
+to handle or declare every exception at compile time. The verbosity
+they impose leads developers to swallow exceptions rather than handle
+them properly. Unchecked exceptions provide no compile-time
+enforcement at all.
 
 ## Result types
 

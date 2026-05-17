@@ -95,7 +95,7 @@ The system has two stable states — healthy and overloaded — and
 once tipped into the bad one, it does not recover on its own.
 Defenses: retry budgets (bound retries as a fraction of new
 requests), exponential backoff with jitter, and shedding aggressive
-enough to actually drain the queue rather than tread water.
+enough to actually drain the queue, not just keep pace with arrivals.
 
 ## The underlying principle
 

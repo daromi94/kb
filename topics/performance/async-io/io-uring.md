@@ -89,36 +89,6 @@ The most aggressive performance mode (`IORING_SETUP_SQPOLL`):
 - Application issues I/O without making a single system call
 - Suitable for ultra-low latency, high-IOPS applications (HFT, databases)
 
-## Code example
-
-Using the `liburing` helper library:
-
-```c
-struct io_uring ring;
-io_uring_queue_init(32, &ring, 0); // Setup ring with 32 entries
-
-// 1. Get an SQE (Submission Queue Entry)
-struct io_uring_sqe *sqe = io_uring_get_sqe(&ring);
-
-// 2. Prepare a Read operation (equivalent to pread)
-io_uring_prep_read(sqe, fd, buffer, buffer_size, offset);
-
-// 3. Submit the request
-io_uring_submit(&ring); // Calls io_uring_enter()
-
-// 4. Wait for completion
-struct io_uring_cqe *cqe;
-io_uring_wait_cqe(&ring, &cqe);
-
-// 5. Check result
-if (cqe->res < 0) {
-    fprintf(stderr, "Async read failed: %s\n", strerror(-cqe->res));
-}
-
-// 6. Mark completion as seen
-io_uring_cqe_seen(&ring, cqe);
-```
-
 ## Capabilities
 
 io_uring has evolved into a general-purpose async execution mechanism:

@@ -16,6 +16,7 @@
 - [Blast radius reduction](blast-radius-reduction.md)
 - [Metastable failures](metastable-failures.md)
 - [Backpressure](backpressure.md)
+- [Admission control](admission-control.md)
 - [CoDel](codel.md)
 - [Replication](replication.md)
 - [Partitioning](partitioning.md)

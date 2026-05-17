@@ -23,7 +23,7 @@ reading on a gauge.
 
 ## Burn rate alerting
 
-Alerting on a raw SLO breach after the fact is useless — by the time
+Alerting on a raw SLO breach after the fact is too late — by the time
 a 28-day target is violated, the incident happened days ago. The
 practical approach is to alert on the rate at which the budget is
 being consumed.

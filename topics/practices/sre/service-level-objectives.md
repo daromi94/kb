@@ -17,7 +17,7 @@ A well-formed SLO has three components:
 | Target      | The threshold                   | 99.9%                 |
 | Time window | Period over which it's measured | Rolling 28 days       |
 
-The precision of the SLI definition matters enormously. "Successful
+The precision of the SLI definition matters. "Successful
 request" needs an exact definition — which status codes count as
 failures, whether client errors (4xx) are excluded, how timeouts are
 classified, whether health-check traffic is filtered out. Ambiguity in

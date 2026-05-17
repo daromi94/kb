@@ -4,8 +4,6 @@ Command-query separation (CQS) states that every method should either be a
 **command** that changes state or a **query** that returns data, but never
 both. Asking a question should not change the answer.
 
-Coined by Bertrand Meyer in *Object-Oriented Software Construction*.
-
 ## Commands and queries
 
 **Query:** Returns a result without changing observable state. Safe to call

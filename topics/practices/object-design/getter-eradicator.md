@@ -37,7 +37,7 @@ often require accessors to function.
 (how data is represented), not the data itself. A `Person.getName()` getter
 exposing a conceptual property does not break encapsulation. The problem
 arises when a getter exposes an implementation detail — returning an
-`ArrayList` instead of a `List`, or a raw internal structure that may change.
+ArrayList instead of a List, or a raw internal structure that may change.
 
 **Collaboration between objects:** Objects must share information to
 collaborate. Forbidding all getters forces workarounds like visitors or

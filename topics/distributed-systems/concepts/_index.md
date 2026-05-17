@@ -25,6 +25,7 @@
 - [Leader and followers](leader-and-followers.md)
 - [Leader election](leader-election.md)
 - [Centralized task state](centralized-task-state.md)
+- [Replicated state machine](replicated-state-machine.md)
 - [Quorum and linearizability](quorum-and-linearizability.md)
 - [Write-ahead log](write-ahead-log.md)
 - [Segmented log](segmented-log.md)

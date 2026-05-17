@@ -8,7 +8,7 @@ long-lived branches: merge conflicts, integration drift, and
 
 ## How it works
 
-Branches, if they exist at all, are extremely short-lived (hours, not
+Branches, if they exist at all, are short-lived (hours, not
 days) and exist only to run CI before merging. Because commits land on
 trunk constantly, unfinished work is hidden behind **feature flags**
 rather than isolated on branches.
@@ -34,7 +34,7 @@ workflows:
 ## Tradeoffs
 
 Pays integration cost continuously in tiny increments rather than
-deferring it. Dramatically shortens feedback loops and is a
+deferring it. Shortens feedback loops substantially and is a
 prerequisite for continuous delivery. Large-scale monorepos
 (Google, Meta) run on this model.
 

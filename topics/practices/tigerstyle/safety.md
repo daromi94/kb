@@ -2,10 +2,6 @@
 
 Safety principles derived from NASA's Power of Ten guidelines.
 
-> "The rules act like the seat-belt in your car: initially they are perhaps a
-> little uncomfortable, but after a while their use becomes second-nature and
-> not using them becomes unimaginable." — Gerard J. Holzmann
-
 ## Control flow
 
 - Use straightforward control mechanisms only

@@ -1,9 +1,9 @@
 # Shutdown surgery
 
 Shutdown surgery is a specialized engineering pattern for decommissioning or
-drastically refactoring high-stakes legacy systems. It describes the process
-of systematically removing a service, module, or database while it is still
-"live" or critical to other operations, without causing systemic failure.
+heavily refactoring legacy systems. It describes the process of systematically
+removing a service, module, or database while it is still live or in use by
+other operations, without causing systemic failure.
 
 If a system is tightly coupled, shutdown surgery is impossible; if it is
 well-architected, the surgery is routine.
@@ -30,14 +30,13 @@ logic without calling systems ever knowing a change occurred.
 
 ### Feature flags and kill switches
 
-Modern shutdown surgery relies on feature flags. This allows "dark launching"
-the replacement logic. If the new system fails during surgery, the flag can
-be flipped back instantly, acting as a digital tourniquet to stop the "bleeding"
-(outages).
+Shutdown surgery relies on feature flags. This allows "dark launching" the
+replacement logic. If the new system fails during surgery, the flag can be
+flipped back instantly to halt the rollout and contain outages.
 
 ### Handling hidden side effects
 
-The most dangerous part of shutdown surgery is discovering hidden dependencies:
+The hardest part of shutdown surgery is discovering hidden dependencies:
 
 - **Database triggers:** Logic living in the DB rather than the code
 - **Cron jobs:** External scripts expecting a specific file or table to exist
@@ -55,14 +54,6 @@ isolation:
   the main flow, confusing future maintainers
 - **The Chesterton's fence dilemma:** Developers afraid to remove code because
   they don't understand why it was put there in the first place
-
-## The bridge replacement analogy
-
-Replacing a major highway bridge while traffic is still flowing is the physical
-version of shutdown surgery. You don't just blow up the old bridge. You build a
-temporary bypass (indirection), move the cars over (traffic shifting), tear down
-the old structure (amputation), and finally move traffic onto the permanent new
-bridge.
 
 ---
 

@@ -18,9 +18,6 @@ Dependencies introduce compounding risks for foundational infrastructure:
 One toolchain for everything. Zig covers builds, formatting, and
 analysis — no need for language-specific tools that fragment team velocity.
 
-> "The right tool for the job is often the tool you are already using—adding
-> new tools has a higher cost than many people appreciate" — John Carmack
-
 ## Trade-offs
 
 Higher upfront implementation cost, lower long-term maintenance burden. For

@@ -2,8 +2,8 @@
 
 The anemic domain model is an antipattern where domain objects contain state
 (data) but lack behavior (logic). Objects are named after business nouns
-(`Order`, `Customer`) with rich relationships, yet they are little more than
-bags of getters and setters. The actual business logic lives in separate
+(Order, Customer) with rich relationships, yet they are little more than
+bags of getters and setters. The business logic lives in separate
 Service or Manager classes, making the design procedural despite using an
 object-oriented language.
 
@@ -12,18 +12,24 @@ object-oriented language.
 Anemic — the entity is a data bag, logic lives elsewhere:
 
 ```java
-class Order {
+public class Order {
     private List<LineItem> items;
+
     private String status;
-    // getters and setters for everything
+
+    // Getters and setters for everything
 }
 
-class OrderService {
-    void confirm(Order order) {
-        if (order.getItems().isEmpty())
+public class OrderService {
+    public void confirm(final Order order) {
+        if (order.getItems().isEmpty()) {
             throw new IllegalStateException("no items");
-        if (!order.getStatus().equals("DRAFT"))
+        }
+
+        if (!order.getStatus().equals("DRAFT")) {
             throw new IllegalStateException("already confirmed");
+        }
+
         order.setStatus("CONFIRMED");
     }
 }
@@ -32,15 +38,20 @@ class OrderService {
 Rich — the entity owns its rules and protects its invariants:
 
 ```java
-class Order {
+public class Order {
     private List<LineItem> items;
+
     private Status status = Status.DRAFT;
 
-    void confirm() {
-        if (items.isEmpty())
+    public void confirm() {
+        if (items.isEmpty()) {
             throw new IllegalStateException("no items");
-        if (status != Status.DRAFT)
+        }
+
+        if (status != Status.DRAFT) {
             throw new IllegalStateException("already confirmed");
+        }
+
         status = Status.CONFIRMED;
     }
 }
@@ -54,13 +65,13 @@ rules.
 ## Symptoms
 
 **Logic displacement:** Validations, calculations, and business rules live in
-service classes (`OrderService`) rather than on the entities they govern.
+service classes (OrderService) rather than on the entities they govern.
 
 **Logic duplication:** Because logic is not anchored to its data, it scatters
 across multiple services. Two services that both confirm orders may enforce
 subtly different rules.
 
-**Poor discoverability:** A developer looking at a `Product` class cannot see
+**Poor discoverability:** A developer looking at a Product class cannot see
 what operations are possible; they must search through service classes to find
 the relevant logic.
 

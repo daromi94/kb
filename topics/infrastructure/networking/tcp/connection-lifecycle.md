@@ -44,7 +44,7 @@ Client                              Server
    |      TIME_WAIT (2*MSL)            |
 ```
 
-The active closer enters TIME_WAIT for 2×MSL (typically 60 seconds) to handle
+The active closer enters TIME_WAIT for $2 \times \text{MSL}$ (typically 60 seconds) to handle
 delayed packets and ensure the final ACK arrives.
 
 ---

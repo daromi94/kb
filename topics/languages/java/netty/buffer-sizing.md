@@ -81,7 +81,7 @@ frames are uniform. Set via `ChannelOption.RCVBUF_ALLOCATOR`.
 
 | Scenario              | Strategy                                      |
 |-----------------------|-----------------------------------------------|
-| Exact size in O(1)    | Override `allocateBuffer()` with exact size   |
+| Exact size in $O(1)$  | Override `allocateBuffer()` with exact size   |
 | Tight upper bound     | Use upper bound as initial capacity           |
 | Variable/unbounded    | Accept 256-byte default, let buffer grow      |
 | Length-prefixed frame | Write placeholder, back-patch with `setInt()` |

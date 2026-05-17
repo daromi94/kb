@@ -46,7 +46,7 @@ String result = returnedSegment.getString(0);
 
 ## Performance
 
-Marshaling is O(n) in data size — it allocates, encodes, and
+Marshaling is $O(n)$ in data size — it allocates, encodes, and
 copies. For small strings, overhead is negligible. For large
 buffers (images, network payloads), repeated marshaling negates
 the benefit of native execution.

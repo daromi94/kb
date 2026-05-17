@@ -48,7 +48,7 @@ $$4 \times 1 \times (1 + 10) = 44 \text{ threads}$$
 While the formulas optimize for CPU, consider memory (RAM). Every thread has its
 own stack memory, typically 1MB by default.
 
-- **Thread stack cost:** 1,000 threads ≈ 1 GB RAM just for stacks
+- **Thread stack cost:** $1{,}000 \text{ threads} \approx 1 \text{ GB}$ RAM just for stacks
 - **Heap pressure:** More threads mean more simultaneous object creation,
   increasing GC pause frequency
 - **Rule of thumb:** If calculations suggest 1,000 threads, but you only have

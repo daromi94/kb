@@ -31,11 +31,11 @@ The efficiency of Java NIO depends on which underlying OS system call the
 Selector uses:
 
 **`select()` / `poll()`:** The kernel scans every registered socket to find
-which are ready. This is O(n) per invocation and degrades as connection
+which are ready. This is $O(n)$ per invocation and degrades as connection
 count grows.
 
 **`epoll` (Linux) / `kqueue` (BSD/macOS):** Event-driven APIs where the OS
-maintains a list of ready sockets and hands it over on request. O(1) per
+maintains a list of ready sockets and hands it over on request. $O(1)$ per
 ready event, scaling to millions of connections.
 
 ## Why Netty wraps the Selector

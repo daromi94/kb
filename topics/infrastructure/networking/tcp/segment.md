@@ -56,7 +56,7 @@ data payload.
 | Option       | Purpose                                           |
 |--------------|---------------------------------------------------|
 | MSS          | Maximum Segment Size (sent only in SYN)           |
-| Window Scale | Multiply window by 2^n (allows windows > 64KB)    |
+| Window Scale | Multiply window by $2^n$ (allows windows > 64KB)  |
 | SACK         | Selective acknowledgment of non-contiguous blocks |
 | Timestamps   | RTT measurement and PAWS protection               |
 

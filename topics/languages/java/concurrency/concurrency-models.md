@@ -10,7 +10,7 @@ handles the full request lifecycle using blocking I/O. Code reads
 sequentially, making it easy to write, debug, and reason about.
 
 This model hit a wall when OS threads were expensive. Early Linux kernels
-using the LinuxThreads library had high thread-creation costs, O(n)
+using the LinuxThreads library had high thread-creation costs, $O(n)$
 schedulers that slowed as thread count grew, and per-thread stacks (typically
 1MB) that exhausted memory at thousands of connections.
 
@@ -32,7 +32,7 @@ Several advances have made thread-per-client viable again at high scale:
 **NPTL (Native POSIX Thread Library):** Replaced LinuxThreads in Linux 2.6,
 drastically reducing thread creation and synchronization overhead.
 
-**O(log n) schedulers:** The Completely Fair Scheduler (CFS) in Linux 2.6.23
+**$O(\log n)$ schedulers:** The Completely Fair Scheduler (CFS) in Linux 2.6.23
 uses a red-black tree, making scheduling cost nearly independent of thread
 count.
 

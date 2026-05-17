@@ -43,7 +43,7 @@ of total CPU, even on a small instance.
 | 16 GB to 128 GB  | 6%          |
 | Above 128 GB     | 2%          |
 
-An 8 GB node reserves `(25% × 4) + (20% × 4) = 1 + 0.8 = 1.8 GB`
+An 8 GB node reserves $(25\% \times 4) + (20\% \times 4) = 1 + 0.8 = 1.8$ GB
 for the kubelet, plus 100 MB for eviction. About **24% of the node
 is gone** before any pod runs.
 

@@ -2,7 +2,7 @@
 
 Derived buffers are zero-copy views over an existing ByteBuf. They
 share the same backing memory but maintain independent indices, so
-creation is O(1) with no memcpy.
+creation is $O(1)$ with no memcpy.
 
 ## How they work
 

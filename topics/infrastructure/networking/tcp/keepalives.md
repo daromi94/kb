@@ -39,7 +39,7 @@ net.ipv4.tcp_keepalive_intvl = 10
 net.ipv4.tcp_keepalive_probes = 3
 ```
 
-Total detection time: 60 + (10 × 3) = 90 seconds
+Total detection time: $60 + (10 \times 3) = 90$ seconds
 
 ## Enabling keepalives
 

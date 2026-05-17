@@ -10,7 +10,7 @@ performance, and improves resilience.
 Moves and transforms data based on configuration the control plane provides.
 
 - Latency-sensitive, high throughput
-- Scales linearly with request volume — O(requests)
+- Scales linearly with request volume — $O(\text{requests})$
 - Must maintain near-constant uptime; failure directly impacts users
 
 **Control plane (management plane):** Operates out-of-band from the request
@@ -18,7 +18,7 @@ path. Manages system metadata, configuration orchestration, and global state
 coordination.
 
 - Consistency-oriented
-- Scales with managed nodes or entities — O(nodes)
+- Scales with managed nodes or entities — $O(\text{nodes})$
 - Prioritizes strong consistency (CP in CAP) over high availability
 - Handles complex logic (leader election, sharding) asynchronously
 

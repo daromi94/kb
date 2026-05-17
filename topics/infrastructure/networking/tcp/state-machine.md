@@ -28,7 +28,7 @@ failing to close connections properly, leaking file descriptors.
 
 ## TIME_WAIT: the safety net
 
-After sending the final ACK, the active closer enters TIME_WAIT for 2×MSL
+After sending the final ACK, the active closer enters TIME_WAIT for $2 \times \text{MSL}$
 (Maximum Segment Lifetime), typically 60 seconds.
 
 **Why it exists:**

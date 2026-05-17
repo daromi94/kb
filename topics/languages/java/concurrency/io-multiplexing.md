@@ -12,15 +12,15 @@ thread hand a set of file descriptors to the kernel and block until at least
 one has data ready.
 
 **`select`:** Takes three sets of file descriptors (read, write, exception).
-The kernel scans the entire set on each call, making it O(n) per invocation.
+The kernel scans the entire set on each call, making it $O(n)$ per invocation.
 Limited to a fixed maximum number of descriptors (typically 1,024 on Linux).
 
 **`poll`:** Replaces the fixed-size bitmask with an array of `pollfd` structs,
-removing the descriptor limit. Still O(n) per call since the kernel scans the
+removing the descriptor limit. Still $O(n)$ per call since the kernel scans the
 full array.
 
 **`epoll` (Linux) / `kqueue` (BSD/macOS):** Event-driven alternatives that
-register interest once and receive only the descriptors that are ready. O(1)
+register interest once and receive only the descriptors that are ready. $O(1)$
 per ready event, scaling to hundreds of thousands of connections.
 
 ## Java NIO

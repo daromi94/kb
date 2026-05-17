@@ -13,11 +13,11 @@ redirection — once the rules are in place, packets never leave the kernel.
 Each mode expresses the same ClusterIP DNAT rewrite through a different
 kernel subsystem.
 
-| Mode     | Kernel mechanism              | Trade-off                       |
-|----------|-------------------------------|---------------------------------|
-| iptables | netfilter rule chains         | Sync cost grows with endpoints  |
-| nftables | netfilter via the nft API     | Faster rule updates             |
-| IPVS     | netfilter + kernel hash table | O(1) lookup; more LB algorithms |
+| Mode     | Kernel mechanism              | Trade-off                         |
+|----------|-------------------------------|-----------------------------------|
+| iptables | netfilter rule chains         | Sync cost grows with endpoints    |
+| nftables | netfilter via the nft API     | Faster rule updates               |
+| IPVS     | netfilter + kernel hash table | $O(1)$ lookup; more LB algorithms |
 
 Endpoint selection is random by default; session affinity by ClientIP is
 the alternative.

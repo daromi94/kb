@@ -8,13 +8,12 @@ and low-latency scenarios.
 **Problem**: Original 16-bit window field limits to 64KB. On high-bandwidth,
 high-latency links, this is far too small.
 
-```text
-BDP = Bandwidth × RTT
-1 Gbps × 100ms = 12.5 MB needed
-```
+$$\text{BDP} = \text{Bandwidth} \times \text{RTT}$$
+
+$$1 \text{ Gbps} \times 100 \text{ ms} = 12.5 \text{ MB needed}$$
 
 **Solution**: During handshake, both sides negotiate a shift factor. Actual
-window = header value × 2^scale. Allows windows up to 1GB.
+window is $\text{header value} \times 2^{\text{scale}}$. Allows windows up to 1GB.
 
 ## Nagle's algorithm and TCP_NODELAY
 

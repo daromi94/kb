@@ -46,7 +46,7 @@ decrease).
 faster from loss, more stable on high-latency links.
 
 **BBR**: Measures actual bottleneck bandwidth and RTT to send exactly what the
-network can handle. Key insight: packet loss ≠ congestion (could be random
+network can handle. Key insight: packet loss $\neq$ congestion (could be random
 noise). Prevents bufferbloat in router queues.
 
 ## Observing cwnd

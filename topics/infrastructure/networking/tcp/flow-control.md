@@ -52,10 +52,9 @@ sysctl net.ipv4.tcp_wmem
 **Bandwidth-Delay Product**: For high-bandwidth, high-latency links, buffers
 must be large enough to keep the pipe full:
 
-```text
-BDP = Bandwidth × RTT
-1 Gbps × 100ms = 12.5 MB
-```
+$$\text{BDP} = \text{Bandwidth} \times \text{RTT}$$
+
+$$1 \text{ Gbps} \times 100 \text{ ms} = 12.5 \text{ MB}$$
 
 The default 64KB window is far too small. Window Scaling option (RFC 1323)
 allows windows up to 1GB by applying a shift factor negotiated during

@@ -57,7 +57,7 @@ changes, every piece of code that handles withdrawals must be updated.
 account.withdraw(amount);
 ```
 
-The `Account` object handles the balance check, the subtraction, and the
+The Account object handles the balance check, the subtraction, and the
 business rules internally. The caller doesn't need to know how a withdrawal
 works, only that it is possible.
 

@@ -51,7 +51,7 @@ class Main {
                     final var component = components.get(i);
 
                     component.stop();
-                } catch (Exception e) {
+                } catch (final Exception e) {
                     logger.warn("component failed to stop", e);
                 }
             }

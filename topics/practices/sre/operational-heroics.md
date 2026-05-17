@@ -14,11 +14,10 @@ sees engagement metrics and calls it a strong culture.
 
 ## The reality
 
-Perpetual firefighting is a fantastically expensive misallocation of
-talent. Engineers consumed by break-fix work cannot address
-architectural root causes or improve the product. The system quietly
-decays while the team celebrates its resilience to operating it
-broken.
+Perpetual firefighting is an expensive misallocation of talent.
+Engineers consumed by break-fix work cannot address architectural
+root causes or improve the product. The system quietly decays while
+the team celebrates its resilience to operating it broken.
 
 A mature correction of errors (COE) culture forces teams out of
 break-fix loops by treating repeated incidents as a signal that the

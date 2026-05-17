@@ -1,9 +1,8 @@
 # Leaky abstractions
 
 All non-trivial abstractions leak some of their underlying complexity.
-Joel Spolsky coined this as the Law of Leaky Abstractions: the
-simplification an abstraction provides is never total, and the details
-it hides will surface in unexpected ways.
+The simplification an abstraction provides is never total, and the
+details it hides will surface in unexpected ways.
 
 ## How abstractions leak
 

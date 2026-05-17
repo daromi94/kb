@@ -1,11 +1,9 @@
 # Design by contract
 
 A software correctness methodology where components interact through
-formal, enforceable specifications rather than implicit trust.
-Invented by Bertrand Meyer, formalized in Eiffel and
-*Object-Oriented Software Construction*. The metaphor is from
-business law: two parties enter an agreement with explicit mutual
-obligations and benefits.
+formal, enforceable specifications rather than implicit trust. The
+metaphor is from business law: two parties enter an agreement with
+explicit mutual obligations and benefits.
 
 ## The three components
 

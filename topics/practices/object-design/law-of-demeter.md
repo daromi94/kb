@@ -1,12 +1,8 @@
 # Law of Demeter
 
-The Law of Demeter (LoD) is a design guideline for developing software,
-particularly object-oriented programs. It states that a unit should have only
-limited knowledge about other units: only units "closely" related to the
-current unit.
-
-In simpler terms: **"Only talk to your immediate friends; don't talk to
-strangers."**
+The Law of Demeter (LoD) states that a unit should have only limited
+knowledge about other units: only units "closely" related to the current
+unit. **Only talk to your immediate friends; don't talk to strangers.**
 
 ## The "train wreck" anti-pattern
 
@@ -19,10 +15,10 @@ calls, often called a "train wreck."
 customer.getWallet().getPaymentCard().charge(amount);
 ```
 
-The calling code knows too much. It knows that a `Customer` has a `Wallet`,
-that the `Wallet` contains a `PaymentCard`, and that the `PaymentCard` has a
-`charge` method. If the structure of the `Wallet` changes (e.g., the customer
-now uses a digital `PaymentService`), this code breaks.
+The calling code knows too much. It knows that a Customer has a Wallet,
+that the Wallet contains a PaymentCard, and that the PaymentCard has a
+`charge` method. If the structure of the Wallet changes (e.g., the customer
+now uses a digital PaymentService), this code breaks.
 
 ## The formal rules
 
@@ -41,7 +37,7 @@ allowed calls (don't talk to the friends of your friends).
 | Benefit                   | Explanation                                                           |
 |---------------------------|-----------------------------------------------------------------------|
 | Reduced coupling          | Classes are less dependent on internal structure of other classes     |
-| Increased maintainability | Changes to one part (like `Wallet`) don't ripple through the codebase |
+| Increased maintainability | Changes to one part (like Wallet) don't ripple through the codebase   |
 | Easier testing            | Fewer "stranger" dependencies makes mocking simpler                   |
 | Lower WTFs/minute         | Code intent is clearer via "tell, don't ask" philosophy               |
 
@@ -54,7 +50,7 @@ tell the object what you want it to do.
 - **Asking (bad):** `if (engine.getOil().getPressure() < 10) { alert(); }`
 - **Telling (good):** `if (engine.isOilPressureLow()) { alert(); }`
 
-In the "telling" version, the `Engine` handles the logic of what constitutes
+In the "telling" version, the Engine handles the logic of what constitutes
 "low pressure," encapsulating that knowledge and keeping calling code clean.
 
 ## Exceptions and nuance

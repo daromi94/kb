@@ -1,8 +1,8 @@
 # Defensive programming
 
 Write code that expects failure, validates assumptions, and degrades
-gracefully rather than catastrophically. Every input is hostile, every
-dependency will fail, every edge case will be hit in production.
+gracefully rather than abruptly. Treat every input as untrusted, every
+dependency as fallible, and every edge case as reachable in production.
 
 ## Validate at boundaries
 
@@ -14,11 +14,11 @@ untrusted data deep into the call stack.
 
 ## Fail fast
 
-A loud crash at the source is far easier to debug than silent
-corruption discovered three layers later. When execution reaches an
-impossible or undefined state, halt or throw a descriptive exception
-instantly. Deferred errors obscure root causes, complicate debugging,
-and risk corrupting downstream processes.
+A crash at the source is easier to debug than silent corruption
+discovered three layers down. When execution reaches an impossible
+or undefined state, halt or throw a descriptive exception instantly.
+Deferred errors obscure root causes, complicate debugging, and risk
+corrupting downstream processes.
 
 Write error branches before the success path. It forces clarity about
 what can go wrong and keeps the happy path clean. Check error codes,
@@ -61,10 +61,10 @@ optional extras.
 
 ## Log for reconstruction
 
-When something breaks at 3am, the logs are the only witness. Capture
-request identifiers, input values, the operation attempted, and the
-error returned. The goal is a complete trace from trigger to failure
-without reproducing the scenario.
+When something breaks in production, the logs are the only witness.
+Capture request identifiers, input values, the operation attempted,
+and the error returned. The goal is a complete trace from trigger to
+failure without reproducing the scenario.
 
 ---
 

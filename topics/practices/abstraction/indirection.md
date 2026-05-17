@@ -4,8 +4,7 @@ Indirection is the ability to reference something using a name, identifier, or
 container instead of the value itself. In software engineering, it is the act
 of adding a layer between a requester and a provider to decouple them.
 
-The "fundamental theorem of software engineering," often attributed to David
-Wheeler, states:
+The "fundamental theorem of software engineering" states:
 
 > "We can solve any problem by introducing an extra level of indirection."
 >
@@ -28,7 +27,7 @@ Instead of **A → B**, the structure becomes **A → Map → B**.
 ### Pointers and references
 
 In low-level programming (like C), a pointer is the purest form of indirection.
-Instead of passing a massive data structure, a small memory address is passed.
+Instead of passing a large data structure, a small memory address is passed.
 This allows multiple parts of a program to share and modify the same data
 without duplicating it.
 
@@ -59,7 +58,7 @@ While often used together, they serve different logical purposes:
 - **Indirection** provides flexibility (the "where" or "which"). It focuses on
   the mapping.
 
-If a function uses an interface `Shape` to call `draw()`, it uses abstraction
+If a function uses an interface Shape to call `draw()`, it uses abstraction
 to not care if it's a circle or square. It uses indirection because the actual
 implementation is determined at runtime (dynamic dispatch).
 

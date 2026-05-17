@@ -4,9 +4,6 @@ Performance is a design-phase concern. Back-of-the-envelope sketches
 targeting resource constraints prevent architectural mistakes that no later
 optimization can fix.
 
-> "The lack of back-of-the-envelope performance sketches is the root of all
-> evil." — Rivacindela Hudsoni
-
 ## Design-phase sketches
 
 - Estimate against the four resources: network, disk, memory, CPU

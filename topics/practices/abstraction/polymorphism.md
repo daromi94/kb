@@ -51,8 +51,8 @@ multiple subclasses provide their own implementations of the base's methods.
   interface rather than a concrete class, making components independently
   testable and replaceable.
 - **Open for extension:** New implementations can be added without modifying
-  existing code — a `Triangle` that implements `Shape` works everywhere
-  `Shape` is accepted.
+  existing code — a Triangle that implements Shape works everywhere
+  Shape is accepted.
 
 ## The performance trade-off
 

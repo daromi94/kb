@@ -28,7 +28,7 @@ is easy to delete, easy to move, and easy to test.
 waiting for a pattern to appear across multiple modules, the resulting
 abstraction will be tighter and more accurate to actual needs.
 
-**Refactor incrementally.** Rather than a massive "day zero" design phase,
+**Refactor incrementally.** Rather than a large "day zero" design phase,
 refactor as requirements become clearer. Abstractions crystallize naturally
 from specific implementations.
 

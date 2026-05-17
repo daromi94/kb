@@ -89,10 +89,10 @@ under 5 minutes.
 code samples, LaTeX notation, depth and nuance — but express them concisely
 
 **Format:** Fix inconsistencies, remove trailing whitespace, no double spaces in
-prose (table padding is fine), consistent heading hierarchy, ~80 char lines.
-Class/interface names in prose are plain text (Channel, ByteBuf), not
-backtick-quoted — reserve backticks for code literals like method calls,
-package paths, and inline snippets
+prose (table padding is fine), consistent heading hierarchy, prose lines ≤ 79
+characters (tables exempt — they may exceed). Class/interface names in prose
+are plain text (Channel, ByteBuf), not backtick-quoted — reserve backticks
+for code literals like method calls, package paths, and inline snippets
 
 **Tables:** Every row must fit on a single line — never wrap a cell across
 multiple lines. Condense prose to fit. Pad all cells so columns align. Ensure

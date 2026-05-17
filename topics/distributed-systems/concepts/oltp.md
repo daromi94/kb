@@ -43,7 +43,7 @@ This is the only isolation level safe for ledgers, inventory, and
 other systems where state must reflect physical reality. Weaker
 levels — snapshot isolation, read committed, eventual consistency —
 permit lost updates, write skew, or dirty reads that corrupt the
-record.
+system of record.
 
 ## Power-law contention
 

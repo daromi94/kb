@@ -7,11 +7,10 @@ outages.
 
 ## Mandatory and recurring
 
-At AWS, a mandatory weekly meeting where senior leaders and engineers
-cross-examine correction of errors (COE) documents is cited as a core
-causal factor in the company's reliability record. The cadence is the
-point: reliability review is not an exception triggered by a big
-outage, it is a standing obligation.
+A weekly meeting where senior leaders and engineers cross-examine
+correction of errors (COE) documents anchors organizational reliability.
+The cadence is the point: reliability review is not an exception
+triggered by an outage, it is a standing obligation.
 
 ## Cross-examination, not approval
 

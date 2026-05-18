@@ -9,5 +9,6 @@
 - [Eisenhower matrix](eisenhower-matrix.md)
 - [Eliminating zero days](eliminating-zero-days.md)
 - [Learning posture with AI](learning-posture-with-ai.md)
+- [Cognitive surrender](cognitive-surrender.md)
 - [Effective one-on-ones](one-on-ones.md)
 - [Managing up](managing-up.md)

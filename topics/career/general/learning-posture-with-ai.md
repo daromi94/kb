@@ -1,15 +1,15 @@
 # Learning posture with AI
 
-Using AI without active intent to learn degrades the skill you're paid
-for. The bug gets fixed, the code ships, and the mental model behind it
-never moves. Over time, what you can build without AI assistance gets
-weaker.
+Using AI without active intent to learn degrades your engineering
+skills. The bug gets fixed, the code ships, and your understanding does
+not grow. Over time, your ability to build without AI assistance
+weakens.
 
 The fix is to change posture, not to stop using AI.
 
 ## The default loop optimizes for shipping, not learning
 
-Paste in a spec or error, accept the fix, ship. The struggle between
+Paste in a spec or error, accept the diff, ship. The struggle between
 problem and solution stops happening. Tools are tuned to close tasks:
 product teams are rewarded for merged changes and shorter cycle times,
 not for sharper engineers. Friction is where the learning happens, and

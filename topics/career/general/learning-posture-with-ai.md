@@ -63,9 +63,11 @@ just close tickets?
 months, cognitive debt is accumulating — capability traded for
 present-day speed.
 
-Managers and customers only ask about ship. Learn is on you. Better to
-ship 80% of what you could and learn 100% of what you needed, than the
-reverse. Over years, those produce very different engineers.
+Shipping shows up on dashboards; learning does not. That asymmetry
+pulls everyone toward closing tickets and away from understanding what
+they closed. Resist it deliberately — over a career, the engineer who
+traded some output for understanding ends up substantially stronger
+than the one who optimized for tickets.
 
 ---
 

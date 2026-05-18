@@ -13,7 +13,7 @@ Paste in a spec or error, accept the diff, ship. The struggle between
 problem and solution stops happening. Tools are tuned to close tasks:
 product teams are rewarded for merged changes and shorter cycle times,
 not for sharper engineers. Friction is where the learning happens, and
-defaults have removed it.
+tool defaults have removed it.
 
 Posture, not tool choice, determines the outcome. Engineers who use AI
 to ask conceptual questions retain understanding; engineers who

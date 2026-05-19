@@ -1,6 +1,6 @@
 # Problem-solving
 
-- [The four-phase method](four-phase-method.md)
+- [Four-phase method](four-phase-method.md)
 - [Working through the phases](working-through-phases.md)
 - [The intelligent solver](intelligent-solver.md)
 - [Signs of progress](signs-of-progress.md)

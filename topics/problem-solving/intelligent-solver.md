@@ -1,7 +1,7 @@
-# The intelligent solver
+# Intelligent solver
 
-Defined not by innate talent but by attitude, flexibility, and a
-systematic approach to obstacles.
+Intelligent solvers are defined not by innate talent but by
+attitude, flexibility, and a systematic approach to obstacles.
 
 ## Characteristics
 
@@ -9,14 +9,12 @@ systematic approach to obstacles.
 Without active interest, the mental effort will not survive the
 frustration of dead ends.
 
-**Flexible use of heuristics.** Treat the questions — "What is the
-unknown?", "Can you solve a simpler problem?" — as a versatile
-toolkit, not a rigid checklist. If one angle yields no progress,
-pivot to another without forcing a fit.
+**Flexible use of heuristics.** Treat them as a toolkit, not a
+checklist. If one approach stalls, pivot to another without forcing
+a fit.
 
-**Self-interrogation.** Ask the heuristic questions of yourself
-naturally. When stuck, do not wait passively — actively interrogate
-your understanding of the data, the condition, and the unknown.
+**Self-interrogation.** Question your own thinking. When stuck,
+probe the data, the condition, and the unknown.
 
 **Proportionate attention.** Do not get lost in details before
 understanding the whole. Zoom into execution only after a general

@@ -2,7 +2,7 @@
 
 - [Four-phase method](four-phase-method.md)
 - [Working through the phases](working-through-phases.md)
-- [The intelligent solver](intelligent-solver.md)
+- [Intelligent solver](intelligent-solver.md)
 - [Signs of progress](signs-of-progress.md)
 - [Cultivating depth](cultivating-depth.md)
 - [Socratic method](socratic-method.md)

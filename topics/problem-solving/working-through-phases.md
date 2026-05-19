@@ -13,54 +13,52 @@ your memory and prepares you to recollect relevant points.
 
 ## Working for better understanding
 
-Return to the statement of the problem once it is clear enough that
-you can lose sight of it for a while without losing it altogether.
-Isolate the principal parts: the unknown, the data, and the condition
-for a problem to find; the assumptions and the goal for a problem
-to verify. Consider them one by one, in turn, and in various
-combinations — relating each detail to other details and each to the
-whole. This prepares and clarifies the details that will play a role
-later.
+Return to the problem statement once you can hold it in mind without
+staring at it. Isolate the principal parts:
 
-## Hunting for the helpful idea
+- For a problem to **find**: the unknown, the data, and the
+  condition.
+- For a problem to **prove**: the assumptions and the goal.
 
-Consider the problem from various sides. Emphasize different parts,
-examine the same details in different ways, combine them differently.
-Try to see new meaning in each detail, a new interpretation of the
-whole. Seek contacts with formerly acquired knowledge — what helped
-you in similar situations?
+Consider them one by one and in various combinations, relating each
+to the others and to the whole. This clarifies which details will
+matter later.
 
-A helpful idea shows you the whole way or part of it. Ideas are more
-or less complete. An incomplete idea is still valuable: if it looks
-advantageous, consider it longer. If it looks reliable, ascertain how
-far it leads you and reconsider the situation — it has changed. Each
-idea shifts the landscape. Repeat: consider the new situation from
-various sides, seek contacts with prior knowledge.
+## Hunting for a helpful idea
 
-Be grateful for all ideas — lesser ones, hazy ones, supplementary
-ones that add precision to a hazy one. Even without new ideas, your
-conception of the problem may become more complete, more coherent,
-more balanced.
+Look at the problem from different angles. Emphasize different
+parts, examine the same details in new ways, combine them in new
+arrangements. Try to see new meaning in each detail and a new
+interpretation of the whole. Connect with what you already know —
+what helped you in similar situations?
+
+A helpful idea shows you the whole path or part of it. Even a
+partial idea is worth keeping. If it looks promising but unverified,
+spend more time on it. If it looks sound, follow it through and
+reassess — each idea reshapes the problem. Then look again from new
+angles.
+
+Value every idea — small ones, hazy ones, supplementary ones that
+sharpen a hazy one. Even without new ideas, your understanding of
+the problem may become more complete, more coherent, more balanced.
 
 ## Carrying out the plan
 
-Start from the idea that led you to the solution, once you feel sure
-of the main connection and confident you can supply the missing
-details. For complex problems, distinguish great steps from small
-steps. Check the great steps first, then get down to the smaller
-ones. Convince yourself of each step's correctness by formal
-reasoning, intuitive insight, or both.
+Once you are sure of the main connection and confident you can fill
+in the details, start from the idea your plan rests on. For complex
+problems, sort steps into major and minor. Verify the major ones
+first, then the minor. Convince yourself of each step's correctness
+by formal reasoning, intuitive insight, or both.
 
 ## Looking back
 
-Start from the complete, correct solution. Simplify the details,
-shorten longer parts, try to see the whole solution at a glance. Try
-to improve the solution — make it intuitive, fit it into your prior
-knowledge as naturally as possible. Scrutinize the method and result
-for use in other problems.
+Start from the correct solution. Tighten the details until you can
+see the whole at a glance. Make the reasoning intuitive and connect
+the result to what you already know. Look for other problems the
+method might solve.
 
-Habitually reviewing solutions builds well-ordered, ready-to-use
-knowledge and develops your ability to solve problems.
+Reviewing solutions builds well-ordered, ready-to-use knowledge and
+develops your ability to solve problems.
 
 ---
 

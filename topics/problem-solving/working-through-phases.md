@@ -1,7 +1,8 @@
 # Working through the phases
 
-The four phases are not discrete jumps. Each unfolds through an inner
-progression: orient yourself, do the work, harvest what you gained.
+The four phases are not discrete steps. Each has its own inner
+arc — getting oriented, doing the work, reviewing what you found —
+and the boundaries between phases blur as understanding deepens.
 
 ## Getting acquainted
 

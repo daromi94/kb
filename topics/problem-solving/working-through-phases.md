@@ -1,8 +1,6 @@
 # Working through the phases
 
-The four phases are not discrete steps. Each has its own inner
-arc — getting oriented, doing the work, reviewing what you found —
-and the boundaries between phases blur as understanding deepens.
+The four phases overlap. Progress in one reshapes the earlier ones.
 
 ## Getting acquainted
 

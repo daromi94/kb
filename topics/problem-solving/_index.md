@@ -10,6 +10,7 @@
 - [Generalization](generalization.md)
 - [Auxiliary problems](auxiliary-problems.md)
 - [Auxiliary elements](auxiliary-elements.md)
+- [Counterfactual probing](counterfactual-probing.md)
 - [Figures](figures.md)
 - [Examine your guess](examine-your-guess.md)
 - [Transparent deduction](transparent-deduction.md)

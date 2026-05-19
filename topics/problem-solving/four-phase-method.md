@@ -12,8 +12,8 @@ it yet.
 Identify three things:
 
 - **Unknown:** What are you trying to find or prove?
-- **Data:** What information is given?
-- **Condition:** How does the data constrain the unknown?
+- **Data:** What information is available?
+- **Condition:** Which rules or constraints link the data to the unknown?
 
 Write the parts down separately. Draw a figure or introduce notation
 that makes the constraints visible.

@@ -5,6 +5,7 @@
 - [The intelligent solver](intelligent-solver.md)
 - [Signs of progress](signs-of-progress.md)
 - [Cultivating depth](cultivating-depth.md)
+- [Socratic method](socratic-method.md)
 - [Decomposition and recombination](decomposition-and-recombination.md)
 - [Analogy](analogy.md)
 - [Generalization](generalization.md)

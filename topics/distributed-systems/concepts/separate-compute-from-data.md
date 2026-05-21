@@ -14,17 +14,17 @@ Storage, or a distributed file system) responsible for durability and
 accessibility.
 
 ```text
-+-------------------+     +-------------------+
-|  Compute Node A   |     |  Compute Node B   |
-|   (stateless)     |     |   (stateless)     |
-+---------+---------+     +---------+---------+
-          |                         |
-          |       fetch / push      |
-          v                         v
-+-------------------------------------------+
-|            Storage Layer                  |
-|         (stateful, durable)               |
-+-------------------------------------------+
++------------------+  +------------------+
+|  Compute Node A  |  |  Compute Node B  |
+|   (stateless)    |  |   (stateless)    |
++--------+---------+  +--------+---------+
+         |                     |
+         |    fetch / push     |
+         v                     v
++--------+---------------------+------+
+|            Storage Layer            |
+|         (stateful, durable)         |
++-------------------------------------+
 ```
 
 ## Benefits

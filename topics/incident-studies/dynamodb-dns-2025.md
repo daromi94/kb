@@ -1,10 +1,9 @@
 # AWS DynamoDB DNS outage (Oct 2025)
 
-A 14.5-hour US-EAST-1 outage in which the DynamoDB regional endpoint
-was left resolving to no IP addresses after a race in the DNS
-routing automation. Recovery required manual operator intervention
-because the enactor processes could not make forward progress from
-the resulting state.
+A race in DynamoDB's DNS routing automation left the US-EAST-1
+regional endpoint resolving to no IP addresses. The routing system
+could not self-heal, so the outage ran 14.5 hours and ended only
+when operators intervened.
 
 ## Incident
 
@@ -18,37 +17,34 @@ the resulting state.
 | Cascading | Lambda, ECS, EKS, Fargate, STS/IAM, Connect |
 | Recovery  | Manual operator intervention                |
 
-EC2 internal subsystems depend on DynamoDB for state, propagating
-the failure beyond DynamoDB itself.
-
 ## The routing system
 
-DynamoDB regional endpoints are published in Route 53. Two
-components manage the automation:
+DynamoDB's regional endpoint is published through Route 53. Two
+components keep its DNS record up-to-date:
 
-- **Planner:** Single process producing numbered routing plans from
-  load measurements.
-- **DNS Enactor:** Runs independently in three Availability Zones.
-  Each instance polls for new plans, applies them to Route 53 via
-  transactions, and garbage-collects plans many generations old.
+- **Planner:** A single process that produces numbered routing
+  plans from load measurements.
+- **DNS Enactor:** A process that polls for new plans, applies them
+  to Route 53, and garbage-collects stale plans. It runs as three
+  independent instances, one per Availability Zone.
 
 ```text
 +-----------+
 | Planner   |
 | generates |
 | Plan N    |
-+-----------+
++-----+-----+
       |
       v
-+---------------+
++-----+---------+
 | DNS Enactor   |
 | (one per AZ)  |
 | applies plan  |
 | GCs old plans |
-+---------------+
++-----+---------+
       |
       v
-+--------------+
++-----+--------+
 | Route 53     |
 | endpoint DNS |
 +--------------+
@@ -56,59 +52,30 @@ components manage the automation:
 
 ## Failure sequence
 
-1. One enactor stalled while processing an older plan. Other
-   enactors continued applying newer plans.
-2. The stalled enactor's stale-plan validity check failed — timestamp
-   comparisons became unreliable under the delay — and it overwrote
-   the regional endpoint with the much older plan.
-3. Another enactor's garbage collector deleted that older plan,
+1. One enactor stalled while applying a plan. The other enactors
+   continued applying newer plans.
+2. The stalled enactor's check for stale plans did not reject its
+   plan — the delay had made the timestamp comparison unreliable —
+   so it overwrote the regional endpoint with that now-obsolete
+   plan.
+3. Another enactor's garbage collector deleted that same plan,
    already many generations behind.
-4. The regional endpoint referenced a deleted plan and resolved to
-   no IP addresses.
-5. Enactor processes reading this state could not apply further
-   plan updates. The system remained stuck until operators
-   intervened.
-
-## Why recovery failed
-
-Recovery required the next enactor apply cycle to succeed. It did
-not: the enactor's write path could not produce a new record while
-the prior reference was unresolvable. The state persisted until
-operators intervened.
-
-The same terminal state is reachable without a race — deleting the
-endpoint record directly produces it. Any dangling reference
-triggers the same non-recovery.
+4. The regional endpoint referenced a deleted plan and resolved
+   to no IP addresses.
 
 ## Lessons
 
-Four properties of the system combined to produce the outage.
+**A late write must not overwrite newer state.** Order writes by a
+sequence number, not a timestamp, so a late write is dropped, not
+applied.
 
-**Shared-code redundancy.** Three AZ-isolated enactors run identical
-logic. AZ isolation protects against infrastructure faults, not code
-faults — inputs that stop one stop all three. Surviving this class
-of failure requires diverse implementations or graceful-degradation
-paths, not replication.
+**A one-sided invariant does not hold.** If cleanup deletes data
+past an age limit, no writer may reference data past that limit.
 
-**Transactional serialization across apply operations.** The locking
-mechanism produces head-of-line blocking: a stalled enactor delays
-its own apply until its plan is generations obsolete. Serialization
-primitives meant to prevent concurrent-write anomalies bound
-progress on the slowest holder. Where ordering can be reconstructed
-from monotonic versions, last-write-wins avoids this failure class.
-
-**Hard failure on missing prior state.** The write path aborts when
-its read of the current plan reference is unresolvable, rather than
-treating it as "no current plan." In a foundational service, a
-dangling reference is a state that will be encountered — treating
-it as exceptional turns transient bad state into persistent outage.
-
-**Overlapping cleanup and apply windows.** A plan eligible for
-garbage collection can still be the target of an in-flight apply;
-the apply step has no pre-write check against the deletion
-threshold. Lifecycle bounds enforced only at cleanup permit writes
-that are invalid the moment they land — every mutating endpoint
-must honor the bound.
+**A recovery path must run from the broken state.** If every write
+must first read valid current state, nothing can fix a broken one.
+Let writes proceed even when the current state cannot be read, so
+they can overwrite it.
 
 ---
 

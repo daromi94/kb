@@ -12,8 +12,8 @@ Every HBase daemon exposes this endpoint on its HTTP info server.
 
 - **Served from memory.** It returns the configuration the daemon
   already holds, never re-reading files from disk.
-- **Locked down.** Access is restricted and secret values are masked,
-  so it is safe to leave enabled in production.
+- **Locked down.** It restricts access and masks secret values, so it
+  is safe to leave enabled in production.
 
 ---
 

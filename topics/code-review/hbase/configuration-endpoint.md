@@ -1,10 +1,10 @@
 # Configuration endpoint
 
 A configuration endpoint is a read-only HTTP route that serves the
-settings a process is running with. Those settings are assembled at
-startup from several sources — defaults, config files, environment
-variables, code overrides. Each source is just one input; the process
-runs the merged result of all of them.
+settings a process is currently running with. Those settings are
+assembled at startup from several sources — defaults, config files,
+environment variables, code overrides. Each source is just one input;
+the process runs the merged result of all of them.
 
 ## Implementation
 

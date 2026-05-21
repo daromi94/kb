@@ -1,36 +1,33 @@
 # Structured config loading
 
-Treat configuration as a typed, validated tree that is parsed once at
-startup, consumed by subsystem builders, and then discarded. The config
-struct exists only long enough to prove the system can start correctly.
+Treat configuration as a typed, validated tree: parse it once at
+startup, hand it to subsystem builders, then discard it. The config
+exists only long enough to prove the system can start correctly.
 
-## How linkerd2-proxy does it
+## The config lifecycle
 
-Configuration is a nested struct tree that mirrors the subsystem
-hierarchy — each subsystem owns its own typed config. The config
-source is abstracted so parsing works against any backend, not just
-environment variables. Validation has two layers: per-field type
-parsing and cross-field semantic checks. If anything fails, the proxy
-exits immediately — it never starts in a degraded state. At build
-time, the config is destructured into subsystem builders and ceases
-to exist. There is no runtime config reload.
+Configuration is a typed tree that mirrors the subsystem hierarchy.
+The config source is pluggable, so parsing works against any backend,
+not just environment variables. Validation has two layers: per-field
+type parsing and cross-field semantic checks. If anything fails, the
+proxy exits immediately — it never starts in a degraded state.
+Otherwise, subsystem builders consume the config, and it ceases to
+exist. The proxy never reloads config at runtime.
 
-## Why it works
+## The payoff
 
-A typed tree catches misconfiguration at the earliest possible moment
-rather than at runtime. Failing fast is the right posture for a
-container — a crash triggers a restart and the error is visible in
-logs, while silent degradation from partial config is harder to
-diagnose. Consuming the config once eliminates stale reads, config
-drift, and partial reload bugs.
+A typed tree catches misconfiguration at startup, not at runtime.
+Failing fast suits a container — a crash triggers a restart and the
+error is visible in the logs, whereas silent degradation from partial
+config is harder to diagnose. Consuming the config once eliminates
+stale reads, drift, and partial-reload bugs.
 
-## Takeaway
+## The forcing function
 
-The alternative — stringly-typed config read lazily at arbitrary
-points — trades startup confidence for runtime surprises. When you
-make the config ephemeral, you force every subsystem to declare its
-requirements upfront. Nothing can silently depend on a value that was
-never validated.
+The alternative — untyped config read lazily at arbitrary points —
+trades startup confidence for runtime surprises. Making the config
+ephemeral forces every subsystem to declare its requirements upfront.
+Nothing can silently depend on an unvalidated value.
 
 ---
 

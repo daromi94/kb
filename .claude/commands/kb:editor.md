@@ -10,7 +10,8 @@ Polish one existing note until every paragraph is excellent. Where
 `/kb:editor` goes deep on a single note — its core message, its
 structure, and the wording of every paragraph.
 
-Refer to `/kb:ingest` for all formatting and structural standards.
+Refer to `/kb:ingest` for formatting and structural standards, and to
+`.claude/kb-style.md` for prose and wording standards.
 
 Improve how the note expresses and orders its ideas, and cut what is
 redundant. Do not change its substance — what the note teaches stays
@@ -29,52 +30,29 @@ what it teaches, how it is built, and where it sags.
 State, in one sentence, the single thing the note exists to teach.
 Every paragraph must serve it.
 
-The opening paragraph must deliver that core message — a reader should
-grasp it from the first paragraph alone. If it does not, that is the
-first fix.
+The opening paragraph must deliver that core message (see **Core
+message** in `.claude/kb-style.md`). If it does not, that is the first
+fix.
 
 ### 3. Audit the structure
 
 Go paragraph by paragraph. Name, in twelve words or fewer, the one
-idea each paragraph carries.
-
-- **One idea per paragraph:** split a paragraph that carries two;
-  merge two that carry one.
-- **Idea first:** each paragraph opens with its point. Supporting
-  detail — reasoning, mechanism, examples — comes after it, never
-  before.
-- **Order by dependency:** the core message leads; supporting ideas
-  follow in the order that builds understanding.
-- **Earn the space:** cut any paragraph or section that only restates
-  what another already said. A heading must name the content beneath
-  it, not the project or a template.
+idea each paragraph carries, then fix it against the **Core message**
+and **Paragraphs** rules in `.claude/kb-style.md`. A heading must name
+the content beneath it, not the project or a template.
 
 ### 4. Choose prose or bullets
 
-Prose is the default. It carries reasoning, cause and effect, and the
-connective tissue between ideas.
-
-Use a bullet list only for a genuine set of parallel, independent
-items that need no connective tissue between them. Never bullet to
-look tidy; never force prose onto a real list.
+Apply the **Prose or bullets** rule in `.claude/kb-style.md`: prose
+is the default; a bullet list serves only a genuine set of parallel,
+independent items.
 
 ### 5. Polish every paragraph
 
-Work through the note one paragraph at a time. Make each one:
-
-- **Tight:** every word earns its place. Cut filler, hedges, and
-  anything a neighboring sentence already implies.
-- **Clear:** one reading is enough — no vague term, no ambiguous
-  "and" or "or", no pronoun without a plain antecedent.
-- **Active:** prefer active voice. Recast a cleft — "what X returns
-  is Y" — into the plain "X returns Y". Keep passive only when it
-  earns its place, such as holding one topic in subject position
-  across sentences.
-- **Sound:** grammatically correct, and every claim it makes is true.
-
-When a sentence reads wrong, name the exact fault before fixing it:
-weak collocation, cleft, nominalization, redundancy, repetition,
-subject-verb mismatch. A precise diagnosis produces a precise fix.
+Work through the note one paragraph at a time, holding each to every
+rule in `.claude/kb-style.md` — voice, tense, sentences, words. When a
+sentence reads wrong, name the exact fault before fixing it, as
+**Naming the fault** there describes.
 
 ### 6. Reflow and re-read
 

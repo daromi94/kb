@@ -67,23 +67,17 @@ than creating a duplicate.
 
 ### 5. Process Content
 
-**Remove:** Self-references, filler, redundant explanations, marketing language,
-sales pitches (competitive positioning, "unlike X we do Y", "best-in-class",
-customer testimonials, pricing/business arguments for adoption),
-dated references (version numbers, "as of 2024", "currently", "new in v3",
-release-specific features, "modern" without context),
-deprecation notes ("deprecated since", "removed in", "replaced by X in v4",
-migration advice from old APIs — just document the current approach),
-convoluted phrasing, roundabout explanations, unnecessary qualifiers
+**Remove:** Marketing language and sales pitches (competitive positioning,
+"unlike X we do Y", "best-in-class", customer testimonials, pricing or
+business arguments for adoption), self-references, and redundant
+explanations. Also strip everything `.claude/kb-style.md` rules out —
+filler, hedges, convoluted phrasing, dated references, deprecation
+language.
 
-**Writing style:** Get to the point. Use short, direct sentences. Lead with
-the fact or rule, not the context. For each section, identify in ≤12 words
-the one thing it says; develop only that and cut sentences that don't carry
-it. Say what something *is* or *does* before explaining why. Avoid hedging
-("it should be noted that", "it is worth mentioning", "one might consider").
-Cut filler words ("basically", "essentially", "in order to", "the fact
-that"). Prefer active voice. Each note must be scannable and recallable in
-under 5 minutes.
+**Writing style:** Prose and wording follow `.claude/kb-style.md` — apply
+every rule there. Two ingest-specific checks on top: for each section,
+identify in ≤12 words the one thing it says and develop only that; and
+keep each note scannable and recallable in under 5 minutes.
 
 **Preserve:** Core explanations, essential examples, tables/comparisons,
 code samples, LaTeX notation, depth and nuance — but express them concisely

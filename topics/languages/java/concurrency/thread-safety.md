@@ -42,9 +42,8 @@ them—and requires no extra coordination from callers.
 Correctness means conforming to a specification: the invariants that
 constrain the object's state and the postconditions that describe the
 effects of its operations. In a correct thread-safe class, no sequence of
-public operations—method calls, field reads, field writes—can drive an
-instance into an invalid state, whether those operations run sequentially
-or concurrently.
+public operations—method calls, field reads, field writes—can violate its
+specification, whether those operations run sequentially or concurrently.
 
 Stateless objects are always thread-safe. With no state to share, they give
 concurrent threads nothing to corrupt.

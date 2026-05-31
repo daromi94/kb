@@ -8,6 +8,7 @@
 - [Daemon threads](daemon-threads.md)
 - [Shutdown hooks](shutdown-hooks.md)
 - [Graceful shutdown](graceful-shutdown.md)
+- [Thread safety](thread-safety.md)
 - [Safety and liveness](safety-and-liveness.md)
 - [Thread safety hazards](thread-safety-hazards.md)
 - [Interruption](interruption.md)

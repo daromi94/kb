@@ -14,6 +14,7 @@
 - [Crash or continue](crash-or-continue.md)
 - [Crash-only software](crash-only-software.md)
 - [MTBF and MTTR](mtbf-and-mttr.md)
+- [Scale as survivability](scale-as-survivability.md)
 - [Blast radius reduction](blast-radius-reduction.md)
 - [Metastable failures](metastable-failures.md)
 - [Backpressure](backpressure.md)

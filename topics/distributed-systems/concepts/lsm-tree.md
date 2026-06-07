@@ -2,8 +2,8 @@
 
 The Log-Structured Merge tree (LSM tree) is a storage engine
 optimized for high write throughput. Writes go into an in-memory
-buffer and periodically flush to immutable on-disk files, converting
-random writes into sequential appends. The trade-off is a more
+buffer and periodically flush to immutable on-disk files, so random
+writes turn into sequential appends. The trade-off is a more
 expensive read path: a key's most recent value may live in memory or
 across multiple on-disk files.
 

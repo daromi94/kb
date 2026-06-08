@@ -1,10 +1,10 @@
 # Three pillars of observability
 
-Metrics, logs, and traces are the three signals a system emits, and
-each answers a different question. Metrics tell you how much, logs
-tell you what, and traces tell you where. Only traces follow a single
-request across service boundaries, so they supply the cross-service
-context that metrics and logs lack.
+Metrics, logs, and traces are the three signals a system emits, and each
+answers a different question. Metrics tell you how much, logs tell you
+what, and traces tell you where. Only traces follow a single request
+across service boundaries, so they supply the cross-service context that
+metrics and logs lack.
 
 | Pillar  | Question | Scope                        |
 |---------|----------|------------------------------|
@@ -25,15 +25,15 @@ but discards the per-request detail needed to explain why.
 
 A log is a discrete, timestamped record of an event, carrying
 high-fidelity detail such as a stack trace or an out-of-memory error.
-Each line is localized: on its own it records what happened in one place
-with no built-in link to the request that triggered it elsewhere.
+Each line is localized: it records one event in one place, with no
+built-in link to the request that triggered it elsewhere.
 Correlating log lines across services therefore requires a shared
 correlation ID that you add deliberately.
 
 ## Traces
 
-A trace records the lifecycle of one request as it crosses multiple
-service boundaries.
+A trace records the path of one request as it crosses multiple service
+boundaries.
 
 **Span:** a single unit of work within a trace, such as one service
 handling the request or one database query. A trace is a tree of spans.

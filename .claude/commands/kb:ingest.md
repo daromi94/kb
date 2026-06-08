@@ -166,9 +166,10 @@ headings alike. Examples: "# Consistent hashing", "## Write path",
 name; the directory path already provides context ("# Consistency" not
 "# Cassandra consistency").
 
-**Link text must match titles:** In `_index.md` entries and
-`Return to [...](_index.md)` footers, the link text must match the
-target's `# Title` exactly.
+**Link text must match titles:** A note's only links are its
+`Return to [...](_index.md)` footer and an `_index.md`'s entries for
+its notes; a note never links to another note. In both, the link text
+must match the target's `# Title` exactly.
 
 Standards: Single blank lines between elements, language tags on code blocks.
 

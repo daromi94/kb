@@ -159,15 +159,13 @@ Make example values meaningful and realistic — a name, path, or
 identifier that fits the context. Don't fall back on placeholder
 noise like "foo", "bar", or "baz".
 
-## Lists and cross-references
+## Lists and links
 
 - **Parallel structure.** List items and sibling headings share one
   grammatical form.
-- **Refer by name, not position.** Point to another section or note
-  by its title — never "the section above", "below", or "the
-  following". A note may be reread out of order.
-- **Descriptive link text.** Link text matches the target's `# Title`
-  exactly. No bare "here".
+- **No links between notes.** A note is self-contained; it never links
+  to another note. The only links are an `_index.md`'s entries and each
+  note's `Return to [...](_index.md)` footer.
 
 ## Spelling
 

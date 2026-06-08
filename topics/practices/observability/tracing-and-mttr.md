@@ -8,10 +8,10 @@ component instead of searching each service's logs separately.
 ## The problem tracing solves
 
 With only metrics and logs, locating a fault across many services is
-slow. When a request times out, the entry gateway's log shows only the
-timeout, not which downstream dependency caused it. Each service writes
-to its own logs, so finding the responsible one means opening them one
-at a time and reconstructing the request path by hand.
+slow. When a request times out, the entry gateway's log shows only that,
+not which downstream dependency caused it. Each service writes to its
+own logs, so finding the responsible one means opening them one at a
+time and reconstructing the request path by hand.
 
 ## From alert to root cause
 
@@ -23,8 +23,8 @@ signals:
 2. You pull the trace for that request. Its spans expose the slow or
    failing step, isolating the specific service, database query, or
    network hop responsible.
-3. That span points you to the logs of the one component responsible,
-   where the high-fidelity detail explains the failure.
+3. That span points you to the logs of that one component, where the
+   high-fidelity detail explains the failure.
 
 Each signal has one job: metrics detect, traces localize, logs explain.
 Metrics and logs answer how much and what; the trace supplies the where

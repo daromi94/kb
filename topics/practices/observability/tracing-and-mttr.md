@@ -20,9 +20,9 @@ signals:
 
 1. A metric alert fires, flagging a degraded request, such as a latency
    spike or a rising error rate.
-2. You pull the trace for that request. Its span timings expose where
-   the time went, isolating the specific service, database query, or
-   network hop that produced the latency or error.
+2. You pull the trace for that request. Its spans expose the slow or
+   failing step, isolating the specific service, database query, or
+   network hop responsible.
 3. That span points you to the logs of the one component responsible,
    where the high-fidelity detail explains the failure.
 
@@ -33,9 +33,10 @@ that connects them.
 ## Why this moves MTTR
 
 MTTR covers the whole repair path: detecting the failure, diagnosing it,
-and restoring service. Tracing targets the diagnosis stage, which in a
-system of many services is where the time is lost. Replacing that manual
-log search with a single trace lookup shortens recovery directly.
+and restoring service. Tracing targets the diagnosis stage, which is
+where the time goes when many services are involved. Replacing that
+manual log search with a single trace lookup takes that time straight
+off recovery.
 
 ---
 

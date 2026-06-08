@@ -26,9 +26,9 @@ but discards the per-request detail needed to explain why.
 A log is a discrete, timestamped record of an event, carrying
 high-fidelity detail such as a stack trace or an out-of-memory error.
 Each line is localized: it records one event in one place, with no
-built-in link to the request that triggered it elsewhere.
-Correlating log lines across services therefore requires a shared
-correlation ID that you add deliberately.
+built-in link to the request that triggered it elsewhere. Correlating
+log lines across services therefore requires a shared correlation ID
+that you add deliberately.
 
 ## Traces
 

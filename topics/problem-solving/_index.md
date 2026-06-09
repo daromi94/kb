@@ -7,6 +7,8 @@
 - [Cultivating depth](cultivating-depth.md)
 - [Socratic method](socratic-method.md)
 - [Argument versus quarrel](argument-versus-quarrel.md)
+- [Validity versus soundness](validity-versus-soundness.md)
+- [Echo chambers](echo-chambers.md)
 - [Decomposition and recombination](decomposition-and-recombination.md)
 - [Analogy](analogy.md)
 - [Generalization](generalization.md)

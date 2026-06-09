@@ -38,4 +38,4 @@ not you.
 
 ---
 
-Return to [General](_index.md)
+Return to [Problem-solving](_index.md)

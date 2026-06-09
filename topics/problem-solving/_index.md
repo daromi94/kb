@@ -6,6 +6,7 @@
 - [Signs of progress](signs-of-progress.md)
 - [Cultivating depth](cultivating-depth.md)
 - [Socratic method](socratic-method.md)
+- [Argument versus quarrel](argument-versus-quarrel.md)
 - [Decomposition and recombination](decomposition-and-recombination.md)
 - [Analogy](analogy.md)
 - [Generalization](generalization.md)

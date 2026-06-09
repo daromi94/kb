@@ -27,4 +27,4 @@ brain to enter a concentrated state on arrival.
 
 ---
 
-Return to [Career](_index.md)
+Return to [General](_index.md)

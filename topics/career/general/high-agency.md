@@ -28,4 +28,4 @@ lowers the threshold for the next one.
 
 ---
 
-Return to [Career](_index.md)
+Return to [General](_index.md)

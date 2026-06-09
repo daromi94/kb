@@ -26,4 +26,4 @@ unstuck faster than pretending to have all the answers.
 
 ---
 
-Return to [Career](_index.md)
+Return to [General](_index.md)

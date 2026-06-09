@@ -30,4 +30,4 @@ bottlenecks; relationship-building prevents misalignment.
 
 ---
 
-Return to [Career](_index.md)
+Return to [General](_index.md)

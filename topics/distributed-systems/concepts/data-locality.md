@@ -13,7 +13,7 @@ Spatial locality means data next to a recent access is likely to be
 needed next.
 
 Caches, prefetchers, and the register → cache → main memory → disk
-hierarchy all exist to exploit both. A cache hit can be two orders of
+hierarchy all exist to exploit both. A cache hit can be orders of
 magnitude faster than a trip to main memory.
 
 Even main memory has a near and a far. Under NUMA (non-uniform memory

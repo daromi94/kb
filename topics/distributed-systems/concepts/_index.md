@@ -9,6 +9,7 @@
 - [OLTP](oltp.md)
 - [Stateless vs stateful](stateless-vs-stateful.md)
 - [Separate compute from data](separate-compute-from-data.md)
+- [Data locality](data-locality.md)
 - [Control plane vs data plane](control-plane-data-plane.md)
 - [Distributed monolith](distributed-monolith.md)
 - [Crash or continue](crash-or-continue.md)

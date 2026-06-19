@@ -1,8 +1,8 @@
 # Data locality
 
-A processor works most efficiently when the data it needs sits
-physically close. Every step outward through the memory, storage, and
-network hierarchy costs far more to reach.
+Computation runs fastest when the data it needs sits physically close.
+Each step outward through the memory, storage, and network hierarchy
+costs more.
 
 ## Locality of reference
 
@@ -22,15 +22,16 @@ one attached to another socket on the same board.
 
 ## Across a cluster
 
-The principle scales up. A node's own memory and local disk are close,
-while another machine across the network is far. Reading a block from a
-local disk costs far less than pulling it over the network. A task placed
-on the machine that already holds its input avoids that cost entirely.
+The same principle scales up. A node's own memory and local disk are
+close, while another machine across the network is far. Reading a block
+from a local disk costs far less than pulling it over the network. A task
+placed on the machine that already holds its input avoids that cost
+entirely.
 
-The economics drive the choice. Network bandwidth in a large cluster is
-much lower than the aggregate bandwidth of all its disks. Keeping reads
-local both speeds up the task and spares a shared, finite resource — the
-network backplane — for work that needs it.
+Network bandwidth in a large cluster is much lower than the aggregate
+bandwidth of all its disks. Keeping reads local both speeds up the task
+and spares the network backplane — a shared, finite resource — for work
+that needs it.
 
 ## The locality hierarchy
 
@@ -46,14 +47,14 @@ each task at the closest available tier:
 
 The scheduler prefers node-local placement and degrades to the next tier
 when the ideal node is busy, rather than leaving the task queued. Replica
-placement makes the low tiers likely. A common pattern keeps one replica
+placement makes the near tiers likely. A common pattern keeps one replica
 on the local node, one elsewhere in the same rack, and one on a separate
 rack — fault tolerance balanced against the chance of a node-local read.
 
 ## Trade-offs
 
-Locality couples compute to storage. The machines that hold data must
-also run the code, so the two cannot scale independently. A node can
+Locality couples compute to storage. The machines that hold the data
+must also run the code, so the two cannot scale independently. A node can
 exhaust its CPU while its disk sits half-empty.
 
 Concentrating work where the data lives also concentrates load. A hot

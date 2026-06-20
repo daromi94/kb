@@ -1,10 +1,9 @@
 # Colocation
 
-Colocation places things that are used, accessed, or work together near
-each other in the network, so that few or no hops separate them. Those
-things might be a pair of processes, related datasets, or a service and
-the data it reads. The same node is ideal; a shared rack, zone, or region
-is the next best.
+Colocation places things that work together near each other in the
+network, so that few or no hops separate them. Those things might be a
+pair of processes, related datasets, or a service and the data it reads.
+The same node is ideal; a shared rack, zone, or region is next best.
 
 It is the design-time counterpart of data locality. Locality is resolved
 at runtime, when a scheduler sends each task to the node that already

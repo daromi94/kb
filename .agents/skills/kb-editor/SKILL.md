@@ -42,11 +42,12 @@ idea each paragraph carries, then fix it against the **Core message**
 and **Paragraphs** rules in `$kb-style`. A heading must name
 the content beneath it, not the project or a template.
 
-### 4. Choose prose or bullets
+### 4. Choose the explanatory form
 
-Apply the **Prose or bullets** rule in `$kb-style`: prose
-is the default; a bullet list serves only a genuine set of parallel,
-independent items.
+Apply the **Prose or bullets** rule in `$kb-style`. Use prose for reasoning,
+bullets for parallel items, tables for repeated comparisons, and small ASCII
+diagrams for relationships that are harder to understand linearly. Every
+visual element must teach something that its surrounding prose does not.
 
 ### 5. Polish every paragraph
 

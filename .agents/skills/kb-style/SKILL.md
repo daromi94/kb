@@ -1,6 +1,6 @@
 ---
 name: kb-style
-description: Apply this repository's prose and wording standards when creating, editing, or reviewing knowledge-base notes under topics/.
+description: Apply this repository's teaching-first prose, explanation, and formatting standards when creating, editing, or reviewing knowledge-base notes under topics/.
 ---
 
 # KB note style
@@ -12,6 +12,31 @@ paragraph must serve it.
 
 The opening paragraph delivers that core message — a reader grasps it
 from the first paragraph alone.
+
+When the idea has a central tradeoff or operational rule, state it near
+the opening as a short bold blockquote. Use this only when it gives the
+reader a memorable anchor, not as a required decoration.
+
+## Teaching flow
+
+A note should feel like an excellent technical explanation, not compressed
+reference material. Give the reader enough intermediate reasoning to see
+why the conclusion follows.
+
+- **Lead with the thesis.** Define the idea and its central consequence
+  before introducing mechanisms or edge cases.
+- **Move from abstract to concrete.** Follow a principle with a small
+  technical scenario, state transition, comparison, or data flow that makes
+  it observable.
+- **Develop one implication at a time.** Let each important consequence land
+  before moving to the next. Use headings that express the question or claim
+  the section resolves.
+- **Recombine the pieces.** Near the end, show how the mechanisms interact
+  and restate the idea as a practical design rule.
+
+Do not force every note through the same visible template. Use the smallest
+sequence that teaches the idea completely, but prefer clarity and useful
+reinforcement over maximum compression.
 
 ## Teach the idea
 
@@ -55,17 +80,28 @@ when it was written.
   detail — reasoning, mechanism, examples — comes after, never before.
 - **Order by dependency.** The core message leads; supporting ideas
   follow in the order that builds understanding.
-- **Earn the space.** Cut any paragraph or section that only restates
-  what another already said.
+- **Earn the space.** Cut restatement that adds nothing. Keep deliberate
+  reinforcement when a concrete example, comparison, failure case, or final
+  principle makes an earlier abstraction easier to understand or remember.
 
 ## Prose or bullets
 
-Prose is the default. It carries reasoning, cause and effect, and the
-connective tissue between ideas.
+Choose the form that best performs each teaching job:
 
-Use a bullet list only for a genuine set of parallel, independent
-items that need no connective tissue. Never bullet to look tidy;
-never force prose onto a real list.
+- Use prose for reasoning, causality, qualifications, and transitions.
+- Use bullets for genuine sets of choices, consequences, requirements, or
+  independent examples.
+- Use tables when the reader needs to compare the same dimensions across
+  several options.
+- Use short ASCII diagrams for topology, data flow, state transitions,
+  bottlenecks, failure propagation, and before-and-after behavior.
+- Use `text` code blocks for compact pseudo-state, equations in words,
+  configuration fragments, or a sequence that benefits from visual rhythm.
+
+Visual structure is part of the explanation, not decoration. Introduce a
+table or diagram in prose, explain the conclusion it reveals, and keep it
+small enough to understand at a glance. Do not repeat the same information
+in prose, a list, and a diagram unless each form adds a distinct insight.
 
 ## Voice
 
@@ -77,6 +113,9 @@ never force prose onto a real list.
   note speaks to them directly. Never "we" or "I".
 - **State facts directly.** Say what something *is* or *does* before
   explaining why.
+- **Teach conversationally.** Use natural transitions and direct questions
+  when they guide the reader's attention. Sound like a thoughtful expert
+  explaining the idea, not a specification compressing it.
 - **Neutral, mechanical wording.** Describe the action, not its
   drama. No "final chance", "last wishes", "death rattle", "graceful
   curtain call" — write "runs cleanup before the process exits". No
@@ -163,6 +202,24 @@ meaning.
 Make example values meaningful and realistic — a name, path, or
 identifier that fits the context. Don't fall back on placeholder
 noise like "foo", "bar", or "baz".
+
+Use examples to expose mechanism. Prefer a minimal scenario that shows a
+change in state, a request path, a capacity boundary, or a failure sequence.
+When useful, contrast the system before and after the design choice so the
+tradeoff becomes visible.
+
+## Emphasis and conclusions
+
+Use bold text for a term, compact label, or sentence fragment that deserves
+attention. Use a blockquote for one central tradeoff or design principle.
+Avoid scattering emphasis across every paragraph.
+
+Horizontal rules may separate major phases of a longer explanation. Do not
+place them between sections that already flow naturally.
+
+End by sharpening the lesson into a practical principle, decision rule, or
+compact comparison. A conclusion should synthesize the note rather than
+repeat every section.
 
 ## Lists and links
 

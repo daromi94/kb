@@ -18,6 +18,7 @@
 - [Crash-only software](crash-only-software.md)
 - [MTBF and MTTR](mtbf-and-mttr.md)
 - [Scale as survivability](scale-as-survivability.md)
+- [Bounded resource design](bounded-resource-design.md)
 - [Blast radius reduction](blast-radius-reduction.md)
 - [Metastable failures](metastable-failures.md)
 - [Backpressure](backpressure.md)

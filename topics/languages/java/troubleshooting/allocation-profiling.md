@@ -37,7 +37,7 @@ post-GC heap:  1.0 GB -> 1.4 GB -> 1.9 GB -> 2.5 GB
 allocation-churn problem
 
 post-GC heap:  1.0 GB -> 1.1 GB -> 1.0 GB -> 1.1 GB
-allocated:       40 GB     42 GB     39 GB     41 GB
+allocated:      40 GB     42 GB     39 GB     41 GB
 ```
 
 This difference determines which diagnostic artifact is useful. A heap dump

@@ -1,87 +1,94 @@
 # Symptom triage
 
-Memory troubleshooting starts by identifying which part of the Java process
-is under pressure. A **heap dump** records Java objects and their references,
-but it cannot explain every way a process consumes memory.
-
-The central rule is:
+A Java memory symptom can originate in the managed heap, elsewhere in the
+process, or at an external memory limit. Triage first identifies which layer
+reported the problem and which region is growing. Only then can a diagnostic
+artifact answer the right question.
 
 > **Classify the failure before choosing the diagnostic tool.**
 
-## A Java process has several memory regions
+## Establish the process boundary
 
-The **Java Virtual Machine (JVM)** runs Java code inside an operating-system
-process. That process contains the managed Java heap and several kinds of
-memory outside it.
+The **Java Virtual Machine (JVM)** runs inside an operating-system process.
+The Java heap is one memory region within that process, not its complete
+footprint.
 
-| Region        | What it contains                               |
-|---------------|------------------------------------------------|
-| Java heap     | Objects managed by garbage collection          |
-| Metaspace     | Loaded class metadata                          |
-| Thread stacks | Method frames and local state for each thread  |
-| Direct memory | Native buffers used through Java APIs          |
-| JVM native    | Garbage collector, compiler, and runtime state |
-| Other native  | Libraries, allocators, and file mappings       |
+**Garbage collection (GC)** manages ordinary Java objects in the heap. Once
+the application can no longer reach an object, GC can reclaim its heap space.
+It does not manage the other process regions:
 
-**Garbage collection (GC)** finds Java objects that the application can no
-longer reach and reclaims their heap space. It manages the Java heap, not the
-entire process.
+| Region         | What consumes memory                         |
+|----------------|----------------------------------------------|
+| Java heap      | Ordinary Java objects                        |
+| Class metadata | Runtime information about loaded classes     |
+| Thread stacks  | Method calls and local state for each thread |
+| Direct buffers | Native payloads reached through Java objects |
+| JVM runtime    | Collector, compiler, and compiled code       |
+| Other native   | Libraries, allocators, and file mappings     |
 
-This boundary explains a common diagnostic failure:
+This boundary determines whether Java-object evidence can explain the
+symptom:
 
 ```text
 large process
      |
-     +--> large Java heap  --> inspect Java objects
+     +--> heap grows --------> investigate Java objects
      |
-     +--> large non-heap   --> inspect native memory and mappings
+     +--> heap stays stable -> investigate other process memory
 ```
 
-## First question: did the JVM report the failure?
+## First determine who reported the failure
 
-An `OutOfMemoryError` means the JVM could not satisfy a particular resource
-request. Its detail message identifies the failed request and provides the
-first branch in the investigation.
+Start with the evidence produced when the symptom occurred. A Java error, a
+fatal-error file, and an operating-system kill describe different failure
+boundaries.
 
-| Detail message                       | Failed resource              |
-|--------------------------------------|------------------------------|
-| `Java heap space`                    | Space for another object     |
-| `GC overhead limit exceeded`         | Useful progress during GC    |
-| `Metaspace`                          | Space for class metadata     |
-| `Direct buffer memory`               | Space for a direct buffer    |
-| `unable to create new native thread` | Resources for another thread |
+An `OutOfMemoryError` reports resource exhaustion or failure to make useful
+progress under memory pressure. Its detail text usually identifies the failed
+request or condition. Common message fragments include:
 
-The message identifies where allocation failed. It does not prove why that
-region filled. A heap can fill because the application retains objects, the
-configured maximum is too small, or one request creates an unusually large
-group of connected objects.
+| Message fragment                          | Failed request                          |
+|-------------------------------------------|-----------------------------------------|
+| `Java heap space`                         | Space for another heap object           |
+| `GC overhead limit exceeded`              | GC time with too little space recovered |
+| `Requested array size exceeds VM limit`   | Array larger than the JVM permits       |
+| `Metaspace`                               | Space for loaded-class metadata         |
+| `Compressed class space`                  | Encoded class-metadata address space    |
+| `Cannot reserve ... direct buffer memory` | Native payload for a direct buffer      |
+| `unable to create new native thread`      | Memory or system limit for a thread     |
 
-If the process disappears without a Java error, inspect the evidence outside
-the JVM. The operating system or a container runtime may terminate a process
-that exceeds its memory limit.
+The list is not exhaustive. Preserve the complete message and stack trace
+rather than matching only one phrase.
+
+The message identifies the failing boundary, not why the condition arose. For
+example, `Java heap space` can result from retained objects, an undersized
+heap, or one request that creates an unusually large object graph.
+
+If the process exits without an `OutOfMemoryError`, look outside the Java
+exception path:
 
 ```text
 Java error and stack trace
-        -> JVM detected resource exhaustion
-
-kernel or container kill event
-        -> process exceeded an external limit
+        -> JVM or Java library rejected a resource request
 
 fatal-error file
-        -> JVM or native code crashed
+        -> JVM or native code encountered a fatal failure
+
+kernel or container kill event
+        -> process crossed an externally enforced limit
 ```
 
-The JVM writes a **fatal-error file**, commonly named `hs_err_pid*.log`, when
-it detects a fatal runtime or native-code crash.
+The JVM commonly writes a fatal-error file named `hs_err_pid*.log` after a
+fatal runtime or native-code failure. An operating-system or container kill
+may leave no Java exception because the decision occurs outside the JVM.
 
-An external kill concerns the process's total footprint. The Java heap,
-thread stacks, native libraries, and mapped files can all contribute.
+If the process has exited, preserve these artifacts before restarting it.
+Measurements that require attaching to the live JVM are no longer available.
 
-## Second question: what remains after collection?
+## For a live process, observe what GC leaves behind
 
-For a process that is still running, raw heap usage is noisy. Heap occupancy
-rises as objects are allocated and falls when GC reclaims unreachable
-objects.
+Raw heap occupancy rises as the application creates objects and falls as GC
+reclaims them:
 
 ```text
 used heap
@@ -91,92 +98,90 @@ used heap
               GC      GC
 ```
 
-The **live set** is the heap occupied by reachable objects after a collection.
-It gives a more useful signal than the peak immediately before GC.
+The **live set** is the reachable data that remains after GC has evaluated the
+relevant heap regions. A young-generation collection examines only part of
+the heap, so not every post-GC sample represents the whole live set. Compare
+measurements with the same collection scope under equivalent workload.
 
-Compare the live set across equivalent workload periods:
-
-```text
-stable live set:    800 MB -> 820 MB -> 790 MB -> 810 MB
-
-growing live set:   800 MB -> 1.1 GB -> 1.5 GB -> 2.0 GB
-```
-
-A stable live set with frequent collections points toward allocation churn:
-the application creates many short-lived objects. A growing live set points
-toward retention or a growing workload. A heap dump can reveal what keeps
-those objects reachable.
-
-Growth alone does not prove a leak. Cache warming, larger traffic volume, and
-delayed cleanup can all increase the live set. The investigation must connect
-the growth to an owner that retains the objects longer than intended.
-
-## Third question: does the heap explain the process?
-
-**Resident Set Size (RSS)** is the physical memory currently resident for the
-process according to the operating system. RSS includes more than the Java
-heap.
-
-Compare RSS with the JVM's memory measurements:
+Two trends lead in different directions:
 
 ```text
-RSS:                         8 GB
-committed Java heap:         3 GB
-other explained JVM memory:  2 GB
-unexplained difference:      3 GB
+stable live set:   800 MB -> 820 MB -> 790 MB -> 810 MB
+
+growing live set:  800 MB -> 1.1 GB -> 1.5 GB -> 2.0 GB
 ```
 
-A large difference directs the investigation outside the heap. Start with
-**Native Memory Tracking (NMT)**, the JVM's accounting of its own native
-allocations. If NMT does not explain the difference, compare direct-buffer
-count and capacity, thread counts, and operating-system memory maps with RSS.
-A memory map identifies the address regions assigned to the process and the
-files that back them.
+A growing live set points toward retained objects or a growing workload. A
+stable live set with costly, frequent GC can indicate **allocation churn**:
+the application creates and discards short-lived objects at a high rate. It
+can also indicate that the heap or one of its generations is too small.
 
-The two measurements produce four useful cases:
+Growth alone does not prove a leak. Cache warmup, increased traffic, and
+delayed cleanup can raise the live set legitimately. A retention diagnosis
+must identify an owner that keeps objects longer than intended.
 
-| Post-GC heap | RSS relationship  | Likely direction      |
-|--------------|-------------------|-----------------------|
-| Rising       | Heap explains RSS | Heap retention        |
-| Stable       | Heap explains RSS | Heap sizing or churn  |
-| Stable       | RSS much larger   | Native memory or maps |
-| Rising       | RSS much larger   | Multiple contributors |
+## Compare the heap trend with process memory
 
-## Choose the first tool from the question
+**Resident Set Size (RSS)** counts the process pages currently in physical
+memory according to the operating system. RSS includes the Java heap, native
+allocations, shared libraries, and resident file mappings.
 
-Each tool answers a different question. Start with the least invasive source
-that can distinguish the remaining explanations.
+Compare trends over the same interval instead of subtracting JVM commitments
+from RSS. The JVM can commit memory without making every page resident, while
+RSS can count shared or mapped pages that do not belong to the heap.
 
-| Question                              | Evidence                      | What it reveals                         |
-|---------------------------------------|-------------------------------|-----------------------------------------|
-| Why did the process exit?             | Error, kernel, or runtime log | Which layer reported the failure        |
-| Is the live set growing?              | GC log or Flight Recorder     | Heap changes and related runtime events |
-| Which classes occupy the heap?        | Class histogram               | Object counts and shallow sizes         |
-| What retains those objects?           | Heap dump and Memory Analyzer | Reference paths from objects to roots   |
-| Which JVM-native category is growing? | Native Memory Tracking        | JVM allocation categories               |
-| Which code creates short-lived data?  | Allocation profile            | Allocation volume by call path          |
-| What lies outside JVM accounting?     | OS maps and native profile    | Mappings and native allocation paths    |
+| Post-GC heap trend | RSS trend         | Likely direction              |
+|--------------------|-------------------|-------------------------------|
+| Rising             | Rises similarly   | Heap retention or workload    |
+| Stable             | Rising            | Memory outside the Java heap  |
+| Stable             | Stable; GC costly | Allocation churn or heap size |
+| Rising             | Rises much faster | Multiple contributors         |
 
-The diagnostic path is therefore:
+The table identifies a direction, not a proof. Time-aligned measurements are
+more useful than exact equality between numbers from different accounting
+layers.
+
+## Choose evidence that answers the remaining question
+
+Each diagnostic artifact answers one kind of question:
+
+**Java Flight Recorder** records JVM and application events on one timeline.
+On HotSpot JVMs, **Native Memory Tracking** groups the JVM's own allocations
+into runtime categories. Both observe a live process; Native Memory Tracking
+must be enabled when the JVM starts.
+
+| Question                            | First evidence                                    |
+|-------------------------------------|---------------------------------------------------|
+| Which layer reported the failure?   | Java, runtime, kernel, or container logs          |
+| Does the heap recover after GC?     | GC log or Java Flight Recorder timeline           |
+| Which classes occupy the heap?      | Class histogram: object counts and bytes by class |
+| What keeps those objects alive?     | Heap dump: objects and references between them    |
+| Which JVM-native region is growing? | Native Memory Tracking categories                 |
+| Which code creates temporary data?  | Allocation profile grouped by method-call path    |
+| What lies outside JVM accounting?   | OS maps and native allocation profile             |
+
+The complete triage path is:
 
 ```text
-failure or memory symptom
-          |
-          v
-identify the reporting boundary
-          |
-          v
-compare post-GC heap with RSS
-          |
-          +--> heap retention --> heap dump
-          |
-          +--> allocation rate --> allocation profile
-          |
-          +--> non-heap growth --> native accounting
+memory symptom
+      |
+      +--> process exited
+      |         |
+      |         +--> Java error, fatal-error file, or external kill evidence
+      |
+      +--> process alive
+                |
+                +--> live set grows -------> retention evidence
+                |
+                +--> live set stable,
+                |    GC remains costly ----> allocation evidence
+                |
+                +--> RSS grows while
+                     heap stays stable ----> native-memory evidence
 ```
 
-Start with the symptom, locate the memory region, and only then collect the
-artifact that can explain ownership.
+Start with the reporting boundary, locate the growing region, and collect only
+the artifact that can explain its ownership or activity.
 
 ---
 

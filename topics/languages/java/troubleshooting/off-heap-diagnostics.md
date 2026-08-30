@@ -1,249 +1,237 @@
 # Off-heap diagnostics
 
-The Java heap is only one part of a **Java Virtual Machine (JVM)** process.
-Thread stacks, class metadata, direct buffers, memory-mapped files, and native
-libraries can make the process consume far more physical memory. Diagnose the
-difference by following the component that grows over the same time interval.
+A Java process can consume more physical memory than its Java heap. When
+process memory rises while the heap remains stable, compare measurements from
+the same interval until one non-heap component explains the growth.
 
-> **Measure physical memory from outside the process, classify allocations
-> from inside it, and profile only the growth neither view explains.**
+> **Measure physical memory from outside the process, classify JVM-owned
+> memory from inside it, and profile only the growth neither view explains.**
 
-## Separate memory commitments from residency
+## Start at the process boundary
 
-**Garbage collection (GC)** manages the Java heap, where ordinary Java
-objects live. Once the application can no longer reach an object, GC can
-reclaim its heap space. It cannot reclaim thread stacks, direct buffers,
-mapped files, or native-library allocations. Together, those process regions
-make up **off-heap memory**.
+The Java Virtual Machine (JVM) runs inside an operating-system process. Its
+Java heap stores application objects. Garbage collection (GC) can reclaim an
+unreachable heap object, but the process also contains unmanaged regions:
 
-Off-heap memory is a boundary, not one region:
-
-| Mechanism        | What consumes memory                         |
+| Process region   | What consumes memory                         |
 |------------------|----------------------------------------------|
-| JVM runtime      | Collector, compiler, and compiled-code state |
+| Java heap        | Ordinary Java objects                        |
 | Class metadata   | Runtime information about loaded classes     |
-| Threads          | Native stacks and thread metadata            |
+| Thread stacks    | Method calls and local state for each thread |
 | Direct buffers   | Native payloads reached through Java objects |
 | File mappings    | Resident pages from mapped files             |
+| JVM runtime      | Collector, compiler, and compiled code       |
 | Native libraries | Allocations made outside the JVM             |
 
-Three measurements describe different states:
+Together, the process regions outside the Java heap form **off-heap memory**.
+This is a diagnostic boundary, not one allocator or memory pool.
 
-- **Reserved memory** is virtual address space set aside for possible use.
-- **Committed memory** has backing that the JVM can use.
-- **Resident Set Size (RSS)** counts process pages currently in physical
-  memory according to the operating system.
-
-The HotSpot JVM implementation exposes reserved and committed runtime memory
-through **Native Memory Tracking (NMT)**. RSS reports resident pages from the
-heap, native allocations, shared libraries, and file mappings. Committed
-memory need not be resident, so subtracting NMT totals from RSS does not
-produce an exact accounting identity.
-
-The measurements instead answer complementary questions:
+Suppose an order service shows this trend under steady traffic:
 
 ```text
-RSS grows
-    -> the process has more resident pages
-
-an NMT category grows during the same interval
-    -> that JVM subsystem claims more memory
-
-RSS grows while NMT stays stable
-    -> inspect buffers, mappings, and native libraries
+process RSS:      3.2 GB -> 4.1 GB -> 5.5 GB
+post-GC heap:     0.9 GB -> 0.9 GB -> 0.94 GB
 ```
 
-## Establish a synchronized baseline
+**Resident Set Size (RSS)** counts process pages currently held in physical
+memory. The stable post-GC heap cannot explain the additional 2.3 GB of RSS,
+so a heap dump is not the first diagnostic artifact.
 
-NMT groups the JVM's native memory by runtime subsystem. It must begin
-collecting at startup:
+## Keep address space, commitment, and residency separate
+
+A JVM can reserve virtual address space, make part of it available, and touch
+only some of those pages:
+
+```text
+reserved     8.0 GB   virtual address range set aside
+committed    3.0 GB   capacity available to the JVM
+resident     2.1 GB   pages currently in physical memory
+```
+
+Reserved and committed values describe JVM capacity; RSS describes physical
+residency. A committed page need not be resident, so compare changes instead
+of subtracting JVM commitments from RSS.
+
+## Establish one observation interval
+
+On HotSpot, the JVM used by OpenJDK, **Native Memory Tracking (NMT)** groups
+internal memory by subsystem. NMT is disabled by default and cannot start
+after process launch. Choose its tracking level at startup:
 
 ```text
 -XX:NativeMemoryTracking=summary
+-XX:NativeMemoryTracking=detail
 ```
 
-Use `jcmd`, a diagnostic utility included with the **Java Development Kit
-(JDK)**, to read the data. Replace `<pid>` with the operating-system process
-identifier of the running JVM:
+`summary` groups memory by subsystem. `detail` also records allocation call
+sites. NMT can add roughly 5-10% performance overhead, so test the chosen
+level before production use.
 
-```bash
-jcmd <pid> VM.native_memory summary scale=MB
-```
-
-NMT does not fully track native-library allocations, some JDK library
-allocations, or file-backed mappings.
-
-Take a baseline after startup and warmup:
+The Java Development Kit (JDK) includes `jcmd`, which queries a running JVM.
+Replace `<pid>` with its process identifier. After warmup, set a baseline:
 
 ```bash
 jcmd <pid> VM.native_memory baseline
 ```
 
-Run the representative workload for the observation interval, then request
-the change since that baseline:
+Run the representative workload, then request the change:
 
 ```bash
 jcmd <pid> VM.native_memory summary.diff scale=MB
 ```
 
-Record RSS over the same interval. A stable category does not explain new
-growth; a smaller category that rises with RSS may.
+Record RSS, post-GC heap, workload, and subsystem metrics over the same
+interval. NMT tracks HotSpot internals, not third-party native code or JDK
+class-library allocations. It is a classifier, not a complete process ledger.
 
-## Follow growth in the Thread category
+## Let the changing signal choose the next question
 
-A **platform thread** uses an operating-system thread and a native stack for
-method calls and local state. NMT's Thread category usually grows as the JVM
-creates platform threads.
+Each signal points to a different owner:
 
-The rough capacity relationship is:
+| Signal that grows with RSS | Next question                               |
+|----------------------------|---------------------------------------------|
+| Post-GC heap               | Which Java objects remain reachable?        |
+| NMT Thread                 | Why are platform threads or stacks growing? |
+| NMT Class                  | Why do classes or class loaders remain?     |
+| Direct-buffer capacity     | Which component owns the buffers or pool?   |
+| Mapping residency          | Which mapped files became resident?         |
+| Native allocation profile  | Which library allocation path remains?      |
+
+Explain the largest measured contributors first, then investigate what
+remains.
+
+## Follow JVM-owned categories
+
+A **platform thread** uses an operating-system thread and reserves native
+stack space. If NMT Thread grows, compare it with the platform-thread count:
 
 ```text
 stack reservation ~= platform-thread count * effective stack size
 ```
 
-The `-Xss` option controls the requested stack size, but its default depends
-on the platform. Inspect the effective JVM flags and the current threads:
+The `-Xss` option controls the requested stack size; its default depends on
+the platform. Inspect the effective flags and current threads:
 
 ```bash
 jcmd <pid> VM.flags -all
 jcmd <pid> Thread.print > threads.txt
 ```
 
-Find `ThreadStackSize` in the flag output. Group the thread dump by name and
-method-call path to find unbounded pools, per-request pools, or threads that
-never terminate.
+Find `ThreadStackSize`, then group the dump by thread name and call path. A
+growing pool can explain the change. Require corresponding RSS growth because
+reservation is not residency.
 
-A stack reservation is not the same as resident memory. Pair rising thread
-count and NMT Thread growth with rising RSS before attributing the physical
-footprint to stacks.
-
-## Follow growth in the Class category
-
-**Metaspace** holds metadata for loaded Java classes. A **class loader**
-defines classes and participates in their lifetime. If the application keeps
-an old loader reachable after a reload, its classes and metadata can remain.
-
-Inspect class-loader statistics with:
+NMT Class grows with metadata stored in **metaspace**. Each class belongs to a
+class loader. If an old loader remains reachable after an application reload,
+its classes and metadata remain as well.
 
 ```bash
 jcmd <pid> VM.classloader_stats
 ```
 
-A large class count alone is not a leak because frameworks can legitimately
-generate classes. The stronger pattern combines three growing signals:
+Look for class count, loader count, and NMT Class memory growing together. A
+metaspace limit does not correct an unintended loader lifetime.
 
-```text
-loaded classes
-      +
-class-loader count
-      +
-NMT Class memory
-```
+## Measure direct-buffer capacity separately
 
-If old application loaders remain, inspect heap references to find what keeps
-them reachable. `-XX:MaxMetaspaceSize` limits growth; it does not correct the
-loader lifetime.
+A direct byte buffer stores its payload outside the Java heap. Its ByteBuffer
+wrapper remains in the heap, but the wrapper's heap bytes exclude the payload.
 
-## Measure direct-buffer memory
-
-A **direct byte buffer** keeps its payload in native memory. Its small
-ByteBuffer heap object does not reveal the native payload's size.
-
-The JVM management interface publishes buffer-pool estimates through a
-**management bean**, a runtime metrics object queried by monitoring tools.
-The direct-buffer pool uses this object name:
+The BufferPoolMXBean management interface exposes estimates for this pool:
 
 ```text
 java.nio:type=BufferPool,name=direct
 ```
 
-Record its buffer count, total capacity, and memory used. Memory used can
-differ from total capacity because of alignment and allocator details. Treat
-both values as estimates and correlate their growth with RSS.
+Record buffer count, capacity, and memory used. The last two can differ
+because of alignment and allocator details. Correlate both with RSS.
 
-`-XX:MaxDirectMemorySize` limits direct-buffer allocations governed by the
-`java.nio` mechanism. It does not limit memory requested independently by a
-native library.
+For the order service, the complete interval now looks like:
 
-A pooled allocator may keep native regions for reuse. Compare its pool metrics
-and capacity with RSS before treating retained memory as unbounded growth.
+```text
+process RSS change                 +2,300 MB
+post-GC heap change                   +40 MB
+NMT subsystem changes                 +90 MB
+direct-buffer capacity change      +2,050 MB
+```
+
+Direct buffers are the strongest lead because capacity grew at the same time
+and scale as RSS. Inspect the owning pool and its capacity policy.
+
+`-XX:MaxDirectMemorySize` limits `java.nio` direct-buffer allocations, not
+memory requested independently by a native library. A pool can also retain
+regions for reuse, so retained capacity is not automatically a leak.
 
 ## Inspect resident file mappings
 
-A **memory-mapped file** places file pages in the process address space. Pages
-loaded into physical memory raise RSS without becoming Java heap objects.
+A memory-mapped file places a file region in virtual address space. RSS rises
+only as the mapping's pages become resident.
 
-On Linux, inspect the aggregate and individual mappings:
+On Linux, inspect the aggregate process mappings first:
 
 ```bash
 cat /proc/<pid>/smaps_rollup
-less /proc/<pid>/smaps
 ```
 
-`smaps_rollup` totals the process mappings. `smaps` shows each region and its
-backing file. Focus on the `Rss` and `Pss` fields, not only the virtual `Size`.
+The report separates virtual mapping size from resident ownership:
 
-RSS counts a shared resident page in every process that maps it.
-**Proportional Set Size (PSS)** divides that page among those processes. PSS
-therefore gives a more useful ownership estimate for shared libraries and
-shared file mappings.
+```text
+Size    complete virtual range
+Rss     pages currently resident
+Pss     proportional share of resident pages
+```
 
-Storage libraries and `FileChannel.map()` commonly create large virtual
-mappings. They consume physical memory only as their pages become resident.
+RSS counts a shared page in every process that maps it. **Proportional Set
+Size (PSS)** divides that page among those processes. If mapping residency
+grows, inspect `/proc/<pid>/smaps` for the responsible file or anonymous
+region. `FileChannel.map()` can create mappings without adding heap objects.
 
-## Profile growth outside the JVM ledgers
+## Profile what the JVM measurements cannot explain
 
-Another accounting gap appears when Java delegates work to native libraries
-through the **Java Native Interface (JNI)**. That work can use a **native
-allocator** to obtain and reuse memory outside the heap. NMT does not record
-the library's request, and the heap may show only a small wrapper that points
-to a much larger native allocation.
+The **Java Native Interface (JNI)** lets Java call native libraries. A library
+can allocate memory while leaving only a small Java wrapper in the heap. NMT
+does not record that third-party allocation path.
 
-When RSS grows while the other measurements stay stable, use async-profiler,
-a native and Java profiler, to record allocator activity:
+If RSS grows while heap, NMT, buffers, and mappings stay stable, use
+async-profiler to record native allocation and release calls:
 
 ```bash
 asprof -e nativemem -d 300 -f native-memory.jfr <pid>
 ```
 
-The `nativemem` event records allocation and release calls with their
-method-call paths, or **stack traces**. Use async-profiler's `jfrconv` utility
-to report allocations that have no matching release during the recording
-window:
+Convert the recording into a report of sampled allocations without a matched
+release:
 
 ```bash
 jfrconv --total --nativemem --leak \
   native-memory.jfr native-memory-leaks.html
 ```
 
-An outstanding allocation is evidence, not proof of a leak. Allocators can
-retain memory for reuse. Test profiling overhead and compare recordings under
-the same workload.
+The converter excludes recent allocations to reduce end-of-recording bias.
+An unmatched allocation may still be live or retained for reuse, so it is
+evidence rather than proof. Test profiler overhead.
 
-If the process can restart with an instrumented allocator such as jemalloc,
-it can provide a longer-running profile. It can also expose **allocator
-fragmentation**: resident pages that the allocator cannot return or reuse
-efficiently. Fragmentation can keep RSS high after live allocations shrink.
+With allocator fragmentation, live allocations shrink while partially used
+regions keep RSS high. Confirm it with allocator metrics and process maps.
 
-## Reconcile growth over one interval
+## Verify the proposed owner
 
-The diagnosis comes from time-aligned measurements:
+After bounding the order service's direct-buffer pool, repeat the same traffic
+and observation interval:
 
-| Signal that grows with RSS | Likely contributor          |
-|----------------------------|-----------------------------|
-| Post-GC heap               | Retained Java objects       |
-| NMT Thread                 | Platform threads and stacks |
-| NMT Class                  | Classes and class loaders   |
-| Direct-buffer memory       | Native buffer payloads      |
-| Mapping RSS or PSS         | Resident mapped pages       |
-| Native allocation profile  | Native library allocations  |
+| Measurement                   | Before    | After   |
+|-------------------------------|-----------|---------|
+| Throughput                    | 5,000/s   | 5,000/s |
+| Process RSS change            | +2,300 MB | +140 MB |
+| Direct-buffer capacity change | +2,050 MB | +60 MB  |
+| Post-GC heap change           | +40 MB    | +35 MB  |
 
-More than one row may grow. Explain the largest contributors first, then
-profile the difference that remains. If nothing correlates with RSS, verify
-that every measurement covers the same process, workload, and time interval.
+The matching reduction in buffer growth and RSS supports the explanation.
+Stable throughput and heap show that the result did not come from less work
+or from moving pressure into the Java heap.
 
-Off-heap diagnostics succeeds when a large process becomes a small set of
-measured contributors with explicit owners.
+Off-heap diagnosis succeeds when time-aligned measurements turn a large
+process into a bounded component with an explicit owner.
 
 ---
 

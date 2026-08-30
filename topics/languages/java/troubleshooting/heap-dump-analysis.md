@@ -1,140 +1,157 @@
 # Heap dump analysis
 
-A heap dump records the Java objects in a running Java Virtual Machine (JVM)
-and the references between them. Use it when the investigation needs to
-explain which objects occupy the heap and why garbage collection cannot
-reclaim them.
-
-The central rule is:
+A heap dump captures the Java heap as a graph of objects and references. The
+largest object or most common class is rarely the whole diagnosis. The useful
+question is why those objects are still reachable.
 
 > **A large object is only a symptom until its reference path identifies the
-> owner that keeps it alive.**
+> component that controls its lifetime.**
 
-## A heap dump is an object graph
+## Reachability turns the heap into an object graph
 
-The **Java heap** stores application objects managed by garbage collection
-(GC). GC reclaims an object only when no live execution path can reach it.
+The Java heap stores application objects managed by garbage collection (GC).
+GC begins with references that the Java Virtual Machine (JVM) always treats as
+reachable. These **GC roots** include active thread stacks, static fields, and
+references held by JVM runtime structures.
 
-A heap dump represents those objects as a graph:
+GC follows references outward from those roots. Anything it can reach must
+remain in the heap. An object with no remaining path from a root is eligible
+for collection.
 
 ```text
-GC root
-   |
-   v
-CacheManager
-   |
-   v
-ConcurrentHashMap
-   |
-   +--> entry --> OrderSummary
-   +--> entry --> OrderSummary
-   +--> entry --> OrderSummary
+GC root: static field
+          |
+          v
+     CacheRegistry
+          |
+          v
+       OrderCache
+          |
+          +--> map entry --> OrderSummary
+          +--> map entry --> OrderSummary
+          +--> map entry --> OrderSummary
 ```
 
-A **GC root** is a starting point that the JVM treats as reachable. Common
-roots include active thread stacks, static fields, and references held by JVM
-runtime structures.
+The **shallow size** of `OrderCache` is the space occupied by that object
+alone. Its **retained set** contains the objects that would become collectible
+if the cache became unreachable. Their combined shallow size is the cache's
+**retained size**.
 
-The graph answers two different size questions:
+A cache object can be tiny while retaining gigabytes of map nodes, keys,
+values, and byte arrays. Retained size shifts the investigation from storage
+classes to lifetime owners.
 
-- **Shallow size** is the memory occupied by one object itself.
-- **Retained size** estimates how much heap becomes collectible if that object
-  and the objects reachable only through it disappear.
+## Choose the state before capturing it
 
-A map object may have a small shallow size while retaining gigabytes through
-its entries. Retained size is therefore the useful starting point for an
-ownership investigation.
+A heap dump preserves one state of one JVM. Choose that state according to
+the question being investigated:
 
-## Decide which state to capture
+| Capture point          | Question it helps answer                                |
+|------------------------|---------------------------------------------------------|
+| After allocation fails | What survived the JVM's attempts to recover space?      |
+| During controlled load | What owns memory at a reproducible workload point?      |
+| After expected cleanup | What remains after requests or jobs should be finished? |
 
-A dump is most useful when it represents the condition under investigation.
-Three capture strategies answer different questions:
-
-| Capture strategy       | What it preserves                         |
-|------------------------|-------------------------------------------|
-| At failure             | The object graph when allocation failed   |
-| During controlled load | A reproducible point for comparison       |
-| After cleanup activity | Objects that survive the expected cleanup |
-
-Forcing a collection before a dump changes the state and may pause the
-application. It can remove transient objects, but it can also erase evidence
-about a burst that caused the failure. Choose that operation only when the
-question specifically concerns the **live set**: the objects that remain
-reachable after collection.
-
-From a running JVM, ask the `jcmd` diagnostic utility to write the object graph
-to a file:
+The Java Development Kit (JDK) includes `jcmd`, a diagnostic utility that
+sends commands to a running JVM. Here, `<pid>` means the operating-system
+process identifier of the target JVM:
 
 ```bash
-jcmd <pid> GC.heap_dump /var/dumps/orders-service.hprof
+jcmd <pid> GC.heap_dump /var/dumps/orders-service-live.hprof
 ```
 
-A heap dump can be large and its creation can pause or slow the JVM. Verify
-free disk space, write to persistent storage, and understand the production
-impact before capture.
+By default, this command requests a full GC and records reachable objects. The
+result shows the surviving heap, but the collection may remove short-lived
+objects that contributed to an allocation burst.
 
-If the JVM exhausts the Java heap and throws `OutOfMemoryError`, automatic
-capture preserves evidence that may vanish after restart:
+If the investigation needs the heap without that requested full collection,
+use `-all`:
+
+```bash
+jcmd <pid> GC.heap_dump -all /var/dumps/orders-service-all.hprof
+```
+
+This form includes objects that are unreachable but not yet reclaimed. It
+preserves more pre-collection state, but the dump is usually larger and
+noisier because some recorded objects are already garbage.
+
+Both forms are high-impact operations. A large dump can pause the JVM and
+consume substantial disk space. Check the available space, use persistent
+storage, and give each capture a distinct filename.
+
+For Java heap exhaustion, the JVM can capture a dump automatically:
 
 ```text
 -XX:+HeapDumpOnOutOfMemoryError
 -XX:HeapDumpPath=/var/dumps
 ```
 
-This mechanism applies to Java heap exhaustion. It does not produce a heap
-dump for every form of `OutOfMemoryError`, such as failure to create a native
-thread.
+The dump shows what survived the failed allocation and the JVM's recovery
+attempts, not every transient object present when pressure began. These
+options do not cover every `OutOfMemoryError`; failure to create a native
+thread, for example, is not Java heap exhaustion.
 
-## Follow ownership, not object counts
+## Build one ownership explanation
 
-Eclipse Memory Analyzer (MAT) reads heap dumps and calculates object-graph
-relationships. Its views answer a sequence of increasingly specific
-questions.
+Eclipse Memory Analyzer (MAT) examines a heap dump's object graph. Use its
+views as a sequence: locate a large keep-alive dependency, find its root path,
+and inspect the data it retains.
 
-### 1. Which objects retain the most memory?
+### Find the largest keep-alive dependency
 
-The **dominator tree** groups objects by ownership. Object A dominates object B
-when every path from a GC root to B passes through A. Removing A therefore
-breaks the only route that keeps B reachable.
+Start with MAT's dominator tree and sort it by retained size. An object
+**dominates** another object when every path from a GC root to the second
+object passes through the first. If `OrderCache` dominates a large group of
+entries, making the cache unreachable would also make that group collectible.
 
-Sort the dominator tree by retained size. Start with application-level owners
-such as caches, sessions, queues, registries, and class loaders. A surviving
-class loader matters because it owns the classes and metadata it defined.
-Large arrays and collection internals often store the data but do not decide
-its lifetime.
-
-### 2. Why is the suspected owner still reachable?
-
-Use **Path to GC Roots** on the suspected object. This view walks backward
-from the object to the root that keeps it alive.
+Suppose the first useful result is:
 
 ```text
-static field
-    |
-    v
-CacheRegistry
-    |
-    v
-ordersByCustomer
-    |
-    v
-2,400,000 map entries
+OrderCache
+  shallow size:     96 bytes
+  retained size:   3.2 GB
 ```
 
-The path replaces a vague observation with a specific cause: a static registry
-owns an unbounded map of customer entries.
+This makes the cache an important lead, not proof of a defect. The dominator
+tree models reachability rather than intended ownership, and its parent-child
+edges need not be direct object references.
 
-A **strong reference** normally keeps its target reachable. **Weak and soft
-references** allow GC to clear their targets under defined conditions.
-Excluding those special references from a path search can reveal the strong
-reference that controls the object's lifetime.
+Prefer candidates such as caches, queues, sessions, registries, and class
+loaders. Arrays and collection internals often hold the bytes while another
+component decides how long they remain.
 
-### 3. Which classes make up the retained data?
+### Find why the owner remains reachable
 
-A **class histogram** groups objects by class and reports instance counts and
-shallow bytes. Use it to describe the contents below a dominator.
+Run **Path to GC Roots** on the `OrderCache`. MAT then walks backward through
+references until it finds a root:
 
-For example:
+```text
+GC root: static field
+          |
+          v
+     CacheRegistry
+          |
+          v
+       OrderCache
+          |
+          v
+  2,400,000 entries
+```
+
+Now the explanation is precise: a static field keeps `CacheRegistry` alive,
+and the registry keeps the cache alive. Ask whether that process-long lifetime
+is intended and whether the cache has an effective capacity.
+
+Ordinary fields are usually **strong references**, so their targets stay
+reachable while the root path remains. GC may clear targets reached only
+through Java's weak or soft references. Excluding these special references
+from a MAT search can expose the strong path preventing collection.
+
+### Inspect what the owner retains
+
+After identifying the owner, inspect the classes below its retained set. A
+class histogram groups objects by class and reports their instance counts and
+shallow-byte totals. For the same cache, it might show:
 
 ```text
 owner:    OrderCache
@@ -146,52 +163,52 @@ contents:
   4,900,000 byte arrays
 ```
 
-The histogram explains composition. The dominator tree and root path explain
-ownership. Neither view replaces the other.
+The histogram describes composition, not why data survives. Here, the
+dominator tree found the keep-alive dependency, the root path exposed its
+process-long ownership, and the histogram showed what fills the cache.
 
-### 4. Does the automated report support the same explanation?
+MAT's Leak Suspects Report highlights large retained sets and likely owners.
+Use it for orientation, then verify its suggestions with the dominator tree
+and root paths. It does not know the application's intended lifetime policy.
 
-MAT's Leak Suspects Report highlights large retained sets and their owners.
-Use it for orientation, then verify its suggestion in the dominator tree and
-reference paths. An automated suspect is evidence, not the final cause.
+## Recognize lifetime mismatches
 
-## Recognize ownership patterns
-
-Common heap problems differ mainly in who controls object lifetime:
+Heap retention becomes a problem when the lifetime of stored data exceeds the
+lifetime the application intended:
 
 | Pattern            | Typical root path                        | Lifetime mismatch                  |
 |--------------------|------------------------------------------|------------------------------------|
 | Unbounded cache    | Service -> cache -> entries              | Cache has no effective capacity    |
-| Thread-local value | Worker thread -> ThreadLocalMap -> value | Pool thread outlives request data  |
-| Class-loader leak  | Runtime root -> old loader -> classes    | Old loader survives app reload     |
+| Thread-local value | Pool thread -> thread-local map -> value | Thread outlives request data       |
+| Class-loader leak  | Runtime root -> old loader -> classes    | Loader survives application reload |
 | Listener retention | Event source -> listeners -> component   | Source outlives retired listener   |
-| Static collection  | Class root -> static collection          | Class outlives stored entries      |
-| Oversized query    | Request thread -> result rows            | Request materializes too many rows |
+| Static collection  | Static field -> collection -> entries    | Class outlives stored entries      |
+| Oversized query    | Request thread -> result rows            | Request retains too many rows      |
 
-Arrays and strings often dominate shallow-byte totals because they hold the
-payload. Walk upward until the path reaches the component that chose to retain
-them.
-
-For a thread-local value, the important path is:
+For example, a worker pool reuses its threads across many requests. If a
+request stores data in a thread-local variable and never removes it, the
+long-lived worker thread can preserve request-scoped data after the request
+finishes:
 
 ```text
-long-lived pool thread
-          |
-          v
-ThreadLocalMap entry
-          |
-          v
-request-scoped object survives after the request
+worker thread
+     |
+     v
+thread-local map
+     |
+     v
+finished request data
 ```
 
-The corrective action belongs at the lifetime boundary: remove the value when
-the request finishes, or avoid placing request state on a reusable thread.
+Fix that lifetime boundary: remove the value when the request finishes or do
+not attach request state to a reusable thread.
 
-## Compare dumps when growth matters
+## Compare captures only when growth is the question
 
-One dump shows ownership at one moment, but it cannot distinguish a stable
-large heap from continued growth. Capture another dump at a comparable
-workload point to see which classes and retained sets increased.
+One dump cannot distinguish a stable large heap from continuing growth. Begin
+with lower-impact evidence such as post-collection heap trends, object counts,
+or allocation profiles. If needed, capture another dump at a comparable
+workload point.
 
 ```text
 10:00  OrderSummary count =   400,000
@@ -199,30 +216,34 @@ workload point to see which classes and retained sets increased.
 12:00  OrderSummary count = 1,900,000
 ```
 
-Comparison narrows the search, but growth still needs context. A cache that is
-warming toward a fixed capacity can grow safely. A cache with no capacity and
-the same root path can grow until the heap fills.
+Each additional dump repeats the pause and disk costs. Growth also needs
+context: a cache warming toward a fixed limit can grow safely, while the same
+root path without a capacity can grow until the heap fills.
 
 ## Finish with a testable explanation
 
-A complete heap diagnosis names four things:
+A useful diagnosis connects four facts:
 
 ```text
-objects growing
-      +
-owner retaining them
-      +
-root keeping the owner alive
-      +
+objects consuming memory
+          +
+component retaining them
+          +
+root keeping that component reachable
+          +
 missing or incorrect lifetime boundary
 ```
 
-After changing the ownership policy, repeat the workload. The live set should
-stabilize, the retained set should remain bounded, and collection should
-recover the expected space.
+For the running example: `OrderSummary` objects fill an `OrderCache`; a static
+`CacheRegistry` keeps the cache reachable; and the cache lacks an effective
+capacity. That explanation predicts a remedy and a validation test.
 
-Do not stop at the largest class. Follow the reference path until it reaches
-the component that controls lifetime.
+After correcting the ownership policy, repeat the workload and observe the
+heap after comparable collections. The surviving heap should stabilize, and
+the cache's retained set should remain within its intended bound.
+
+Do not stop at the largest class. Follow references until they reach the
+component that decides how long the data lives.
 
 ---
 

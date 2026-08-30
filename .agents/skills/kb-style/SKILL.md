@@ -1,3 +1,8 @@
+---
+name: kb-style
+description: Apply this repository's prose and wording standards when creating, editing, or reviewing knowledge-base notes under topics/.
+---
+
 # KB note style
 
 ## Core message

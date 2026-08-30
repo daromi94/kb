@@ -1,17 +1,18 @@
 ---
-description: Polish a single KB note, paragraph by paragraph
-arguments: <note-path>
+name: kb-editor
+description: Polish one existing knowledge-base note under topics/ paragraph by paragraph without changing what it teaches.
 ---
 
 # Knowledge Editing Skill
 
 Polish one existing note until every paragraph is excellent. Where
-`/kb:review` sweeps a whole topic for consistency and ordering,
-`/kb:editor` goes deep on a single note — its core message, its
+`$kb-review` sweeps a whole topic for consistency and ordering,
+`$kb-editor` goes deep on a single note — its core message, its
 structure, and the wording of every paragraph.
 
-Refer to `/kb:ingest` for formatting and structural standards, and to
-`.claude/kb-style.md` for prose and wording standards.
+Before editing, read [kb-ingest](../kb-ingest/SKILL.md) completely for
+formatting and structural standards, and read
+[kb-style](../kb-style/SKILL.md) completely for prose and wording standards.
 
 Improve how the note expresses and orders its ideas, and cut what is
 redundant. Do not change its substance — what the note teaches stays
@@ -31,32 +32,32 @@ State, in one sentence, the single thing the note exists to teach.
 Every paragraph must serve it.
 
 The opening paragraph must deliver that core message (see **Core
-message** in `.claude/kb-style.md`). If it does not, that is the first
+message** in `$kb-style`). If it does not, that is the first
 fix.
 
 ### 3. Audit the structure
 
 Go paragraph by paragraph. Name, in twelve words or fewer, the one
 idea each paragraph carries, then fix it against the **Core message**
-and **Paragraphs** rules in `.claude/kb-style.md`. A heading must name
+and **Paragraphs** rules in `$kb-style`. A heading must name
 the content beneath it, not the project or a template.
 
 ### 4. Choose prose or bullets
 
-Apply the **Prose or bullets** rule in `.claude/kb-style.md`: prose
+Apply the **Prose or bullets** rule in `$kb-style`: prose
 is the default; a bullet list serves only a genuine set of parallel,
 independent items.
 
 ### 5. Polish every paragraph
 
 Work through the note one paragraph at a time, holding each to every
-rule in `.claude/kb-style.md` — voice, tense, sentences, words. When a
+rule in `$kb-style` — voice, tense, sentences, words. When a
 sentence reads wrong, name the exact fault before fixing it, as
 **Naming the fault** there describes.
 
 ### 6. Reflow and re-read
 
-Re-wrap every changed paragraph to the line width in `/kb:ingest`. If
+Re-wrap every changed paragraph to the line width in `$kb-ingest`. If
 the title changed, update the `_index.md` entry and the `Return to`
 footer so the link text still matches.
 

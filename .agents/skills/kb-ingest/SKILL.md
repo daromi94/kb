@@ -1,12 +1,13 @@
 ---
-description: Record and organize knowledge into atomic Zettelkasten notes
-arguments: <topic>
+name: kb-ingest
+description: Record supplied material as atomic Zettelkasten notes under topics/, merging overlaps and maintaining each leaf index.
 ---
 
 # Knowledge Acquisition Skill
 
 Record knowledge into clean, atomic Zettelkasten notes. Each note must be
-readable and recallable in under 5 minutes.
+readable and recallable in under five minutes. Before processing content,
+read [kb-style](../kb-style/SKILL.md) completely and apply every rule in it.
 
 ## Directory Structure
 
@@ -25,23 +26,23 @@ discovery there happens via directory listing.
 
 ### 1. Initialize
 
-- Glob `topics/<topic>/**/*.md` to check if topic exists
+- Use `rg --files topics/<topic>` to check whether the topic exists
 - Read `_index.md` if present to see what notes already exist
 
 ### 2. Gather Input
 
 Ask: "How would you like to provide content? (1) URL (2) Paste (3) Book reference (4) File"
 
-**Critical:** Save all input to `/tmp/ingest-input.md` before processing. This prevents
-raw content from polluting conversation context:
+**Critical:** Create a uniquely named temporary file with `mktemp`, then save all input
+there before processing. This prevents raw content from polluting conversation context:
 
-- **URL:** Fetch content, write to `/tmp/ingest-input.md`
-- **Paste:** User pastes content, write to `/tmp/ingest-input.md`
-- **Book reference:** User provides text, write to `/tmp/ingest-input.md`
-- **File:** Copy file contents to `/tmp/ingest-input.md` (or use directly if already a tmp file)
+- **URL:** Fetch content and write it to the temporary file
+- **Paste:** Write the pasted content to the temporary file
+- **Book reference:** Write the provided text to the temporary file
+- **File:** Copy its contents to the temporary file, or use it directly if it is already temporary
 
-Then read from `/tmp/ingest-input.md` for all subsequent processing steps. Delete the tmp
-file after notes are created.
+Read from that file for all subsequent processing. Delete only the temporary file created
+for this run after the notes are created.
 
 ### 3. Match Existing Notes
 
@@ -70,11 +71,11 @@ than creating a duplicate.
 **Remove:** Marketing language and sales pitches (competitive positioning,
 "unlike X we do Y", "best-in-class", customer testimonials, pricing or
 business arguments for adoption), self-references, and redundant
-explanations. Also strip everything `.claude/kb-style.md` rules out —
+explanations. Also strip everything `$kb-style` rules out —
 filler, hedges, convoluted phrasing, dated references, deprecation
 language.
 
-**Writing style:** Prose and wording follow `.claude/kb-style.md` — apply
+**Writing style:** Prose and wording follow `$kb-style` — apply
 every rule there. Two ingest-specific checks on top: for each section,
 identify in ≤12 words the one thing it says and develop only that; and
 keep each note scannable and recallable in under 5 minutes.
@@ -116,8 +117,9 @@ data flow with arrows and label the operations:
 
 ### 6. Fact-Check
 
-Before writing notes, verify claims against trusted sources. Launch a
-general-purpose subagent (via the Task tool) with instructions to:
+Before writing notes, verify claims against trusted sources. Delegate the
+fact-check to an independent subagent when delegation is available and
+authorized; otherwise perform the same research directly. In either case:
 
 - Identify the key factual claims in the processed content (API names, method
   signatures, default values, behavioral descriptions, class hierarchies)
@@ -216,20 +218,20 @@ ASCII diagrams or other structured content.
 ## Examples
 
 ```
-/ingest practices/clean-code + paste -> Created:
+$kb-ingest practices/clean-code + paste -> Created:
   shutdown-surgery.md
   _index.md - Updated
 
-/ingest languages/java/concurrency + paste -> Created:
+$kb-ingest languages/java/concurrency + paste -> Created:
   topics/languages/java/concurrency/threads.md
   topics/languages/java/concurrency/executor-service.md
   topics/languages/java/concurrency/_index.md - Updated
 
-/ingest performance/async-io + paste (with match) -> Updated:
+$kb-ingest performance/async-io + paste (with match) -> Updated:
   asynchronous-io.md - Added event loop section
   Created blocking.md
 
-/ingest databases/postgres + file ~/notes/postgres-indexes.md -> Created:
+$kb-ingest databases/postgres + file ~/notes/postgres-indexes.md -> Created:
   btree-indexes.md
   index-only-scans.md
 ```

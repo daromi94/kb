@@ -1,6 +1,6 @@
 ---
-description: Review and polish KB notes for clarity, consistency, and impact
-arguments: <topic-path>
+name: kb-review
+description: Review knowledge-base notes under a topic for clarity, consistency, structure, and ordering, then apply approved fixes.
 ---
 
 # Knowledge Review Skill
@@ -9,14 +9,15 @@ Review existing Zettelkasten notes for readability, consistency, and
 learning impact. The goal is to make every note clearer and more
 memorable without changing its substance.
 
-Refer to `/kb:ingest` for formatting and structural standards, and to
-`.claude/kb-style.md` for prose and wording standards.
+Before reviewing, read [kb-ingest](../kb-ingest/SKILL.md) completely for
+formatting and structural standards, and read
+[kb-style](../kb-style/SKILL.md) completely for prose and wording standards.
 
 ## Workflow
 
 ### 1. Load notes
 
-- Glob `topics/<topic-path>/**/*.md` to find all notes
+- Use `rg --files topics/<topic-path>` to find all notes
 - Read `_index.md` and every note in the topic
 
 ### 2. Read-through
@@ -30,12 +31,12 @@ awkward transitions, sections that don't belong where they are.
 ### 3. Check format compliance
 
 Verify each note against the formatting and structural standards in
-`/kb:ingest`: tables, titles, links, index structure. List any
+`$kb-ingest`: tables, titles, links, and index structure. List any
 deviations.
 
 ### 4. Check readability and clarity
 
-Check every note against `.claude/kb-style.md` — each rule there
+Check every note against `$kb-style` — each rule there
 applies: core message, paragraphs, voice, tense, sentences, words.
 Flag every deviation.
 
@@ -65,8 +66,8 @@ Report issues in a numbered list grouped by category:
 
 1. **Flow issues** — structural problems, orphaned thoughts, awkward
    transitions
-2. **Format issues** — deviations from `/kb:ingest` standards
-3. **Style issues** — deviations from `.claude/kb-style.md`
+2. **Format issues** — deviations from `$kb-ingest` standards
+3. **Style issues** — deviations from `$kb-style`
 4. **Clarity issues** — missing arguments, thin sections
 5. **Consistency issues** — contradictions between notes, same concept
    described differently

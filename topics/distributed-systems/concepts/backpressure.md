@@ -15,60 +15,96 @@ unbounded queue growth, memory exhaustion, GC pressure, latency
 spikes, and cascading failure as timeouts propagate and retries
 amplify load.
 
-Queues hide the imbalance until they don't. Backpressure exposes
-it and propagates it upstream while there is still time to act.
+Queues temporarily conceal the imbalance by accumulating work.
+Backpressure turns the mismatch into a signal that upstream components
+can use to reduce demand.
 
 ## Mechanisms
 
-**Pull-based flow control.** The consumer pulls work when ready. A
-bounded blocking queue is the canonical example: when full, writes
-block the producer. Stream APIs formalize this with explicit demand
-— the subscriber tells the publisher how many items it can accept,
-and the publisher never sends more. TCP's sliding window is the same
-idea at the transport layer: the receiver advertises a window size,
-and the sender cannot exceed it.
+Every mechanism closes the same loop: work moves downstream, while a
+capacity signal moves upstream.
+
+```text
++-------------------+      work       +---------------------+
+| Upstream producer | --------------> | Downstream consumer |
++-------------------+                 +----------+----------+
+          ^                                      |
+          |           capacity signal            |
+          +--------------------------------------+
+```
+
+The signal matters only if the upstream component changes its behavior.
+It may send less work, wait, reroute, or reject new work.
+
+**Demand-driven flow control.** The consumer requests work when ready.
+Stream protocols formalize this with explicit demand: the consumer
+tells the producer how many items it can accept, and the producer does
+not exceed that amount.
+
+**Blocking flow control.** A bounded blocking queue makes the producer
+wait when the queue is full. The consumer frees capacity as it removes
+work, which allows the producer to continue.
 
 **Credit-based schemes.** The consumer hands out credits; the
 producer spends one per message and stops when it runs out. This
 generalizes well across network boundaries because credits can be
-batched and refilled asynchronously.
+batched and refilled asynchronously. TCP uses the same principle at
+the transport layer: the receiver advertises a window, and the sender
+limits the amount of unacknowledged data accordingly.
 
-**Rate limiting and admission control.** When signals cannot
-propagate all the way back — for example, when the producer is an
-external client — reject or throttle at the edge. Token buckets,
-leaky buckets, and concurrency limiters fall here. Backpressure is
-expressed as 429s, queue rejections, or rising latency that clients
-are expected to interpret.
+**Boundary controls.** Rate limiting and admission control are not
+backpressure themselves. When a signal cannot reach an external
+producer directly, these controls reject or throttle work at the edge.
+An overload response becomes a backpressure signal only when the
+producer interprets it and reduces demand.
 
 **Load shedding.** When buffers fill and the producer cannot be
-slowed, drop work — preferably the lowest-priority work, and
-preferably early. Head-drop (drop the oldest) beats tail-drop (drop
-the newest) under sustained overload, since the oldest work is most
-likely past its deadline.
+slowed, drop low-priority work early. For deadline-bound work under
+sustained overload, head-drop can outperform tail-drop because the
+oldest work is most likely past its deadline.
 
 ## Principles
 
-*Bounded everything.* Unbounded queues silently absorb load until
-the system collapses. Every buffer, thread pool, connection pool,
-and channel should have a finite capacity, and the behavior at
-capacity should be a deliberate design decision, not a default.
+**Bound every point of accumulation.** Unbounded queues silently
+absorb load until the system collapses. Every buffer, thread pool,
+connection pool, and channel should have a finite capacity. Its
+behavior at capacity should be a deliberate design decision.
 
-*Propagate end-to-end.* If service A pushes back on service B but
-the load balancer in front of B keeps accepting connections, the
-pressure just relocates to a different buffer. The signal needs a
-path all the way to whatever can actually slow down or reject.
+**Propagate end to end.** If service B pushes back on service A but
+the gateway in front of A keeps accepting requests, the pressure
+relocates to the gateway's queue:
 
-*Latency is a backpressure signal too.* If arrival rate exceeds
-service rate, queue length grows without bound and so does latency.
-Rising p99 latency with stable throughput is often the first
-observable symptom that a system is at its capacity ceiling. Using
-latency as the control signal directly is more robust than measuring
-queue depth.
+```text
+Forward work:
 
-*Retries without backpressure amplify load.* A struggling service
-that returns errors will see clients retry, multiplying the load it
-cannot handle. Retries need budgets, jitter, and circuit breakers.
-Circuit breakers are themselves a coarse form of backpressure.
++--------+    +---------+    +-----------+    +-----------+
+| Client | -> | Gateway | -> | Service A | -> | Service B |
++--------+    +---------+    +-----------+    +-----------+
+
+Pressure signal:
+
++--------+    +---------+    +-----------+    +-----------+
+| Client | <- | Gateway | <- | Service A | <- | Service B |
++--------+    +---------+    +-----------+    +-----------+
+```
+
+The signal must reach the component that can slow down or reject new
+work. Otherwise, overload merely moves to another queue.
+
+**Latency can serve as a control signal.** If arrival rate exceeds
+service rate, queue length and latency grow without bound. Rising
+99th-percentile (p99) latency with stable throughput often reveals
+that a system has reached its capacity ceiling. If the producer
+observes that latency and reduces demand, the measurement carries
+pressure upstream. Latency can be more useful than queue depth when
+work items have different processing costs because it measures the
+delay that the system actually creates.
+
+**Retries without backpressure amplify load.** Errors often cause
+clients to retry, multiplying the load on a struggling service.
+Retries need budgets and jitter. Circuit breakers contain repeated
+failures; when their rejections cause callers to reduce demand, they
+also help carry a pressure signal upstream.
 
 ## Network of queues
 

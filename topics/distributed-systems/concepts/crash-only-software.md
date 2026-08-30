@@ -1,54 +1,111 @@
 # Crash-only software
 
-Crash-only software is built so the only way to stop it is to crash it,
-and the only way to recover is to restart. Making a crash safe at any
-moment imposes five structural properties on the system.
+Crash-only software treats abrupt termination as its normal stop path and
+restart as its only recovery path. Five structural constraints make this
+safe by moving durability, isolation, cleanup, and request context outside
+the lifetime of the process.
 
-## The five properties
+> **A component can stop without cooperation only when correctness does
+> not depend on its shutdown code.**
 
-1. All important non-volatile state is managed by dedicated state stores.
-2. Components have externally enforced boundaries.
-3. All interactions between components have a timeout.
-4. All resources are leased, rather than permanently allocated.
-5. Requests are entirely self-describing.
+## A crash cannot depend on cleanup
 
-## State lives in dedicated stores
+A conventional shutdown path may flush buffers, release locks, and notify
+peers before the process exits. A crash can interrupt the process before
+any of those actions complete. Crash-only software therefore assumes that
+none of them run.
 
-Either commit to storing data safely in a system built for it, or
-explicitly accept that the data is volatile. Half-measures — state that
-is kept in application memory but treated as if it will persist — are
-the trap. A crash must either leave the data intact in its store or
-destroy it cleanly, with no middle ground that silently corrupts.
+Its lifecycle has no separate graceful stop path:
 
-## Boundaries are externally enforced
+```text
++---------+    crash    +---------+    restart    +---------+
+| Running | ----------> | Stopped | ------------> | Running |
++---------+             +---------+               +---------+
+```
 
-Components interact through well-defined APIs and nothing else. Implicit
-communication channels — shared memory, globals, side effects on common
-infrastructure — are minimized or removed. The boundary is enforced from
-outside the component so a misbehaving component cannot reach past it.
+This lifecycle creates a strict design test: if the process disappears at
+any instruction, another instance must continue without guessing what the
+failed process left behind.
 
-## Every interaction has a timeout
+## Durable state outlives the process
 
-Operations can fail. Waiting indefinitely for a component that may never
-respond is not resilience; it is a resource leak waiting to exhaust the
-caller. Bounded waits turn silent hangs into explicit failures the
-caller can handle.
+Important nonvolatile state belongs in a dedicated state store. Process
+memory is either explicitly volatile or reconstructible from that store.
+The design does not treat in-memory state as though it survives a restart.
 
-## Resources are leased
+This separation gives every piece of state a clear fate. Durable state
+remains intact in its store, while volatile state can disappear without
+damaging correctness. Restart reconstructs what the process needs instead
+of recovering an ambiguous partial state.
 
-Resources — locks, connections, memory, handles — are handed out for a
-bounded time and reclaimed when the holder no longer justifies keeping
-them. Leases remove the need for a cooperative shutdown: if the holder
-dies mid-operation, the lease expires and the resource returns to the
-pool on its own.
+## External boundaries contain failure
 
-## Requests are self-describing
+Externally enforced boundaries limit what a failed component can affect.
+Components communicate through defined interfaces instead of shared
+memory, global variables, or implicit side effects on common
+infrastructure.
 
-A request carries the context needed to process it rather than relying
-on implicit protocol state held by the server. Self-describing requests
-survive server restarts, route freely between instances, and remove a
-large class of subtle bugs where client and server disagree about what
-state the conversation is in.
+The enforcement must live outside the component. A process that fails or
+misbehaves cannot be trusted to preserve its own boundary, but an external
+boundary continues to constrain it.
+
+## Timeouts turn silence into failure
+
+Every interaction has a timeout because a crashed component cannot send a
+final response. Without a timeout, its callers may wait forever and retain
+threads, connections, or memory for work that cannot complete.
+
+A bounded wait converts silence into an explicit failure. The caller can
+then release its own resources, retry through another instance, or return
+the failure to its caller.
+
+## Leases reclaim abandoned resources
+
+A lease grants a resource for a bounded period instead of allocating it
+permanently. Locks, connections, memory, and handles return to their pools
+unless the holder renews them.
+
+If a process crashes mid-operation, it stops renewing its leases. Each
+lease eventually expires, so the system reclaims the resource without
+running cleanup code in the failed process.
+
+## Requests carry their own context
+
+A self-describing request contains the context required to process it. It
+does not depend on conversation state stored only inside one server
+process.
+
+After a crash, the same request can reach another instance without first
+reconstructing an implicit session. This keeps the client and server from
+disagreeing about the state of an interrupted exchange.
+
+## The constraints work together
+
+The five constraints move each recovery responsibility outside the process:
+
+```text
+                              durable write
++----------+    request    +------------------+    +-------------+
+| Caller   | ------------> | Crash-only       | -> | State store |
+| timeout  | <------------ | process          |    | durable     |
++----------+    response   +--------+---------+    +-------------+
+                                   |
+                                   | acquire or renew lease
+                                   v
+                          +-------------------+
+                          | Resource pool     |
+                          | expiring leases   |
+                          +-------------------+
+```
+
+If the process crashes, the caller's timeout ends the wait, the state store
+retains durable data, and the resource pool expires abandoned leases. A
+self-describing request can then run on a replacement inside the same
+externally enforced boundary.
+
+Crash-only design does not make crashes harmless. It makes recovery
+independent of the failed process by ensuring that everything needed to
+continue already lives outside it.
 
 ---
 

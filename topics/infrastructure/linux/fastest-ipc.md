@@ -128,14 +128,14 @@ shared memory
 A ring buffer is a common high-performance design:
 
 ```text
-                  shared memory
+shared memory
 
-             read                write
-              |                    |
-              v                    v
-       +------+------+------+------+------+
-       | M1   | M2   | M3   |      |      |
-       +------+------+------+------+------+
+      read                write
+       |                    |
+       v                    v
++------+------+------+------+------+
+| M1   | M2   | M3   |      |      |
++------+------+------+------+------+
 ```
 
 The producer writes directly into the shared buffer, then publishes the new

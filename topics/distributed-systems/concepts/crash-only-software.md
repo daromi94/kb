@@ -8,6 +8,14 @@ the lifetime of the process.
 > **A component can stop without cooperation only when correctness does
 > not depend on its shutdown code.**
 
+## The five properties
+
+1. All important nonvolatile state is managed by dedicated state stores.
+2. Components have externally enforced boundaries.
+3. All interactions between components have a timeout.
+4. All resources are leased rather than permanently allocated.
+5. Requests are entirely self-describing.
+
 ## A crash cannot depend on cleanup
 
 A conventional shutdown path may flush buffers, release locks, and notify

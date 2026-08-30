@@ -1,88 +1,83 @@
 # Allocation profiling
 
-The **Java Virtual Machine (JVM)** stores application objects in a memory area
-called the **heap**. Creating an object reserves heap space; this operation is
-an **allocation**. The amount of space reserved per unit of time is the
+A stable heap does not mean that memory behavior is cheap. An application can
+create gigabytes of short-lived objects, reclaim almost all of them, and still
+lose processor time to garbage collection. Allocation profiling estimates
+which code paths create those objects and connects that activity to its
+performance cost.
+
+> **A heap dump explains what survives. An allocation profile explains what
+> the application keeps creating.**
+
+## Two memory problems leave different evidence
+
+The Java Virtual Machine (JVM) stores application objects in a memory region
+called the **heap**. Creating an object reserves heap space; that operation is
+an **allocation**. The number of bytes allocated per unit of time is the
 **allocation rate**.
 
-When the application can no longer reach an object, **garbage collection
-(GC)** can reclaim its space. Most objects may disappear quickly, yet creating
-and reclaiming them is not free. At a high enough allocation rate, that work
-can consume processor time, introduce pauses, and slow requests even while
-the heap holds a moderate amount of data.
+Garbage collection (GC) reclaims an object's space after the application can
+no longer reach it. The reachable objects that remain after GC has evaluated
+the relevant heap regions form the **live set**. Compare live-set estimates
+only after collections with the same scope and under equivalent workloads.
 
-Allocation profiling finds the code paths responsible for that work.
-
-## Retention and churn produce different shapes
-
-Objects that remain reachable are **retained**. Together, the reachable
-objects left after a collection form the **live set**. A growing live set is a
-retention problem.
-
-When the application instead creates short-lived objects at a high rate, GC
-repeatedly reclaims them. This cycle is **allocation churn**: a large volume
-of data moves through the heap, but the live set stays moderate.
-
-The central distinction is:
-
-> **Retention measures what remains. Allocation rate measures how quickly new
-> objects enter the heap.**
+Retention makes the live set grow. **Allocation churn** produces a different
+shape: the application creates short-lived objects rapidly, GC reclaims them,
+and the live set remains roughly stable.
 
 ```text
-retention problem
+retention
 
-post-GC heap:  1.0 GB -> 1.4 GB -> 1.9 GB -> 2.5 GB
+post-GC heap:      1.0 GB -> 1.4 GB -> 1.9 GB -> 2.5 GB
 
 
-allocation-churn problem
+allocation churn
 
-post-GC heap:  1.0 GB -> 1.1 GB -> 1.0 GB -> 1.1 GB
-allocated:      40 GB     42 GB     39 GB     41 GB
+post-GC heap:      1.0 GB -> 1.1 GB -> 1.0 GB -> 1.1 GB
+allocation rate:   650 MB/s  680 MB/s  640 MB/s  670 MB/s
 ```
 
-This difference determines which diagnostic artifact is useful. A heap dump
-captures the objects and references that still exist at one moment, so it can
-explain retention. Short-lived objects usually disappear before the capture;
-an allocation profile records their creation sites instead.
+A heap dump captures an object graph at one moment, so it can explain why
+objects remain reachable. Short-lived objects often disappear before that
+capture. An allocation profile instead samples their creation and records the
+method-call paths that produced them.
 
-## Confirm that collection is doing useful work
+## Confirm allocation pressure before profiling code
 
-Start with GC evidence before profiling code. A GC log records heap occupancy,
-collection timing, and the space reclaimed by each collection.
+Start with evidence that connects GC activity to application cost. GC logs or
+Java Flight Recorder data can show heap occupancy, collection frequency,
+processor time, pause time, and request latency on one timeline.
 
-The useful comparison is:
+For equivalent collection scopes, compare the heap before and after each
+collection. A large reduction means that the collection reclaimed many
+bytes; the difference is a useful estimate rather than an exact accounting
+identity, especially when collection and application work overlap.
 
-```text
-heap before GC - heap after GC = memory reclaimed
-```
-
-Two patterns point in different directions:
-
-| Observation                              | Interpretation      |
+| Observation                              | Likely direction    |
 |------------------------------------------|---------------------|
-| GC reclaims little; post-GC heap rises   | Retention pressure  |
-| GC reclaims much; post-GC heap is stable | Allocation pressure |
+| Little reclaimed; post-GC heap rises     | Retention pressure  |
+| Much reclaimed; post-GC heap stays level | Allocation pressure |
 
-High GC frequency alone is not enough. A collector can run frequently with
-small, inexpensive collections. Measure the processor time, pause time, and
-request latency associated with those collections.
+High collection frequency alone does not prove a problem. Collections may be
+frequent and inexpensive. Profile allocations when GC processor time, pauses,
+or request latency materially harms the workload while the post-GC heap stays
+bounded.
 
-If the service allocates 2 GB each second but retains only 500 MB after
-collection, increasing the maximum heap may increase the time between
-collections. It does not remove the work required to allocate and reclaim
-those objects.
+Suppose a service allocates 650 MB each second but retains only 500 MB after
+comparable collections. A larger maximum heap may delay some collections,
+but it does not remove the work that creates and eventually reclaims those
+temporary objects.
 
-## Use Flight Recorder for a broad view
+## Record a representative interval
 
-**Java Flight Recorder (JFR)** places runtime and application events on one
-timeline. Each sampled allocation can include the method-call path that
-created the object. That path is its **stack trace**. Because the recording
-also contains GC, processor, lock, and input/output events, it can connect an
-allocation burst to its source and its effect on the application.
+Java Flight Recorder (JFR) records JVM and application events on a shared
+timeline. Its allocation samples include the object class, thread, and stack
+trace. A **stack trace** is the active chain of method calls that led to an
+event.
 
-Start a two-minute recording with `jcmd`, a diagnostic utility included with
-the **Java Development Kit (JDK)**. Replace `<pid>` with the operating system
-process identifier for the running JVM:
+Record a short interval after startup and workload warmup. The Java
+Development Kit (JDK) provides `jcmd`, which sends diagnostic commands to a
+running JVM. Replace `<pid>` with the operating-system process identifier:
 
 ```bash
 jcmd <pid> JFR.start \
@@ -92,114 +87,117 @@ jcmd <pid> JFR.start \
   filename=/var/recordings/allocation-check.jfr
 ```
 
-Open the recording in **JDK Mission Control (JMC)**. Its allocation views group
-sampled events by class, thread, and stack trace. They also distinguish
-allocations made inside and outside **Thread-Local Allocation Buffers
-(TLABs)**. A TLAB gives one thread a small private heap region, allowing it to
-allocate without contending with other threads. An object that does not fit
-may be allocated outside the TLAB, but it still occupies the Java heap.
-
-Use the recording to answer:
+Open the recording in JDK Mission Control (JMC). Group allocation samples by
+class, thread, and stack trace, then compare bursts with GC activity and
+request latency:
 
 ```text
 Which classes account for the most allocated bytes?
-
 Which threads create them?
-
-Which stack traces lead to those allocation sites?
-
-Do allocation bursts align with GC or latency spikes?
+Which call paths reach those allocation sites?
+Do allocation bursts coincide with GC or latency spikes?
 ```
 
-Recording every allocation would add substantial overhead, so JFR may
-**sample** them by recording a representative subset. It may also aggregate
-multiple events into totals. Treat its results as estimates that identify
-dominant paths, not as an exact invoice for every object.
+The profile configuration records a representative subset of allocations.
+Each sample has a statistical weight that estimates how much allocation
+pressure it represents. Aggregate those weights over many samples to find
+dominant paths; do not treat the result as an exact invoice for every object.
 
-## Use async-profiler for an allocation flame graph
+Most allocations do not require threads to coordinate. HotSpot, the JVM
+implementation used by OpenJDK, usually gives each thread a small private heap
+region called a **Thread-Local Allocation Buffer (TLAB)**. Dedicated JFR
+events can distinguish allocations inside and outside TLABs, but the command
+above does not enable them by default. Its general allocation samples answer
+the main question: which call paths create the heap pressure?
 
-**async-profiler** can turn sampled allocation stacks into a **flame graph**.
-This view combines related call paths and uses frame width to represent their
-share of the sampled allocated bytes:
+## Follow the allocation path visually
+
+For a focused view of allocation paths on a HotSpot-based JVM, async-profiler
+can produce an allocation **flame graph**. The graph combines sampled stack
+traces into rectangles called frames:
 
 ```bash
 asprof -e alloc -d 60 -f allocation.html <pid>
 ```
 
-A flame graph aggregates related stack traces:
+Frame width represents the path's share of estimated heap pressure. Vertical
+position represents the call chain, not elapsed time. In async-profiler's
+allocation view, the top frame names the allocated class. The method directly
+below it is the allocation site, and lower frames are its callers.
 
 ```text
-wide frame   = large share of sampled allocation
-tall stack   = deeper call path
-top frame    = method where allocation occurs
-lower frames = callers that led there
+byte[]                 allocated class
+copyPayload            allocation site
+decodeRequest          caller
+handleOrder            entry point
 ```
 
-The widest frame is not automatically defective. A request-decoding method may
-allocate heavily because every request legitimately passes through it. The
-actionable path combines high allocation volume with an avoidable design
-choice. For example:
+The widest path is not automatically defective. A decoder may allocate
+heavily because every request passes through it. The actionable question is
+whether the path combines high volume with an avoidable operation.
+
+Suppose `copyPayload` duplicates an immutable request body before parsing it:
 
 ```text
 handleOrder
-   -> decodeRequest
-      -> copyPayload
-         -> new byte[requestSize]
+    -> decodeRequest
+        -> copyPayload
+            -> new byte[requestSize]
 ```
 
-If `copyPayload` duplicates an immutable request body that the decoder can
-read directly, the stack exposes a removable copy. If the buffer must outlive
-the request input, the allocation may be necessary.
+If the parser can safely read the original body, the profile has exposed a
+removable copy. If another component must own the bytes after the input is
+released, the copy establishes a necessary lifetime boundary.
 
-## Look for mechanisms, not class names
+## Look for the mechanism behind the class
 
-Allocation pressure commonly comes from a small set of mechanisms:
+The allocated class describes what consumes heap space. The full call path
+reveals the operation that creates it:
 
-| Mechanism             | Evidence in the profile                       |
-|-----------------------|-----------------------------------------------|
-| Repeated copying      | Large arrays allocated along conversion paths |
-| Temporary collections | Lists and maps built only to traverse once    |
-| Boxing                | Primitive values wrapped as objects in loops  |
-| Parsing               | Decoding creates strings, tokens, and buffers |
-| Logging               | Message construction on disabled paths        |
-| Retry amplification   | Retries recreate the same request objects     |
+| Mechanism             | Evidence in the profile                        |
+|-----------------------|------------------------------------------------|
+| Repeated copying      | Large arrays below conversion or parsing paths |
+| Temporary collections | Lists or maps built only for one traversal     |
+| Boxing                | Primitive values repeatedly wrapped as objects |
+| Parsing               | Strings and buffers created while decoding     |
+| Eager logging         | Messages built before a discarded log event    |
+| Retry amplification   | Each retry recreates the same request objects  |
 
-The class name tells you what was allocated. The full stack tells you which
-operation caused the allocation and whether that operation can change.
+Prioritize a path only when it materially contributes to allocation rate,
+its GC cost harms the workload, and the code can change without violating
+ownership or correctness.
 
-## Optimize only after connecting cost to impact
+Common corrections remove copies, parse only required fields, avoid
+intermediate collections, or reuse a bounded buffer. Object pooling reuses
+instances instead of repeatedly allocating them, but it complicates object
+lifetime and concurrent access. Use pooling only when measurement shows that
+reuse improves the target workload.
 
-Prioritize a path when all three statements hold:
+## Verify cost per unit of work
 
-1. It contributes materially to the measured allocation rate.
-2. Its allocations contribute to GC processor time, pauses, or request latency.
-3. The code can remove, reuse, batch, or delay the objects without breaking
-   ownership or correctness.
+Repeat the same recording under comparable traffic after the change. Compare
+both total rate and cost per completed request; lower traffic alone can make
+an unchanged path appear cheaper.
 
-Typical changes include eliminating copies, reusing bounded buffers, parsing
-only required fields, and avoiding intermediate collections. Object pooling
-replaces repeated allocation with reuse, but it also makes object lifetimes
-and concurrent access harder to manage. Use it only when measurement shows
-that reuse improves the target workload.
+| Measurement           | Before           | After            |
+|-----------------------|------------------|------------------|
+| Throughput            | 5,000 requests/s | 5,000 requests/s |
+| Allocated per request | 96 KB            | 44 KB            |
+| Allocation rate       | 480 MB/s         | 220 MB/s         |
+| GC processor time     | 28%              | 13%              |
+| Post-GC heap          | 510 MB           | 505 MB           |
 
-## Verify the change with the same workload
+This result supports the explanation: removing the payload copy reduced both
+allocation per request and GC cost at the same throughput. The stable post-GC
+heap also shows that the change did not trade churn for retention.
 
-Repeat the recording under comparable traffic after the change. Compare:
+Check process memory as well. A direct buffer stores its payload outside the
+Java heap. Replacing heap arrays with direct buffers can move pressure into
+**native memory**, the rest of the process memory, rather than remove it.
 
-```text
-allocation rate
-GC processor time
-GC pause time
-request latency
-post-GC live set
-```
-
-A successful change lowers allocation-related cost without increasing the
-live set or moving pressure into **native memory**, the process memory outside
-the Java heap.
-
-Use a heap dump to explain what survives. Use an allocation profile to explain
-what the application keeps creating.
+Allocation profiling succeeds when it connects a costly allocation rate to a
+specific call path, a removable mechanism, and a measured improvement under
+the same workload.
 
 ---
 

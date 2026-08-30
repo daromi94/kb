@@ -1,109 +1,232 @@
 # Memory accounting
 
-When there is no OOM and no crash, the investigation is memory
-accounting: building a budget that explains every megabyte. The
-question is not "what's leaking" but "where is my memory going."
+Memory accounting explains a Java process by reconciling the operating
+system's measurement with measurements from the Java Virtual Machine (JVM).
+The result is a budget that shows which region deserves investigation.
 
-## Split the total
+The central rule is:
 
-Compare RSS from the OS (`ps`, `top`, container metrics) against the
-JVM's own view:
+> **Do not call memory unexplained until you have compared measurements that
+> describe the same process at the same time.**
+
+## Four measurements describe different things
+
+A Java process can reserve address space without occupying all of it. It can
+also commit memory without touching every page. Four terms keep those states
+separate:
+
+- **Reserved memory** is virtual address space set aside for possible use.
+- **Committed memory** is memory the JVM can use without first requesting
+  more backing from the operating system.
+- **Used memory** contains live data or runtime structures at that moment.
+- **Resident Set Size (RSS)** is the process memory currently resident in
+  physical memory according to the operating system.
+
+These values answer different questions:
+
+```text
+reserved >= committed >= used
+
+RSS = resident pages from heap, native allocations, mappings, and libraries
+```
+
+RSS is not expected to equal any one JVM number. Some committed pages may not
+be resident, and file-backed or shared mappings may appear in RSS without
+belonging to the Java heap.
+
+## Start with the outside measurement
+
+Measure the process from the operating system or its container runtime first.
+On Linux, a process listing reports RSS in kibibytes (KiB), where one KiB is
+1,024 bytes:
+
+```bash
+ps -o pid,rss,vsz,cmd -p <pid>
+```
+
+**Virtual size (VSZ)** is the process's mapped virtual address space. Large
+reserved regions can make VSZ much larger than physical memory, so VSZ is not
+a useful substitute for RSS.
+
+For a container, also record its memory usage and limit. A container limit
+applies to a **control group**, which accounts for and limits a set of
+processes. The control-group total may not match one process's RSS.
+
+The first snapshot should therefore record:
+
+```text
+process RSS
+container usage, if applicable
+container or host limit
+timestamp and workload level
+```
+
+The timestamp matters because memory changes while commands run. Comparing an
+RSS sample from peak traffic with a JVM sample from an idle period creates a
+false discrepancy.
+
+## Add the JVM's internal ledger
+
+The JVM exposes heap information through `jcmd`, a diagnostic command that
+attaches to a running JVM owned by the same operating-system user.
 
 ```bash
 jcmd <pid> GC.heap_info
-jcmd <pid> VM.native_memory summary
 ```
 
-NMT requires `-XX:NativeMemoryTracking=summary` at JVM startup. The
-output breaks committed memory into categories:
+This reports the heap configuration and current occupancy. The maximum heap,
+often configured with `-Xmx`, is a ceiling. It is not a promise that the
+process uses that amount, and it is not the process's total memory limit.
+
+The heap explains only one part of the JVM. On a HotSpot-based JVM, **Native
+Memory Tracking (NMT)** groups the runtime's own native allocations by
+subsystem. Because collection begins at startup, enable it when the JVM starts:
 
 ```text
-Java Heap   (reserved=4GB,   committed=4GB)
-Class       (reserved=1GB,   committed=256MB)
-Thread      (reserved=512MB, committed=512MB)
-Code        (reserved=256MB, committed=180MB)
-GC          (reserved=400MB, committed=400MB)
-Internal    (...)
+-XX:NativeMemoryTracking=summary
 ```
 
-Before touching a heap dump, you should be able to say: "RSS is 8GB,
-of which heap accounts for 4GB, threads 500MB, Metaspace 256MB, GC
-structures 400MB, direct buffers 2GB, unaccounted 800MB." That
-sentence tells you where to dig. If heap is only 30% of RSS, profiling
-the heap is a waste of time.
+Once enabled, request a summary in a consistent unit:
 
-## Write a budget
+```bash
+jcmd <pid> VM.native_memory summary scale=MB
+```
 
-The discipline that makes this investigation tractable:
+The report separates categories such as:
+
+| NMT category | Typical contents                              |
+|--------------|-----------------------------------------------|
+| Java Heap    | Reserved and committed managed heap           |
+| Class        | Metaspace and class-related structures        |
+| Thread       | Thread stacks and thread metadata             |
+| Code         | Compiled machine code and code-cache metadata |
+| GC           | Collector data structures                     |
+| Compiler     | Just-in-time compiler state                   |
+| Internal     | Other JVM runtime allocations                 |
+
+NMT is the JVM ledger, not the process ledger. It does not fully track
+third-party native libraries, every Java standard-library allocation, or
+file-backed mappings. Enabling it also has a performance cost, so production
+use requires an explicit operational decision.
+
+## Build an approximate budget
+
+Normalize every measurement to one unit and write down each contributor. A
+budget makes the unexplained difference visible:
 
 ```text
-Expected:
-  Heap (-Xmx):             4096 MB
-  Metaspace cap:            512 MB
-  Direct memory cap:        512 MB
-  Thread stacks (200×1MB):  200 MB
-  Code cache:               240 MB
-  GC overhead (~10%):       400 MB
-  ------
-  Total expected:         ~5960 MB
+Observed process RSS:                        8,200 MB
 
-Actual RSS:                8200 MB
-Unexplained:               2240 MB
+JVM and application contributors:
+  committed Java heap                        4,096 MB
+  class metadata                               260 MB
+  thread stacks and metadata                   480 MB
+  code cache and compiler                      230 MB
+  GC and other JVM structures                  420 MB
+  direct buffers from buffer-pool metrics    1,100 MB
+  identified resident file mappings            900 MB
+                                                -----
+Approximate explained memory                 7,486 MB
+Approximate unexplained difference             714 MB
 ```
 
-That unexplained delta is the investigation. If the numbers match, the
-app is using exactly what it was configured to use — the question
-becomes whether the caps are right for your workload.
+The budget is a reconciliation, not an exact accounting identity. Categories
+can overlap at different measurement layers, RSS counts only resident pages,
+and native allocators may retain partly used pages. That last condition is
+called **allocator fragmentation**.
 
-The JVM is not frugal by default. It treats `-Xmx` as permission, not
-a target. A huge fraction of "why does my Java app use so much memory"
-turns out to be "because `-Xmx` is 8GB and the JVM happily grows to
-fill it."
+Its purpose is narrower: identify whether the discrepancy is tens of
+megabytes or several gigabytes, and determine which branch can explain it.
 
-## Pragmatic investigation order
+## Interpret the shape of the budget
 
-Stop as soon as the picture is clear:
+The largest contributor determines the next question:
 
-1. **NMT summary + RSS comparison.** Resolves ~40% of cases by
-   revealing the problem is threads, Metaspace, or direct buffers
-   rather than heap.
-2. **Class histogram.** Run `jcmd <pid> GC.class_histogram | head -30`
-   for a fast, low-impact breakdown of instance counts and byte sizes
-   without a full heap dump. Look for massive counts of custom classes
-   or large `byte[]` / `char[]` arrays.
-3. **Heap dump after forced Full GC.** If heap dominates, one dump
-   opened in MAT, dominator tree top 20.
-4. **NMT category drill-down.** If off-heap dominates, follow the
-   category that stands out.
-5. **jemalloc profiling.** If nothing adds up, native allocations.
-6. **JFR.** If the issue is allocation rate rather than retention.
+| Budget shape                     | Next investigation                    |
+|----------------------------------|---------------------------------------|
+| Used heap grows after collection | Object retention                      |
+| Stable heap; GC is frequent      | Allocation rate                       |
+| Thread category grows            | Thread count and effective stack size |
+| Class category grows             | Class loading and loader lifetime     |
+| Direct-buffer metrics grow       | Buffer ownership and pool limits      |
+| RSS grows while NMT stays stable | Mappings, native libraries, allocator |
 
-## Production readiness
+Take repeated snapshots under comparable load when growth matters. NMT can
+store a baseline and report the change since that point:
 
-Configure these flags proactively so diagnostic data is available when
-failure occurs:
+```bash
+jcmd <pid> VM.native_memory baseline
+jcmd <pid> VM.native_memory summary.diff scale=MB
+```
 
-| Flag                               | Purpose                           |
+A difference report answers a better question than a single large number:
+which JVM-native category grew during the observation window?
+
+## Use progressively stronger evidence
+
+Start with broad summaries and stop when one explanation accounts for the
+symptom.
+
+```text
+RSS and container limit
+          |
+          v
+heap information + NMT summary
+          |
+          v
+class histogram or category-specific metric
+          |
+          v
+heap dump, OS maps, or native allocation profile
+```
+
+Before capturing the complete object graph, use a **class histogram** to see
+which classes dominate the current heap. It groups objects by class and
+reports their counts and shallow byte totals:
+
+```bash
+jcmd <pid> GC.class_histogram
+```
+
+A histogram shows composition, not ownership. If a suspicious class needs an
+ownership explanation, collect a heap dump so the references between objects
+can be traced. If the unexplained difference remains outside the JVM's ledger,
+move to operating-system maps or native profiling instead.
+
+## Preserve evidence before failure
+
+Several diagnostics require preparation. NMT cannot be enabled after startup,
+and a failure may remove the process before an operator can attach.
+
+Preserve heap history with **unified GC logging**, which records collections
+and heap transitions. For broader context, **Java Flight Recorder (JFR)** can
+retain recent JVM and application events in a bounded ring. As new events
+arrive, the ring overwrites events outside its size or time window.
+
+| Preparation                        | Evidence preserved                |
 |------------------------------------|-----------------------------------|
-| `-XX:+HeapDumpOnOutOfMemoryError`  | Auto-capture dump at OOM          |
-| `-XX:HeapDumpPath=/var/dumps`      | Dump location with disk space     |
-| `-XX:NativeMemoryTracking=summary` | Enable NMT (5-10% overhead)       |
-| `-Xms` = `-Xmx`                    | Lock heap size, prevent resizing  |
-| `-XX:MaxMetaspaceSize=N`           | Cap Metaspace growth              |
-| `-XX:+UseContainerSupport`         | Respect container memory limits   |
-| `-XX:MaxRAMPercentage=N`           | Dynamic heap sizing in containers |
+| `-XX:NativeMemoryTracking=summary` | JVM native-memory categories      |
+| `-XX:+HeapDumpOnOutOfMemoryError`  | Heap at Java heap exhaustion      |
+| `-XX:HeapDumpPath=<path>`          | Controlled dump destination       |
+| Unified GC logging                 | Heap and collection behavior      |
+| Continuous Flight Recorder ring    | Recent JVM and application events |
 
-GC logging (essentially free, invaluable after the fact):
+The dump path needs enough free space and must survive process or container
+replacement. Heap-dump-on-error does not capture resource failures outside
+Java heap exhaustion, so external logs and runtime events remain necessary.
+
+Memory accounting succeeds when the numbers support a specific next question:
 
 ```text
--Xlog:gc*:file=gc.log:time,uptime:filecount=10,filesize=100M
+total footprint
+      -
+explained contributors
+      =
+small, named uncertainty
 ```
 
-Setting `-Xms` equal to `-Xmx` prevents latency spikes from the JVM
-pausing to request or release memory to the OS.
-
-In containers, `-XX:MaxRAMPercentage` is preferred over hardcoded
-`-Xmx` values to allow dynamic sizing relative to the container limit.
+Build the budget first. Profile only the region that the budget leaves
+unexplained.
 
 ---
 

@@ -7,6 +7,7 @@
 - [CAP theorem](cap-theorem.md)
 - [CALM theorem](calm-theorem.md)
 - [OLTP](oltp.md)
+- [Seven stages of OLTP survivability](oltp-survivability-stages.md)
 - [Stateless vs stateful](stateless-vs-stateful.md)
 - [Separate compute from data](separate-compute-from-data.md)
 - [Data locality](data-locality.md)

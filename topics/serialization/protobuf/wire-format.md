@@ -40,11 +40,7 @@ Given the schema above, generated code provides type-safe builders and
 serialization:
 
 ```java
-Person john = Person.newBuilder()
-        .setId(1234)
-        .setName("John Doe")
-        .setEmail("jdoe@example.com")
-        .build();
+Person john = Person.newBuilder().setId(1234).setName("John Doe").setEmail("jdoe@example.com").build();
 
 output = new FileOutputStream(args[0]);
 

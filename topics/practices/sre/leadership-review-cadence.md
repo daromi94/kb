@@ -28,7 +28,3 @@ it. Leaders who only see dashboards lose the concrete detail that
 makes reliability decisions correct. Without this engagement,
 postmortem culture quietly drifts toward blame-avoidance and shallow
 root causes.
-
----
-
-Return to [SRE](_index.md)

@@ -174,7 +174,3 @@ The principled approach: one mechanism for operational errors
 (exceptions, Result types, or return codes) and a separate
 mechanism for programming errors (assertions or panics that
 cannot be caught by normal error handling).
-
----
-
-Return to [Correctness](_index.md)

@@ -55,7 +55,3 @@ noise). Prevents bufferbloat in router queues.
 ss -ti | grep cwnd
 # cwnd:10 ssthresh:20 rtt:5/3
 ```
-
----
-
-Return to [TCP](_index.md)

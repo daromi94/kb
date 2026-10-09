@@ -80,7 +80,3 @@ Before native sidecars, managing helper containers was difficult:
 Unlike traditional init containers (which don't support probes), native sidecars
 support startup, readiness, and liveness probes. This allows Kubernetes to wait
 for a sidecar proxy to have started before launching the main application.
-
----
-
-Return to [Pods](_index.md)

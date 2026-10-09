@@ -35,7 +35,3 @@ Storing data in text files (CSVs) lacks essential guarantees:
 - **Concurrency control** — Allowing simultaneous access by multiple users
 
 A DBMS provides these guarantees; flat files do not.
-
----
-
-Return to [Databases](_index.md)

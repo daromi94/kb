@@ -83,7 +83,3 @@ The layering maps naturally onto the hardware memory hierarchy.
 Because the deepest levels are immutable and account for most of the
 total volume, they can also be tiered to remote object storage,
 keeping the local node's working set small.
-
----
-
-Return to [Concepts](_index.md)

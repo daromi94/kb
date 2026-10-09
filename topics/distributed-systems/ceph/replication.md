@@ -56,7 +56,3 @@ When an OSD fails:
 2. **Detection:** Surviving OSDs and Monitors detect the failure
 3. **Backfilling:** Cluster identifies new homes for missing replicas and copies
    data to restore full `size` count
-
----
-
-Return to [Ceph](_index.md)

@@ -43,7 +43,3 @@ number of bytes transferred:
 `SOCK_DGRAM` sockets are **atomic**. A `send()` either transmits the entire
 message or fails with `EMSGSIZE` if it exceeds the buffer. Partial datagrams
 never occur.
-
----
-
-Return to [Unix domain sockets](_index.md)

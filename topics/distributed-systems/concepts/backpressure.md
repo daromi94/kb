@@ -111,7 +111,3 @@ also help carry a pressure signal upstream.
 A distributed system is a network of queues. Stability requires
 that every queue has a way to say "no" or "slow down" to whatever
 feeds it. Backpressure is the name for that signal.
-
----
-
-Return to [Concepts](_index.md)

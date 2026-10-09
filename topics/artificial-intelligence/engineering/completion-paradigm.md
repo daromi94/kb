@@ -33,7 +33,3 @@ into a classifier.
 
 No separate translation or classification algorithm runs. The prompt
 structure steers the same completion mechanism toward different tasks.
-
----
-
-Return to [AI engineering](_index.md)

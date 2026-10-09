@@ -70,7 +70,3 @@ mode of operation.
 In a large system the exact order in which actors process messages is
 not controllable and not intended to be. The system determines
 scheduling; application logic should not depend on global ordering.
-
----
-
-Return to [Pekko](_index.md)

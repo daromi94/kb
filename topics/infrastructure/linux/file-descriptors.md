@@ -70,7 +70,3 @@ one advance the position for both.
 Each entry is a symlink showing what the FD currently refers to
 (e.g., `/dev/pts/0` for a terminal, `socket:[12345]` for a network
 connection).
-
----
-
-Return to [Linux](_index.md)

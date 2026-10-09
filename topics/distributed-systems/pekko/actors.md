@@ -53,7 +53,3 @@ behavior.
 Behaviors are typed to match their actor ref. A successor behavior
 must handle the same message type as its predecessor, preserving the
 validity of all outstanding references.
-
----
-
-Return to [Pekko](_index.md)

@@ -35,7 +35,3 @@ supervisable.
 error kernel. It should only start the application's subsystems and
 contain minimal logic. Overloading it strains a single point of
 contention and coarsens fault handling.
-
----
-
-Return to [Pekko](_index.md)

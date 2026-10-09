@@ -54,7 +54,3 @@ and per-connection thread allocation.
 | Data flow      | Streams (byte by byte)  | Buffers (block of data)     |
 | Thread usage   | 1 thread = 1 connection | 1 thread = many connections |
 | OS interaction | Blocking syscalls       | Event-based notifications   |
-
----
-
-Return to [Netty](_index.md)

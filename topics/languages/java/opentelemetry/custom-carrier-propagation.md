@@ -121,7 +121,3 @@ The `Context.current().wrap()` call bridges the trace context to the
 executor thread. For executor-level wrapping with
 `Context.taskWrapping()`, see the in-process propagation section in
 the context deep dive.
-
----
-
-Return to [OpenTelemetry](_index.md)

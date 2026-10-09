@@ -33,7 +33,3 @@ internally. The interface stays simple while performance is preserved.
 **Break UAP for I/O:** When a property would trigger a database query or
 network call, use an explicit name like `fetchData()` to signal the cost.
 UAP applies to in-memory decisions, not I/O boundaries.
-
----
-
-Return to [Abstraction](_index.md)

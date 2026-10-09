@@ -36,7 +36,3 @@ not arrived yet.
 2. **Execution:** A worker thread picks the task from the queue and runs it
 3. **Completion:** Call `future.get()` to retrieve the result (blocks until
    done)
-
----
-
-Return to [Concurrency](_index.md)

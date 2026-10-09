@@ -61,7 +61,3 @@ slow receiver is difficult to implement from scratch.
 Netty provides a consistent, high-performance wrapper that handles state
 management, buffer pooling, and OS-specific quirks so application code can
 focus on business logic.
-
----
-
-Return to [Netty](_index.md)

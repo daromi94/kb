@@ -24,7 +24,3 @@ or functions within messages — even though Scala makes it tempting.
 Closures can capture mutable state from the enclosing actor, silently
 sharing it with the recipient and breaking the actor model's
 guarantees.
-
----
-
-Return to [Pekko](_index.md)

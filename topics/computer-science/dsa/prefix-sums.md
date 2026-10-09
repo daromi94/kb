@@ -45,7 +45,3 @@ tree instead.
 
 **Single query.** If you only need one range sum, a direct $O(n)$
 scan is simpler and avoids the extra space.
-
----
-
-Return to [Data structures and algorithms](_index.md)

@@ -68,7 +68,3 @@ or EBS volumes for durability. Turbopuffer delegates replication to
 object storage, eliminating the need for application-level replication
 across disk-heavy servers. The tradeoff is higher per-write latency
 from the S3 roundtrip.
-
----
-
-Return to [Turbopuffer](_index.md)

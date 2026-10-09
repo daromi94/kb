@@ -40,7 +40,3 @@ prerequisite for continuous delivery. Large-scale monorepos
 
 The overhead is operational: teams need mature CI, flag management, and
 the discipline to keep commits small and trunk green.
-
----
-
-Return to [SRE](_index.md)

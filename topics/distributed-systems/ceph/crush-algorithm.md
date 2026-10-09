@@ -70,7 +70,3 @@ the failure domain to `rack` ensures replicas land on different racks:
 
 The insight: **tables require coordination; math is free and locally
 executable**. Replace "where is X?" with "calculate the location of X."
-
----
-
-Return to [Ceph](_index.md)

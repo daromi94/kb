@@ -32,7 +32,3 @@ and invalid boundaries reveals bugs that single-sided checks miss.
 
 Assertions catch bugs but do not prove correctness. Design thinking remains
 essential.
-
----
-
-Return to [TigerStyle](_index.md)

@@ -55,7 +55,3 @@ to guarantee atomicity.
 
 CQRS applies the same separation at architectural scale, often using
 different databases for reads and writes.
-
----
-
-Return to [Object design](_index.md)

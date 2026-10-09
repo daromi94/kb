@@ -41,7 +41,3 @@ then isolated to the non-monotonic boundaries.
 CRDTs (Conflict-free Replicated Data Types) are a direct application:
 their merge operations are monotonic (commutative, associative,
 idempotent), so replicas converge without coordination.
-
----
-
-Return to [Concepts](_index.md)

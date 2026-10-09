@@ -46,7 +46,3 @@ infeasible before the first line of code.
 Cycle budgeting is the computational twin of Little's Law. One
 caps how many requests can be in flight; the other caps how much
 work each can do.
-
----
-
-Return to [Latency](_index.md)

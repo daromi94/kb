@@ -147,7 +147,3 @@ Python's small integer cache).
 
 **3D scene graphs.** Shared geometry, materials, shaders with
 per-instance transforms via instance buffers.
-
----
-
-Return to [Patterns](_index.md)

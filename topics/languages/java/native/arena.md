@@ -66,7 +66,3 @@ methods:
   alignment
 - `allocateFrom(String)` — converts to a null-terminated UTF-8 C
   string
-
----
-
-Return to [Native interop](_index.md)

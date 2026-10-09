@@ -60,7 +60,3 @@ lossy links.
 Every segment includes a 16-bit checksum covering both header and data (plus a
 pseudo-header with IP addresses). Corrupted segments are silently dropped,
 triggering retransmission via timeout.
-
----
-
-Return to [TCP](_index.md)

@@ -66,7 +66,3 @@ runs server-side interceptors.
 **Generated base class:** Routes incoming calls by HTTP/2 path,
 unmarshals Protobuf payloads, and dispatches to the concrete service
 implementation.
-
----
-
-Return to [gRPC](_index.md)

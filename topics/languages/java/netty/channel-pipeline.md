@@ -55,7 +55,3 @@ To avoid boilerplate for events a handler does not care about, Netty
 provides ChannelInboundHandlerAdapter and ChannelOutboundHandlerAdapter.
 These base classes forward every event to the next handler by default,
 letting the application override only the methods it needs.
-
----
-
-Return to [Netty](_index.md)

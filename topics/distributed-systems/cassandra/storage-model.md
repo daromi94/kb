@@ -86,7 +86,3 @@ disk index lookups.
 | **Memtable**     | RAM      | Fast buffer and recent data read   |
 | **SSTable**      | Disk     | Persistent, immutable storage      |
 | **Bloom filter** | RAM/Disk | Read optimization (skipping files) |
-
----
-
-Return to [Cassandra](_index.md)

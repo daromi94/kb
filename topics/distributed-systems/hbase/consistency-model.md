@@ -72,7 +72,3 @@ allowing concurrent modifications.
 - Plan for RegionServer failures in application error handling
 - Master failover also causes temporary unavailability until standby activates
 - Trade-off is worthwhile when data correctness is more important than uptime
-
----
-
-Return to [HBase](_index.md)

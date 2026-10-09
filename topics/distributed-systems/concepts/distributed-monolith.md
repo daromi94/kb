@@ -75,7 +75,3 @@ systems that require cross-team coordination for every feature.
 **Refactoring across a network is expensive.** Fixing an interface inside
 one application is a method rename. Fixing an API between services
 requires versioning, backward compatibility, and coordinated rollouts.
-
----
-
-Return to [Concepts](_index.md)

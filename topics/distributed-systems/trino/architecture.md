@@ -69,7 +69,3 @@ allowing seamless joins across sources.
                v
      External data sources
 ```
-
----
-
-Return to [Trino](_index.md)

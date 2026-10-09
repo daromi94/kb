@@ -63,7 +63,3 @@ storage is unreachable, the system returns errors rather than serving
 potentially stale or incorrect data. The single stateful dependency on
 object storage eliminates the consensus problems of multi-node
 stateful architectures.
-
----
-
-Return to [Turbopuffer](_index.md)

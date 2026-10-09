@@ -95,7 +95,3 @@ The signal you are cooperating: you end the session with a sharper
 mental model than you started with, not a fuzzier one. You can still
 build the thing yourself — you have chosen a faster path. The agent
 is the second engineer in the room, not the only one.
-
----
-
-Return to [General](_index.md)

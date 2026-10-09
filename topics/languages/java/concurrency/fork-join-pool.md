@@ -58,7 +58,3 @@ Per Doug Lea and Brian Goetz:
 | **Join support**      | Blocking to wait is expensive | Designed for efficient joins       |
 | **Efficiency goal**   | Throughput of many requests   | Minimum latency for one large task |
 | **Java usage**        | Tomcat, Netty, general APIs   | Parallel streams engine            |
-
----
-
-Return to [Concurrency](_index.md)

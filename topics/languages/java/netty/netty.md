@@ -61,7 +61,3 @@ Inbound                                             Outbound
 | Thread model     | Manual selector and thread safety | Reactor-based EventLoop model          |
 | Zero-copy        | Limited support                   | Extensive support via CompositeByteBuf |
 | Known bugs       | Epoll spin bug is your problem    | Detected and worked around internally  |
-
----
-
-Return to [Netty](_index.md)

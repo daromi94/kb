@@ -72,7 +72,3 @@ Without anti-entropy, a node that was offline longer than the hinted handoff
 window (typically 3 hours) would permanently hold stale data. These
 protocols ensure that every replica eventually converges to the most recent
 state.
-
----
-
-Return to [Cassandra](_index.md)

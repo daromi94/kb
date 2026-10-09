@@ -33,7 +33,3 @@ for it?" The answer must be one of:
 | Made real progress  | Path to a major goal is demonstrably shorter |
 
 If the answer is none of these, the task was busywork.
-
----
-
-Return to [General](_index.md)

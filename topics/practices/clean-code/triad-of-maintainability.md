@@ -50,7 +50,3 @@ the **total cost of ownership**.
 - **Clean code:** Development speed remains constant. Because the code is easy
   to read, understand, and modify, the team can pivot or scale without the
   system collapsing under its own weight
-
----
-
-Return to [Clean code](_index.md)

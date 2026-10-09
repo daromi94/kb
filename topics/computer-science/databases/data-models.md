@@ -43,7 +43,3 @@ obsolete for new applications.
 | Graph        | Relationship-heavy data with complex traversals          |
 | Wide-Column  | Sparse data with many columns                            |
 | Array/Matrix | Scientific and analytical workloads                      |
-
----
-
-Return to [Databases](_index.md)

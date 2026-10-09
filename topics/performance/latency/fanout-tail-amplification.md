@@ -26,7 +26,3 @@ amplification, it still meets the user SLO. With 1000 leaves, that
 is p99.99.
 
 Optimize the tail, not the mean.
-
----
-
-Return to [Latency](_index.md)

@@ -50,7 +50,3 @@ of moving large datasets across continents.
 **Isolation.** Separating services across machines enforces security
 and operational boundaries. A compromised node, kernel panic, or
 memory leak is physically contained, limiting blast radius.
-
----
-
-Return to [Concepts](_index.md)

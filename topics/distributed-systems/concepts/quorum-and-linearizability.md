@@ -70,7 +70,3 @@ mechanisms on top of quorum overlap:
 | Concurrency      | Reads can overlap with in-flight writes | Operations appear in a strict total order   |
 | Failure handling | May surface partially written data      | Only returns committed data                 |
 | Performance      | Low latency                             | Higher latency from additional coordination |
-
----
-
-Return to [Concepts](_index.md)

@@ -68,7 +68,3 @@ pulls everyone toward closing tickets and away from understanding what
 they closed. Resist it deliberately — over a career, the engineer who
 traded some output for understanding ends up substantially stronger
 than the one who optimized for tickets.
-
----
-
-Return to [General](_index.md)

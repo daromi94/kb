@@ -56,7 +56,3 @@ Centralization makes the coordinator critical. Coordinator failure strands
 every running task. Most systems accept this and require the client to
 retry; investing in coordinator high availability requires replicating the
 state machine itself.
-
----
-
-Return to [Concepts](_index.md)

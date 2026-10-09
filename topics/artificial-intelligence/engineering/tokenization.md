@@ -49,7 +49,3 @@ efficiently as subword fragments than as whole-word units.
    model's fixed vocabulary
 3. **Embedding.** Integer IDs are converted to dense, high-dimensional
    vectors that encode semantic relationships between tokens
-
----
-
-Return to [AI engineering](_index.md)

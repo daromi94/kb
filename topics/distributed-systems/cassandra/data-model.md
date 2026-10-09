@@ -55,7 +55,3 @@ reconciles these markers and eventually removes the old data.
 | **Querying**    | Flexible (declarative)    | Restrictive (query-driven)      |
 | **Consistency** | ACID                      | Tunable (eventual to strong)    |
 | **Scaling**     | Vertical (bigger servers) | Horizontal (more nodes)         |
-
----
-
-Return to [Cassandra](_index.md)

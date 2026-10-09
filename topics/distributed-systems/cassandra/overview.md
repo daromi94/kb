@@ -58,7 +58,3 @@ Cassandra excels in specific scenarios:
 
 **When to avoid:** Complex ACID transactions across multiple tables, heavy ad-hoc
 joins, or datasets small enough for a single relational server.
-
----
-
-Return to [Cassandra](_index.md)

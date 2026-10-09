@@ -27,7 +27,3 @@ alone. You can check soundness only against the outside world, by
 testing whether the premises hold. This is why an argument can feel
 unassailable yet be wrong: the logic is easy to confirm, the
 premises are not, so the flaw sits in a premise you never tested.
-
----
-
-Return to [Problem-solving](_index.md)

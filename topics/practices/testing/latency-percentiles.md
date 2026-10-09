@@ -15,7 +15,3 @@ The percentiles preserve the shape the average flattens. p50 is the
 typical request, p95 catches the common slow path, and p99 and p99.9
 expose the tail outliers that a single-number summary erases
 entirely.
-
----
-
-Return to [Testing](_index.md)

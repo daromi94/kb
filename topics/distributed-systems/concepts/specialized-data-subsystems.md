@@ -17,7 +17,3 @@ was engineered for.
 | Search index     | Search and filtering      | Inverted index maps terms to documents       |
 | Stream processor | Low-latency reactions     | Processes append-only logs as events arrive  |
 | Batch processor  | High-throughput analytics | Parallel passes over bounded historical data |
-
----
-
-Return to [Concepts](_index.md)

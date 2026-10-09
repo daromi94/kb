@@ -53,7 +53,3 @@ reported as "ready". io_uring handles disk operations asynchronously.
 
 **Buffer pinning:** Proactor can register buffers once and reuse them, avoiding
 per-operation memory management overhead.
-
----
-
-Return to [Async I/O](_index.md)

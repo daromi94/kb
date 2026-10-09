@@ -59,7 +59,3 @@ forget the network exists:
 - **Partial Failure:** In local calls, either everything works or it crashes. In
   RPC, the server might complete the task but the network could fail before the
   success message reaches you
-
----
-
-Return to [Fundamentals](_index.md)

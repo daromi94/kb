@@ -80,7 +80,3 @@ the spark. When proposing a change that improves the common case,
 ask what margin it consumes and what the new boundary looks like —
 the optimization that makes today's graphs greener may be the one
 that sustains tomorrow's outage.
-
----
-
-Return to [Concepts](_index.md)

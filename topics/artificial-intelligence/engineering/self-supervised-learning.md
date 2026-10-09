@@ -46,7 +46,3 @@ meaning from an unrelated preceding text.
 **`<EOS>` (end of sequence).** Marks the end of a document or
 response. During generation, predicting `<EOS>` is the signal that
 tells the model to stop producing output.
-
----
-
-Return to [AI engineering](_index.md)

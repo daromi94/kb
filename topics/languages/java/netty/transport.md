@@ -58,7 +58,3 @@ when it finishes).
 **Embedded** provides a test harness that drives data through a pipeline
 in-process, allowing assertions on handler output without binding to a real
 port.
-
----
-
-Return to [Netty](_index.md)

@@ -55,7 +55,3 @@ In systems like Kafka each segment consists of companion files:
 
 The result is a log that behaves like an infinite stream while physically
 consisting of finite, disposable files.
-
----
-
-Return to [Concepts](_index.md)

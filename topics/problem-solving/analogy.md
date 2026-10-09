@@ -30,7 +30,3 @@ problem.
 Analogy produces conjectures. Every step derived from an analogy
 must still be verified — the structural mapping may not hold under
 the specific constraints of the original problem.
-
----
-
-Return to [Problem-solving](_index.md)

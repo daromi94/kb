@@ -82,7 +82,3 @@ Workers are typically ephemeral, spawned per-request:
 
 This per-request lifecycle simplifies state management — each
 worker's lifecycle maps to exactly one operation.
-
----
-
-Return to [Pekko](_index.md)

@@ -72,7 +72,3 @@ of buffers per second.
 reference to it. When the count drops to zero, the buffer is returned to
 the pool (or its memory is freed). This ensures pooled buffers are released
 promptly rather than waiting for garbage collection.
-
----
-
-Return to [Netty](_index.md)

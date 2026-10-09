@@ -64,7 +64,3 @@ The actor model sidesteps all of these problems. Each actor:
 
 This eliminates the need for locks entirely, preserves encapsulation
 under concurrency, and extends naturally to distributed systems.
-
----
-
-Return to [Pekko](_index.md)

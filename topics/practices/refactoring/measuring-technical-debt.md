@@ -23,7 +23,3 @@ starting a refactor, define the ROI with objective metrics.
 
 If you can't quantify the problem, you may be optimizing for personal
 preference rather than system health.
-
----
-
-Return to [Refactoring](_index.md)

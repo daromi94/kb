@@ -40,7 +40,3 @@ interrupted.
 `get()` is a blocking operation. Processing 100 futures requires calling
 `get()` sequentially or polling `isDone()`. There is no way to say "when
 this future completes, run that task automatically."
-
----
-
-Return to [Concurrency](_index.md)

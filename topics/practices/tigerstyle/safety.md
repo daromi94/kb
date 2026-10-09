@@ -37,7 +37,3 @@ optimization.
 
 ~92% of catastrophic failures stem from mishandled non-fatal errors that
 were explicitly signaled. Handle every error.
-
----
-
-Return to [TigerStyle](_index.md)

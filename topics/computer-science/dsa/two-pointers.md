@@ -167,7 +167,3 @@ Two pointers rely on structure in the data — sorted order,
 partitioning, or a monotonic property — to skip work. If no such
 structure exists and every pair must be examined, the technique does
 not help.
-
----
-
-Return to [Data structures and algorithms](_index.md)

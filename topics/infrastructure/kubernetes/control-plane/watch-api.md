@@ -44,7 +44,3 @@ Bookmarks prevent this. Periodically — even without real changes —
 the server sends a synthetic `BOOKMARK` event carrying the current
 resourceVersion. The client records it without doing any work and
 keeps a fresh resume point for free.
-
----
-
-Return to [Control plane](_index.md)

@@ -114,7 +114,3 @@ externally enforced boundary.
 Crash-only design does not make crashes harmless. It makes recovery
 independent of the failed process by ensuring that everything needed to
 continue already lives outside it.
-
----
-
-Return to [Concepts](_index.md)

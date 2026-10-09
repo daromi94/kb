@@ -65,7 +65,3 @@ extending a class, hold an instance of it as a private field:
 Composition treats the other class as a black box, depending only on its
 public interface. It avoids the self-use and fragile base class problems
 entirely.
-
----
-
-Return to [Object design](_index.md)

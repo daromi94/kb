@@ -28,7 +28,3 @@ CNIs like Cilium can replace kube-proxy entirely. They attach eBPF programs
 to kernel hooks and keep the Service-to-endpoint table in eBPF maps, so
 lookups happen closer to the socket or NIC and endpoint updates land by
 writing to a map instead of rebuilding rules.
-
----
-
-Return to [Networking](_index.md)

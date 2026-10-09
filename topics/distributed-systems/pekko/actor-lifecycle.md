@@ -22,7 +22,3 @@ dead letter mailbox and are forwarded to the EventStream as
 DeadLetters. The actor ref's mailbox is replaced with a system
 mailbox that redirects all future messages to DeadLetters. This is
 best-effort — do not rely on it for guaranteed delivery.
-
----
-
-Return to [Pekko](_index.md)

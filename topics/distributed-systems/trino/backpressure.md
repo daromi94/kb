@@ -42,7 +42,3 @@ Backpressure keeps memory bounded without any central data-flow
 controller. The same loop also protects the source system — a slow
 downstream means the connector reads slower from S3 or PostgreSQL,
 rather than draining the external system as fast as it can deliver.
-
----
-
-Return to [Trino](_index.md)

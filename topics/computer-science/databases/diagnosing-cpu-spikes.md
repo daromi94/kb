@@ -61,7 +61,3 @@ concurrency and keep authenticated connections warm.
 | Thousands of distinct query texts/sec | Ad-hoc compilation           |
 | CPU spike correlates with reconnects  | Connection storm, no pooling |
 | High CPU, low query throughput        | Latch contention             |
-
----
-
-Return to [Databases](_index.md)

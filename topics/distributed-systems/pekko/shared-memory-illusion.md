@@ -42,7 +42,3 @@ The principled approach: keep state local to each concurrent entity and
 propagate data between them through explicit messages. This is exactly
 what the actor model does — and it aligns with how the hardware actually
 works.
-
----
-
-Return to [Pekko](_index.md)

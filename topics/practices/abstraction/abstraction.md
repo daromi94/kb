@@ -44,7 +44,3 @@ the specification, and any conforming implementation is substitutable.
 - **Wrong axis.** Generalizes a dimension that doesn't actually vary;
   the abstraction holds only one real case
 - **Rename wrapper.** A layer that hides nothing; pure overhead
-
----
-
-Return to [Abstraction](_index.md)

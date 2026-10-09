@@ -54,7 +54,3 @@ isolation:
   the main flow, confusing future maintainers
 - **The Chesterton's fence dilemma:** Developers afraid to remove code because
   they don't understand why it was put there in the first place
-
----
-
-Return to [Refactoring](_index.md)

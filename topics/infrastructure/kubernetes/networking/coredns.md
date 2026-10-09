@@ -57,7 +57,3 @@ CoreDNS is driven by a single config file, the Corefile, shipped as the
     loadbalance
 }
 ```
-
----
-
-Return to [Networking](_index.md)

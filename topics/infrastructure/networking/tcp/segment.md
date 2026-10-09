@@ -59,7 +59,3 @@ data payload.
 | Window Scale | Multiply window by $2^n$ (allows windows > 64KB)  |
 | SACK         | Selective acknowledgment of non-contiguous blocks |
 | Timestamps   | RTT measurement and PAWS protection               |
-
----
-
-Return to [TCP](_index.md)

@@ -96,7 +96,3 @@ the internal representation, then converted to whatever API version
 the client asked for. This is why an older API version can be
 deprecated in the schema without rewriting any data in etcd —
 conversion happens at request time.
-
----
-
-Return to [Control plane](_index.md)

@@ -82,7 +82,3 @@ require during decoding.
 
 SBE is the right choice when the message shape is known at compile time
 and a hot path demands deterministic, allocation-free encode/decode.
-
----
-
-Return to [Simple Binary Encoding](_index.md)

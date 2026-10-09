@@ -34,7 +34,3 @@ asked, and share it while keeping your manager in the loop.
 Your manager has a boss and their own metrics. Find out what
 specific deliverables they are evaluated on and actively align your
 work to help them succeed.
-
----
-
-Return to [General](_index.md)

@@ -182,7 +182,3 @@ memory symptom
 
 Start with the reporting boundary, locate the growing region, and collect only
 the artifact that can explain its ownership or activity.
-
----
-
-Return to [Troubleshooting](_index.md)

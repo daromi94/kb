@@ -50,7 +50,3 @@ Safety and liveness pull in opposite directions:
 | Minimal locking / CAS | Lower, race conditions possible | Low, threads always make progress |
 
 Correct concurrent programs must satisfy both properties simultaneously.
-
----
-
-Return to [Concurrency](_index.md)

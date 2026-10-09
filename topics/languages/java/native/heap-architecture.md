@@ -62,7 +62,3 @@ Static variables live on the Java heap, attached to the `java.lang.Class`
 mirror object — not in Metaspace. JIT-compiled machine code occupies the
 CodeCache, a separate native memory region sized by
 `-XX:ReservedCodeCacheSize`.
-
----
-
-Return to [Native interop](_index.md)

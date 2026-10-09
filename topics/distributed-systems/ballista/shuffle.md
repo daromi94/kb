@@ -61,7 +61,3 @@ Upstream stage task                       Downstream stage task
 | ...              |                               |
 +------------------+                               |
 ```
-
----
-
-Return to [Ballista](_index.md)

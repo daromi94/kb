@@ -67,7 +67,3 @@ Both use LSM trees but differ in where data lives:
 - WAL → Commit Log
 - MemStore → Memtable
 - HFile → SSTable (Sorted String Table)
-
----
-
-Return to [HBase](_index.md)

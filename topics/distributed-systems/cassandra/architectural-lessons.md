@@ -92,7 +92,3 @@ system converges without human intervention.
 | Lock rows during updates   | Timestamps and tombstones       |
 | Fixed heartbeat timeouts   | Probabilistic failure detection |
 | Strict ACID compliance     | Tunable consistency (BASE)      |
-
----
-
-Return to [Cassandra](_index.md)

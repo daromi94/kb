@@ -55,7 +55,3 @@ Alongside the CBO, a library of deterministic rules simplifies the plan:
 constant folding, predicate simplification, subquery decorrelation,
 redundant projection removal, exchange elimination. These run repeatedly
 until the plan stabilizes.
-
----
-
-Return to [Trino](_index.md)

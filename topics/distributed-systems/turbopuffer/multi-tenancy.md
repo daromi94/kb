@@ -44,7 +44,3 @@ Applications can issue a preflight query to hydrate the cache before
 the user starts searching. This hides cold-start latency by
 triggering the S3-to-NVMe transfer while the user is still
 navigating to the search interface.
-
----
-
-Return to [Turbopuffer](_index.md)

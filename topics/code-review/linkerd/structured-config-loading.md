@@ -28,7 +28,3 @@ The alternative — untyped config read lazily at arbitrary points —
 trades startup confidence for runtime surprises. Making the config
 ephemeral forces every subsystem to declare its requirements upfront.
 Nothing can silently depend on an unvalidated value.
-
----
-
-Return to [Linkerd2-proxy](_index.md)

@@ -42,7 +42,3 @@ primary database, published as events for other systems to consume.
 Propagation is asynchronous, so a derived store reflects each write only
 after the event reaches it. The derived stores are eventually consistent
 with the system of record.
-
----
-
-Return to [Concepts](_index.md)

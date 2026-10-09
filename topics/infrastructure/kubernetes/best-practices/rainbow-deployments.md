@@ -56,7 +56,3 @@ Once the old Deployment's workload is done:
   indefinitely.
 - Blue/green and canary are simpler when you don't need overlap for
   draining.
-
----
-
-Return to [Best practices](_index.md)

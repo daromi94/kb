@@ -24,7 +24,3 @@ forever.
 
 The COE database is not just a log of what broke. It is the input to
 the team's strategic resilience roadmap.
-
----
-
-Return to [SRE](_index.md)

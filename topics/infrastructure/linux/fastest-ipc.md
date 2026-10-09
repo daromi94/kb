@@ -449,7 +449,3 @@ shared memory + lock-free queue + busy polling
 At the lowest-latency end of this hierarchy, IPC barely resembles traditional
 message passing. It becomes two CPU cores communicating through cache-coherent
 shared memory, coordinated by an explicit synchronization protocol.
-
----
-
-Return to [Linux](_index.md)

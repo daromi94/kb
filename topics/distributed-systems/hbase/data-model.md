@@ -53,7 +53,3 @@ Each row only stores the columns it actually has values for.
   Use a small number (typically 1-3) of well-chosen families.
 - **Column qualifiers are lightweight:** Add freely as needed without schema
   changes.
-
----
-
-Return to [HBase](_index.md)

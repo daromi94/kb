@@ -62,7 +62,3 @@ overwhelmed.
 | **Node removal**  | Almost all keys move                    | Only keys from that node move |
 | **Scalability**   | Hard to scale dynamically               | Designed for elastic scaling  |
 | **Load balance**  | Hard to tune                            | Tunable via virtual nodes     |
-
----
-
-Return to [Cassandra](_index.md)

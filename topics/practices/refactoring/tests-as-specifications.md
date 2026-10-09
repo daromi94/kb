@@ -28,7 +28,3 @@ logic.
 | Test fails after refactor      | Likely violated a requirement    |
 | Changing test to make it pass  | May be hiding a regression       |
 | Test and impl changed together | Can't tell which introduced bugs |
-
----
-
-Return to [Refactoring](_index.md)

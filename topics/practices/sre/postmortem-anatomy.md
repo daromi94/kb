@@ -37,7 +37,3 @@ Fixes must address every layer the investigation surfaced:
 
 An action list that only patches the code has learned from only one
 layer.
-
----
-
-Return to [SRE](_index.md)

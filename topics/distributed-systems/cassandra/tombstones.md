@@ -65,7 +65,3 @@ lets Cassandra skip an entire SSTable section.
 | Grace period | Waits for `gc_grace_seconds`            | Allows offline nodes time to sync the delete |
 | Compaction   | Tombstone and shadowed data merged      | Physically removes data from disk            |
 | Eviction     | Data is gone permanently                | Reclaims disk space and improves read speed  |
-
----
-
-Return to [Cassandra](_index.md)

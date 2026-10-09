@@ -41,7 +41,3 @@ Two practices close it:
   model permits
 - **Conformance testing.** Check the implementation's observable
   behavior against the spec
-
----
-
-Return to [Concepts](_index.md)

@@ -58,7 +58,3 @@ pauses keeps P99 latencies low and stable.
 
 **Better hardware utilization.** The same workload runs on fewer servers
 because CPUs aren't wasting cycles managing threads or waiting for locks.
-
----
-
-Return to [ScyllaDB](_index.md)

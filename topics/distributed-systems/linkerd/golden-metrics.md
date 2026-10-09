@@ -29,7 +29,3 @@ latency. A byte stream has no notion of a request.
 
 Observability requires no setup beyond meshing the service — no client
 library, no span instrumentation, no tracing backend.
-
----
-
-Return to [Linkerd](_index.md)

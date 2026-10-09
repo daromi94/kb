@@ -53,7 +53,3 @@ inconsistent data temporarily.
 | Consistency         | **Strong**  | Synchronous replication, Primary model      |
 | Availability        | **Partial** | Sacrificed during partitions/quorum loss    |
 | Partition Tolerance | **High**    | Monitor quorum (Paxos) prevents split-brain |
-
----
-
-Return to [Ceph](_index.md)

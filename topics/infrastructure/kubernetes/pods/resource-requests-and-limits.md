@@ -70,7 +70,3 @@ numbers will misconfigure themselves:
 Applications have to be told their limits explicitly, or use
 cgroup-aware helpers (JVM `UseContainerSupport`, Uber `automaxprocs`
 for Go).
-
----
-
-Return to [Pods](_index.md)

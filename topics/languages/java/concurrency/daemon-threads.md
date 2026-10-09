@@ -59,7 +59,3 @@ database connections.
 
 **Silent exit:** There is no graceful shutdown for a daemon. Work in progress is
 simply lost.
-
----
-
-Return to [Concurrency](_index.md)

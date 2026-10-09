@@ -49,7 +49,3 @@ for an extended period may find the log entries it needs have already
 been deleted. In this case the follower cannot catch up incrementally
 and must instead undergo a **state transfer** where the leader sends a
 full snapshot of the current state rather than replaying log entries.
-
----
-
-Return to [Concepts](_index.md)

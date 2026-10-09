@@ -94,7 +94,3 @@ streams |    issuing |
 7. Proxy opens gRPC streams to the destination service
 8. Proxy is ready — traffic flows through it with mTLS, metrics,
    and policy enforcement
-
----
-
-Return to [Linkerd](_index.md)

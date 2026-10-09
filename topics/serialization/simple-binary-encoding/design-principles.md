@@ -59,7 +59,3 @@ Each missing feature protects the hot-path performance profile:
 | Optional fields          | Would require branching to check presence  |
 | Maps                     | Would require hashing or searching         |
 | Self-describing messages | Field tags waste cache, force tag dispatch |
-
----
-
-Return to [Simple Binary Encoding](_index.md)

@@ -19,7 +19,3 @@ Set the level with the JVM option `-Dio.netty.leakDetection.level=<LEVEL>`:
 `SIMPLE` catches most leaks in production. Switch to `ADVANCED` or
 `PARANOID` when reproducing a specific leak in development — the
 access traces pinpoint which handler failed to release.
-
----
-
-Return to [Netty](_index.md)

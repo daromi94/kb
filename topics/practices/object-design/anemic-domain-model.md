@@ -97,7 +97,3 @@ anemia by default.
 **Tooling bias:** IDE generators and libraries that auto-create getters and
 setters make it effortless to build hollow objects, steering designs away from
 rich behavior.
-
----
-
-Return to [Object design](_index.md)

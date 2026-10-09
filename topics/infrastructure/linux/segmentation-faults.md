@@ -32,7 +32,3 @@ gdb ./program core
 ```
 
 Core dump production requires `ulimit -c` to be non-zero.
-
----
-
-Return to [Linux](_index.md)

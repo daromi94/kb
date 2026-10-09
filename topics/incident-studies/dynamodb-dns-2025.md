@@ -76,7 +76,3 @@ past an age limit, no writer may reference data past that limit.
 must first read valid current state, nothing can fix a broken one.
 Let writes proceed even when the current state cannot be read, so
 they can overwrite it.
-
----
-
-Return to [Incident studies](_index.md)

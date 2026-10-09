@@ -67,7 +67,3 @@ and is computationally expensive.
 **Memory visibility:** Threads have private registers and potentially private
 CPU caches. Changes to shared heap memory may not be immediately visible to
 other threads without explicit synchronization.
-
----
-
-Return to [Concurrency](_index.md)

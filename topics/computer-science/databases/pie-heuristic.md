@@ -48,7 +48,3 @@ Distributed SQL (Spanner, CockroachDB, TiDB, Yugabyte) targets the
 partitioning. Cross-shard transactions still pay coordination latency,
 so "pick two" reads as **the third costs you measurably**, not that
 it's unreachable.
-
----
-
-Return to [Databases](_index.md)

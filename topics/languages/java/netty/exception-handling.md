@@ -40,7 +40,3 @@ automatically notifies listeners on the corresponding ChannelPromise.
 | Inbound  | Event propagation  | Override `exceptionCaught()` at pipeline tail     |
 | Outbound | Future listener    | `future.addListener()` at the call site           |
 | Outbound | Promise completion | `promise.setFailure()` inside an outbound handler |
-
----
-
-Return to [Netty](_index.md)

@@ -29,7 +29,3 @@ and latency. As load increases, latency stays roughly flat up to a
 point, then rises sharply once a bottleneck is hit. Locating that
 knee is often the whole point of the test, because the throughput
 just below it is the safe operating ceiling.
-
----
-
-Return to [Testing](_index.md)

@@ -18,7 +18,3 @@ far more reliable.
 
 Fix problems during design and implementation, not after deployment. Bugs
 found early cost exponentially less than bugs found in production.
-
----
-
-Return to [TigerStyle](_index.md)

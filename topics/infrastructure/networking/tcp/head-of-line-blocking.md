@@ -54,7 +54,3 @@ This is why HTTP/3 (which uses QUIC) performs better on lossy networks.
 | Multiplexed streams  | Severe (all streams blocked)        |
 | Lossy networks       | Severe (frequent retransmissions)   |
 | Real-time data       | Severe (stale data still delivered) |
-
----
-
-Return to [TCP](_index.md)

@@ -139,7 +139,3 @@ breaker, and timeout layers.
 
 **UI components.** Visual elements wrap in scrollbar, border, or shadow
 decorators without altering the base drawing logic.
-
----
-
-Return to [Patterns](_index.md)

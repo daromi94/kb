@@ -312,7 +312,3 @@ The strongest design principle is:
 
 > **Every limit must answer two questions: what is the maximum obligation,
 > and what does the system do when it reaches that maximum?**
-
----
-
-Return to [Concepts](_index.md)

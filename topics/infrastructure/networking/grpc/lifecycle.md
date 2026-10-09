@@ -45,7 +45,3 @@ Key naming rules:
 gRPC does not interpret user-defined metadata. It exists for clients
 and servers to pass out-of-band information (auth tokens, tracing
 context) alongside calls.
-
----
-
-Return to [gRPC](_index.md)

@@ -39,7 +39,3 @@ or mutexes, which can slow the program and cause deadlocks.
 
 For heavy CPU-bound tasks, multiprocessing is often better than either
 approach.
-
----
-
-Return to [Async I/O](_index.md)

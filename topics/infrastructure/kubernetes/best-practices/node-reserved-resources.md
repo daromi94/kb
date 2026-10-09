@@ -63,7 +63,3 @@ same compute loses 3.66 GB.
 DaemonSets (kube-proxy, log agent, DNS cache, CSI driver) add
 another **fixed** per-node cost on top, which compounds the penalty
 on small clusters.
-
----
-
-Return to [Best practices](_index.md)

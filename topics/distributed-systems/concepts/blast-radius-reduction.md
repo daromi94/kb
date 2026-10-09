@@ -49,7 +49,3 @@ the same path the request originally took.
 The failure is not prevented — it is contained. The system can tolerate
 imperfect judgment about when to crash, which is the realistic
 operating condition of any large codebase.
-
----
-
-Return to [Concepts](_index.md)

@@ -83,7 +83,3 @@ integration hides which component is the bottleneck.
 
 The output is a per-component capacity number, not a system-level
 verdict. Use it during tuning, not as a release gate.
-
----
-
-Return to [Testing](_index.md)

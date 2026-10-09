@@ -85,7 +85,3 @@ their tier.
 A common hybrid: two clusters per team (one dev, one prod), or
 cluster-per-environment overall with extra dedicated clusters for
 workloads that need specialized infrastructure.
-
----
-
-Return to [Best practices](_index.md)

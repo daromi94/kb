@@ -27,7 +27,3 @@ flags in a single string.
 
 The receiving service extracts these headers, reconstructs the Context,
 and continues the trace as a child of the propagated Span.
-
----
-
-Return to [OpenTelemetry](_index.md)

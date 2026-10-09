@@ -89,7 +89,3 @@ exists"), Cassandra uses the Paxos consensus protocol. This involves a
 multi-phase prepare/propose/commit cycle. It ensures that a specific condition
 is met across the cluster before the write is finalized, though it carries a
 significant performance penalty compared to standard writes.
-
----
-
-Return to [Cassandra](_index.md)

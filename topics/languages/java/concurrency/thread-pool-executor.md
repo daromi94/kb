@@ -98,7 +98,3 @@ A fixed pool's unbounded queue can grow until the JVM runs out of memory. A
 cached pool can spawn threads without limit during traffic spikes. Both fail
 catastrophically under sustained load. The custom configuration in the
 production example above avoids both failure modes.
-
----
-
-Return to [Concurrency](_index.md)

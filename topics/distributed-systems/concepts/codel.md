@@ -63,7 +63,3 @@ behaves under load:
 - **Self-tunes across hardware.** A 5 ms target means the same
   thing on any machine. A 10,000-item queue does not — its
   meaning shifts with every CPU upgrade or workload change.
-
----
-
-Return to [Concepts](_index.md)

@@ -71,7 +71,3 @@ class MyWorker extends Thread {
 MyWorker worker = new MyWorker();
 worker.start();
 ```
-
----
-
-Return to [Concurrency](_index.md)

@@ -64,7 +64,3 @@ Feed production monitoring back into the test suite. Real traffic
 reveals which request mixes and which resource behaviors actually
 matter. Fold those observations into new test cases, or the suite
 slowly drifts away from what production does.
-
----
-
-Return to [Testing](_index.md)

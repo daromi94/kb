@@ -18,7 +18,3 @@ constraints.
 - Is this specific case a subset of a broader category?
 - Does solving the general case reveal a pattern that makes the
   specific case trivial?
-
----
-
-Return to [Problem-solving](_index.md)

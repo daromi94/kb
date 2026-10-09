@@ -95,7 +95,3 @@ VM boot dominates everything else combined. The usual approaches:
 Only the last two eliminate VM provisioning from the critical path.
 The first two shrink the non-VM portion, which is already the
 smaller share.
-
----
-
-Return to [Autoscaling](_index.md)

@@ -78,7 +78,3 @@ f.addListener(ChannelFutureListener.CLOSE);
 `ChannelFutureListener.CLOSE` is a built-in listener that closes the
 Channel unconditionally when the future completes, regardless of whether
 the operation succeeded or failed.
-
----
-
-Return to [Netty](_index.md)

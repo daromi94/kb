@@ -33,7 +33,3 @@ detection, and reconciliation loops into every layer. At that
 volume, every dropped packet, every timing race, every memory
 bit-flip, every TCP reset happens constantly. The rare-event path
 *is* the common case, just distributed across many types of rare.
-
----
-
-Return to [Latency](_index.md)

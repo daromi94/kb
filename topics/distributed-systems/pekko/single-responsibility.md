@@ -40,7 +40,3 @@ Create a child actor when:
 | Supervision | One strategy for all      | Per-child strategy           |
 | Testability | Complex setup, many paths | Focused unit tests           |
 | Throughput  | Single mailbox bottleneck | Children process in parallel |
-
----
-
-Return to [Pekko](_index.md)

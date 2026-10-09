@@ -57,7 +57,3 @@ not supported because preceding variable-length entries shift offsets.
 
 Strings and arbitrary byte arrays go last so they cannot shift the
 offsets of fixed fields. Each varData field is length-prefixed.
-
----
-
-Return to [Simple Binary Encoding](_index.md)

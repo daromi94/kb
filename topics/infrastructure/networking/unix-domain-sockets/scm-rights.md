@@ -81,7 +81,3 @@ Any file descriptor:
 - Only works over UDS (TCP cannot do this)
 - Both processes must be on the same host
 - Receiver must handle the fd arriving with a different number
-
----
-
-Return to [Unix domain sockets](_index.md)

@@ -36,7 +36,3 @@ itself through a storm of retries.
 Per-route timeouts bound how long the proxy will wait for a response
 before failing the call back to the client. This protects a caller
 from having its resources tied up by a slow or hung downstream.
-
----
-
-Return to [Linkerd](_index.md)

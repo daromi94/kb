@@ -31,7 +31,3 @@ focus anchored to the target.
 - Does the sketch accidentally introduce symmetry or special cases
   that the problem does not guarantee?
 - Is every known quantity labeled and the unknown visually marked?
-
----
-
-Return to [Problem-solving](_index.md)

@@ -65,7 +65,3 @@ only touches connections that have actual work, then returns to monitoring.
 | Thread-per-client        | High (1MB/thread) | Low             | Low to medium concurrency         |
 | NIO (multiplexed)        | Low (few threads) | High            | High concurrency, chatty I/O      |
 | Modern thread-per-client | Low to moderate   | Low             | High-scale servers, microservices |
-
----
-
-Return to [Concurrency](_index.md)

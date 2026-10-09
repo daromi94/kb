@@ -79,7 +79,3 @@ read repair might have missed.
 | **Node failure**        | Gossip detects the failure; hinted handoff stores missed writes       |
 | **Rack failure**        | NetworkTopologyStrategy ensures replicas exist in other racks         |
 | **Data center failure** | Cross-DC replication allows traffic to failover to a different region |
-
----
-
-Return to [Cassandra](_index.md)

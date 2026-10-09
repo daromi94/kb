@@ -77,7 +77,3 @@ When a peer replica detects the leader is unresponsive, it proposes a
 new election. The newly elected leader waits for the previous leader's
 lease to expire before serving traffic — a pause of a few seconds —
 preventing two nodes from acting as leader simultaneously.
-
----
-
-Return to [DynamoDB](_index.md)

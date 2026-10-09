@@ -40,7 +40,3 @@ Flattening assumes a rectangular grid. Jagged arrays (rows of
 different lengths) cannot be flattened without padding. Sparse grids
 waste memory on empty cells — a map from coordinates to values is
 more space-efficient.
-
----
-
-Return to [Data structures and algorithms](_index.md)

@@ -58,7 +58,3 @@ hyphen.
 The same pipeline runs at index time and query time, and they must
 agree. If the indexer lowercases but the query parser doesn't,
 searching for `Brutus` misses every document containing `brutus`.
-
----
-
-Return to [Elasticsearch](_index.md)

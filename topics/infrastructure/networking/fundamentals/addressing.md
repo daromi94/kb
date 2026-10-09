@@ -115,7 +115,3 @@ they can't read it.
 | Address Conflict | Two hosts have the same IP address            |
 | ICMP Blocked     | Firewall blocks ping but allows other traffic |
 | ARP Cache Stale  | Old MAC-to-IP mapping causes misdelivery      |
-
----
-
-Return to [Fundamentals](_index.md)

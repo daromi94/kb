@@ -58,7 +58,3 @@ merge results. Deletes are recorded as a bitmap of live doc IDs; a
 background merge process rewrites small segments into larger ones and
 drops deleted documents. Essentially an LSM-tree applied to inverted
 indexes.
-
----
-
-Return to [Elasticsearch](_index.md)

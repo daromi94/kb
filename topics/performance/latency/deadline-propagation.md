@@ -50,7 +50,3 @@ do work nobody will read. Check the budget at dequeue and fail the
 request when it cannot cover the estimated cost. Under overload this
 is decisive: rejecting at the door keeps the queue moving, while
 starting work and canceling it midway burns resources anyway.
-
----
-
-Return to [Latency](_index.md)

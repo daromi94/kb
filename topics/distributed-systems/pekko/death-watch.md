@@ -51,7 +51,3 @@ failures and JVM crashes, not just graceful stops.
 
 **Orderly shutdown.** A parent watches its children to detect when
 all work is complete before shutting itself down.
-
----
-
-Return to [Pekko](_index.md)

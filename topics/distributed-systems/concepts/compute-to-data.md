@@ -37,7 +37,3 @@ and reusable. Move the data when it is small, or when the work needs
 specialized hardware, such as GPUs, that exists only in certain places. In
 both cases, push the computation as close to the source as possible, so
 that whatever crosses each boundary is already reduced.
-
----
-
-Return to [Concepts](_index.md)

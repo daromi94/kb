@@ -49,7 +49,3 @@ justification.
 **Where exactly is the assumption?** Highlight the precise moment a
 known fact is replaced by an educated guess, explicitly inviting
 observers to test that specific weak point.
-
----
-
-Return to [Problem-solving](_index.md)

@@ -89,7 +89,3 @@ CREATE TABLE weather_data (
 |-----------------------|----------------------|-------------------------------------------|
 | **Partition key**     | Cluster distribution | Fast node lookups; avoids cluster scans   |
 | **Clustering column** | Local sorting        | Fast range scans; efficient data grouping |
-
----
-
-Return to [Cassandra](_index.md)

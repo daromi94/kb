@@ -41,7 +41,3 @@ When tasks overwhelm a single server, the architecture allows two scaling types:
 |------------|--------------------------------------------------------------|
 | Vertical   | Upgrade existing server (more RAM, faster CPU, better NICs)  |
 | Horizontal | Add more servers with a load balancer to distribute requests |
-
----
-
-Return to [Fundamentals](_index.md)

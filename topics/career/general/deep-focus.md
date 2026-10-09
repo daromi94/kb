@@ -24,7 +24,3 @@ Reserve a specific physical space for deep work only. Never browse,
 scroll, or perform distracting habits in that space. Over time, the
 consistent pairing of location and focused effort conditions the
 brain to enter a concentrated state on arrival.
-
----
-
-Return to [General](_index.md)

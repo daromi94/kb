@@ -63,7 +63,3 @@ apply to:
 - **Fluent interfaces/builders:** Chaining like `builder.setName("X").setAge(20).build()`
   is not a violation because methods return the same context (the builder
   itself), not "stranger" objects
-
----
-
-Return to [Object design](_index.md)

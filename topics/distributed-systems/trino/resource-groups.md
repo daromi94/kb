@@ -50,7 +50,3 @@ can drown the coordinator's planning threads or exhaust cluster
 memory. Resource groups give each tenant its own envelope: queries
 that would otherwise compete with the rest of the cluster are queued
 within their group, so one heavy workload cannot stall everyone else.
-
----
-
-Return to [Trino](_index.md)

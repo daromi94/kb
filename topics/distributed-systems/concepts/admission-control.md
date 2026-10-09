@@ -102,7 +102,3 @@ enough to actually drain the queue, not just keep pace with arrivals.
 A system that accepts work it cannot complete is lying about its
 capacity, and that lie is paid for in cascading failure. Admission
 control is how the system tells the truth at its edges.
-
----
-
-Return to [Concepts](_index.md)

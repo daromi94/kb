@@ -59,7 +59,3 @@ your ability to solve future problems.
 Your conception of the problem is incomplete when you start. It
 shifts as you make progress, and again as you near the solution —
 expect to revisit earlier phases.
-
----
-
-Return to [Problem-solving](_index.md)

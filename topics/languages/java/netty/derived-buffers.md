@@ -50,7 +50,3 @@ returns a zero-copy view; the latter allocates and copies.
 Encoders prepending a header to a payload ByteBuf should combine
 them with a CompositeByteBuf, not `writeBytes(payload)` — which
 copies the entire payload into the encoding buffer.
-
----
-
-Return to [Netty](_index.md)

@@ -47,7 +47,3 @@ entries exist to recover from.
       +------------ WAL replicated -----------+
                     quorum: 2 of 3
 ```
-
----
-
-Return to [DynamoDB](_index.md)

@@ -22,7 +22,3 @@ readability.
 Highly effective for **I/O-bound tasks** (network requests, file reading)
 because it prevents the CPU from sitting idle while waiting for slow external
 resources.
-
----
-
-Return to [Async I/O](_index.md)

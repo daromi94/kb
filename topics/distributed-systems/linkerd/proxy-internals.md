@@ -27,7 +27,3 @@ convergence after changes and lower load on the Kubernetes API server
 compared to polling.
 
 No proxy config files means no proxy-config misconfiguration.
-
----
-
-Return to [Linkerd](_index.md)

@@ -45,7 +45,3 @@ options are: pull the data up (prefetch, cache, replicate) or push
 the computation down (move the code to where the data already
 lives). Everything else is rearranging deck chairs on the wrong
 tier.
-
----
-
-Return to [Latency](_index.md)

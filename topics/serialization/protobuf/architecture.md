@@ -46,7 +46,3 @@ identical regardless of implementation language.
 | Payload size     | Large (includes keys/braces) | Minimal (tags and values only) |
 | Performance      | High CPU overhead            | Low CPU overhead               |
 | Interoperability | Native to web/browsers       | Requires generated bindings    |
-
----
-
-Return to [Protocol Buffers](_index.md)

@@ -96,7 +96,3 @@ usually allow more.
 Nothing forces every node to be the same size. A common pattern is
 one general pool plus a dedicated pool for memory-heavy or GPU
 workloads — letting each class of work pick its own trade-off.
-
----
-
-Return to [Best practices](_index.md)

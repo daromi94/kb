@@ -113,7 +113,3 @@ directory and bind with a relative path.
 | Ignoring `SIGPIPE` | Sudden process death  | High     |
 | Permission race    | Unauthorized connects | Medium   |
 | Long paths         | `ENAMETOOLONG`        | Low      |
-
----
-
-Return to [Unix domain sockets](_index.md)

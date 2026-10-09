@@ -58,7 +58,3 @@ most.
 open to challenge, not just delivering it. Willingness to admit you are
 wrong is a prerequisite for earning the trust that makes direct feedback
 possible.
-
----
-
-Return to [Radical Candor](_index.md)

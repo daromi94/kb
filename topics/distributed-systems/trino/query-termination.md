@@ -56,7 +56,3 @@ operator notice the cancellation.
 This is why a query that "won't die" is almost always a worker stuck
 in a non-cancellable native call. The coordinator already considers
 the query terminal; the wait is for the worker to notice.
-
----
-
-Return to [Trino](_index.md)

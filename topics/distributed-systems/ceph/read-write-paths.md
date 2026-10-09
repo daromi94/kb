@@ -81,7 +81,3 @@ to reduce latency.
 | Consistency   | Strong (min_size replicas ACK)   | High (read from Primary)  |
 | Network hops  | Client → Primary → Replicas      | Client → Primary          |
 | Load          | High (hashing, WAL, replication) | Low (hashing, local read) |
-
----
-
-Return to [Ceph](_index.md)

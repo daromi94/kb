@@ -211,7 +211,3 @@ require operating-system, container, and runtime evidence.
 Memory accounting succeeds when time-aligned measurements identify a growing
 region and produce one specific ownership question. Profile that region, not
 the entire process.
-
----
-
-Return to [Troubleshooting](_index.md)

@@ -26,7 +26,3 @@ blind to long-range dependencies.
 high-dimensional embedding space. Self-attention lets the model weigh
 every token against every other token in the sequence, capturing
 grammar, semantics, and long-range context in a single pass.
-
----
-
-Return to [AI engineering](_index.md)

@@ -68,7 +68,3 @@ hidden coupling to over-delivered reliability.
 **No consequences.** If budget exhaustion does not change team
 behavior — does not pause launches, does not redirect work — the
 framework collapses into a dashboard nobody reads.
-
----
-
-Return to [SRE](_index.md)

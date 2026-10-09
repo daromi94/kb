@@ -39,7 +39,3 @@ Trino with little or no change.
 - Transactional workloads: row-level updates, OLTP, single-record lookups.
 - Tiny datasets where a single-node engine suffices.
 - Workloads needing strict ACID across multi-statement transactions.
-
----
-
-Return to [Trino](_index.md)

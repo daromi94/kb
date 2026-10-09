@@ -59,7 +59,3 @@ The `otel.javaagent.logging` property controls where agent logs go:
 | `simple`      | Standard error stream (default)                  |
 | `none`        | Suppressed                                       |
 | `application` | Routed through the app's SLF4J/Logback framework |
-
----
-
-Return to [OpenTelemetry](_index.md)

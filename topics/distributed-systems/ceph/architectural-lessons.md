@@ -86,7 +86,3 @@ for every minor event.
 | Hotspots     | Static hashing      | Dynamic subtree partitioning |
 | Failures     | Admin intervention  | Autonomic recovery           |
 | State Sync   | Global broadcast    | Lazy epoch-based gossip      |
-
----
-
-Return to [Ceph](_index.md)

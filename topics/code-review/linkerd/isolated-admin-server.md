@@ -43,7 +43,3 @@ compete with the data path for resources. This is what makes
 liveness checks trustworthy — if admin shares the same event loop
 as request processing, a saturated loop makes the process appear
 dead to the orchestrator even when it is not.
-
----
-
-Return to [Linkerd2-proxy](_index.md)

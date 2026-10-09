@@ -92,7 +92,3 @@ Multiplexed I/O achieves high connection counts with few threads, but at the
 cost of programming complexity. Application logic must be expressed as state
 machines or callbacks rather than sequential code, since a single thread
 interleaves work across many connections.
-
----
-
-Return to [Concurrency](_index.md)

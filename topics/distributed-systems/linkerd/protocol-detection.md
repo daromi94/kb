@@ -19,7 +19,3 @@ Non-HTTP connections are proxied as opaque byte streams. The proxy
 still terminates mTLS and reports byte-level metrics and connection
 counts, but it cannot see request boundaries inside the stream, so it
 cannot route, retry, or compute per-request latency.
-
----
-
-Return to [Linkerd](_index.md)

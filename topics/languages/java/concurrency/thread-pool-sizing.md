@@ -90,7 +90,3 @@ executor.getLargestPoolSize();    // high-water mark for threads
 
 - **Queue constantly full:** pool is undersized, increase thread count
 - **Threads mostly idle:** pool is over-provisioned, reduce threads
-
----
-
-Return to [Concurrency](_index.md)

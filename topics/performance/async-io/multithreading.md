@@ -20,7 +20,3 @@ write thread-safe code using tools like mutexes (locks).
 
 Often used to handle multiple client connections or tasks where low latency and
 high-speed data sharing between tasks are required.
-
----
-
-Return to [Async I/O](_index.md)

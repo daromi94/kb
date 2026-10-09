@@ -25,7 +25,3 @@ the simplification is worth the cost. A good abstraction leaks rarely
 and in predictable places. A bad one leaks constantly, forcing the
 consumer to hold two mental models at once: the abstraction and the
 reality behind it.
-
----
-
-Return to [Abstraction](_index.md)

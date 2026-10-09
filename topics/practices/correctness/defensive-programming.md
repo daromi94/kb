@@ -65,7 +65,3 @@ When something breaks in production, the logs are the only witness.
 Capture request identifiers, input values, the operation attempted,
 and the error returned. The goal is a complete trace from trigger to
 failure without reproducing the scenario.
-
----
-
-Return to [Correctness](_index.md)

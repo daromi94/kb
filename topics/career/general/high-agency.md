@@ -25,7 +25,3 @@ High agency is not innate — it is built through small acts of
 courage. Initiate the uncomfortable conversation you have been
 avoiding. Volunteer for the messy task no one wants. Each small act
 lowers the threshold for the next one.
-
----
-
-Return to [General](_index.md)

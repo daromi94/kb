@@ -51,7 +51,3 @@ As systems grow complex, architecture is split into tiers to separate concerns:
 
 The main risk is a **single point of failure**. If the central server goes down,
 the entire system is paralyzed for all clients.
-
----
-
-Return to [Fundamentals](_index.md)

@@ -60,7 +60,3 @@ it (LIFO). The kernel enforces a maximum stack size
 Threads within a process share the text, data, BSS, and heap
 segments. Each thread gets its own private stack and register set,
 so function call chains remain independent.
-
----
-
-Return to [Linux](_index.md)

@@ -22,7 +22,3 @@ falsity is impossible. Also known as reductio ad absurdum.
   cases?
 - If the opposite of the goal is assumed, does an obvious line of
   deduction present itself?
-
----
-
-Return to [Problem-solving](_index.md)

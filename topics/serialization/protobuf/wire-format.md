@@ -55,7 +55,3 @@ john.writeTo(output);
 
 Protobuf is optimized for messages up to a few megabytes, balancing compression
 with parsing speed.
-
----
-
-Return to [Protocol Buffers](_index.md)

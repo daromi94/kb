@@ -53,7 +53,3 @@ insufficient. Systems must instead:
 These requirements are identical to those of distributed systems.
 Concurrency within a single machine and communication across a network
 demand the same failure model.
-
----
-
-Return to [Pekko](_index.md)

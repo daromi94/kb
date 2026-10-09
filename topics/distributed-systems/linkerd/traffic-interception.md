@@ -22,7 +22,3 @@ container entirely.
 
 Only TCP traffic is intercepted. UDP bypasses the mesh completely —
 the proxy does not handle UDP at any layer.
-
----
-
-Return to [Linkerd](_index.md)

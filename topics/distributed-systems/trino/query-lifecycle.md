@@ -63,7 +63,3 @@ operator pipeline. Pages cross stage boundaries via exchange operators that
 move data over the network. Results stream back to the coordinator and out
 to the client as soon as they are ready — there is no "wait until the whole
 query finishes" step.
-
----
-
-Return to [Trino](_index.md)

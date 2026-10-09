@@ -30,7 +30,3 @@ and aggregates to serve the cluster-wide Resource Metrics API.
 cAdvisor can also run standalone (binary, container, or DaemonSet)
 when a richer per-container view than the Resource Metrics API
 provides is needed.
-
----
-
-Return to [Autoscaling](_index.md)

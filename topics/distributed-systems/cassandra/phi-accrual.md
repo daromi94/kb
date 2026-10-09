@@ -57,7 +57,3 @@ The `phi_convict_threshold` controls sensitivity:
 | Sensitivity | Fixed timeout             | Adaptive to observed arrival history   |
 | Reaction    | Sudden; prone to flapping | Gradual suspicion accumulation         |
 | Philosophy  | No heartbeat means dead   | How likely should I have heard by now? |
-
----
-
-Return to [Cassandra](_index.md)

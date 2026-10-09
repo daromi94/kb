@@ -40,7 +40,3 @@ kernel's contribution to latency.
 
 Each technique narrows a distribution rather than lowering its mean.
 Variance is the adversary.
-
----
-
-Return to [Latency](_index.md)

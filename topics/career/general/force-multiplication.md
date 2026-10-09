@@ -42,7 +42,3 @@ Deliver critical feedback privately. State that you share it because
 you care about their growth. Skip the feedback sandwich — focus on
 specific observations, the impact of the behavior, and a clear
 actionable alternative.
-
----
-
-Return to [General](_index.md)

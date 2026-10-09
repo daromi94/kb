@@ -29,7 +29,3 @@ multiple contexts) when annotated with `@ChannelHandler.Sharable`.
 - Typical use: cross-connection metrics or stateless protocol logic
 - Adding an unannotated handler to more than one pipeline throws an
   exception
-
----
-
-Return to [Netty](_index.md)

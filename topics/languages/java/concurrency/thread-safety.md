@@ -56,7 +56,3 @@ specified invariants make this tractable.
 
 A thread-safe class encapsulates the synchronization it needs, so callers
 never have to add their own.
-
----
-
-Return to [Concurrency](_index.md)

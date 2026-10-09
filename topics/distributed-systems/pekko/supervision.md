@@ -101,7 +101,3 @@ for the parent itself to restart or stop to restore a functional
 state. Combine supervision with death watch: the parent watches its
 children for termination and reacts accordingly, bubbling permanent
 failures up through the hierarchy.
-
----
-
-Return to [Pekko](_index.md)

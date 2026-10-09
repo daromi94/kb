@@ -49,7 +49,3 @@ runs out of headroom. Common bottleneck classes:
 Whichever resource runs out first defines the ceiling. Removing it
 shifts saturation to the next-most-constrained resource — never to
 infinite capacity, just to a different bottleneck.
-
----
-
-Return to [Testing](_index.md)

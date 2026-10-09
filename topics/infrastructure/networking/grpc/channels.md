@@ -63,7 +63,3 @@ limits.
 
 Creating a new channel per RPC is an antipattern: it bypasses HTTP/2
 multiplexing, exhausts ephemeral ports, and degrades throughput.
-
----
-
-Return to [gRPC](_index.md)

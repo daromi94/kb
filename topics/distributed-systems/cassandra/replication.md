@@ -77,7 +77,3 @@ trees) to compare all data across replicas and synchronize any differences.
 | **Redundancy**  | Controlled by the replication factor (RF)                      |
 | **Consistency** | Tunable at request time via the consistency level (CL)         |
 | **Durability**  | Achieved by distributing copies across different racks and DCs |
-
----
-
-Return to [Cassandra](_index.md)

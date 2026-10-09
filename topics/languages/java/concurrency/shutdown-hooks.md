@@ -81,7 +81,3 @@ By the time a hook runs, the JVM is already winding down. A hook
 can only depend on what it controls directly — its own captured state,
 its own spawned threads, and basic JVM facilities — never on shared
 application services.
-
----
-
-Return to [Concurrency](_index.md)

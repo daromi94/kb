@@ -22,7 +22,3 @@ crossing from user space into the kernel:
 ```text
 strace -c ls # summary of syscalls used by ls
 ```
-
----
-
-Return to [Linux](_index.md)

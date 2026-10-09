@@ -35,7 +35,3 @@ ID and Span ID into log output. With the Java agent, this happens
 automatically via MDC population. With the SDK alone, you must install
 a logging bridge (e.g., the Logback MDC shim) and update your log
 pattern to include the MDC keys.
-
----
-
-Return to [OpenTelemetry](_index.md)

@@ -63,7 +63,3 @@ Adding a component to a CompositeByteBuf transfers ownership.
 Releasing the composite releases each component exactly once. Do not
 manually release buffers after adding them — double-release throws
 IllegalReferenceCountException.
-
----
-
-Return to [Netty](_index.md)

@@ -48,7 +48,3 @@ Logback). The Java agent provides two separate instrumentations:
 
 Application code rarely interacts with the Logger interface
 (`io.opentelemetry.api.logs.Logger`) directly.
-
----
-
-Return to [OpenTelemetry](_index.md)

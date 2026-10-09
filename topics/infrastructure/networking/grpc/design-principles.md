@@ -36,7 +36,3 @@ independently.
 The status code namespace is deliberately constrained to simplify
 error handling. Richer domain-specific status travels through metadata
 exchange.
-
----
-
-Return to [gRPC](_index.md)

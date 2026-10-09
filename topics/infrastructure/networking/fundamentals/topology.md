@@ -96,7 +96,3 @@ logic (BGP, OSPF) to determine paths.
 | Star           | Modern LANs / Wi-Fi     | High (per node)        | Very High   |
 | Full Mesh      | Critical infrastructure | Highest                | Very Low    |
 | Partial Mesh   | Internet / WAN          | High                   | High        |
-
----
-
-Return to [Fundamentals](_index.md)

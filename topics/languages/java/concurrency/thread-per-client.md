@@ -61,7 +61,3 @@ Thread pools (via ExecutorService) bound thread count and queue excess
 connections, trading unbounded resource consumption for added latency when
 the pool is saturated. Virtual threads (JDK 21) remove the constraint
 entirely by multiplexing lightweight threads onto a small carrier pool.
-
----
-
-Return to [Concurrency](_index.md)

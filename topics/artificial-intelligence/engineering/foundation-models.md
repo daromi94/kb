@@ -44,7 +44,3 @@ and a sentiment analyzer are each trained from scratch on labeled data
 specific to that task. Foundation models invert this by front-loading
 compute into one pre-training run, then amortizing that cost across
 many lightweight adaptations.
-
----
-
-Return to [AI engineering](_index.md)

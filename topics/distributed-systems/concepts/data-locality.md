@@ -65,7 +65,3 @@ Locality serves a bottleneck; it is not a goal in itself. Profile where
 the time goes — network, CPU, or disk — before restructuring for it. A
 CPU-bound job, or one on a network fast enough that remote reads are
 cheap, gains nothing from chasing locality and loses flexibility.
-
----
-
-Return to [Concepts](_index.md)

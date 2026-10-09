@@ -54,7 +54,3 @@ The JVM can also trigger GC when direct buffer allocation approaches
 |                          |     | Cleaner / Arena.close() |
 +--------------------------+     +-------------------------+
 ```
-
----
-
-Return to [Native interop](_index.md)

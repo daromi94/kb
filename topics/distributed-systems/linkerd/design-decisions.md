@@ -50,7 +50,3 @@ What the control plane does not do is as deliberate as what it does:
   but Linkerd is not a full traffic management platform
 - No WASM or plugin system — the proxy is a closed system
 - No proxy configuration beyond annotations and CRDs
-
----
-
-Return to [Linkerd](_index.md)

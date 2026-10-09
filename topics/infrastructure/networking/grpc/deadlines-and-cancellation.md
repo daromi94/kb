@@ -24,7 +24,3 @@ Client and server determine call success independently and locally.
 Their conclusions may not match. An RPC can succeed on the server
 (response sent) but fail on the client (response arrived after the
 deadline).
-
----
-
-Return to [gRPC](_index.md)

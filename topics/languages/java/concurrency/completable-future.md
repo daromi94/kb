@@ -116,7 +116,3 @@ List<String> results = futures.stream()
     .map(CompletableFuture::join)
     .toList();
 ```
-
----
-
-Return to [Concurrency](_index.md)

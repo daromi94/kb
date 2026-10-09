@@ -61,7 +61,3 @@ storage:
 - **RocksDB / LevelDB** — embedded storage engines
 - **HBase** — Hadoop-based NoSQL database
 - **Bigtable** — Google's managed NoSQL service that inspired Cassandra
-
----
-
-Return to [Cassandra](_index.md)

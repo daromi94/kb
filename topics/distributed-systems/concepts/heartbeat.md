@@ -71,7 +71,3 @@ A leader is granted authority for a bounded time window (the lease) and
 must successfully heartbeat a majority of followers to renew it. If
 heartbeats stop, the lease expires and the leader's authority is
 automatically revoked, preventing zombie leaders from corrupting data.
-
----
-
-Return to [Concepts](_index.md)

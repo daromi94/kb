@@ -24,7 +24,3 @@ the core system behaves in an ideal state.
   standard algorithms apply?
 - If a specific constraint is temporarily ignored, does the path
   to the solution become clear?
-
----
-
-Return to [Problem-solving](_index.md)

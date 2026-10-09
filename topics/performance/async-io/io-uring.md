@@ -98,7 +98,3 @@ io_uring has evolved into a general-purpose async execution mechanism:
 - **Time:** Asynchronous timeouts and timers
 - **Chaining:** Link requests (read file, then send to socket). If read fails,
   send is automatically cancelled.
-
----
-
-Return to [Async I/O](_index.md)

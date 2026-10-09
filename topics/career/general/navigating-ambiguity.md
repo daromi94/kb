@@ -39,7 +39,3 @@ brings stakeholders along and transforms a blank page into a clear
 roadmap. A vague directive like "improve reliability" becomes
 "reduce customer-impacting incidents by 80% within six months while
 maintaining current performance metrics."
-
----
-
-Return to [General](_index.md)

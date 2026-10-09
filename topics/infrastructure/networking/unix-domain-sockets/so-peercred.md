@@ -69,7 +69,3 @@ mounting a disk) is allowed.
 - Linux-specific (BSD has similar but different mechanisms)
 - Only provides UID, GID, PID—not full user context
 - Credentials captured at connect time; if process changes uid later, stale
-
----
-
-Return to [Unix domain sockets](_index.md)

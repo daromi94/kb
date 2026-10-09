@@ -228,7 +228,3 @@ local recovery work <= recovery capacity * recovery time budget
 Object storage may hold a vast history, but the failure-sensitive local set
 must remain small enough to recover with headroom. Scale is survivable only
 while the system can restore redundancy faster than failures remove it.
-
----
-
-Return to [Concepts](_index.md)

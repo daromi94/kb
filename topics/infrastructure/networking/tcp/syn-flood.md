@@ -59,7 +59,3 @@ sysctl net.ipv4.tcp_max_syn_backlog
 | Increase backlog     | Larger queue before dropping         |
 | Reduce SYN-ACK retry | `tcp_synack_retries` (default 5)     |
 | Hardware/cloud scrub | Filter attack traffic upstream       |
-
----
-
-Return to [TCP](_index.md)

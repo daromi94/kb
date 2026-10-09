@@ -57,7 +57,3 @@ invoke the OS `write()` immediately:
 
 Application code sees a ChannelFuture that completes once the entire
 message has been sent, hiding the partial-write machinery entirely.
-
----
-
-Return to [Netty](_index.md)

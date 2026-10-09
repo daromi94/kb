@@ -59,7 +59,3 @@ simultaneously.
 `/proc` is a pseudo-filesystem with no on-disk storage. The
 kernel generates its contents dynamically, exposing internal data
 structures as files.
-
----
-
-Return to [Linux](_index.md)

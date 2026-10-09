@@ -97,7 +97,3 @@ requests exactly that.
 Best fit for workloads with sharp traffic spikes where scale-up
 latency is user-facing. Not worth the extra compute for batch or
 predictable workloads.
-
----
-
-Return to [Autoscaling](_index.md)

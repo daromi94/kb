@@ -83,7 +83,3 @@ Setup is four steps:
    and exposes it as `myapp_requests_per_second` under the Custom
    Metrics API.
 4. Create a HorizontalPodAutoscaler referencing that metric name.
-
----
-
-Return to [Autoscaling](_index.md)

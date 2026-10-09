@@ -47,7 +47,3 @@ resolution, and the consistency tradeoffs of distributed systems.
 
 With synchronous replication, RPO approaches zero. With asynchronous,
 RPO equals the replication lag.
-
----
-
-Return to [SRE](_index.md)

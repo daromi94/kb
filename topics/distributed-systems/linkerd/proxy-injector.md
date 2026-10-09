@@ -37,7 +37,3 @@ or namespace:
 Per-pod annotations override namespace-level settings. This lets
 operators enable injection cluster-wide while opting out individual
 workloads that are incompatible with the sidecar.
-
----
-
-Return to [Linkerd](_index.md)

@@ -67,7 +67,3 @@ parallel across all available executors.
           |  (Parquet, CSV, ...)    |
           +-------------------------+
 ```
-
----
-
-Return to [Ballista](_index.md)

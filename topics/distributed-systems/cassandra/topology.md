@@ -51,7 +51,3 @@ this mapping.
 | GossipingPropertyFileSnitch | Production standard; local config shared via gossip |
 | Ec2Snitch / Ec2MultiRegion  | Maps AWS regions and AZs to DCs and racks           |
 | SimpleSnitch                | Development only; single DC and rack                |
-
----
-
-Return to [Cassandra](_index.md)

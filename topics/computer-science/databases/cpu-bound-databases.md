@@ -27,7 +27,3 @@ A database pinned at 100% CPU is rarely a hardware sizing problem. It
 signals that the workload — query shape, plan choices, concurrency — is
 hitting the engine's expensive operations. Disk graphs can look calm while
 the CPU pegs.
-
----
-
-Return to [Databases](_index.md)

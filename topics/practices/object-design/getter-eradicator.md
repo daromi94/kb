@@ -50,7 +50,3 @@ responsibility principle. If an object's data is used in fifty business
 contexts, absorbing all fifty into that class creates a god object. The
 eradicator should move logic to the *right* object, not pile everything into
 the object that holds the data.
-
----
-
-Return to [Object design](_index.md)

@@ -62,7 +62,3 @@ healthy:
 
 This captures a common reality: even without failures, a system may choose
 weaker consistency to achieve lower latency.
-
----
-
-Return to [Concepts](_index.md)

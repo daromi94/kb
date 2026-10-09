@@ -34,7 +34,3 @@ new plan.
 - Is the current state simpler than it was three steps ago?
 - Does the path forward feel forced and irregular, or is there a
   natural flow to the next step?
-
----
-
-Return to [Problem-solving](_index.md)

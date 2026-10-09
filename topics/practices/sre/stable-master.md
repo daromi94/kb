@@ -34,7 +34,3 @@ recovery is non-negotiable.
 Integration is deferred until a feature is "ready." This keeps the
 mainline clean but risks painful merges, long feedback loops, and
 integration drift when branches live too long.
-
----
-
-Return to [SRE](_index.md)

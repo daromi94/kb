@@ -115,7 +115,3 @@ Multi-coordinator high availability requires a routing gateway: each
 coordinator runs its own registry against its own pool of workers, and
 clients reach the gateway rather than any individual coordinator. The
 discovery layer itself is never clustered.
-
----
-
-Return to [Trino](_index.md)

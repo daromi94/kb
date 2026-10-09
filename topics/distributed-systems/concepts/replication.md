@@ -66,7 +66,3 @@ it up to date:
   downed node and replay them once it returns
 - **Merkle trees** — Hash-based structures that quickly identify which
   pieces of data are out of sync without transferring the entire dataset
-
----
-
-Return to [Concepts](_index.md)

@@ -84,7 +84,3 @@ Over-provisioning absorbs the gap. Keep a buffer of idle capacity
 using low-priority placeholder pods that get evicted when real
 pods need the space, or run a small pool of oversized nodes so HPA
 has room to grow into while CA catches up.
-
----
-
-Return to [Autoscaling](_index.md)

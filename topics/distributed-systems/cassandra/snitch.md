@@ -63,7 +63,3 @@ minimizes network transfer and reduces overall query latency.
 | Input   | Manual config or cloud metadata | Real-time latency and node health |
 | Purpose | Define rack/DC boundaries       | Optimize for lowest latency       |
 | Impact  | Replica placement (safety)      | Query routing (performance)       |
-
----
-
-Return to [Cassandra](_index.md)

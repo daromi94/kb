@@ -41,7 +41,3 @@ role:
   releases the message's reference count, preventing memory leaks
 
 As with all handlers, `channelRead0` must not block the EventLoop thread.
-
----
-
-Return to [Netty](_index.md)

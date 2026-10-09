@@ -57,7 +57,3 @@ sub-region of the original. The slice shares the parent's temporal
 bounds (lifetime) but enforces narrower spatial bounds. This allows
 passing restricted memory ranges to native functions without risk of
 out-of-bounds access.
-
----
-
-Return to [Native interop](_index.md)

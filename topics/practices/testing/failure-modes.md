@@ -75,7 +75,3 @@ on the server at the same moment — a connection pool saturating,
 garbage collection pausing, a queue backing up. Without that
 correlation a load test yields a number with no diagnosis attached,
 and the next regression has nothing to point at.
-
----
-
-Return to [Testing](_index.md)

@@ -36,7 +36,3 @@ settling on a scoped approach. This prevents premature narrowing.
 Lean into difficult conversations. Give feedback directly and attach
 your name to it rather than hiding behind anonymity. Honest,
 attributed feedback builds trust and drives better outcomes.
-
----
-
-Return to [General](_index.md)

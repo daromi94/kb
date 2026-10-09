@@ -68,7 +68,3 @@ network (10GbE minimum), distributed systems expertise.
 
 **Simplicity vs Scalability.** NFS for ease of use and low latency at small
 scale. CephFS for resilience and massive throughput at large scale.
-
----
-
-Return to [Ceph](_index.md)

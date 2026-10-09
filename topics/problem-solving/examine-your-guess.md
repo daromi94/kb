@@ -18,7 +18,3 @@ trial-and-error into guided iteration.
 - If it fails, in what exact direction does it fail?
 - If the condition has multiple parts, does the guess satisfy at
   least one of them?
-
----
-
-Return to [Problem-solving](_index.md)

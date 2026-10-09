@@ -37,7 +37,3 @@ without rebooting.
 | `modprobe <name>`  | Load a module and its dependencies                |
 | `insmod <file.ko>` | Load a single `.ko` file (no dependency handling) |
 | `rmmod <name>`     | Unload a module                                   |
-
----
-
-Return to [Linux](_index.md)

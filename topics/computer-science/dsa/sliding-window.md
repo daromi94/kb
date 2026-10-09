@@ -74,7 +74,3 @@ apply to subsequences with gaps. The window property must also be
 monotonic: expanding the window can only make the condition harder (or
 easier) to satisfy, never both. If adding an element can both help
 and hurt, the shrink logic breaks.
-
----
-
-Return to [Data structures and algorithms](_index.md)

@@ -96,7 +96,3 @@ try (Arena arena = Arena.ofConfined()) {
 
 `invokeExact()` declares `throws Throwable`, requiring a catch
 block or throws clause.
-
----
-
-Return to [Native interop](_index.md)

@@ -70,7 +70,3 @@ immediately — there is no unnecessary wait.
 - **Endpoint race:** Endpoint removal propagates asynchronously. A brief
   `sleep` in the preStop hook (2-5 seconds) gives kube-proxy and ingress
   controllers time to update before the app stops serving.
-
----
-
-Return to [Pods](_index.md)

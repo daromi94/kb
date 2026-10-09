@@ -45,7 +45,3 @@ The kernel enforces `RLIMIT_AS` (total address space) and
 `RLIMIT_DATA` (data segment size) at `brk(2)`/`mmap(2)` time, set
 via `ulimit`. Cgroup memory limits are enforced at page fault time
 when physical memory is actually committed.
-
----
-
-Return to [Linux](_index.md)

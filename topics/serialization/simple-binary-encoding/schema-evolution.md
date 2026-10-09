@@ -36,7 +36,3 @@ added after its own schema version.
 
 The tradeoff is flexibility for performance — SBE locks down the layout
 so every field access remains a direct offset read.
-
----
-
-Return to [Simple Binary Encoding](_index.md)

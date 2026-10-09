@@ -63,7 +63,3 @@ fencing (visibility), and a happens-before edge (ordering).
 **AtomicInteger** and related classes use hardware Compare-and-Swap (CAS)
 instructions to achieve atomicity and visibility without locking, at the cost
 of requiring retry loops under contention.
-
----
-
-Return to [Concurrency](_index.md)

@@ -42,7 +42,3 @@ Codegen adds latency to the first execution and consumes JVM metaspace for
 generated classes. In return, the per-row cost on the hot path drops by an
 order of magnitude or more. For analytical queries scanning millions of
 rows, this is a clear win.
-
----
-
-Return to [Trino](_index.md)

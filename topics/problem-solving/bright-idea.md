@@ -29,7 +29,3 @@ carrying-out phase before trusting it.
   is time to step away?
 - When insight strikes, what is the smallest test that can prove
   or disprove it?
-
----
-
-Return to [Problem-solving](_index.md)

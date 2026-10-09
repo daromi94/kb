@@ -78,7 +78,3 @@ Zero protocol overhead for backpressure.
 | SOCK_STREAM    | Yes        | None       | TCP                |
 | SOCK_DGRAM     | No         | Preserved  | UDP (but reliable) |
 | SOCK_SEQPACKET | Yes        | Preserved  | SCTP               |
-
----
-
-Return to [Unix domain sockets](_index.md)

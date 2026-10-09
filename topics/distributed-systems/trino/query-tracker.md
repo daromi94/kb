@@ -109,7 +109,3 @@ multi-coordinator deployment, a gateway pins each session to one
 coordinator — a client that routes to a different coordinator mid-query
 gets a lookup failure. There is no shared store, no replication, no
 cluster-wide query registry.
-
----
-
-Return to [Trino](_index.md)

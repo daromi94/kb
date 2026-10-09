@@ -70,7 +70,3 @@ merge completes and the old files are deleted.
 **Falling behind:** If the write rate exceeds the compaction throughput, the
 cluster accumulates compaction debt: a growing backlog of small SSTables
 that degrades read performance.
-
----
-
-Return to [Cassandra](_index.md)

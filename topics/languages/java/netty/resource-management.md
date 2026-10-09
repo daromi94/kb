@@ -58,7 +58,3 @@ You do not need to release a message manually when:
 - **Reaching the transport** — once a message reaches the head of the
   pipeline (the transport layer), Netty releases it after the write
   completes or the Channel closes
-
----
-
-Return to [Netty](_index.md)

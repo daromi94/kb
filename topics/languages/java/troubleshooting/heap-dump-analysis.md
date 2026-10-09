@@ -244,7 +244,3 @@ the cache's retained set should remain within its intended bound.
 
 Do not stop at the largest class. Follow references until they reach the
 component that decides how long the data lives.
-
----
-
-Return to [Troubleshooting](_index.md)

@@ -59,7 +59,3 @@ much parallelism can help.
 **Downstream dependencies.** A service's capacity is bounded by the
 slowest thing it calls. When that thing slows, the failure mode is
 rarely graceful — cascading timeouts and retry storms start here.
-
----
-
-Return to [Testing](_index.md)

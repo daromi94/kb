@@ -67,7 +67,3 @@ infrastructure responsibilities.
 **Cross-cutting concerns:** Logging, security, and auditing touch many
 objects. Duplicating that logic in every expert class creates massive
 repetition; these belong in interceptors or middleware.
-
----
-
-Return to [Object design](_index.md)

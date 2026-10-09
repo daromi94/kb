@@ -55,7 +55,3 @@ or memory — VPA raises the per-Pod request, which changes the
 utilization ratio HPA is measuring. Run VPA in recommendation-only
 mode alongside HPA, or drive HPA off a signal other than CPU/memory
 (request rate, queue depth).
-
----
-
-Return to [Autoscaling](_index.md)

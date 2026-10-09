@@ -85,7 +85,3 @@ In large-scale systems, the pattern becomes recursive:
 - **Specialized control planes:** A single system may have separate control
   planes for fault tolerance (low latency), autoscaling (metric-driven), and
   provisioning (customer-facing CRUD)
-
----
-
-Return to [Concepts](_index.md)

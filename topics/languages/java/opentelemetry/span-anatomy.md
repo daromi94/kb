@@ -44,7 +44,3 @@ structure a directed acyclic graph.
 Spans are created via the Tracer
 (`io.opentelemetry.api.trace.Tracer`). The active span is held in
 thread-local storage through the Context API.
-
----
-
-Return to [OpenTelemetry](_index.md)

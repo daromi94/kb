@@ -134,7 +134,3 @@ subsequent object storage fetch. Compaction is the strongest
 candidate for separation due to its resource spikes. For vector
 databases, index building dwarfs traditional compaction in compute
 cost.
-
----
-
-Return to [Turbopuffer](_index.md)

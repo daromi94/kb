@@ -37,7 +37,3 @@ The defining technical feature is the **CRUSH** (Controlled Replication Under
 Scalable Hashing) algorithm. Unlike traditional storage that uses a central
 lookup table to find files, Ceph calculates data locations on the fly. Clients
 use CRUSH to determine which OSDs hold data, eliminating the central bottleneck.
-
----
-
-Return to [Ceph](_index.md)

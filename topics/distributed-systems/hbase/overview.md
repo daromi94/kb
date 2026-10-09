@@ -41,7 +41,3 @@ approach with tunable eventual consistency.
 | Consistency  | Strong (atomic single-row ops)      | Tunable (eventual to strong) |
 | Best for     | Scans, batch processing             | High write rate, always-on   |
 | Internals    | Relies on HDFS & ZooKeeper          | Manages own storage & gossip |
-
----
-
-Return to [HBase](_index.md)

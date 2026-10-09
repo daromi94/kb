@@ -40,7 +40,3 @@ Unable to make single cores faster, manufacturers added more cores:
 
 This is why concurrent programming and async I/O became essential —
 clock speeds will not get significantly faster.
-
----
-
-Return to [Latency](_index.md)

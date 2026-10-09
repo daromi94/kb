@@ -37,7 +37,3 @@ and restoring service. Tracing targets the diagnosis stage, which is
 where the time goes when many services are involved. Replacing that
 manual log search with a single trace lookup takes that time straight
 off recovery.
-
----
-
-Return to [Observability](_index.md)

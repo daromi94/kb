@@ -51,7 +51,3 @@ Sticky routing sends queries for the same namespace to the same node,
 maximizing NVMe cache hit rates and turning 400ms cold queries into
 8ms warm ones — without sacrificing the ability to fail over instantly
 to any other node.
-
----
-
-Return to [Turbopuffer](_index.md)

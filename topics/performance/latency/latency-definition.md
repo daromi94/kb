@@ -33,7 +33,3 @@ When analyzing any slow system:
 2. Where does the stopwatch stop? (The observed effect)
 
 Without agreement on these boundaries, you cannot fix the problem.
-
----
-
-Return to [Latency](_index.md)

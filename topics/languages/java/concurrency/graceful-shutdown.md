@@ -85,7 +85,3 @@ The coordinator enforces two properties:
   Always pass an explicit timeout.
 - **Cyclic dependencies.** If A's shutdown calls into B and B's
   shutdown calls into A, neither finishes.
-
----
-
-Return to [Concurrency](_index.md)

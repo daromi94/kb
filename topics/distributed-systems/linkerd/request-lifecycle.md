@@ -27,7 +27,3 @@ HTTP connection — the mesh is invisible.
 The response follows the same path in reverse. Both proxies record
 metrics (latency, status codes, bytes transferred) for every request
 that crosses their path.
-
----
-
-Return to [Linkerd](_index.md)

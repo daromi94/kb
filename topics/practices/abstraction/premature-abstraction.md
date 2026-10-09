@@ -37,7 +37,3 @@ abstraction than it is to fix one wrong, deeply embedded abstraction. A wrong
 abstraction accumulates special cases over time, becoming increasingly costly
 to change because every consumer depends on its current shape. Duplication,
 by contrast, is localized and easy to delete.
-
----
-
-Return to [Abstraction](_index.md)

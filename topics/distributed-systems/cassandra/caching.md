@@ -57,7 +57,3 @@ returns to peak performance immediately after a maintenance window.
 | Row cache     | Off-heap      | Full row data                   | Disabled |
 | Chunk cache   | Off-heap      | Decompressed SSTable blocks     | Enabled  |
 | Counter cache | On-heap (JVM) | Recent counter values           | Enabled  |
-
----
-
-Return to [Cassandra](_index.md)

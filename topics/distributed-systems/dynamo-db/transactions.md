@@ -36,7 +36,3 @@ roughly 3-4x slower than equivalent batch operations. Latencies are
 notably higher than single-item reads and writes. The system is
 designed so that this overhead does not cascade into delays for
 non-transactional operations on the same table.
-
----
-
-Return to [DynamoDB](_index.md)

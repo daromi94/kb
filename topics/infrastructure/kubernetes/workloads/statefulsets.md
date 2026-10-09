@@ -55,7 +55,3 @@ StatefulSets are appropriate for:
 **Complexity warning:** StatefulSets are harder to manage than Deployments.
 Strict ordering and persistent data make "stuck" updates common if a single Pod
 fails its health check.
-
----
-
-Return to [Workloads](_index.md)

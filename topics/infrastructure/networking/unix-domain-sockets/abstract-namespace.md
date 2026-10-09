@@ -73,7 +73,3 @@ Uses abstract sockets for various internal communication channels.
 
 **Security note:** Abstract sockets cannot use filesystem permissions. Any
 process can connect if it knows the name. Use `SO_PEERCRED` for access control.
-
----
-
-Return to [Unix domain sockets](_index.md)

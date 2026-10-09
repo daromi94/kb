@@ -29,7 +29,3 @@ Two design choices follow from this:
 | DataFrame jobs that shuffle across many nodes      | Primary use case                       |
 | Embedding distributed compute in a Rust/Python app | First-class — local SessionContext API |
 | BI tools speaking Arrow Flight SQL (JDBC)          | Supported via Flight SQL endpoint      |
-
----
-
-Return to [Ballista](_index.md)

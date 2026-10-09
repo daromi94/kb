@@ -25,7 +25,3 @@ The trade-off is that the mesh becomes stale: new deployments, scale
 events, and policy changes will not reach the proxies until the
 destination service recovers. Existing traffic keeps flowing, but
 the mesh cannot adapt to changes.
-
----
-
-Return to [Linkerd](_index.md)

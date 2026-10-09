@@ -59,7 +59,3 @@ writes, partial failures, and clock skew can still cause stale or
 inconsistent reads. Achieving strong consistency requires additional
 mechanisms such as leader-based sequencing, read repair, or consensus
 protocols.
-
----
-
-Return to [Concepts](_index.md)

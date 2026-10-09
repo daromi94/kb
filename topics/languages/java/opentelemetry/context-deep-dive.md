@@ -305,7 +305,3 @@ Baggage is sent to every downstream service as plain HTTP headers.
 Do not put sensitive data (tokens, PII) in Baggage, and keep the
 total size small — large Baggage adds overhead to every network call
 in the transaction.
-
----
-
-Return to [OpenTelemetry](_index.md)

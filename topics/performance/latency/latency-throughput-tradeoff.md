@@ -46,7 +46,3 @@ prefetching, and replication.
 |-----------------|----------------------------|--------------------------------|
 | Low latency     | No queuing, idle resources | Users fast, machines underused |
 | High throughput | Pipelining, batching       | Machines busy, users wait      |
-
----
-
-Return to [Latency](_index.md)

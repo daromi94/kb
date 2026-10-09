@@ -57,7 +57,3 @@ method might solve.
 
 Reviewing solutions builds well-ordered, ready-to-use knowledge and
 develops your ability to solve problems.
-
----
-
-Return to [Problem-solving](_index.md)

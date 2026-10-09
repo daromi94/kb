@@ -56,7 +56,3 @@ stages that have not started from executing.
 | `cancel(true)` | State change | No                   | Result no longer needed   |
 | AtomicBoolean  | Polling      | Yes (at checkpoint)  | CPU-intensive work        |
 | Close resource | IOException  | Yes (immediately)    | Non-interruptible sockets |
-
----
-
-Return to [Concurrency](_index.md)

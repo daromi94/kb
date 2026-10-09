@@ -73,7 +73,3 @@ translates them into rules that proxies enforce on inbound traffic.
    service, it receives these authorization rules
 4. On every inbound request, the proxy checks the peer's mTLS
    identity against the policy and allows or rejects the call
-
----
-
-Return to [Linkerd](_index.md)

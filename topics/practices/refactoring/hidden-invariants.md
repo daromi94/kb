@@ -20,7 +20,3 @@ Map the inputs and outputs of the module. Your goal is to change the
 |-------------|------|--------------------------------|
 | Structure   | Yes  | Only if it affects behavior    |
 | Behavior    | No   | Violates the implicit contract |
-
----
-
-Return to [Refactoring](_index.md)

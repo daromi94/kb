@@ -51,7 +51,3 @@ Enable for:
 
 Leave disabled for interactive queries: the spool round-trip is not worth
 the latency.
-
----
-
-Return to [Trino](_index.md)

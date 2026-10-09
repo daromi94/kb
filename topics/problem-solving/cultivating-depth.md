@@ -30,7 +30,3 @@ Avoid over-optimizing the learning process. Goal-directed research
 has blind spots. Unstructured exploration — browsing physical
 resources, casual interactions outside targeted objectives —
 introduces adjacent concepts that deliberate searches miss.
-
----
-
-Return to [Problem-solving](_index.md)

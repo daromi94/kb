@@ -63,7 +63,3 @@ data not yet flushed.
 | Disk access | Random I/O (slow)                 | Sequential I/O (fast)             |
 | Integrity   | Risk of partial writes/corruption | High (log is the source of truth) |
 | Performance | Latency tied to data file updates | Latency tied to simple appends    |
-
----
-
-Return to [Concepts](_index.md)

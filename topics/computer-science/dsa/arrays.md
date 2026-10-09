@@ -71,7 +71,3 @@ void fill2D(int[][] arr, int value) {
     }
 }
 ```
-
----
-
-Return to [Data structures and algorithms](_index.md)

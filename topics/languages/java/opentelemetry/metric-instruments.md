@@ -49,7 +49,3 @@ measurement, it can sample that data point and attach the current
 Trace ID and Span ID. The backend stores this alongside the
 aggregated metric, enabling direct navigation from a latency spike
 to the specific trace that caused it.
-
----
-
-Return to [OpenTelemetry](_index.md)

@@ -46,7 +46,3 @@ practical.
 - Comments explain rationale, not what the code does
 - Format comments as proper sentences
 - Write commit messages for the reader, not the author
-
----
-
-Return to [TigerStyle](_index.md)

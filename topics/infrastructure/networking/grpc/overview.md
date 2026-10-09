@@ -54,7 +54,3 @@ independent read-write streams. The two streams operate independently,
 so each side reads and writes in whatever order it chooses.
 
 gRPC guarantees message ordering within each individual stream.
-
----
-
-Return to [gRPC](_index.md)

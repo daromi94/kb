@@ -63,7 +63,3 @@ containerized applications.
 | Unit of storage | Block (virtual disk) | Object (file + meta) | File/directory       |
 | Shared access   | No (single host)     | Yes (global)         | Yes (multiple hosts) |
 | Performance     | Low latency          | High throughput      | Balanced             |
-
----
-
-Return to [Ceph](_index.md)

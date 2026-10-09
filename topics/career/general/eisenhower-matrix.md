@@ -27,7 +27,3 @@ Intentionally schedule time for important but non-urgent work.
 Investing in Q2 reduces the number of crises that end up in Q1.
 Strategic planning prevents fires; skill-building prevents
 bottlenecks; relationship-building prevents misalignment.
-
----
-
-Return to [General](_index.md)

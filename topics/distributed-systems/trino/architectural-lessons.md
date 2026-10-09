@@ -166,7 +166,3 @@ wrong tool.
 Architectural failures often come from trying to do everything;
 architectural success tends to come from picking constraints early
 and holding them.
-
----
-
-Return to [Trino](_index.md)

@@ -9,7 +9,3 @@ It is the design-time counterpart of data locality. Locality is resolved
 at runtime, for example when a scheduler sends each task to the node
 that already holds its data. Colocation is decided earlier, when you
 design a schema or plan a deployment.
-
----
-
-Return to [Concepts](_index.md)

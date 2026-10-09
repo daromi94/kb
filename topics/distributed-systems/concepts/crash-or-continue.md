@@ -68,7 +68,3 @@ stale inputs, keep going.
 | Malformed global config file     | —            | —            | Safe         | Continue     |
 | Serverless function on bad input | —            | Instant      | —            | Crash        |
 | Monolithic server with live bug  | —            | Minutes      | —            | Stay alive   |
-
----
-
-Return to [Concepts](_index.md)

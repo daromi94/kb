@@ -42,7 +42,3 @@ connection.
 - `/var/run/docker.sock` - Docker daemon
 - `/var/run/mysqld/mysqld.sock` - MySQL
 - `/tmp/.X11-unix/X0` - X11 display server
-
----
-
-Return to [Unix domain sockets](_index.md)

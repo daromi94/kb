@@ -43,7 +43,3 @@ under a different name.
 have visibility into all consumers. In a multi-repo world the same
 principle applies but enforcement shifts to lockfiles, BOMs, or
 platform dependency constraints.
-
----
-
-Return to [SRE](_index.md)

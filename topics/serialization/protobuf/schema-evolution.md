@@ -41,7 +41,3 @@ default value when the tag is absent.
 | Type mismatches  | Strictly typed definitions in `.proto` files |
 | Missing fields   | Default values for absent tags               |
 | Unknown fields   | Skip logic ignores unrecognized tags         |
-
----
-
-Return to [Protocol Buffers](_index.md)

@@ -65,7 +65,3 @@ Turbopuffer supports three search modes built on this foundation:
 Hybrid search combines semantic similarity (vector) with exact keyword
 matching (BM25), allowing retrieval that captures both meaning and
 specific terms.
-
----
-
-Return to [Turbopuffer](_index.md)

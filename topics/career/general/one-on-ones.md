@@ -39,7 +39,3 @@ instead of venting to peers. They have top-down context you lack;
 you have ground-level insights (customer complaints, code friction)
 they cannot see. Raising strategy or industry trends signals you are
 thinking beyond your own backlog.
-
----
-
-Return to [General](_index.md)

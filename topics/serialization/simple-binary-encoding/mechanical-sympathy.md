@@ -61,7 +61,3 @@ average-case savings.
 | Branch prediction   | Tag dispatch per field       | No branches for fixed          |
 | Cache behavior      | Pointer-chasing, scattered   | Linear scan, prefetch-friendly |
 | Latency consistency | Jitter from GC and stalls    | Tight variance                 |
-
----
-
-Return to [Simple Binary Encoding](_index.md)

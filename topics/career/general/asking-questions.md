@@ -23,7 +23,3 @@ Engineers who hide behind jargon and polished answers are hard to
 work with. Expose the uncertain parts of your reasoning instead of
 performing confidence. This invites collaboration and gets the team
 unstuck faster than pretending to have all the answers.
-
----
-
-Return to [General](_index.md)

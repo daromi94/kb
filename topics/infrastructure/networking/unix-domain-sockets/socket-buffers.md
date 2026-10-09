@@ -69,7 +69,3 @@ ss -xl # Show Send-Q and Recv-Q for Unix domain sockets
 |--------------------------|--------------------------------------------|
 | Recv-Q consistently high | Consumer too slow to drain incoming data   |
 | Send-Q consistently high | Peer's recv buffer full, throttling sender |
-
----
-
-Return to [Unix domain sockets](_index.md)

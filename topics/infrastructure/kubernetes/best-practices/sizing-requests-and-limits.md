@@ -48,7 +48,3 @@ resources:
 Applications drift. Code changes, traffic patterns evolve, and the
 numbers that were right six months ago are no longer right. Treat
 sizing as an ongoing loop — not a one-time setup.
-
----
-
-Return to [Best practices](_index.md)

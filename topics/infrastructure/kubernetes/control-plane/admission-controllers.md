@@ -39,7 +39,3 @@ ValidatingAdmissionPolicy evaluates CEL inline: no callout, no extra
 pod, no external dependency. Use it for rules expressible in CEL
 (required fields, allowed values, cross-field consistency); reach
 for a webhook only when the rule needs state outside the object.
-
----
-
-Return to [Control plane](_index.md)

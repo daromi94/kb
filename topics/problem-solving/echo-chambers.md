@@ -34,7 +34,3 @@ challenge is stronger than one that was never tested.
 |--------------|-----------------------------------------|--------------------------------------------|
 | Echo chamber | Low — consensus skips critical analysis | Fragile — feels strong, fails under stress |
 | Open debate  | High — you re-examine and rebuild       | Robust — rebuilt stronger through testing  |
-
----
-
-Return to [Problem-solving](_index.md)

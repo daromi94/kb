@@ -81,7 +81,3 @@ coordinator plays back the hint to bring the node up to date.
 | **Optimization**   | Snitch identifies the fastest/closest replicas                  |
 | **Execution**      | Coordinator sends requests in parallel                          |
 | **Reconciliation** | Coordinator waits for enough acks to satisfy the CL             |
-
----
-
-Return to [Cassandra](_index.md)

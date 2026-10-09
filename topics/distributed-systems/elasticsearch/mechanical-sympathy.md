@@ -44,7 +44,3 @@ access. Segments, once written, are sealed. The consequences:
   into the page cache. Read-only pages never go dirty, so the kernel
   never tracks writes, invalidates caches, or flushes. Disk-backed data
   serves at near-RAM latency.
-
----
-
-Return to [Elasticsearch](_index.md)

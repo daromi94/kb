@@ -34,7 +34,3 @@ slow with no way to adapt without rewriting code.
 The relational model introduced **physical data independence**—allowing storage
 to change without breaking application logic. Instead of navigating, you
 declare *what* data you want and the DBMS determines *how* to retrieve it.
-
----
-
-Return to [Databases](_index.md)

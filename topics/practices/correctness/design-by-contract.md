@@ -140,7 +140,3 @@ contracts reject valid inputs or constrain future implementations.
 The biggest barrier is cultural. Most languages lack first-class
 contract support, so contracts end up as assert statements easy to
 ignore.
-
----
-
-Return to [Correctness](_index.md)

@@ -232,7 +232,3 @@ or from moving pressure into the Java heap.
 
 Off-heap diagnosis succeeds when time-aligned measurements turn a large
 process into a bounded component with an explicit owner.
-
----
-
-Return to [Troubleshooting](_index.md)

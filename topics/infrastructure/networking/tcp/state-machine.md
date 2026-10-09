@@ -56,7 +56,3 @@ ss -tan state time-wait
 ss -tan state close-wait | wc -l
 netstat -an | grep CLOSE_WAIT
 ```
-
----
-
-Return to [TCP](_index.md)

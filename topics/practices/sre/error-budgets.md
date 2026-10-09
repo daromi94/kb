@@ -46,7 +46,3 @@ trend over a longer period. The confirmation window requires the
 problem to persist for a shorter minimum duration before firing.
 This prevents paging on transient blips while still catching real
 incidents quickly.
-
----
-
-Return to [SRE](_index.md)

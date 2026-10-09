@@ -31,7 +31,3 @@ abstraction will be tighter and more accurate to actual needs.
 **Refactor incrementally.** Rather than a large "day zero" design phase,
 refactor as requirements become clearer. Abstractions crystallize naturally
 from specific implementations.
-
----
-
-Return to [Abstraction](_index.md)

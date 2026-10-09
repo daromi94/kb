@@ -28,7 +28,3 @@ plan is established.
   because the problem demands it?
 - If stuck, am I passively waiting or actively changing
   perspective?
-
----
-
-Return to [Problem-solving](_index.md)

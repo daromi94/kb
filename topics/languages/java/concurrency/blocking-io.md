@@ -78,7 +78,3 @@ blocked thread, the system still reaches a standstill.
 | Data transfer   | Kernel copies to user space   | App must poll or await notification |
 | Code complexity | Low, straightforward          | High, requires selectors/callbacks  |
 | Best suited for | Long-lived heavy connections  | Many short-lived chatty connections |
-
----
-
-Return to [Concurrency](_index.md)

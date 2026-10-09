@@ -31,7 +31,3 @@ stay professional.
 Keep feedback specific, sincere, and helpful. Focus on the impact of
 behavior on the project or team, not on the person's character. Shift
 from "you as a person" to "the result we need to achieve."
-
----
-
-Return to [Radical Candor](_index.md)

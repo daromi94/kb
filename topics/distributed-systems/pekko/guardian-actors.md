@@ -32,7 +32,3 @@ stays available throughout the shutdown of application actors.
 2. The /system guardian detects /user's termination via death watch
 3. /system shuts down infrastructure actors (logging, etc.)
 4. The ActorSystem terminates its threads
-
----
-
-Return to [Pekko](_index.md)

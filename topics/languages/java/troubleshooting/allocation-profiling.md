@@ -198,7 +198,3 @@ Java heap. Replacing heap arrays with direct buffers can move pressure into
 Allocation profiling succeeds when it connects a costly allocation rate to a
 specific call path, a removable mechanism, and a measured improvement under
 the same workload.
-
----
-
-Return to [Troubleshooting](_index.md)

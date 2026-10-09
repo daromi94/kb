@@ -72,7 +72,3 @@ that slice. Typical consumers:
 - **Service mesh data planes** — proxies like Envoy refresh their
   upstream lists.
 - **Custom operators** — anything with a watch on EndpointSlices.
-
----
-
-Return to [Networking](_index.md)

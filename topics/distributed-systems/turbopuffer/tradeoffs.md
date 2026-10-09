@@ -37,7 +37,3 @@ The system exposes few tuning knobs. Index parameters are managed
 internally rather than requiring users to configure HNSW settings or
 recall targets. This maintains high recall (>90%) even under complex
 metadata filters, at the cost of less control for advanced users.
-
----
-
-Return to [Turbopuffer](_index.md)

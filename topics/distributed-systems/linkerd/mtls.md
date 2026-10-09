@@ -33,7 +33,3 @@ The leaf certificates the identity service hands out chain up to a
 configured with. Rotating the trust anchor requires coordinating
 across every proxy in the cluster, so it is kept distinct from the
 short-lived leaf certs that rotate automatically.
-
----
-
-Return to [Linkerd](_index.md)

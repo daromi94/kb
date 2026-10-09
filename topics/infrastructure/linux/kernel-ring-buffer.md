@@ -27,7 +27,3 @@ oldest entries.
 | `dmesg -w`               | Follow mode — stream new messages as they arrive        |
 | `dmesg --level=err,warn` | Filter to errors and warnings only                      |
 | `dmesg -n <level>`       | Set which severity levels print to the physical console |
-
----
-
-Return to [Linux](_index.md)

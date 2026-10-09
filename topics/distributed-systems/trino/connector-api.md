@@ -67,7 +67,3 @@ WHERE
 The coordinator plans the join, pushes the region filter into the Hive
 scanner, fetches matching rows from both sources in parallel, and joins on a
 worker. The user sees one logical SQL surface across heterogeneous storage.
-
----
-
-Return to [Trino](_index.md)

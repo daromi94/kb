@@ -21,7 +21,3 @@ itself.
 Without this framing, on-call becomes rote work that senior engineers
 avoid, and the team loses its most valuable production learning
 channel.
-
----
-
-Return to [SRE](_index.md)

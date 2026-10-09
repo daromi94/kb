@@ -23,7 +23,3 @@ analysis — no need for language-specific tools that fragment team velocity.
 Higher upfront implementation cost, lower long-term maintenance burden. For
 infrastructure intended to run for decades, self-contained code provides
 stronger guarantees than external dependencies.
-
----
-
-Return to [TigerStyle](_index.md)

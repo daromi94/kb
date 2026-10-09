@@ -26,7 +26,3 @@ Each category opens a distinct angle of attack.
   choose?
 - **Consequences.** What are the second-order effects? What if it
   fails?
-
----
-
-Return to [Problem-solving](_index.md)

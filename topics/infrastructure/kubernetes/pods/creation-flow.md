@@ -89,7 +89,3 @@ cluster. Before it lands, the Pod exists only on its node.
 The asymmetry — kubelet knows first, API server learns second — is
 why tools reading from the API server can briefly disagree with
 what's actually running on the node.
-
----
-
-Return to [Pods](_index.md)

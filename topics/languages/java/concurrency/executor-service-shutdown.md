@@ -70,7 +70,3 @@ so callers higher up still see the cancellation.
 New submissions after `shutdown()` throw RejectedExecutionException.
 Tasks returned from `shutdownNow()` are the caller's responsibility —
 typically discarded, logged, or re-submitted to another executor.
-
----
-
-Return to [Concurrency](_index.md)

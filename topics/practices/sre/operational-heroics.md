@@ -23,7 +23,3 @@ A mature correction of errors (COE) culture forces teams out of
 break-fix loops by treating repeated incidents as a signal that the
 system itself — not the humans — must change. Heroics should be rare
 and memorable, not a weekly routine.
-
----
-
-Return to [SRE](_index.md)

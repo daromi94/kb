@@ -33,7 +33,3 @@ between different streams.
 without synchronization, the order messages reach the gRPC runtime is
 non-deterministic. The stream transmits in the order it receives, but
 that order is a race condition created by the application.
-
----
-
-Return to [gRPC](_index.md)

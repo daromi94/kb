@@ -51,7 +51,3 @@ mitigate this with:
   local bus speeds
 - **Metadata services** — A separate service tracks where data lives in the
   storage layer so compute nodes avoid searching for it
-
----
-
-Return to [Concepts](_index.md)

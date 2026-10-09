@@ -24,7 +24,3 @@ Use a tight feedback loop:
 4. Commit
 
 This keeps each change isolated and verifiable.
-
----
-
-Return to [Refactoring](_index.md)

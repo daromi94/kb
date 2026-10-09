@@ -28,7 +28,3 @@ This separates the "when to stop" decision from the "how to stop"
 logic in each subsystem. Treating acknowledgment as reference
 counting — completion means all holders released, not that anyone
 sent a message — keeps the mechanism simple and decoupled.
-
----
-
-Return to [Linkerd2-proxy](_index.md)

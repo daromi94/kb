@@ -26,7 +26,3 @@ Before proposing a rewrite, articulate the problem in concrete terms:
 
 If the answer is "it's ugly" or "I don't understand it," that's not sufficient
 justification.
-
----
-
-Return to [Refactoring](_index.md)

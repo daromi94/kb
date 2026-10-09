@@ -38,7 +38,3 @@ The goal is **instant mental model synchronization**: the moment a developer
 looks at a block of code, they should immediately understand its intent, its
 inputs, and its expected output without needing to trace the entire execution
 stack.
-
----
-
-Return to [Clean code](_index.md)

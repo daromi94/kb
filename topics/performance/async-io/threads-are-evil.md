@@ -64,7 +64,3 @@ Modern technologies avoid threads for application logic:
 | Node.js       | Async I/O (single-threaded) avoids locks and race conditions       |
 | Go / Erlang   | Message passing between actors/goroutines instead of shared memory |
 | Multi-process | Each task gets its own memory; one crash won't take down others    |
-
----
-
-Return to [Async I/O](_index.md)

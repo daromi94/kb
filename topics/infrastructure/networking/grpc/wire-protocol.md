@@ -52,7 +52,3 @@ carrying:
 
 The client runtime parses these trailers to return the result or raise
 an error.
-
----
-
-Return to [gRPC](_index.md)

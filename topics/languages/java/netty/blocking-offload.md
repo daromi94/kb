@@ -47,7 +47,3 @@ it to the pipeline.
 | Non-blocking logic          | EventLoop (I/O)      | Highest throughput, minimal switching      |
 | Blocking logic on EventLoop | EventLoop (I/O)      | Severe — blocks all connections on thread  |
 | Explicit executor offload   | Application executor | Full control, clear ownership of threading |
-
----
-
-Return to [Netty](_index.md)

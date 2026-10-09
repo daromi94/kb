@@ -55,7 +55,3 @@ tail.
 Ring buffers have a fixed capacity set at creation. If the producer
 can outpace the consumer indefinitely, a growable queue is a better
 fit.
-
----
-
-Return to [Data structures and algorithms](_index.md)

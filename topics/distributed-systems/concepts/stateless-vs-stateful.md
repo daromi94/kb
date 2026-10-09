@@ -55,7 +55,3 @@ service and the storage layer into a stateful service:
 
 This lets the compute layer scale elastically while the storage layer
 focuses on consistency and consensus.
-
----
-
-Return to [Concepts](_index.md)

@@ -66,7 +66,3 @@ the server receive P2 first — if the packets carry no ordering
 information, the server cannot detect the reordering. A race
 condition becomes a bug only when one or more of the possible
 orderings produces an undesirable outcome.
-
----
-
-Return to [Pekko](_index.md)

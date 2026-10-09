@@ -21,7 +21,3 @@ A failed refactor that ends in `git reset --hard` is a better outcome than a
 "completed" refactor that introduces intermittent production outages.
 
 The sunk cost of time invested is not a valid reason to ship risky code.
-
----
-
-Return to [Refactoring](_index.md)

@@ -198,7 +198,3 @@ The only way to get a ValidatedOrder is through `validate()`.
 Circumventing this requires reflection or modifying the type
 definition — both obvious, reviewable decisions, not silent
 oversights.
-
----
-
-Return to [Correctness](_index.md)

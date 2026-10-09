@@ -43,7 +43,3 @@ trace context into the metadata of its outbound network calls, and the
 next service extracts it. The wire standard for this is W3C Trace
 Context, which defines the `traceparent` and `tracestate` headers so a
 trace holds together across tools from different vendors.
-
----
-
-Return to [Observability](_index.md)

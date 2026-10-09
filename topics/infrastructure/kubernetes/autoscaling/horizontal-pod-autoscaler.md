@@ -95,7 +95,3 @@ the per-Pod request rate near 2 req/sec.
 
 When multiple metrics are configured, HPA computes a desired replica
 count for each and picks the maximum.
-
----
-
-Return to [Autoscaling](_index.md)

@@ -36,7 +36,3 @@ Any handler that touches the bytes kills the zero-copy path:
 - **Type mismatch** — FileRegion is not a ByteBuf. Outbound handlers
   between the file source and the socket must pass it through or
   explicitly convert it; an unchecked cast to ByteBuf will fail.
-
----
-
-Return to [Netty](_index.md)

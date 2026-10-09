@@ -60,7 +60,3 @@ flooding the recovering node.
 | CL impact         | Does not satisfy `ONE`, `QUORUM`, or `ALL`                 |
 | Expiration        | Configurable time window (default ~3 hours)                |
 | Beyond expiration | Anti-entropy repair required                               |
-
----
-
-Return to [Cassandra](_index.md)

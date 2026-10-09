@@ -35,7 +35,3 @@ that the exchange is an argument over the truth, not a quarrel aimed
 at the person. When someone finds a deep flaw in your position, you
 can take it impersonally because you trust the target is the idea,
 not you.
-
----
-
-Return to [Problem-solving](_index.md)

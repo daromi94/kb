@@ -23,7 +23,3 @@ uncancellable.
 Side effects already begun do not roll back — DB writes, external
 API calls. Idempotency keys make a canceled side effect safe to
 retry.
-
----
-
-Return to [Latency](_index.md)

@@ -152,7 +152,3 @@ dependency contains the blast radius when one slows or fails.
 
 Less useful when tasks have rich interdependencies — reach for a DAG
 executor or actor model instead.
-
----
-
-Return to [Patterns](_index.md)

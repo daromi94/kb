@@ -53,7 +53,3 @@ A ChannelHandler executes on the EventLoop thread, which may be managing
 thousands of connections. Blocking inside a handler (long database query,
 `Thread.sleep()`) freezes all those connections. Heavy work must be
 offloaded to a separate thread pool.
-
----
-
-Return to [Netty](_index.md)

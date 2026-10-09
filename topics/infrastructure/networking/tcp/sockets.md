@@ -95,7 +95,3 @@ ss -ti
 | cwnd   | Current congestion window                 |
 | rto    | Retransmission timeout (ms)               |
 | rtt    | Measured round-trip time                  |
-
----
-
-Return to [TCP](_index.md)

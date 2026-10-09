@@ -62,7 +62,3 @@ single record that must serialize updates to preserve isolation.
 In OLTP, correctness comes before throughput. Wrong answers cost
 more than the latency saved producing them. Preserve strict
 serializability and ACID first; optimize after.
-
----
-
-Return to [Concepts](_index.md)

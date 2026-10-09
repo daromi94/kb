@@ -25,7 +25,3 @@ four resource types:
 Extract hot loops into standalone functions with primitive arguments. This
 helps the compiler by reducing function complexity, enabling better
 inlining, and focusing optimization on the critical path.
-
----
-
-Return to [TigerStyle](_index.md)

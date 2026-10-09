@@ -40,7 +40,3 @@ do not fit etcd's storage model.
 Default to a CRD. Reach for aggregation when the data does not
 belong in etcd — live metrics, computed views, external
 integrations.
-
----
-
-Return to [Control plane](_index.md)

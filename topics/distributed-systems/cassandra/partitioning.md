@@ -58,7 +58,3 @@ are stored together in a single wide row on the same physical node.
 | **Efficient reads** | With the partition key, the coordinator contacts one node       |
 | **Hot spots**       | Low-cardinality keys cause uneven distribution (hot partitions) |
 | **Clustering**      | Within a partition, data is sorted by clustering columns        |
-
----
-
-Return to [Cassandra](_index.md)

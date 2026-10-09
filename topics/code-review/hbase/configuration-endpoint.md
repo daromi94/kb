@@ -14,7 +14,3 @@ Every HBase daemon exposes this endpoint on its HTTP info server.
   already holds, never re-reading files from disk.
 - **Locked down.** It restricts access and masks secret values, so it
   is safe to leave enabled in production.
-
----
-
-Return to [Apache HBase](_index.md)

@@ -19,7 +19,3 @@ method requires.
 - Can you introduce something new that connects disparate pieces
   of the given data?
 - Can you add a component that eliminates special cases?
-
----
-
-Return to [Problem-solving](_index.md)

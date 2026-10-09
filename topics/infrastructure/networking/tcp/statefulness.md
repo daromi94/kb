@@ -56,7 +56,3 @@ to Server B fails because Server B lacks the connection state.
 Protocols like QUIC implement reliability over UDP with connection IDs that
 allow migration between paths/addresses, partially addressing the load
 balancing problem.
-
----
-
-Return to [TCP](_index.md)

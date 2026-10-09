@@ -69,7 +69,3 @@ HTTP/2 provides credit-based flow control at two levels — per-stream
 and per-connection — via `WINDOW_UPDATE` frames. A fast sender cannot
 overwhelm a slow receiver or exhaust its memory buffers. Only `DATA`
 frames are flow-controlled; control frames are not.
-
----
-
-Return to [gRPC](_index.md)

@@ -85,7 +85,3 @@ Every level of indirection comes with trade-offs:
    finding the code that actually performs work
 3. **Memory usage:** Each layer requires storage for references, handles, or
    mapping tables
-
----
-
-Return to [Abstraction](_index.md)

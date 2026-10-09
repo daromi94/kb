@@ -57,7 +57,3 @@ is blocking: if the coordinator fails mid-process, resources can remain
 locked indefinitely. Paxos is consensus-based: as long as a quorum of
 replicas is alive, the transaction can be resolved or timed out without
 locking the table.
-
----
-
-Return to [Cassandra](_index.md)

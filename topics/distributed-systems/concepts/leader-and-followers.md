@@ -63,7 +63,3 @@ is bounded by the slowest node in the quorum.
 must catch up on missed log entries. This typically involves replaying
 from the segmented log, guided by the low-water mark to determine
 where to start.
-
----
-
-Return to [Concepts](_index.md)

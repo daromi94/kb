@@ -66,7 +66,3 @@ Benefits:
     |  OSD   |           |  OSD   |            |  OSD   |
     +--------+           +--------+            +--------+
 ```
-
----
-
-Return to [Ceph](_index.md)

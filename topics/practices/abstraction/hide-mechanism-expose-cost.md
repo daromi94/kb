@@ -19,7 +19,3 @@ abstraction. SQL hides the mechanism well, and the cost with it.
 Cost has many dimensions: latency, throughput, blast radius, and more.
 A good abstraction lets the user predict each one without going deep
 into the implementation. Otherwise, it's hiding the wrong things.
-
----
-
-Return to [Abstraction](_index.md)

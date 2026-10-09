@@ -67,7 +67,3 @@ This "indirect jump" is slightly slower than a direct function call and can
 occasionally hinder CPU optimizations like inlining. However, for most
 applications, the gain in clarity and maintainability far outweighs this
 minor cost.
-
----
-
-Return to [Abstraction](_index.md)

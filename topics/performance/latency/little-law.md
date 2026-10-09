@@ -79,7 +79,3 @@ machine.
 | Handle more traffic     | Reduce $W$ or increase $L$            |
 | Survive a latency spike | Shed load ($\lambda$) or increase $L$ |
 | Reduce infrastructure   | Reduce $W$ or restrict $\lambda$      |
-
----
-
-Return to [Latency](_index.md)

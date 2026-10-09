@@ -34,7 +34,3 @@ The partition key determines physical data placement:
 This hashing scheme lets the request router contact the correct
 storage node directly without scanning, maintaining single-digit
 millisecond latency regardless of table size.
-
----
-
-Return to [DynamoDB](_index.md)

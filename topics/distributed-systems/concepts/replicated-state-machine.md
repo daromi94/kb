@@ -72,7 +72,3 @@ The leader appends the command locally, sends it to followers, waits
 for a quorum of ACKs, then applies the command and replies to the
 client. Any future quorum overlaps with this one, so the command
 survives any single node loss, including the leader's.
-
----
-
-Return to [Concepts](_index.md)

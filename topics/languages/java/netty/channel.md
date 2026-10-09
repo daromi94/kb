@@ -66,7 +66,3 @@ richer object that integrates with the framework:
 - Connected to a ChannelPipeline that processes inbound and outbound data
   through a chain of handlers
 - Provides ChannelFuture for asynchronous operation tracking
-
----
-
-Return to [Netty](_index.md)

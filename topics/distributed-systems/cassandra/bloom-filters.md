@@ -55,7 +55,3 @@ When a read request arrives at a node:
 4. If not cached, check the **partition summary** and **partition index** on
    disk.
 5. Read the **SSTable** data block.
-
----
-
-Return to [Cassandra](_index.md)

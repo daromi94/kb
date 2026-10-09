@@ -65,7 +65,3 @@ handlers. A single `readBytes` call or a single transforming handler
 between source and socket negates careful work elsewhere. Design the
 pipeline as a chain of views and compositions, and treat any point
 where bytes get memcpy'd as a deliberate choice.
-
----
-
-Return to [Netty](_index.md)

@@ -46,7 +46,3 @@ Client                              Server
 
 The active closer enters TIME_WAIT for $2 \times \text{MSL}$ (typically 60 seconds) to handle
 delayed packets and ensure the final ACK arrives.
-
----
-
-Return to [TCP](_index.md)

@@ -113,7 +113,3 @@ descriptors (`SCM_RIGHTS`) or credentials (`SCM_CREDENTIALS`).
 | `connect` | TCP handshake (SYN/ACK) | Permission check + queue |
 | `read`    | Network buffers         | Direct memory buffers    |
 | `close`   | FIN/ACK handshake       | Immediate refcount drop  |
-
----
-
-Return to [Unix domain sockets](_index.md)

@@ -126,7 +126,3 @@ and cluster-wide limits. When the cluster's global memory pool is
 exhausted, the OOM killer cancels the largest offender — preventing
 distributed deadlock where every worker is waiting on memory that no
 query is willing to release.
-
----
-
-Return to [Trino](_index.md)

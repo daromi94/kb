@@ -35,7 +35,3 @@ Latency and throughput often trade against each other:
 
 The goal of latency engineering is achieving low latency without destroying
 throughput.
-
----
-
-Return to [Latency](_index.md)

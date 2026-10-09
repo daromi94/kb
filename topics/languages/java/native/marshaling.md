@@ -54,7 +54,3 @@ the benefit of native execution.
 The high-performance pattern is to keep large data permanently
 off-heap, passing MemorySegment pointers between Java and C
 instead of marshaling the underlying bytes.
-
----
-
-Return to [Native interop](_index.md)

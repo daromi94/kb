@@ -74,7 +74,3 @@ applies one of two strategies:
 
 **Recreate** is useful when an application cannot tolerate two versions running
 simultaneously, such as when holding database schema locks.
-
----
-
-Return to [Workloads](_index.md)

@@ -50,7 +50,3 @@ autonomously without human intervention.
 When a storage node or replica is unhealthy — bad hardware, high
 latency — autoadmin triggers recovery to replace affected replicas
 and restore the replication group to full strength.
-
----
-
-Return to [DynamoDB](_index.md)

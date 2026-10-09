@@ -70,7 +70,3 @@ For finer control, many protocols implement their own heartbeats:
 - Works through NAT/proxies that may intercept TCP keepalives
 
 Examples: gRPC keepalive pings, WebSocket ping/pong, database connection pools
-
----
-
-Return to [TCP](_index.md)

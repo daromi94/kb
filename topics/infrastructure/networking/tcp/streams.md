@@ -71,7 +71,3 @@ single bytes rapidly, TCP waits briefly to batch them into one segment.
 **Bad for**: interactive/real-time applications (SSH keystrokes, games)
 
 **Disable with**: `TCP_NODELAY` socket option
-
----
-
-Return to [TCP](_index.md)

@@ -59,7 +59,3 @@ application and Linux kernel have mapped as shared memory:
 - App writes a request
 - Kernel reads that same memory location
 - No expensive syscalls needed to pass data back and forth
-
----
-
-Return to [Async I/O](_index.md)

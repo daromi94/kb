@@ -100,7 +100,3 @@ There are specific contexts where "asking" is appropriate:
 - **User interfaces:** UIs often need to "ask" an object for its state to
   display it. The goal is ensuring the UI doesn't contain the logic for
   modifying that state
-
----
-
-Return to [Object design](_index.md)

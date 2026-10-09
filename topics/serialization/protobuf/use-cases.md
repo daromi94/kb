@@ -36,7 +36,3 @@ Smaller payloads mean less radio time and lower power consumption.
 | Browser-based web APIs             | Poor  |
 | Human-readable debugging needs     | Poor  |
 | Rapidly changing schemas           | Mixed |
-
----
-
-Return to [Protocol Buffers](_index.md)

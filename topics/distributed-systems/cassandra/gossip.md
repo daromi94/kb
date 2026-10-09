@@ -93,7 +93,3 @@ Without a central name node or master, gossip provides:
    definitions
 4. **Token metadata:** Keeping the token map updated so coordinators can route
    queries correctly
-
----
-
-Return to [Cassandra](_index.md)

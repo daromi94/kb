@@ -56,7 +56,3 @@ coordination for individual operations.
 | Region ownership | Single owner per region   | Multiple replicas, any can serve |
 | Failure handling | Master reassigns regions  | Requests route around failures   |
 | Complexity       | Simpler consistency model | More complex conflict resolution |
-
----
-
-Return to [HBase](_index.md)

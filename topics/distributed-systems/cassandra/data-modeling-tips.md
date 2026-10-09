@@ -85,7 +85,3 @@ more efficiently during compaction.
 | **Scaling**       | Vertical                  | Horizontal                  |
 | **Relationships** | Foreign keys              | Denormalization / bucketing |
 | **Write cost**    | Expensive (index updates) | Very cheap (sequential)     |
-
----
-
-Return to [Cassandra](_index.md)

@@ -57,7 +57,3 @@ failures, a second node fails before the first recovers. The cluster
 loses nodes faster than it restores them, quorum breaks, and the
 system stops serving. Bounding per-node state keeps MTTR well below
 MTBF and holds the cluster in the stable regime.
-
----
-
-Return to [Concepts](_index.md)

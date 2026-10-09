@@ -21,7 +21,3 @@ exposes the connection you could not see before.
 - Can the elements be rearranged? Once broken apart, can they be
   recombined in a different order or grouping to form a familiar
   pattern?
-
----
-
-Return to [Problem-solving](_index.md)

@@ -80,7 +80,3 @@ existing nodes to the new one to balance load.
 
 **Distributed joins.** Joining data across partitions on different machines
 is slow and often avoided in distributed database design.
-
----
-
-Return to [Concepts](_index.md)

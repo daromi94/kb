@@ -36,7 +36,3 @@ $\text{King} - \text{Man} + \text{Woman} \approx \text{Queen}$
 The direction from Man to Woman captures a relationship that, when
 applied to King, lands near Queen. The same principle holds for verb
 tense, geography, and other systematic relationships.
-
----
-
-Return to [AI engineering](_index.md)

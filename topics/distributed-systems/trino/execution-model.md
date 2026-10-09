@@ -68,7 +68,3 @@ Connector ---> Page ---> Operator ---> Page ---> Exchange ---> Page ---> ...
                          thread per               (no disk)
                          pipeline
 ```
-
----
-
-Return to [Trino](_index.md)

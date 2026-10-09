@@ -71,7 +71,3 @@ rejects any write carrying a token lower than the current one.
 | Overhead   | Grows with cluster size              | Fixed — core size independent of app size  |
 | Dependency | None                                 | Requires maintaining a separate cluster    |
 | Best for   | Databases and core infrastructure    | Microservices and distributed applications |
-
----
-
-Return to [Concepts](_index.md)

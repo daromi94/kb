@@ -84,7 +84,3 @@ sysctl net.ipv4.tcp_wmem
 sysctl -w net.ipv4.tcp_rmem="4096 131072 16777216"
 sysctl -w net.ipv4.tcp_wmem="4096 131072 16777216"
 ```
-
----
-
-Return to [TCP](_index.md)

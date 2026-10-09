@@ -58,7 +58,3 @@ does not consume more than half of `-XX:MaxDirectMemorySize`.
 
 Tuning matters mainly when the event loop count is unusual or direct
 memory is constrained.
-
----
-
-Return to [Netty](_index.md)

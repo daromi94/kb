@@ -65,7 +65,3 @@ between nodes.
 
 For general-purpose networking, the operational risk of a single misconfigured
 port outweighs the marginal throughput gain.
-
----
-
-Return to [Ethernet](_index.md)

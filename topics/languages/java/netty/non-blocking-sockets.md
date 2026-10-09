@@ -64,7 +64,3 @@ busy-waiting. It spikes CPU usage to 100% because the thread never yields.
 Non-blocking sockets must be paired with an I/O multiplexer (like `epoll`
 or Java's Selector) that blocks on behalf of all registered sockets and
 wakes the application only when a socket is genuinely ready.
-
----
-
-Return to [Netty](_index.md)

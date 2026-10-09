@@ -35,7 +35,3 @@ scales.
 This favors scaling out over scaling up. Enlarging nodes lengthens
 recovery and erodes survivability; adding bounded nodes holds recovery
 time constant, and survivability with it.
-
----
-
-Return to [Concepts](_index.md)

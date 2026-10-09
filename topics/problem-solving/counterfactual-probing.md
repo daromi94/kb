@@ -21,7 +21,3 @@ never stated.
 - If the scale doubled, would the underlying problem still exist?
 - If a simpler partial fix already addressed most of the issue,
   would the larger one still be justified?
-
----
-
-Return to [Problem-solving](_index.md)

@@ -29,7 +29,3 @@ TCP's reliability comes at a cost:
 
 UDP fires packets without guarantees but avoids these costs, making it suitable
 for real-time applications where occasional loss is acceptable.
-
----
-
-Return to [TCP](_index.md)

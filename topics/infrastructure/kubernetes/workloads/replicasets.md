@@ -46,7 +46,3 @@ back up.
 | Update strategy | Manual                      | Automated (RollingUpdate, Recreate) |
 | Self-healing    | Yes                         | Yes (via ReplicaSet)                |
 | Rollback        | No                          | Yes (tracks multiple ReplicaSets)   |
-
----
-
-Return to [Workloads](_index.md)

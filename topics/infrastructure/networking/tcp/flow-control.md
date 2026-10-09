@@ -59,7 +59,3 @@ $$1 \text{ Gbps} \times 100 \text{ ms} = 12.5 \text{ MB}$$
 The default 64KB window is far too small. Window Scaling option (RFC 1323)
 allows windows up to 1GB by applying a shift factor negotiated during
 handshake.
-
----
-
-Return to [TCP](_index.md)

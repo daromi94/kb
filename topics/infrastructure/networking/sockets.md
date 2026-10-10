@@ -601,6 +601,7 @@ The number in brackets identifies the socket inode, not its TCP port.
 
 The most useful way to think about Linux sockets is to separate three concepts:
 
+```text
 File descriptor
 
 How the process references the socket
@@ -612,5 +613,6 @@ Communication endpoint, operations, state, and buffers
 Transport and networking protocols
 
 TCP, UDP, IP, routing, and network device processing
+```
 
 A socket is not a packet, a network interface, a port, or necessarily a connection. It is the abstraction through which applications access communication services implemented by the kernel.

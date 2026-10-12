@@ -243,7 +243,7 @@ Garbage collectors operate on objects, not merely their application fields.
 Smaller objects can reduce the live heap footprint, which can translate into lower memory pressure and less work during copying and compaction.
 
 ```text
-                Smaller object headers
+               Smaller object header
                          |
               +----------+----------+
               |                     |

@@ -225,7 +225,7 @@ Compact objects (16 bytes each)
 +-----------+-----------+-----------+-----------+
 ```
 
-This is a simplified packing illustration, not a guarantee of how separate objects will be arranged in memory. The remaining 16 bytes may contain part of another object.
+This is a simplified packing illustration, not a guarantee of how separate objects will be arranged in memory.
 
 The consequences can include:
 

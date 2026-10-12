@@ -48,7 +48,7 @@ This illustrates two important concepts:
 
 Generalization is powerful, but it has limits. A model can recognize a new dog despite never seeing that particular dog during training. Recognizing an entirely new category is a different challenge.
 
-There is an important nuance for LLMs: a language does not necessarily have to appear explicitly in one particular training subset for a multilingual model to exhibit some ability in it, because of transfer learning and related representations. However, a language that is entirely absent or severely underrepresented will generally be much harder to handle reliably.
+There is an important nuance for large language models (LLMs): a language does not necessarily have to appear explicitly in one particular training subset for a multilingual model to exhibit some ability in it, because of transfer learning and related representations. However, a language that is entirely absent or severely underrepresented will generally be much harder to handle reliably.
 
 ## 2. Why collecting massive amounts of internet data is insufficient
 
@@ -204,6 +204,8 @@ Training data is sampled from some probability distribution, conventionally writ
 ```text
 P_train(X, Y)
 ```
+
+Here, `X` represents inputs and `Y` represents desired outputs. `P_train` describes how likely different input-output pairs are in the training data.
 
 But production requests may come from a different distribution:
 

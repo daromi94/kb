@@ -210,25 +210,22 @@ Smaller objects allow more application data to fit in the same cache capacity.
 ```text
 Traditional objects (24 bytes each)
 
-  CPU Cache
-  +----------------+----------------+
-  | Object A       | Object B       |
-  | 24 bytes       | 24 bytes       |
-  +----------------+----------------+
-  48 bytes of objects
-
+64-byte cache line
++-----------------+-----------------+-----------+
+| Object A        | Object B        | Remaining |
+| 24 bytes        | 24 bytes        | 16 bytes  |
++-----------------+-----------------+-----------+
 
 Compact objects (16 bytes each)
 
-  CPU Cache
-  +----------+----------+----------+----------+
-  | Object A | Object B | Object C | Object D |
-  | 16 bytes | 16 bytes | 16 bytes | 16 bytes |
-  +----------+----------+----------+----------+
-                  64 bytes
+64-byte cache line
++-----------+-----------+-----------+-----------+
+| Object A  | Object B  | Object C  | Object D  |
+| 16 bytes  | 16 bytes  | 16 bytes  | 16 bytes  |
++-----------+-----------+-----------+-----------+
 ```
 
-This is a simplified packing illustration, not a guarantee of how separate objects will be arranged in memory.
+This is a simplified packing illustration, not a guarantee of how separate objects will be arranged in memory. The remaining 16 bytes may contain part of another object.
 
 The consequences can include:
 

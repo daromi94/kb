@@ -102,6 +102,8 @@ An optional output layer might compute:
 y_t = W_hy * h_t + b_y
 ```
 
+Here, `W_hy` contains learned hidden-to-output weights, and `b_y` is the output bias vector.
+
 For token prediction, the output logits are typically converted into probabilities using softmax.
 
 These equations describe the classic Elman-style RNN implemented in frameworks such as PyTorch.
@@ -179,7 +181,7 @@ Here, each RNN box represents the same cell with the same trainable parameters, 
 
 There are not four independently learned networks.
 
-For example, if the hidden state has 128 dimensions, the recurrent weight matrix `W_hh` has shape `128 * 128`, regardless of whether the sequence contains 10 or 10,000 elements.
+For example, if the hidden state has 128 dimensions, the recurrent weight matrix `W_hh` has shape `128 x 128`, regardless of whether the sequence contains 10 or 10,000 elements.
 
 This parameter sharing is a defining characteristic of RNNs.
 

@@ -262,41 +262,7 @@ Smaller objects can reduce the live heap footprint, which can translate into low
 
 For example, benchmarks cited by the OpenJDK team reported a 22% heap reduction and 8% CPU reduction in one SPECjbb2015 configuration. Those are workload-specific measurements, not universal guarantees.
 
-## 5. What about synchronization and garbage collection?
-
-Shrinking an object header is more complicated than removing four bytes.
-
-The JVM must still support `synchronized`, `System.identityHashCode()`, and garbage collection.
-
-A particularly important difficulty is that the compact header contains class information that must remain available while the JVM performs these operations.
-
-### Synchronization
-
-Historically, some HotSpot locking implementations could replace the Mark Word with a pointer to lock-related information.
-
-With compact headers, overwriting the entire word would also overwrite the encoded class pointer.
-
-Consequently, lightweight locking primarily manipulates the lock-state bits while keeping the class information intact. Inflated monitors use external monitor structures and associated machinery.
-
-```text
-        Compact Object Header
-        +-----------------------------+
-        | Klass | Hash | ... | Lock   |
-        +-----------------------------+
-          ^                    ^
-          |                    |
-       Preserved           Lock state
-       during              can change
-       locking
-```
-
-### Garbage collection
-
-Moving collectors sometimes need to record where an object has been relocated.
-
-The compact-header design requires forwarding mechanisms that preserve or recover the object's class information. This is why the change required modifications across HotSpot's object representation, locking, and GC implementations, rather than merely changing a structure's size.
-
-## 6. Compact Object Headers vs. Compressed OOPs
+## 5. Compact Object Headers vs. Compressed OOPs
 
 These are two different JVM optimizations.
 
@@ -307,7 +273,7 @@ Compact Object Headers reduce the space required for the metadata stored inside 
 ```text
          Object A
   +---------------------+
-  | Compact Header      | <--- Compact Object Headers
+  | Compact Header      |
   |                     |
   | reference to B -----+-----+
   +---------------------+     |
@@ -315,43 +281,19 @@ Compact Object Headers reduce the space required for the metadata stored inside 
            Compressed OOP ----+
                               |
                               v
-                        Object B
-                 +---------------------+
-                 | Compact Header      |
-                 |                     |
-                 | Fields              |
-                 +---------------------+
+                          Object B
+                  +---------------------+
+                  | Compact Header      |
+                  |                     |
+                  | Fields              |
+                  +---------------------+
 ```
 
 Compact Object Headers use a further-compressed class pointer in their metadata word. That is different from compressing ordinary Java object references.
 
 Both optimizations improve memory efficiency, but they operate on different parts of an object's layout.
 
-## 7. How to enable Compact Object Headers
-
-The required flags depend on the Java version.
-
-| JDK   | Configuration                                                   |
-| ----- | --------------------------------------------------------------- |
-| 24    | `-XX:+UnlockExperimentalVMOptions -XX:+UseCompactObjectHeaders` |
-| 25–26 | `-XX:+UseCompactObjectHeaders`                                  |
-| 27    | Enabled by default                                              |
-
-With JDK 27, compact headers can still be disabled for comparison:
-
-```bash
-java -XX:-UseCompactObjectHeaders MyApplication
-```
-
-Check the setting:
-
-```bash
-java -XX:+PrintFlagsFinal -version | grep UseCompactObjectHeaders
-```
-
-On JDK 27, the default should show `true`.
-
-## 8. When does this optimization matter most?
+## 6. When does this optimization matter most?
 
 Compact Object Headers are particularly beneficial when the Java heap contains millions of small objects.
 

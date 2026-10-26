@@ -304,20 +304,20 @@ If those hot keys are reassigned during reconfiguration, fetching them once and 
 Consider:
 
 ```text
-                    Task B
-                 (New Owner)
-                      |
-                      v
-                  Key A used
-                      |
-                      v
-               Fetch from Task A
-                      |
-                      v
-                Store locally
-                      |
-                      v
-              Future accesses local
+Task B
+(New Owner)
+   |
+   v
+Key A used
+   |
+   v
+Fetch from Task A
+   |
+   v
+Store locally
+   |
+   v
+Future accesses local
 ```
 
 For a very popular key, the initial remote transfer cost is amortized over many subsequent accesses.
@@ -363,18 +363,18 @@ Caching benefits when recently accessed data is likely to be reused.
 A cache stores a subset of the total dataset:
 
 ```text
-               Incoming Request
-                       |
-                       v
-                 +-----------+
-                 | Cache     |
-                 +-----------+
-                  |         |
-                Hit        Miss
-                  |         |
-                  v         v
-               Return    Fetch from
-               data      backing store
+ Incoming Request
+        |
+        v
+  +-----------+
+  |   Cache   |
+  +-----------+
+  |           |
+ Hit         Miss
+  |           |
+  v           v
+Return    Fetch from
+data      backing store
 ```
 
 A small, stable working set can produce a high cache hit rate.

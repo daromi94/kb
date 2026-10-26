@@ -10,7 +10,7 @@ Consider a distributed system that maintains state for millions of customers.
 
 Each customer has a key and associated state:
 
-```
+```text
 Key: customer-42
 
 State:
@@ -22,7 +22,7 @@ Two questions arise:
 
 Ownership: Who is allowed to process this customer?
 
-```
+```text
            customer-42
                 |
                 v
@@ -37,7 +37,7 @@ Task B is responsible for processing records associated with `customer-42`.
 
 Location: Where are the actual bytes stored?
 
-```
+```text
            customer-42
                 |
                 v
@@ -54,7 +54,7 @@ Task A physically stores the customer's state.
 
 These assignments can differ.
 
-```
+```text
              customer-42
                   |
           +-------+-------+
@@ -79,13 +79,13 @@ Physical location determines whether accessing that state requires local storage
 
 Many distributed dataflow systems enforce the following relationship:
 
-```
+```text
         Owner(key) == Location(key)
 ```
 
 Consider a stateful operator with two tasks.
 
-```
+```text
        +---------------------+
        | Task A              |
        |                     |
@@ -116,7 +116,7 @@ Suppose key 2 is reassigned from Task A to Task B.
 
 Under a tightly coupled design, Task B cannot independently start processing key 2 until its associated state has been moved.
 
-```
+```text
 Before:
 
 Task A                       Task B
@@ -151,7 +151,7 @@ If the reassigned partition contains 100 GB of state, the system may need to mov
 
 A different architecture permits:
 
-```
+```text
         Owner(key) != Location(key)
 ```
 
@@ -161,7 +161,7 @@ Consider the same example.
 
 ### Step 1: Initial configuration
 
-```
+```text
 Task A                       Task B
 +----------------+           +----------------+
 |                |           |                |
@@ -177,7 +177,7 @@ Key 2 is reassigned to Task B.
 
 However, its state remains on Task A.
 
-```
+```text
 Task A                       Task B
 +----------------+           +----------------+
 |                |           |                |
@@ -198,7 +198,7 @@ Task B is now responsible for key 2, although Task A still holds its physical st
 
 When Task B receives a record for key 2, it must retrieve the corresponding state.
 
-```
+```text
              Task B
           (Owner of 2)
                 |
@@ -219,7 +219,7 @@ When Task B receives a record for key 2, it must retrieve the corresponding stat
 
 Once Task B has fetched the state, it can store it locally and process subsequent records without remote access.
 
-```
+```text
 Task A                       Task B
 +----------------+           +----------------+
 |                |           |                |
@@ -243,7 +243,7 @@ Consider two logical mappings.
 
 Ownership mapping
 
-```
+```text
 Key      Owner
 ----------------
 1        Task A
@@ -254,7 +254,7 @@ Key      Owner
 
 State location mapping
 
-```
+```text
 Key      Location
 ----------------
 1        Task A
@@ -271,7 +271,7 @@ These mappings need not be centralized. A task can maintain state-location infor
 
 Consider processing an event for key 2:
 
-```
+```text
                  Incoming record
                      key = 2
                          |
@@ -298,7 +298,7 @@ Consider processing an event for key 2:
 
 After migration, Task B updates its location metadata:
 
-```
+```text
 Before: key 2 -> Task A
 After:  key 2 -> Task B
 ```
@@ -317,13 +317,15 @@ The answer is exclusive logical ownership.
 
 A useful invariant is:
 
-\\[ \forall k,\quad |\operatorname{Owners}(k)|=1 \\]
+```text
+For every key k: count(Owners(k)) = 1
+```
 
 Every key has exactly one logical owner at any moment.
 
 During ownership transfer, the old owner must finish its existing operations before the new owner starts processing that key.
 
-```
+```text
 Time -------------------------------------------------->
 
 Task A:
@@ -358,7 +360,7 @@ Those records cannot be processed by Task A.
 
 Instead, Task A forwards them to the new owner.
 
-```
+```text
                   Upstream
                       |
                       | Old routing information
@@ -387,7 +389,7 @@ Initially, Task A owns and stores key 42.
 
 After the first reconfiguration:
 
-```
+```text
 Owner(42)    = Task B
 Location(42) = Task A
 ```
@@ -396,7 +398,7 @@ Assume Task B never accesses key 42, so no state migration occurs.
 
 A second reconfiguration assigns key 42 to Task C.
 
-```
+```text
 Owner(42)    = Task C
 Location(42) = Task A
 ```
@@ -405,7 +407,7 @@ Notice that Task B never physically stored the state.
 
 An inefficient design might discover the state by following historical ownership:
 
-```
+```text
 Task C ---> Task B ---> Task A
 ```
 
@@ -413,13 +415,13 @@ Instead, location metadata can be transferred along with ownership.
 
 Task C receives the actual location information:
 
-```
+```text
 Key 42 -> Task A
 ```
 
 It can fetch directly:
 
-```
+```text
 Task C -------------------> Task A
         Direct state fetch
 ```
@@ -438,14 +440,14 @@ However, suppose only 5 GB of the reassigned state is actively accessed afterwar
 
 With eager migration:
 
-```
+```text
 Ownership transferred: 200 GB worth of keys
 State migrated:        200 GB
 ```
 
 With lazy migration:
 
-```
+```text
 Ownership transferred: 200 GB worth of keys
 State migrated:          5 GB
 State left in place:   195 GB

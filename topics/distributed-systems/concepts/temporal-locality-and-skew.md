@@ -17,7 +17,7 @@ Consider a distributed system processing events associated with customer IDs.
 
 An example access sequence:
 
-```
+```text
 Time --->
 
 A, B, A, C, A, B, A, C, B, A
@@ -29,7 +29,7 @@ This workload exhibits temporal locality.
 
 Compare it with:
 
-```
+```text
 Time --->
 
 A, B, C, D, E, F, G, H, I, J
@@ -61,7 +61,7 @@ A working set is the collection of distinct keys accessed within a given time wi
 
 Suppose a stateful application maintains one million keys, but only 10,000 are accessed during the last minute.
 
-```
+```text
 Total key space: 1,000,000 keys
 
 +---------------------------------------+
@@ -89,7 +89,7 @@ The working set is not necessarily fixed.
 
 For example:
 
-```
+```text
 Time T1:
   Hot keys: A, B, C
 
@@ -134,7 +134,7 @@ This is a skewed workload.
 
 Uniform workload:
 
-```
+```text
 Key A: #################### 25%
 Key B: #################### 25%
 Key C: #################### 25%
@@ -143,7 +143,7 @@ Key D: #################### 25%
 
 Skewed workload:
 
-```
+```text
 Key A: ################################################## 70%
 Key B: ##############                                     20%
 Key C: #####                                               7%
@@ -156,7 +156,7 @@ Skew creates an important problem in distributed systems: equal numbers of keys 
 
 Suppose four tasks process events using key-based partitioning.
 
-```
+```text
                  Incoming Events
                         |
                         v
@@ -189,19 +189,21 @@ Adding workers does not automatically solve skew. If one exceptionally hot key m
 
 Many real-world workloads exhibit approximately Zipfian popularity distributions.
 
-A common model assigns the probability of accessing the key of rank \\(i\\) as:
+A common model assigns the probability of accessing the key of rank `i` as:
 
-\\[ P(i)=\frac{1/i^s}{\sum\_{j=1}^{N}1/j^s} \\]
+```text
+P(i) = (1 / i^s) / sum(j = 1..N, 1 / j^s)
+```
 
 Where:
 
-- \\(i\\) is the key's popularity rank.
-- \\(N\\) is the total number of keys.
-- \\(s\\) controls how skewed the distribution is.
+- `i` is the key's popularity rank.
+- `N` is the total number of keys.
+- `s` controls how skewed the distribution is.
 
-When \\(s=0\\), all keys are equally likely to be accessed.
+When `s=0`, all keys are equally likely to be accessed.
 
-As \\(s\\) increases, a small number of popular keys receive an increasingly large fraction of requests.
+As `s` increases, a small number of popular keys receive an increasingly large fraction of requests.
 
 This is why caches, storage servers, and distributed processing tasks can experience heavily concentrated load even when keys are evenly partitioned.
 
@@ -227,7 +229,7 @@ Suppose 100 keys are active for an extended period.
 
 Each active key receives approximately the same number of requests.
 
-```
+```text
 Time T1: A B C D A B C D
 Time T2: A B C D A B C D
 Time T3: A B C D A B C D
@@ -239,7 +241,7 @@ Temporal locality is high, but popularity is uniformly distributed across the ac
 
 ### Example B: High skew, rapidly changing hot keys
 
-```
+```text
 Time T1:
   A -> 90% of requests
 
@@ -273,7 +275,7 @@ But consider a workload with strong temporal locality.
 
 Only 2 GB of the reassigned state is actively accessed after the reconfiguration.
 
-```
+```text
                  Reconfiguration
                         |
              +----------+----------+
@@ -301,7 +303,7 @@ If those hot keys are reassigned during reconfiguration, fetching them once and 
 
 Consider:
 
-```
+```text
                     Task B
                  (New Owner)
                       |
@@ -331,7 +333,7 @@ The strongest opportunity arises when the workload has both:
 
 Consider:
 
-```
+```text
 Total state:       100 GB
 Active state:        5 GB
 Hot state:           1 GB
@@ -360,7 +362,7 @@ Caching benefits when recently accessed data is likely to be reused.
 
 A cache stores a subset of the total dataset:
 
-```
+```text
                Incoming Request
                        |
                        v
@@ -383,7 +385,7 @@ A rapidly changing working set may lead to repeated misses and evictions.
 
 A skewed workload can overload individual partitions.
 
-```
+```text
 Worker A: 95% CPU
 Worker B: 20% CPU
 Worker C: 15% CPU
@@ -406,7 +408,7 @@ These measurements serve different purposes: temporal-locality metrics help dete
 
 Temporal locality and skew should be considered together, but optimized differently.
 
-```
+```text
                     Workload
                        |
              +---------+---------+

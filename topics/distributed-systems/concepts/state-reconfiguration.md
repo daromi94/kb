@@ -10,7 +10,7 @@ The central challenge is that stateful tasks cannot be freely moved or reassigne
 
 Consider a distributed system that continuously processes transactions and maintains an account balance for each customer.
 
-```
+```text
                       Input Stream
                            |
                            v
@@ -38,7 +38,7 @@ The system maintains two important assignments:
 
 Initially:
 
-```
+```text
 Key     Task       Worker
 -------------------------
 1       A          Node 1
@@ -51,7 +51,7 @@ A reconfiguration changes one or both assignments.
 
 For example, a third task might be introduced to reduce the workload of Task A.
 
-```
+```text
 BEFORE
 
 Task A                 Task B
@@ -79,7 +79,7 @@ Long-running distributed applications rarely experience constant workloads.
 
 Consider a streaming system that processes millions of events per second.
 
-```
+```text
 Time -------------------------------------------------->
 
              Load increases
@@ -100,7 +100,7 @@ There are four common scenarios.
 
 Increase the number of tasks processing an operator.
 
-```
+```text
 BEFORE
 
           +-------------------+
@@ -125,7 +125,7 @@ Challenge: Newly created tasks need access to the state of their reassigned keys
 
 Decrease the number of tasks.
 
-```
+```text
 BEFORE
 
   +----------------+     +----------------+
@@ -154,7 +154,7 @@ Unlike scale-out, scale-in may require complete migration of the departing task'
 
 Redistribute keys without changing the number of tasks.
 
-```
+```text
 BEFORE
 
 Task A                     Task B
@@ -185,7 +185,7 @@ Rebalancing can be a more efficient solution.
 
 Move a task from one physical worker to another.
 
-```
+```text
 BEFORE
 
 Node 1                      Node 2
@@ -212,7 +212,7 @@ Challenge: The new execution location must obtain the existing state before the 
 
 Consider an ordinary stateless operator:
 
-```
+```text
 Output = f(Input)
 ```
 
@@ -222,7 +222,7 @@ A stateless task can often be replaced without transferring application state.
 
 A stateful operator, however, behaves differently:
 
-```
+```text
 NewState, Output = f(OldState, Input)
 ```
 
@@ -230,7 +230,7 @@ The result depends on previously accumulated information.
 
 Suppose Task A owns key 42:
 
-```
+```text
 Task A
 
 Key 42:
@@ -239,14 +239,14 @@ Key 42:
 
 Two events arrive:
 
-```
+```text
 Event 1: +50
 Event 2: -20
 ```
 
 The correct final balance is:
 
-```
+```text
 100 + 50 - 20 = 130
 ```
 
@@ -254,7 +254,7 @@ Now suppose ownership is transferred to Task B while events are being processed.
 
 If the transfer is not coordinated correctly:
 
-```
+```text
 Task A                       Task B
 Initial balance: 100         Initial balance: 100
 
@@ -277,7 +277,7 @@ A correct reconfiguration protocol must preserve several invariants.
 
 At every moment, each key must have exactly one logical owner.
 
-```
+```text
 Before:
 
 Key 42 ----> Task A
@@ -301,7 +301,7 @@ Reconfiguration must not introduce lost or duplicated records.
 
 Consider an event that is already traveling toward Task A when the system changes ownership to Task B.
 
-```
+```text
                   Event (key=42)
                          |
                          v
@@ -325,7 +325,7 @@ Stream-processing systems frequently use event timestamps and watermarks.
 
 Suppose Task B becomes responsible for a time window, but some older events are still traveling through Task A.
 
-```
+```text
 Upstream 1 ----> Task B
 
 Upstream 2 ----> Task A ----> Task B
@@ -347,7 +347,7 @@ A useful starting point is the traditional eager-state-migration approach.
 
 ### Traditional approach: move state before resuming
 
-```
+```text
         Reconfiguration requested
                     |
                     v
@@ -377,7 +377,7 @@ During this period, records may accumulate in upstream queues.
 
 A more adaptable architecture separates logical ownership from physical state location.
 
-```
+```text
         Reconfiguration requested
                     |
                     v
@@ -397,7 +397,7 @@ The key idea is that ownership transfer and state migration are two different op
 
 For example:
 
-```
+```text
                   Task A
               +-------------+
               | State: 42   |
@@ -442,7 +442,7 @@ This distinction is essential for designing non-disruptive distributed systems.
 
 Reconfiguration is typically coordinated by a control plane.
 
-```
+```text
                    +-------------------+
                    | Policy Controller |
                    |                   |
@@ -497,7 +497,7 @@ Therefore, avoiding a complete pause is not sufficient by itself.
 
 State reconfiguration involves three logically distinct changes:
 
-```
+```text
               RECONFIGURATION
                      |
           +----------+----------+

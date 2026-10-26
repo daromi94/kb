@@ -16,7 +16,7 @@ A distributed dataflow system executes computations organized as a directed grap
 
 Consider an application that continuously counts transactions per customer.
 
-```
+```text
                 Input Stream
                      |
                      v
@@ -49,7 +49,7 @@ Each task processes a subset of customer IDs.
 
 For example:
 
-```
+```text
 Task A                    Task B
 ------------------        ------------------
 Customer 1: 120           Customer 3: 250
@@ -73,7 +73,7 @@ Consequently, the placement of this state directly influences the cost of proces
 
 In an embedded-state architecture, each task maintains its assigned state locally.
 
-```
+```text
                Worker Node 1
        +-----------------------------+
        |                             |
@@ -97,7 +97,7 @@ State might be maintained in memory, a local embedded key-value database, or a c
 
 A record can be processed without making a network request to retrieve its state.
 
-```
+```text
 Record arrives
       |
       v
@@ -125,7 +125,7 @@ The system decides to split its workload between Task A and a new Task C.
 
 Before:
 
-```
+```text
 Task A
 +----------------------+
 | Customer 1           |
@@ -137,7 +137,7 @@ Task A
 
 After:
 
-```
+```text
 Task A                    Task C
 +------------------+      +------------------+
 | Customer 1       |      | Customer 3       |
@@ -149,7 +149,7 @@ Task C now owns customers 3 and 4.
 
 But their state is still stored inside Task A.
 
-```
+```text
 Task A                          Task C
 +--------------------+          +--------------------+
 | Customer 1         |          |                    |
@@ -183,7 +183,7 @@ An alternative architecture separates computation from storage.
 
 Tasks become clients of an independent state service.
 
-```
+```text
              Compute Layer
 
      +----------+      +----------+
@@ -215,7 +215,7 @@ Suppose Task A is overloaded.
 
 A new Task C is introduced and assigned some of Task A's customers.
 
-```
+```text
 BEFORE
 
 Task A ----+
@@ -241,7 +241,7 @@ This is a significant advantage for long-running applications requiring frequent
 
 Every state access may now involve a network operation.
 
-```
+```text
 Record arrives
       |
       v
@@ -275,7 +275,7 @@ Consider a stream-processing application that runs continuously for months.
 
 During its lifetime, workload characteristics may change significantly.
 
-```
+```text
 Time -------------------------------------------------->
 
 Morning       Afternoon       Evening        Night
@@ -328,7 +328,7 @@ Physical location determines where the state associated with that key is actuall
 
 Consider:
 
-```
+```text
                   Logical Ownership
 
                   Key 42
@@ -351,7 +351,7 @@ This arrangement is possible if the system maintains metadata describing the phy
 
 For example:
 
-```
+```text
                       Task B
                     (Key owner)
                          |
@@ -383,7 +383,7 @@ Moving responsibility for computation does not inherently require moving the dat
 
 Traditional embedded-state systems often couple the two operations:
 
-```
+```text
 Reconfiguration
        |
        v
@@ -398,7 +398,7 @@ Resume processing
 
 A decoupled design allows the operations to happen independently:
 
-```
+```text
 Reconfiguration
        |
        v

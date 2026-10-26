@@ -17,7 +17,7 @@ There are two distinct components.
 
 Compute executes operations:
 
-```
+```text
 Read balance
 Apply transaction
 Validate constraints
@@ -27,7 +27,7 @@ Generate result
 
 Data represents the information those operations depend on:
 
-```
+```text
 account-1 -> balance: 1000
 account-2 -> balance: 2500
 account-3 -> balance: 4000
@@ -35,7 +35,7 @@ account-3 -> balance: 4000
 
 Conceptually:
 
-```
+```text
              +------------------+
              | Compute          |
              |                  |
@@ -65,7 +65,7 @@ Data locality is the principle of minimizing the distance between computation an
 
 Consider a cluster with two workers.
 
-```
+```text
 +-----------------------+
 | Worker A              |
 |                       |
@@ -104,7 +104,7 @@ This is useful because local access avoids additional network operations.
 
 There is a hierarchy of access costs:
 
-```
+```text
                CPU Registers
                      |
                   L1 Cache
@@ -137,7 +137,7 @@ If processing every record requires remote state access, network overhead can be
 
 With local state:
 
-```
+```text
 Record
    |
    v
@@ -152,7 +152,7 @@ Process
 
 With remote state:
 
-```
+```text
 Record
    |
    v
@@ -184,7 +184,7 @@ Locality provides efficient access, but tightly coupling computation and data ha
 
 Suppose Task A owns 100 GB of state.
 
-```
+```text
 Worker A
 +------------------------+
 |                        |
@@ -203,7 +203,7 @@ The scheduler wants to relocate Task A to Worker B.
 
 If computation and data must remain colocated:
 
-```
+```text
 Worker A                       Worker B
 +-------------------+          +-------------------+
 |                   |          |                   |
@@ -224,7 +224,7 @@ The system cannot relocate the task cheaply because its state is tied to the old
 
 With independent computation and storage:
 
-```
+```text
 BEFORE
 
 +-------------+
@@ -267,7 +267,7 @@ Consider two architectures.
 
 ### Architecture A: tightly coupled compute and state
 
-```
+```text
 +--------------------+
 | Worker 1           |
 |                    |
@@ -293,7 +293,7 @@ But if the system wants to change task ownership or placement, it may need to re
 
 ### Architecture B: disaggregated compute and state
 
-```
+```text
        COMPUTE LAYER
 
 +-------------+  +-------------+
@@ -341,7 +341,7 @@ Consider a system with two tasks.
 
 Initially:
 
-```
+```text
 Task A                          Task B
 +-------------------+           +-------------------+
 | Owns: 1, 2        |           | Owns: 3, 4        |
@@ -354,7 +354,7 @@ Now suppose key 2 is reassigned to Task B.
 
 Instead of immediately moving its state, the system transfers logical ownership.
 
-```
+```text
 Task A                          Task B
 +-------------------+           +-------------------+
 | Owns: 1           |           | Owns: 2, 3, 4     |
@@ -367,7 +367,7 @@ Task B is authorized to process key 2, but the associated state remains physical
 
 When Task B first needs key 2:
 
-```
+```text
 Task B                         Task A
    |                              |
    |---- Fetch state: key 2 ----->|
@@ -383,7 +383,7 @@ Process record                    |
 
 Subsequent operations access local state.
 
-```
+```text
 Task A                          Task B
 +-------------------+           +-------------------+
 | Owns: 1           |           | Owns: 2, 3, 4     |
@@ -407,7 +407,7 @@ The working set is the subset of data actively accessed during a particular peri
 
 Suppose a system maintains 1 TB of state.
 
-```
+```text
 Total State: 1 TB
 
 +----------------------------------+
@@ -429,7 +429,7 @@ A lazy migration strategy can avoid moving inactive state, migrating only reassi
 
 If only 10 GB of the reassigned state becomes active:
 
-```
+```text
 Eager migration
 
 500 GB transferred
@@ -457,11 +457,15 @@ The architecture can be viewed as balancing two categories of cost.
 
 Normal execution cost is paid while processing records:
 
-\\[ C\_{\text{execution}} = C\_{\text{compute}} + C\_{\text{state access}} \\]
+```text
+C_execution = C_compute + C_state_access
+```
 
 Reconfiguration cost is paid when the deployment changes:
 
-\\[ C\_{\text{reconfiguration}} = C\_{\text{coordination}} + C\_{\text{migration}} + C\_{\text{disruption}} \\]
+```text
+C_reconfiguration = C_coordination + C_migration + C_disruption
+```
 
 A locality-oriented system typically minimizes state-access cost but may incur higher migration and disruption costs.
 
@@ -483,7 +487,7 @@ Shared state: Accessed by multiple computational components. Keeping it in one l
 
 This suggests a more general approach:
 
-```
+```text
                  Data
                    |
                    v

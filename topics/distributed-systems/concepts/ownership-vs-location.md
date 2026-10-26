@@ -23,14 +23,14 @@ Two questions arise:
 Ownership: Who is allowed to process this customer?
 
 ```text
-           customer-42
-                |
-                v
-            +--------+
-            | Task B |
-            +--------+
+customer-42
+   |
+   v
++--------+
+| Task B |
++--------+
 
-         Logical owner
+Logical owner
 ```
 
 Task B is responsible for processing records associated with `customer-42`.
@@ -38,16 +38,16 @@ Task B is responsible for processing records associated with `customer-42`.
 Location: Where are the actual bytes stored?
 
 ```text
-           customer-42
-                |
-                v
-            +--------+
-            | Task A |
-            |        |
-            | State  |
-            +--------+
+customer-42
+   |
+   v
++--------+
+| Task A |
+|        |
+| State  |
++--------+
 
-        Physical location
+Physical location
 ```
 
 Task A physically stores the customer's state.
@@ -80,28 +80,27 @@ Physical location determines whether accessing that state requires local storage
 Many distributed dataflow systems enforce the following relationship:
 
 ```text
-        Owner(key) == Location(key)
+Owner(key) == Location(key)
 ```
 
 Consider a stateful operator with two tasks.
 
 ```text
-       +---------------------+
-       | Task A              |
-       |                     |
-       | Owns keys: 1, 2     |
-       |                     |
-       | Stores state: 1, 2  |
-       +---------------------+
++---------------------+
+| Task A              |
+|                     |
+| Owns keys: 1, 2     |
+|                     |
+| Stores state: 1, 2  |
++---------------------+
 
-
-       +---------------------+
-       | Task B              |
-       |                     |
-       | Owns keys: 3, 4     |
-       |                     |
-       | Stores state: 3, 4  |
-       +---------------------+
++---------------------+
+| Task B              |
+|                     |
+| Owns keys: 3, 4     |
+|                     |
+| Stores state: 3, 4  |
++---------------------+
 ```
 
 This design is attractive because it provides two benefits.
@@ -152,7 +151,7 @@ If the reassigned partition contains 100 GB of state, the system may need to mov
 A different architecture permits:
 
 ```text
-        Owner(key) != Location(key)
+Owner(key) != Location(key)
 ```
 
 The system can reassign a key to a new task while leaving its state on the previous task.
@@ -199,22 +198,22 @@ Task B is now responsible for key 2, although Task A still holds its physical st
 When Task B receives a record for key 2, it must retrieve the corresponding state.
 
 ```text
-             Task B
-          (Owner of 2)
-                |
-                | Fetch state for key 2
-                |
-                v
-             Task A
-          (Stores key 2)
-                |
-                | Return state
-                |
-                v
-             Task B
-                |
-                v
-          Process record
+Task B
+(Owner of 2)
+   |
+   | Fetch state for key 2
+   |
+   v
+Task A
+(Stores key 2)
+   |
+   | Return state
+   |
+   v
+Task B
+   |
+   v
+Process record
 ```
 
 Once Task B has fetched the state, it can store it locally and process subsequent records without remote access.
@@ -272,28 +271,28 @@ These mappings need not be centralized. A task can maintain state-location infor
 Consider processing an event for key 2:
 
 ```text
-                 Incoming record
-                     key = 2
-                         |
-                         v
-                  Routing Table
-                         |
-                         v
-                      Task B
-                         |
-                         v
-                  Location Lookup
-                         |
-                   key 2 -> A
-                         |
-                         v
-                  Fetch from A
-                         |
-                         v
-                  Store locally
-                         |
-                         v
-                  Process event
+Incoming record
+key = 2
+   |
+   v
+Routing Table
+   |
+   v
+Task B
+   |
+   v
+Location Lookup
+   |
+key 2 -> A
+   |
+   v
+Fetch from A
+   |
+   v
+Store locally
+   |
+   v
+Process event
 ```
 
 After migration, Task B updates its location metadata:
@@ -361,18 +360,18 @@ Those records cannot be processed by Task A.
 Instead, Task A forwards them to the new owner.
 
 ```text
-                  Upstream
-                      |
-                      | Old routing information
-                      v
-                   Task A
-                      |
-                      | Forward key 2
-                      v
-                   Task B
-                      |
-                      v
-                 Process key 2
+Upstream
+   |
+   | Old routing information
+   v
+Task A
+   |
+   | Forward key 2
+   v
+Task B
+   |
+   v
+Process key 2
 ```
 
 Eventually, upstream routing is updated, so new records reach Task B directly.
@@ -423,7 +422,7 @@ It can fetch directly:
 
 ```text
 Task C -------------------> Task A
-        Direct state fetch
+       direct state fetch
 ```
 
 This is a single-hop state lookup, regardless of how many times the key has changed owners.

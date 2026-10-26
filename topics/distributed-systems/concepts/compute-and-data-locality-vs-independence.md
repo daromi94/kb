@@ -36,23 +36,23 @@ account-3 -> balance: 4000
 Conceptually:
 
 ```text
-             +------------------+
-             | Compute          |
-             |                  |
-             | Execute logic    |
-             | Transform data   |
-             | Produce results  |
-             +------------------+
-                      |
-                      | Read / Write
-                      v
-             +------------------+
-             | Data             |
-             |                  |
-             | Application state|
-             | Stored records   |
-             | Indexes          |
-             +------------------+
++------------------+
+| Compute          |
+|                  |
+| Execute logic    |
+| Transform data   |
+| Produce results  |
++------------------+
+      |
+      | Read / Write
+      v
++------------------+
+| Data             |
+|                  |
+| Application state|
+| Stored records   |
+| Indexes          |
++------------------+
 ```
 
 The compute component needs data to execute its operations, but there is no fundamental requirement that both reside on the same machine.
@@ -105,21 +105,21 @@ This is useful because local access avoids additional network operations.
 There is a hierarchy of access costs:
 
 ```text
-               CPU Registers
-                     |
-                  L1 Cache
-                     |
-                  L2 Cache
-                     |
-                  L3 Cache
-                     |
-                  Local DRAM
-                     |
-                  Local SSD
-                     |
-               Network Access
-                     |
-              Remote Storage
+CPU Registers
+   |
+L1 Cache
+   |
+L2 Cache
+   |
+L3 Cache
+   |
+Local DRAM
+   |
+Local SSD
+   |
+Network Access
+   |
+Remote Storage
 ```
 
 This is a conceptual hierarchy, not a strict latency ranking for every device and workload. A local SSD operation, for example, can be slower than a remote memory access.
@@ -213,7 +213,7 @@ Worker A                       Worker B
 +-------------------+          +-------------------+
          |                               ^
          |                               |
-         +------ Move 100 GB ------------+
+         +------------ 100 GB -----------+
 ```
 
 A computational placement decision has become a storage migration problem.
@@ -294,22 +294,21 @@ But if the system wants to change task ownership or placement, it may need to re
 ### Architecture B: disaggregated compute and state
 
 ```text
-       COMPUTE LAYER
+COMPUTE LAYER
 
-+-------------+  +-------------+
-| Compute A   |  | Compute B   |
-+-------------+  +-------------+
++-------------+   +-------------+
+| Compute A   |   | Compute B   |
++-------------+   +-------------+
        |                |
        +--------+-------+
                 |
                 | Network
                 v
+   +-------------------------+
+   | Distributed State Store |
+   +-------------------------+
 
-       STORAGE LAYER
-
-+-------------------------+
-| Distributed State Store |
-+-------------------------+
+STORAGE LAYER
 ```
 
 This architecture optimizes independence.
@@ -410,13 +409,10 @@ Suppose a system maintains 1 TB of state.
 ```text
 Total State: 1 TB
 
-+----------------------------------+
-|                                  |
-|  Hot State: 20 GB                |
-|                                  |
-|  Cold State: 980 GB              |
-|                                  |
-+----------------------------------+
++--------------------+
+| Hot State:   20 GB |
+| Cold State: 980 GB |
++--------------------+
 ```
 
 Only 20 GB is frequently accessed.
@@ -488,7 +484,7 @@ Shared state: Accessed by multiple computational components. Keeping it in one l
 This suggests a more general approach:
 
 ```text
-                 Data
+                  Data
                    |
                    v
            Access Characteristics
@@ -501,7 +497,7 @@ This suggests a more general approach:
           v        v        v
         Local    Leave     Shared or
         State    in place  Replicated
-                            Storage
+                           Storage
 ```
 
 This is a conceptual policy rather than a universal rule.

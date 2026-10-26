@@ -42,7 +42,7 @@ Consider an application that continuously counts transactions per customer.
               +------+------+
                      |
                      v
-                Output
+                   Output
 ```
 
 Each task processes a subset of customer IDs.
@@ -74,21 +74,21 @@ Consequently, the placement of this state directly influences the cost of proces
 In an embedded-state architecture, each task maintains its assigned state locally.
 
 ```text
-               Worker Node 1
-       +-----------------------------+
-       |                             |
-       |   +---------------------+   |
-       |   | Task A              |   |
-       |   |                     |   |
-       |   | Computation         |   |
-       |   |      |              |   |
-       |   |      v              |   |
-       |   | Local State         |   |
-       |   | Customer 1: 120     |   |
-       |   | Customer 2:  80     |   |
-       |   +---------------------+   |
-       |                             |
-       +-----------------------------+
+Worker Node 1
++-----------------------------+
+|                             |
+|   +---------------------+   |
+|   | Task A              |   |
+|   |                     |   |
+|   | Computation         |   |
+|   |      |              |   |
+|   |      v              |   |
+|   | Local State         |   |
+|   | Customer 1: 120     |   |
+|   | Customer 2:  80     |   |
+|   +---------------------+   |
+|                             |
++-----------------------------+
 ```
 
 State might be maintained in memory, a local embedded key-value database, or a combination of memory and local disk.
@@ -150,15 +150,14 @@ Task C now owns customers 3 and 4.
 But their state is still stored inside Task A.
 
 ```text
-Task A                          Task C
-+--------------------+          +--------------------+
-| Customer 1         |          |                    |
-| Customer 2         |          |                    |
-| Customer 3 --------+--------->| Customer 3         |
-| Customer 4 --------+--------->| Customer 4         |
-+--------------------+          +--------------------+
-
-             State migration
+Task A                              Task C
++--------------------+              +--------------------+
+| Customer 1         |              |                    |
+| Customer 2         |              |                    |
+| Customer 3         |------------->| Customer 3         |
+| Customer 4         |------------->| Customer 4         |
++--------------------+              +--------------------+
+                     state migration
 ```
 
 In a conventional embedded-state architecture, the state must be transferred before Task C can independently process those customers.
@@ -276,7 +275,7 @@ Consider a stream-processing application that runs continuously for months.
 During its lifetime, workload characteristics may change significantly.
 
 ```text
-Time -------------------------------------------------->
+Time ----------------------------------------------->
 
 Morning       Afternoon       Evening        Night
 
@@ -329,20 +328,20 @@ Physical location determines where the state associated with that key is actuall
 Consider:
 
 ```text
-                  Logical Ownership
+Logical Ownership
 
-                  Key 42
-                     |
-                     v
-                  Task B
+Key 42
+|
+v
+Task B
 
 
-                  Physical Location
+Physical Location
 
-                  Key 42
-                     |
-                     v
-                  Task A
+Key 42
+|
+v
+Task A
 ```
 
 Task B owns key 42, but Task A still physically stores its state.
@@ -352,20 +351,20 @@ This arrangement is possible if the system maintains metadata describing the phy
 For example:
 
 ```text
-                      Task B
-                    (Key owner)
-                         |
-                         | Lookup Key 42
-                         v
-                  +---------------+
-                  | Location Map  |
-                  | 42 -> Task A  |
-                  +---------------+
-                         |
-                         | Fetch state
-                         v
-                      Task A
-                  (State holder)
+   Task B
+ (Key owner)
+      |
+      | Lookup Key 42
+      v
++--------------+
+| Location Map |
+| 42 -> Task A |
++--------------+
+      |
+      | Fetch state
+      v
+   Task A
+(State holder)
 ```
 
 This decoupling introduces an interesting design opportunity:

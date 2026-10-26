@@ -1,4 +1,4 @@
-# State Reconfiguration in Distributed Systems
+# State reconfiguration
 
 State reconfiguration is the process of changing how stateful computation is distributed across tasks and workers while preserving the correctness of an executing application.
 
@@ -87,7 +87,7 @@ Time -------------------------------------------------->
                    v
 Input rate     100K/s -----> 500K/s -----> 100K/s
 
-Tasks              4  ----->   12  ----->    4
+Tasks               4 ----->     12 ----->      4
 ```
 
 Without reconfiguration, the system would either become overloaded during traffic spikes or waste resources during periods of low activity.
@@ -103,18 +103,18 @@ Increase the number of tasks processing an operator.
 ```text
 BEFORE
 
-          +-------------------+
-          | Task A            |
-          | Keys: 1, 2, 3, 4  |
-          +-------------------+
++-------------------+
+| Task A            |
+| Keys: 1, 2, 3, 4  |
++-------------------+
 
 
 AFTER
 
-  +----------------+     +----------------+
-  | Task A         |     | Task B         |
-  | Keys: 1, 2     |     | Keys: 3, 4     |
-  +----------------+     +----------------+
++----------------+     +----------------+
+| Task A         |     | Task B         |
+| Keys: 1, 2     |     | Keys: 3, 4     |
++----------------+     +----------------+
 ```
 
 Purpose: Increase parallelism and processing capacity.
@@ -128,20 +128,20 @@ Decrease the number of tasks.
 ```text
 BEFORE
 
-  +----------------+     +----------------+
-  | Task A         |     | Task B         |
-  | Keys: 1, 2     |     | Keys: 3, 4     |
-  +----------------+     +----------------+
++----------------+     +----------------+
+| Task A         |     | Task B         |
+| Keys: 1, 2     |     | Keys: 3, 4     |
++----------------+     +----------------+
 
 
 AFTER
 
-          +-------------------+
-          | Task A            |
-          | Keys: 1, 2, 3, 4  |
-          +-------------------+
++-------------------+
+| Task A            |
+| Keys: 1, 2, 3, 4  |
++-------------------+
 
-          Task B terminated
+Task B terminated
 ```
 
 Purpose: Reduce resource consumption.
@@ -302,17 +302,17 @@ Reconfiguration must not introduce lost or duplicated records.
 Consider an event that is already traveling toward Task A when the system changes ownership to Task B.
 
 ```text
-                  Event (key=42)
-                         |
-                         v
-                      Task A
-                         |
-                         | Ownership moved
-                         v
-                      Task B
-                         |
-                         v
-                  Process event
+Event (key=42)
+   |
+   v
+Task A
+   |
+   | Ownership moved
+   v
+Task B
+   |
+   v
+Process event
 ```
 
 The event must be processed exactly once, even though the original routing decision was made before reconfiguration.
@@ -348,19 +348,19 @@ A useful starting point is the traditional eager-state-migration approach.
 ### Traditional approach: move state before resuming
 
 ```text
-        Reconfiguration requested
-                    |
-                    v
-          Pause affected tasks
-                    |
-                    v
-          Transfer required state
-                    |
-                    v
-          Update routing tables
-                    |
-                    v
-            Resume processing
+Reconfiguration requested
+   |
+   v
+Pause affected tasks
+   |
+   v
+Transfer required state
+   |
+   v
+Update routing tables
+   |
+   v
+Resume processing
 ```
 
 This approach is relatively straightforward.
@@ -378,19 +378,19 @@ During this period, records may accumulate in upstream queues.
 A more adaptable architecture separates logical ownership from physical state location.
 
 ```text
-        Reconfiguration requested
-                    |
-                    v
-         Transfer key ownership
-                    |
-                    v
-        Forward records to new owner
-                    |
-                    v
-         Update upstream routing
-                    |
-                    v
-         Fetch state when needed
+Reconfiguration requested
+   |
+   v
+Transfer key ownership
+   |
+   v
+Forward records to new owner
+   |
+   v
+Update upstream routing
+   |
+   v
+Fetch state when needed
 ```
 
 The key idea is that ownership transfer and state migration are two different operations.
@@ -398,19 +398,19 @@ The key idea is that ownership transfer and state migration are two different op
 For example:
 
 ```text
-                  Task A
-              +-------------+
-              | State: 42   |
-              | State: 43   |
-              +-------------+
-                    |
-                    | Ownership of 42 moves
-                    v
-                  Task B
-              +-------------+
-              | Owns: 42    |
-              | State: none |
-              +-------------+
+Task A
++-------------+
+| State: 42   |
+| State: 43   |
++-------------+
+   |
+   | Ownership of 42 moves
+   v
+Task B
++-------------+
+| Owns: 42    |
+| State: none |
++-------------+
 ```
 
 Task B can become the owner of key 42 without first moving the associated bytes.

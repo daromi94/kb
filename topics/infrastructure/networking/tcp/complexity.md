@@ -136,13 +136,10 @@ The sender needs to maintain sequence numbers, information about outstanding dat
 
 This generates several costs:
 
-Memory: Outstanding data must remain available for retransmission, along with bookkeeping structures.
-
-CPU: ACK processing updates transport state, determines which bytes are acknowledged, and may update congestion-control or loss-recovery information.
-
-Cache: Connection state, packet metadata, and buffering structures consume cache capacity and memory bandwidth.
-
-Network: ACKs consume some reverse-path bandwidth and processing capacity.
+- **Memory:** Outstanding data must remain available for retransmission, along with bookkeeping structures.
+- **CPU:** ACK processing updates transport state, determines which bytes are acknowledged, and may update congestion-control or loss-recovery information.
+- **Cache:** Connection state, packet metadata, and buffering structures consume cache capacity and memory bandwidth.
+- **Network:** ACKs consume some reverse-path bandwidth and processing capacity.
 
 Importantly, TCP does not wait for an ACK after every segment before sending the next one. It uses sliding windows that permit multiple segments to remain in flight simultaneously. ACKs may acknowledge multiple segments at once.
 

@@ -222,8 +222,7 @@ In a conventional Linux kernel, a hardware interrupt can cause the CPU to execut
 Hardware interrupt
        |
        v
-CPU enters
-IRQ context
+CPU enters IRQ context
        |
        v
 IRQ handler

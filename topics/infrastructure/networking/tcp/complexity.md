@@ -1,4 +1,4 @@
-# TCP: Complexity
+# TCP Complexity
 
 TCP is expensive because it provides a strong set of guarantees over a network that is fundamentally unreliable.
 
@@ -13,17 +13,15 @@ The Internet Protocol (IP) provides a best-effort datagram service. IP does not 
 Consider an application sending three pieces of data:
 
 ```text
-             Sender                           Receiver
+Sender                                  Receiver
 
-             [ A ] -------------------------> [ A ]
+[ A ] --------------------------------> [ A ]
 
-             [ B ] ------------ X              Lost
+[ B ] --------------- X                 Lost
 
-             [ C ] -------------------------> [ C ]
+[ C ] --------------------------------> [ C ]
 
-                         Receiver observes:
-
-                              A, C
+Receiver observes: A, C
 ```
 
 Several things can go wrong:
@@ -40,20 +38,18 @@ TCP was designed to hide these problems from applications.
 Instead of exposing packet delivery directly, TCP provides an abstraction:
 
 ```text
- Application A                            Application B
-     |                                         ^
-     | write("ABC")                            | read()
-     v                                         |
-  +-------+                                 +-------+
-  |  TCP  |                                 |  TCP  |
-  +-------+                                 +-------+
-     |                                         ^
-     |     Unreliable IP network               |
-     +-----------------------------------------+
+Application A                           Application B
+    |                                       ^
+    | write("ABC")                          | read()
+    v                                       |
++-------+                               +-------+
+|  TCP  |                               |  TCP  |
++-------+                               +-------+
+    |                                       ^
+    |                                       |
+    +-------- Unreliable IP network --------+
 
-                 Application B sees:
-
-                        "ABC"
+Application B sees: "ABC"
 ```
 
 If data is lost, TCP attempts to recover it. If segments arrive out of order, TCP reconstructs the original stream before exposing it to the application.
@@ -109,32 +105,31 @@ Imagine sending 8 KiB through an established TCP connection.
 TCP cannot simply discard the data after transmitting it. Until the receiver acknowledges it, the sender must retain the ability to retransmit it.
 
 ```text
-                    TCP sender
+TCP sender
 
- Application
-     |
-     | write(8 KiB)
-     v
- +-----------------------------------+
- | TCP send / retransmission state   |
- |                                   |
- | Data not yet acknowledged         |
- |                                   |
- |  [ S1 ][ S2 ][ S3 ][ S4 ] ...     |
- +-----------------------------------+
-     |
-     | Transmit segments
-     v
-   Network -------------------------> Receiver
-     ^                                  |
-     |                                  |
-     +------------- ACK ----------------+
-     |
-     v
- TCP processes ACK
- Advances acknowledged sequence
- Releases acknowledged data/state
- Updates congestion and RTT information
+Application
+    |
+    | write(8 KiB)
+    v
++-----------------------------------+
+| TCP send / retransmission state   |
+|                                   |
+| Data not yet acknowledged         |
+|                                   |
+| [ S1 ][ S2 ][ S3 ][ S4 ] ...      |
++-----------------------------------+
+    |
+    | Transmit segments
+    v
+Network ------------------------------> Receiver
+                                            |
+    +----------------- ACK -----------------+
+    |
+    v
+TCP processes ACK
+Advances acknowledged sequence
+Releases acknowledged data/state
+Updates congestion and RTT information
 ```
 
 The sender needs to maintain sequence numbers, information about outstanding data, retransmission state, and RTT measurements.
@@ -160,22 +155,22 @@ This is one of TCP's most consequential semantic costs.
 Consider three TCP segments carrying consecutive ranges of the byte stream:
 
 ```text
-Sender                                    Receiver
+Sender                                  Receiver
 
-  S1 ---------------------------------->  S1 arrived
+S1 -----------------------------------> S1 arrived
 
-  S2 ---------------- X                   S2 lost
+S2 --------------- X                    S2 lost
 
-  S3 ---------------------------------->  S3 arrived
+S3 -----------------------------------> S3 arrived
 
 Receiver's TCP state:
 
-  [ S1 ][ missing S2 ][ S3 received ]
-    |
-    v
-  Deliver S1
-  Cannot deliver S3 as subsequent stream bytes
-  Wait for S2
+[ S1 ][ missing S2 ][ S3 received ]
+   |
+   v
+Deliver S1
+Cannot deliver S3 as subsequent stream bytes
+Wait for S2
 ```
 
 Even though S3 has arrived, the receiver cannot expose the bytes after the missing gap through the ordinary TCP stream interface.
@@ -212,28 +207,28 @@ Outstanding data <~ min(cwnd, rwnd)
 Consider:
 
 ```text
-                 Sender
+Sender
 
-   Application has 1 MiB available
-                 |
-                 v
-           +-----------+
-           | TCP       |
-           |           |
-           | cwnd      |  Limits network usage
-           | rwnd      |  Limits receiver usage
-           +-----------+
-                 |
-                 | Allowed transmission
-                 v
-          Shared network
-                 |
-                 v
-              Receiver
-                 |
-                 | ACK feedback
-                 v
-        Sender updates state
+Application has 1 MiB available
+      |
+      v
++-----------+
+| TCP       |
+|           |
+| cwnd      |  Limits network usage
+| rwnd      |  Limits receiver usage
++-----------+
+      |
+      | Allowed transmission
+      v
+Shared network
+      |
+      v
+  Receiver
+      |
+      | ACK feedback
+      v
+Sender updates state
 ```
 
 A sender cannot assume that a fast local NIC means the entire path has unlimited capacity.
@@ -257,32 +252,32 @@ Even if no packets are lost, no retransmissions occur, and congestion control is
 A simplified TCP data path:
 
 ```text
-     Sender host                         Receiver host
+Sender host                             Receiver host
 
- +------------------+                 +------------------+
- | Application      |                 | Application      |
- +------------------+                 +------------------+
-          |                                     ^
-          | send()                              | recv()
-          v                                     |
- +------------------+                 +------------------+
- | Kernel           |                 | Kernel           |
- |                  |                 |                  |
- | Copy / map data  |                 | Socket buffers   |
- | TCP state        |                 | TCP processing   |
- | Socket buffers   |                 | Sequence checks  |
- | Segment handling |                 | ACK generation   |
- | IP processing    |                 | IP processing    |
- +------------------+                 +------------------+
-          |                                     ^
-          v                                     |
- +------------------+                 +------------------+
- | NIC driver       |                 | NIC driver       |
- | TX queue         |                 | RX queue / NAPI  |
- +------------------+                 +------------------+
-          |                                     ^
-          v                                     |
-        NIC -------------- Network ------------ NIC
++------------------+                    +------------------+
+| Application      |                    | Application      |
++------------------+                    +------------------+
+         |                                       ^
+         | send()                                | recv()
+         v                                       |
++------------------+                    +------------------+
+| Kernel           |                    | Kernel           |
+|                  |                    |                  |
+| Copy / map data  |                    | Socket buffers   |
+| TCP state        |                    | TCP processing   |
+| Socket buffers   |                    | Sequence checks  |
+| Segment handling |                    | ACK generation   |
+| IP processing    |                    | IP processing    |
++------------------+                    +------------------+
+         |                                       ^
+         v                                       |
++------------------+                    +------------------+
+| NIC driver       |                    | NIC driver       |
+| TX queue         |                    | RX queue / NAPI  |
++------------------+                    +------------------+
+         |                                       ^
+         v                                       |
+        NIC ------------- Network ------------- NIC
 ```
 
 Several operations can contribute to latency and CPU consumption.
@@ -311,11 +306,11 @@ A normal new connection requires a three-way handshake:
 Client                                  Server
 
   |                                       |
-  | ------------ SYN ------------------>  |
+  | --------------- SYN ----------------> |
   |                                       |
-  | <--------- SYN + ACK ---------------- |
+  | <------------ SYN + ACK ------------- |
   |                                       |
-  | ------------ ACK ------------------>  |
+  | --------------- ACK ----------------> |
   |                                       |
   |        Connection established         |
 ```
@@ -441,23 +436,23 @@ Because the Internet was not designed around a single type of network.
 The architectural decision was to keep the network relatively general and place end-to-end communication intelligence at the endpoints.
 
 ```text
-              Internet architecture
+Internet architecture
 
- +-------------+                 +-------------+
- | Endpoint A  |                 | Endpoint B  |
- |             |                 |             |
- | TCP state   |                 | TCP state   |
- | Reliability |                 | Reliability |
- | Ordering    |                 | Ordering    |
- +-------------+                 +-------------+
-        |                               ^
-        v                               |
-    +--------+      +--------+     +--------+
-    | Router | ---> | Router | --> | Router |
-    +--------+      +--------+     +--------+
++-------------+                 +-------------+
+| Endpoint A  |                 | Endpoint B  |
+|             |                 |             |
+| TCP state   |                 | TCP state   |
+| Reliability |                 | Reliability |
+| Ordering    |                 | Ordering    |
++-------------+                 +-------------+
+       |                               ^
+       v                               |
+   +--------+      +--------+      +--------+
+   | Router | ---> | Router | ---> | Router |
+   +--------+      +--------+      +--------+
 
-       Forward datagrams without needing
-       each TCP connection's full state
+Forward datagrams without needing
+each TCP connection's full state
 ```
 
 This architecture allows TCP to operate across widely varying underlying communication technologies.

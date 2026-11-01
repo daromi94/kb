@@ -1,4 +1,4 @@
-# TCP Complexity
+# TCP complexity
 
 TCP is expensive because it provides a strong set of guarantees over a network that is fundamentally unreliable.
 

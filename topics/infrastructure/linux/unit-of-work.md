@@ -1,4 +1,4 @@
-# Unit of Work
+# Unit of work
 
 A unit of work is a discrete piece of computation that a system treats as a single entity for execution, scheduling, tracking, or completion.
 

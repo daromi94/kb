@@ -4,7 +4,7 @@ AI agents are becoming increasingly capable of writing software. They can implem
 
 But there is a fundamental problem:
 
-Producing code is not the same as proving that the code works.
+**Producing code is not the same as proving that the code works.**
 
 As AI reduces the cost of writing software, the engineering bottleneck shifts toward verification: establishing sufficient evidence that an implementation behaves correctly, satisfies its requirements, and is safe to deploy.
 
@@ -17,35 +17,37 @@ Agentic verification is an engineering approach in which AI agents use executabl
 Rather than generating a solution and declaring it complete, the agent participates in a continuous feedback loop.
 
 ```text
-              Requirements
-                   |
-                   v
-             AI Agent
-                   |
-                   v
-           Generate solution
-                   |
-                   v
-          Execute verification
-                   |
-                   v
-           Collect evidence
-                   |
-                   v
-          Evaluate correctness
-                   |
-             +-----+-----+
-             |           |
-             v           v
-           PASS         FAIL
-             |           |
-             v           v
-       Review result   Diagnose issue
-             |           |
-             v           v
-        Deliver        Modify solution
-                         |
-                         +----> Verify again
+                Requirements
+                      |
+                      v
+                  AI Agent
+                      |
+                      v
+              Generate solution
+                      |
+                      v
+            Execute verification <----------------------+
+                      |                                 |
+                      v                                 |
+              Collect evidence                          |
+                      |                                 |
+                      v                                 |
+            Evaluate correctness                        |
+                      |                                 |
+      +---------------+---------------+                 |
+      |                               |                 |
+      v                               v                 |
+    PASS                            FAIL                |
+      |                               |                 |
+      v                               v                 |
+Review result                  Diagnose issue           |
+      |                               |                 |
+      v                               v                 |
+   Deliver                     Modify solution          |
+                                      |                 |
+                                      v                 |
+                                Verify again            |
+                                      +-----------------+
 ```
 
 The essential distinction is that the agent doesn't merely reason about whether a solution should work. It interacts with an execution environment that provides actual evidence.
@@ -130,24 +132,24 @@ It needs something against which to compare the result.
 That might be an expected output, an invariant, a trusted reference implementation, or a formal specification.
 
 ```text
-              Input
-                |
-                v
-          Implementation
-                |
-                v
-           Actual output
-                |
-                v
-        Compare with oracle
-                |
-          +-----+-----+
-          |           |
-          v           v
-        Match       Mismatch
-          |           |
-          v           v
-        PASS          FAIL
+            Input
+              |
+              v
+       Implementation
+              |
+              v
+        Actual output
+              |
+              v
+     Compare with oracle
+              |
+  +-----------+-----------+
+  |                       |
+  v                       v
+Match                 Mismatch
+  |                       |
+  v                       v
+PASS                    FAIL
 ```
 
 Without an oracle, an agent can execute code and observe the output, but it cannot reliably establish correctness.
@@ -171,22 +173,22 @@ End-to-end (E2E) testing validates observable behavior through the interfaces of
 Consider a web application that creates orders.
 
 ```text
-          HTTP request
-                |
-                v
-          API Gateway
-                |
-                v
-          Order Service
-                |
-                v
-          Database
-                |
-                v
-          HTTP response
-                |
-                v
-          Verify outcome
+HTTP request
+      |
+      v
+API Gateway
+      |
+      v
+Order Service
+      |
+      v
+Database
+      |
+      v
+HTTP response
+      |
+      v
+Verify outcome
 ```
 
 A unit test might prove that an order creation method invokes its dependencies correctly.
@@ -239,23 +241,23 @@ This is especially useful for migrations, rewrites, or optimizations.
 Imagine replacing a query execution engine.
 
 ```text
-                  Query
-                    |
-          +---------+---------+
-          |                   |
-          v                   v
-     Old engine          New engine
-          |                   |
-          v                   v
-       Result A             Result B
-          |                   |
-          +---------+---------+
-                    |
-                    v
-             Compare results
-                    |
-                    v
-           Equivalent behavior?
+                 Query
+                   |
+     +-------------+-------------+
+     |                           |
+     v                           v
+Old engine                  New engine
+     |                           |
+     v                           v
+ Result A                    Result B
+     |                           |
+     +-------------+-------------+
+                   |
+                   v
+            Compare results
+                   |
+                   v
+         Equivalent behavior?
 ```
 
 An agent can execute thousands of queries against both implementations and compare the results.
@@ -308,26 +310,26 @@ But with five nodes, the cluster could admit approximately 5,000 requests per se
 The agent has verified the implementation against an incorrect understanding of the requirement.
 
 ```text
-         Actual requirement
-                 |
-                 X
-          Misunderstanding
-                 |
-          +------+------+
-          |             |
-          v             v
-     Implementation    Tests
-          |             |
-          +------+------+
-                 |
-                 v
-             All green
-                 |
-                 v
-           Still incorrect
+             Actual requirement
+                      |
+                      X
+              Misunderstanding
+                      |
+       +--------------+--------------+
+       |                             |
+       v                             v
+Implementation                     Tests
+       |                             |
+       +--------------+--------------+
+                      |
+                      v
+                  All green
+                      |
+                      v
+               Still incorrect
 ```
 
-This is an example of a correlated verification failure.
+This is an example of a **correlated verification failure**.
 
 The implementation and the verification logic share the same mistaken assumption.
 
@@ -346,23 +348,23 @@ A useful approach for complex agent workflows is separating implementation from 
 For example:
 
 ```text
-                 Specification
-                      |
-            +---------+---------+
-            |                   |
-            v                   v
-     Implementation Agent   Verification Agent
-            |                   |
-            v                   v
-       Produces code       Designs checks
-            |                   |
-            +---------+---------+
-                      |
-                      v
-              Execute checks
-                      |
-                      v
-              Review evidence
+                    Specification
+                          |
+          +---------------+---------------+
+          |                               |
+          v                               v
+Implementation Agent             Verification Agent
+          |                               |
+          v                               v
+    Produces code                  Designs checks
+          |                               |
+          +---------------+---------------+
+                          |
+                          v
+                   Execute checks
+                          |
+                          v
+                   Review evidence
 ```
 
 The verification agent evaluates the work against independently defined requirements, rather than merely accepting the implementation agent's explanation of what it built.
@@ -394,9 +396,8 @@ This makes the system easier for agents to work on and easier for engineers to m
 
 Consider the difference between two systems.
 
-System A: The application requires extensive manual setup, failures are difficult to reproduce, and successful operation is established mainly by human observation.
-
-System B: The application can run in a reproducible environment, exposes useful diagnostics, and has executable tests for its important behaviors.
+- **System A:** The application requires extensive manual setup, failures are difficult to reproduce, and successful operation is established mainly by human observation.
+- **System B:** The application can run in a reproducible environment, exposes useful diagnostics, and has executable tests for its important behaviors.
 
 Agents can operate much more effectively in System B.
 
@@ -493,25 +494,25 @@ That is particularly relevant in complex systems where correctness includes prop
 The resulting engineering workflow becomes:
 
 ```text
-             Define correctness
-                     |
-                     v
-             Specify invariants
-                     |
-                     v
-          Build verification oracles
-                     |
-                     v
-             Delegate execution
-                     |
-                     v
-          Collect measurable evidence
-                     |
-                     v
-           Evaluate remaining risk
-                     |
-                     v
-              Ship or iterate
+Define correctness
+      |
+      v
+Specify invariants
+      |
+      v
+Build verification oracles
+      |
+      v
+Delegate execution
+      |
+      v
+Collect measurable evidence
+      |
+      v
+Evaluate remaining risk
+      |
+      v
+Ship or iterate
 ```
 
 The central lesson is that the value of AI agents comes not only from generating code faster, but from making the entire engineering process more evidence-driven.

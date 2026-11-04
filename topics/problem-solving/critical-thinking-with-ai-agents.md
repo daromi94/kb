@@ -50,25 +50,25 @@ Delegating work to AI is not inherently problematic. The real issue is how much 
 There are three important levels.
 
 ```text
-              COGNITIVE OFFLOADING
-              --------------------
-              Agent performs the work
-              Human evaluates evidence
-              Human owns the decision
-                       |
-                       v
-               COGNITIVE DEFERRAL
-               ------------------
-               Agent produces an answer
-               Answer becomes an assumption
-               Independent scrutiny decreases
-                       |
-                       v
-               COGNITIVE SURRENDER
-               -------------------
-               Agent produces an answer
-               Answer is accepted as truth
-               Understanding is no longer required
+COGNITIVE OFFLOADING
+--------------------
+Agent performs the work
+Human evaluates evidence
+Human owns the decision
+        |
+        v
+COGNITIVE DEFERRAL
+------------------
+Agent produces an answer
+Answer becomes an assumption
+Independent scrutiny decreases
+        |
+        v
+COGNITIVE SURRENDER
+-------------------
+Agent produces an answer
+Answer is accepted as truth
+Understanding is no longer required
 ```
 
 ### Cognitive offloading
@@ -127,40 +127,22 @@ Cognitive debt accumulates when a system grows faster than the ability to unders
 Consider:
 
 ```text
-Traditional development
------------------------
+  Traditional development                Agent-driven development
+  -----------------------                ------------------------
 
-Understand problem
-        |
-        v
-Design solution
-        |
-        v
-Implement code
-        |
-        v
-Test and debug
-        |
-        v
-Understand resulting system
-
-
-Agent-driven development
-------------------------
-
-Describe problem
-        |
-        v
-Agent designs + implements
-        |
-        v
-Agent tests + debugs
-        |
-        v
-Working implementation
-        |
-        v
-Limited understanding?
+    Understand problem                       Describe problem
+             |                                       |
+             v                                       v
+      Design solution                   Agent designs + implements
+             |                                       |
+             v                                       v
+      Implement code                       Agent tests + debugs
+             |                                       |
+             v                                       v
+      Test and debug                      Working implementation
+             |                                       |
+             v                                       v
+Understand resulting system               Limited understanding?
 ```
 
 The danger is that an implementation may look complete while the mental model required to maintain it is missing.
@@ -210,32 +192,33 @@ For example:
 This changes the entire workflow.
 
 ```text
-       Problem observation
-               |
-               v
+        Problem observation
+                 |
+                 v
        Formulate hypothesis
-               |
-               v
-       Define constraints
-               |
-               v
-       Establish success criteria
-               |
-               v
-        Delegate to agent
-               |
-               v
+                 |
+                 v
+        Define constraints
+                 |
+                 v
+    Establish success criteria
+                 |
+                 v
+         Delegate to agent
+                 |
+                 v
          Evaluate evidence
-               |
-          +----+----+
-          |         |
-          v         v
-       Confirm    Reject
-          |         |
-          v         v
-       Decide    New hypothesis
-                    |
-                    +----> Investigate
+                 |
+   +-------------+-------------+
+   |                           |
+   v                           v
+Confirm                     Reject
+   |                           |
+   v                           v
+Decide                  New hypothesis
+                               |
+                               v
+                          Investigate
 ```
 
 A hypothesis need not be correct initially. Its purpose is to establish an explanation that evidence can confirm or reject.
@@ -269,26 +252,27 @@ Or what if separate instances enforce limits independently when the requirement 
 The tests may all pass while the system violates its actual requirements.
 
 ```text
-                   REQUIREMENTS
-                        |
-                        v
-                 Implementation
-                        |
-                        v
-                    Tests
-                        |
-                  All green
-                        |
-                        v
-              What was verified?
-                        |
-              +---------+---------+
-              |                   |
-              v                   v
-       Tested behavior      Untested behavior
-              |                   |
-              v                   v
-       Evidence exists       Unknown risk
+               REQUIREMENTS
+                     |
+                     v
+              Implementation
+                     |
+                     v
+                   Tests
+                     |
+                     v
+                 All green
+                     |
+                     v
+            What was verified?
+                     |
+       +-------------+-------------+
+       |                           |
+       v                           v
+Tested behavior            Untested behavior
+       |                           |
+       v                           v
+Evidence exists              Unknown risk
 ```
 
 The important questions are therefore:
@@ -308,15 +292,15 @@ Agents can generate work much faster than humans can meaningfully review it.
 Imagine several agents working simultaneously:
 
 ```text
-Agent A ----> Feature implementation ----+
-                                         |
-Agent B ----> Performance optimization --+
-                                         |
-Agent C ----> Refactoring ---------------+--> Review
-                                         |      |
-Agent D ----> Bug fixes -----------------+      v
-                                         |   Bottleneck
-Agent E ----> Test generation -----------+
+Agent A ---> Feature implementation --------+
+                                            |
+Agent B ---> Performance optimization ------+
+                                            |
+Agent C ---> Refactoring -------------------+---> Review
+                                            |        |
+Agent D ---> Bug fixes ---------------------+        v
+                                            |   Bottleneck
+Agent E ---> Test generation ---------------+
 ```
 
 Increasing the number of agents increases the amount of generated output.
@@ -371,22 +355,22 @@ Rather than asking the agent to defend its recommendation, the task becomes disc
 A useful reasoning cycle is:
 
 ```text
-        Proposed explanation
-                  |
-                  v
-        Identify assumptions
-                  |
-                  v
-        Develop counterarguments
-                  |
-                  v
-        Design discriminating tests
-                  |
-                  v
-          Collect evidence
-                  |
-                  v
-        Revise understanding
+Proposed explanation
+        |
+        v
+Identify assumptions
+        |
+        v
+Develop counterarguments
+        |
+        v
+Design discriminating tests
+        |
+        v
+Collect evidence
+        |
+        v
+Revise understanding
 ```
 
 This is closely related to scientific reasoning.
@@ -404,31 +388,31 @@ With agents, much of that execution can be delegated.
 The human contribution increasingly concentrates at the beginning and end.
 
 ```text
-          ENGINEERING WORKFLOW
+ENGINEERING WORKFLOW
 
-       BEFORE EXECUTION
-       ----------------
-       What problem matters?
-       Why does it matter?
-       What are the constraints?
-       What would success mean?
-                |
-                v
-       AGENT EXECUTION
-       ---------------
-       Investigate
-       Implement
-       Test
-       Iterate
-                |
-                v
-       AFTER EXECUTION
-       ---------------
-       Is the evidence sufficient?
-       What assumptions were made?
-       What remains uncertain?
-       Is the outcome acceptable?
-       Who is accountable?
+BEFORE EXECUTION
+----------------
+What problem matters?
+Why does it matter?
+What are the constraints?
+What would success mean?
+        |
+        v
+AGENT EXECUTION
+---------------
+Investigate
+Implement
+Test
+Iterate
+        |
+        v
+AFTER EXECUTION
+---------------
+Is the evidence sufficient?
+What assumptions were made?
+What remains uncertain?
+Is the outcome acceptable?
+Who is accountable?
 ```
 
 This requires strong engineering judgment.
@@ -479,9 +463,8 @@ But faster output does not automatically produce better decisions.
 
 Consider the difference between two outcomes:
 
-Outcome A: An agent produces a working solution, tests pass, and it is shipped without anyone understanding its important assumptions.
-
-Outcome B: An agent produces the same solution, but the relevant assumptions are explicit, the verification evidence is understood, and the architectural trade-offs are defensible.
+- **Outcome A:** An agent produces a working solution, tests pass, and it is shipped without anyone understanding its important assumptions.
+- **Outcome B:** An agent produces the same solution, but the relevant assumptions are explicit, the verification evidence is understood, and the architectural trade-offs are defensible.
 
 Both may produce identical code.
 
@@ -491,6 +474,6 @@ And that difference becomes especially important when the system fails, requirem
 
 The central principle is therefore:
 
-Delegate as much implementation as makes sense, but preserve the ability to explain the important decisions, challenge the evidence, and take responsibility for what ships.
+**Delegate as much implementation as makes sense, but preserve the ability to explain the important decisions, challenge the evidence, and take responsibility for what ships.**
 
 The future of engineering is not simply about producing more software with fewer keystrokes. It is about making better decisions while increasingly powerful tools handle more of the execution.

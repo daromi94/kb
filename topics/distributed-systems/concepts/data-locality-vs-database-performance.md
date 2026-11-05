@@ -2,7 +2,7 @@
 
 The central problem is deceptively simple:
 
-When an application needs faster data access, should the data move closer to the computation, or should the database itself become faster?
+**When an application needs faster data access, should the data move closer to the computation, or should the database itself become faster?**
 
 Both approaches can reduce latency, but they solve different problems and introduce very different architectural costs.
 
@@ -13,26 +13,26 @@ This is fundamentally a discussion about data locality, I/O performance, distrib
 Consider a conventional application architecture:
 
 ```text
-           Application
-                |
-                | Query
-                v
-          Network / RPC
-                |
-                v
-        +----------------+
-        |    Database    |
-        |                |
-        |   CPU + RAM    |
-        |                |
-        | Storage Engine |
-        +----------------+
-                |
-                | I/O
-                v
-        +----------------+
-        |     Storage    |
-        +----------------+
+    Application
+         |
+         | Query
+         v
+   Network / RPC
+         |
+         v
++----------------+
+|    Database    |
+|                |
+|   CPU + RAM    |
+|                |
+| Storage Engine |
++----------------+
+         |
+         | I/O
+         v
++----------------+
+|    Storage     |
++----------------+
 ```
 
 A database query involves several operations:
@@ -56,21 +56,21 @@ The important observation is that database performance depends on more than CPU 
 For example, suppose a database uses network-attached storage:
 
 ```text
-        Database Server
-      +------------------+
-      |       CPU        |
-      |        |         |
-      |    Buffer Pool   |
-      +--------+---------+
-               |
-               | Cache miss
-               v
-          Network I/O
-               |
-               v
-      +------------------+
-      |  Remote Storage  |
-      +------------------+
+   Database Server
++-------------------+
+|        CPU        |
+|         |         |
+|    Buffer Pool    |
++-------------------+
+          |
+          | Cache miss
+          v
+     Network I/O
+          |
+          v
++-------------------+
+|  Remote Storage   |
++-------------------+
 ```
 
 Every read that misses the database's cache may require additional network communication with the storage system.
@@ -86,9 +86,9 @@ Meanwhile, the database has several competing sources of I/O:
 
 As demand increases, storage queues may grow, causing both average and tail latency to deteriorate.
 
-Engineering lesson #1: Identify the actual bottleneck before changing the architecture.
+**Engineering lesson #1: Identify the actual bottleneck before changing the architecture.**
 
-A slow database does not necessarily imply that the application needs a distributed cache or local data replication.
+**A slow database does not necessarily imply that the application needs a distributed cache or local data replication.**
 
 ## 2. Approach A: Move data closer to computation
 
@@ -97,22 +97,22 @@ One solution is to create a local copy of the data needed by the application.
 This is the data locality pattern.
 
 ```text
-                Central Database
-                       |
-                       | Change stream
-                       v
-                Sync / Replication
-                       |
-              +--------+--------+
-              |                 |
-              v                 v
-        Application A     Application B
-        +------------+    +------------+
-        | Local Data |    | Local Data |
-        +------------+    +------------+
-              |                 |
-              v                 v
-        Local Queries     Local Queries
+             Central Database
+                     |
+                     | Change stream
+                     v
+            Sync / Replication
+                     |
+       +-------------+-------------+
+       |                           |
+       v                           v
+ Application A               Application B
++-------------+             +-------------+
+| Local Data  |             | Local Data  |
++-------------+             +-------------+
+       |                           |
+       v                           v
+ Local Queries               Local Queries
 ```
 
 Instead of executing every read against the remote database, each application maintains a synchronized subset of the data.
@@ -140,14 +140,13 @@ But this comes at a substantial cost.
 The moment an application creates an independent copy of authoritative data, it introduces a state synchronization problem.
 
 ```text
-             Authoritative State
-                     |
-                     | Replication delay
-                     v
-                 Local State
+Authoritative State
+      |
+      | Replication delay
+      v
+Local State
 
-       Authoritative != Local
-       (during synchronization)
+Authoritative != Local (during synchronization)
 ```
 
 Now the system must answer:
@@ -165,9 +164,9 @@ This is no longer just a data access optimization.
 
 It is a distributed data management system.
 
-Engineering lesson #2: Data locality reduces access latency by introducing replication, lifecycle management, and consistency complexity.
+**Engineering lesson #2: Data locality reduces access latency by introducing replication, lifecycle management, and consistency complexity.**
 
-The optimization moves complexity from the read path into the data synchronization path.
+**The optimization moves complexity from the read path into the data synchronization path.**
 
 ## 3. The write path makes everything harder
 
@@ -178,21 +177,21 @@ Mutable data is considerably more complicated.
 Consider a central database that remains responsible for all authoritative writes.
 
 ```text
-                  Application
-                      |
-             +--------+--------+
-             |                 |
-           READ              WRITE
-             |                 |
-             v                 v
-        Local Store         Write API
-             ^                 |
-             |                 v
-             |           Central Database
-             |                 |
-             |                 | Commit
-             |                 v
-             +----------- Change Stream
+               Application
+                    |
+     +--------------+--------------+
+     |                             |
+   READ                          WRITE
+     |                             |
+     v                             v
+Local Store                    Write API
+     ^                             |
+     |                             v
+     |                     Central Database
+     |                             |
+     |                             | Commit
+     |                             v
+     +<------ Change Stream -------+
 ```
 
 Reads are local, but writes still travel to the authoritative database.
@@ -251,20 +250,21 @@ T3: Rollback local value to 100
 Now introduce concurrent writers:
 
 ```text
-Application A ---- Write X=150 ----+
-                                   |
-                                   v
-                             Central DB
-                                   ^
-                                   |
-Application B ---- Write X=200 ----+
-
-                |
-                v
-        Ordered transactions
-                |
-                v
-        Replicated changes
+Application A             Application B
+      |                         |
+      v                         v
+ Write X=150               Write X=200
+      |                         |
+      +------------+------------+
+                   |
+                   v
+              Central DB
+                   |
+                   v
+         Ordered transactions
+                   |
+                   v
+          Replicated changes
 ```
 
 The central database establishes transaction ordering, but every local copy must eventually observe the resulting state.
@@ -273,7 +273,7 @@ The application must also reconcile optimistic changes with the actual committed
 
 This makes concepts such as read-your-writes consistency, versioning, idempotency, conflict handling, and replication ordering relevant to application correctness.
 
-Engineering lesson #3: A local read optimization can create an entirely new consistency protocol on the application side.
+**Engineering lesson #3: A local read optimization can create an entirely new consistency protocol on the application side.**
 
 If low-latency writes and immediate consistency are essential, querying the authoritative database directly may be significantly simpler.
 
@@ -282,21 +282,21 @@ If low-latency writes and immediate consistency are essential, querying the auth
 An alternative is to improve the database itself before introducing additional application-level copies.
 
 ```text
-                Applications
-                     |
-                     v
-              +-------------+
-              |  Database   |
-              |             |
-              |  CPU + RAM  |
-              +------+------+
-                     |
-                     | Local I/O
-                     v
-              +-------------+
-              |  Local SSD  |
-              |  / NVMe     |
-              +-------------+
+ Applications
+       |
+       v
++-------------+
+|  Database   |
+|             |
+|  CPU + RAM  |
++-------------+
+       |
+       | Local I/O
+       v
++-------------+
+|  Local SSD  |
+|   / NVMe    |
++-------------+
 ```
 
 With storage physically close to the database compute, cache misses can avoid the extra network hop to remote storage.
@@ -314,17 +314,20 @@ The main architectural benefit is not simply faster disks.
 It is the ability to serve more workloads through a single authoritative data access path.
 
 ```text
-Application
-     |
-     +---- Reads ----+
-     |               |
-     +---- Writes ---+
-                     |
-                     v
-               Database
-                     |
-                     v
-               One authority
+       Application
+            |
+  +---------+---------+
+  |                   |
+  v                   v
+Reads              Writes
+  |                   |
+  +---------+---------+
+            |
+            v
+        Database
+            |
+            v
+      One authority
 ```
 
 No application-level synchronization protocol is needed.
@@ -340,23 +343,23 @@ Local storage tightly couples them.
 ```text
 Network-attached:
 
-  Compute Node -------- Storage
-       X                    |
-    Failure              Survives
+Compute Node --------------- Storage
+      X                         |
+   Failure                  Survives
 
 
 Compute-local:
 
-  Compute Node
-  +-----------------+
-  | CPU             |
-  | Local SSD       |
-  +-----------------+
-          X
-       Failure
-          |
-          v
-  Local copy unavailable
+     Compute Node
++---------------------+
+| CPU                 |
+| Local SSD           |
++---------------------+
+           X
+        Failure
+           |
+           v
+Local copy unavailable
 ```
 
 A local SSD does not automatically survive the loss of its host.
@@ -377,7 +380,7 @@ A database may still be limited by:
 
 For example, replacing storage does very little if the majority of query latency comes from an inefficient join or excessive application round trips.
 
-Engineering lesson #4: Optimize the bottleneck at the lowest architectural layer that can solve it.
+**Engineering lesson #4: Optimize the bottleneck at the lowest architectural layer that can solve it.**
 
 If storage performance is the issue, improving storage may be preferable to adding distributed state.
 
@@ -397,15 +400,15 @@ A conventional application might repeatedly query the same customer records.
 
 ```text
 Application Requests
-        |
-        v
-  Customer Records
-        |
-        v
-  Same small dataset
-        |
-        v
-  High data reuse
+      |
+      v
+Customer Records
+      |
+      v
+Same small dataset
+      |
+      v
+High data reuse
 ```
 
 A local copy works well because synchronization costs can be amortized across many reads.
@@ -457,29 +460,25 @@ Over a given workload, local synchronization pays off only when its savings outw
 
 The cost comparison must also account for tail latency, freshness requirements, and the cost of implementing synchronization.
 
-Engineering lesson #5: Data locality is valuable when data reuse is high enough to amortize the cost of moving and maintaining the data.
+**Engineering lesson #5: Data locality is valuable when data reuse is high enough to amortize the cost of moving and maintaining the data.**
 
-Locality is not inherently superior to remote access. Its value depends on the access pattern.
+**Locality is not inherently superior to remote access. Its value depends on the access pattern.**
 
 ## 6. Scaling reads without giving every application its own dataset
 
 There is an intermediate approach: database-level read replicas.
 
 ```text
-                   Applications
-                        |
-                +-------+-------+
-                |               |
-              Writes           Reads
-                |               |
-                v               v
-           +---------+     +---------+
-           | Primary |---->| Replica |
-           +---------+     +---------+
-                |               ^
-                |               |
-                +-------------->|
-                  Replication
+             Applications
+                   |
+     +-------------+-------------+
+     |                           |
+  Writes                       Reads
+     |                           |
+     v                           v
++---------+                 +---------+
+| Primary |- Replication -->| Replica |
++---------+                 +---------+
 ```
 
 Read replicas increase read-serving capacity without requiring every application to manage a synchronized local dataset.
@@ -500,7 +499,7 @@ Application-local replication exposes synchronization and reconciliation directl
 
 Database-level replication generally encapsulates much of this complexity below the application interface.
 
-Engineering lesson #6: Prefer encapsulating distributed-state complexity inside a well-defined subsystem when its consistency guarantees satisfy the workload.
+**Engineering lesson #6: Prefer encapsulating distributed-state complexity inside a well-defined subsystem when its consistency guarantees satisfy the workload.**
 
 ## 7. Durability is a different reason to replicate
 
@@ -511,15 +510,15 @@ Some copies are created to preserve committed data and maintain availability aft
 Consider a database with multiple replicas.
 
 ```text
-                Primary
-                   |
-          +--------+--------+
-          |                 |
-          v                 v
-       Standby A         Standby B
-          |                 |
-          v                 v
-       Zone A            Zone B
+            Primary
+               |
+    +----------+----------+
+    |                     |
+    v                     v
+Standby A             Standby B
+    |                     |
+    v                     v
+ Zone A                Zone B
 ```
 
 There are two common replication strategies.
@@ -542,7 +541,7 @@ These are different trade-offs from application-local data synchronization.
 | Application responsibilities | Synchronization, optimistic state, reconciliation | Generally lower                              |
 | Failure behavior             | Potentially stale local reads                     | Failover according to replication guarantees |
 
-Engineering lesson #7: Separate replication for performance from replication for durability.
+**Engineering lesson #7: Separate replication for performance from replication for durability.**
 
 The objectives may overlap, but the mechanisms and correctness requirements can differ significantly.
 
@@ -569,19 +568,14 @@ These workloads benefit from different storage layouts, indexing strategies, and
 A common architectural pattern is to separate them:
 
 ```text
-                  Applications
-                       |
-              +--------+--------+
-              |                 |
-             OLTP             OLAP
-              |                 ^
-              v                 |
-       Transactional DB         |
-              |                 |
-              +---- CDC --------+
-                                |
-                                v
-                         Analytical Store
+                      Applications
+                            |
+        +-------------------+-------------------+
+        |                                       |
+      OLTP                                    OLAP
+        |                                       |
+        v                                       v
+Transactional DB -------- CDC --------> Analytical Store
 ```
 
 The analytical store is another copy of data, but its purpose is different.
@@ -592,7 +586,7 @@ This is an example of workload-oriented data placement.
 
 The trade-off is additional replication and eventual freshness lag in exchange for better analytical performance and isolation from transactional traffic.
 
-Engineering lesson #8: Replicate or transform data when the new copy provides a distinct computational advantage, not merely because copies are possible.
+**Engineering lesson #8: Replicate or transform data when the new copy provides a distinct computational advantage, not merely because copies are possible.**
 
 ## 9. How to choose: An engineering decision framework
 
@@ -600,35 +594,38 @@ The decision should follow the bottleneck and the workload's consistency require
 
 ```text
               Slow Data Access
-                     |
-                     v
+                      |
+                      v
              Measure Bottleneck
-                     |
-          +----------+-----------+
-          |          |           |
-          v          v           v
-        Query      Storage     Network /
-       Execution     I/O       Data Access
-          |          |           |
-          v          v           v
-       Optimize    Improve     Evaluate
-       queries     storage     locality
-          |          |           |
-          +----------+-----------+
-                     |
-                     v
-               Re-measure
-                     |
-                     v
-          Is capacity sufficient?
-                 /        \
-               Yes         No
-                |           |
-                v           v
-             Keep it     Evaluate
-              simple     read scaling,
-                         caching, or
-                         specialization
+                      |
+    +-----------------+-----------------+
+    |                 |                 |
+    v                 v                 v
+  Query            Storage          Network /
+Execution            I/O           Data Access
+    |                 |                 |
+    v                 v                 v
+Optimize           Improve          Evaluate
+ queries           storage          locality
+    |                 |                 |
+    +-----------------+-----------------+
+                      |
+                      v
+                 Re-measure
+                      |
+                      v
+           Is capacity sufficient?
+                      |
+      +---------------+---------------+
+      |                               |
+      v                               v
+     Yes                             No
+      |                               |
+      v                               v
+   Keep it                        Evaluate
+   simple                       read scaling,
+                                 caching, or
+                               specialization
 ```
 
 There are several questions worth answering before adding application-local replication:
@@ -644,17 +641,17 @@ There are several questions worth answering before adding application-local repl
 
 The trade-offs reduce to a few reusable principles.
 
-1. The fastest I/O is often the I/O that never happens. Cache reuse, selective queries, projection, filtering, and data skipping can eliminate work before faster storage or replication is necessary.
+1. **The fastest I/O is often the I/O that never happens.** Cache reuse, selective queries, projection, filtering, and data skipping can eliminate work before faster storage or replication is necessary.
 
-2. Moving data is not free. Every synchronized copy consumes bandwidth, storage, CPU, and operational capacity. Data movement must create enough future value to justify its cost.
+2. **Moving data is not free.** Every synchronized copy consumes bandwidth, storage, CPU, and operational capacity. Data movement must create enough future value to justify its cost.
 
-3. Locality and independence are competing goals. Placing data close to compute can minimize communication, but tightly coupling the two can make placement, reconfiguration, and scaling harder.
+3. **Locality and independence are competing goals.** Placing data close to compute can minimize communication, but tightly coupling the two can make placement, reconfiguration, and scaling harder.
 
-4. Distributed state creates correctness obligations. Once multiple independently updated or asynchronously synchronized views exist, freshness, ordering, failure recovery, and reconciliation become part of system design.
+4. **Distributed state creates correctness obligations.** Once multiple independently updated or asynchronously synchronized views exist, freshness, ordering, failure recovery, and reconciliation become part of system design.
 
-5. Optimization should preserve architectural simplicity when possible. A faster central system can sometimes eliminate the need for a new distributed subsystem, but it cannot solve problems such as offline access or unavoidable wide-area latency.
+5. **Optimization should preserve architectural simplicity when possible.** A faster central system can sometimes eliminate the need for a new distributed subsystem, but it cannot solve problems such as offline access or unavoidable wide-area latency.
 
-6. Replication should have a clear purpose. Read scalability, high availability, offline access, and analytical specialization are different motivations and should be evaluated separately.
+6. **Replication should have a clear purpose.** Read scalability, high availability, offline access, and analytical specialization are different motivations and should be evaluated separately.
 
 ## Final takeaway
 
@@ -662,7 +659,7 @@ The fundamental trade-off is not simply local data versus remote data.
 
 It is:
 
-Lower read latency through data replication versus lower architectural complexity through centralized authority.
+**Lower read latency through data replication versus lower architectural complexity through centralized authority.**
 
 When an application repeatedly accesses a predictable working set, moving data closer to computation can be extremely effective.
 
@@ -670,4 +667,4 @@ When queries are highly dynamic, the data changes frequently, consistency matter
 
 The general rule is:
 
-> First eliminate unnecessary work. Then optimize the existing data path. Introduce additional copies of mutable state only when their benefits clearly exceed the consistency, synchronization, and operational costs they create.
+> **First eliminate unnecessary work. Then optimize the existing data path. Introduce additional copies of mutable state only when their benefits clearly exceed the consistency, synchronization, and operational costs they create.**

@@ -4,8 +4,8 @@ One of the fundamental architectural trade-offs in distributed systems is whethe
 
 These two design goals optimize different properties:
 
-- Locality: Minimize the cost of accessing data by placing computation near the data it needs.
-- Independence: Allow computation and data to scale, move, and evolve without requiring each other to move.
+- **Locality: Minimize the cost of accessing data by placing computation near the data it needs.**
+- **Independence: Allow computation and data to scale, move, and evolve without requiring each other to move.**
 
 The challenge is that improving one often makes the other more difficult.
 
@@ -36,23 +36,23 @@ account-3 -> balance: 4000
 Conceptually:
 
 ```text
-+------------------+
-| Compute          |
-|                  |
-| Execute logic    |
-| Transform data   |
-| Produce results  |
-+------------------+
-      |
-      | Read / Write
-      v
-+------------------+
-| Data             |
-|                  |
-| Application state|
-| Stored records   |
-| Indexes          |
-+------------------+
++-------------------+
+| Compute           |
+|                   |
+| Execute logic     |
+| Transform data    |
+| Produce results   |
++-------------------+
+          |
+          | Read / Write
+          v
++-------------------+
+| Data              |
+|                   |
+| Application state |
+| Stored records    |
+| Indexes           |
++-------------------+
 ```
 
 The compute component needs data to execute its operations, but there is no fundamental requirement that both reside on the same machine.
@@ -70,12 +70,12 @@ Consider a cluster with two workers.
 | Worker A              |
 |                       |
 |  +-----------------+  |
-|  | Task A          |  |
+|  |     Task A      |  |
 |  |                 |  |
-|  | Compute         |  |
-|  |      |          |  |
-|  |      v          |  |
-|  | Local State     |  |
+|  |     Compute     |  |
+|  |        |        |  |
+|  |        v        |  |
+|  |   Local State   |  |
 |  +-----------------+  |
 |                       |
 +-----------------------+
@@ -85,12 +85,12 @@ Consider a cluster with two workers.
 | Worker B              |
 |                       |
 |  +-----------------+  |
-|  | Task B          |  |
+|  |     Task B      |  |
 |  |                 |  |
-|  | Compute         |  |
-|  |      |          |  |
-|  |      v          |  |
-|  | Local State     |  |
+|  |     Compute     |  |
+|  |        |        |  |
+|  |        v        |  |
+|  |   Local State   |  |
 |  +-----------------+  |
 |                       |
 +-----------------------+
@@ -174,7 +174,7 @@ Locality reduces communication costs, often improving throughput and latency.
 
 This motivates an important systems principle:
 
-Move computation to data when moving data to computation would be more expensive.
+**Move computation to data when moving data to computation would be more expensive.**
 
 It is particularly useful for data-intensive workloads where operations repeatedly access the same state.
 
@@ -211,12 +211,12 @@ Worker A                       Worker B
 | State: 100 GB     |          |                   |
 |                   |          |                   |
 +-------------------+          +-------------------+
-         |                               ^
-         |                               |
-         +------------ 100 GB -----------+
+          |                              ^
+          |                              |
+          +---------- 100 GB ----------->+
 ```
 
-A computational placement decision has become a storage migration problem.
+**A computational placement decision has become a storage migration problem.**
 
 The system cannot relocate the task cheaply because its state is tied to the old worker.
 
@@ -251,7 +251,7 @@ AFTER
 +-------------+
 ```
 
-The computational task moves, but the state remains where it was.
+**The computational task moves, but the state remains where it was.**
 
 This is compute-data independence.
 
@@ -269,21 +269,21 @@ Consider two architectures.
 
 ```text
 +--------------------+
-| Worker 1           |
+|      Worker 1      |
 |                    |
-| Compute A          |
-|    |               |
-|    v               |
-| State A            |
+|     Compute A      |
+|         |          |
+|         v          |
+|      State A       |
 +--------------------+
 
 +--------------------+
-| Worker 2           |
+|      Worker 2      |
 |                    |
-| Compute B          |
-|    |               |
-|    v               |
-| State B            |
+|     Compute B      |
+|         |          |
+|         v          |
+|      State B       |
 +--------------------+
 ```
 
@@ -299,8 +299,8 @@ COMPUTE LAYER
 +-------------+   +-------------+
 | Compute A   |   | Compute B   |
 +-------------+   +-------------+
-       |                |
-       +--------+-------+
+       |                 |
+       +--------+--------+
                 |
                 | Network
                 v
@@ -330,7 +330,7 @@ The resulting trade-off is:
 
 Neither architecture is universally better.
 
-The correct choice depends on the frequency and cost of state accesses relative to the frequency and cost of reconfiguration.
+**The correct choice depends on the frequency and cost of state accesses relative to the frequency and cost of reconfiguration.**
 
 ## 5. Can locality and independence coexist?
 
@@ -367,17 +367,16 @@ Task B is authorized to process key 2, but the associated state remains physical
 When Task B first needs key 2:
 
 ```text
-Task B                         Task A
-   |                              |
-   |---- Fetch state: key 2 ----->|
-   |                              |
-   |<--- State for key 2 ---------|
-   |                              |
-   v                              |
-Store state locally               |
-   |                              |
-   v                              |
-Process record                    |
+      Task B                            Task A
+         |                                 |
+         |------ Fetch state: key 2 ------>|
+         |                                 |
+         |<------- State for key 2 --------|
+         v                                 |
+Store state locally                        |
+         |                                 |
+         v                                 |
+  Process record                           |
 ```
 
 Subsequent operations access local state.
@@ -396,7 +395,7 @@ This produces an interesting combination:
 - Independence during reconfiguration: Ownership can change before state moves.
 - Locality during normal execution: Frequently accessed state eventually resides with the task processing it.
 
-A correct implementation must still coordinate ownership handoffs, state transfers, and records already in flight so that no two tasks independently update the same key.
+**A correct implementation must still coordinate ownership handoffs, state transfers, and records already in flight so that no two tasks independently update the same key.**
 
 ## 6. The importance of the working set
 
@@ -484,38 +483,38 @@ Shared state: Accessed by multiple computational components. Keeping it in one l
 This suggests a more general approach:
 
 ```text
-                  Data
+                 Data
                    |
                    v
-           Access Characteristics
+        Access Characteristics
                    |
-          +--------+--------+
-          |        |        |
-          v        v        v
-         Hot      Cold     Shared
-          |        |        |
-          v        v        v
-        Local    Leave     Shared or
-        State    in place  Replicated
-                           Storage
+  +----------------+----------------+
+  |                |                |
+  v                v                v
+ Hot             Cold            Shared
+  |                |                |
+  v                v                v
+Local            Leave          Shared or
+State          in place        Replicated
+                                 Storage
 ```
 
 This is a conceptual policy rather than a universal rule.
 
-An important distinction is that data locality should be driven by actual access patterns, not merely by logical ownership or total data size.
+**An important distinction is that data locality should be driven by actual access patterns, not merely by logical ownership or total data size.**
 
 ## 9. Architectural lessons
 
 There are several broader lessons for distributed systems design.
 
-First, computation and data have different resource requirements. CPU capacity may need to scale rapidly while stored state grows more slowly, or vice versa. Treating both as inseparable can lead to inefficient resource allocation.
+**First, computation and data have different resource requirements.** CPU capacity may need to scale rapidly while stored state grows more slowly, or vice versa. Treating both as inseparable can lead to inefficient resource allocation.
 
-Second, placement flexibility has a cost. Remote storage removes some migration dependencies but introduces network overhead, additional failure modes, and potential contention at shared storage services.
+**Second, placement flexibility has a cost.** Remote storage removes some migration dependencies but introduces network overhead, additional failure modes, and potential contention at shared storage services.
 
-Third, locality does not necessarily require permanent colocation. A system can dynamically move active state toward computation while leaving inactive state elsewhere.
+**Third, locality does not necessarily require permanent colocation.** A system can dynamically move active state toward computation while leaving inactive state elsewhere.
 
-Finally, the decision to move computation should not automatically imply a decision to move all associated data.
+**Finally, the decision to move computation should not automatically imply a decision to move all associated data.**
 
-The central architectural principle is to make computation and storage independently manageable while preserving locality for performance-critical accesses.
+**The central architectural principle is to make computation and storage independently manageable while preserving locality for performance-critical accesses.**
 
 The difficult engineering problem is achieving both properties without compromising correctness, introducing excessive coordination, or making remote state access the dominant execution cost.

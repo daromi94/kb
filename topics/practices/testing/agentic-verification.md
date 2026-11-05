@@ -66,7 +66,7 @@ This resembles the traditional engineering cycle of implementation, testing, and
 
 The core principle is:
 
-An agent should have a way to observe whether its actions achieved the intended result.
+**An agent should have a way to observe whether its actions achieved the intended result.**
 
 ## 2. The shift from code generation to verification
 
@@ -116,7 +116,7 @@ Instead of exclusively improving the speed of code generation, systems should be
 
 One of the most important ideas in software testing is the concept of a test oracle.
 
-A test oracle is a mechanism for determining whether an observed result is correct.
+**A test oracle is a mechanism for determining whether an observed result is correct.**
 
 Suppose a function returns:
 
@@ -152,7 +152,7 @@ Match                 Mismatch
 PASS                    FAIL
 ```
 
-Without an oracle, an agent can execute code and observe the output, but it cannot reliably establish correctness.
+**Without an oracle, an agent can execute code and observe the output, but it cannot reliably establish correctness.**
 
 This is particularly important because language models are good at producing plausible explanations.
 
@@ -164,7 +164,7 @@ The effectiveness of agentic verification therefore depends heavily on the quali
 
 Different techniques establish different properties of software.
 
-No single verification mechanism can prove everything about a sufficiently complex system.
+**No single verification mechanism can prove everything about a sufficiently complex system.**
 
 ### A. End-to-end verification
 
@@ -331,7 +331,7 @@ Implementation                     Tests
 
 This is an example of a **correlated verification failure**.
 
-The implementation and the verification logic share the same mistaken assumption.
+**The implementation and the verification logic share the same mistaken assumption.**
 
 Adding more tests based on that assumption doesn't necessarily increase confidence.
 
@@ -339,7 +339,7 @@ This is why independently established requirements, invariants, reference implem
 
 The objective is not to maximize the number of passing tests.
 
-It is to maximize meaningful evidence of correctness.
+**It is to maximize meaningful evidence of correctness.**
 
 ## 6. The role of independent verification
 
@@ -377,7 +377,7 @@ If both agents receive the same incorrect specification, they may reach the same
 
 And if the verification agent merely reviews the implementation agent's summary, it may inherit the same assumptions.
 
-Meaningful independence comes from the verification method and evidence, not simply the number of agents involved.
+**Meaningful independence comes from the verification method and evidence, not simply the number of agents involved.**
 
 ## 7. The verification environment becomes part of the architecture
 
@@ -405,7 +405,7 @@ The reason is straightforward: the environment provides shorter and more reliabl
 
 This leads to an important architectural principle:
 
-Design for verifiability, not merely implementability.
+**Design for verifiability, not merely implementability.**
 
 ## 8. Verification must be risk-aware
 
@@ -413,7 +413,7 @@ Not every change requires the same depth of verification.
 
 A small documentation change and a modification to a distributed consensus algorithm have very different failure consequences.
 
-Verification effort should reflect the criticality, complexity, and reversibility of the change.
+**Verification effort should reflect the criticality, complexity, and reversibility of the change.**
 
 | Change               | Appropriate verification                                      |
 | -------------------- | ------------------------------------------------------------- |
@@ -485,7 +485,7 @@ Instead of automation being limited to implementing solutions, agents can partic
 
 But there is an important distinction:
 
-Agents can automate the verification process without automatically solving the problem of knowing what should be verified.
+**Agents can automate the verification process without automatically solving the problem of knowing what should be verified.**
 
 Deciding what constitutes correctness requires understanding the requirements, the architecture, the failure modes, and the consequences of being wrong.
 
@@ -519,6 +519,6 @@ The central lesson is that the value of AI agents comes not only from generating
 
 A system that enables agents to implement, execute, observe, and validate their changes can achieve much higher development velocity.
 
-But that velocity is sustainable only when the evidence supporting correctness keeps pace with the code being produced.
+**But that velocity is sustainable only when the evidence supporting correctness keeps pace with the code being produced.**
 
 The goal is not to build agents that always say their work is correct. It is to build agents that can demonstrate what is correct, explain what remains unverified, and provide enough evidence to support responsible engineering decisions.

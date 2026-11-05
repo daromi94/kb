@@ -1,6 +1,6 @@
 # Packets Per Second
 
-Packets Per Second (PPS) is a measure of how many network packets are transmitted, received, or processed in one second.
+**Packets Per Second (PPS) is a measure of how many network packets are transmitted, received, or processed in one second.**
 
 It is one of the most important metrics for understanding networking performance, alongside bandwidth (bits per second) and latency.
 
@@ -58,7 +58,7 @@ Approximate maximum packet rates on 10 Gbps Ethernet:
 
 Both cases can saturate the same 10 Gbps link. Calculations include Ethernet preamble, inter-frame gap, headers, and FCS, without VLAN tags.
 
-The important observation is that the same bandwidth can require dramatically different packet rates.
+The important observation is that **the same bandwidth can require dramatically different packet rates.**
 
 Small packets require more packets per second to move the same amount of data.
 
@@ -111,7 +111,7 @@ Each packet may introduce processing overhead:
 
 Not all packets traverse every operation, and Linux can batch or aggregate some of this work.
 
-Nevertheless, packet processing has a per-packet cost, not just a per-byte cost.
+Nevertheless, **packet processing has a per-packet cost, not just a per-byte cost.**
 
 For example, suppose processing a packet costs 500 ns of CPU time on average.
 
@@ -151,11 +151,11 @@ With 1518-byte frames, the machine can theoretically saturate the link without e
 
 This is a key distinction:
 
-Bandwidth determines how much data a network can carry. PPS capacity determines how many individual packets a system can handle.
+**Bandwidth determines how much data a network can carry. PPS capacity determines how many individual packets a system can handle.**
 
 ## 5. Important distinction: wire PPS vs. kernel packet-processing rate
 
-On Linux, packet-processing rate is not necessarily identical to the physical packet rate.
+**On Linux, packet-processing rate is not necessarily identical to the physical packet rate.**
 
 Modern networking optimizations include:
 
@@ -166,7 +166,7 @@ Modern networking optimizations include:
 
 Consequently, a NIC might receive one million physical packets per second while upper layers of the kernel operate on fewer aggregated SKBs.
 
-The exact meaning of a PPS measurement therefore depends on where it is collected: NIC hardware counters, interface statistics, kernel tracing, or application-level instrumentation.
+**The exact meaning of a PPS measurement therefore depends on where it is collected**: NIC hardware counters, interface statistics, kernel tracing, or application-level instrumentation.
 
 ## 6. The three main networking performance metrics
 
@@ -180,4 +180,4 @@ A networking system can have excellent bandwidth, yet poor PPS capacity for smal
 
 This is particularly relevant to distributed databases, high-performance messaging systems, and packet-processing applications, where packets may be small and frequent.
 
-The fundamental principle: Moving 1 GB as a small number of large packets is generally less expensive in per-packet processing overhead than moving the same 1 GB as millions of small packets.
+The fundamental principle: **Moving 1 GB as a small number of large packets is generally less expensive in per-packet processing overhead than moving the same 1 GB as millions of small packets.**

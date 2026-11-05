@@ -4,7 +4,7 @@ The Engineering Investigation Template is a structured way to investigate proble
 
 Its purpose is to prevent one of the most common mistakes in software engineering:
 
-Jumping from a symptom directly to a solution without understanding the problem.
+**Jumping from a symptom directly to a solution without understanding the problem.**
 
 For example:
 
@@ -70,7 +70,7 @@ Engineering investigation provides a disciplined way to answer these questions.
 
 These steps are not necessarily linear. Evidence can invalidate hypotheses, experiments can reveal new constraints, and validation can uncover unexpected failures.
 
-The essential distinction is between understanding the problem and choosing how to solve it.
+**The essential distinction is between understanding the problem and choosing how to solve it.**
 
 Let's go through every section using one hypothetical example.
 
@@ -103,7 +103,7 @@ A well-framed problem should establish:
 
 The goal is not to explain why the problem exists yet.
 
-Engineering principle: Separate observations from interpretations.
+**Engineering principle: Separate observations from interpretations.**
 
 ## 3. Constraints — What must remain true?
 
@@ -137,7 +137,7 @@ None of these solutions can be evaluated properly without first understanding th
 
 Also, constraints should be challenged when necessary. A 99.9% success target might be unrealistic at arbitrarily high offered load; the supported workload and overload behavior must be defined.
 
-Engineering principle: A solution isn't good in isolation. It's good relative to specific requirements and constraints.
+**Engineering principle: A solution isn't good in isolation. It's good relative to specific requirements and constraints.**
 
 ## 4. Hypotheses — What could explain the behavior?
 
@@ -187,7 +187,7 @@ Now there is something concrete to investigate.
 
 It's also possible for multiple hypotheses to be true simultaneously.
 
-Engineering principle: A useful hypothesis explains the observations and predicts evidence that could disprove it.
+**Engineering principle: A useful hypothesis explains the observations and predicts evidence that could disprove it.**
 
 ## 5. Evidence — What do we know, and what is missing?
 
@@ -227,7 +227,7 @@ Worker E:  Memory  48%
 
 Cluster-wide averages can obscure the node responsible for failures.
 
-Engineering principle: Measurements should distinguish competing explanations, not merely describe system activity.
+**Engineering principle: Measurements should distinguish competing explanations, not merely describe system activity.**
 
 ## 6. Experiment — What test can distinguish the hypotheses?
 
@@ -262,7 +262,7 @@ Another subtle point is that limiting execution concurrency may move waiting tim
 
 A good experiment should define the workload, variables, predicted outcomes, metrics, and conditions under which the hypothesis would be rejected.
 
-Engineering principle: Experiments are not just for verifying solutions. They are for improving understanding of how the system behaves.
+**Engineering principle: Experiments are not just for verifying solutions. They are for improving understanding of how the system behaves.**
 
 ## 7. Alternatives — What solutions are available, and what are their trade-offs?
 
@@ -292,7 +292,7 @@ For example, bounded admission control may be attractive as an immediate mitigat
 
 The trade-off is that overload must now be handled explicitly through queueing, rejection, or some other policy.
 
-Engineering principle: Engineering decisions rarely involve a universally best solution. They involve selecting an appropriate trade-off.
+**Engineering principle: Engineering decisions rarely involve a universally best solution. They involve selecting an appropriate trade-off.**
 
 ## 8. Decision — What should be done, and why?
 
@@ -322,7 +322,7 @@ One of the most valuable engineering habits is documenting why a decision was ma
 
 Implementing a change doesn't mean solving the problem.
 
-Validation compares actual outcomes against success criteria defined in advance.
+**Validation compares actual outcomes against success criteria defined in advance.**
 
 For example, after introducing bounded concurrency:
 
@@ -344,7 +344,7 @@ Validation must consider rejected requests, retries, total offered load, and end
 
 A controlled rollout should also include rollback criteria.
 
-Engineering principle: Evaluate system-level outcomes, not just whether the implemented component behaves correctly.
+**Engineering principle: Evaluate system-level outcomes, not just whether the implemented component behaves correctly.**
 
 ## 10. Failure modes — What could go wrong with the proposed solution?
 
@@ -398,7 +398,7 @@ The appropriate response depends on the recovery and durability guarantees.
 
 This is a deeper engineering mindset: a solution should be evaluated not only under expected conditions, but also under unexpected and adverse conditions.
 
-Engineering principle: Every solution introduces assumptions and potential new failure modes.
+**Engineering principle: Every solution introduces assumptions and potential new failure modes.**
 
 ## 11. The deeper lesson: three distinct kinds of reasoning
 
@@ -438,11 +438,11 @@ Initially, the quality of the reasoning matters more than finding the correct so
 
 A particularly useful habit is to ask, after every hypothesis:
 
-> What observation would prove this hypothesis wrong?
+> **What observation would prove this hypothesis wrong?**
 
 And after every proposed solution:
 
-> Under what circumstances would this solution make the system worse?
+> **Under what circumstances would this solution make the system worse?**
 
 Those two questions develop some of the most important skills in engineering: scientific reasoning and trade-off awareness.
 

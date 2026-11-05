@@ -1,8 +1,8 @@
 # Unit of work
 
-A unit of work is a discrete piece of computation that a system treats as a single entity for execution, scheduling, tracking, or completion.
+**A unit of work is a discrete piece of computation that a system treats as a single entity for execution, scheduling, tracking, or completion.**
 
-The important distinction is that a unit of work describes what needs to be done, not necessarily which thread or CPU executes it.
+The important distinction is that **a unit of work describes what needs to be done, not necessarily which thread or CPU executes it.**
 
 In operating systems, the meaning depends on the abstraction being discussed:
 
@@ -56,7 +56,7 @@ In Linux, the primary schedulable unit is a task, represented by a `task_struct`
 
 A Linux task generally corresponds to a thread of execution. It has execution state, scheduling attributes, and CPU context.
 
-The kernel scheduler operates on runnable tasks, not on arbitrary functions or application-level jobs.
+**The kernel scheduler operates on runnable tasks, not on arbitrary functions or application-level jobs.**
 
 ```text
           Linux Scheduler
@@ -75,7 +75,7 @@ Task A        Task B        Task C
 
 The scheduler decides which runnable task should execute on each available CPU.
 
-This has an important consequence: preemption occurs at the task execution level, not necessarily at the logical unit-of-work boundary.
+This has an important consequence: **preemption occurs at the task execution level, not necessarily at the logical unit-of-work boundary.**
 
 A thread executing Work A might be preempted halfway through it. When the thread resumes, execution continues from its saved CPU context.
 
@@ -131,7 +131,7 @@ The choice influences scheduling overhead, load balancing, responsiveness, and c
 | Smaller execution batches             | Larger execution batches               |
 | Potentially better responsiveness     | Potentially better cache locality      |
 
-Importantly, a large unit of work does not necessarily monopolize a CPU: a preemptive kernel can still preempt its executing thread.
+Importantly, **a large unit of work does not necessarily monopolize a CPU: a preemptive kernel can still preempt its executing thread.**
 
 However, a cooperative runtime that only switches work at explicit boundaries may suffer from long-running units of work.
 
@@ -149,4 +149,4 @@ In Linux, these commonly correspond to work items, threads, and CPUs, respective
 
 They are related but not interchangeable.
 
-Key insight: A unit of work is a logical abstraction. A thread is an execution abstraction. A CPU is a physical execution resource. Keeping these concepts separate is essential for understanding preemption, scheduling, concurrency, and throughput.
+Key insight: **A unit of work is a logical abstraction. A thread is an execution abstraction. A CPU is a physical execution resource.** Keeping these concepts separate is essential for understanding preemption, scheduling, concurrency, and throughput.

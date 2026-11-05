@@ -79,11 +79,11 @@ Maximizing processing capacity is generally beneficial because it allows more tr
 
 Maximizing offered traffic until the system saturates, however, is not necessarily beneficial.
 
-The objective should be to increase system capacity without creating excessive queueing delay.
+**The objective should be to increase system capacity without creating excessive queueing delay.**
 
 ## 2. The throughput-latency relationship
 
-Throughput and latency are not inherently opposed.
+**Throughput and latency are not inherently opposed.**
 
 At low utilization, a system can increase throughput without significantly increasing latency.
 
@@ -155,7 +155,7 @@ Below this point, additional traffic produces useful throughput without excessiv
 
 Beyond this point, delays rise disproportionately while delivered throughput approaches its maximum.
 
-The correct operating point is therefore not necessarily 100% utilization. It depends on the workload, burstiness, and acceptable latency.
+**The correct operating point is therefore not necessarily 100% utilization.** It depends on the workload, burstiness, and acceptable latency.
 
 ## 3. Packet throughput is not the same as bandwidth throughput
 
@@ -182,7 +182,7 @@ This matters because the kernel and NIC perform work per packet, including:
 - Queue management.
 - Interrupt or polling operations.
 
-For small packets, per-packet overhead can become the bottleneck before the physical link reaches capacity.
+**For small packets, per-packet overhead can become the bottleneck before the physical link reaches capacity.**
 
 Therefore, optimizing packet throughput often means reducing CPU cycles and fixed overhead per packet, rather than increasing link bandwidth.
 
@@ -248,7 +248,7 @@ This introduces a trade-off:
 | Wait to form large batches                            | Potentially higher efficiency | Higher waiting time        |
 | Process currently available packets in bounded bursts | Good efficiency               | Often a useful compromise  |
 
-An important subtlety: batch processing does not necessarily introduce latency. Processing packets that have already arrived in a batch is different from intentionally delaying packets to accumulate a batch.
+An important subtlety: batch processing does not necessarily introduce latency. **Processing packets that have already arrived in a batch is different from intentionally delaying packets to accumulate a batch.**
 
 DPDK explicitly supports different processing strategies, from individual packet processing to burst-oriented execution, because there is no universally optimal strategy.
 
@@ -289,7 +289,7 @@ If 50 such frames are queued ahead of a packet, they alone can add approximately
 
 The important observation is:
 
-Queueing latency depends on the amount of work ahead of a packet, not just how fast the packet itself can be transmitted.
+**Queueing latency depends on the amount of work ahead of a packet, not just how fast the packet itself can be transmitted.**
 
 Queues are necessary to accommodate bursts, but continuously occupied queues introduce avoidable latency.
 
@@ -318,7 +318,7 @@ Receive queues should be configured based on CPU capacity and queueing behavior 
 
 Rather than maximizing throughput without constraints, the problem can be formulated as:
 
-Maximize the sustainable packet delivery rate subject to a latency and reliability requirement.
+**Maximize the sustainable packet delivery rate subject to a latency and reliability requirement.**
 
 Mathematically:
 
@@ -395,7 +395,7 @@ Packets may arrive in bursts. Processing times fluctuate. NIC queues can tempora
 
 These sources of variability create queueing even when average traffic remains below maximum capacity.
 
-Consequently, real systems generally need some headroom to maintain predictable latency.
+Consequently, **real systems generally need some headroom to maintain predictable latency.**
 
 ## 9. The fundamental conclusion
 
@@ -406,6 +406,6 @@ There are two very different optimization strategies:
 
 The strongest design objective for a low-latency, high-throughput transport is therefore:
 
-> Maximize sustainable packets per second while minimizing the processing and queueing latency experienced by each packet, particularly at high-percentile latency targets.
+> **Maximize sustainable packets per second while minimizing the processing and queueing latency experienced by each packet, particularly at high-percentile latency targets.**
 
 It is not about keeping the CPU or NIC as busy as possible. It is about making each packet inexpensive to process, avoiding unnecessary waiting, and operating within the capacity of the slowest stage.

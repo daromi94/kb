@@ -4,7 +4,7 @@ PREEMPT_RT is a Linux kernel configuration that makes almost all kernel executio
 
 In other words, it transforms Linux into a real-time operating system by allowing high-priority tasks to interrupt most ongoing kernel operations, rather than waiting for those operations to finish.
 
-The objective is not necessarily to make execution faster. It is to make the time required to respond to important events more predictable.
+**The objective is not necessarily to make execution faster. It is to make the time required to respond to important events more predictable.**
 
 PREEMPT_RT achieves this primarily through two mechanisms:
 
@@ -27,19 +27,15 @@ Time -------------------------------------------------->
 
 CPU:
 
-     Task A executing kernel code
-     *-----------------------------*
-                                   |
-                                   v
-                              Task B runs
+ Task A executing kernel code
+*-----------------------------*
+          ^                   |
+          |                   v
+   Task B becomes        Task B runs
+      runnable
 
-               ^
-               |
-         Task B becomes
-           runnable
-
-     Task B must wait until the kernel
-     reaches a safe preemption point.
+Task B must wait until the kernel
+reaches a safe preemption point.
 ```
 
 Even though Task B has higher priority, it cannot execute immediately.
@@ -53,15 +49,15 @@ Time -------------------------------------------------->
 
 CPU:
 
-     Task A        Task B         Task A
-     *--------*----------------*----------*
-              ^
-              |
-         Task B becomes
-           runnable
+ Task A       Task B        Task A
+*--------*----------------*----------*
+         ^
+         |
+  Task B becomes
+     runnable
 
-     Task B preempts Task A, even though
-     Task A was executing kernel code.
+Task B preempts Task A, even though
+Task A was executing kernel code.
 ```
 
 This is possible when Task A is executing preemptible kernel code and Task B has a sufficiently high scheduling priority.
@@ -70,7 +66,7 @@ PREEMPT_RT reduces the amount of time that a high-priority task can be prevented
 
 ## 2. What does real-time actually mean?
 
-A real-time operating system is designed around timing constraints, not simply execution speed.
+**A real-time operating system is designed around timing constraints, not simply execution speed.**
 
 Consider a control system that must respond to an event within 100 microseconds.
 
@@ -98,7 +94,7 @@ L_sched = t_running - t_runnable
 
 This measures the delay between a task becoming runnable and actually starting or resuming execution.
 
-Importantly, PREEMPT_RT does not automatically guarantee a particular maximum latency. Hardware, drivers, firmware, system configuration, and workload interference still matter.
+Importantly, **PREEMPT_RT does not automatically guarantee a particular maximum latency.** Hardware, drivers, firmware, system configuration, and workload interference still matter.
 
 ## 3. How does PREEMPT_RT work internally?
 
@@ -123,25 +119,25 @@ This prevents certain forms of concurrency problems, but it also introduces sche
 ```text
 Standard Linux
 
-Low-priority Task A
-       |
-       v
-Acquire lock
-       |
-       v
-Preemption disabled
-       |
-       |  High-priority Task B
-       |  becomes runnable
-       |
-       v
-Release lock
-       |
-       v
-Preemption enabled
-       |
-       v
-Task B executes
+   Low-priority Task A
+            |
+            v
+      Acquire lock
+            |
+            v
+   Preemption disabled
+            |
+            |  High-priority Task B
+            |  becomes runnable
+            |
+            v
+      Release lock
+            |
+            v
+   Preemption enabled
+            |
+            v
+     Task B executes
 ```
 
 With PREEMPT_RT, regular `spinlock_t` locks are implemented using an RT-mutex-based mechanism.
@@ -169,19 +165,19 @@ Thread C holds a lock that Thread A needs.
 However, Thread B has higher priority than C and can prevent C from running.
 
 ```text
-Task A (High priority)
-       |
-       | Waiting for lock
-       v
-     Lock X
-       ^
-       | Owned by
-       |
-Task C (Low priority)
-       ^
-       |
-Cannot run because
-       |
+ Task A (High priority)
+            |
+            | Waiting for lock
+            v
+         Lock X
+            ^
+            | Owned by
+            |
+  Task C (Low priority)
+            ^
+            |
+   Cannot run because
+            |
 Task B (Medium priority)
 ```
 
@@ -191,21 +187,21 @@ The highest-priority task is indirectly blocked by a medium-priority task that d
 
 PREEMPT_RT addresses this through priority inheritance.
 
-When Task A blocks on the lock, Task C temporarily inherits Task A's priority.
+**When Task A blocks on the lock, Task C temporarily inherits Task A's priority.**
 
 ```text
-Task A (High)
-       |
-       | Waiting
-       v
-     Lock X
-       ^
-       |
+      Task A (High)
+            |
+            | Waiting
+            v
+         Lock X
+            ^
+            |
 Task C (Boosted to High)
-       |
-       | Runs and releases lock
-       v
-Task A can continue
+            |
+            | Runs and releases lock
+            v
+   Task A can continue
 ```
 
 This prevents medium-priority tasks from indefinitely delaying the lock owner merely because of its original low priority.
@@ -219,16 +215,16 @@ This is another major architectural change.
 In a conventional Linux kernel, a hardware interrupt can cause the CPU to execute an interrupt handler directly.
 
 ```text
-Hardware interrupt
-       |
-       v
+  Hardware interrupt
+           |
+           v
 CPU enters IRQ context
-       |
-       v
-IRQ handler
-       |
-       v
-Return to task
+           |
+           v
+      IRQ handler
+           |
+           v
+    Return to task
 ```
 
 Interrupt handlers execute outside normal task scheduling, and significant work performed in hard interrupt context cannot be preempted by an ordinary runnable task.
@@ -236,26 +232,26 @@ Interrupt handlers execute outside normal task scheduling, and significant work 
 PREEMPT_RT changes this by moving most interrupt processing into kernel threads.
 
 ```text
-Hardware interrupt
-         |
-         v
-Minimal IRQ handler
-         |
-         | Wake thread
-         v
-    IRQ thread
-         |
-         v
-  Linux scheduler
-         |
-    +----+----+
-    |         |
-    v         v
-IRQ work   Higher-priority
-           real-time task
+      Hardware interrupt
+               |
+               v
+      Minimal IRQ handler
+               |
+               | Wake thread
+               v
+          IRQ thread
+               |
+               v
+        Linux scheduler
+               |
+    +----------+----------+
+    |                     |
+    v                     v
+IRQ work           Higher-priority
+                   real-time task
 ```
 
-The IRQ thread becomes schedulable, meaning that:
+**The IRQ thread becomes schedulable**, meaning that:
 
 - Its execution can be preempted.
 - It has an explicit scheduling priority.
@@ -283,20 +279,20 @@ Examples include:
 A useful conceptual model:
 
 ```text
-             Linux kernel
-                  |
-      +-----------+-----------+
-      |                       |
-      v                       v
-Preemptible code       Non-preemptible code
-      |                       |
- Most kernel work       Low-level critical
- Threaded interrupts    sections
- Regular spinlocks      Raw spinlocks
- Deferred processing    Scheduler internals
+                  Linux kernel
+                        |
+         +--------------+--------------+
+         |                             |
+         v                             v
+ Preemptible code            Non-preemptible code
+         |                             |
+ Most kernel work             Low-level critical
+Threaded interrupts                sections
+ Regular spinlocks               Raw spinlocks
+Deferred processing           Scheduler internals
 ```
 
-The objective of PREEMPT_RT is to minimize the duration and frequency of non-preemptible execution, not eliminate it entirely.
+**The objective of PREEMPT_RT is to minimize the duration and frequency of non-preemptible execution, not eliminate it entirely.**
 
 ## 5. Does PREEMPT_RT improve performance?
 
@@ -318,7 +314,7 @@ On a conventional kernel, the application may benefit from batching, long execut
 
 PREEMPT_RT can introduce additional synchronization and scheduling overhead.
 
-Consequently, workloads optimized for maximum throughput may not benefit from PREEMPT_RT unless they also have strict scheduling-latency requirements.
+Consequently, **workloads optimized for maximum throughput may not benefit from PREEMPT_RT unless they also have strict scheduling-latency requirements.**
 
 On the other hand, industrial automation, robotics, audio processing, and time-sensitive control systems frequently benefit from predictable scheduling.
 
@@ -331,29 +327,29 @@ PREEMPT_RT changes this balance by placing significantly more kernel execution u
 ```text
 Conventional Linux
 
-Kernel execution
-       |
-       v
-Some operations run
-without preemption
-       |
-       v
-High-priority tasks
-can be delayed
+     Kernel execution
+             |
+             v
+    Some operations run
+    without preemption
+             |
+             v
+    High-priority tasks
+      can be delayed
 
 PREEMPT_RT
 
-Kernel execution
-       |
-       v
-Most operations are
+     Kernel execution
+             |
+             v
+    Most operations are
 preemptible and schedulable
-       |
-       v
-High-priority tasks
-can execute sooner
+             |
+             v
+    High-priority tasks
+    can execute sooner
 ```
 
-The central idea is that even kernel work should generally not be allowed to delay a more important real-time task unnecessarily.
+**The central idea is that even kernel work should generally not be allowed to delay a more important real-time task unnecessarily.**
 
 This is why PREEMPT_RT is fundamentally about reducing scheduling latency and improving timing predictability, rather than making Linux universally faster.

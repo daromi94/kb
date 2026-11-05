@@ -11,7 +11,7 @@ Both properties strongly influence caching, partitioning, load balancing, state 
 
 ## 1. Temporal locality
 
-Temporal locality is the tendency for recently accessed data to be accessed again in the near future.
+**Temporal locality is the tendency for recently accessed data to be accessed again in the near future.**
 
 Consider a distributed system processing events associated with customer IDs.
 
@@ -113,7 +113,7 @@ It is particularly valuable for systems that move data toward the computation ac
 
 ## 2. Data skew
 
-Data skew occurs when workload or data is distributed unevenly across keys, partitions, or workers.
+**Data skew occurs when workload or data is distributed unevenly across keys, partitions, or workers.**
 
 Consider an application processing one million events.
 
@@ -150,25 +150,25 @@ Key C: #####                                               7%
 Key D: ##                                                  3%
 ```
 
-Skew creates an important problem in distributed systems: equal numbers of keys do not necessarily produce equal workloads.
+Skew creates an important problem in distributed systems: **equal numbers of keys do not necessarily produce equal workloads.**
 
 ### Skew and partitioning
 
-Suppose four tasks process events using key-based partitioning.
+Suppose three tasks process events using key-based partitioning.
 
 ```text
-                 Incoming Events
-                        |
-                        v
-                 Hash Partition
-                        |
-          +-------------+-------------+
-          |             |             |
-          v             v             v
-        Task A        Task B        Task C
-        Key 1         Key 2         Key 3
+            Incoming Events
+                   |
+                   v
+            Hash Partition
+                   |
+   +---------------+---------------+
+   |               |               |
+   v               v               v
+Task A          Task B          Task C
+ Key 1           Key 2           Key 3
 
-        80K/s         10K/s         10K/s
+ 80K/s           10K/s           10K/s
 ```
 
 Even if the partitioning scheme distributes keys evenly, it may distribute actual computational load poorly.
@@ -183,7 +183,7 @@ The system may experience:
 - CPU utilization imbalance.
 - Reduced overall throughput.
 
-Adding workers does not automatically solve skew. If one exceptionally hot key must be processed by a single owner, that key can remain a bottleneck.
+**Adding workers does not automatically solve skew.** If one exceptionally hot key must be processed by a single owner, that key can remain a bottleneck.
 
 ### Skew is often modeled using Zipf's law
 
@@ -221,7 +221,7 @@ Although related, these properties describe different aspects of a workload.
 
 They are not interchangeable.
 
-A workload can exhibit strong temporal locality with little skew, or strong skew with rapidly changing hot keys.
+**A workload can exhibit strong temporal locality with little skew, or strong skew with rapidly changing hot keys.**
 
 ### Example A: High temporal locality, low skew
 
@@ -276,19 +276,19 @@ But consider a workload with strong temporal locality.
 Only 2 GB of the reassigned state is actively accessed after the reconfiguration.
 
 ```text
-                 Reconfiguration
-                        |
-             +----------+----------+
-             |                     |
-             v                     v
-       Eager Migration       Lazy Migration
-             |                     |
-             v                     v
-        Move 50 GB             Move 2 GB
-             |                     |
-             v                     v
-       All reassigned         Only accessed
-       state transferred      state transferred
+               Reconfiguration
+                      |
+        +-------------+-------------+
+        |                           |
+        v                           v
+ Eager Migration             Lazy Migration
+        |                           |
+        v                           v
+   Move 50 GB                   Move 2 GB
+        |                           |
+        v                           v
+ All reassigned               Only accessed
+state transferred           state transferred
 ```
 
 The remaining 48 GB can stay where it is, provided the existing storage location remains available.
@@ -304,25 +304,25 @@ If those hot keys are reassigned during reconfiguration, fetching them once and 
 Consider:
 
 ```text
-Task B
-(New Owner)
-   |
-   v
-Key A used
-   |
-   v
-Fetch from Task A
-   |
-   v
-Store locally
-   |
-   v
+       Task B
+     (New Owner)
+          |
+          v
+     Key A used
+          |
+          v
+  Fetch from Task A
+          |
+          v
+    Store locally
+          |
+          v
 Future accesses local
 ```
 
-For a very popular key, the initial remote transfer cost is amortized over many subsequent accesses.
+**For a very popular key, the initial remote transfer cost is amortized over many subsequent accesses.**
 
-However, skew also affects load distribution. Moving state efficiently does not by itself balance the workload. The system still needs an ownership assignment that distributes hot keys appropriately.
+However, skew also affects load distribution. **Moving state efficiently does not by itself balance the workload.** The system still needs an ownership assignment that distributes hot keys appropriately.
 
 ## 5. Why the combination is powerful
 
@@ -363,18 +363,20 @@ Caching benefits when recently accessed data is likely to be reused.
 A cache stores a subset of the total dataset:
 
 ```text
- Incoming Request
-        |
-        v
-  +-----------+
-  |   Cache   |
-  +-----------+
-  |           |
- Hit         Miss
-  |           |
-  v           v
-Return    Fetch from
-data      backing store
+        Incoming Request
+                |
+                v
+         +-------------+
+         |    Cache    |
+         +-------------+
+                |
+   +------------+--------------+
+   |                           |
+  Hit                        Miss
+   |                           |
+   v                           v
+Return                    Fetch from
+ data                    backing store
 ```
 
 A small, stable working set can produce a high cache hit rate.
@@ -394,7 +396,7 @@ Worker D: 10% CPU
 
 Possible mitigation strategies include hot-key-aware partitioning, dynamic rebalancing, splitting associative computations, or replicating read-only data where consistency semantics permit.
 
-A single key requiring strictly sequential state updates remains a special challenge: merely adding workers cannot make its updates independently parallelizable.
+**A single key requiring strictly sequential state updates remains a special challenge: merely adding workers cannot make its updates independently parallelizable.**
 
 ### Measuring the properties
 
@@ -409,24 +411,24 @@ These measurements serve different purposes: temporal-locality metrics help dete
 Temporal locality and skew should be considered together, but optimized differently.
 
 ```text
-                    Workload
+                   Workload
                        |
-             +---------+---------+
-             |                   |
-             v                   v
-      Temporal Locality         Skew
-             |                   |
-             v                   v
-      Which keys are       Which keys consume
-      likely to be         the most resources?
-      reused soon?
-             |                   |
-             v                   v
-      State placement      Load balancing
-      Cache management     Key partitioning
-      Lazy migration       Hot-key mitigation
+        +--------------+--------------+
+        |                             |
+        v                             v
+Temporal Locality                   Skew
+        |                             |
+        v                             v
+ Which keys are              Which keys consume
+  likely to be               the most resources?
+  reused soon?
+        |                             |
+        v                             v
+ State placement               Load balancing
+Cache management              Key partitioning
+ Lazy migration              Hot-key mitigation
 ```
 
-Temporal locality tells a distributed system which data is worth keeping close to computation. Skew tells it where the computational pressure is concentrated.
+**Temporal locality tells a distributed system which data is worth keeping close to computation. Skew tells it where the computational pressure is concentrated.**
 
 Together, they provide the information needed to make intelligent decisions about state placement, migration, partitioning, and dynamic reconfiguration.

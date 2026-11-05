@@ -4,7 +4,7 @@ Yes. Linux uses preemptive scheduling, and it also supports preemption of code e
 
 ## 1. What is preemption?
 
-Preemption is the ability of the operating system to suspend a running task and give the CPU to another task without requiring the first task to voluntarily relinquish it.
+**Preemption is the ability of the operating system to suspend a running task and give the CPU to another task without requiring the first task to voluntarily relinquish it.**
 
 Consider a CPU executing two threads:
 
@@ -12,10 +12,10 @@ Consider a CPU executing two threads:
 Time ---------------------------------------->
 
 CPU
-    | Thread A | Thread B | Thread A | Thread B |
-               ^          ^          ^
-               |          |          |
-           Preemption  Preemption  Preemption
+| Thread A | Thread B | Thread A | Thread B |
+           ^          ^          ^
+           |          |          |
+      Preemption Preemption Preemption
 ```
 
 Thread A might be executing an infinite loop:
@@ -37,30 +37,31 @@ This allows multiple runnable threads to share the same CPU.
 A simplified sequence:
 
 ```text
-CPU executing Thread A
-      |
-      v
-Timer interrupt
-      |
-      v
-Kernel gains control
-      |
-      v
-Scheduler evaluates tasks
-      |
-      v
-Should Thread B run?
-      |
-     Yes
-      |
-      v
-Save Thread A CPU state
-      |
-      v
+  CPU executing Thread A
+             |
+             v
+      Timer interrupt
+             |
+             v
+   Kernel gains control
+             |
+             v
+ Scheduler evaluates tasks
+             |
+             v
+   Should Thread B run?
+             |
+             v
+            Yes
+             |
+             v
+  Save Thread A CPU state
+             |
+             v
 Restore Thread B CPU state
-      |
-      v
-CPU executes Thread B
+             |
+             v
+   CPU executes Thread B
 ```
 
 The actual scheduler decision depends on scheduling policies, priorities, task eligibility, and CPU scheduling history.
@@ -76,17 +77,17 @@ This distinction is particularly important.
 A thread executing application code can be preempted by the kernel.
 
 ```text
-      CPU
-       |
-       v
+        CPU
+         |
+         v
 User-space Thread A
-       |
-       |  Timer interrupt
-       v
-Kernel scheduler
-       |
-       |  Context switch
-       v
+         |
+         |  Timer interrupt
+         v
+ Kernel scheduler
+         |
+         |  Context switch
+         v
 User-space Thread B
 ```
 
@@ -105,48 +106,48 @@ read(fd, buffer, size);
 The CPU transitions from user mode into kernel mode.
 
 ```text
-   Thread A
-      |
-      v
-User-space code
-      |
-      | read()
-      v
-Kernel-space code
-      |
-      | Processing syscall
-      |
-      v
+      Thread A
+          |
+          v
+   User-space code
+          |
+          | read()
+          v
+  Kernel-space code
+          |
+          | Processing syscall
+          |
+          v
 Return to user space
 ```
 
-Kernel preemption means that Thread A can be suspended while it is still executing kernel code, allowing another task to run.
+**Kernel preemption means that Thread A can be suspended while it is still executing kernel code, allowing another task to run.**
 
 For example, on a fully preemptible kernel:
 
 ```text
-   Thread A
-      |
-      v
-User-space code
-      |
-      | read()
-      v
-Kernel-space code
-      |
-      | Thread B needs CPU
-      v
- Preemption
-      |
-      v
-Thread B executes
-      |
-      | Thread A scheduled again
-      v
-Kernel-space code
-      |
-      | Continue read()
-      v
+      Thread A
+          |
+          v
+   User-space code
+          |
+          | read()
+          v
+  Kernel-space code
+          |
+          | Thread B needs CPU
+          v
+     Preemption
+          |
+          v
+  Thread B executes
+          |
+          | Thread A scheduled again
+          v
+  Kernel-space code
+          |
+          | Continue read()
+          v
 Return to user space
 ```
 
@@ -168,7 +169,7 @@ Linux supports several preemption models.
 | `PREEMPT` (Full)    | Allows kernel code to be preempted wherever preemption is enabled.                                   |
 | `PREEMPT_RT`        | Makes much more kernel execution preemptible, including much interrupt processing.                   |
 
-Even on a fully preemptible Linux kernel, certain critical sections cannot be preempted.
+**Even on a fully preemptible Linux kernel, certain critical sections cannot be preempted.**
 
 For example:
 
@@ -203,19 +204,19 @@ Costs:
 - Potential cache disruption and scheduling overhead.
 - More complex concurrency behavior inside the kernel.
 
-A particularly important distinction is that preemption improves the ability to schedule tasks promptly; it does not automatically improve throughput.
+A particularly important distinction is that **preemption improves the ability to schedule tasks promptly; it does not automatically improve throughput.**
 
 For example, a high-throughput networking application may prefer fewer context switches and more uninterrupted CPU execution, while a real-time control application may prioritize bounded scheduling latency.
 
 ## 5. Preemption is not the same as an interrupt
 
-An interrupt transfers execution to a handler, which may run independently of the normal task scheduler.
+**An interrupt transfers execution to a handler, which may run independently of the normal task scheduler.**
 
-Preemption changes which task is executing.
+**Preemption changes which task is executing.**
 
 A hardware interrupt can cause the scheduler to make a preemption decision, but an interrupt does not necessarily result in a task switch.
 
-Similarly, disabling task preemption does not automatically disable hardware interrupts.
+Similarly, **disabling task preemption does not automatically disable hardware interrupts.**
 
 These are separate mechanisms.
 

@@ -4,7 +4,7 @@ AI agents are fundamentally changing how software engineering happens. Tasks tha
 
 But this introduces an interesting problem:
 
-When the cost of producing software approaches zero, the ability to evaluate software becomes increasingly important.
+**When the cost of producing software approaches zero, the ability to evaluate software becomes increasingly important.**
 
 The challenge is no longer exclusively about writing correct code. It is about determining whether the right problem was solved, whether the solution is appropriate, and whether the evidence supporting its correctness is sufficient.
 
@@ -39,7 +39,7 @@ Does the service have enough CPU capacity? Is the workload CPU-bound or I/O-boun
 
 The difference is fundamental:
 
-A plausible explanation is not necessarily a correct explanation.
+**A plausible explanation is not necessarily a correct explanation.**
 
 Critical thinking transforms a convincing answer into a testable claim.
 
@@ -73,7 +73,7 @@ Understanding is no longer required
 
 ### Cognitive offloading
 
-Cognitive offloading means delegating execution while maintaining ownership of the result.
+**Cognitive offloading means delegating execution while maintaining ownership of the result.**
 
 For example, an agent could:
 
@@ -122,7 +122,7 @@ Traditional technical debt occurs when implementation choices create future main
 
 AI-assisted development introduces another kind of debt: cognitive debt.
 
-Cognitive debt accumulates when a system grows faster than the ability to understand its behavior and underlying decisions.
+**Cognitive debt accumulates when a system grows faster than the ability to understand its behavior and underlying decisions.**
 
 Consider:
 
@@ -165,7 +165,7 @@ The implementation works, but several questions remain:
 
 A future engineer might spend considerably more time recovering this reasoning than the agent spent implementing the feature.
 
-Importantly, maintaining a complete mental model of a large system is neither realistic nor necessary. What matters is preserving the ability to reconstruct the relevant understanding when needed, including knowing which assumptions require verification.
+Importantly, maintaining a complete mental model of a large system is neither realistic nor necessary. **What matters is preserving the ability to reconstruct the relevant understanding when needed, including knowing which assumptions require verification.**
 
 ## 4. Critical thinking begins before the agent starts working
 
@@ -183,7 +183,7 @@ What workload matters? What constraints must be preserved?
 
 An agent can fill in these gaps, but its choices may not match the intended outcome.
 
-A stronger approach begins with a hypothesis and an explicit definition of success.
+**A stronger approach begins with a hypothesis and an explicit definition of success.**
 
 For example:
 
@@ -249,7 +249,7 @@ Or what if time calculations are incorrect when the system clock changes?
 
 Or what if separate instances enforce limits independently when the requirement calls for a global limit?
 
-The tests may all pass while the system violates its actual requirements.
+**The tests may all pass while the system violates its actual requirements.**
 
 ```text
                REQUIREMENTS
@@ -281,7 +281,7 @@ What did the test prove? What did it not prove?
 
 This is a fundamental distinction between verification and critical thinking.
 
-Verification provides evidence about specific properties. Critical thinking evaluates whether those properties are sufficient to justify the conclusion.
+**Verification provides evidence about specific properties. Critical thinking evaluates whether those properties are sufficient to justify the conclusion.**
 
 A strong workflow defines the meaning of verified before implementation, rather than accepting whatever checks the agent happens to produce afterward.
 
@@ -328,13 +328,13 @@ For instance, agents can be required to provide:
 - Tests performed and properties not covered.
 - Known limitations and unresolved risks.
 
-The goal is to reduce review effort without reducing accountability.
+**The goal is to reduce review effort without reducing accountability.**
 
 ## 7. Critical thinking means actively searching for disconfirming evidence
 
 A powerful technique is to ask:
 
-What would have to be true for this solution to be wrong?
+**What would have to be true for this solution to be wrong?**
 
 Suppose an agent recommends replacing a synchronized queue with a lock-free implementation to improve throughput.
 
@@ -443,7 +443,7 @@ Several habits are especially valuable.
 | Practice important skills manually  | Maintains the ability to supervise and challenge agents            |
 | Reconstruct understanding on demand | Avoids unnecessary memorization without surrendering comprehension |
 
-These practices should be proportional to risk.
+**These practices should be proportional to risk.**
 
 Choosing a low-stakes configuration or producing a disposable prototype does not require the same level of scrutiny as modifying a financial transaction system or changing a distributed consensus protocol.
 

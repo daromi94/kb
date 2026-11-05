@@ -2,7 +2,7 @@
 
 The Pigeonhole Principle is a fundamental mathematical principle stating that:
 
-> If more objects are distributed among fewer containers, at least one container must hold more than one object.
+> **If more objects are distributed among fewer containers, at least one container must hold more than one object.**
 
 The name comes from the idea of putting pigeons into pigeonholes (small compartments).
 
@@ -13,9 +13,9 @@ Suppose there are 5 pigeons and only 4 pigeonholes.
 ```text
 Pigeons                 Pigeonholes
 
-   A -----\
-           \----------> [ A, B ]
-   B -----/
+   A ------+
+           +----------> [ A, B ]
+   B ------+
 
    C -----------------> [ C ]
 
@@ -28,7 +28,7 @@ Pigeons                 Pigeonholes
 
 No matter how the pigeons are distributed, at least one pigeonhole must contain two or more pigeons.
 
-This is a mathematical guarantee, not a probability.
+**This is a mathematical guarantee, not a probability.**
 
 ## 2. Generalized Pigeonhole Principle
 
@@ -46,7 +46,7 @@ For example, if 100 tasks are assigned to 8 queues:
 ceil(100 / 8) = 13
 ```
 
-At least one queue must contain 13 or more tasks, regardless of the assignment strategy.
+**At least one queue must contain 13 or more tasks, regardless of the assignment strategy.**
 
 Notice that the principle says nothing about which queue will contain those tasks.
 
@@ -61,9 +61,9 @@ Objects                 Hash buckets
 
 Object 1  ------------> [ Bucket 0 ]
 Object 2  ------------> [ Bucket 1 ]
-Object 3  -----\
-                \-----> [ Bucket 2 ]
-Object 4  -----/
+Object 3  -----+
+               +------> [ Bucket 2 ]
+Object 4  -----+
    ...                      ...
 Object 1000 ----------> [ Bucket 255 ]
 ```
@@ -100,7 +100,7 @@ At least one core must have 3 or more assigned threads.
 
 Since each core can execute only one thread at a time (assuming one hardware execution context per core), the threads assigned to that core must share CPU execution time.
 
-The principle guarantees contention under those assumptions, but does not determine scheduling fairness, latency, or actual CPU utilization.
+**The principle guarantees contention under those assumptions, but does not determine scheduling fairness, latency, or actual CPU utilization.**
 
 ## 4. Why is it important?
 
@@ -117,4 +117,4 @@ It appears in:
 
 For example, it proves that no lossless compression algorithm can make every possible input smaller. There are simply not enough shorter binary strings to represent all longer binary strings uniquely.
 
-The key insight: When the number of distinguishable objects exceeds the number of available destinations, some destination must be shared. No algorithm can eliminate this fundamental constraint without increasing the number of destinations, restricting the inputs, or changing the representation.
+The key insight: **When the number of distinguishable objects exceeds the number of available destinations, some destination must be shared.** No algorithm can eliminate this fundamental constraint without increasing the number of destinations, restricting the inputs, or changing the representation.

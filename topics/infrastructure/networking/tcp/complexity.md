@@ -56,7 +56,7 @@ If data is lost, TCP attempts to recover it. If segments arrive out of order, TC
 
 TCP must operate over a potentially unreliable datagram service, across many different types of networks.
 
-The fundamental tradeoff: TCP makes networking easier and safer for applications by moving substantial complexity into the transport layer.
+**The fundamental tradeoff: TCP makes networking easier and safer for applications by moving substantial complexity into the transport layer.**
 
 ## 2. The assumptions behind TCP
 
@@ -143,7 +143,7 @@ This generates several costs:
 
 Importantly, TCP does not wait for an ACK after every segment before sending the next one. It uses sliding windows that permit multiple segments to remain in flight simultaneously. ACKs may acknowledge multiple segments at once.
 
-Also, an application's successful `send()` call does not mean the remote application has received the data. Usually, it means the local kernel accepted the data for transmission.
+Also, **an application's successful `send()` call does not mean the remote application has received the data.** Usually, it means the local kernel accepted the data for transmission.
 
 ### 3.2. Ordered delivery introduces head-of-line blocking
 
@@ -170,7 +170,7 @@ Cannot deliver S3 as subsequent stream bytes
 Wait for S2
 ```
 
-Even though S3 has arrived, the receiver cannot expose the bytes after the missing gap through the ordinary TCP stream interface.
+**Even though S3 has arrived, the receiver cannot expose the bytes after the missing gap through the ordinary TCP stream interface.**
 
 TCP must first reconstruct the contiguous byte sequence.
 
@@ -228,7 +228,7 @@ Shared network
 Sender updates state
 ```
 
-A sender cannot assume that a fast local NIC means the entire path has unlimited capacity.
+**A sender cannot assume that a fast local NIC means the entire path has unlimited capacity.**
 
 The connection could traverse a slow link, a congested router, or a receiver whose application stops reading.
 
@@ -291,7 +291,7 @@ Cache locality. Packet processing and application processing may run on differen
 
 Crucially, these are not exclusively TCP costs. Standard Linux UDP sockets use much of the same kernel networking infrastructure.
 
-Removing TCP's reliability mechanisms while retaining ordinary UDP sockets does not automatically eliminate system calls, kernel packet processing, or memory copies.
+**Removing TCP's reliability mechanisms while retaining ordinary UDP sockets does not automatically eliminate system calls, kernel packet processing, or memory copies.**
 
 ### 3.5. Connection management and transport state
 
@@ -318,7 +318,7 @@ Each established connection also has state associated with sequencing, buffering
 
 Why? The endpoints must agree on the connection's initial sequence-number spaces and distinguish new data from potentially delayed segments belonging to previous connection instances.
 
-For long-lived connections, handshake cost is amortized and often insignificant. For workloads that repeatedly create short-lived connections, it can become important.
+**For long-lived connections, handshake cost is amortized and often insignificant.** For workloads that repeatedly create short-lived connections, it can become important.
 
 ### 3.6. Latency-oriented traffic conflicts with batching optimizations
 
@@ -334,7 +334,7 @@ Linux supports `TCP_NODELAY` to disable Nagle's algorithm. Separately, delayed a
 
 This is an example of a recurring tradeoff:
 
-Optimizing network efficiency sometimes conflicts with optimizing the latency of individual application writes.
+**Optimizing network efficiency sometimes conflicts with optimizing the latency of individual application writes.**
 
 ## 4. Are these costs still relevant on modern Linux?
 
@@ -355,7 +355,7 @@ Modern implementations do not necessarily process every physical network segment
 
 For an 8 KiB message, this matters: the payload may span several wire packets while still being processed efficiently as a larger unit in parts of the stack.
 
-Consequently, TCP's actual overhead cannot be estimated simply by counting packets and multiplying by the cost of a fully independent protocol-stack traversal.
+Consequently, **TCP's actual overhead cannot be estimated simply by counting packets and multiplying by the cost of a fully independent protocol-stack traversal.**
 
 ## 5. TCP versus UDP: which costs disappear?
 
@@ -471,6 +471,6 @@ For a narrowly controlled cluster with predictable latency, however, some of TCP
 
 For ultra-low-latency communication between two nodes, the most productive question is therefore not simply whether TCP is expensive.
 
-It is which portion of end-to-end latency and CPU consumption comes from TCP's required semantics, and which comes from the Linux networking data path.
+**It is which portion of end-to-end latency and CPU consumption comes from TCP's required semantics, and which comes from the Linux networking data path.**
 
-The central conclusion: TCP was designed to make communication correct and interoperable across unreliable, heterogeneous networks. Its costs are the consequences of those guarantees and of the general-purpose kernel implementation, not merely inefficiencies that can be tuned away.
+**The central conclusion: TCP was designed to make communication correct and interoperable across unreliable, heterogeneous networks. Its costs are the consequences of those guarantees and of the general-purpose kernel implementation, not merely inefficiencies that can be tuned away.**

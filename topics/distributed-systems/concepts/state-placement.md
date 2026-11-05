@@ -8,7 +8,7 @@ This decision affects three important properties:
 2. Adaptability: How easily tasks can be scaled, moved, or reorganized.
 3. Operational disruption: How much ongoing computation is affected when the system changes.
 
-The central tension is that placing state close to computation improves performance, but makes computation harder to move independently of that state.
+**The central tension is that placing state close to computation improves performance, but makes computation harder to move independently of that state.**
 
 ## 1. What is state in a dataflow system?
 
@@ -17,32 +17,32 @@ A distributed dataflow system executes computations organized as a directed grap
 Consider an application that continuously counts transactions per customer.
 
 ```text
-                Input Stream
-                     |
-                     v
-             +---------------+
-             | Parse Records |
-             +---------------+
-                     |
-                     v
-             +---------------+
-             | Partition by  |
-             | Customer ID   |
-             +---------------+
-                     |
-              +------+------+
-              |             |
-              v             v
-         +---------+   +---------+
-         | Task A  |   | Task B  |
-         |         |   |         |
-         | Count   |   | Count   |
-         +---------+   +---------+
-              |             |
-              +------+------+
-                     |
-                     v
-                   Output
+           Input Stream
+                 |
+                 v
+         +---------------+
+         | Parse Records |
+         +---------------+
+                 |
+                 v
+         +---------------+
+         | Partition by  |
+         |  Customer ID  |
+         +---------------+
+                 |
+      +----------+----------+
+      |                     |
+      v                     v
++-----------+         +-----------+
+|  Task A   |         |  Task B   |
+|           |         |           |
+|   Count   |         |   Count   |
++-----------+         +-----------+
+      |                     |
+      +----------+----------+
+                 |
+                 v
+              Output
 ```
 
 Each task processes a subset of customer IDs.
@@ -78,14 +78,14 @@ Worker Node 1
 +-----------------------------+
 |                             |
 |   +---------------------+   |
-|   | Task A              |   |
+|   |       Task A        |   |
 |   |                     |   |
-|   | Computation         |   |
-|   |      |              |   |
-|   |      v              |   |
-|   | Local State         |   |
-|   | Customer 1: 120     |   |
-|   | Customer 2:  80     |   |
+|   |     Computation     |   |
+|   |          |          |   |
+|   |          v          |   |
+|   |     Local State     |   |
+|   |   Customer 1: 120   |   |
+|   |   Customer 2:  80   |   |
 |   +---------------------+   |
 |                             |
 +-----------------------------+
@@ -127,12 +127,12 @@ Before:
 
 ```text
 Task A
-+----------------------+
-| Customer 1           |
-| Customer 2           |
-| Customer 3           |
-| Customer 4           |
-+----------------------+
++--------------------+
+| Customer 1         |
+| Customer 2         |
+| Customer 3         |
+| Customer 4         |
++--------------------+
 ```
 
 After:
@@ -174,7 +174,7 @@ The larger the state, the more expensive reconfiguration can become.
 
 For example, a task might process only a few thousand records per second but own hundreds of gigabytes of accumulated state.
 
-Moving the computation is cheap. Moving its associated state is potentially expensive.
+**Moving the computation is cheap. Moving its associated state is potentially expensive.**
 
 ## 3. External state: computation and state separated
 
@@ -185,23 +185,23 @@ Tasks become clients of an independent state service.
 ```text
              Compute Layer
 
-     +----------+      +----------+
-     | Task A   |      | Task B   |
-     +----------+      +----------+
-          |                 |
-          |  Network RPCs   |
-          |                 |
-          +--------+--------+
++----------+              +----------+
+| Task A   |              | Task B   |
++----------+              +----------+
+      |                         |
+      |      Network RPCs       |
+      |                         |
+      +------------+------------+
                    |
                    v
-         +--------------------+
-         | Shared State Store |
-         |                    |
-         | Customer 1: 120    |
-         | Customer 2:  80    |
-         | Customer 3: 250    |
-         | Customer 4:  90    |
-         +--------------------+
+        +---------------------+
+        | Shared State Store  |
+        |                     |
+        | Customer 1: 120     |
+        | Customer 2:  80     |
+        | Customer 3: 250     |
+        | Customer 4:  90     |
+        +---------------------+
 ```
 
 Here, the state is not physically tied to the computational task.
@@ -230,7 +230,7 @@ Task A ----+
 Task C ----+----> State Store
 ```
 
-No application state needs to move between computational tasks merely because responsibility for a set of keys has changed.
+**No application state needs to move between computational tasks merely because responsibility for a set of keys has changed.**
 
 The system updates routing and ownership assignments, and Task C starts accessing the existing state.
 
@@ -266,7 +266,7 @@ Compared with local state, this introduces network latency, serialization overhe
 
 Batching, caching, and asynchronous I/O can mitigate these costs, but they add complexity and do not eliminate the underlying trade-off.
 
-Thus, external state offers greater flexibility at the potential expense of steady-state performance.
+**Thus, external state offers greater flexibility at the potential expense of steady-state performance.**
 
 ## 4. Why long-running applications make this trade-off especially important
 
@@ -313,7 +313,7 @@ This makes the cost of reconfiguration an important consideration, not merely th
 | Task migration             | Potentially expensive   | Usually simpler        |
 | Reconfiguration disruption | Potentially significant | Generally lower        |
 
-The key distinction is between steady-state efficiency and reconfiguration efficiency.
+**The key distinction is between steady-state efficiency and reconfiguration efficiency.**
 
 An architecture optimized for processing records efficiently may struggle when workload ownership changes. An architecture optimized for changing task assignments may incur a continuous cost during record processing.
 
@@ -351,20 +351,20 @@ This arrangement is possible if the system maintains metadata describing the phy
 For example:
 
 ```text
-   Task B
- (Key owner)
-      |
-      | Lookup Key 42
-      v
+     Task B
+   (Key owner)
+        |
+        | Lookup Key 42
+        v
 +--------------+
 | Location Map |
 | 42 -> Task A |
 +--------------+
-      |
-      | Fetch state
-      v
-   Task A
-(State holder)
+        |
+        | Fetch state
+        v
+     Task A
+ (State holder)
 ```
 
 This decoupling introduces an interesting design opportunity:
@@ -374,11 +374,11 @@ This decoupling introduces an interesting design opportunity:
 - State can be moved only when necessary.
 - Once fetched, subsequent accesses can be local.
 
-However, it also introduces correctness challenges: there must never be two tasks concurrently updating the same key, even while ownership and location are changing.
+However, it also introduces correctness challenges: **there must never be two tasks concurrently updating the same key, even while ownership and location are changing.**
 
 ## 7. Key engineering insight
 
-Moving responsibility for computation does not inherently require moving the data used by that computation.
+**Moving responsibility for computation does not inherently require moving the data used by that computation.**
 
 Traditional embedded-state systems often couple the two operations:
 
@@ -398,21 +398,21 @@ Resume processing
 A decoupled design allows the operations to happen independently:
 
 ```text
-Reconfiguration
-       |
-       v
-Transfer logical ownership
-       |
-       v
-Continue processing
-       |
-       +----------------------+
-       |                      |
-       v                      v
-Local state access      Remote state access
-                              |
-                              v
-                       Migrate if needed
+                  Reconfiguration
+                         |
+                         v
+            Transfer logical ownership
+                         |
+                         v
+                Continue processing
+                         |
+         +---------------+---------------+
+         |                               |
+         v                               v
+Local state access              Remote state access
+                                         |
+                                         v
+                                 Migrate if needed
 ```
 
 This design shifts the fundamental question from:
@@ -421,8 +421,8 @@ How can all the state be migrated quickly?
 
 to:
 
-How much state actually needs to be migrated at all?
+**How much state actually needs to be migrated at all?**
 
 That distinction is especially important for large, long-running stateful systems, where the total accumulated state can be enormous while only a small fraction of keys is actively accessed.
 
-The broader distributed systems lesson is that decoupling logical responsibility from physical resource placement can improve adaptability without necessarily sacrificing locality during normal operation.
+**The broader distributed systems lesson is that decoupling logical responsibility from physical resource placement can improve adaptability without necessarily sacrificing locality during normal operation.**

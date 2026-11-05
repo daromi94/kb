@@ -1,6 +1,6 @@
 # Ownership vs location
 
-Ownership and location are two independent concepts: ownership determines who is responsible for a resource, while location determines where that resource physically resides.
+**Ownership and location are two independent concepts: ownership determines who is responsible for a resource, while location determines where that resource physically resides.**
 
 Separating these concepts is a powerful architectural technique because it allows a distributed system to change responsibility for data without necessarily moving the data itself.
 
@@ -23,13 +23,12 @@ Two questions arise:
 Ownership: Who is allowed to process this customer?
 
 ```text
-customer-42
-   |
-   v
-+--------+
-| Task B |
-+--------+
-
+ customer-42
+      |
+      v
+ +---------+
+ | Task B  |
+ +---------+
 Logical owner
 ```
 
@@ -38,15 +37,14 @@ Task B is responsible for processing records associated with `customer-42`.
 Location: Where are the actual bytes stored?
 
 ```text
-customer-42
-   |
-   v
-+--------+
-| Task A |
-|        |
-| State  |
-+--------+
-
+   customer-42
+        |
+        v
+   +---------+
+   | Task A  |
+   |         |
+   |  State  |
+   +---------+
 Physical location
 ```
 
@@ -55,21 +53,21 @@ Task A physically stores the customer's state.
 These assignments can differ.
 
 ```text
-             customer-42
-                  |
-          +-------+-------+
-          |               |
-          v               v
-      Ownership        Location
-          |               |
-          v               v
-       Task B           Task A
+           customer-42
+                |
+    +-----------+-----------+
+    |                       |
+    v                       v
+Ownership               Location
+    |                       |
+    v                       v
+ Task B                  Task A
 ```
 
 The distinction is:
 
-- Ownership is about authority and responsibility.
-- Location is about physical storage and data access.
+- **Ownership is about authority and responsibility.**
+- **Location is about physical storage and data access.**
 
 In a stateful dataflow system, logical ownership typically establishes which task has exclusive responsibility for reading, processing, and updating a key's state.
 
@@ -118,28 +116,28 @@ Under a tightly coupled design, Task B cannot independently start processing key
 ```text
 Before:
 
-Task A                       Task B
-+----------------+           +----------------+
-| Owner: 1, 2    |           | Owner: 3, 4    |
-| State: 1, 2    |           | State: 3, 4    |
-+----------------+           +----------------+
+Task A                         Task B
++------------------+           +------------------+
+| Owner: 1, 2      |           | Owner: 3, 4      |
+| State: 1, 2      |           | State: 3, 4      |
++------------------+           +------------------+
 
 
 Reconfiguration:
 
-Task A                       Task B
-+----------------+           +----------------+
-| State: 1, 2    |--- 2 ---->| State: 2, 3, 4 |
-+----------------+           +----------------+
+Task A                         Task B
++------------------+           +------------------+
+| State: 1, 2      |--- 2 ---->| State: 2, 3, 4   |
++------------------+           +------------------+
 
 
 After:
 
-Task A                       Task B
-+----------------+           +----------------+
-| Owner: 1       |           | Owner: 2, 3, 4 |
-| State: 1       |           | State: 2, 3, 4 |
-+----------------+           +----------------+
+Task A                         Task B
++------------------+           +------------------+
+| Owner: 1         |           | Owner: 2, 3, 4   |
+| State: 1         |           | State: 2, 3, 4   |
++------------------+           +------------------+
 ```
 
 Changing ownership becomes dependent on physically migrating state.
@@ -161,13 +159,13 @@ Consider the same example.
 ### Step 1: Initial configuration
 
 ```text
-Task A                       Task B
-+----------------+           +----------------+
-|                |           |                |
-| Owns: 1, 2     |           | Owns: 3, 4     |
-|                |           |                |
-| Stores: 1, 2   |           | Stores: 3, 4   |
-+----------------+           +----------------+
+Task A                         Task B
++------------------+           +------------------+
+|                  |           |                  |
+| Owns: 1, 2       |           | Owns: 3, 4       |
+|                  |           |                  |
+| Stores: 1, 2     |           | Stores: 3, 4     |
++------------------+           +------------------+
 ```
 
 ### Step 2: Transfer logical ownership
@@ -177,13 +175,13 @@ Key 2 is reassigned to Task B.
 However, its state remains on Task A.
 
 ```text
-Task A                       Task B
-+----------------+           +----------------+
-|                |           |                |
-| Owns: 1        |           | Owns: 2, 3, 4  |
-|                |           |                |
-| Stores: 1, 2   |           | Stores: 3, 4   |
-+----------------+           +----------------+
+Task A                         Task B
++------------------+           +------------------+
+|                  |           |                  |
+| Owns: 1          |           | Owns: 2, 3, 4    |
+|                  |           |                  |
+| Stores: 1, 2     |           | Stores: 3, 4     |
++------------------+           +------------------+
          ^
          |
          +---- State for key 2 remains here
@@ -219,16 +217,16 @@ Process record
 Once Task B has fetched the state, it can store it locally and process subsequent records without remote access.
 
 ```text
-Task A                       Task B
-+----------------+           +----------------+
-|                |           |                |
-| Owns: 1        |           | Owns: 2, 3, 4  |
-|                |           |                |
-| Stores: 1      |           | Stores: 2, 3, 4|
-+----------------+           +----------------+
+Task A                         Task B
++------------------+           +------------------+
+|                  |           |                  |
+| Owns: 1          |           | Owns: 2, 3, 4    |
+|                  |           |                  |
+| Stores: 1        |           | Stores: 2, 3, 4  |
++------------------+           +------------------+
 ```
 
-The important difference is that state migration occurs when the state is needed, rather than when ownership changes.
+**The important difference is that state migration occurs when the state is needed, rather than when ownership changes.**
 
 This is called lazy state migration.
 
@@ -320,36 +318,49 @@ A useful invariant is:
 For every key k: count(Owners(k)) = 1
 ```
 
-Every key has exactly one logical owner at any moment.
+**Every key has exactly one logical owner at any moment.**
 
-During ownership transfer, the old owner must finish its existing operations before the new owner starts processing that key.
+**During ownership transfer, the old owner must finish its existing operations before the new owner starts processing that key.**
 
 ```text
-Time -------------------------------------------------->
-
-Task A:
-  Process key 2
-  Update state
-  Finish current batch
-  Transfer ownership
-            |
-            v
-      Stop processing key 2
-
-
-Task B:
-            |
-            v
-      Acquire ownership
-      Fetch state if remote
-      Process key 2
+        Time
+          |
+          v
+       Task A:
+          |
+          v
+    Process key 2
+          |
+          v
+    Update state
+          |
+          v
+Finish current batch
+          |
+          v
+ Transfer ownership
+          |
+          v
+Stop processing key 2
+          |
+          v
+       Task B:
+          |
+          v
+  Acquire ownership
+          |
+          v
+Fetch state if remote
+          |
+          v
+    Process key 2
 ```
 
 Task A may continue to serve the stored state to Task B, but it must no longer independently process records or modify that key as its logical owner.
 
 This distinction enables safe remote storage access without requiring distributed locks for every event.
 
-The ownership handoff itself must still be synchronized correctly.
+**The ownership handoff itself must still be synchronized correctly.**
 
 ### What about records already in flight?
 
@@ -425,7 +436,7 @@ Task C -------------------> Task A
        direct state fetch
 ```
 
-This is a single-hop state lookup, regardless of how many times the key has changed owners.
+**This is a single-hop state lookup, regardless of how many times the key has changed owners.**
 
 It prevents repeated reconfiguration from increasing the network distance needed to locate a key.
 
@@ -471,10 +482,10 @@ The same principle appears in other distributed system designs, including primar
 
 The central insight is:
 
-Ownership is a logical decision about authority. Location is a physical decision about data placement.
+**Ownership is a logical decision about authority. Location is a physical decision about data placement.**
 
 When these are tightly coupled, changing authority often requires expensive data movement.
 
 When they are decoupled, the system can reorganize computation rapidly, defer unnecessary movement, and preserve local access for frequently used state.
 
-The engineering challenge then shifts from bulk migration to maintaining three invariants: a single logical owner per key, accurate state-location metadata, and correct record delivery during ownership transitions.
+**The engineering challenge then shifts from bulk migration to maintaining three invariants: a single logical owner per key, accurate state-location metadata, and correct record delivery during ownership transitions.**

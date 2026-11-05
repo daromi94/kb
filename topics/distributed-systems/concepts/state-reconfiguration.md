@@ -4,31 +4,31 @@ State reconfiguration is the process of changing how stateful computation is dis
 
 In distributed dataflow systems, reconfiguration allows the system to adapt to changing workloads, resource availability, and execution requirements without restarting the entire application.
 
-The central challenge is that stateful tasks cannot be freely moved or reassigned because their computation depends on previously accumulated state.
+**The central challenge is that stateful tasks cannot be freely moved or reassigned because their computation depends on previously accumulated state.**
 
 ## 1. Understanding state reconfiguration
 
 Consider a distributed system that continuously processes transactions and maintains an account balance for each customer.
 
 ```text
-                      Input Stream
-                           |
-                           v
-                    +-------------+
-                    | Partition   |
-                    | by Key      |
-                    +-------------+
-                           |
-                 +---------+---------+
-                 |                   |
-                 v                   v
-          +-------------+     +-------------+
-          | Task A      |     | Task B      |
-          |             |     |             |
-          | Keys: 1, 2  |     | Keys: 3, 4  |
-          |             |     |             |
-          | Local State |     | Local State |
-          +-------------+     +-------------+
+              Input Stream
+                    |
+                    v
+             +-------------+
+             | Partition   |
+             | by Key      |
+             +-------------+
+                    |
+       +------------+------------+
+       |                         |
+       v                         v
++-------------+           +-------------+
+| Task A      |           | Task B      |
+|             |           |             |
+| Keys: 1, 2  |           | Keys: 3, 4  |
+|             |           |             |
+| Local State |           | Local State |
++-------------+           +-------------+
 ```
 
 The system maintains two important assignments:
@@ -80,14 +80,14 @@ Long-running distributed applications rarely experience constant workloads.
 Consider a streaming system that processes millions of events per second.
 
 ```text
-Time -------------------------------------------------->
+Time -------------------------------------------------------->
 
-             Load increases
-                   |
-                   v
-Input rate     100K/s -----> 500K/s -----> 100K/s
+                            Load increases
+                                   |
+                                   v
+Input rate    100K/s    ---->   500K/s    ---->   100K/s
 
-Tasks               4 ----->     12 ----->      4
+Tasks            4      ---->     12      ---->      4
 ```
 
 Without reconfiguration, the system would either become overloaded during traffic spikes or waste resources during periods of low activity.
@@ -148,7 +148,7 @@ Purpose: Reduce resource consumption.
 
 Challenge: Before Task B can be removed, any state that exists only on Task B must be preserved elsewhere.
 
-Unlike scale-out, scale-in may require complete migration of the departing task's remaining state.
+**Unlike scale-out, scale-in may require complete migration of the departing task's remaining state.**
 
 ### C. Key rebalancing
 
@@ -255,19 +255,19 @@ Now suppose ownership is transferred to Task B while events are being processed.
 If the transfer is not coordinated correctly:
 
 ```text
-Task A                       Task B
-Initial balance: 100         Initial balance: 100
+Task A                          Task B
+Initial balance: 100            Initial balance: 100
 
-Process +50                  Process -20
+Process +50                     Process -20
 
-Final: 150                   Final: 80
+Final: 150                      Final: 80
 ```
 
 The system has two independently modified versions of the same state.
 
 Neither contains the correct result.
 
-This illustrates the fundamental correctness problem: reconfiguration must preserve the logical continuity of stateful computation.
+**This illustrates the fundamental correctness problem: reconfiguration must preserve the logical continuity of stateful computation.**
 
 ## 4. The three major correctness requirements
 
@@ -275,7 +275,7 @@ A correct reconfiguration protocol must preserve several invariants.
 
 ### Invariant 1: Exclusive ownership
 
-At every moment, each key must have exactly one logical owner.
+**At every moment, each key must have exactly one logical owner.**
 
 ```text
 Before:
@@ -297,7 +297,7 @@ Two tasks must never concurrently process and update the same key's state indepe
 
 ### Invariant 2: Exactly-once processing
 
-Reconfiguration must not introduce lost or duplicated records.
+**Reconfiguration must not introduce lost or duplicated records.**
 
 Consider an event that is already traveling toward Task A when the system changes ownership to Task B.
 
@@ -333,7 +333,7 @@ Upstream 2 ----> Task A ----> Task B
                     +-- Older events in flight
 ```
 
-Task B must not finalize the window before all events covered by its watermark have arrived.
+**Task B must not finalize the window before all events covered by its watermark have arrived.**
 
 Therefore, event-time progress must account for old forwarding channels as well as newly established upstream channels.
 
@@ -393,20 +393,20 @@ Update upstream routing
 Fetch state when needed
 ```
 
-The key idea is that ownership transfer and state migration are two different operations.
+**The key idea is that ownership transfer and state migration are two different operations.**
 
 For example:
 
 ```text
-Task A
+    Task A
 +-------------+
 | State: 42   |
 | State: 43   |
 +-------------+
-   |
-   | Ownership of 42 moves
-   v
-Task B
+       |
+       | Ownership of 42 moves
+       v
+    Task B
 +-------------+
 | Owns: 42    |
 | State: none |
@@ -443,30 +443,30 @@ This distinction is essential for designing non-disruptive distributed systems.
 Reconfiguration is typically coordinated by a control plane.
 
 ```text
-                   +-------------------+
-                   | Policy Controller |
-                   |                   |
-                   | Observes metrics  |
-                   | Decides placement |
-                   +-------------------+
-                            |
-                            v
-                   +-------------------+
-                   | Coordinator       |
-                   |                   |
-                   | Executes safe     |
-                   | reconfiguration   |
-                   +-------------------+
-                            |
-             +--------------+--------------+
-             |              |              |
-             v              v              v
-          Task A         Task B         Task C
+           +-------------------+
+           | Policy Controller |
+           |                   |
+           | Observes metrics  |
+           | Decides placement |
+           +-------------------+
+                     |
+                     v
+           +-------------------+
+           | Coordinator       |
+           |                   |
+           | Executes safe     |
+           | reconfiguration   |
+           +-------------------+
+                     |
+   +-----------------+-----------------+
+   |                 |                 |
+   v                 v                 v
+Task A            Task B            Task C
 ```
 
-The controller decides when and how the deployment should change.
+**The controller decides when and how the deployment should change.**
 
-The reconfiguration protocol determines how to execute that change safely.
+**The reconfiguration protocol determines how to execute that change safely.**
 
 These are separate problems.
 
@@ -487,7 +487,7 @@ Important metrics include:
 - Backlog recovery time: How quickly accumulated work is consumed.
 - Resource contention: How migration competes with normal computation for CPU, network bandwidth, memory, and disk I/O.
 
-A protocol can be technically live while still causing major performance degradation.
+**A protocol can be technically live while still causing major performance degradation.**
 
 For example, aggressive background migration might consume enough disk bandwidth to slow normal processing significantly.
 
@@ -498,17 +498,17 @@ Therefore, avoiding a complete pause is not sufficient by itself.
 State reconfiguration involves three logically distinct changes:
 
 ```text
-              RECONFIGURATION
-                     |
-          +----------+----------+
-          |          |          |
-          v          v          v
-       Ownership   Routing    Location
-          |          |          |
-          v          v          v
-       Who may    Where do   Where is
-       process    records    state
-       a key?     arrive?    stored?
+            RECONFIGURATION
+                   |
+    +--------------+--------------+
+    |              |              |
+    v              v              v
+Ownership       Routing       Location
+    |              |              |
+    v              v              v
+ Who may       Where do       Where is
+ process        records         state
+ a key?         arrive?        stored?
 ```
 
 A tightly coupled architecture requires these changes to happen together.
@@ -517,4 +517,4 @@ A more flexible architecture allows them to progress independently while preserv
 
 That separation creates opportunities to minimize unnecessary state movement, reduce disruption, and rapidly adapt to workload changes.
 
-The fundamental challenge of state reconfiguration is not simply moving data between machines. It is changing the execution topology of a running stateful computation while preserving its observable behavior.
+**The fundamental challenge of state reconfiguration is not simply moving data between machines. It is changing the execution topology of a running stateful computation while preserving its observable behavior.**

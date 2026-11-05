@@ -1,4 +1,4 @@
-# PREEMPT_RT-configured Linux Kernel
+# PREEMPT_RT-configured Linux kernel
 
 PREEMPT_RT is a Linux kernel configuration that makes almost all kernel execution preemptible, with the primary goal of minimizing worst-case scheduling latency.
 

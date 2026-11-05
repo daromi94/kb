@@ -1,4 +1,4 @@
-# Compute and Data: Locality vs. Independence
+# Compute and data: locality vs. independence
 
 One of the fundamental architectural trade-offs in distributed systems is whether computation should be placed close to its data or whether computation and data should be managed independently.
 

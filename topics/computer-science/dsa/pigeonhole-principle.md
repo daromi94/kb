@@ -1,4 +1,4 @@
-# Pigeonhole Principle
+# Pigeonhole principle
 
 The Pigeonhole Principle is a fundamental mathematical principle stating that:
 

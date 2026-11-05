@@ -1,4 +1,4 @@
-# Data Locality vs. Database Performance
+# Data locality vs. database performance
 
 The central problem is deceptively simple:
 

@@ -1,4 +1,4 @@
-# Engineering Investigation Template
+# Engineering investigation template
 
 The Engineering Investigation Template is a structured way to investigate problems, reason about their causes, evaluate possible solutions, and make defensible technical decisions.
 

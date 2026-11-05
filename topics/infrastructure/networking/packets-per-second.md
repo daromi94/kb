@@ -1,4 +1,4 @@
-# Packets Per Second
+# Packets per second
 
 **Packets Per Second (PPS) is a measure of how many network packets are transmitted, received, or processed in one second.**
 

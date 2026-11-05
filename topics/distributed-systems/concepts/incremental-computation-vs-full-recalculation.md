@@ -657,7 +657,7 @@ For deterministic input state, both should produce equivalent outputs. This can 
 | Event coalescing                           | Eliminates redundant work                | More complicated scheduling and acknowledgment |
 | Ordered acknowledgment                     | Protects against message loss            | Head-of-line blocking and replay               |
 | Per-object scheduling limits               | Improves fairness and capacity stability | Adds freshness delay                           |
-| Bounded-memory degradation                 | Preserves progress                       | May weaken completeness guarantees             |
+| Partial updates with reconciliation        | Preserves progress                       | May weaken completeness guarantees             |
 | Differential verification                  | Catches missed dependencies              | Additional validation cost                     |
 
 ## 12. Generalizable engineering principles

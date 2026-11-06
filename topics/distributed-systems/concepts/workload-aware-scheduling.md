@@ -322,12 +322,12 @@ Two placements are possible.
 Placement A: Workers close together
 
 ```text
-         NODE 1
-+-----------------------+
-| GPU 1 <----> GPU 2    |
-|   |            |      |
-| GPU 3 <----> GPU 4    |
-+-----------------------+
+NODE 1
++--------------------+
+| GPU 1 <----> GPU 2 |
+|   |            |   |
+| GPU 3 <----> GPU 4 |
++--------------------+
 
 High-bandwidth local links
 Low communication latency
@@ -695,5 +695,3 @@ A workload-aware scheduler asks:
 ```
 
 **The deeper distributed-systems lesson is that scheduling is not merely task placement. It is the coordination of resource ownership, execution dependencies, admission policies, and progress guarantees across a dynamic cluster.**
-
-That distinction is what turns a basic placement algorithm into a distributed scheduling system.

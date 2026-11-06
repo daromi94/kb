@@ -1,4 +1,4 @@
-# Pipelined shuffles and concurrent DAG execution
+# Pipelined DAG execution
 
 The fundamental problem is that traditional DAG execution engines often introduce synchronization barriers between stages that exchange data.
 

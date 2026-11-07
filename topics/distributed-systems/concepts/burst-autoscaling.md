@@ -276,11 +276,11 @@ It uses domain-specific knowledge about the workload, rather than relying exclus
 
 Three tradeoffs are particularly important.
 
-Cost versus availability. A burst replica is expensive, but deleting it prematurely can interrupt service. Safety-oriented designs retain extra capacity until retirement is demonstrably safe.
+**Cost versus availability.** A burst replica is expensive, but deleting it prematurely can interrupt service. Safety-oriented designs retain extra capacity until retirement is demonstrably safe.
 
-Concurrent hydration versus resource contention. Running two replicas at once increases aggregate CPU, memory, and I/O demand. If both replicas compete for a saturated shared storage system, the larger replica may offer little improvement. **Burst capacity is useful only when the additional resources relieve the actual bottleneck.**
+**Concurrent hydration versus resource contention.** Running two replicas at once increases aggregate CPU, memory, and I/O demand. If both replicas compete for a saturated shared storage system, the larger replica may offer little improvement. **Burst capacity is useful only when the additional resources relieve the actual bottleneck.**
 
-Automatic recovery versus complexity. A controller needs to survive crashes, retry failed provisioning attempts, and reconcile replica state. Persisting burst intent and deriving actions from current state avoids depending on one fragile, long-running imperative workflow.
+**Automatic recovery versus complexity.** A controller needs to survive crashes, retry failed provisioning attempts, and reconcile replica state. Persisting burst intent and deriving actions from current state avoids depending on one fragile, long-running imperative workflow.
 
 ## 7. Engineering lessons
 

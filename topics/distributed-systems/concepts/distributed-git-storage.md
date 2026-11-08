@@ -1,6 +1,12 @@
 # Distributed Git storage
 
-The architecture is built around two fundamental principles:
+A Git hosting service must handle pushes, fetches, and other operations from many users and agents. A busy repository may receive many requests at once.
+
+**The challenge is to process those requests concurrently without losing data or allowing conflicting updates to overwrite one another.**
+
+A repository-wide lock can protect shared state, but it also makes unrelated writers wait. Keeping a full durable copy on every compute node creates another cost: adding request-processing capacity also requires copying repository data.
+
+The architecture described here addresses these problems with two principles:
 
 1. **Minimize coordination:** Only operations that modify shared mutable state should require distributed agreement.
 2. **Decouple storage from compute:** Durability, request processing, and background maintenance should scale independently.

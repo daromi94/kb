@@ -72,8 +72,6 @@ These steps are not necessarily linear. Evidence can invalidate hypotheses, expe
 
 **The essential distinction is between understanding the problem and choosing how to solve it.**
 
-Let's go through every section using one hypothetical example.
-
 ## 2. Problem — What is happening, and why does it matter?
 
 The first step is to describe the observed behavior without making assumptions about its cause.
@@ -348,7 +346,7 @@ A controlled rollout should also include rollback criteria.
 
 ## 10. Failure modes — What could go wrong with the proposed solution?
 
-This section is about anticipating the consequences of the chosen design.
+Analyzing failure modes helps anticipate the consequences of the chosen design.
 
 Suppose bounded admission control is implemented.
 

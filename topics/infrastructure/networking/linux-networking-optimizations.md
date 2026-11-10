@@ -379,7 +379,7 @@ However, the Toeplitz hash is linear over the finite field GF(2).
 
 For certain structured input patterns, such as flows differing primarily in consecutive ephemeral port numbers, a randomly generated key can map traffic to only a subset of the available queues.
 
-In a documented case, just 4 of 16 RX queues received traffic.
+In one case, just 4 of 16 RX queues received traffic.
 
 ```text
 16 available RX queues

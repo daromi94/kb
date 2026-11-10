@@ -125,8 +125,6 @@ Invariant + exit condition
       Correct result
 ```
 
-Let's apply all three steps to the summation algorithm.
-
 ### Initialization
 
 Before the first iteration:

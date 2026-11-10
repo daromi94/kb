@@ -698,7 +698,7 @@ A collection cycle must not delete an object that is still needed by:
 - An in-progress push.
 - A retention or recovery policy.
 
-The design uses dedicated maintenance workers and durable records to coordinate and resume maintenance work, but the detailed garbage-collection safety protocol is not fully specified.
+The design uses dedicated maintenance workers and durable records to coordinate and resume maintenance work.
 
 The architectural takeaway is that garbage collection is a separate, correctness-sensitive lifecycle problem, not merely pack merging.
 
@@ -842,7 +842,7 @@ The complete system can be understood as three cooperating planes.
                  +---------------------------+
 ```
 
-The coordination and storage planes are logically separate; the diagram is not intended to imply that all object I/O passes through the metadata service.
+The coordination and storage planes are logically separate. Compute replicas access object storage directly.
 
 ### Engineering lessons
 

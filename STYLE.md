@@ -2,8 +2,6 @@
 
 The reader speaks English as a second language. Make technical explanations easy to follow while keeping their depth.
 
-For supplied notes, preserve the wording and structure. The pipeline in `PROCESSING.md` defines the cleanup to apply.
-
 ## Self-contained notes
 
 Each note includes the context, definitions, and explanations needed to understand it on its own.

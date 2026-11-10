@@ -32,20 +32,18 @@ Each note includes the context, definitions, and explanations needed to understa
 
 ## Make mechanisms visible
 
-Use frequent small ASCII diagrams in `text` fences for flows, relationships, bottlenecks, failure sequences, and before-and-after states.
-
-Small state blocks and calculations are welcome. Tables help compare the same dimensions across alternatives. Explain what a visual reveals without repeating all its contents in prose.
-
-Write formulas in ASCII, with each displayed formula on one physical line inside a `text` fence. Use backticks for inline expressions. Label executable code with its language.
+- Use frequent small ASCII diagrams in `text` fences for flows, relationships, bottlenecks, failure sequences, and before-and-after states.
+- Small state blocks and calculations are welcome.
+- Tables help compare the same dimensions across alternatives.
+- Explain what a visual reveals without repeating all its contents in prose.
+- Write formulas in ASCII, with each displayed formula on one physical line inside a `text` fence.
+- Use backticks for inline expressions.
+- Label executable code with its language.
 
 ## Ordinary Markdown
 
-Use standard `.md` files with natural paragraph wrapping.
-
-Use short sentence-case titles and matching lowercase, hyphenated filenames. Preserve proper names and acronyms.
-
-Do not include links between notes or links to sources.
-
-Let the subject determine the note's length. The result should feel like a patient technical explanation that is easy to scan, not a compressed reference or a polished essay.
-
-Repeated topics and numbered notes such as `retries-1.md` and `retries-2.md` are welcome. A note can develop several connected ideas. Write first; organize when it helps.
+- Use standard `.md` files with natural paragraph wrapping.
+- Use short sentence-case titles and matching lowercase, hyphenated filenames. Preserve proper names and acronyms.
+- Do not include links between notes or links to sources.
+- Let the subject determine the note's length. The result should feel like a patient technical explanation that is easy to scan, not a compressed reference or a polished essay.
+- Repeated topics and numbered notes such as `retries-1.md` and `retries-2.md` are welcome. A note can develop several connected ideas. Write first; organize when it helps.

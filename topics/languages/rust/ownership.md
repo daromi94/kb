@@ -703,7 +703,7 @@ When a handle is dropped, the strong reference count decreases.
 
 ### `Arc<T>`: atomic reference-counted ownership
 
-**`Arc<T>` provides thread-safe reference counting.**
+`Arc<T>` provides thread-safe reference counting.
 
 ```rust
 use std::sync::Arc;

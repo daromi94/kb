@@ -195,7 +195,9 @@ Imagine a desktop application with a synchronization problem.
 An engineer introduces a timer as a temporary workaround:
 
 ```javascript
-setTimeout(() => { refreshUI(); }, 100);
+setTimeout(() => {
+  refreshUI();
+}, 100);
 ```
 
 The workaround resolves a visible symptom, but it does not fix the underlying synchronization issue.

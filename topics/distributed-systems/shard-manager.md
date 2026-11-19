@@ -196,11 +196,11 @@ The lifecycle is roughly:
               v
  Receive updated assignments
               |
-    +---------+---------------+
-    |                         |
-    v                         v
-Start new                Stop removed
-  shards                    shards
+     +--------+--------+
+     |                 |
+     v                 v
+ Start new        Stop removed
+   shards            shards
 ```
 
 The application integrates through a `ShardProcessor` interface exposing:

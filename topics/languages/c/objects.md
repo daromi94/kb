@@ -189,7 +189,7 @@ On successful allocation, the allocated object's lifetime lasts until that alloc
 
 ## 5. An object is not necessarily a physical memory location
 
-The C standard describes an **abstract machine**, not a specific CPU architecture.
+C's memory model uses an **abstract machine** rather than a specific CPU architecture.
 
 For example:
 

@@ -231,8 +231,9 @@ The next call accesses the same object.
 void example(void) {
     int *p = malloc(sizeof *p);
 
-    if (p == NULL)
+    if (p == NULL) {
         return;
+    }
 
     *p = 42;
 

@@ -66,8 +66,9 @@ For example, recursion creates distinct automatic objects for each active invoca
 void recursive(int n) {
     int x = n;
 
-    if (n > 0)
+    if (n > 0) {
         recursive(n - 1);
+    }
 }
 ```
 
@@ -253,8 +254,9 @@ Consider:
 void example(void) {
     int *p = malloc(sizeof *p);
 
-    if (p == NULL)
+    if (p == NULL) {
         return;
+    }
 
     *p = 42;
 
@@ -321,8 +323,9 @@ For example:
 int *create_number(void) {
     int *p = malloc(sizeof *p);
 
-    if (p != NULL)
+    if (p != NULL) {
         *p = 42;
+    }
 
     return p;
 }

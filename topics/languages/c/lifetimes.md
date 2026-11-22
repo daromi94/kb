@@ -253,7 +253,6 @@ void example(void) {
 | Allocated object    |
 |                     |
 | *p = 42             |
-|                     |
 +----------+----------+
            |
            v

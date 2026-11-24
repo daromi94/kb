@@ -7,14 +7,16 @@ Process supplied notes in the following order. Give brief progress updates betwe
 - Read the source directly and keep it available for comparison. Default to one note unless splitting is requested.
 - Use a short sentence-case title and a matching lowercase, hyphenated `.md` filename. Preserve proper names and acronyms.
 - Choose the folder by subject.
-- Preserve the supplied wording, section order, explanations, examples, and code, except for the cleanup below or requested edits. Make only minimal corrections for definite factual or arithmetic errors, and report them.
+- Keep the supplied wording and code verbatim, except for the cleanup in this file, the visual translations below, and edits the user requests or approves. Preserve section order, explanations, and examples.
+- Propose wording changes only for definite factual or arithmetic errors. Show the original wording, the smallest correction, and the reason. Ask the user for approval before applying the correction.
 - Remove links, citation cards, reference-only lines, and HTML artifacts. Normalize escaped list markers and remove accidentally duplicated export titles. Preserve intentional repetition.
 - Remove assistant narration, user references, conversation history, and commentary about source coverage or the research process. For example, remove remarks that a protocol is not described in introductory material or cannot be identified without more evidence.
-- State technical facts directly: replace scaffolding such as "the documentation states that X" with X. Preserve substantive history, technical limitations, assumptions, uncertainty, and correctness conditions. Removing source commentary must not introduce guesses about missing mechanisms.
+- Remove attribution scaffolding such as "the documentation states that" while keeping the wording of the technical claim. Preserve substantive history, technical limitations, assumptions, uncertainty, and correctness conditions.
 - Check for orphaned citation fragments such as `Documentation`, publisher names, and `+1` after removing links.
 
 ## 2. Fix diagrams and math
 
+- Translate complex diagrams and interactive visuals into faithful static Markdown tables, ASCII diagrams, or worked examples. Use only information in the source. Preserve labels, values, relationships, and assumptions, including any inputs and outcomes supplied for interactive visuals. Keep the surrounding prose verbatim.
 - Use ASCII diagrams in `text` fences. Move diagrams left and align boxes, arrows, columns, indices, and annotations. Repair disconnected paths and misleading pointers while preserving labels, values, and technical meaning.
 - Restore a missing diagram only from information already present in the source. Identify illustrative examples as such and avoid inventing measurements or durations.
 - Convert LaTeX to ASCII. Use backticks for inline expressions and `text` fences for displayed formulas. Keep each formula on one physical line, including long summations; diagrams and pseudocode can remain multiline.
@@ -30,8 +32,8 @@ Process supplied notes in the following order. Give brief progress updates betwe
 
 ## 4. Verify the saved note
 
-- Read the saved file and compare it with the original input. Account for every wording change through requested edits, cleanup, or an explicitly reported correction.
-- Check diagram connections and pointers, example values, code contents, and the mathematical meaning of formulas, including signs, bounds, indices, and conditions.
+- Compare the saved file with the original input. Account for every wording change through listed cleanup, a user request, or an approved factual correction. Restore any other wording changes made during processing.
+- Check that each translated visual preserves the information in the source. Check diagram connections and pointers, example values, code contents, and the mathematical meaning of formulas, including signs, bounds, indices, and conditions.
 - Check the short title and matching filename, labeled and balanced fences, one-line formulas, selective bolding, table alignment, and remaining citation or meta-commentary fragments.
 - Run `git diff --check` and check whitespace in new files too, since untracked files are not included in that command. Keep verification lightweight and appropriate to Markdown changes.
 - Report the result, any intentional corrections, and whether changes remain uncommitted.

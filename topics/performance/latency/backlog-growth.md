@@ -2,7 +2,7 @@
 
 A queue grows when work arrives faster than the system can process it.
 
-In a continuous approximation, **the backlog changes at the difference between the arrival rate and the actual departure rate.**
+In a continuous approximation, **the backlog changes at the difference between the arrival rate and the departure rate.**
 
 ```text
 dQ(t)/dt = lambda(t) - d(t)

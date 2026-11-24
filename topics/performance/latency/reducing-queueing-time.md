@@ -8,7 +8,7 @@ Reducing queueing time is fundamentally about controlling the relationship betwe
 
 The central principle is:
 
-**Queueing delays decrease when work can begin processing sooner. Individual requests can still take the same time to finish.**
+**Queueing delays decrease when work can begin processing sooner, not necessarily when individual requests finish processing faster.**
 
 ## 1. Understanding where queueing time comes from
 
@@ -19,15 +19,15 @@ Arrival rate: 90 req/s
             |
             v
 +-----------------------+
-|         Queue         |
+|         QUEUE         |
 |    [R][R][R][R][R]    |
 +-----------------------+
             |
             v
 +-----------------------+
-|        Worker         |
-|  Service: 10 ms/req   |
-|  Capacity: 100 req/s  |
+|        WORKER         |
+| Service: 10 ms/req    |
+| Capacity: 100 req/s   |
 +-----------------------+
             |
             v
@@ -42,16 +42,16 @@ R = W_q + S
 
 Where:
 
-- **`R`:** Response time, also called **sojourn time**.
-- **`W_q`:** Queueing time.
-- **`S`:** Service time.
+- `R`: Response time, also called **sojourn time**.
+- `W_q`: Queueing time.
+- `S`: Service time.
 
 Suppose a request waits 80 ms before receiving 10 ms of processing.
 
 Its response time is:
 
 ```text
-R = 80 ms + 10 ms = 90 ms
+R = 80 + 10 = 90 ms
 ```
 
 Only 10 ms is spent doing useful processing. The remaining 80 ms is spent waiting for capacity to become available.
@@ -70,16 +70,16 @@ rho = lambda / mu
 
 Where:
 
-- **`lambda`:** Arrival rate.
-- **`mu`:** Service capacity.
-- **`rho`:** Traffic intensity, equal to utilization in a stable queue.
+- `lambda`: Arrival rate.
+- `mu`: Service capacity.
+- `rho`: Traffic intensity or utilization.
 
 Consider a server capable of processing 100 requests/s.
 
-Under a stable M/M/1 queueing model (`lambda < mu`), average queueing time is:
+Under an M/M/1 queueing model, average queueing time is:
 
 ```text
-E[W_q] = rho / (mu - lambda)
+W_q = rho / (mu - lambda)
 ```
 
 | Arrival rate | Utilization | Average queueing time |
@@ -95,7 +95,7 @@ Notice what happens near full utilization.
 
 Increasing traffic from 90 to 99 requests/s increases utilization by just 9 percentage points, but average queueing time grows from 90 ms to 990 ms.
 
-The relationship is nonlinear.
+**The relationship is nonlinear.**
 
 ### Why?
 
@@ -104,20 +104,20 @@ When the server is lightly utilized, it frequently becomes idle. Incoming reques
 When utilization approaches 100%, idle periods become rare. Even a small burst creates a backlog that takes longer to clear.
 
 ```text
-Time runs left to right, one slot per column.
-R = arrival, [R] = one request in service, - = no arrival or idle
+Time runs left to right. R = arrival, [R] = request in service.
+- = no arrival or idle, . = service continues beyond the six requests shown.
 
 Low utilization:
-Arrivals: --R-------R----------R--------
-Server:   --[R]-----[R]--------[R]------
-                  ^        ^
-                  Usually available
+Arrivals: --R------R-----------R----
+Server:   --[R]----[R]---------[R]--
+               ^      ^
+               Usually available
 
 High utilization:
-Arrivals: --R-RR---RR--R---RR-----------
-Server:   --[R][R][R][R][R][R][R][R]----
-              ^
-              Backlog forms
+Arrivals: --R-R-RR-R-RRR-RR-RR------
+Server:   --[R][R][R][R][R][R]......
+                ^
+                Backlog forms
 ```
 
 This motivates the first optimization:
@@ -137,20 +137,20 @@ Even if the average arrival rate is lower than service capacity, bursts can prod
 Consider two workloads:
 
 ```text
-Each R marks one arrival. Every row spans the same time interval.
+Each R marks one arrival.
 
 Workload A: Regular arrivals
-Time ------------------------------>
+Time ----------------------------------->
 R----R----R----R----R----R----R----R
 
 Workload B: Bursty arrivals
-Time ------------------------------>
-RRRR--------------RRRR--------------
+Time ----------------------------------->
+RRRRR-----------------RRRRR---------
 ```
 
-Both receive the same number of requests over the same interval.
+Both might receive the same number of requests over a sufficiently long interval.
 
-However, workload B can create much larger temporary backlogs.
+However, workload B creates much larger temporary backlogs.
 
 This occurs because queueing is influenced by both:
 
@@ -160,22 +160,22 @@ This occurs because queueing is influenced by both:
 A useful approximation is Kingman's formula for a stable, single-server GI/G/1 queue:
 
 ```text
-E[W_q] ~= (rho / (1 - rho)) * ((c_a^2 + c_s^2) / 2) * E[S]
+W_q ~= (rho / (1 - rho)) * ((c_a^2 + c_s^2) / 2) * E[S]
 ```
 
 Where:
 
-- **`c_a`:** Coefficient of variation of interarrival times.
-- **`c_s`:** Coefficient of variation of service times.
-- **`E[S]`:** Average service time.
-- **`rho`:** Utilization.
+- `c_a`: Coefficient of variation of interarrival times.
+- `c_s`: Coefficient of variation of service times.
+- `E[S]`: Average service time.
+- `rho`: Utilization.
 
 This formula reveals something fundamental.
 
 Queueing delay depends on:
 
 ```text
-Mean queueing time ~= Utilization factor * Variability factor * Mean service time
+Utilization * Variability * Service time
 ```
 
 More precisely, the utilization factor is `rho / (1 - rho)`, which diverges as utilization approaches 1.
@@ -184,23 +184,23 @@ More precisely, the utilization factor is `rho / (1 - rho)`, which diverges as u
 
 **On the arrival side:**
 
-- **Smooth traffic bursts** using rate limiting or pacing.
-- **Use jitter** to prevent synchronized retries.
-- **Avoid periodic synchronized jobs.**
-- **Apply backpressure** to regulate upstream producers.
+- Smooth traffic bursts using rate limiting or pacing.
+- Use jitter to prevent synchronized retries.
+- Avoid periodic synchronized jobs.
+- Apply backpressure to regulate upstream producers.
 
 **On the service side:**
 
-- **Eliminate unpredictable slow operations.**
-- **Separate long-running jobs from short-running jobs.**
-- **Reduce contention for shared resources.**
-- **Avoid mixing radically different request types** in one queue.
+- Eliminate unpredictable slow operations.
+- Separate long-running jobs from short-running jobs.
+- Reduce contention for shared resources.
+- Avoid mixing radically different request types in one queue.
 
-Reducing variability can decrease waiting time even when average processing capacity stays unchanged.
+**Reducing variability can decrease waiting time even when average processing capacity stays unchanged.**
 
 ## 4. The third lever: reduce service time
 
-Making processing faster increases service capacity and often reduces queueing delay.
+**Making processing faster increases service capacity and often reduces queueing delay.**
 
 For example, consider a worker with:
 
@@ -221,7 +221,7 @@ Now optimize service time to 8 ms.
 New capacity:
 
 ```text
-mu = 1 / (0.008 s) = 125 req/s
+mu = 1 / 0.008 = 125 req/s
 ```
 
 New utilization:
@@ -245,7 +245,7 @@ This happens because the optimization reduces both the time required to process 
 
 ## 5. The fourth lever: improve scheduling
 
-How much work arrives affects queueing time. So does **which request gets processed next**.
+A queue is not only about how much work arrives. It is also about **which request gets processed next**.
 
 This is called the **queue discipline** or **scheduling discipline**.
 
@@ -257,12 +257,12 @@ Consider three requests:
 | B       | 10 ms        |
 | C       | 10 ms        |
 
-All arrive simultaneously, and there is one worker. For FCFS, assume the worker takes them in the order A, B, C.
+All arrive simultaneously, and there is one worker.
 
 ### First-Come, First-Served (FCFS)
 
 ```text
-Timeline (ms, 4 columns per 10 ms)
+Timeline (milliseconds, 4 columns per 10 ms)
 
 0                                       100 110 120
 +---------------------------------------+---+---+
@@ -281,7 +281,7 @@ Average = 70 ms
 ### Shortest Processing Time First (SPT)
 
 ```text
-Timeline (ms, 4 columns per 10 ms)
+Timeline (milliseconds, 4 columns per 10 ms)
 
 0   10  20                                      120
 +---+---+---------------------------------------+
@@ -299,20 +299,20 @@ Average = 10 ms
 
 The same amount of work is processed with identical hardware and total processing capacity.
 
-Yet average waiting time falls from 70 ms to 10 ms.
+**Yet average waiting time falls from 70 ms to 10 ms.**
 
 This demonstrates that scheduling policy can substantially affect latency.
 
 Common disciplines include:
 
-| Discipline              | Main objective                                                                    |
-| ----------------------- | --------------------------------------------------------------------------------- |
-| FCFS / FIFO             | Preserve arrival order                                                            |
-| Shortest Job First      | Minimize mean waiting time when jobs are ready together and their sizes are known |
-| Priority Queueing       | Favor important or latency-sensitive work                                         |
-| Round Robin             | Share processing opportunities                                                    |
-| Processor Sharing       | Provide concurrent progress to competing jobs                                     |
-| Earliest Deadline First | Prioritize jobs with urgent deadlines                                             |
+| Discipline              | Main objective                                      |
+| ----------------------- | --------------------------------------------------- |
+| FCFS / FIFO             | Preserve arrival order                              |
+| Shortest Job First      | Minimize mean waiting time when job sizes are known |
+| Priority Queueing       | Favor important or latency-sensitive work           |
+| Round Robin             | Share processing opportunities                      |
+| Processor Sharing       | Provide concurrent progress to competing jobs       |
+| Earliest Deadline First | Prioritize jobs with urgent deadlines               |
 
 There are tradeoffs.
 
@@ -346,13 +346,13 @@ Multiple workers:
                          +----------+
 ```
 
-For `c` independent, identical workers, each with service rate `mu`:
+For `c` identical workers, each with service rate `mu`:
 
 ```text
 C = c * mu
 ```
 
-Adding workers decreases queueing delay when it creates additional effective processing capacity.
+**Adding workers decreases queueing delay when it creates additional effective processing capacity.**
 
 However, a critical distinction exists:
 
@@ -362,7 +362,7 @@ For example, 16 CPU-bound workers competing for 4 CPU cores might not achieve mo
 
 Similarly, adding 20 database query workers can make latency worse if the underlying database is already saturated.
 
-The correct strategy is to add parallelism at the actual bottleneck, while preserving enough capacity in dependent resources.
+**The correct strategy is to add parallelism at the actual bottleneck, while preserving enough capacity in dependent resources.**
 
 ### Worker pooling
 
@@ -414,32 +414,33 @@ There are two primary control mechanisms.
 
 ### Admission control
 
-Prevent excess work from entering the overloaded system.
+**Prevent excess work from entering the overloaded system.**
 
 ```text
-       150 req/s
-           |
-           v
-+----------------------+
-| Admission controller |
-+----------------------+
-           |      |
-           |      +--> Reject 50 req/s
-           v
-       100 req/s
-           |
-           v
-        [Queue]
-           |
-           v
+        150 req/s
+            |
+            v
++-----------------------+
+| Admission Controller  |
++-----------------------+
+            |
+            +----> Reject 50 req/s
+            |
+            v
+        100 req/s
+            |
+            v
+         [Queue]
+            |
+            v
         [Workers]
 ```
 
-Admission control protects accepted requests from sustained overload. For an M/M/1 queue, the accepted arrival rate must stay below capacity for the steady-state mean wait to be finite.
+This protects accepted requests from a continuously growing queue.
 
 ### Backpressure
 
-Signal to upstream producers that they must send requests more slowly.
+**Signal to upstream producers that processing must slow down.**
 
 ```text
 [Producer] ------ Requests ------> [Consumer]
@@ -454,45 +455,43 @@ Backpressure can prevent work from accumulating inside the consumer.
 
 However, it does not eliminate excess demand. It moves the waiting or rate adjustment upstream. If producers cannot slow down indefinitely, admission control, load shedding, or durable buffering may still be necessary.
 
-A bounded queue prevents unchecked local memory growth, but its overflow behavior must be explicitly defined.
+**A bounded queue prevents unchecked local memory growth, but its overflow behavior must be explicitly defined.**
 
 ## 8. The connection with Little's Law
 
 Little's Law provides another perspective:
 
 ```text
-L_q = lambda * E[W_q]
+L_q = lambda * W_q
 ```
 
-For a stable queue, all three quantities refer to the same population of requests.
+For a stable queue:
 
-- **`L_q`:** Average number of requests waiting.
-- **`lambda`:** Effective long-run arrival/completion rate.
-- **`E[W_q]`:** Average queueing time.
+- `L_q`: Average number of requests waiting.
+- `lambda`: Effective long-run arrival/completion rate.
+- `W_q`: Average queueing time.
 
 Rearranging:
 
 ```text
-E[W_q] = L_q / lambda
+W_q = L_q / lambda
 ```
 
-Suppose a system serves every admitted request, completes 200 requests/s, and maintains an average queue length of 1,000 requests.
+Suppose a system completes 200 requests/s and maintains an average queue length of 1,000 requests.
 
 ```text
-E[W_q] = 1000 req / (200 req/s) = 5 s
+W_q = 1000 / 200 = 5 seconds
 ```
 
 If average queue length falls to 200 requests while effective throughput remains 200 requests/s:
 
 ```text
-E[W_q] = 200 req / (200 req/s) = 1 s
+W_q = 200 / 200 = 1 second
 ```
 
-Monitoring queue length and throughput helps estimate average waiting time.
+This highlights why monitoring queue length is important.
 
-Little's Law describes a relationship between queue length, throughput, and waiting time.
-
-Deleting queued requests can reduce waiting for the surviving requests by reducing the work ahead of them. Increasing service capacity requires the system to process more work per unit of time.
+But note that Little's Law describes a relationship, not a direct optimization technique. Simply deleting queued requests reduces waiting for the surviving requests but does not increase service capacity.
 
 ## 9. Putting the strategies together
 
@@ -510,12 +509,12 @@ Deleting queued requests can reduce waiting for the surviving requests by reduci
 
 ## 10. The central engineering lesson
 
-Queueing time is the result of contention for limited processing capacity.
+**Queueing time is the result of contention for limited processing capacity.**
 
 Four factors are especially important:
 
 ```text
-Queueing time = f(load, capacity, variability, scheduling)
+W_q = f(Load, Capacity, Variability, Scheduling)
 ```
 
 An effective performance-engineering approach is therefore:
@@ -529,4 +528,4 @@ An effective performance-engineering approach is therefore:
 
 The most important insight is that **reducing service time, reducing variability, and maintaining spare capacity can improve queueing latency far more than their individual percentages suggest.**
 
-Near saturation, queueing is highly nonlinear. Preventing a system from operating continuously at its capacity limit is often more effective than trying to optimize requests after the queue has already formed.
+**Near saturation, queueing is highly nonlinear.** Preventing a system from operating continuously at its capacity limit is often more effective than trying to optimize requests after the queue has already formed.

@@ -1,17 +1,17 @@
 # Increasing service capacity
 
-**Service capacity increases when each request takes less processing time or when the system can process more requests concurrently.**
-
 In queueing theory, service capacity depends primarily on two variables:
 
-- **Service time (`S`).** How long it takes a server to process one request.
-- **Number of servers (`c`).** How many independent processing units are available.
+- **Service time (`S`)**: How long it takes a server to process one request.
+- **Number of servers (`c`)**: How many independent processing units are available.
 
-For a single server, the service rate `mu` is the reciprocal of the mean service time `E[S]`.
+For a single server:
 
 ```text
 mu = 1 / E[S]
 ```
+
+Where `mu` is the service rate and `E[S]` is the mean service time.
 
 For `c` identical servers, each with service rate `mu`, the theoretical aggregate service capacity is:
 
@@ -19,7 +19,7 @@ For `c` identical servers, each with service rate `mu`, the theoretical aggregat
 C = c * mu = c / E[S]
 ```
 
-**Aggregate capacity assumes that servers can process work independently without a shared bottleneck.**
+**This assumes that servers can process work independently without a shared bottleneck.**
 
 ## 1. Reduce service time
 
@@ -63,7 +63,7 @@ Service time can be reduced by:
 - Reducing lock contention and synchronization overhead.
 - Improving CPU cache locality and memory access patterns.
 
-**Service time** measures how long the worker takes to process the request. Reducing **queue waiting time** lets processing begin sooner.
+**An important distinction:** reducing **queue waiting time** does not necessarily make the worker itself faster. Service time measures processing, not time waiting for processing to begin.
 
 ## 2. Increase the number of servers
 
@@ -93,9 +93,9 @@ The aggregate service capacity becomes:
 C = 3 * 50 = 150 requests/s
 ```
 
-Independent workers can process requests in **parallel**. Adding separate processing instances is **horizontal scaling**.
+This is **parallelism**, or horizontal scaling when additional processing instances are introduced.
 
-However, adding workers only helps if they can make independent progress.
+**However, adding workers only helps if they can make independent progress.**
 
 For CPU-bound workloads, adding more runnable threads than available CPU capacity often increases contention and context switching instead of throughput.
 
@@ -103,7 +103,7 @@ For I/O-bound workloads, additional concurrency may increase throughput because 
 
 ## 3. Increase concurrency by overlapping I/O
 
-Overlapping I/O can increase capacity when a service spends most of its time waiting for databases, storage, or remote APIs.
+This is particularly important for services that spend most of their time waiting for databases, storage, or remote APIs.
 
 Consider a request requiring:
 
@@ -146,7 +146,7 @@ C_CPU = 1 / 0.002 = 500 requests/s
 
 assuming sufficient I/O concurrency and no other bottlenecks.
 
-**Overlapping I/O can improve resource utilization even when individual requests take just as long.**
+**Concurrency improves resource utilization; it does not necessarily reduce the elapsed service time of individual requests.**
 
 For I/O-bound services, this can substantially increase effective service capacity without increasing CPU resources.
 
@@ -175,7 +175,7 @@ Incoming requests
 +---------------+
 ```
 
-If each request passes through every stage once, the stage with the lowest capacity sets the throughput limit.
+Assuming each request passes through every component, the maximum throughput is approximately:
 
 ```text
 C_system = min(500, 200, 400) = 200 requests/s
@@ -183,11 +183,11 @@ C_system = min(500, 200, 400) = 200 requests/s
 
 Doubling API worker capacity to 1,000 requests/s does not improve system throughput.
 
-The database remains the bottleneck.
+**The database remains the bottleneck.**
 
 Worse, increasing upstream concurrency may overload the database, increase its latency, and reduce effective system capacity.
 
-**End-to-end service capacity depends on the bottleneck across the full request path.**
+This is why service capacity should be understood as an **end-to-end property**, not merely the number of workers or threads.
 
 ## 5. Connecting capacity improvements to backlog recovery
 
@@ -209,15 +209,15 @@ The backlog grows at:
 120 - 100 = 20 req/s
 ```
 
-Shorter service times and more independent workers both increase service capacity.
+There are two possible improvements:
 
 | Approach                   | New capacity | Backlog growth |
 | -------------------------- | ------------ | -------------- |
 | No improvement             | 100 req/s    | +20 req/s      |
-| Reduce service time by 20% | 125 req/s    | -5 req/s       |
+| Make processing 20% faster | 125 req/s    | -5 req/s       |
 | Double independent workers | 200 req/s    | -80 req/s      |
 
-A 20% reduction in service time increases the service rate by 25%.
+Notice that a 20% reduction in service time increases service rate by 25%:
 
 ```text
 1 / (0.8 * S) = 1.25 * (1 / S)
@@ -225,26 +225,30 @@ A 20% reduction in service time increases the service rate by 25%.
 
 **Once capacity exceeds arrivals, the queue begins draining.**
 
-The time to drain a backlog depends on the capacity left after serving new arrivals. Assume 1,000 requests are queued, arrivals stay at 120 req/s, and service capacity stays constant throughout recovery.
+But there is another subtlety.
 
-```text
-Drain time = Backlog / (Service capacity - Arrival rate)
-```
+Suppose an accumulated backlog contains 1,000 requests.
 
-| Service capacity | Spare capacity | Drain time   |
-| ---------------- | -------------- | ------------ |
-| 125 req/s        | 5 req/s        | 200 s        |
-| 150 req/s        | 30 req/s       | About 33.3 s |
-| 200 req/s        | 80 req/s       | 12.5 s       |
+Recovery time at different service capacities
+
+Constant arrival rate: 120 req/s; initial backlog: 1,000 requests
+
+| Service capacity | Spare capacity | Recovery time |
+| ---------------- | -------------- | ------------- |
+| 125 req/s        | 5 req/s        | 200 s         |
+| 150 req/s        | 30 req/s       | About 33.3 s  |
+| 200 req/s        | 80 req/s       | 12.5 s        |
+
+Assumes capacity is continuously available to process queued work.
 
 Increasing service capacity has two benefits:
 
-1. **Higher sustainable arrival rate.** The system can process more incoming requests.
-2. **Faster backlog recovery.** More spare capacity is available to process queued work.
+1. **It increases the maximum sustainable arrival rate.**
+2. **It creates additional spare capacity for recovering from accumulated backlog.**
 
-## 6. Shared resource limits
+## 6. The hidden constraint: the scalability limit
 
-Adding workers indefinitely does not produce indefinitely increasing throughput.
+**Adding workers indefinitely does not produce indefinitely increasing throughput.**
 
 Eventually, shared resources become bottlenecks:
 
@@ -252,7 +256,7 @@ Eventually, shared resources become bottlenecks:
    Workers added
          |
          v
-  More concurrency
+ More concurrency
          |
          v
   Shared resource
@@ -272,19 +276,25 @@ Throughput plateaus
 
 Typical causes include locks, CPU saturation, memory bandwidth, database connection limits, storage IOPS, and network bandwidth.
 
+This leads to an important distinction:
+
 - **Service demand**: The actual resource time required per request, such as CPU milliseconds.
-- **Response time**: The total elapsed time, including processing, queueing, contention, and waiting.
+- **Response time**: The total elapsed time, including queueing, contention, and waiting.
 - **Service capacity**: The maximum sustainable completion rate under specified workload and resource conditions.
 
 Optimizing service demand increases potential capacity. Adding concurrency helps exploit available resources. Neither guarantees an end-to-end throughput improvement unless the relevant bottleneck is addressed.
 
-## 7. Capacity optimization order
+## 7. Practical engineering principle
 
-With independent workers and adequate shared resources, capacity scales with the number of workers that can run in parallel and their individual service rates.
+The two primary strategies are:
 
 ```text
 Capacity = Parallelism * Per-worker service rate
 ```
+
+**But this relationship assumes independent workers and adequate shared resources.**
+
+A useful optimization order is:
 
 1. **Measure the bottleneck.** Determine whether processing is CPU-bound, I/O-bound, lock-bound, or limited by a downstream service.
 2. **Reduce resource demand per request.** Eliminate unnecessary work and improve processing efficiency.
@@ -292,6 +302,8 @@ Capacity = Parallelism * Per-worker service rate
 4. **Add resources or replicas.** Scale the actual bottleneck rather than an unrelated component.
 5. **Protect the new capacity.** Use admission control and bounded queues so unexpected load cannot exhaust the system.
 
+The deeper principle is:
+
 **Increasing the number of workers is not the same as increasing the amount of useful work a system can complete per second.**
 
-Effective service capacity increases only when the system can complete more work without creating an equal or greater bottleneck elsewhere.
+**Effective service capacity increases only when the system can complete more work without creating an equal or greater bottleneck elsewhere.**
